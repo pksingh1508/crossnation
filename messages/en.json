@@ -7,6 +7,17 @@
     "contact": "Contact",
     "book": "Book Appointment"
   },
+  "nav": {
+    "study": "Study",
+    "work": "Work",
+    "invest": "Invest",
+    "migrate": "Migrate",
+    "employer": "Employer",
+    "institution": "Institution",
+    "recruiter": "Recruiter",
+    "jobseeker": "Jobseeker",
+    "traineeship": "Traineeship"
+  },
   "home": {
     "title": "Welcome to Our Service Website",
     "subtitle": "Professional services tailored to your needs",

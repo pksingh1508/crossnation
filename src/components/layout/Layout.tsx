@@ -30,14 +30,19 @@ export function Layout({
         Skip to content
       </a>
       <Navbar />
-      <main id="main-content" className={className}>
+      <main
+        id="main-content"
+        className={[className, !container ? "px-4" : undefined]
+          .filter(Boolean)
+          .join(" ")}
+      >
         {container ? (
           <div className="container mx-auto px-4 py-6">{children}</div>
         ) : (
           children
         )}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

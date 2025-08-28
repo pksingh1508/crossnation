@@ -7,6 +7,17 @@
     "contact": "Contacto",
     "book": "Reservar Cita"
   },
+  "nav": {
+    "study": "Estudios",
+    "work": "Trabajo",
+    "invest": "Invertir",
+    "migrate": "Migrar",
+    "employer": "Empleador",
+    "institution": "Institución",
+    "recruiter": "Reclutador",
+    "jobseeker": "Solicitante",
+    "traineeship": "Prácticas"
+  },
   "home": {
     "title": "Bienvenido a Nuestro Sitio Web de Servicios",
     "subtitle": "Servicios profesionales adaptados a sus necesidades",

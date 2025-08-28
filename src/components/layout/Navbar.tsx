@@ -6,121 +6,259 @@ import { useLocale, useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { NAVBAR_LINKS } from "@/constants/data";
-import { Globe } from "lucide-react";
+import {
+  Globe,
+  Phone,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 import { colors } from "@/constants/color";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
-  const t = useTranslations("common");
+  const tCommon = useTranslations("common");
+  const tNav = useTranslations("nav");
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="border-b bg-white">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-4 md:gap-8">
-          <Link href={`/${locale}`} className="flex items-center gap-2">
-            <Globe
-              aria-hidden="true"
-              size={24}
-              style={{ color: colors.yellow.DEFAULT }}
-            />
-            <span
-              className="text-xl font-bold"
-              style={{ color: colors.black.light }}
-            >
-              CrossNation
-            </span>
-          </Link>
-
-          <div className="hidden md:flex items-center gap-6">
-            {NAVBAR_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="text-gray-600 hover:text-gray-900"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+    <nav className="bg-white">
+      {/* Top bar */}
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between text-sm">
+        <div className="flex items-center gap-4 text-gray-400">
+          <a
+            href="#"
+            aria-label="Facebook"
+            className="hover:text-gray-600 transition-colors"
+          >
+            <Facebook className="h-4 w-4" />
+          </a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            className="hover:text-gray-600 transition-colors"
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+          <a
+            href="#"
+            aria-label="Twitter"
+            className="hover:text-gray-600 transition-colors"
+          >
+            <Twitter className="h-4 w-4" />
+          </a>
+          <a
+            href="#"
+            aria-label="Linkedin"
+            className="hover:text-gray-600 transition-colors"
+          >
+            <Linkedin className="h-4 w-4" />
+          </a>
         </div>
-
-        <div className="flex items-center gap-2 md:gap-4">
+        {/* Top-bar right: large screens (2xl+) show full actions; below that only language */}
+        <div className="hidden 2xl:flex items-center gap-6 text-gray-400">
+          <span className="inline-flex items-center gap-2">
+            <Phone className="h-4 w-4" /> +48 22 209 5497
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <Phone className="h-4 w-4" /> +48 72 635 666
+          </span>
           <Button
             asChild
             variant="outline"
-            className="hidden sm:inline-flex"
-            style={{
-              borderColor: colors.yellow.DEFAULT,
-              color: colors.black.light,
-            }}
+            className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
+            style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
           >
-            <Link href={`/${locale}/book`}>{t("book")}</Link>
+            <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
+            style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+          >
+            <Link href={`/${locale}/contact`}>{tCommon("contact")}</Link>
           </Button>
           <LanguageSwitcher />
-
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 md:hidden"
-            aria-label="Toggle navigation menu"
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-                />
-              )}
-            </svg>
-          </button>
+        </div>
+        {/* Small to xl: only language on the right */}
+        <div className="flex 2xl:hidden items-center gap-2">
+          <LanguageSwitcher />
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden border-t bg-white">
-          <div className="container mx-auto px-4 py-3 flex flex-col gap-3">
-            {NAVBAR_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="text-gray-700 hover:text-gray-900"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Button
-              asChild
-              variant="outline"
-              className="mt-2 w-full"
+      {/* Bottom bar */}
+      <div
+        className="border-t"
+        style={{ background: "linear-gradient(90deg, #FEF9C3 0%, white 60%)" }}
+      >
+        <div className="container mx-auto px-4 py-3 grid grid-cols-2 items-center">
+          {/* Logo */}
+          <Link href={`/${locale}`} className="flex items-center gap-3">
+            <motion.span
+              whileHover={{ scale: 1.03 }}
+              className="inline-flex items-center justify-center h-10 w-14 rounded-xl font-bold"
               style={{
-                borderColor: colors.yellow.DEFAULT,
+                backgroundColor: colors.yellow.DEFAULT,
                 color: colors.black.light,
               }}
             >
-              <Link href={`/${locale}/book`} onClick={() => setIsOpen(false)}>
-                {t("book")}
-              </Link>
-            </Button>
+              CN
+            </motion.span>
+            <div className="leading-tight">
+              <span
+                className="text-xl font-semibold"
+                style={{ color: colors.black.light }}
+              >
+                CountryNation
+              </span>
+              <div className="text-xs text-gray-500">GLOBAL SERVICES</div>
+            </div>
+          </Link>
+
+          {/* Links (right) - show from xl and up */}
+          <div className="hidden xl:flex items-center justify-end gap-8">
+            {NAVBAR_LINKS.map((item) => {
+              const key = item.href.replace(/^\//, "");
+              return (
+                <motion.div key={item.href} whileHover={{ y: -2 }}>
+                  <Link
+                    href={`/${locale}${item.href}`}
+                    className="text-gray-700 transition-colors rounded-md px-1.5 py-2 hover:bg-[var(--hover-bg)] hover:text-black"
+                    style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+                  >
+                    {tNav(key as any)}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
+
+          {/* Toggle + actions for < xl */}
+          <div className="flex lg:hidden items-center justify-end">
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+          {/* From lg to < xl: show Book button left of toggle */}
+          <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
+            <Button asChild size="sm" variant="brandOutline">
+              <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+            </Button>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+
+          {/* No bottom actions on xl; actions remain in the top bar */}
         </div>
-      )}
+      </div>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="xl:hidden border-t bg-white"
+          >
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+              {NAVBAR_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={`/${locale}${item.href}`}
+                  className="text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black"
+                  style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {tNav(item.href.replace(/^\//, "") as any)}
+                </Link>
+              ))}
+              {/* Buttons visible in drawer only for < lg */}
+              <div className="mt-2 grid gap-2 lg:hidden">
+                <Button asChild variant="brandOutline" className="w-full">
+                  <Link
+                    href={`/${locale}/book`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {tCommon("book")}
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
+                  style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+                >
+                  <Link
+                    href={`/${locale}/contact`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {tCommon("contact")}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
