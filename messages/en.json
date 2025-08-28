@@ -19,11 +19,28 @@
     "traineeship": "Traineeship"
   },
   "home": {
-    "title": "Welcome to Our Service Website",
-    "subtitle": "Professional services tailored to your needs",
     "hero": {
-      "title": "Transform Your Business",
-      "description": "We provide innovative solutions to help your business grow and succeed in today's competitive market."
+      "countries": "Countries",
+      "successStories": "Success Stories",
+      "title": {
+        "part1": "Global Opportunities for",
+        "highlight": "Study, Work & Investment"
+      },
+      "description": "We help students, jobseekers, employers, and investors connect worldwide with trusted guidance and expert support.",
+      "cta": "Get Free Counselling"
     }
+  },
+  "about": {
+    "title": "About Us",
+    "description": {
+      "paragraph1": "With over 15 years of experience in international education, immigration, and investment consulting, we are your trusted partner in navigating global opportunities.",
+      "paragraph2": "Our team of certified consultants has helped thousands of individuals and families achieve their dreams of studying, working, and investing abroad. We provide personalized guidance tailored to your unique goals and circumstances."
+    },
+    "stats": {
+      "experience": "Years of Experience",
+      "successRate": "Success Rate"
+    },
+    "imageAlt": "Consulting",
+    "trustedBadge": "Trusted by Thousands"
   }
 }

@@ -19,11 +19,28 @@
     "traineeship": "Prácticas"
   },
   "home": {
-    "title": "Bienvenido a Nuestro Sitio Web de Servicios",
-    "subtitle": "Servicios profesionales adaptados a sus necesidades",
     "hero": {
-      "title": "Transforma Tu Negocio",
-      "description": "Proporcionamos soluciones innovadoras para ayudar a tu negocio a crecer y tener éxito en el mercado competitivo de hoy."
+      "countries": "Países",
+      "successStories": "Historias de Éxito",
+      "title": {
+        "part1": "Oportunidades Globales para",
+        "highlight": "Estudios, Trabajo e Inversión"
+      },
+      "description": "Ayudamos a estudiantes, solicitantes de empleo, empleadores e inversores a conectarse mundialmente con orientación confiable y apoyo experto.",
+      "cta": "Obtener Asesoría Gratuita"
     }
+  },
+  "about": {
+    "title": "Acerca de",
+    "description": {
+      "paragraph1": "Con más de 15 años de experiencia en educación internacional, inmigración y consultoria de inversiones, somos tu socio de confianza en la navegación de oportunidades globales.",
+      "paragraph2": "Nuestro equipo de consultores certificados ha ayudado a miles de individuos y familias a lograr sus sueños de estudiar, trabajar e invertir en el extranjero. Brindamos asesoramiento personalizado adaptado a tus metas y circunstancias únicas."
+    },
+    "stats": {
+      "experience": "Años de Experiencia",
+      "successRate": "Tasa de Éxito"
+    },
+    "imageAlt": "Consultoría",
+    "trustedBadge": "Confiado por miles"
   }
 }

@@ -61,8 +61,8 @@ src/
 ### Phase 3: Feature Development
 
 - [ ] Homepage Components
-  - [ ] Hero section with engaging visuals
-  - [ ] About section highlighting key features
+  - [x] Hero section with engaging visuals
+  - [x] About section highlighting key features
   - [ ] FAQ section with expandable items
   - [ ] Looking for inspiration section
   - [ ] Our solution section
