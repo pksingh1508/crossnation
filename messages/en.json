@@ -68,5 +68,52 @@
         "answer": "Our fees depend on the type of service you choose. We provide transparent pricing upfront with no hidden charges."
       }
     }
+  },
+  "studyAbroad": {
+    "title": "Study Abroad Opportunities",
+    "description": "Unlock your potential with world-class education opportunities. We guide you through the entire process from university selection to visa applications and beyond.",
+    "features": {
+      "matching": "Personalized university matching based on your profile",
+      "application": "Complete application and documentation support",
+      "visa": "Visa guidance and interview preparation",
+      "support": "Post-arrival support and accommodation assistance"
+    },
+    "cta": "Explore Study Options"
+  },
+  "migrate": {
+    "title": "Migrate with Ease",
+    "description": "Make your dream of living abroad a reality. Our migration experts provide comprehensive support for all visa categories and immigration programs.",
+    "features": {
+      "skilled": "Skilled worker and family visa applications",
+      "express": "Express entry and provincial nominee programs",
+      "document": "Document preparation and verification",
+      "settlement": "Settlement services and orientation"
+    },
+    "cta": "Start Migration Process"
+  },
+  "invest": {
+    "title": "Invest Smartly Across Borders",
+    "description": "Maximize your investment potential with our global investment advisory services. From real estate to business opportunities, we help you make informed decisions.",
+    "features": {
+      "realEstate": "International real estate investment opportunities",
+      "business": "Business acquisition and partnership guidance",
+      "visa": "Investment visa and residency programs",
+      "planning": "Financial planning and tax optimization"
+    },
+    "cta": "Explore Investments"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Hear from thousands of satisfied clients who achieved their global dreams with our support",
+    "roles": {
+      "International Student": "International Student",
+      "Investor": "Investor",
+      "Migrant": "Migrant",
+      "Job Seeker": "Job Seeker",
+      "Business Owner": "Business Owner",
+      "PhD Student": "PhD Student",
+      "Healthcare Professional": "Healthcare Professional",
+      "Tech Entrepreneur": "Tech Entrepreneur"
+    }
   }
 }

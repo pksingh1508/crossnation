@@ -21,7 +21,7 @@ export function Layout({ children, className }: LayoutProps) {
       </a>
       <Navbar />
       <main className={clsx(className)}>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

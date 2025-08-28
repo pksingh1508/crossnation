@@ -1,21 +1,27 @@
 "use client";
 
 import { useTranslations } from "@/hooks/useTranslations";
-import { 
-  Accordion, 
-  AccordionItem, 
-  AccordionTrigger, 
-  AccordionContent 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
 } from "@/components/ui/accordion";
 
 export function FAQ() {
   const t = useTranslations("faq");
 
-  const faqKeys = ["services", "countries", "duration", "visa", "fees"] as const;
+  const faqKeys = [
+    "services",
+    "countries",
+    "duration",
+    "visa",
+    "fees",
+  ] as const;
 
   return (
     <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 overflow-hidden">
-      {/* Background Pattern - Same as Hero */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-amber-400 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
@@ -38,8 +44,8 @@ export function FAQ() {
           <div className="space-y-0">
             <Accordion type="single" className="w-full space-y-3">
               {faqKeys.map((key, index) => (
-                <AccordionItem 
-                  key={key} 
+                <AccordionItem
+                  key={key}
                   value={key}
                   className="border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
@@ -61,7 +67,8 @@ export function FAQ() {
                 Still have questions?
               </h3>
               <p className="text-gray-600 mb-6 text-sm md:text-base">
-                Our expert consultants are here to help you with personalized guidance.
+                Our expert consultants are here to help you with personalized
+                guidance.
               </p>
               <button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 Contact Our Experts
