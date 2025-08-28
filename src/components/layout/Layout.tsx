@@ -3,24 +3,14 @@
 import { ReactNode } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import clsx from "clsx";
 
 interface LayoutProps {
   children: ReactNode;
-  /**
-   * When true, wraps the main content in a centered container with default paddings
-   */
-  container?: boolean;
-  /**
-   * Optional className applied to the main element
-   */
   className?: string;
 }
 
-export function Layout({
-  children,
-  container = false,
-  className,
-}: LayoutProps) {
+export function Layout({ children, className }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <a
@@ -30,18 +20,7 @@ export function Layout({
         Skip to content
       </a>
       <Navbar />
-      <main
-        id="main-content"
-        className={[className, !container ? "px-4" : undefined]
-          .filter(Boolean)
-          .join(" ")}
-      >
-        {container ? (
-          <div className="container mx-auto px-4 py-6">{children}</div>
-        ) : (
-          children
-        )}
-      </main>
+      <main className={clsx(className)}>{children}</main>
       {/* <Footer /> */}
     </div>
   );
