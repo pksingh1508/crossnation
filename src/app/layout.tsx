@@ -8,6 +8,7 @@ const fonts = `${fontSans.variable} ${fontMono.variable}`;
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
+  icons: { icon: [{ url: "/favicon.ico" }] },
 };
 
 export default function RootLayout({
