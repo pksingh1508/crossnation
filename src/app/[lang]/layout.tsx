@@ -2,8 +2,7 @@ import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { siteConfig } from "@/constants/site";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import Layout from "@/components/layout/Layout";
 
 interface LangLayoutProps {
   children: ReactNode;
@@ -24,11 +23,9 @@ export default async function LangLayout({
 
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </div>
+      <Layout container className="flex-1">
+        {children}
+      </Layout>
     </NextIntlClientProvider>
   );
 }

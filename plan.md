@@ -49,8 +49,8 @@ src/
 
 ### Phase 2: Core Components
 
-- [ ] Layout component development
-- [ ] Navbar component with responsive design
+- [x] Layout component development
+- [x] Navbar component with responsive design
 - [ ] BreadCrumb component for navigation
 - [ ] Footer component
 - [ ] Responsive design system
