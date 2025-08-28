@@ -1,0 +1,18 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "book": "Book Appointment"
+  },
+  "home": {
+    "title": "Welcome to Our Service Website",
+    "subtitle": "Professional services tailored to your needs",
+    "hero": {
+      "title": "Transform Your Business",
+      "description": "We provide innovative solutions to help your business grow and succeed in today's competitive market."
+    }
+  }
+}

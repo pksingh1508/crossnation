@@ -1,0 +1,18 @@
+{
+  "common": {
+    "welcome": "Bienvenido",
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "book": "Reservar Cita"
+  },
+  "home": {
+    "title": "Bienvenido a Nuestro Sitio Web de Servicios",
+    "subtitle": "Servicios profesionales adaptados a sus necesidades",
+    "hero": {
+      "title": "Transforma Tu Negocio",
+      "description": "Proporcionamos soluciones innovadoras para ayudar a tu negocio a crecer y tener éxito en el mercado competitivo de hoy."
+    }
+  }
+}
