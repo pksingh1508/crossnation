@@ -42,5 +42,31 @@
     },
     "imageAlt": "Consultoría",
     "trustedBadge": "Confiado por miles"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Obtén respuestas a preguntas comunes sobre nuestros servicios y procesos",
+    "questions": {
+      "services": {
+        "question": "¿Qué servicios proporcionan?",
+        "answer": "Ofrecemos servicios como orientación para estudios en el extranjero, oportunidades de trabajo, asesoramiento de inversión, apoyo de migración, mentoría y asistencia para buscadores de empleo."
+      },
+      "countries": {
+        "question": "¿Con qué países trabajan?",
+        "answer": "Trabajamos con múltiples países incluyendo EE.UU., Reino Unido, Canadá, Australia y varias naciones europeas y asiáticas dependiendo de los requisitos del servicio."
+      },
+      "duration": {
+        "question": "¿Cuánto tiempo toma el proceso?",
+        "answer": "La duración varía dependiendo del tipo de servicio. En promedio, los procesos pueden tomar desde unas pocas semanas hasta varios meses."
+      },
+      "visa": {
+        "question": "¿Proporcionan asistencia con visas?",
+        "answer": "Sí, asistimos con solicitudes de visa, documentación y preparación de entrevistas para asegurar un proceso fluido."
+      },
+      "fees": {
+        "question": "¿Cuáles son sus tarifas?",
+        "answer": "Nuestras tarifas dependen del tipo de servicio que elijas. Proporcionamos precios transparentes por adelantado sin cargos ocultos."
+      }
+    }
   }
 }

@@ -73,3 +73,31 @@ export const FOOTER_COUNTRIES = [
   { label: "Australia", value: "australia" },
   { label: "Germany", value: "germany" },
 ] as const;
+
+export const FAQS = [
+  {
+    question: "What services do you provide?",
+    answer:
+      "We offer services such as study abroad guidance, work opportunities, investment advice, migration support, mentorship, and job-seeker assistance.",
+  },
+  {
+    question: "Which countries do you work with?",
+    answer:
+      "We work with multiple countries including the USA, UK, Canada, Australia, and various European and Asian nations depending on the service requirements.",
+  },
+  {
+    question: "How long does the process take?",
+    answer:
+      "The duration varies depending on the type of service. On average, processes can take anywhere from a few weeks to several months.",
+  },
+  {
+    question: "Do you provide visa assistance?",
+    answer:
+      "Yes, we assist with visa applications, documentation, and interview preparation to ensure a smooth process.",
+  },
+  {
+    question: "What are your fees?",
+    answer:
+      "Our fees depend on the type of service you choose. We provide transparent pricing upfront with no hidden charges.",
+  },
+] as const;

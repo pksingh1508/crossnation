@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -22,9 +22,22 @@ export function Navbar() {
   const tNav = useTranslations("nav");
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white">
+    <nav className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? "shadow-lg backdrop-blur-sm bg-white/95" : ""
+    }`}>
       {/* Top bar */}
       <div className="container mx-auto px-4 py-2 flex items-center justify-between text-sm">
         <div className="flex items-center gap-4 text-gray-400">

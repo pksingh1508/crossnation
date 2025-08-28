@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/About";
+import { FAQ } from "@/components/sections/FAQ";
 import { Hero } from "@/components/sections/Hero";
 
 interface PageProps {
@@ -12,6 +13,7 @@ export default async function HomePage({ params }: PageProps) {
     <div>
       <Hero />
       <About />
+      <FAQ />
     </div>
   );
 }

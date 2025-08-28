@@ -63,7 +63,7 @@ src/
 - [ ] Homepage Components
   - [x] Hero section with engaging visuals
   - [x] About section highlighting key features
-  - [ ] FAQ section with expandable items
+  - [x] FAQ section with expandable items
   - [ ] Looking for inspiration section
   - [ ] Our solution section
   - [ ] Testimonial section with slider/carousel
