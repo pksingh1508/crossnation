@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { fontSans, fontMono } from "@/fonts";
 import "./globals.css";
 import { siteConfig } from "@/constants/site";
 
-const inter = Inter({ subsets: ["latin"] });
+const fonts = `${fontSans.variable} ${fontMono.variable}`;
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={siteConfig.defaultLanguage}>
-      <body className={inter.className}>{children}</body>
+      <body className={fonts}>{children}</body>
     </html>
   );
 }

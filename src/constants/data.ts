@@ -55,3 +55,21 @@ export const INSURANCE_TYPES = [
   { label: "For companies & self-employed", value: "companies-self-employed" },
   { label: "Car", value: "car" },
 ] as const;
+
+// src/constants/footer.ts
+
+export const FOOTER_SERVICES = [
+  { label: "Study Abroad", value: "study-abroad" },
+  { label: "Work Visa", value: "work-visa" },
+  { label: "Migration", value: "migration" },
+  { label: "Investment", value: "investment" },
+  { label: "Training Programs", value: "training-programs" },
+] as const;
+
+export const FOOTER_COUNTRIES = [
+  { label: "United States", value: "united-states" },
+  { label: "Canada", value: "canada" },
+  { label: "United Kingdom", value: "united-kingdom" },
+  { label: "Australia", value: "australia" },
+  { label: "Germany", value: "germany" },
+] as const;
