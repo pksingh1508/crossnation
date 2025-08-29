@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { fontPoppins, fontMontserrat, fontInter } from "@/fonts";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 export function Hero() {
   const t = useTranslations("home");
@@ -36,6 +38,8 @@ export function Hero() {
               alt="Home"
               width={160}
               height={48}
+              placeholder="empty"
+              unoptimized
               className="w-[90vw] md:w-[40vw] h-[70vh] md:h-[70vh] object-cover"
             />
           </motion.div>
@@ -44,44 +48,52 @@ export function Hero() {
           <div className="w-[50vw] pt-7 md:pt-0 flex items-center justify-center flex-col space-y-8">
             {/* Heading */}
             <div className="text-center">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900">
+              <h2
+                className={`text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 ${fontPoppins.className}`}
+              >
                 {t("title1")}
               </h2>
-              <p className="text-4xl sm:text-5xl md:text-6xl text-gray-900">
+              <p
+                className={`text-4xl sm:text-5xl md:text-6xl text-gray-900 ${fontPoppins.className}`}
+              >
                 {t("title2")}
               </p>
             </div>
 
             {/* First Row Buttons */}
             <div className="flex gap-6">
-              <Button
+              <RippleButton
+                variant="brandOutline"
                 size="lg"
-                className="bg-yellow-400 hover:bg-yellow-500 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all"
+                className={`bg-yellow-400 hover:bg-yellow-500 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
               >
                 <Link href={`/${locale}/recruiter`}>{t("btn1")}</Link>
-              </Button>
-              <Button
+              </RippleButton>
+              <RippleButton
+                variant="brandOutline"
                 size="lg"
-                className="bg-purple-600 hover:bg-purple-700 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all"
+                className={`bg-purple-600 hover:bg-purple-700 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
               >
                 <Link href={`/${locale}/jobseeker`}>{t("btn2")}</Link>
-              </Button>
+              </RippleButton>
             </div>
 
             {/* Second Row Buttons */}
             <div className="flex gap-6">
-              <Button
+              <RippleButton
+                variant="brandOutline"
                 size="lg"
-                className="bg-teal-500 hover:bg-teal-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all"
+                className={`bg-teal-500 hover:bg-teal-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
               >
                 <Link href={`/${locale}/migrate`}>{t("btn3")}</Link>
-              </Button>
-              <Button
+              </RippleButton>
+              <RippleButton
+                variant="brandOutline"
                 size="lg"
-                className="bg-green-500 hover:bg-green-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all"
+                className={`bg-green-500 hover:bg-green-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
               >
                 <Link href={`/${locale}/employer`}>{t("btn4")}</Link>
-              </Button>
+              </RippleButton>
             </div>
 
             {/* Counselling Section */}
@@ -101,8 +113,14 @@ export function Hero() {
                 />
               </svg>
               <div>
-                <p className="text-gray-800 font-medium">{t("cta1")}</p>
-                <button className="text-red-600 font-semibold hover:underline">
+                <p
+                  className={`text-gray-800 font-medium ${fontInter.className}`}
+                >
+                  {t("cta1")}
+                </p>
+                <button
+                  className={`text-red-600 font-semibold hover:underline ${fontInter.className}`}
+                >
                   <Link href={`/${locale}/contact`}>{t("cta2")}</Link>
                 </button>
               </div>

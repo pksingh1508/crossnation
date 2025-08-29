@@ -15,14 +15,14 @@
     "jobseeker": "Jobseeker"
   },
   "home": {
-    "title1": "What we can do for",
-    "title2": "you today",
+    "title1": "How can we support you?",
+    "title2": "",
     "btn1": "Recruiter",
     "btn2": "Jobseeker",
     "btn3": "Migrate",
     "btn4": "Employer",
-    "cta1": "Don't know what to do?",
-    "cta2": "Get free Counselling!"
+    "cta1": "If you are uncertain about your options",
+    "cta2": "we offer free professional counselling."
   },
   "about": {
     "title": "About Us",

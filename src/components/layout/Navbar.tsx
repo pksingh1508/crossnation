@@ -17,6 +17,7 @@ import {
 import { colors } from "@/constants/color";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { fontInter, fontMontserrat, fontRoboto } from "@/fonts";
 
 export function Navbar() {
   const tCommon = useTranslations("common");
@@ -42,49 +43,63 @@ export function Navbar() {
       }`}
     >
       {/* Top bar */}
-      <div className="container mx-auto px-4 xl:px-28 py-2 flex items-center justify-between text-sm">
-        <div className="flex items-center gap-4 text-gray-400">
+      <div className="container mx-auto px-4 xl:px-28 flex items-center justify-between text-sm">
+        <div className="flex items-center gap-6 text-gray-400">
           <a
-            href="#"
-            aria-label="Facebook"
-            className="hover:text-gray-600 transition-colors"
+            href="tel:+48222095497"
+            className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
+            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
-            <Facebook className="h-4 w-4" />
+            <Phone className="h-4 w-4" /> +48 22 209 5497
           </a>
           <a
-            href="#"
-            aria-label="Instagram"
-            className="hover:text-gray-600 transition-colors"
+            href="tel:+48726635666"
+            className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
+            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
-            <Instagram className="h-4 w-4" />
-          </a>
-          <a
-            href="#"
-            aria-label="Twitter"
-            className="hover:text-gray-600 transition-colors"
-          >
-            <Twitter className="h-4 w-4" />
-          </a>
-          <a
-            href="#"
-            aria-label="Linkedin"
-            className="hover:text-gray-600 transition-colors"
-          >
-            <Linkedin className="h-4 w-4" />
+            <Phone className="h-4 w-4" /> +48 72 635 666
           </a>
         </div>
         {/* Top-bar right: large screens (2xl+) show full actions; below that only language */}
-        <div className="hidden 2xl:flex items-center gap-6 text-gray-400">
-          <span className="inline-flex items-center gap-2">
-            <Phone className="h-4 w-4" /> +48 22 209 5497
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Phone className="h-4 w-4" /> +48 72 635 666
-          </span>
+        <div className="hidden 2xl:flex items-center gap-2 text-gray-400">
+          <div className="flex items-center pr-2">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+            >
+              <Twitter className="h-4 w-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Linkedin"
+              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+          </div>
           <Button
             asChild
             variant="outline"
-            className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
+            className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
             style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
             {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
@@ -95,7 +110,7 @@ export function Navbar() {
           <Button
             asChild
             variant="outline"
-            className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
+            className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
             style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
             <Link href={`/${locale}/contact`}>{tCommon("contact")}</Link>
@@ -125,14 +140,14 @@ export function Navbar() {
           </Link>
 
           {/* Links (right) - show from xl and up */}
-          <div className="hidden xl:flex items-center justify-end gap-8">
+          <div className="hidden xl:flex items-center justify-end gap-2">
             {NAVBAR_LINKS.map((item) => {
               const key = item.href.replace(/^\//, "");
               return (
                 <motion.div key={item.href} whileHover={{ y: -2 }}>
                   <Link
                     href={`/${locale}${item.href}`}
-                    className="text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg"
+                    className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium`}
                     style={{ ["--hover-bg" as any]: colors.yellow.dark }}
                   >
                     {tNav(key as any)}
@@ -177,7 +192,7 @@ export function Navbar() {
           </div>
           {/* From lg to < xl: show Book button left of toggle */}
           <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
-            <Button asChild size="sm" variant="brandOutline">
+            <Button asChild size="sm" variant="brandOutline" className={fontMontserrat.className}>
               <Link href={`https://crossnation.youcanbook.me`} target="_blank">
                 {tCommon("book")}
               </Link>
@@ -232,7 +247,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={`/${locale}${item.href}`}
-                  className="text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black"
+                  className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontInter.className} font-medium`}
                   style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
                   onClick={() => setIsOpen(false)}
                 >
@@ -241,7 +256,7 @@ export function Navbar() {
               ))}
               {/* Buttons visible in drawer only for < lg */}
               <div className="mt-2 grid gap-2 lg:hidden">
-                <Button asChild variant="brandOutline" className="w-full">
+                <Button asChild variant="brandOutline" className={`w-full ${fontMontserrat.className}`}>
                   <Link
                     href={`https://crossnation.youcanbook.me`}
                     target="_blank"
@@ -253,7 +268,7 @@ export function Navbar() {
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
+                  className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
                   style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
                 >
                   <Link

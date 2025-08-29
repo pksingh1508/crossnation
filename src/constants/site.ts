@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Cross-Nation",
-  description: "Professional services tailored to your needs",
+  name: "Carrier Serwis",
+  description: "Europe’s Premier Immigration and Recruitment Consultancy",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ogImage: "/og-image.jpg",
   links: {

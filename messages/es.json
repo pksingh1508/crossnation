@@ -15,14 +15,14 @@
     "jobseeker": "Solicitante"
   },
   "home": {
-    "title1": "Qué podemos hacer por",
-    "title2": "ti hoy",
+    "title1": "¿Cómo podemos apoyarte?",
+    "title2": "",
     "btn1": "Reclutador",
     "btn2": "Buscador de empleo",
     "btn3": "Migrar",
     "btn4": "Empleador",
-    "cta1": "¿No sabes qué hacer?",
-    "cta2": "¡Obtén asesoría gratuita!"
+    "cta1": "Si no estás seguro de tus opciones",
+    "cta2": "te ofrecemos asesoría profesional gratuita."
   },
   "about": {
     "title": "Acerca de",
