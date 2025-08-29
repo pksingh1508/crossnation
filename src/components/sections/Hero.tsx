@@ -2,59 +2,14 @@
 
 import { useTranslations } from "@/hooks/useTranslations";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe, Users } from "lucide-react";
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-
-interface CounterProps {
-  target: number;
-  suffix?: string;
-  duration?: number;
-}
-
-function Counter({ target, suffix = "", duration = 2000 }: CounterProps) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const startTime = Date.now();
-    const startValue = 0;
-
-    const updateCount = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentCount = Math.floor(
-        startValue + (target - startValue) * easeOutQuart
-      );
-
-      setCount(currentCount);
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCount);
-      }
-    };
-
-    const timer = setTimeout(() => {
-      requestAnimationFrame(updateCount);
-    }, 500); // Start animation after 500ms delay
-
-    return () => clearTimeout(timer);
-  }, [target, duration]);
-
-  return (
-    <span className="text-2xl font-bold text-gray-800">
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 export function Hero() {
   const t = useTranslations("home");
-  const common = useTranslations("common");
+  const locale = useLocale();
 
   const container = {
     hidden: { opacity: 0 },
@@ -103,13 +58,13 @@ export function Hero() {
                 size="lg"
                 className="bg-yellow-400 hover:bg-yellow-500 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all"
               >
-                {t("btn1")}
+                <Link href={`/${locale}/recruiter`}>{t("btn1")}</Link>
               </Button>
               <Button
                 size="lg"
                 className="bg-purple-600 hover:bg-purple-700 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all"
               >
-                {t("btn2")}
+                <Link href={`/${locale}/jobseeker`}>{t("btn2")}</Link>
               </Button>
             </div>
 
@@ -119,13 +74,13 @@ export function Hero() {
                 size="lg"
                 className="bg-teal-500 hover:bg-teal-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all"
               >
-                {t("btn3")}
+                <Link href={`/${locale}/migrate`}>{t("btn3")}</Link>
               </Button>
               <Button
                 size="lg"
                 className="bg-green-500 hover:bg-green-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all"
               >
-                {t("btn4")}
+                <Link href={`/${locale}/employer`}>{t("btn4")}</Link>
               </Button>
             </div>
 
@@ -148,7 +103,7 @@ export function Hero() {
               <div>
                 <p className="text-gray-800 font-medium">{t("cta1")}</p>
                 <button className="text-red-600 font-semibold hover:underline">
-                  {t("cta2")}
+                  <Link href={`/${locale}/contact`}>{t("cta2")}</Link>
                 </button>
               </div>
             </div>

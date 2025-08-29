@@ -4,13 +4,10 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  NAVBAR_LINKS,
-  FOOTER_SERVICES,
-  FOOTER_COUNTRIES,
-} from "@/constants/data";
+import { NAVBAR_LINKS, FOOTER_SERVICES } from "@/constants/data";
 import { colors } from "@/constants/color";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const locale = useLocale();
@@ -18,9 +15,9 @@ export function Footer() {
   const tNav = useTranslations("nav");
 
   return (
-    <footer className="mt-auto bg-gray-50 text-gray-800">
+    <footer className="mt-auto bg-gray-50 text-gray-800 px-4 xl:px-28">
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-gray-100 to-gray-200">
+      <div>
         <div className="container mx-auto px-6 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
@@ -38,9 +35,12 @@ export function Footer() {
               <Button
                 type="submit"
                 className="bg-amber-500 text-white hover:bg-amber-600 font-semibold px-8 py-3 transition-all duration-300"
-                style={{ backgroundColor: colors.yellow.DEFAULT, color: colors.black.light }}
+                style={{
+                  backgroundColor: colors.yellow.DEFAULT,
+                  color: colors.black.light,
+                }}
               >
-{t("newsletter.submitButton")}
+                {t("newsletter.submitButton")}
               </Button>
             </form>
           </div>
@@ -49,30 +49,35 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: colors.yellow.DEFAULT }}>
-                <span className="font-bold text-lg" style={{ color: colors.black.light }}>CN</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-800">{t("company.name")}</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-wide">{t("company.tagline")}</p>
-              </div>
+              <Image
+                src="/mylogo.jpeg"
+                alt="Logo"
+                width={160}
+                height={48}
+                className="h-16 w-52 object-cover"
+              />
             </div>
             <p className="text-gray-600 leading-relaxed mb-6">
               {t("company.description")}
             </p>
             <div className="flex items-center gap-2 text-gray-600">
-              <MapPin className="w-4 h-4" style={{ color: colors.yellow.DEFAULT }} />
+              <MapPin
+                className="w-4 h-4"
+                style={{ color: colors.yellow.DEFAULT }}
+              />
               <span className="text-sm">{t("company.location")}</span>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-6">{t("sections.navigation")}</h4>
+          <div className="flex flex-col lg:items-center items-start">
+            <h4 className="text-lg font-semibold text-gray-800 mb-6">
+              {t("sections.navigation")}
+            </h4>
             <ul className="space-y-3">
               {NAVBAR_LINKS.slice(0, 6).map((link) => (
                 <li key={link.href}>
@@ -87,40 +92,40 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-6">{t("sections.quickLink")}</h4>
-            <ul className="space-y-3">
-              {FOOTER_SERVICES.map((service) => (
-                <li key={service.value}>
-                  <span className="text-gray-600 text-sm font-medium">
-                    {service.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-6">{t("sections.workHours")}</h4>
+          <div className="flex flex-col items-start lg:items-center">
+            <h4 className="text-lg font-semibold text-gray-800 mb-6">
+              {t("sections.workHours")}
+            </h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <Clock className="w-4 h-4" style={{ color: colors.yellow.DEFAULT }} />
+                  <Clock
+                    className="w-4 h-4"
+                    style={{ color: colors.yellow.DEFAULT }}
+                  />
                 </div>
                 <div>
-                  <p className="text-gray-800 font-medium text-sm">{t("contact.businessHours")}</p>
-                  <p className="text-gray-500 text-xs">{t("contact.businessHoursLabel")}</p>
+                  <p className="text-gray-800 font-medium text-sm">
+                    {t("contact.businessHours")}
+                  </p>
+                  <p className="text-gray-500 text-xs">
+                    {t("contact.businessHoursLabel")}
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <Phone className="w-4 h-4" style={{ color: colors.yellow.DEFAULT }} />
+                  <Phone
+                    className="w-4 h-4"
+                    style={{ color: colors.yellow.DEFAULT }}
+                  />
                 </div>
                 <div>
-                  <p className="text-gray-800 font-medium text-sm">+48 22 209 5497</p>
+                  <p className="text-gray-800 font-medium text-sm">
+                    +48 22 209 5497
+                  </p>
                   <p className="text-gray-500 text-xs">{t("contact.callUs")}</p>
                 </div>
               </div>
@@ -139,16 +144,28 @@ export function Footer() {
               {t("bottom.copyright", { year: new Date().getFullYear() })}
             </p>
             <div className="flex items-center gap-6">
-              <Link href={`/${locale}/privacy-policy`} className="text-gray-500 hover:text-amber-500 text-sm transition-colors">
+              <Link
+                href={`/${locale}/privacy-policy`}
+                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
+              >
                 {t("bottom.privacyPolicy")}
               </Link>
-              <Link href={`/${locale}/terms-and-conditions`} className="text-gray-500 hover:text-amber-500 text-sm transition-colors">
+              <Link
+                href={`/${locale}/terms-and-conditions`}
+                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
+              >
                 {t("bottom.termsOfService")}
               </Link>
-              <Link href={`/${locale}/refund-policy`} className="text-gray-500 hover:text-amber-500 text-sm transition-colors">
+              <Link
+                href={`/${locale}/refund-policy`}
+                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
+              >
                 {t("bottom.refundPolicy")}
               </Link>
-              <Link href={`/${locale}/antiFraud-policy`} className="text-gray-500 hover:text-amber-500 text-sm transition-colors">
+              <Link
+                href={`/${locale}/antiFraud-policy`}
+                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
+              >
                 {t("bottom.antiFraudPolicy")}
               </Link>
             </div>

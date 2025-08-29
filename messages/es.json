@@ -61,18 +61,10 @@
         "question": "¿Cuáles son sus tarifas?",
         "answer": "Nuestras tarifas dependen del tipo de servicio que elijas. Proporcionamos precios transparentes por adelantado sin cargos ocultos."
       }
-    }
-  },
-  "studyAbroad": {
-    "title": "Oportunidades de Estudios en el Extranjero",
-    "description": "Desbloquea tu potencial con oportunidades educativas de clase mundial. Te guiamos a través de todo el proceso desde la selección de universidades hasta las solicitudes de visa y más allá.",
-    "features": {
-      "matching": "Emparejamiento personalizado de universidades basado en tu perfil",
-      "application": "Soporte completo de aplicación y documentación",
-      "visa": "Orientación de visa y preparación de entrevistas",
-      "support": "Soporte post-llegada y asistencia de alojamiento"
     },
-    "cta": "Explorar Opciones de Estudio"
+    "cta1": "¿Aún tienes preguntas?",
+    "cta2": "Nuestros consultores expertos están aquí para ayudarte con una orientación personalizada.",
+    "cta3": "Contacta a nuestros expertos"
   },
   "migrate": {
     "title": "Migra con Facilidad",
@@ -84,17 +76,6 @@
       "settlement": "Servicios de asentamiento y orientación"
     },
     "cta": "Iniciar Proceso de Migración"
-  },
-  "invest": {
-    "title": "Invierte Inteligentemente a Través de Fronteras",
-    "description": "Maximiza tu potencial de inversión con nuestros servicios de asesoría de inversión global. Desde bienes raíces hasta oportunidades de negocio, te ayudamos a tomar decisiones informadas.",
-    "features": {
-      "realEstate": "Oportunidades de inversión inmobiliaria internacional",
-      "business": "Orientación para adquisición de negocios y asociaciones",
-      "visa": "Programas de visa de inversión y residencia",
-      "planning": "Planificación financiera y optimización fiscal"
-    },
-    "cta": "Explorar Inversiones"
   },
   "testimonials": {
     "title": "Lo que dicen nuestros clientes",

@@ -61,18 +61,10 @@
         "question": "What are your fees?",
         "answer": "Our fees depend on the type of service you choose. We provide transparent pricing upfront with no hidden charges."
       }
-    }
-  },
-  "studyAbroad": {
-    "title": "Study Abroad Opportunities",
-    "description": "Unlock your potential with world-class education opportunities. We guide you through the entire process from university selection to visa applications and beyond.",
-    "features": {
-      "matching": "Personalized university matching based on your profile",
-      "application": "Complete application and documentation support",
-      "visa": "Visa guidance and interview preparation",
-      "support": "Post-arrival support and accommodation assistance"
     },
-    "cta": "Explore Study Options"
+    "cta1": "Still have questions?",
+    "cta2": "Our expert consultants are here to help you with personalized guidance.",
+    "cta3": "Contact Our Experts"
   },
   "migrate": {
     "title": "Migrate with Ease",
@@ -84,17 +76,6 @@
       "settlement": "Settlement services and orientation"
     },
     "cta": "Start Migration Process"
-  },
-  "invest": {
-    "title": "Invest Smartly Across Borders",
-    "description": "Maximize your investment potential with our global investment advisory services. From real estate to business opportunities, we help you make informed decisions.",
-    "features": {
-      "realEstate": "International real estate investment opportunities",
-      "business": "Business acquisition and partnership guidance",
-      "visa": "Investment visa and residency programs",
-      "planning": "Financial planning and tax optimization"
-    },
-    "cta": "Explore Investments"
   },
   "testimonials": {
     "title": "What Our Clients Say",

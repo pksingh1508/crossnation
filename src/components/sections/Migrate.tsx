@@ -4,9 +4,12 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 export function Migrate() {
   const t = useTranslations("migrate");
+  const locale = useLocale();
 
   const features = [
     {
@@ -28,9 +31,9 @@ export function Migrate() {
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center px-0 lg:px-10">
+    <section className="py-16 px-4 xl:px-28">
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
           {/* Content Section */}
           <div className="order-2 lg:order-1">
             <div className="max-w-xl">
@@ -57,10 +60,15 @@ export function Migrate() {
               {/* CTA Button */}
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 text-base md:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 text-base md:text-lg font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                {t("cta")}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Link
+                  href={`/${locale}/migrate`}
+                  className="flex items-center gap-2"
+                >
+                  {t("cta")}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
             </div>
           </div>
