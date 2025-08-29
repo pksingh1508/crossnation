@@ -8,27 +8,21 @@
     "book": "Book Appointment"
   },
   "nav": {
-    "study": "Study",
     "work": "Work",
-    "invest": "Invest",
     "migrate": "Migrate",
     "employer": "Employer",
-    "institution": "Institution",
     "recruiter": "Recruiter",
-    "jobseeker": "Jobseeker",
-    "traineeship": "Traineeship"
+    "jobseeker": "Jobseeker"
   },
   "home": {
-    "hero": {
-      "countries": "Countries",
-      "successStories": "Success Stories",
-      "title": {
-        "part1": "Global Opportunities for",
-        "highlight": "Study, Work & Investment"
-      },
-      "description": "We help students, jobseekers, employers, and investors connect worldwide with trusted guidance and expert support.",
-      "cta": "Get Free Counselling"
-    }
+    "title1": "What we can do for",
+    "title2": "you today",
+    "btn1": "Recruiter",
+    "btn2": "Jobseeker",
+    "btn3": "Migrate",
+    "btn4": "Employer",
+    "cta1": "Don't know what to do?",
+    "cta2": "Get free Counselling!"
   },
   "about": {
     "title": "About Us",

@@ -4,7 +4,7 @@ export const colors = {
   // Brand Colors
   yellow: {
     DEFAULT: "#FACC15", // main yellow (primary)
-    dark: "#CA8A04", // hover/active
+    dark: "#fecc00", // hover/active
     light: "#FEF9C3", // subtle background highlight
   },
 

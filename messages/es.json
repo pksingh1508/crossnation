@@ -8,27 +8,21 @@
     "book": "Reservar Cita"
   },
   "nav": {
-    "study": "Estudios",
     "work": "Trabajo",
-    "invest": "Invertir",
     "migrate": "Migrar",
     "employer": "Empleador",
-    "institution": "Institución",
     "recruiter": "Reclutador",
-    "jobseeker": "Solicitante",
-    "traineeship": "Prácticas"
+    "jobseeker": "Solicitante"
   },
   "home": {
-    "hero": {
-      "countries": "Países",
-      "successStories": "Historias de Éxito",
-      "title": {
-        "part1": "Oportunidades Globales para",
-        "highlight": "Estudios, Trabajo e Inversión"
-      },
-      "description": "Ayudamos a estudiantes, solicitantes de empleo, empleadores e inversores a conectarse mundialmente con orientación confiable y apoyo experto.",
-      "cta": "Obtener Asesoría Gratuita"
-    }
+    "title1": "Qué podemos hacer por",
+    "title2": "ti hoy",
+    "btn1": "Reclutador",
+    "btn2": "Buscador de empleo",
+    "btn3": "Migrar",
+    "btn4": "Empleador",
+    "cta1": "¿No sabes qué hacer?",
+    "cta2": "¡Obtén asesoría gratuita!"
   },
   "about": {
     "title": "Acerca de",

@@ -1,14 +1,10 @@
 // src/constants/navbarLinks.ts
 export const NAVBAR_LINKS = [
-  { label: "Study", href: "/study" },
   { label: "Work", href: "/work" },
-  { label: "Invest", href: "/invest" },
   { label: "Migrate", href: "/migrate" },
   { label: "Employer", href: "/employer" },
-  { label: "Institution", href: "/institution" },
   { label: "Recruiter", href: "/recruiter" },
   { label: "Jobseeker", href: "/jobseeker" },
-  { label: "Traineeship", href: "/traineeship" },
 ] as const;
 
 // src/constants/countries.ts

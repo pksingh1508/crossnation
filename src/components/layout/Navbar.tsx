@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { colors } from "@/constants/color";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function Navbar() {
   const tCommon = useTranslations("common");
@@ -41,7 +42,7 @@ export function Navbar() {
       }`}
     >
       {/* Top bar */}
-      <div className="container mx-auto px-4 py-2 flex items-center justify-between text-sm">
+      <div className="container mx-auto px-4 xl:px-28 py-2 flex items-center justify-between text-sm">
         <div className="flex items-center gap-4 text-gray-400">
           <a
             href="#"
@@ -84,7 +85,7 @@ export function Navbar() {
             asChild
             variant="outline"
             className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
-            style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
             {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
             <Link href={`https://crossnation.youcanbook.me`} target="_blank">
@@ -95,7 +96,7 @@ export function Navbar() {
             asChild
             variant="outline"
             className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
-            style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
             <Link href={`/${locale}/contact`}>{tCommon("contact")}</Link>
           </Button>
@@ -108,32 +109,19 @@ export function Navbar() {
       </div>
 
       {/* Bottom bar */}
-      <div
-        className="border-t"
-        style={{ background: "linear-gradient(90deg, #FEF9C3 0%, white 60%)" }}
-      >
-        <div className="container mx-auto px-4 py-3 grid grid-cols-2 items-center">
+      <div className="border-t border-b">
+        <div className="container mx-auto px-4 xl:px-28 grid grid-cols-2 items-center">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-3">
-            <motion.span
-              whileHover={{ scale: 1.03 }}
-              className="inline-flex items-center justify-center h-10 w-14 rounded-xl font-bold"
-              style={{
-                backgroundColor: colors.yellow.DEFAULT,
-                color: colors.black.light,
-              }}
-            >
-              CN
-            </motion.span>
-            <div className="leading-tight">
-              <span
-                className="text-xl font-semibold"
-                style={{ color: colors.black.light }}
-              >
-                CountryNation
-              </span>
-              <div className="text-xs text-gray-500">GLOBAL SERVICES</div>
-            </div>
+            <motion.div whileHover={{ scale: 1.03 }}>
+              <Image
+                src="/mylogo.jpeg"
+                alt="CountryNation Logo"
+                width={160}
+                height={48}
+                className="h-16 w-52 object-cover"
+              />
+            </motion.div>
           </Link>
 
           {/* Links (right) - show from xl and up */}
@@ -144,8 +132,8 @@ export function Navbar() {
                 <motion.div key={item.href} whileHover={{ y: -2 }}>
                   <Link
                     href={`/${locale}${item.href}`}
-                    className="text-gray-700 transition-colors rounded-md px-1.5 py-2 hover:bg-[var(--hover-bg)] hover:text-black"
-                    style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+                    className="text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg"
+                    style={{ ["--hover-bg" as any]: colors.yellow.dark }}
                   >
                     {tNav(key as any)}
                   </Link>
