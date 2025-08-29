@@ -30,7 +30,7 @@ export function FormField({
         </Label>
       )}
       {React.isValidElement(children)
-        ? React.cloneElement(children as React.ReactElement, {
+        ? React.cloneElement(children as React.ReactElement<any>, {
             id,
             "aria-invalid": !!error || undefined,
             "aria-describedby": hint ? `${id}-hint` : undefined,
