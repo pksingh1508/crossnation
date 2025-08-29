@@ -69,21 +69,21 @@ src/
   - [x] Testimonial section with slider/carousel
   - [x] Contact section with form integration
   - [x] Book appointment section
-- [ ] Policy Pages
-  - [ ] Refund Policy page and content
-  - [ ] Terms and Conditions page and content
-  - [ ] Anti-fraud Policy page and content
-  - [ ] Privacy Policy page and content
-- [ ] Internationalization
-  - [ ] Setup language switcher component
-  - [ ] Implement translation files for all content
-  - [ ] Route handling for different languages
-  - [ ] Date and number formatting
-- [ ] Booking System Integration
-  - [ ] Cal.ai/Calendly setup and configuration
-  - [ ] Booking widget implementation
-  - [ ] Confirmation and reminder system
-  - [ ] Calendar availability management
+- [x] Policy Pages
+  - [x] Refund Policy page and content
+  - [x] Terms and Conditions page and content
+  - [x] Anti-fraud Policy page and content
+  - [x] Privacy Policy page and content
+- [x] Internationalization
+  - [x] Setup language switcher component
+  - [x] Implement translation files for all content
+  - [x] Route handling for different languages
+  - [x] Date and number formatting
+- [x] Booking System Integration
+  - [x] simplybook.me / youcanbook.me setup
+  - [x] Booking widget implementation
+  - [x] Confirmation and reminder system
+  - [x] Calendar availability management
 - [ ] Database Implementation
   - [ ] Supabase setup and configuration
   - [ ] User authentication

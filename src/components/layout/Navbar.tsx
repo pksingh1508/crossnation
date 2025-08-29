@@ -35,9 +35,11 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? "shadow-lg backdrop-blur-sm bg-white/95" : ""
-    }`}>
+    <nav
+      className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled ? "shadow-lg backdrop-blur-sm bg-white/95" : ""
+      }`}
+    >
       {/* Top bar */}
       <div className="container mx-auto px-4 py-2 flex items-center justify-between text-sm">
         <div className="flex items-center gap-4 text-gray-400">
@@ -84,7 +86,10 @@ export function Navbar() {
             className="hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)]"
             style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
           >
-            <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+            {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
+            <Link href={`https://crossnation.youcanbook.me`} target="_blank">
+              {tCommon("book")}
+            </Link>
           </Button>
           <Button
             asChild

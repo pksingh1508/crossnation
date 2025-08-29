@@ -107,7 +107,7 @@ export const Testimonials = [
     name: "Sarah Johnson",
     role: "International Student",
     image:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b1e5?w=150&h=150&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
     review:
       "Amazing support throughout my study abroad journey. They made the process seamless and stress-free.",
   },

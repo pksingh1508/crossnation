@@ -103,17 +103,243 @@
     "cta": "Explorar Inversiones"
   },
   "testimonials": {
-    "title": "Lo Que Dicen Nuestros Clientes",
-    "subtitle": "Escucha de miles de clientes satisfechos que lograron sus sueños globales con nuestro apoyo",
+    "title": "Lo que dicen nuestros clientes",
+    "subtitle": "Escucha a miles de clientes satisfechos que lograron sus sueños globales con nuestro apoyo",
     "roles": {
       "International Student": "Estudiante Internacional",
       "Investor": "Inversor",
       "Migrant": "Migrante",
       "Job Seeker": "Buscador de Empleo",
-      "Business Owner": "Dueño de Negocio",
+      "Business Owner": "Propietario de Negocio",
       "PhD Student": "Estudiante de Doctorado",
       "Healthcare Professional": "Profesional de la Salud",
       "Tech Entrepreneur": "Emprendedor Tecnológico"
+    }
+  },
+  "pages": {
+    "study": {
+      "title": "Servicios de Estudios en el Extranjero",
+      "description": "Orientación integral y servicios de apoyo para estudios en el extranjero para ayudarte a alcanzar tus metas educativas en todo el mundo.",
+      "services": {
+        "consultation": {
+          "title": "Consulta Educativa",
+          "description": "Orientación personalizada para elegir la universidad y programa adecuados para tus objetivos profesionales."
+        },
+        "application": {
+          "title": "Apoyo en Aplicaciones",
+          "description": "Asistencia completa con aplicaciones universitarias, ensayos y documentación."
+        },
+        "visa": {
+          "title": "Asistencia con Visa",
+          "description": "Ayuda experta con aplicaciones de visa de estudiante y preparación para entrevistas."
+        }
+      }
+    },
+    "work": {
+      "title": "Oportunidades de Trabajo",
+      "description": "Encuentra oportunidades de trabajo internacionales y obtén apoyo integral para tu carrera en el extranjero.",
+      "services": {
+        "jobSearch": {
+          "title": "Apoyo en Búsqueda de Empleo",
+          "description": "Acceso a mercados laborales internacionales y servicios personalizados de búsqueda de empleo."
+        },
+        "workVisa": {
+          "title": "Asistencia con Visa de Trabajo",
+          "description": "Apoyo completo para permisos de trabajo y aplicaciones de visa en todo el mundo."
+        },
+        "careerGuidance": {
+          "title": "Orientación Profesional",
+          "description": "Asesoramiento profesional y recomendaciones de desarrollo de habilidades."
+        }
+      }
+    },
+    "invest": {
+      "title": "Servicios de Inversión",
+      "description": "Explora oportunidades de inversión internacional con orientación experta y apoyo integral.",
+      "services": {
+        "realEstate": {
+          "title": "Inversión Inmobiliaria",
+          "description": "Oportunidades de inversión inmobiliaria internacional y análisis de mercado."
+        },
+        "business": {
+          "title": "Inversión Empresarial",
+          "description": "Adquisición de negocios, asociaciones y orientación para inversión en startups."
+        },
+        "portfolio": {
+          "title": "Gestión de Cartera",
+          "description": "Gestión de cartera de inversión diversificada y planificación financiera."
+        }
+      }
+    },
+    "migrate": {
+      "title": "Servicios de Migración",
+      "description": "Asistencia completa de migración y reubicación para ayudarte a comenzar tu nueva vida en el extranjero.",
+      "services": {
+        "visaAssistance": {
+          "title": "Asistencia con Visa",
+          "description": "Apoyo integral para todos los tipos de visas de migración y permisos."
+        },
+        "relocation": {
+          "title": "Apoyo en Reubicación",
+          "description": "Servicios completos de reubicación incluyendo vivienda y asistencia de asentamiento."
+        },
+        "settlement": {
+          "title": "Servicios de Asentamiento",
+          "description": "Apoyo post-llegada para ayudarte a integrarte en tu nueva comunidad."
+        }
+      }
+    },
+    "employer": {
+      "title": "Servicios para Empleadores",
+      "description": "Servicios de reclutamiento internacional y apoyo para empleadores para encontrar el talento adecuado globalmente.",
+      "services": {
+        "recruitment": {
+          "title": "Reclutamiento Global",
+          "description": "Acceso a pools de talento internacional y servicios de reclutamiento."
+        },
+        "compliance": {
+          "title": "Apoyo en Cumplimiento",
+          "description": "Cumplimiento de inmigración y asistencia con permisos de trabajo para empleadores."
+        },
+        "onboarding": {
+          "title": "Incorporación de Empleados",
+          "description": "Apoyo integral de incorporación para empleados internacionales."
+        }
+      }
+    },
+    "institution": {
+      "title": "Servicios para Instituciones",
+      "description": "Asociaciones de instituciones educativas y servicios de apoyo para colaboración internacional.",
+      "services": {
+        "partnerships": {
+          "title": "Asociaciones Internacionales",
+          "description": "Facilitar asociaciones entre instituciones educativas en todo el mundo."
+        },
+        "studentServices": {
+          "title": "Servicios de Apoyo Estudiantil",
+          "description": "Servicios de apoyo integral para estudiantes internacionales."
+        },
+        "accreditation": {
+          "title": "Apoyo en Acreditación",
+          "description": "Asistencia con acreditación internacional y aseguramiento de calidad."
+        }
+      }
+    },
+    "recruiter": {
+      "title": "Servicios para Reclutadores",
+      "description": "Servicios profesionales de reclutamiento y apoyo en adquisición de talento para mercados globales.",
+      "services": {
+        "talentAcquisition": {
+          "title": "Adquisición de Talento",
+          "description": "Servicios estratégicos de adquisición de talento para mercados internacionales."
+        },
+        "screening": {
+          "title": "Evaluación de Candidatos",
+          "description": "Servicios integrales de evaluación y selección de candidatos."
+        },
+        "placement": {
+          "title": "Servicios de Colocación",
+          "description": "Servicios de colocación de extremo a extremo con apoyo continuo."
+        }
+      }
+    },
+    "jobseeker": {
+      "title": "Servicios para Buscadores de Empleo",
+      "description": "Orientación profesional y servicios de colocación laboral para oportunidades internacionales.",
+      "services": {
+        "careerCounseling": {
+          "title": "Asesoramiento Profesional",
+          "description": "Orientación profesional y planificación de desarrollo."
+        },
+        "resumeBuilding": {
+          "title": "Construcción de CV",
+          "description": "Servicios profesionales de redacción de CV y cartas de presentación."
+        },
+        "jobMatching": {
+          "title": "Búsqueda de Empleo",
+          "description": "Búsqueda personalizada de empleo basada en tus habilidades y preferencias."
+        }
+      }
+    },
+    "traineeship": {
+      "title": "Programas de Prácticas",
+      "description": "Oportunidades internacionales de prácticas y pasantías para el desarrollo de habilidades.",
+      "services": {
+        "internships": {
+          "title": "Pasantías Internacionales",
+          "description": "Acceso a oportunidades de pasantías en empresas líderes en todo el mundo."
+        },
+        "skillDevelopment": {
+          "title": "Desarrollo de Habilidades",
+          "description": "Programas integrales de desarrollo de habilidades y capacitación."
+        },
+        "mentorship": {
+          "title": "Programas de Mentoría",
+          "description": "Mentoría profesional y orientación durante tu período de prácticas."
+        }
+      }
+    },
+    "book": {
+      "title": "Reservar Cita",
+      "description": "Programa una consulta con nuestros expertos para discutir tus objetivos y obtener orientación personalizada.",
+      "form": {
+        "title": "Programa tu Consulta",
+        "description": "Elige un momento conveniente para hablar con nuestros expertos sobre tus objetivos.",
+        "placeholder": "El widget de reservas se integrará aquí (Cal.com/Calendly)"
+      }
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "description": "Ponte en contacto con nuestro equipo para asistencia personalizada y apoyo.",
+      "form": {
+        "title": "Envíanos un Mensaje",
+        "name": "Nombre Completo",
+        "namePlaceholder": "Ingresa tu nombre completo",
+        "email": "Dirección de Email",
+        "emailPlaceholder": "Ingresa tu dirección de email",
+        "message": "Mensaje",
+        "messagePlaceholder": "Cuéntanos cómo podemos ayudarte",
+        "submit": "Enviar Mensaje"
+      },
+      "info": {
+        "title": "Información de Contacto",
+        "phone": "Números de Teléfono",
+        "email": "Dirección de Email",
+        "hours": "Horario de Atención",
+        "hoursText": "Lunes - Viernes: 9:00 AM - 6:00 PM (CET)"
+      }
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Nuestros Boletines",
+      "description": "Obtén las últimas actualizaciones, consejos y recursos.",
+      "emailPlaceholder": "Correo Electrónico",
+      "submitButton": "Enviar"
+    },
+    "company": {
+      "name": "CountryNation",
+      "tagline": "Servicios Globales",
+      "description": "Tu socio de confianza para oportunidades globales en educación, migración e inversión. Te ayudamos a lograr tus sueños internacionales con orientación experta y apoyo personalizado.",
+      "location": "Sirviendo clientes en todo el mundo"
+    },
+    "sections": {
+      "navigation": "Navegación",
+      "quickLink": "Enlaces Rápidos",
+      "workHours": "Horario de Trabajo"
+    },
+    "contact": {
+      "businessHours": "7 AM - 5 PM, Lun - Sáb",
+      "businessHoursLabel": "Horario Comercial",
+      "callUs": "Llámanos",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "bottom": {
+      "copyright": "© {year} CountryNation. Todos los derechos reservados.",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "refundPolicy": "Política de Reembolso",
+      "antiFraudPolicy": "Política Anti-Fraude"
     }
   }
 }

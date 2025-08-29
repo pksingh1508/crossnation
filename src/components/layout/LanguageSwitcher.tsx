@@ -16,12 +16,8 @@ export function LanguageSwitcher() {
     // Remove the current locale from the pathname
     const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
     
-    // Navigate to the new locale
-    if (newLocale === siteConfig.defaultLanguage) {
-      router.push(pathWithoutLocale);
-    } else {
-      router.push(`/${newLocale}${pathWithoutLocale}`);
-    }
+    // Always include the locale prefix for consistency
+    router.push(`/${newLocale}${pathWithoutLocale}`);
   };
 
   return (

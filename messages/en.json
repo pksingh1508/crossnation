@@ -115,5 +115,231 @@
       "Healthcare Professional": "Healthcare Professional",
       "Tech Entrepreneur": "Tech Entrepreneur"
     }
+  },
+  "pages": {
+    "study": {
+      "title": "Study Abroad Services",
+      "description": "Comprehensive study abroad guidance and support services to help you achieve your educational goals worldwide.",
+      "services": {
+        "consultation": {
+          "title": "Educational Consultation",
+          "description": "Personalized guidance to choose the right university and program for your career goals."
+        },
+        "application": {
+          "title": "Application Support",
+          "description": "Complete assistance with university applications, essays, and documentation."
+        },
+        "visa": {
+          "title": "Visa Assistance",
+          "description": "Expert help with student visa applications and interview preparation."
+        }
+      }
+    },
+    "work": {
+      "title": "Work Opportunities",
+      "description": "Find international work opportunities and get comprehensive support for your career abroad.",
+      "services": {
+        "jobSearch": {
+          "title": "Job Search Support",
+          "description": "Access to international job markets and personalized job matching services."
+        },
+        "workVisa": {
+          "title": "Work Visa Assistance",
+          "description": "Complete support for work permit and visa applications worldwide."
+        },
+        "careerGuidance": {
+          "title": "Career Guidance",
+          "description": "Professional career counseling and skill development recommendations."
+        }
+      }
+    },
+    "invest": {
+      "title": "Investment Services",
+      "description": "Explore international investment opportunities with expert guidance and comprehensive support.",
+      "services": {
+        "realEstate": {
+          "title": "Real Estate Investment",
+          "description": "International property investment opportunities and market analysis."
+        },
+        "business": {
+          "title": "Business Investment",
+          "description": "Business acquisition, partnerships, and startup investment guidance."
+        },
+        "portfolio": {
+          "title": "Portfolio Management",
+          "description": "Diversified investment portfolio management and financial planning."
+        }
+      }
+    },
+    "migrate": {
+      "title": "Migration Services",
+      "description": "Complete migration and relocation assistance to help you start your new life abroad.",
+      "services": {
+        "visaAssistance": {
+          "title": "Visa Assistance",
+          "description": "Comprehensive support for all types of migration visas and permits."
+        },
+        "relocation": {
+          "title": "Relocation Support",
+          "description": "Complete relocation services including housing and settlement assistance."
+        },
+        "settlement": {
+          "title": "Settlement Services",
+          "description": "Post-arrival support to help you integrate into your new community."
+        }
+      }
+    },
+    "employer": {
+      "title": "Employer Services",
+      "description": "International recruitment and employer support services to find the right talent globally.",
+      "services": {
+        "recruitment": {
+          "title": "Global Recruitment",
+          "description": "Access to international talent pools and recruitment services."
+        },
+        "compliance": {
+          "title": "Compliance Support",
+          "description": "Immigration compliance and work permit assistance for employers."
+        },
+        "onboarding": {
+          "title": "Employee Onboarding",
+          "description": "Comprehensive onboarding support for international employees."
+        }
+      }
+    },
+    "institution": {
+      "title": "Institution Services",
+      "description": "Educational institution partnerships and support services for international collaboration.",
+      "services": {
+        "partnerships": {
+          "title": "International Partnerships",
+          "description": "Facilitate partnerships between educational institutions worldwide."
+        },
+        "studentServices": {
+          "title": "Student Support Services",
+          "description": "Comprehensive support services for international students."
+        },
+        "accreditation": {
+          "title": "Accreditation Support",
+          "description": "Assistance with international accreditation and quality assurance."
+        }
+      }
+    },
+    "recruiter": {
+      "title": "Recruiter Services",
+      "description": "Professional recruitment services and talent acquisition support for global markets.",
+      "services": {
+        "talentAcquisition": {
+          "title": "Talent Acquisition",
+          "description": "Strategic talent acquisition services for international markets."
+        },
+        "screening": {
+          "title": "Candidate Screening",
+          "description": "Comprehensive candidate screening and assessment services."
+        },
+        "placement": {
+          "title": "Placement Services",
+          "description": "End-to-end placement services with ongoing support."
+        }
+      }
+    },
+    "jobseeker": {
+      "title": "Job Seeker Services",
+      "description": "Career guidance and job placement services for international opportunities.",
+      "services": {
+        "careerCounseling": {
+          "title": "Career Counseling",
+          "description": "Professional career guidance and development planning."
+        },
+        "resumeBuilding": {
+          "title": "Resume Building",
+          "description": "Professional resume and cover letter writing services."
+        },
+        "jobMatching": {
+          "title": "Job Matching",
+          "description": "Personalized job matching based on your skills and preferences."
+        }
+      }
+    },
+    "traineeship": {
+      "title": "Traineeship Programs",
+      "description": "International traineeship and internship opportunities for skill development.",
+      "services": {
+        "internships": {
+          "title": "International Internships",
+          "description": "Access to internship opportunities in leading companies worldwide."
+        },
+        "skillDevelopment": {
+          "title": "Skill Development",
+          "description": "Comprehensive skill development and training programs."
+        },
+        "mentorship": {
+          "title": "Mentorship Programs",
+          "description": "Professional mentorship and guidance throughout your traineeship."
+        }
+      }
+    },
+    "book": {
+      "title": "Book Appointment",
+      "description": "Schedule a consultation with our experts to discuss your goals and get personalized guidance.",
+      "form": {
+        "title": "Schedule Your Consultation",
+        "description": "Choose a convenient time to speak with our experts about your goals.",
+        "placeholder": "Booking widget will be integrated here (Cal.com/Calendly)"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with our team for personalized assistance and support.",
+      "form": {
+        "title": "Send us a Message",
+        "name": "Full Name",
+        "namePlaceholder": "Enter your full name",
+        "email": "Email Address",
+        "emailPlaceholder": "Enter your email address",
+        "message": "Message",
+        "messagePlaceholder": "Tell us how we can help you",
+        "submit": "Send Message"
+      },
+      "info": {
+        "title": "Contact Information",
+        "phone": "Phone Numbers",
+        "email": "Email Address",
+        "hours": "Business Hours",
+        "hoursText": "Monday - Friday: 9:00 AM - 6:00 PM (CET)"
+      }
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Our Newsletters",
+      "description": "Get the latest updates, tips, and resources.",
+      "emailPlaceholder": "Email",
+      "submitButton": "Submit Button"
+    },
+    "company": {
+      "name": "CountryNation",
+      "tagline": "Global Services",
+      "description": "Your trusted partner for global opportunities in education, migration, and investment. We help you achieve your international dreams with expert guidance and personalized support.",
+      "location": "Serving clients worldwide"
+    },
+    "sections": {
+      "navigation": "Navigation",
+      "quickLink": "Quick Link",
+      "workHours": "Work Hours"
+    },
+    "contact": {
+      "businessHours": "7 AM - 5 PM, Mon - Sat",
+      "businessHoursLabel": "Business Hours",
+      "callUs": "Call Us",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "bottom": {
+      "copyright": "© {year} CountryNation. All rights reserved.",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "refundPolicy": "Refund Policy",
+      "antiFraudPolicy": "Anti-Fraud Policy"
+    }
   }
 }
