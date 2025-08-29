@@ -86,8 +86,6 @@ src/
   - [x] Calendar availability management
 - [ ] Database Implementation
   - [ ] Supabase setup and configuration
-  - [ ] User authentication
-  - [ ] Booking data management
   - [ ] Contact form submissions storage
   - [ ] Rate limiting and security
 

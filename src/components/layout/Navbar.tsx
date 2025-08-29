@@ -255,7 +255,8 @@ export function Navbar() {
               <div className="mt-2 grid gap-2 lg:hidden">
                 <Button asChild variant="brandOutline" className="w-full">
                   <Link
-                    href={`/${locale}/book`}
+                    href={`https://crossnation.youcanbook.me`}
+                    target="_blank"
                     onClick={() => setIsOpen(false)}
                   >
                     {tCommon("book")}
