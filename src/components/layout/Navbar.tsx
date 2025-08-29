@@ -190,7 +190,9 @@ export function Navbar() {
           {/* From lg to < xl: show Book button left of toggle */}
           <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
             <Button asChild size="sm" variant="brandOutline">
-              <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+              <Link href={`https://crossnation.youcanbook.me`} target="_blank">
+                {tCommon("book")}
+              </Link>
             </Button>
             <button
               type="button"
