@@ -141,6 +141,13 @@ export function Navbar() {
 
           {/* Links (right) - show from xl and up */}
           <div className="hidden xl:flex items-center justify-end gap-2">
+            <Link
+              href={`/${locale}/`}
+              className="hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px]"
+              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+            >
+              <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
+            </Link>
             {NAVBAR_LINKS.map((item) => {
               const key = item.href.replace(/^\//, "");
               return (
@@ -192,7 +199,12 @@ export function Navbar() {
           </div>
           {/* From lg to < xl: show Book button left of toggle */}
           <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
-            <Button asChild size="sm" variant="brandOutline" className={fontMontserrat.className}>
+            <Button
+              asChild
+              size="sm"
+              variant="brandOutline"
+              className={fontMontserrat.className}
+            >
               <Link href={`https://crossnation.youcanbook.me`} target="_blank">
                 {tCommon("book")}
               </Link>
@@ -256,7 +268,11 @@ export function Navbar() {
               ))}
               {/* Buttons visible in drawer only for < lg */}
               <div className="mt-2 grid gap-2 lg:hidden">
-                <Button asChild variant="brandOutline" className={`w-full ${fontMontserrat.className}`}>
+                <Button
+                  asChild
+                  variant="brandOutline"
+                  className={`w-full ${fontMontserrat.className}`}
+                >
                   <Link
                     href={`https://crossnation.youcanbook.me`}
                     target="_blank"

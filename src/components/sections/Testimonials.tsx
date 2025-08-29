@@ -6,9 +6,12 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import { Testimonials } from "@/constants/data";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 export function TestimonialsSection() {
   const t = useTranslations("testimonials");
+  const locale = useLocale();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
   const [direction, setDirection] = useState(0);
@@ -251,22 +254,24 @@ export function TestimonialsSection() {
                       />
                     </motion.div>
                     <div>
-                      <motion.h3
-                        className="font-semibold text-gray-800 text-lg"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 + index * 0.1 }}
-                      >
-                        {testimonial.name}
-                      </motion.h3>
-                      <motion.p
-                        className="text-gray-600 text-sm"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5 + index * 0.1 }}
-                      >
-                        {t(`roles.${testimonial.role}` as any)}
-                      </motion.p>
+                      <Link href={`/${locale}/testimonials`}>
+                        <motion.h3
+                          className="font-semibold text-gray-800 text-lg"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.4 + index * 0.1 }}
+                        >
+                          {testimonial.name}
+                        </motion.h3>
+                        <motion.p
+                          className="text-gray-600 text-sm"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.5 + index * 0.1 }}
+                        >
+                          {t(`roles.${testimonial.role}` as any)}
+                        </motion.p>
+                      </Link>
                     </div>
                   </motion.div>
 
