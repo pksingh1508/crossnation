@@ -22,7 +22,7 @@ export function FormField({
 }: FormFieldProps) {
   const id = React.useId();
   return (
-    <div className={cn("space-y-1.5", className)} {...props}>
+    <div className={cn("space-y-0.5", className)} {...props}>
       {label && (
         <Label htmlFor={id} className="justify-between">
           <span>{label}</span>
@@ -36,7 +36,7 @@ export function FormField({
             "aria-describedby": hint ? `${id}-hint` : undefined,
           })
         : children}
-      <div className="min-h-5">
+      <div className="min-h-2">
         {error ? (
           <p className="text-xs text-destructive">{error}</p>
         ) : hint ? (

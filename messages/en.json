@@ -283,6 +283,48 @@
         "hours": "Business Hours",
         "hoursText": "Monday - Friday: 9:00 AM - 6:00 PM (CET)"
       }
+    },
+    "myForm": {
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "phoneNumber": "Phone Number",
+      "phonePlaceholder": "Enter phone number",
+      "userType": "I am",
+      "userTypePlaceholder": "Select your role",
+      "userTypes": {
+        "student": "Student",
+        "jobseeker": "Job Seeker",
+        "agent": "Agent/Overseas Recruiter",
+        "employer": "Employer",
+        "institution": "Institution/University",
+        "investor": "Investor/Company Registration"
+      },
+      "termsText": "I accept the",
+      "termsLink": "Terms and Conditions",
+      "submitButton": "Send Message",
+      "successMessage": "Form submitted successfully! We'll get back to you soon.",
+      "errorMessage": "Please fill in all required fields and accept terms",
+      "required": "required"
+    },
+    "commonContact": {
+      "title": "Looking to Work, Hire, or Partner?",
+      "description": "Ready to take the next step? Whether you're looking for work opportunities, investment options, hiring solutions, or partnership possibilities, we're here to help you connect with the right people and opportunities.",
+      "buttons": {
+        "work": "Work",
+        "invest": "Invest",
+        "employer": "Employer",
+        "recruiter": "Recruiter"
+      },
+      "features": {
+        "quickResponse": "Quick response within 24 hours",
+        "consultation": "Professional consultation available",
+        "secure": "Secure and confidential communication"
+      },
+      "formInstruction": "Fill out the form below and we'll get back to you soon."
     }
   },
   "footer": {

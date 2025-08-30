@@ -283,6 +283,48 @@
         "hours": "Horario de Atención",
         "hoursText": "Lunes - Viernes: 9:00 AM - 6:00 PM (CET)"
       }
+    },
+    "myForm": {
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Ingresa tu nombre",
+      "lastName": "Apellido",
+      "lastNamePlaceholder": "Ingresa tu apellido",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "phoneNumber": "Número de Teléfono",
+      "phonePlaceholder": "Ingresa tu número de teléfono",
+      "userType": "Soy",
+      "userTypePlaceholder": "Selecciona tu rol",
+      "userTypes": {
+        "student": "Estudiante",
+        "jobseeker": "Buscador de Empleo",
+        "agent": "Agente/Reclutador Internacional",
+        "employer": "Empleador",
+        "institution": "Institución/Universidad",
+        "investor": "Inversor/Registro de Empresa"
+      },
+      "termsText": "Acepto los",
+      "termsLink": "Términos y Condiciones",
+      "submitButton": "Enviar Mensaje",
+      "successMessage": "¡Formulario enviado exitosamente! Te contactaremos pronto.",
+      "errorMessage": "Por favor completa todos los campos requeridos y acepta los términos",
+      "required": "requerido"
+    },
+    "commonContact": {
+      "title": "¿Buscas Trabajar, Contratar o Asociarte?",
+      "description": "¿Listo para dar el siguiente paso? Ya sea que busques oportunidades de trabajo, opciones de inversión, soluciones de contratación o posibilidades de asociación, estamos aquí para ayudarte a conectar con las personas y oportunidades adecuadas.",
+      "buttons": {
+        "work": "Trabajo",
+        "invest": "Invertir",
+        "employer": "Empleador",
+        "recruiter": "Reclutador"
+      },
+      "features": {
+        "quickResponse": "Respuesta rápida en 24 horas",
+        "consultation": "Consulta profesional disponible",
+        "secure": "Comunicación segura y confidencial"
+      },
+      "formInstruction": "Completa el formulario a continuación y te contactaremos pronto."
     }
   },
   "footer": {
