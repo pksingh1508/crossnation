@@ -327,6 +327,15 @@
       "formInstruction": "Completa el formulario a continuación y te contactaremos pronto."
     }
   },
+  "anyQuestion": {
+    "title": "¿Tienes alguna pregunta?",
+    "description": "En EU Career Serwis, te guiamos en cada paso del camino. Nuestros expertos brindan apoyo integral, incluyendo asistencia en búsqueda de empleo, solicitudes de visa de trabajo para Polonia, reconocimiento de calificaciones y aprendizaje básico del idioma polaco. Ya seas un trabajador calificado o un solicitante por primera vez, hacemos que tu viaje de migración sea fluido y confiable. Para comenzar en tu camino hacia vivir y trabajar en Polonia, haz clic en uno de los íconos de contacto a continuación y conéctate con nuestro equipo hoy.",
+    "contactOptions": {
+      "contact": "Contacto",
+      "email": "Correo",
+      "faq": "FAQ"
+    }
+  },
   "works": {
     "steps": {
       "poland": {

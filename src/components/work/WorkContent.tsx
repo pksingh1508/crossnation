@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { StepWork } from "@/components/work/StepWork";
 import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Inspiration } from "@/components/sections/Inspiration";
 
 export function WorkContent() {
   const tPoland = useTranslations("works.steps.poland");
@@ -55,10 +56,13 @@ export function WorkContent() {
         paragraph4={tStep3("paragraph4")}
         isReversed={true}
       />
-      
+
+      {/* Inspiration Section */}
+      <Inspiration />
+
       {/* Why Choose Us Section */}
       <WhyChooseUs />
-      
+
       {/* Government Links Section */}
       <GovernmentLinks />
     </>

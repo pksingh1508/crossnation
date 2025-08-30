@@ -327,6 +327,15 @@
       "formInstruction": "Fill out the form below and we'll get back to you soon."
     }
   },
+  "anyQuestion": {
+    "title": "Do you have any questions?",
+    "description": "At EU Career Serwis, we guide you every step of the way. Our experts provide comprehensive support, including job search assistance, Poland work visa applications, qualification recognition, and basic Polish language learning. Whether you're a skilled worker or a first-time applicant, we make your migration journey smooth and reliable. To get started on your path to living and working in Poland, click one of the contact icons below and connect with our team today.",
+    "contactOptions": {
+      "contact": "Contact",
+      "email": "Email",
+      "faq": "FAQ"
+    }
+  },
   "works": {
     "steps": {
       "poland": {
