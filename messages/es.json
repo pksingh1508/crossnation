@@ -327,6 +327,73 @@
       "formInstruction": "Completa el formulario a continuación y te contactaremos pronto."
     }
   },
+  "works": {
+    "steps": {
+      "poland": {
+        "imageAlt": "Oportunidades de trabajo en Polonia",
+        "heading": "Trabajar en Polonia",
+        "paragraph1": "¿Buscas trabajar en Polonia? Comienza tu carrera en uno de los mercados laborales de más rápido crecimiento de Europa. Polonia ofrece oportunidades de trabajo legales tanto para trabajadores calificados como semi-calificados en diversas industrias como manufactura, logística, TI, hospitalidad, construcción y atención médica. Con alta demanda de trabajadores extranjeros, Polonia sigue siendo un destino principal para buscadores de empleo internacionales.",
+        "paragraph2": "AtoZ Serwis Plus es tu socio de confianza para permisos de trabajo en Polonia, procesamiento de visas y asistencia de reubicación. Ofrecemos contratos de trabajo verificados, te ayudamos a solicitar la visa nacional (tipo D), y aseguramos que todos los documentos cumplan con los requisitos legales bajo la ley de inmigración polaca.",
+        "paragraph3": "Te guiamos paso a paso—desde la búsqueda de empleadores y documentación hasta citas en embajadas y apoyo post-llegada. Ya sea que estés en Asia, África, o ya dentro de la UE, simplificamos tu camino para trabajar legalmente en Polonia.",
+        "paragraph4": "Encuentra trabajos genuinos en las principales ciudades polacas como Varsovia, Bydgoszcz, Cracovia, Gdansk y Wroclaw. Elige AtoZ Serwis Plus para servicios de visa y empleo profesionales, seguros y transparentes."
+      },
+      "step1": {
+        "imageAlt": "Consulta de permiso de trabajo y verificación de elegibilidad",
+        "heading": "Paso 1: Consulta de Permiso de Trabajo y Verificación de Elegibilidad",
+        "paragraph1": "Tu viaje para trabajar legalmente en Polonia comienza con una consulta profesional. En AtoZ Serwis Plus, comenzamos evaluando tu nacionalidad, habilidades, experiencia laboral y preferencias de trabajo. Basándonos en la demanda laboral actual en Polonia, recomendamos los roles de trabajo más adecuados y las regiones donde hay demanda de trabajadores extranjeros, como Varsovia, Bydgoszcz, Gdansk, Wroclaw y Cracovia.",
+        "paragraph2": "Explicamos tus criterios de elegibilidad, tiempo estimado de procesamiento y la tasa de éxito para obtener un permiso de trabajo en Polonia y una visa nacional Tipo D. Esto te ayuda a tomar una decisión informada antes de comenzar tu solicitud.",
+        "paragraph3": "También te proporcionamos una lista de documentos personalizada, adaptada a tu profesión y país de origen. Esto asegura que tu documentación esté completa, sea precisa y esté alineada con las leyes de inmigración polacas. Con nuestra orientación experta en cada paso, te mantienes en cumplimiento, organizado y un paso más cerca de trabajar legalmente en Polonia.",
+        "paragraph4": ""
+      },
+      "step2": {
+        "imageAlt": "Búsqueda de empleador y solicitud de permiso de trabajo",
+        "heading": "Paso 2: Búsqueda de Empleador y Solicitud de Permiso de Trabajo",
+        "paragraph1": "Una vez confirmada tu elegibilidad, comenzamos el proceso de emparejarte con un empleador polaco verificado de nuestra red de confianza. Nuestro equipo selecciona ofertas de trabajo basadas en tus habilidades, calificaciones y los sectores que actualmente enfrentan escasez de mano de obra en Polonia—como logística, producción, hospitalidad y construcción.",
+        "paragraph2": "Después de la confirmación del empleador, preparamos y enviamos tu solicitud de permiso de trabajo en Polonia (zezwolenie na pracę) a través de la Oficina de Voivodato apropiada (Urząd Wojewódzki). Nuestros servicios incluyen proporcionar un contrato de trabajo válido, prueba de alojamiento y una carta de invitación oficial, todo requerido para tu solicitud de visa nacional Tipo D.",
+        "paragraph3": "Manejamos todas las presentaciones necesarias a las autoridades polacas, asegurando que tu documentación sea legalmente sólida y se presente a tiempo. Eres continuamente actualizado durante todo el proceso, y coordinamos con tu empleador para asegurar que todas las obligaciones se cumplan.",
+        "paragraph4": "Con AtoZ Serwis Plus, la solicitud de un permiso de trabajo en Polonia es precisa, cumple con las normas y libre de estrés—permitiéndote enfocarte en prepararte para tu mudanza a Polonia."
+      },
+      "step3": {
+        "imageAlt": "Aprobación de permiso de trabajo en Polonia y apoyo de visa",
+        "heading": "Paso 3: Aprobación de Permiso de Trabajo en Polonia y Apoyo de Visa",
+        "paragraph1": "Después de que enviemos tu solicitud a la Oficina de Voivodato polaca, tu permiso de trabajo en Polonia típicamente se aprueba dentro de 45 a 95 días laborales, dependiendo de la provincia y la carga de trabajo. Una vez aprobado, te asistimos en preparar una solicitud completa de visa nacional (Tipo D) para presentación en la embajada o consulado polaco apropiado en tu país de origen.",
+        "paragraph2": "Te ayudamos a programar tu cita en la embajada, te guiamos en el proceso de entrevista, y aseguramos que todos los documentos sean precisos y completos. Esto incluye proporcionar una carta de presentación oficial, una carta de invitación del empleador, y todos los documentos legales requeridos.",
+        "paragraph3": "Nuestro equipo revisa tu archivo completo de visa para evitar retrasos o rechazo, asegurando que cumpla con los estándares de la ley de inmigración polaca. Nos mantenemos en contacto durante todo el proceso de la embajada para proporcionar actualizaciones y apoyo según sea necesario.",
+        "paragraph4": "Con AtoZ Serwis Plus, te beneficias de asistencia experta en visas y comunicación oportuna—haciendo que el camino para trabajar legalmente en Polonia sea fluido, transparente y totalmente conforme."
+      }
+    }
+  },
+  "governmentLinks": {
+    "title": "Gobierno de Polonia: Enlaces Útiles",
+    "description": "Haz clic en cualquier logo para visitar el sitio web oficial del gobierno"
+  },
+  "whyChooseUs": {
+    "heading": "¿Por Qué Elegir EU Career Serwis?",
+    "description": "En EU Career Serwis, te ayudamos a construir tu futuro en Polonia ofreciendo apoyo confiable para trabajos legales, permisos de trabajo y procesamiento de visas—todo adaptado a tus objetivos profesionales.",
+    "readMore": "Leer Más",
+    "stats": {
+      "visaSuccess": {
+        "number": "1000+",
+        "label": "Éxito de Visa"
+      },
+      "guidedClients": {
+        "number": "1M+",
+        "label": "Guiados"
+      },
+      "experts": {
+        "number": "50+",
+        "label": "Expertos"
+      },
+      "offices": {
+        "number": "10+",
+        "label": "Oficinas"
+      },
+      "onlineServices": {
+        "number": "24/7",
+        "label": "Servicios en Línea"
+      }
+    }
+  },
   "footer": {
     "newsletter": {
       "title": "Nuestros Boletines",

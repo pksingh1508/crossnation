@@ -9,8 +9,8 @@ export function CommonContact() {
   const t = useTranslations("pages.commonContact");
 
   return (
-    <div className="w-full min-h-screen bg-white">
-      <div className="container mx-auto max-w-7xl px-4 py-16 lg:py-24">
+    <div className="w-full min-h-[80vh] bg-white">
+      <div className="container mx-auto max-w-7xl px-4 py-10">
         <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Section - Content */}

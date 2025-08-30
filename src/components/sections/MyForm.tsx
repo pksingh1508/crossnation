@@ -24,7 +24,7 @@ interface CountryCode {
 
 export function MyForm() {
   const locale = useLocale();
-  const t = useTranslations('pages.myForm');
+  const t = useTranslations("pages.myForm");
   const [selectedCountry, setSelectedCountry] = useState<CountryCode>(
     countryData.find((country) => country.iso === "US") || countryData[0]
   );
@@ -67,7 +67,7 @@ export function MyForm() {
       !formData.userType ||
       !formData.acceptTerms
     ) {
-      console.error(t('errorMessage'));
+      console.error(t("errorMessage"));
       return;
     }
 
@@ -81,17 +81,17 @@ export function MyForm() {
     clearForm();
 
     // Show success message
-    window.alert(t('successMessage'));
+    window.alert(t("successMessage"));
   };
 
   return (
     <div className="w-full max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-2 gap-4">
-          <FormField label={t('firstName')} required>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+          <FormField label={t("firstName")} required>
             <div className="font-inter">
               <Input
-                placeholder={t('firstNamePlaceholder')}
+                placeholder={t("firstNamePlaceholder")}
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
                 className="font-inter"
@@ -100,10 +100,10 @@ export function MyForm() {
             </div>
           </FormField>
 
-          <FormField label={t('lastName')} required>
+          <FormField label={t("lastName")} required>
             <div className="font-inter">
               <Input
-                placeholder={t('lastNamePlaceholder')}
+                placeholder={t("lastNamePlaceholder")}
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
                 className="font-inter"
@@ -113,11 +113,11 @@ export function MyForm() {
           </FormField>
         </div>
 
-        <FormField label={t('email')} required>
+        <FormField label={t("email")} required>
           <div className="font-inter">
             <Input
               type="email"
-              placeholder={t('emailPlaceholder')}
+              placeholder={t("emailPlaceholder")}
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
               className="font-inter"
@@ -126,9 +126,9 @@ export function MyForm() {
           </div>
         </FormField>
 
-        <FormField label={t('phoneNumber')} required>
+        <FormField label={t("phoneNumber")} required>
           <div className="font-inter">
-            <div className="flex gap-2">
+            <div className="flex gap-2 md:flex-row flex-col">
               <Select
                 value={selectedCountry.iso}
                 onValueChange={(value) => {
@@ -169,7 +169,7 @@ export function MyForm() {
 
               <Input
                 type="tel"
-                placeholder={t('phonePlaceholder')}
+                placeholder={t("phonePlaceholder")}
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
                 className="flex-1 font-inter"
@@ -179,25 +179,31 @@ export function MyForm() {
           </div>
         </FormField>
 
-        <FormField label={t('userType')} required>
+        <FormField label={t("userType")} required>
           <div className="font-inter">
             <Select
               value={formData.userType}
               onValueChange={(value) => handleInputChange("userType", value)}
             >
               <SelectTrigger className="w-full">
-                <SelectValue placeholder={t('userTypePlaceholder')} />
+                <SelectValue placeholder={t("userTypePlaceholder")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="student">{t('userTypes.student')}</SelectItem>
-                <SelectItem value="jobseeker">{t('userTypes.jobseeker')}</SelectItem>
-                <SelectItem value="agent">{t('userTypes.agent')}</SelectItem>
-                <SelectItem value="employer">{t('userTypes.employer')}</SelectItem>
+                <SelectItem value="student">
+                  {t("userTypes.student")}
+                </SelectItem>
+                <SelectItem value="jobseeker">
+                  {t("userTypes.jobseeker")}
+                </SelectItem>
+                <SelectItem value="agent">{t("userTypes.agent")}</SelectItem>
+                <SelectItem value="employer">
+                  {t("userTypes.employer")}
+                </SelectItem>
                 <SelectItem value="institution">
-                  {t('userTypes.institution')}
+                  {t("userTypes.institution")}
                 </SelectItem>
                 <SelectItem value="investor">
-                  {t('userTypes.investor')}
+                  {t("userTypes.investor")}
                 </SelectItem>
               </SelectContent>
             </Select>
@@ -217,14 +223,14 @@ export function MyForm() {
             htmlFor="acceptTerms"
             className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed"
           >
-            {t('termsText')}{" "}
+            {t("termsText")}{" "}
             <a
               href={`/${locale}/terms-and-conditions`}
               className="text-yellow-600 hover:text-yellow-700 underline font-medium"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t('termsLink')}
+              {t("termsLink")}
             </a>
           </label>
         </div>
@@ -234,7 +240,7 @@ export function MyForm() {
           className="w-full font-montserrat font-semibold cursor-pointer  hover:bg-yellow-400 hover:text-black hover:border-yellow-400"
           variant="brandOutline"
         >
-          {t('submitButton')}
+          {t("submitButton")}
         </Button>
       </form>
     </div>

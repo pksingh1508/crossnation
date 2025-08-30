@@ -327,6 +327,73 @@
       "formInstruction": "Fill out the form below and we'll get back to you soon."
     }
   },
+  "works": {
+    "steps": {
+      "poland": {
+        "imageAlt": "Work in Poland opportunities",
+        "heading": "Work in Poland",
+        "paragraph1": "Looking to work in Poland? Start your career in one of Europe's fastest-growing job markets. Poland offers legal job opportunities for both skilled and semi-skilled workers across various industries such as manufacturing, logistics, IT, hospitality, construction, and healthcare. With high demand for foreign workers, Poland remains a top destination for international job seekers.",
+        "paragraph2": "AtoZ Serwis Plus is your trusted partner for Poland work permits, visa processing, and relocation assistance. We offer verified job contracts, help you apply for the national visa (type D), and ensure all documents meet legal requirements under Polish immigration law.",
+        "paragraph3": "We guide you step-by-step—from employer matching and documentation to embassy appointments and post-arrival support. Whether you're in Asia, Africa, or already inside the EU, we simplify your path to working legally in Poland.",
+        "paragraph4": "Find genuine jobs in leading Polish cities like Warsaw, Bydgoszcz, Krakow, Gdansk, and Wroclaw. Choose AtoZ Serwis Plus for professional, secure, and transparent visa and employment services."
+      },
+      "step1": {
+        "imageAlt": "Work permit consultation and eligibility check",
+        "heading": "Step 1: Work Permit Consultation & Eligibility Check",
+        "paragraph1": "Your journey to legally working in Poland starts with a professional consultation. At AtoZ Serwis Plus, we begin by assessing your nationality, skills, work experience, and job preferences. Based on current labor demand in Poland, we recommend the most suitable job roles and regions where foreign workers are in demand, such as Warsaw, Bydgoszcz, Gdansk, Wroclaw, and Krakow.",
+        "paragraph2": "We explain your eligibility criteria, estimated processing time, and the success rate of obtaining a Poland work permit and Type D national visa. This helps you make an informed decision before starting your application.",
+        "paragraph3": "We also provide you with a personalized document checklist, tailored to your profession and country of origin. This ensures your documentation is complete, accurate, and aligned with Polish immigration laws. With our expert guidance at every step, you stay compliant, organized, and one step closer to legally working in Poland.",
+        "paragraph4": ""
+      },
+      "step2": {
+        "imageAlt": "Employer matching and work permit filing",
+        "heading": "Step 2: Employer Matching & Work Permit Filing",
+        "paragraph1": "Once your eligibility is confirmed, we begin the process of matching you with a verified Polish employer from our trusted network. Our team selects job offers based on your skills, qualifications, and the sectors currently facing a labor shortage in Poland—such as logistics, production, hospitality, and construction.",
+        "paragraph2": "After employer confirmation, we prepare and submit your Poland work permit application (zezwolenie na pracę) through the appropriate Voivodeship Office (Urząd Wojewódzki). Our services include providing a valid job contract, proof of accommodation, and an official invitation letter, all required for your Type D national visa application.",
+        "paragraph3": "We handle all necessary submissions to Polish authorities, ensuring that your documentation is legally sound and submitted on time. You are continuously updated throughout the process, and we coordinate with your employer to ensure all obligations are fulfilled.",
+        "paragraph4": "With AtoZ Serwis Plus, the application for a Poland work permit is accurate, compliant, and stress-free—allowing you to focus on preparing for your move to Poland."
+      },
+      "step3": {
+        "imageAlt": "Poland work permit approval and visa support",
+        "heading": "Step 3: Poland Work Permit Approval & Visa Support",
+        "paragraph1": "After we submit your application to the Polish Voivodeship Office, your Poland work permit is typically approved within 45 to 95 working days, depending on the province and workload. Once approved, we assist you in preparing a complete national visa (Type D) application for submission at the appropriate Polish embassy or consulate in your home country.",
+        "paragraph2": "We help you schedule your embassy appointment, guide you on the interview process, and ensure all documents are accurate and complete. This includes providing an official cover letter, an employer invitation letter, and all required legal documents.",
+        "paragraph3": "Our team reviews your full visa file to avoid delays or rejection, ensuring it meets the standards of Polish immigration law. We stay in touch throughout the embassy process to provide updates and support as needed.",
+        "paragraph4": "With AtoZ Serwis Plus, you benefit from expert visa assistance and timely communication—making the path to working legally in Poland smooth, transparent, and fully compliant."
+      }
+    }
+  },
+  "governmentLinks": {
+    "title": "Government of Poland: Useful Links",
+    "description": "Click on any logo to visit the official government website"
+  },
+  "whyChooseUs": {
+    "heading": "Why Choose EU Career Serwis?",
+    "description": "At EU Career Serwis, we help you build your future in Poland by offering trusted support for legal jobs, work permits, and visa processing—all tailored to your career goals.",
+    "readMore": "Read More",
+    "stats": {
+      "visaSuccess": {
+        "number": "1000+",
+        "label": "Visa Success"
+      },
+      "guidedClients": {
+        "number": "1M+",
+        "label": "Guided"
+      },
+      "experts": {
+        "number": "50+",
+        "label": "Experts"
+      },
+      "offices": {
+        "number": "10+",
+        "label": "Offices"
+      },
+      "onlineServices": {
+        "number": "24/7",
+        "label": "Online Services"
+      }
+    }
+  },
   "footer": {
     "newsletter": {
       "title": "Our Newsletters",

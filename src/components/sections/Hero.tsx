@@ -34,11 +34,10 @@ export function Hero() {
 
           <motion.div className="w-[90%] md:w-[50vw]">
             <Image
-              src="/home.jpg"
+              src="/home_compressed.jpg"
               alt="Home"
               width={160}
               height={48}
-              placeholder="empty"
               unoptimized
               className="w-[90vw] md:w-[40vw] h-[70vh] md:h-[70vh] object-cover"
             />
