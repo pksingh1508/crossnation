@@ -44,20 +44,20 @@ export function Navbar() {
     >
       {/* Top bar */}
       <div className="container mx-auto px-4 xl:px-28 flex items-center justify-between text-sm">
-        <div className="flex items-center gap-6 text-gray-400">
+        <div className="flex items-center gap-2 md:gap-6 text-gray-400">
           <a
             href="tel:+48222095497"
             className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
             style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
-            <Phone className="h-4 w-4" /> +48 22 209 5497
+            <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
           </a>
           <a
             href="tel:+48726635666"
             className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
             style={{ ["--hover-bg" as any]: colors.yellow.dark }}
           >
-            <Phone className="h-4 w-4" /> +48 72 635 666
+            <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
           </a>
         </div>
         {/* Top-bar right: large screens (2xl+) show full actions; below that only language */}
@@ -255,6 +255,14 @@ export function Navbar() {
             className="xl:hidden border-t bg-white"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+              <Link
+                href={`/${locale}/`}
+                className="hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px]"
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                onClick={() => setIsOpen(false)}
+              >
+                <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
+              </Link>
               {NAVBAR_LINKS.map((item) => (
                 <Link
                   key={item.href}
