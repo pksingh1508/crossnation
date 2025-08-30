@@ -265,7 +265,7 @@
     },
     "contact": {
       "title": "Contáctanos",
-      "description": "Ponte en contacto con nuestro equipo para asistencia personalizada y apoyo.",
+      "description": "Regístrate para una consulta gratuita con expertos",
       "form": {
         "title": "Envíanos un Mensaje",
         "name": "Nombre Completo",
@@ -277,11 +277,25 @@
         "submit": "Enviar Mensaje"
       },
       "info": {
-        "title": "Información de Contacto",
-        "phone": "Números de Teléfono",
-        "email": "Dirección de Email",
-        "hours": "Horario de Atención",
-        "hoursText": "Lunes - Viernes: 9:00 AM - 6:00 PM (CET)"
+        "title": "Contacta a Nuestro Equipo de Expertos",
+        "address": {
+          "title": "Dirección",
+          "street": "Calle: Ul Ludwika Idzikowskiego 16, 4to Piso",
+          "zipCode": "Código postal: 00-710 Warszawa",
+          "city": "Ciudad: Warszawa, País: Polonia"
+        },
+        "callUs": {
+          "title": "Llámanos",
+          "phone": "+48 22 268 3497"
+        },
+        "whatsapp": {
+          "title": "Whatsapp",
+          "number": "+48 79 835 6664"
+        },
+        "email": {
+          "title": "Envíanos un email a",
+          "address": "info@atozerwisplus.pl"
+        }
       }
     },
     "myForm": {
@@ -303,6 +317,10 @@
         "institution": "Institución/Universidad",
         "investor": "Inversor/Registro de Empresa"
       },
+      "subject": "Asunto",
+      "subjectPlaceholder": "Ingresa el asunto",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos cómo podemos ayudarte",
       "termsText": "Acepto los",
       "termsLink": "Términos y Condiciones",
       "submitButton": "Enviar Mensaje",

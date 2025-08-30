@@ -265,7 +265,7 @@
     },
     "contact": {
       "title": "Contact Us",
-      "description": "Get in touch with our team for personalized assistance and support.",
+      "description": "Sign up for a free expert consultation",
       "form": {
         "title": "Send us a Message",
         "name": "Full Name",
@@ -277,11 +277,25 @@
         "submit": "Send Message"
       },
       "info": {
-        "title": "Contact Information",
-        "phone": "Phone Numbers",
-        "email": "Email Address",
-        "hours": "Business Hours",
-        "hoursText": "Monday - Friday: 9:00 AM - 6:00 PM (CET)"
+        "title": "Reach Our Expert Team",
+        "address": {
+          "title": "Address",
+          "street": "Street: Ul Ludwika Idzikowskiego 16, 4th Floor",
+          "zipCode": "ZIP code: 00-710 Warszawa",
+          "city": "City: Warszawa, Country: Poland"
+        },
+        "callUs": {
+          "title": "Call us",
+          "phone": "+48 22 268 3497"
+        },
+        "whatsapp": {
+          "title": "Whatsapp",
+          "number": "+48 79 835 6664"
+        },
+        "email": {
+          "title": "Email us at",
+          "address": "info@atozerwisplus.pl"
+        }
       }
     },
     "myForm": {
@@ -303,6 +317,10 @@
         "institution": "Institution/University",
         "investor": "Investor/Company Registration"
       },
+      "subject": "Subject",
+      "subjectPlaceholder": "Enter subject",
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help you",
       "termsText": "I accept the",
       "termsLink": "Terms and Conditions",
       "submitButton": "Send Message",

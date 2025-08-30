@@ -1,0 +1,225 @@
+"use client";
+
+import * as React from "react";
+import { motion, Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
+import {
+  MapPin,
+  Phone,
+  MessageCircle,
+  Mail,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
+import { ContactForm } from "./ContactForm";
+
+export function ContactContainer() {
+  const t = useTranslations("pages.contact");
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const iconVariants: Variants = {
+    rest: { scale: 1, rotate: 0 },
+    hover: {
+      scale: 1.1,
+      rotate: 5,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const contactItems = [
+    {
+      icon: MapPin,
+      title: t("info.address.title"),
+      content: [
+        t("info.address.street"),
+        t("info.address.zipCode"),
+        t("info.address.city"),
+      ],
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: Phone,
+      title: t("info.callUs.title"),
+      content: [t("info.callUs.phone")],
+      color: "from-green-500 to-green-600",
+      link: `tel:${t("info.callUs.phone")}`,
+    },
+    {
+      icon: MessageCircle,
+      title: t("info.whatsapp.title"),
+      content: [t("info.whatsapp.number")],
+      color: "from-emerald-500 to-emerald-600",
+      link: `tel:${t("info.whatsapp.number")}`,
+    },
+    {
+      icon: Mail,
+      title: t("info.email.title"),
+      content: [t("info.email.address")],
+      color: "from-yellow-500 to-yellow-600",
+      link: `mailto:${t("info.email.address")}`,
+    },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", color: "hover:text-blue-600" },
+    { icon: Twitter, href: "#", color: "hover:text-blue-400" },
+    { icon: Linkedin, href: "#", color: "hover:text-blue-700" },
+    { icon: Instagram, href: "#", color: "hover:text-pink-600" },
+  ];
+
+  return (
+    <section className="w-full bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 py-10">
+      <div className="container mx-auto max-w-7xl px-4">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-gray-900 dark:text-white mb-2 tracking-tight">
+            {t("title")}
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
+          <p className="text-lg font-inter text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {t("description")}
+          </p>
+        </motion.div>
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 lg:p-12">
+            <motion.div
+              className="grid lg:grid-cols-2 gap-12 items-start"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {/* Left Content - Contact Information */}
+              <motion.div
+                className="space-y-8 order-2 lg:order-1"
+                variants={itemVariants}
+              >
+                <div className="space-y-6">
+                  <motion.h2
+                    className="text-3xl lg:text-4xl font-bold font-playfair text-gray-900 dark:text-white"
+                    variants={itemVariants}
+                  >
+                    {t("info.title")}
+                  </motion.h2>
+                  <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
+                </div>
+
+                {/* Contact Items */}
+                <motion.div className="space-y-6" variants={itemVariants}>
+                  {contactItems.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-700/50 transition-all duration-300"
+                      variants={itemVariants}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        className={`p-3 rounded-full bg-gradient-to-r ${item.color} shadow-lg`}
+                        variants={iconVariants}
+                        initial="rest"
+                        whileHover="hover"
+                      >
+                        <item.icon className="w-6 h-6 text-white" />
+                      </motion.div>
+
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold font-poppins text-gray-900 dark:text-white mb-2">
+                          {item.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {item.content.map((line, lineIndex) => (
+                            <p
+                              key={lineIndex}
+                              className="text-gray-600 dark:text-gray-300 font-inter"
+                            >
+                              {item.link ? (
+                                <a
+                                  href={item.link}
+                                  className="hover:text-yellow-600 transition-colors duration-200 hover:underline"
+                                >
+                                  {line}
+                                </a>
+                              ) : (
+                                line
+                              )}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Social Links */}
+                <motion.div className="pt-6" variants={itemVariants}>
+                  <div className="flex gap-4">
+                    {socialLinks.map((social, index) => (
+                      <motion.a
+                        key={index}
+                        href={social.href}
+                        className={`p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
+                        variants={iconVariants}
+                        initial="rest"
+                        whileHover="hover"
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <social.icon className="w-5 h-5" />
+                      </motion.a>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Right Content - Contact Form */}
+              <motion.div
+                className="bg-gray-50/50 dark:bg-gray-700/50 rounded-2xl shadow-lg p-8 order-1 lg:order-2"
+                variants={itemVariants}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <ContactForm />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
