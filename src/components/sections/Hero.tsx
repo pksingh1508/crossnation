@@ -48,15 +48,10 @@ export function Hero() {
             {/* Heading */}
             <div className="text-center">
               <h2
-                className={`text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-700 ${fontPoppins.className}`}
+                className={`text-2xl font-extrabold text-gray-700 ${fontPoppins.className}`}
               >
                 {t("title1")}
               </h2>
-              <p
-                className={`text-4xl sm:text-5xl font-extrabold text-gray-700 ${fontPoppins.className}`}
-              >
-                {t("title2")}
-              </p>
             </div>
 
             {/* First Row Buttons */}
@@ -113,12 +108,12 @@ export function Hero() {
               </svg>
               <div>
                 <p
-                  className={`text-gray-800 font-medium ${fontInter.className}`}
+                  className={`text-gray-800 text-base font-medium ${fontInter.className}`}
                 >
                   {t("cta1")}
                 </p>
                 <button
-                  className={`text-red-600 font-semibold hover:underline ${fontInter.className}`}
+                  className={`text-red-600 text-base font-semibold hover:underline ${fontInter.className}`}
                 >
                   <Link href={`/${locale}/contact`}>{t("cta2")}</Link>
                 </button>

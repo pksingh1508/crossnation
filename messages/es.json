@@ -15,8 +15,8 @@
     "jobseeker": "Solicitante"
   },
   "home": {
-    "title1": "¿Cómo podemos ",
-    "title2": "apoyarte?",
+    "title1": "¿Cómo podemos apoyarte?",
+    "title2": "",
     "btn1": "Reclutador",
     "btn2": "Solicitante",
     "btn3": "Migrar",
@@ -422,6 +422,90 @@
         "label": "Servicios en Línea"
       }
     }
+  },
+  "customHero": {
+    "heading": "Trabajo",
+    "paragraph1": "¿No estás seguro de qué país europeo se adapta mejor a tu perfil, habilidades y experiencia? Elegir el camino correcto es el primer paso hacia construir un futuro seguro y gratificante.",
+    "paragraph2": "En [EU Career Serwis], proporcionamos orientación profesional personalizada para ayudarte a explorar oportunidades con empleadores europeos de confianza. Nuestro equipo de expertos evaluará cuidadosamente tus calificaciones y recomendará las opciones más adecuadas para tu crecimiento profesional.",
+    "buttons": [
+      { "text": "Polonia" },
+      { "text": "Eslovaquia" },
+      { "text": "Lituania" },
+      { "text": "República Checa" },
+      { "text": "Serbia" },
+      { "text": "España" },
+      { "text": "Croacia" }
+    ],
+    "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
+    "imageAlt": "Oportunidades profesionales europeas"
+  },
+  "customHeroMigrate": {
+    "heading": "Migrar",
+    "paragraph1": "Migra a Europa con EU Career Serwis y da el primer paso hacia un futuro exitoso y gratificante en el extranjero. Nos especializamos en guiar a profesionales como tú hacia el país correcto, la oportunidad correcta y la trayectoria profesional adecuada.",
+    "buttons": [
+      { "text": "Alemania" },
+      { "text": "España" },
+      { "text": "Italia" },
+      { "text": "Finlandia" }
+    ],
+    "imageSrc": "/migrate.webp",
+    "imageAlt": "Oportunidades de migración a Europa"
+  },
+  "customHeroTraineeship": {
+    "heading": "Prácticas",
+    "paragraph1": "Proporcionamos oportunidades de prácticas en múltiples países para profesionales calificados. Al completar exitosamente la capacitación, recibirás una certificación y asistencia de colocación con empresas de buena reputación, asegurando una trayectoria profesional que se alinee con tus objetivos y garantice un mejor futuro.",
+    "buttons": [
+      { "text": "España" },
+      { "text": "Polonia" },
+      { "text": "Italia" },
+      { "text": "Portugal" }
+    ],
+    "imageSrc": "/traineeship.webp",
+    "imageAlt": "Oportunidades de prácticas en Europa"
+  },
+  "customHeroStudy": {
+    "heading": "Estudiar",
+    "paragraph1": "Estudiar en Europa es más que solo obtener un título—es una oportunidad de obtener educación de clase mundial, experimentar culturas diversas y construir una base sólida para tu futura carrera",
+    "buttons": [
+      { "text": "Polonia" },
+      { "text": "Finlandia" },
+      { "text": "Alemania" },
+      { "text": "España" },
+      { "text": "Portugal" },
+      { "text": "Letonia" },
+      { "text": "Reino Unido" },
+      { "text": "Irlanda" },
+      { "text": "Canadá" }
+    ],
+    "imageSrc": "/study.webp",
+    "imageAlt": "Oportunidades de estudio en Europa y más allá"
+  },
+  "customHeroInvestor": {
+    "heading": "Inversor",
+    "paragraph1": "Si eres un inversor que busca explorar oportunidades en Europa, ofrecemos múltiples proyectos en varios sectores adaptados para el crecimiento y la rentabilidad. Nuestro equipo proporciona apoyo integral para ayudarte a identificar la inversión correcta, navegar las regulaciones y lograr tus objetivos estratégicos en el mercado europeo.",
+    "buttons": [
+      { "text": "Alemania" },
+      { "text": "Eslovaquia" },
+      { "text": "España" },
+      { "text": "Lituania" },
+      { "text": "Finlandia" }
+    ],
+    "imageSrc": "/invest.webp",
+    "imageAlt": "Oportunidades de inversión en Europa"
+  },
+  "customHeroVisit": {
+    "heading": "Visitar",
+    "paragraph1": "Si deseas explorar Europa y buscas una visa de visitante, contacta a nuestro equipo de soporte. Proporcionamos orientación integral y asistencia durante todo el proceso, asegurando una experiencia de visa sin problemas y ayudándote a realizar tus planes de viaje con confianza y facilidad.",
+    "buttons": [
+      { "text": "Polonia" },
+      { "text": "Suiza" },
+      { "text": "Alemania" },
+      { "text": "Letonia" },
+      { "text": "Finlandia" },
+      { "text": "Luxemburgo" }
+    ],
+    "imageSrc": "/visit.webp",
+    "imageAlt": "Oportunidades de visita a Europa"
   },
   "footer": {
     "newsletter": {

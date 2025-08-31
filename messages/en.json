@@ -15,8 +15,8 @@
     "jobseeker": "Jobseeker"
   },
   "home": {
-    "title1": "How can we ",
-    "title2": "support you?",
+    "title1": "How can we support you?",
+    "title2": "",
     "btn1": "Recruiter",
     "btn2": "Jobseeker",
     "btn3": "Migrate",
@@ -422,6 +422,90 @@
         "label": "Online Services"
       }
     }
+  },
+  "customHero": {
+    "heading": "Work",
+    "paragraph1": "Not sure which European country best suits your profile, skills, and experience? Choosing the right path is the first step towards building a secure and rewarding future.",
+    "paragraph2": "At [EU Career Serwis], we provide personalized career guidance to help you explore opportunities with trusted European employers. Our expert team will carefully assess your qualifications and recommend the most suitable options for your career growth.",
+    "buttons": [
+      { "text": "Poland" },
+      { "text": "Slovakia" },
+      { "text": "Lithuania" },
+      { "text": "Czech Republic" },
+      { "text": "Serbia" },
+      { "text": "Spain" },
+      { "text": "Croatia" }
+    ],
+    "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
+    "imageAlt": "European career opportunities"
+  },
+  "customHeroMigrate": {
+    "heading": "Migrate",
+    "paragraph1": "Migrate to Europe with EU Career Serwis and take the first step toward a successful and rewarding future abroad. We specialize in guiding professionals like you to the right country, the right opportunity, and the right career path.",
+    "buttons": [
+      { "text": "Germany" },
+      { "text": "Spain" },
+      { "text": "Italy" },
+      { "text": "Finland" }
+    ],
+    "imageSrc": "/migrate.webp",
+    "imageAlt": "Migration to Europe opportunities"
+  },
+  "customHeroTraineeship": {
+    "heading": "Traineeship",
+    "paragraph1": "We provide traineeship opportunities across multiple countries for skilled professionals. Upon successful completion of the training, you will receive a certification and placement assistance with reputable companies, ensuring a career path that aligns with your goals and secures a better future.",
+    "buttons": [
+      { "text": "Spain" },
+      { "text": "Poland" },
+      { "text": "Italy" },
+      { "text": "Portugal" }
+    ],
+    "imageSrc": "/traineeship.webp",
+    "imageAlt": "Traineeship opportunities in Europe"
+  },
+  "customHeroStudy": {
+    "heading": "Study",
+    "paragraph1": "Studying in Europe is more than just earning a degree—it's an opportunity to gain world-class education, experience diverse cultures, and build a strong foundation for your future career",
+    "buttons": [
+      { "text": "Poland" },
+      { "text": "Finland" },
+      { "text": "Germany" },
+      { "text": "Spain" },
+      { "text": "Portugal" },
+      { "text": "Latvia" },
+      { "text": "UK" },
+      { "text": "Ireland" },
+      { "text": "Canada" }
+    ],
+    "imageSrc": "/study.webp",
+    "imageAlt": "Study opportunities in Europe and beyond"
+  },
+  "customHeroInvestor": {
+    "heading": "Investor",
+    "paragraph1": "If you are an investor looking to explore opportunities in Europe, we offer multiple projects across various sectors tailored for growth and profitability. Our team provides end-to-end support to help you identify the right investment, navigate regulations, and achieve your strategic goals in the European market.",
+    "buttons": [
+      { "text": "Germany" },
+      { "text": "Slovakia" },
+      { "text": "Spain" },
+      { "text": "Lithuania" },
+      { "text": "Finland" }
+    ],
+    "imageSrc": "/invest.webp",
+    "imageAlt": "Investment opportunities in Europe"
+  },
+  "customHeroVisit": {
+    "heading": "Visit",
+    "paragraph1": "If you wish to explore Europe and are seeking a visitor visa, contact our support team We provide comprehensive guidance and assistance throughout the entire process, ensuring a seamless visa experience and helping you realize your travel plans with confidence and ease.",
+    "buttons": [
+      { "text": "Poland" },
+      { "text": "Switzerland" },
+      { "text": "Germany" },
+      { "text": "Latvia" },
+      { "text": "Finland" },
+      { "text": "Luxembourg" }
+    ],
+    "imageSrc": "/visit.webp",
+    "imageAlt": "Visit Europe opportunities"
   },
   "footer": {
     "newsletter": {
