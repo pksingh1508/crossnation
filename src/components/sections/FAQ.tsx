@@ -15,11 +15,16 @@ export function FAQ() {
   const locale = useLocale();
 
   const faqKeys = [
-    "services",
-    "countries",
-    "duration",
-    "visa",
-    "fees",
+    "choose",
+    "trust",
+    "realJobs",
+    "documents",
+    "industries",
+    "startWork",
+    "support",
+    "employers",
+    "difference",
+    "clients",
   ] as const;
 
   return (

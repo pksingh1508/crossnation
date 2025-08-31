@@ -42,25 +42,45 @@
     "title": "Preguntas Frecuentes",
     "subtitle": "Obtén respuestas a preguntas comunes sobre nuestros servicios y procesos",
     "questions": {
-      "services": {
-        "question": "¿Qué servicios proporcionan?",
-        "answer": "Ofrecemos servicios como orientación para estudios en el extranjero, oportunidades de trabajo, asesoramiento de inversión, apoyo de migración, mentoría y asistencia para buscadores de empleo."
+      "choose": {
+        "question": "¿Por qué debería elegir EU Career Serwis para mi carrera en Europa?",
+        "answer": "Porque somos una empresa de reclutamiento registrada y de confianza en Polonia, totalmente conforme con las leyes de la UE, lo que garantiza transparencia, seguridad legal y oportunidades fiables."
       },
-      "countries": {
-        "question": "¿Con qué países trabajan?",
-        "answer": "Trabajamos con múltiples países incluyendo EE.UU., Reino Unido, Canadá, Australia y varias naciones europeas y asiáticas dependiendo de los requisitos del servicio."
+      "trust": {
+        "question": "¿Por qué debería confiar en EU Career Serwis hoy?",
+        "answer": "Porque ponemos a las personas primero: protegemos a los candidatos del fraude, garantizamos empleos legales y ayudamos a las empresas a crecer con la fuerza laboral adecuada."
       },
-      "duration": {
-        "question": "¿Cuánto tiempo toma el proceso?",
-        "answer": "La duración varía dependiendo del tipo de servicio. En promedio, los procesos pueden tomar desde unas pocas semanas hasta varios meses."
+      "realJobs": {
+        "question": "¿Cómo sé que los trabajos son reales y seguros?",
+        "answer": "Solo trabajamos con empleadores verificados que cumplen con los estándares laborales de la UE, garantizando contratos genuinos y condiciones de trabajo seguras."
       },
-      "visa": {
-        "question": "¿Proporcionan asistencia con visas?",
-        "answer": "Sí, asistimos con solicitudes de visa, documentación y preparación de entrevistas para asegurar un proceso fluido."
+      "documents": {
+        "question": "¿Pueden ayudar con permisos de trabajo y documentos?",
+        "answer": "Sí. Trabajamos con expertos legales para preparar y procesar todos los documentos: permisos de trabajo, visas y contratos, para que no enfrentes estrés ni retrasos."
       },
-      "fees": {
-        "question": "¿Cuáles son sus tarifas?",
-        "answer": "Nuestras tarifas dependen del tipo de servicio que elijas. Proporcionamos precios transparentes por adelantado sin cargos ocultos."
+      "industries": {
+        "question": "¿En qué industrias reclutan?",
+        "answer": "Nos especializamos en logística, construcción, manufactura, hostelería y trabajos de temporada, conectando a los candidatos con los sectores que más necesitan trabajadores."
+      },
+      "startWork": {
+        "question": "¿Qué tan rápido puedo comenzar a trabajar?",
+        "answer": "Muchas colocaciones se completan en un plazo de 2 a 6 semanas, dependiendo del puesto y el país, gracias a nuestro proceso de reclutamiento rápido y eficiente."
+      },
+      "support": {
+        "question": "¿Brindan apoyo después de conseguir el trabajo?",
+        "answer": "Sí. Ayudamos con la integración, el alojamiento, la reubicación y el apoyo continuo para que te sientas seguro y confiado en el extranjero."
+      },
+      "employers": {
+        "question": "¿Puede EU Career Serwis también ayudar a los empleadores a encontrar trabajadores?",
+        "answer": "Por supuesto. Ofrecemos soluciones de personal y subcontratación a empresas en toda Europa, garantizando trabajadores fiables, calificados y motivados."
+      },
+      "difference": {
+        "question": "¿Qué hace a EU Career Serwis diferente de otras agencias?",
+        "answer": "Combinamos experiencia legal, conocimiento en reclutamiento internacional y atención personalizada para cada cliente, construyendo confianza y éxito a largo plazo."
+      },
+      "clients": {
+        "question": "¿Cómo trata EU Career Serwis a sus clientes?",
+        "answer": "Tratamos a cada cliente con respeto, honestidad y profesionalismo. Ya sea que seas un buscador de empleo o un empleador, escuchamos tus necesidades, brindamos información clara y ofrecemos apoyo completo durante todo el proceso. Nuestra prioridad es construir confianza y relaciones a largo plazo, no solo resultados a corto plazo."
       }
     },
     "cta1": "¿Aún tienes preguntas?",

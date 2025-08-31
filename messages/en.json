@@ -42,25 +42,45 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Get answers to common questions about our services and processes",
     "questions": {
-      "services": {
-        "question": "What services do you provide?",
-        "answer": "We offer services such as study abroad guidance, work opportunities, investment advice, migration support, mentorship, and job-seeker assistance."
+      "choose": {
+        "question": "Why should I choose EU Career Serwis for my career in Europe?",
+        "answer": "Because we are a registered and trusted recruitment company in Poland, fully compliant with EU laws, ensuring transparency, legal security, and reliable opportunities."
       },
-      "countries": {
-        "question": "Which countries do you work with?",
-        "answer": "We work with multiple countries including the USA, UK, Canada, Australia, and various European and Asian nations depending on the service requirements."
+      "trust": {
+        "question": "Why should I trust EU Career Serwis today?",
+        "answer": "Because we put people first—protecting candidates from fraud, ensuring legal jobs, and helping companies grow with the right workforce."
       },
-      "duration": {
-        "question": "How long does the process take?",
-        "answer": "The duration varies depending on the type of service. On average, processes can take anywhere from a few weeks to several months."
+      "realJobs": {
+        "question": "How do I know the jobs are real and safe?",
+        "answer": "We only work with verified employers who meet EU labor standards, guaranteeing genuine contracts and safe working conditions."
       },
-      "visa": {
-        "question": "Do you provide visa assistance?",
-        "answer": "Yes, we assist with visa applications, documentation, and interview preparation to ensure a smooth process."
+      "documents": {
+        "question": "Can you help with work permits and documents?",
+        "answer": "Yes. We work with legal experts to prepare and process all documents—work permits, visas, and contracts—so you don’t face stress or delays."
       },
-      "fees": {
-        "question": "What are your fees?",
-        "answer": "Our fees depend on the type of service you choose. We provide transparent pricing upfront with no hidden charges."
+      "industries": {
+        "question": "What industries do you recruit for?",
+        "answer": "We specialize in logistics, construction, manufacturing, hospitality, and seasonal work, connecting candidates with sectors that need workers the most."
+      },
+      "startWork": {
+        "question": "How quickly can I start working?",
+        "answer": "Many placements are completed within 2–6 weeks, depending on the role and country, thanks to our fast and efficient recruitment process."
+      },
+      "support": {
+        "question": "Do you provide support after I get the job?",
+        "answer": "Yes. We assist with onboarding, accommodation, relocation, and ongoing support so you feel secure and confident abroad."
+      },
+      "employers": {
+        "question": "Can EU Career Serwis also help employers find workers?",
+        "answer": "Absolutely. We provide staffing and outsourcing solutions to companies across Europe, ensuring reliable, skilled, and motivated workers."
+      },
+      "difference": {
+        "question": "What makes EU Career Serwis different from other agencies?",
+        "answer": "We combine legal expertise, international recruitment experience, and personal care for every client—building trust and long-term success."
+      },
+      "clients": {
+        "question": "How does EU Career Serwis treat its clients?",
+        "answer": "We treat every client with respect, honesty, and professionalism. Whether you are a job seeker or an employer, we listen to your needs, provide clear information, and offer full support throughout the process. Our priority is to build long-term trust and relationships, not just short-term results."
       }
     },
     "cta1": "Still have questions?",
