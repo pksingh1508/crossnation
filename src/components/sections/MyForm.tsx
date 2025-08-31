@@ -15,6 +15,8 @@ import Flag from "react-country-flag";
 import countryData from "@/constants/countrycode.json";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "../ui/button";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 interface CountryCode {
   country: string;
@@ -28,6 +30,7 @@ export function MyForm() {
   const [selectedCountry, setSelectedCountry] = useState<CountryCode>(
     countryData.find((country) => country.iso === "US") || countryData[0]
   );
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -55,7 +58,7 @@ export function MyForm() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validate required fields
@@ -71,17 +74,43 @@ export function MyForm() {
       return;
     }
 
-    console.log("Form submitted successfully:", {
-      ...formData,
-      countryCode: selectedCountry.code,
-      fullPhone: `${selectedCountry.code} ${formData.phone}`,
-    });
+    // Set loading to true when starting the API call
+    setLoading(true);
 
-    // Clear form after successful submission
-    clearForm();
-
-    // Show success message
-    window.alert(t("successMessage"));
+    // try to send data to supabase
+    try {
+      const res = await axios.post("/api/form-submitted", {
+        firstname: formData.firstName,
+        lastname: formData.lastName,
+        email: formData.email,
+        phone: `${selectedCountry.code} ${formData.phone}`,
+        usertype: formData.userType,
+        isconsulted: false,
+      });
+      if (res.status === 201) {
+        clearForm();
+        // window.alert(t("successMessage"));
+        toast.success(t("successMessage"), {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Error submitting form", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    } finally {
+      // Set loading to false when API call completes (success or error)
+      setLoading(false);
+    }
   };
 
   return (
@@ -237,10 +266,11 @@ export function MyForm() {
 
         <Button
           type="submit"
-          className="w-full font-montserrat font-semibold cursor-pointer  hover:bg-yellow-400 hover:text-black hover:border-yellow-400"
+          disabled={loading}
+          className="w-full font-montserrat font-semibold cursor-pointer  hover:bg-yellow-400 hover:text-black hover:border-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed"
           variant="brandOutline"
         >
-          {t("submitButton")}
+          {loading ? t("loadingMessage") : t("submitButton")}
         </Button>
       </form>
     </div>

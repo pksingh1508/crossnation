@@ -15,8 +15,8 @@
     "jobseeker": "Jobseeker"
   },
   "home": {
-    "title1": "How can we support you?",
-    "title2": "",
+    "title1": "How can we ",
+    "title2": "support you?",
     "btn1": "Recruiter",
     "btn2": "Jobseeker",
     "btn3": "Migrate",
@@ -25,17 +25,18 @@
     "cta2": "we offer free professional counselling."
   },
   "about": {
-    "title": "About Us",
+    "smallTitle": "About EU Career Serwis",
+    "title": "Europe’s Premier Immigration and Recruitment Consultancy",
     "description": {
-      "paragraph1": "With over 15 years of experience in international education, immigration, and investment consulting, we are your trusted partner in navigating global opportunities.",
-      "paragraph2": "Our team of certified consultants has helped thousands of individuals and families achieve their dreams of studying, working, and investing abroad. We provide personalized guidance tailored to your unique goals and circumstances."
+      "paragraph1": "EU Career Serwis is a trusted European consultancy specializing in employment visas, career advisory, and international recruitment. We provide tailored immigration and workforce solutions for individuals and businesses, covering skilled, semi-skilled, and unskilled placements across Europe.",
+      "paragraph2": "Operating under the guidance of qualified Polish lawyers, we ensure legal compliance, transparency, and professionalism in every case. Our mission is to help individuals achieve their career goals abroad while supporting businesses in securing the right talent efficiently and ethically."
     },
     "stats": {
       "experience": "Years of Experience",
       "successRate": "Success Rate"
     },
     "imageAlt": "Consulting",
-    "trustedBadge": "Trusted by Thousands"
+    "trustedBadge": "Europe’s Premier Immigration"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -68,7 +69,7 @@
   },
   "migrate": {
     "title": "Migrate with Ease",
-    "description": "Make your dream of living abroad a reality. Our migration experts provide comprehensive support for all visa categories and immigration programs.",
+    "description": "Migrate to Europe with EU Career Serwis and take the first step toward a successful and rewarding future abroad. We specialize in guiding professionals like you to the right country, the right opportunity, and the right career path.",
     "features": {
       "skilled": "Skilled worker and family visa applications",
       "express": "Express entry and provincial nominee programs",
@@ -324,6 +325,7 @@
       "termsText": "I accept the",
       "termsLink": "Terms and Conditions",
       "submitButton": "Send Message",
+      "loadingMessage": "Submitting...",
       "successMessage": "Form submitted successfully! We'll get back to you soon.",
       "errorMessage": "Please fill in all required fields and accept terms",
       "required": "required"

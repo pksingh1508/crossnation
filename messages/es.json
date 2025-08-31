@@ -15,27 +15,28 @@
     "jobseeker": "Solicitante"
   },
   "home": {
-    "title1": "¿Cómo podemos apoyarte?",
-    "title2": "",
+    "title1": "¿Cómo podemos ",
+    "title2": "apoyarte?",
     "btn1": "Reclutador",
-    "btn2": "Buscador de empleo",
+    "btn2": "Solicitante",
     "btn3": "Migrar",
     "btn4": "Empleador",
     "cta1": "Si no estás seguro de tus opciones",
     "cta2": "te ofrecemos asesoría profesional gratuita."
   },
   "about": {
-    "title": "Acerca de",
+    "smallTitle": "Sobre EU Career Serwis",
+    "title": "La consultoría líder en inmigración y reclutamiento en Europa",
     "description": {
-      "paragraph1": "Con más de 15 años de experiencia en educación internacional, inmigración y consultoria de inversiones, somos tu socio de confianza en la navegación de oportunidades globales.",
-      "paragraph2": "Nuestro equipo de consultores certificados ha ayudado a miles de individuos y familias a lograr sus sueños de estudiar, trabajar e invertir en el extranjero. Brindamos asesoramiento personalizado adaptado a tus metas y circunstancias únicas."
+      "paragraph1": "EU Career Serwis es una consultoría europea de confianza especializada en visados de empleo, asesoría profesional y contratación internacional. Ofrecemos soluciones personalizadas de inmigración y fuerza laboral para particulares y empresas, abarcando colocaciones de trabajadores calificados, semi-calificados y no calificados en toda Europa.",
+      "paragraph2": "Bajo la orientación de abogados polacos cualificados, garantizamos el cumplimiento legal, la transparencia y el profesionalismo en cada caso. Nuestra misión es ayudar a las personas a alcanzar sus metas profesionales en el extranjero, al mismo tiempo que apoyamos a las empresas en la adquisición del talento adecuado de manera eficiente y ética."
     },
     "stats": {
       "experience": "Años de Experiencia",
       "successRate": "Tasa de Éxito"
     },
     "imageAlt": "Consultoría",
-    "trustedBadge": "Confiado por miles"
+    "trustedBadge": "La agencia líder de inmigración en Europa"
   },
   "faq": {
     "title": "Preguntas Frecuentes",
@@ -68,7 +69,7 @@
   },
   "migrate": {
     "title": "Migra con Facilidad",
-    "description": "Haz realidad tu sueño de vivir en el extranjero. Nuestros expertos en migración brindan apoyo integral para todas las categorías de visa y programas de inmigración.",
+    "description": "Migra a Europa con EU Career Serwis y da el primer paso hacia un futuro exitoso y gratificante en el extranjero. Estamos especializados en guiar a profesionales como tú hacia el país adecuado, la oportunidad correcta y la trayectoria profesional ideal.",
     "features": {
       "skilled": "Solicitudes de visa para trabajadores calificados y familiares",
       "express": "Programas de entrada rápida y nominados provinciales",
@@ -324,6 +325,7 @@
       "termsText": "Acepto los",
       "termsLink": "Términos y Condiciones",
       "submitButton": "Enviar Mensaje",
+      "loadingMessage": "Enviando...",
       "successMessage": "¡Formulario enviado exitosamente! Te contactaremos pronto.",
       "errorMessage": "Por favor completa todos los campos requeridos y acepta los términos",
       "required": "requerido"

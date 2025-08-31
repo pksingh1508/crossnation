@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fontSans, fontMono } from "@/fonts";
 import "./globals.css";
 import { siteConfig } from "@/constants/site";
+import { Toaster } from "react-hot-toast";
 
 const fonts = `${fontSans.variable} ${fontMono.variable}`;
 
@@ -18,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang={siteConfig.defaultLanguage}>
-      <body className={fonts}>{children}</body>
+      <body className={fonts}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

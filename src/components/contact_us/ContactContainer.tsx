@@ -119,7 +119,7 @@ export function ContactContainer() {
           </p>
         </motion.div>
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
             <motion.div
               className="grid lg:grid-cols-2 gap-12 items-start"
               variants={containerVariants}

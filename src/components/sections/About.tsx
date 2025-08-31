@@ -3,6 +3,7 @@
 import { useTranslations } from "@/hooks/useTranslations";
 import { useEffect, useState } from "react";
 import { TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 interface CounterProps {
   target: number;
@@ -61,20 +62,17 @@ export function About() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 {/* Placeholder for the consulting image */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 bg-amber-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="w-10 h-10 text-amber-600" />
-                    </div>
-                    <p className="text-gray-600 text-lg font-medium">
-                      {t("imageAlt")}
-                    </p>
-                  </div>
-                </div>
+                <Image
+                  src="/aboutImg.webp"
+                  alt="Consulting"
+                  width={600}
+                  height={400}
+                  className="w-full h-[70vh] md:h-[80vh] object-cover"
+                />
               </div>
 
               {/* Trusted by Thousands Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-amber-400 to-orange-400 text-white px-6 py-4 rounded-2xl shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute -bottom-6 left-6 bg-gradient-to-r from-amber-400 to-orange-400 text-white px-6 py-4 rounded-2xl shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
                 <div className="flex items-center gap-2">
                   <TrendingUp className="w-5 h-5" />
                   <span className="font-bold text-sm md:text-base">
@@ -87,7 +85,8 @@ export function About() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                <p className="text-lg text-amber-600 mb-4">{t("smallTitle")}</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   {t("title")}
                 </h2>
 

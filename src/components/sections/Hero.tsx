@@ -32,14 +32,14 @@ export function Hero() {
         <div className="max-w-7xl mx-auto flex flex-col pt-8 md:pt-0 md:flex-row items-center justify-between">
           {/* Main Content */}
 
-          <motion.div className="w-[90%] md:w-[50vw]">
+          <motion.div className="w-[90%] md:w-[50vw] rounded-md overflow-hidden">
             <Image
               src="/home_compressed.jpg"
               alt="Home"
               width={160}
               height={48}
               unoptimized
-              className="w-[90vw] md:w-[40vw] h-[70vh] md:h-[70vh] object-cover"
+              className="w-[90vw] md:w-[40vw] h-[70vh] md:h-[70vh] object-cover rounded-md"
             />
           </motion.div>
 
@@ -48,12 +48,12 @@ export function Hero() {
             {/* Heading */}
             <div className="text-center">
               <h2
-                className={`text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 ${fontPoppins.className}`}
+                className={`text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-700 ${fontPoppins.className}`}
               >
                 {t("title1")}
               </h2>
               <p
-                className={`text-4xl sm:text-5xl md:text-6xl text-gray-900 ${fontPoppins.className}`}
+                className={`text-4xl sm:text-5xl font-extrabold text-gray-700 ${fontPoppins.className}`}
               >
                 {t("title2")}
               </p>
