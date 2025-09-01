@@ -5,12 +5,15 @@ import { StepWork } from "@/components/work/StepWork";
 import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Inspiration } from "@/components/sections/Inspiration";
+import WorkInfo from "./WorkInfo";
 
 export function WorkContent() {
   const tPoland = useTranslations("works.steps.poland");
   const tStep1 = useTranslations("works.steps.step1");
   const tStep2 = useTranslations("works.steps.step2");
   const tStep3 = useTranslations("works.steps.step3");
+  const tStep4 = useTranslations("works.steps.step4");
+  const tStep5 = useTranslations("works.steps.step5");
 
   return (
     <>
@@ -24,6 +27,9 @@ export function WorkContent() {
         paragraph3={tPoland("paragraph3")}
         paragraph4={tPoland("paragraph4")}
       />
+      {/* work info step */}
+      <WorkInfo />
+
       {/* Step - 1 */}
       <StepWork
         image="/poland-work-permit-1.webp"
@@ -54,6 +60,27 @@ export function WorkContent() {
         paragraph2={tStep3("paragraph2")}
         paragraph3={tStep3("paragraph3")}
         paragraph4={tStep3("paragraph4")}
+        isReversed={true}
+      />
+      {/* Step - 4 */}
+      <StepWork
+        image="/poland-work-permit-1.webp"
+        imageAlt={tStep4("imageAlt")}
+        heading={tStep4("heading")}
+        paragraph1={tStep4("paragraph1")}
+        paragraph2={tStep4("paragraph2")}
+        paragraph3={tStep4("paragraph3")}
+        paragraph4={tStep4("paragraph4")}
+      />
+      {/* Step - 5 */}
+      <StepWork
+        image="/poland-employer-2.webp"
+        imageAlt={tStep5("imageAlt")}
+        heading={tStep5("heading")}
+        paragraph1={tStep5("paragraph1")}
+        paragraph2={tStep5("paragraph2")}
+        paragraph3={tStep5("paragraph3")}
+        paragraph4={tStep5("paragraph4")}
         isReversed={true}
       />
 
