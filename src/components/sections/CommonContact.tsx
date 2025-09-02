@@ -4,10 +4,13 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { MyForm } from "./MyForm";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 export function CommonContact() {
   const t = useTranslations("pages.commonContact");
-
+  const locale = useLocale();
+  const router = useRouter();
   return (
     <div className="w-full min-h-[80vh] bg-white">
       <div className="container mx-auto max-w-7xl px-4 py-10">
@@ -29,28 +32,32 @@ export function CommonContact() {
                 <RippleButton
                   variant="brandOutline"
                   size="lg"
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400"
+                  onClick={() => router.push(`/${locale}/work`)}
+                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
                 >
                   {t("buttons.work")}
                 </RippleButton>
                 <RippleButton
                   variant="brandOutline"
                   size="lg"
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400"
+                  onClick={() => router.push(`/${locale}/migrate`)}
+                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
                 >
-                  {t("buttons.invest")}
+                  {t("buttons.migrate")}
                 </RippleButton>
                 <RippleButton
                   variant="brandOutline"
                   size="lg"
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-black hover:text-white hover:border-black"
+                  onClick={() => router.push(`/${locale}/employer`)}
+                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-black hover:text-white hover:border-black cursor-pointer"
                 >
                   {t("buttons.employer")}
                 </RippleButton>
                 <RippleButton
                   variant="brandOutline"
                   size="lg"
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-black hover:text-white hover:border-black"
+                  onClick={() => router.push(`/${locale}/recruiter`)}
+                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-black hover:text-white hover:border-black cursor-pointer"
                 >
                   {t("buttons.recruiter")}
                 </RippleButton>

@@ -5,6 +5,7 @@ import { Inspiration } from "@/components/sections/Inspiration";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { AnyQuestion } from "@/components/sections/AnyQuestion";
 import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
+import { RecruiterContent } from "@/components/recruiter/RecruiterContent";
 
 export const metadata: Metadata = {
   title: "Recruiter Services | CountryNation",
@@ -19,6 +20,7 @@ export default function RecruiterPage() {
     <div className="min-h-screen">
       <CommonContact />
       {/* custom recruiter page content */}
+      <RecruiterContent />
       <Inspiration />
       <WhyChooseUs />
       <AnyQuestion />

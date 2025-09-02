@@ -355,7 +355,7 @@
       "description": "Ready to take the next step? Whether you're looking for work opportunities, investment options, hiring solutions, or partnership possibilities, we're here to help you connect with the right people and opportunities.",
       "buttons": {
         "work": "Work",
-        "invest": "Invest",
+        "migrate": "Migrate",
         "employer": "Employer",
         "recruiter": "Recruiter"
       },
@@ -431,6 +431,239 @@
       "heading": "EU Career Serwis Works",
       "title": "Safe and Legal Non-Skilled Job Opportunities in Europe",
       "paragraph": "At EU Career Serwis, we provide safe and legal non-skilled job opportunities in many European countries. No advanced qualifications are needed—only your willingness to work and grow. We handle permits, contracts, and relocation support to make the process stress-free. Accommodation and guidance are arranged for your comfort and safety. Available roles include: Truck drivers, Taxi drivers, Delivery drivers (food, parcels, courier), Warehouse workers, Forklift operators, Loading & unloading staff, Movers & packers, Assembly line workers, Machine operators (basic level), Packaging staff, Quality control assistants, Production helpers, Textile workers, Electronics & automotive plant helpers, General laborers, Helpers for electricians, plumbers, carpenters, Painters & decorators, Road construction workers, Cleaning & janitorial staff, Gardening & landscaping workers, Fruit & vegetable pickers, Greenhouse workers, Farm assistants (animals & crops), Seasonal harvest workers, Flower plantation helpers, Hotel housekeeping staff, Kitchen helpers, Dishwashers, Restaurant & fast-food staff, Laundry assistants, Care home assistants, Cleaners & sanitizing staff, and Security guards (basic level)."
+    }
+  },
+  "employer": {
+    "info": {
+      "heading": "Meet All Your Legal Workforce Needs with EU Career Serwis",
+      "paragraph1": "EU Career Serwis is a licensed recruitment consultancy based in Poland, specializing in outsourcing and offshore staffing solutions for European companies. We provide skilled and non-skilled workers from Asia, Africa, and other regions, helping businesses across Europe effectively address labor shortages while ensuring full legal compliance.",
+      "paragraph2": "Our services are transparent, cost-effective, and aligned with both Polish and European labor laws. Employers face no hidden fees, as we follow fair and ethical recruitment practices that create a win-win situation for both companies and candidates. With access to a wide talent pool, we cover diverse industries such as manufacturing, logistics, construction, hospitality, agriculture, and transportation.",
+      "paragraph3": "We handle the complete recruitment cycle from start to finish. This includes candidate sourcing, background screening, and documentation support, as well as managing work permits, visa applications, and relocation assistance. All legal procedures are supervised by experienced Polish lawyers, ensuring every placement is safe, reliable, and fully compliant with immigration and employment regulations.",
+      "paragraph4": "At EU Career Serwis, we focus on building long-term partnerships with employers by delivering workforce solutions that are professional, timely, and tailored to each company’s needs. Our dedication to quality, integrity, and legal compliance has made us a trusted recruitment partner for businesses across leading European cities.",
+      "paragraph5": "Whether your requirement is for seasonal staff or permanent employees, we provide a seamless recruitment process that saves time, reduces administrative burden, and ensures workforce stability. With EU Career Serwis, you can be confident that your staffing requirements are managed efficiently and responsibly."
+    },
+    "step1": {
+      "imageAlt": "Tailored Hiring Solutions for Polish Employers",
+      "heading": "Tailored Hiring Solutions for Polish Employers",
+      "paragraph1": "At EU Career Serwis, we understand that every Polish employer has unique staffing needs. That’s why we provide customized recruitment solutions designed to meet the specific demands of your business. Whether you require skilled specialists, semi-skilled workers, or general labor, we source the right candidates from trusted international regions, ensuring both quality and reliability.",
+      "paragraph2": "We take care of the entire recruitment process on your behalf, including candidate selection, work permit arrangements, visa applications, and relocation support. All legal procedures are handled with the guidance of experienced Polish lawyers, giving you complete confidence in compliance with labor and immigration laws.",
+      "paragraph3": "Our solutions not only help you save time and reduce costs but also guarantee that your workforce is ready to perform from day one. By combining efficiency with ethical recruitment practices, we help Polish employers overcome workforce shortages, achieve operational stability, and focus on long-term business growth.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Global Talent Sourcing Across Regions",
+      "heading": "Global Talent Sourcing Across Regions",
+      "paragraph1": "At EU Career Serwis, we specialize in connecting Polish employers with a diverse pool of international talent from across Asia, Africa, and Eastern Europe. Our wide-reaching recruitment network allows us to identify, screen, and supply motivated candidates who are ready to fill roles in both skilled and non-skilled categories. By sourcing talent globally, we help employers overcome local labor shortages and maintain a consistent, reliable workforce.",
+      "paragraph2": "We work closely with trusted recruitment partners abroad to ensure only qualified and pre-verified candidates are selected. Each worker undergoes a thorough assessment process to confirm their skills, experience, and readiness to adapt to Poland’s work environment. Whether employers require seasonal workers, project-based staff, or long-term employees, our global reach guarantees timely and effective staffing solutions.",
+      "paragraph3": "Our international sourcing strategy is built on transparency, compliance, and efficiency. Every candidate we place is supported with the necessary documentation, including work permits, visa processing, and relocation assistance, ensuring a seamless hiring experience for employers. By leveraging our worldwide recruitment capabilities, we provide Polish companies with access to dependable manpower that contributes to business growth and long-term success.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Diverse Workforce Categories Available",
+      "heading": "Diverse Workforce Categories Available",
+      "paragraph1": "At EU Career Serwis, we provide Polish employers with access to a wide range of workforce categories tailored to meet industry-specific demands. From general laborers to specialized professionals, we ensure that businesses can find the right talent for every role. Our recruitment covers both skilled and non-skilled positions, giving companies the flexibility to build teams that match their operational needs.",
+      "paragraph2": "For non-skilled roles, we supply reliable workers in areas such as logistics, warehousing, construction support, agriculture, hospitality, cleaning, and manufacturing. These employees bring dedication, adaptability, and efficiency, helping businesses maintain smooth operations in labor-intensive sectors.",
+      "paragraph3": "For skilled and semi-skilled positions, we recruit candidates such as drivers, machine operators, welders, technicians, and hospitality staff who bring proven expertise and hands-on experience. Each candidate is carefully screened to ensure they meet employer requirements and are ready to contribute from day one.",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Sectors Where We Make an Impact",
+      "heading": "Sectors Where We Make an Impact",
+      "paragraph1": "At EU Career Serwis, we provide workforce solutions tailored to the unique needs of multiple industries across Poland.",
+      "paragraph2": "Our recruitment supports manufacturing, logistics, construction, hospitality, agriculture, transportation, and warehousing, ensuring that companies can maintain smooth operations.",
+      "paragraph3": "We supply both skilled and non-skilled workers, helping businesses meet production targets, seasonal demands, and long-term staffing goals.",
+      "paragraph4": "By connecting employers with reliable, pre-screened candidates, we reduce recruitment risks and administrative burdens. Our goal is to empower each sector with the right talent, enabling sustainable growth and operational efficiency."
+    },
+    "step5": {
+      "imageAlt": "From Application to Arrival: The Hiring Journey",
+      "heading": "From Application to Arrival: The Hiring Journey",
+      "paragraph1": "At EU Career Serwis, we manage the entire process for international recruitment, ensuring a smooth and legal transition for candidates coming to Poland. The journey begins with obtaining a Work Permit, confirming legal authorization to work, followed by Visa Application Support at the embassy, including document preparation and appointment guidance. Once approved, we assist with Travel Arrangements, ensuring candidates reach Poland safely and on time.",
+      "paragraph2": "Upon arrival, we provide full support in navigating the Local System, including obtaining a PESEL Number for taxation, social security, and healthcare, as well as Opening a Bank Account for salary and daily transactions. By handling every step—from work permit and visa to arrival, registration, and financial setup—EU Career Serwis ensures candidates are fully prepared and compliant, while employers gain peace of mind knowing their workforce is ready to start legally and efficiently.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Ensuring Legal and Ethical Recruitment Standards",
+      "heading": "Ensuring Legal and Ethical Recruitment Standards",
+      "paragraph1": "At EU Career Serwis, we prioritize full compliance with Polish labor laws and European regulations in every step of the recruitment process. From sourcing candidates to final placement, we ensure that all procedures—including work permits, visa applications, contracts, and payroll—adhere to legal requirements, protecting both employers and employees.",
+      "paragraph2": "Our recruitment practices are grounded in ethics, transparency, and fairness. Every candidate is thoroughly screened, and all employment terms are clearly communicated, guaranteeing that workers are treated respectfully and receive their legal rights. By combining professional oversight, legal guidance from Polish lawyers, and verified procedures, we ensure that employers receive fully compliant, reliable talent while maintaining the highest standards of integrity.",
+      "paragraph3": "This approach not only minimizes legal risks for employers but also fosters trust, long-term partnerships, and a positive working environment for international employees. With EU Career Serwis, you gain peace of mind knowing your workforce solutions are both lawful and ethical.",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Building Long-Term Workforce Partnerships",
+      "heading": "Building Long-Term Workforce Partnerships",
+      "paragraph1": "At EU Career Serwis, we focus on creating lasting relationships with employers and employees by delivering consistent, reliable, and high-quality recruitment solutions. We don’t just fill vacancies; we understand each company’s unique workforce needs and provide tailored staffing strategies that support both short-term projects and long-term growth.",
+      "paragraph2": "By offering transparent processes, legal compliance, and continuous support, we ensure that employers receive dependable talent while employees experience fair treatment and clear communication. Our commitment to trust, professionalism, and efficiency enables businesses to reduce turnover, enhance productivity, and build stable, motivated teams that contribute to sustainable success.",
+      "paragraph3": "Through these partnerships, EU Career Serwis becomes more than a recruitment agency—we become a strategic workforce ally, helping companies meet evolving labor demands while fostering positive, long-term employment experiences for international staff.",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Why Partner with EU Career Serwis for Hiring in Poland",
+      "heading": "Why Partner with EU Career Serwis for Hiring in Poland",
+      "paragraph1": "EU Career Serwis is a licensed European recruitment consultancy dedicated to providing end-to-end staffing solutions for employers across Poland. We specialize in helping companies overcome labor shortages by connecting them with skilled, semi-skilled, and general workers from Asia, Africa, and Europe, ready to contribute from day one.",
+      "paragraph2": "Our services are fully compliant with Polish labor laws and immigration regulations, ensuring every placement is legal, transparent, and risk-free. From candidate sourcing and pre-screening to work permits, visa processing, and relocation support, we handle every step of the hiring process efficiently.",
+      "paragraph3": "We believe in clarity and fairness—all contracts and pricing are transparent with no hidden fees, giving employers confidence and peace of mind. Beyond hiring, we provide post-arrival support, including onboarding, accommodation guidance, health insurance, and registration with local authorities, making the transition seamless for both employees and employers.",
+      "paragraph4": "Trusted by businesses in Warsaw, Krakow, Gdansk, Wroclaw, Poznan, and beyond, EU Career Serwis is your reliable partner for legal, efficient, and successful international recruitment in Poland."
+    }
+  },
+  "recruiter": {
+    "info": {
+      "heading": "How EU Career Serwis Supports Our International Recruitment Partners",
+      "description": "EU Career Serwis works hand-in-hand with recruitment agencies across Asia and Africa to legally and efficiently place workers in Poland. As a licensed consultancy, we manage the entire process—from securing work permits and visas to providing post-arrival support.",
+      "bullets": {
+        "b1": "Legal Authorization – We are a licensed recruitment consultancy in Poland, ensuring all your candidates are processed under Polish labor and immigration law.",
+        "b2": "Work Permit & Visa Processing – We handle the complete paperwork, including work permits, embassy coordination, and visa approvals for your candidates.",
+        "b3": "Transparent Collaboration – We provide clear contracts, agreed timelines, and open communication to build trust and long-term partnerships.",
+        "b4": "Candidate Support in Poland – Once workers arrive, we assist them with accommodation, PESEL registration, bank accounts, and orientation for a smooth start.",
+        "b5": "Access to Employers in Poland – We connect your candidates with verified Polish companies in sectors like logistics, construction, manufacturing, hospitality, and agriculture.",
+        "b6": "Ongoing Partnership Growth – We value international partners and support them in expanding their business through ethical, reliable, and compliant recruitment."
+      }
+    },
+    "step1": {
+      "imageAlt": "Partner with EU Career Serwis",
+      "heading": "Partnering with EU Career Serwis",
+      "paragraph1": "Collaborating with EU Career Serwis opens the door to a wide range of recruitment opportunities across Poland’s growing industries. As a licensed and compliant consultancy, we serve as a trusted bridge between international recruitment partners and Polish employers. By joining hands with us, you gain direct access to a structured hiring process, reliable legal support, and a strong network of companies seeking skilled, semi-skilled, and non-skilled workers. Our experience in navigating Poland’s labor market ensures that every placement is secure, transparent, and tailored to employer requirements.",
+      "paragraph2": "Beyond simply filling vacancies, we focus on creating long-term partnerships that deliver consistent value for all stakeholders. We provide our partners with end-to-end guidance — from work permit applications and visa assistance to onboarding and post-arrival support for workers.",
+      "paragraph3": "By working with EU Career Serwis, partners can confidently expand their business scope, strengthen their reputation, and contribute to ethical global workforce mobility while helping employers in Poland overcome critical labor shortages.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Global B2B2C Recruitment Model",
+      "heading": "Our Global B2B2C Recruitment Model Explained",
+      "paragraph1": "At EU Career Serwis, we operate on a modern B2B2C recruitment model designed to simplify international hiring for Polish employers and recruitment partners worldwide. In this approach, we collaborate directly with trusted agencies (B2B) in regions such as Asia and Africa, who connect us with qualified candidates (B2C). This seamless structure ensures that every stage of the process — from candidate sourcing to work permit approval and visa issuance — is handled efficiently, legally, and transparently. It allows us to deliver well-prepared workers while ensuring employers’ staffing needs are met without delays.",
+      "paragraph2": "This model creates value for all parties involved: employers benefit from a reliable workforce, partners gain access to a trusted legal framework, and workers enjoy a safe and supported pathway to employment in Poland.",
+      "paragraph3": "By combining international recruitment reach with local expertise, EU Career Serwis ensures compliance with Polish labor laws and immigration policies while maintaining ethical standards in every placement. Our B2B2C system is more than just a hiring method — it is a proven strategy for building sustainable, long-term workforce solutions.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Recruitment Ally Eligibility",
+      "heading": "Who Can Join as a Recruitment Ally?",
+      "paragraph1": "EU Career Serwis welcomes recruitment agencies, independent consultants, and training centers from Asia, Africa, and other global regions who are committed to ethical hiring practices and transparency. Whether you are a small agency with access to skilled or non-skilled candidates or a larger organization managing high recruitment volumes, you can become our trusted ally in supplying workers to Poland. What matters most is your dedication to professionalism, candidate welfare, and compliance with international standards.",
+      "paragraph2": "By partnering with us, you gain access to a legally structured framework backed by Polish labor and immigration laws, ensuring smooth processes for both employers and workers. We provide our allies with complete guidance on work permits, visa applications, contracts, and post-arrival support, making the partnership beneficial and sustainable. This collaboration allows you to expand your business opportunities while helping candidates secure legitimate employment and employers receive dependable manpower in Poland.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Value and Benefits for Partners",
+      "heading": "Value & Benefits We Deliver to Our Partners",
+      "paragraph1": "At EU Career Serwis, we provide our partners with a comprehensive range of benefits designed to make international recruitment seamless and profitable. By collaborating with us, partners gain access to a pre-screened talent pool, structured recruitment processes, and direct connections with verified employers in Poland. Our legal support ensures every placement is fully compliant with labor and immigration laws, reducing administrative burden and risk for all parties involved.",
+      "paragraph2": "Beyond operational support, we offer transparent communication, reliable timelines, and post-placement assistance, helping partners build trust with both candidates and employers. This framework enables sustainable growth, strengthens professional credibility, and opens opportunities for long-term collaboration. With EU Career Serwis, partners not only expand their business reach but also deliver ethical, well-managed workforce solutions that create mutual success.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step5": {
+      "imageAlt": "Compliance and Legal Security",
+      "heading": "Compliance, Permits, and Legal Security in Recruitment",
+      "paragraph1": "At EU Career Serwis, legal compliance is the cornerstone of our recruitment services. We ensure that every placement strictly follows Polish labor laws and immigration regulations, including proper work permits, visa approvals, and employment contracts. This meticulous attention to legal requirements protects both employers and candidates, minimizing risks and ensuring that every worker is authorized to work in Poland.",
+      "paragraph2": "Our team guides partners through all regulatory procedures, from document preparation to embassy coordination and post-arrival registrations. By providing full legal oversight and professional support, we create a secure recruitment environment where partners can operate confidently, knowing that every step of the hiring process is handled efficiently, ethically, and in full compliance with Polish law.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Certified Recruitment Partner Onboarding",
+      "heading": "How to Get Started as a Certified Recruitment Partner",
+      "paragraph1": "Becoming a certified recruitment partner with EU Career Serwis is a straightforward and structured process. Interested agencies or consultants can begin by submitting their credentials and company details to our team for verification. Once approved, we provide a comprehensive onboarding program that explains our recruitment framework, legal requirements, and operational procedures, ensuring partners are fully prepared to work within our system.",
+      "paragraph2": "After onboarding, partners gain access to our global talent pool, legal support, and employer network in Poland, enabling them to start sourcing and placing candidates immediately. Continuous guidance, transparent communication, and professional support ensure that all partners operate efficiently and ethically. By joining EU Career Serwis, recruitment agencies can expand their business, deliver reliable workforce solutions, and participate in a legally compliant, sustainable international recruitment model.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Expand Reach with EU Career Serwis",
+      "heading": "Expanding Your Reach with EU Career Serwis",
+      "paragraph1": "Partnering with EU Career Serwis allows recruitment agencies and consultants to expand their access to the Polish labor market and connect with a wide range of verified employers across key cities such as Warsaw, Krakow, Gdansk, Wroclaw, and Poznan. By leveraging our established network and expertise, partners can introduce candidates to diverse industries including logistics, construction, manufacturing, hospitality, and agriculture, significantly broadening their business opportunities.",
+      "paragraph2": "We provide partners with the tools and support needed to operate efficiently, including guidance on legal compliance, work permits, visa processing, and post-arrival procedures. This integrated approach ensures that partners can focus on growing their recruitment business while relying on EU Career Serwis to manage regulatory, administrative, and operational complexities. By collaborating with us, partners can scale their reach, enhance their credibility, and deliver reliable, legally compliant workforce solutions to employers in Poland.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Ethical Recruitment for Long-Term Growth",
+      "heading": "Long-Term Growth Through Ethical Recruitment Practices",
+      "paragraph1": "At EU Career Serwis, we believe that sustainable growth for our partners is built on a foundation of ethical and transparent recruitment practices. Every placement is conducted in full compliance with Polish labor laws and immigration regulations, ensuring that both employers and workers are treated fairly and protected throughout the hiring process. By prioritizing integrity and professionalism, we help partners establish a strong reputation in the international recruitment market.",
+      "paragraph2": "Our ethical approach not only safeguards compliance but also strengthens long-term business relationships. Partners benefit from reduced risks, reliable candidate pipelines, and consistent collaboration with verified employers, allowing them to expand their operations confidently. Through these principles, EU Career Serwis enables partners to achieve sustainable growth, credibility, and lasting success in the competitive recruitment landscape.",
+      "paragraph3": "",
+      "paragraph4": ""
+    }
+  },
+  "jobseeker": {
+    "info": {
+      "heading": "Start Your European Career with EU Career Serwis – Opportunities Await in Poland",
+      "title": "Secure Your Job in Poland with Complete Support from EU Career Serwis",
+      "paragraph1": "EU Career Serwis helps job seekers find legal employment opportunities across Poland in both skilled and non-skilled roles.",
+      "paragraph2": "We guide candidates through the entire process, including work permits, visa applications, and document preparation.",
+      "paragraph3": "Our team assists with travel arrangements, arrival, and local registration, including PESEL numbers and bank accounts.",
+      "paragraph4": "We ensure that every placement is fully compliant with Polish labor laws and provides a smooth start.",
+      "paragraph5": "With our support, candidates can focus on building their career in Europe safely and confidently."
+    },
+    "step1": {
+      "heading": "Why Job Seekers Trust EU Career Serwis",
+      "bullet1": "Licensed and Registered Agency – Fully compliant with Polish labor and immigration laws.",
+      "bullet2": "Legal and Safe Opportunities – All placements follow official work permit and visa regulations.",
+      "bullet3": "Transparent Process – Clear contracts, no hidden fees, and honest communication.",
+      "bullet4": "End-to-End Support – Assistance from application, visa, travel, arrival, to local registration.",
+      "bullet5": "Wide Range of Jobs – Opportunities in skilled, semi-skilled, and non-skilled roles across industries.",
+      "bullet6": "Post-Arrival Assistance – Help with accommodation, PESEL number, bank account, and onboarding.",
+      "bullet7": "Trusted by Employers – Strong partnerships with verified companies across Poland and Europe."
+    },
+    "step2": {
+      "heading": "How We Support Job Seekers Every Step of the Way",
+      "bullet1": "Candidate Guidance – We help job seekers understand eligibility, documentation, and job requirements.",
+      "bullet2": "Work Permit Assistance – Support in preparing and submitting applications to Polish authorities.",
+      "bullet3": "Visa Processing Support – Guidance on embassy appointments, document verification, and approvals.",
+      "bullet4": "Travel Arrangements – Assistance with flights, arrival planning, and orientation in Poland.",
+      "bullet5": "Post-Arrival Help – Support with accommodation, PESEL registration, bank accounts, and onboarding.",
+      "bullet6": "Job Placement Support – Matching candidates with verified employers according to skills and preferences.",
+      "bullet7": "Continuous Assistance – Ongoing support to ensure job seekers settle smoothly and work legally."
+    },
+    "step3": {
+      "heading": "Who Can Apply: Eligibility and Requirements for Candidates",
+      "bullet1": "Age Requirement – Candidates must meet the minimum working age as per Polish labor laws.",
+      "bullet2": "Skill Level – Open to skilled, semi-skilled, and non-skilled workers depending on the job role.",
+      "bullet3": "Nationality – Open to international candidates from Asia, Africa, and Europe.",
+      "bullet4": "Legal Documents – Must possess a valid passport and provide necessary personal documents.",
+      "bullet5": "Health & Background – Candidates may be required to pass basic medical and background checks.",
+      "bullet6": "Language Skills – Not always mandatory, but basic communication skills in English or Polish are an advantage.",
+      "bullet7": "Commitment – Candidates should be ready to comply with Polish labor laws and employment terms."
+    },
+    "step4": {
+      "heading": "Job Opportunities We Provide: Skilled, Semi-Skilled, and Non-Skilled Roles",
+      "bullet1": "Skilled Roles – Positions requiring specific experience or technical expertise, such as drivers, machine operators, and technicians.",
+      "bullet2": "Semi-Skilled Roles – Jobs needing some training or experience, including warehouse staff, assembly line workers, and hospitality assistants.",
+      "bullet3": "Non-Skilled Roles – Entry-level positions that require minimal prior experience, such as cleaners, laborers, farm workers, and general helpers.",
+      "bullet4": "Industry Diversity – Opportunities across multiple sectors including logistics, manufacturing, construction, agriculture, and hospitality.",
+      "bullet5": "Flexible Positions – Both short-term/seasonal and long-term employment options available.",
+      "bullet6": "Career Growth Potential – Many roles provide on-the-job training and opportunities for skill development.",
+      "bullet7": "Verified Employers – All positions are with legally registered and trusted companies in Poland."
+    },
+    "step5": {
+      "heading": "The Importance of Working with a Registered and Licensed Agency",
+      "bullet1": "Legal Compliance – Ensures all placements follow Polish labor and immigration laws.",
+      "bullet2": "Safety and Security – Protects candidates from illegal or exploitative work practices.",
+      "bullet3": "Transparent Contracts – Guarantees clear terms, fair wages, and no hidden fees.",
+      "bullet4": "Verified Employers – Connects candidates only with trustworthy and legally registered companies.",
+      "bullet5": "Professional Support – Offers guidance throughout work permit, visa, travel, and post-arrival processes.",
+      "bullet6": "Peace of Mind – Candidates can focus on their career knowing all procedures are handled ethically.",
+      "bullet7": "Long-Term Opportunities – Registered agencies help create sustainable and reliable employment pathways."
+    },
+    "step6": {
+      "heading": "Seamless Application to Arrival: Your Journey Made Easy",
+      "bullet1": "Step-by-Step Guidance – Assistance from initial application to securing the job offer.",
+      "bullet2": "Work Permit & Visa Support – Complete handling of all legal documents and embassy procedures.",
+      "bullet3": "Travel Assistance – Help with flight arrangements and pre-departure guidance.",
+      "bullet4": "Arrival Support – Orientation, accommodation, and local registrations including PESEL and bank account setup.",
+      "bullet5": "Smooth Onboarding – Ensures candidates start work immediately without delays.",
+      "bullet6": "Continuous Assistance – Ongoing support for any challenges faced after arrival in Poland.",
+      "bullet7": ""
+    },
+    "step7": {
+      "heading": "Grow Your Career with Trusted Employers Across Europe",
+      "bullet1": "Verified Employers – Connects job seekers with legally registered and reputable companies.",
+      "bullet2": "Diverse Job Opportunities – Positions across multiple industries including logistics, manufacturing, construction, hospitality, and agriculture.",
+      "bullet3": "Career Development – Many roles offer on-the-job training and skill enhancement opportunities.",
+      "bullet4": "Long-Term Employment – Options for permanent and seasonal work to match career goals.",
+      "bullet5": "Safe and Legal Work – Full compliance with labor laws and employment regulations across Europe.",
+      "bullet6": "Supportive Environment – Assistance with onboarding, accommodation, and integration into the workplace.",
+      "bullet7": ""
     }
   },
   "governmentLinks": {

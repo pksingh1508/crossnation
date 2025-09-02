@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 export default function WorkInfo() {
-  const tInfo = useTranslations("works.info");
+  const tInfo = useTranslations("employer.info");
 
   return (
     <section className="py-8 px-4 bg-white">
@@ -16,14 +16,21 @@ export default function WorkInfo() {
         {/* Underline decoration */}
         <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
 
-        {/* Subheading/Title */}
-        <h2 className="text-xl text-center md:text-2xl font-semibold text-gray-800 mb-6">
-          {tInfo("title")}
-        </h2>
-
         {/* Description */}
         <p className="text-gray-600 leading-relaxed max-w-6xl text-base text-justify hyphens-auto">
-          {tInfo("paragraph")}
+          {tInfo("paragraph1")}
+        </p>
+        <p className="text-gray-600 leading-relaxed max-w-6xl text-base text-justify hyphens-auto">
+          {tInfo("paragraph2")}
+        </p>
+        <p className="text-gray-600 leading-relaxed max-w-6xl text-base text-justify hyphens-auto">
+          {tInfo("paragraph3")}
+        </p>
+        <p className="text-gray-600 leading-relaxed max-w-6xl text-base text-justify hyphens-auto">
+          {tInfo("paragraph4")}
+        </p>
+        <p className="text-gray-600 leading-relaxed max-w-6xl text-base text-justify hyphens-auto">
+          {tInfo("paragraph5")}
         </p>
       </div>
     </section>

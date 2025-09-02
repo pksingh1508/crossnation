@@ -355,7 +355,7 @@
       "description": "¿Listo para dar el siguiente paso? Ya sea que busques oportunidades de trabajo, opciones de inversión, soluciones de contratación o posibilidades de asociación, estamos aquí para ayudarte a conectar con las personas y oportunidades adecuadas.",
       "buttons": {
         "work": "Trabajo",
-        "invest": "Invertir",
+        "migrate": "Migrar",
         "employer": "Empleador",
         "recruiter": "Reclutador"
       },
@@ -431,6 +431,239 @@
       "heading": "EU Career Serwis Works",
       "title": "Oportunidades de trabajo no cualificado seguras y legales en Europa",
       "paragraph": "En EU Career Serwis ofrecemos oportunidades de empleo no cualificado seguras y legales en muchos países europeos. No se necesitan calificaciones avanzadas, solo la disposición para trabajar y crecer. Nos encargamos de los permisos, contratos y apoyo en la reubicación para que el proceso sea sencillo y sin estrés. También organizamos alojamiento y brindamos orientación para tu comodidad y seguridad. Los puestos disponibles incluyen: Conductores de camión, Conductores de taxi, Repartidores (comida, paquetes, mensajería), Trabajadores de almacén, Operadores de montacargas, Personal de carga y descarga, Mudanceros y empacadores, Trabajadores de línea de montaje, Operadores de máquinas (nivel básico), Personal de embalaje, Asistentes de control de calidad, Ayudantes de producción, Trabajadores textiles, Ayudantes en plantas de electrónica y automotriz, Peones generales, Ayudantes de electricistas, fontaneros y carpinteros, Pintores y decoradores, Trabajadores de construcción de carreteras, Personal de limpieza y mantenimiento, Trabajadores de jardinería y paisajismo, Recolectores de frutas y verduras, Trabajadores de invernadero, Asistentes agrícolas (animales y cultivos), Trabajadores de cosecha estacional, Ayudantes en plantaciones de flores, Personal de limpieza de hoteles, Ayudantes de cocina, Lavaplatos, Personal de restaurantes y comida rápida, Asistentes de lavandería, Asistentes en residencias de mayores, Personal de limpieza y desinfección, y Guardias de seguridad (nivel básico)."
+    }
+  },
+  "employer": {
+    "info": {
+      "heading": "Cumpla con todas sus necesidades legales de personal con EU Career Serwis",
+      "paragraph1": "EU Career Serwis es una consultoría de reclutamiento con licencia con sede en Polonia, especializada en soluciones de externalización y contratación internacional para empresas europeas. Proporcionamos trabajadores calificados y no calificados de Asia, África y otras regiones, ayudando a las empresas de toda Europa a abordar eficazmente la escasez de mano de obra mientras se asegura el pleno cumplimiento legal.",
+      "paragraph2": "Nuestros servicios son transparentes, rentables y cumplen con las leyes laborales polacas y europeas. Los empleadores no enfrentan tarifas ocultas, ya que seguimos prácticas de reclutamiento justas y éticas que crean una situación beneficiosa para empresas y candidatos. Con acceso a una amplia base de talento, cubrimos diversas industrias como manufactura, logística, construcción, hostelería, agricultura y transporte.",
+      "paragraph3": "Gestionamos todo el ciclo de reclutamiento de principio a fin. Esto incluye la búsqueda de candidatos, la verificación de antecedentes y el soporte documental, así como la gestión de permisos de trabajo, solicitudes de visa y asistencia en la reubicación. Todos los procedimientos legales son supervisados por abogados polacos experimentados, asegurando que cada colocación sea segura, confiable y cumpla plenamente con las regulaciones de inmigración y empleo.",
+      "paragraph4": "En EU Career Serwis, nos enfocamos en construir relaciones a largo plazo con los empleadores ofreciendo soluciones de personal profesionales, puntuales y adaptadas a las necesidades de cada empresa. Nuestra dedicación a la calidad, la integridad y el cumplimiento legal nos ha convertido en un socio de reclutamiento confiable para empresas en las principales ciudades europeas.",
+      "paragraph5": "Ya sea que necesite personal temporal o empleados permanentes, ofrecemos un proceso de reclutamiento sin interrupciones que ahorra tiempo, reduce la carga administrativa y garantiza estabilidad laboral. Con EU Career Serwis, puede estar seguro de que sus necesidades de personal se gestionan de manera eficiente y responsable."
+    },
+    "step1": {
+      "imageAlt": "Soluciones de Contratación Personalizadas para Empleadores Polacos",
+      "heading": "Soluciones de Contratación Personalizadas para Empleadores Polacos",
+      "paragraph1": "En EU Career Serwis entendemos que cada empleador polaco tiene necesidades de personal únicas. Por eso ofrecemos soluciones de reclutamiento personalizadas diseñadas para satisfacer las demandas específicas de su negocio. Ya sea que requiera especialistas calificados, trabajadores semicalificados o mano de obra general, seleccionamos a los candidatos adecuados de regiones internacionales de confianza, garantizando tanto calidad como fiabilidad.",
+      "paragraph2": "Nos encargamos de todo el proceso de reclutamiento en su nombre, incluida la selección de candidatos, la tramitación de permisos de trabajo, solicitudes de visa y apoyo en la reubicación. Todos los procedimientos legales se manejan con la orientación de abogados polacos experimentados, lo que le brinda total confianza en el cumplimiento de las leyes laborales y de inmigración.",
+      "paragraph3": "Nuestras soluciones no solo le ayudan a ahorrar tiempo y reducir costos, sino que también garantizan que su fuerza laboral esté lista para rendir desde el primer día. Al combinar eficiencia con prácticas de reclutamiento éticas, ayudamos a los empleadores polacos a superar la escasez de mano de obra, lograr estabilidad operativa y enfocarse en el crecimiento empresarial a largo plazo.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Sourcing de Talento Global a Través de Regiones",
+      "heading": "Sourcing de Talento Global a Través de Regiones",
+      "paragraph1": "En EU Career Serwis, nos especializamos en conectar a los empleadores polacos con un diverso grupo de talento internacional de Asia, África y Europa del Este. Nuestra amplia red de reclutamiento nos permite identificar, evaluar y suministrar candidatos motivados que están listos para cubrir roles tanto calificados como no calificados. Al obtener talento a nivel global, ayudamos a los empleadores a superar la escasez de mano de obra local y mantener una fuerza laboral consistente y confiable.",
+      "paragraph2": "Trabajamos estrechamente con socios de reclutamiento confiables en el extranjero para garantizar que solo se seleccionen candidatos calificados y pre-verificados. Cada trabajador pasa por un riguroso proceso de evaluación para confirmar sus habilidades, experiencia y capacidad de adaptación al entorno laboral en Polonia. Ya sea que los empleadores necesiten trabajadores temporales, personal por proyectos o empleados a largo plazo, nuestro alcance global garantiza soluciones de personal oportunas y efectivas.",
+      "paragraph3": "Nuestra estrategia de sourcing internacional se basa en la transparencia, el cumplimiento y la eficiencia. Cada candidato que colocamos cuenta con la documentación necesaria, incluyendo permisos de trabajo, procesamiento de visa y asistencia en la reubicación, asegurando una experiencia de contratación fluida para los empleadores. Al aprovechar nuestras capacidades de reclutamiento en todo el mundo, proporcionamos a las empresas polacas acceso a mano de obra confiable que contribuye al crecimiento empresarial y al éxito a largo plazo.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Categorías Diversas de Fuerza Laboral Disponibles",
+      "heading": "Categorías Diversas de Fuerza Laboral Disponibles",
+      "paragraph1": "En EU Career Serwis, proporcionamos a los empleadores polacos acceso a una amplia gama de categorías de personal adaptadas a las demandas específicas de cada industria. Desde obreros generales hasta profesionales especializados, nos aseguramos de que las empresas puedan encontrar el talento adecuado para cada puesto. Nuestro reclutamiento cubre tanto posiciones calificados como no calificados, brindando a las empresas la flexibilidad de formar equipos que se ajusten a sus necesidades operativas.",
+      "paragraph2": "Para roles no calificados, suministramos trabajadores confiables en áreas como logística, almacenamiento, apoyo en construcción, agricultura, hostelería, limpieza y manufactura. Estos empleados aportan dedicación, adaptabilidad y eficiencia, ayudando a las empresas a mantener operaciones fluidas en sectores intensivos en mano de obra.",
+      "paragraph3": "Para posiciones calificadas y semi-calificadas, reclutamos candidatos como conductores, operadores de maquinaria, soldadores, técnicos y personal de hostelería que aportan experiencia comprobada y práctica. Cada candidato es cuidadosamente evaluado para asegurar que cumpla con los requisitos del empleador y esté listo para contribuir desde el primer día.",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Sectores Donde Tenemos Impacto",
+      "heading": "Sectores Donde Tenemos Impacto",
+      "paragraph1": "En EU Career Serwis, ofrecemos soluciones de personal adaptadas a las necesidades únicas de múltiples industrias en Polonia.",
+      "paragraph2": "Nuestro reclutamiento respalda la manufactura, logística, construcción, hostelería, agricultura, transporte y almacenamiento, asegurando que las empresas puedan mantener operaciones fluidas.",
+      "paragraph3": "Proveemos tanto trabajadores calificados como no calificados, ayudando a las empresas a cumplir objetivos de producción, demandas estacionales y metas de personal a largo plazo.",
+      "paragraph4": "Al conectar a los empleadores con candidatos confiables y pre-evaluados, reducimos los riesgos de contratación y la carga administrativa. Nuestro objetivo es empoderar a cada sector con el talento adecuado, permitiendo un crecimiento sostenible y eficiencia operativa."
+    },
+    "step5": {
+      "imageAlt": "De la Solicitud a la Llegada: El Viaje de Contratación",
+      "heading": "De la Solicitud a la Llegada: El Viaje de Contratación",
+      "paragraph1": "En EU Career Serwis, gestionamos todo el proceso de reclutamiento internacional, asegurando una transición legal y sin problemas para los candidatos que llegan a Polonia. El viaje comienza con la obtención de un Permiso de Trabajo, confirmando la autorización legal para trabajar, seguido del Apoyo en la Solicitud de Visa en la embajada, incluyendo preparación de documentos y orientación para la cita. Una vez aprobado, asistimos con los Arreglos de Viaje, asegurando que los candidatos lleguen a Polonia de manera segura y puntual.",
+      "paragraph2": "A su llegada, proporcionamos apoyo completo para navegar el Sistema Local, incluyendo la obtención de un Número PESEL para impuestos, seguridad social y atención médica, así como la Apertura de una Cuenta Bancaria para salario y transacciones diarias. Al manejar cada paso —desde el permiso de trabajo y la visa hasta la llegada, el registro y la configuración financiera— EU Career Serwis asegura que los candidatos estén completamente preparados y cumplan con la legalidad, mientras que los empleadores tienen la tranquilidad de saber que su fuerza laboral está lista para comenzar de manera legal y eficiente.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Garantizando Estándares Legales y Éticos de Reclutamiento",
+      "heading": "Garantizando Estándares Legales y Éticos de Reclutamiento",
+      "paragraph1": "En EU Career Serwis, priorizamos el pleno cumplimiento de las leyes laborales polacas y regulaciones europeas en cada paso del proceso de reclutamiento. Desde la búsqueda de candidatos hasta la colocación final, aseguramos que todos los procedimientos —incluyendo permisos de trabajo, solicitudes de visa, contratos y nómina— cumplan con los requisitos legales, protegiendo tanto a empleadores como a empleados.",
+      "paragraph2": "Nuestras prácticas de reclutamiento se basan en la ética, la transparencia y la equidad. Cada candidato es cuidadosamente evaluado y todos los términos de empleo se comunican claramente, garantizando que los trabajadores sean tratados con respeto y reciban sus derechos legales. Al combinar supervisión profesional, orientación legal de abogados polacos y procedimientos verificados, aseguramos que los empleadores reciban talento totalmente conforme y confiable, manteniendo los más altos estándares de integridad.",
+      "paragraph3": "Este enfoque no solo minimiza los riesgos legales para los empleadores, sino que también fomenta la confianza, asociaciones a largo plazo y un ambiente laboral positivo para empleados internacionales. Con EU Career Serwis, usted obtiene la tranquilidad de saber que sus soluciones de personal son legales y éticas.",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Construyendo Relaciones Laborales a Largo Plazo",
+      "heading": "Construyendo Relaciones Laborales a Largo Plazo",
+      "paragraph1": "En EU Career Serwis, nos enfocamos en crear relaciones duraderas con empleadores y empleados mediante soluciones de reclutamiento consistentes, confiables y de alta calidad. No solo cubrimos vacantes; comprendemos las necesidades únicas de cada empresa y ofrecemos estrategias de personal adaptadas que apoyan tanto proyectos a corto plazo como crecimiento a largo plazo.",
+      "paragraph2": "Al ofrecer procesos transparentes, cumplimiento legal y soporte continuo, aseguramos que los empleadores reciban talento confiable mientras los empleados experimentan un trato justo y comunicación clara. Nuestro compromiso con la confianza, profesionalismo y eficiencia permite a las empresas reducir la rotación, mejorar la productividad y construir equipos estables y motivados que contribuyan al éxito sostenible.",
+      "paragraph3": "A través de estas relaciones, EU Career Serwis se convierte en más que una agencia de reclutamiento: nos convertimos en un aliado estratégico de la fuerza laboral, ayudando a las empresas a satisfacer demandas laborales cambiantes y fomentando experiencias de empleo positivas y duraderas para el personal internacional.",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Por Qué Asociarse con EU Career Serwis para Contratar en Polonia",
+      "heading": "Por Qué Asociarse con EU Career Serwis para Contratar en Polonia",
+      "paragraph1": "EU Career Serwis es una consultoría de reclutamiento europea con licencia dedicada a ofrecer soluciones completas de personal para empleadores en toda Polonia. Nos especializamos en ayudar a las empresas a superar la escasez de mano de obra conectándolas con trabajadores calificados, semi-calificados y generales de Asia, África y Europa, listos para contribuir desde el primer día.",
+      "paragraph2": "Nuestros servicios cumplen plenamente con las leyes laborales polacas y regulaciones de inmigración, asegurando que cada colocación sea legal, transparente y sin riesgos. Desde la búsqueda y preselección de candidatos hasta permisos de trabajo, procesamiento de visas y asistencia en reubicación, gestionamos cada paso del proceso de contratación de manera eficiente.",
+      "paragraph3": "Creemos en la claridad y la equidad: todos los contratos y precios son transparentes, sin tarifas ocultas, brindando confianza y tranquilidad a los empleadores. Más allá de la contratación, ofrecemos apoyo post-llegada, incluyendo inducción, orientación sobre alojamiento, seguro de salud y registro ante autoridades locales, haciendo la transición fluida tanto para empleados como para empleadores.",
+      "paragraph4": "Confiado por empresas en Varsovia, Cracovia, Gdansk, Wroclaw, Poznan y más allá, EU Career Serwis es su socio confiable para un reclutamiento internacional legal, eficiente y exitoso en Polonia."
+    }
+  },
+  "recruiter": {
+    "info": {
+      "heading": "Cómo EU Career Serwis Apoya a Nuestros Socios Internacionales de Reclutamiento",
+      "description": "EU Career Serwis trabaja mano a mano con agencias de reclutamiento en Asia y África para colocar legal y eficientemente a trabajadores en Polonia. Como consultoría autorizada, gestionamos todo el proceso: desde la obtención de permisos de trabajo y visados hasta el apoyo posterior a la llegada.",
+      "bullets": {
+        "b1": "Autorización Legal – Somos una consultoría de reclutamiento autorizada en Polonia, lo que garantiza que todos tus candidatos sean procesados bajo la legislación laboral y de inmigración polaca.",
+        "b2": "Procesamiento de Permisos de Trabajo y Visados – Nos encargamos de toda la documentación, incluidos permisos de trabajo, coordinación con embajadas y aprobaciones de visados para tus candidatos.",
+        "b3": "Colaboración Transparente – Proporcionamos contratos claros, plazos acordados y comunicación abierta para generar confianza y asociaciones a largo plazo.",
+        "b4": "Apoyo al Candidato en Polonia – Una vez que los trabajadores llegan, les ayudamos con alojamiento, registro PESEL, cuentas bancarias y orientación para un inicio sin problemas.",
+        "b5": "Acceso a Empleadores en Polonia – Conectamos a tus candidatos con empresas polacas verificadas en sectores como logística, construcción, manufactura, hostelería y agricultura.",
+        "b6": "Crecimiento Continuo de la Asociación – Valoramos a los socios internacionales y los apoyamos en la expansión de su negocio a través de un reclutamiento ético, confiable y conforme a la ley."
+      }
+    },
+    "step1": {
+      "imageAlt": "Asóciate con EU Career Serwis",
+      "heading": "Colaborar con EU Career Serwis",
+      "paragraph1": "Colaborar con EU Career Serwis abre la puerta a una amplia gama de oportunidades de reclutamiento en las crecientes industrias de Polonia. Como consultoría autorizada y conforme a la ley, servimos como un puente de confianza entre socios internacionales de reclutamiento y empleadores polacos. Al asociarte con nosotros, obtienes acceso directo a un proceso de contratación estructurado, soporte legal confiable y una sólida red de empresas que buscan trabajadores calificados, semi-calificados y no calificados. Nuestra experiencia en el mercado laboral polaco garantiza que cada colocación sea segura, transparente y adaptada a los requisitos del empleador.",
+      "paragraph2": "Más allá de simplemente cubrir vacantes, nos enfocamos en crear asociaciones a largo plazo que ofrezcan un valor constante para todas las partes interesadas. Proporcionamos a nuestros socios orientación integral, desde solicitudes de permisos de trabajo y asistencia de visado hasta la incorporación y el apoyo posterior a la llegada de los trabajadores.",
+      "paragraph3": "Al trabajar con EU Career Serwis, los socios pueden expandir con confianza el alcance de su negocio, fortalecer su reputación y contribuir a la movilidad laboral global ética, al tiempo que ayudan a los empleadores en Polonia a superar la escasez crítica de mano de obra.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Modelo Global de Reclutamiento B2B2C",
+      "heading": "Nuestro Modelo Global de Reclutamiento B2B2C Explicado",
+      "paragraph1": "En EU Career Serwis operamos con un modelo moderno de reclutamiento B2B2C diseñado para simplificar la contratación internacional para empleadores polacos y socios de reclutamiento en todo el mundo. En este enfoque, colaboramos directamente con agencias confiables (B2B) en regiones como Asia y África, que nos conectan con candidatos calificados (B2C). Esta estructura fluida garantiza que cada etapa del proceso — desde la selección de candidatos hasta la aprobación del permiso de trabajo y la emisión de visados — se maneje de manera eficiente, legal y transparente. Nos permite entregar trabajadores bien preparados y asegurar que las necesidades de personal de los empleadores se cubran sin demoras.",
+      "paragraph2": "Este modelo crea valor para todas las partes involucradas: los empleadores se benefician de una fuerza laboral confiable, los socios obtienen acceso a un marco legal seguro y los trabajadores disfrutan de un camino seguro y respaldado hacia el empleo en Polonia.",
+      "paragraph3": "Al combinar el alcance del reclutamiento internacional con la experiencia local, EU Career Serwis garantiza el cumplimiento de las leyes laborales y políticas de inmigración polacas mientras mantiene estándares éticos en cada colocación. Nuestro sistema B2B2C es más que un método de contratación: es una estrategia comprobada para construir soluciones sostenibles de fuerza laboral a largo plazo.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Elegibilidad como Aliado de Reclutamiento",
+      "heading": "¿Quién Puede Unirse como Aliado de Reclutamiento?",
+      "paragraph1": "EU Career Serwis da la bienvenida a agencias de reclutamiento, consultores independientes y centros de formación de Asia, África y otras regiones del mundo que estén comprometidos con prácticas de contratación éticas y transparentes. Ya sea que seas una pequeña agencia con acceso a candidatos calificados o no calificados, o una organización más grande que gestione altos volúmenes de reclutamiento, puedes convertirte en nuestro aliado de confianza para proveer trabajadores a Polonia. Lo más importante es tu dedicación al profesionalismo, al bienestar de los candidatos y al cumplimiento de las normas internacionales.",
+      "paragraph2": "Al asociarte con nosotros, obtienes acceso a un marco legalmente estructurado respaldado por las leyes laborales y de inmigración polacas, lo que garantiza procesos fluidos tanto para empleadores como para trabajadores. Proporcionamos a nuestros aliados orientación completa sobre permisos de trabajo, solicitudes de visado, contratos y apoyo posterior a la llegada, haciendo que la asociación sea beneficiosa y sostenible. Esta colaboración te permite expandir tus oportunidades de negocio mientras ayudas a los candidatos a conseguir empleo legítimo y a los empleadores a recibir mano de obra confiable en Polonia.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Valor y Beneficios para Socios",
+      "heading": "Valor y Beneficios que Ofrecemos a Nuestros Socios",
+      "paragraph1": "En EU Career Serwis ofrecemos a nuestros socios una amplia gama de beneficios diseñados para hacer que el reclutamiento internacional sea fluido y rentable. Al colaborar con nosotros, los socios obtienen acceso a una base de talento preseleccionada, procesos de reclutamiento estructurados y conexiones directas con empleadores verificados en Polonia. Nuestro apoyo legal garantiza que cada colocación cumpla plenamente con las leyes laborales y de inmigración, reduciendo la carga administrativa y el riesgo para todas las partes involucradas.",
+      "paragraph2": "Más allá del apoyo operativo, ofrecemos comunicación transparente, cronogramas confiables y asistencia posterior a la colocación, ayudando a los socios a generar confianza tanto con los candidatos como con los empleadores. Este marco permite un crecimiento sostenible, fortalece la credibilidad profesional y abre oportunidades para colaboraciones a largo plazo. Con EU Career Serwis, los socios no solo expanden su alcance comercial, sino que también ofrecen soluciones de fuerza laboral éticas y bien gestionadas que crean un éxito mutuo.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step5": {
+      "imageAlt": "Cumplimiento y Seguridad Legal",
+      "heading": "Cumplimiento, Permisos y Seguridad Legal en el Reclutamiento",
+      "paragraph1": "En EU Career Serwis, el cumplimiento legal es la piedra angular de nuestros servicios de reclutamiento. Nos aseguramos de que cada colocación cumpla estrictamente con las leyes laborales y regulaciones de inmigración polacas, incluidos los permisos de trabajo adecuados, las aprobaciones de visado y los contratos laborales. Esta atención meticulosa a los requisitos legales protege tanto a empleadores como a candidatos, minimizando riesgos y asegurando que cada trabajador esté autorizado para trabajar en Polonia.",
+      "paragraph2": "Nuestro equipo guía a los socios a través de todos los procedimientos regulatorios, desde la preparación de documentos hasta la coordinación con embajadas y los registros posteriores a la llegada. Al proporcionar supervisión legal completa y apoyo profesional, creamos un entorno de reclutamiento seguro donde los socios pueden operar con confianza, sabiendo que cada paso del proceso de contratación se maneja de manera eficiente, ética y en total cumplimiento con la ley polaca.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Incorporación de Socio de Reclutamiento Certificado",
+      "heading": "Cómo Convertirse en un Socio de Reclutamiento Certificado",
+      "paragraph1": "Convertirse en un socio de reclutamiento certificado con EU Career Serwis es un proceso sencillo y estructurado. Las agencias o consultores interesados pueden comenzar enviando sus credenciales y detalles de la empresa a nuestro equipo para verificación. Una vez aprobados, proporcionamos un programa de incorporación integral que explica nuestro marco de reclutamiento, requisitos legales y procedimientos operativos, asegurando que los socios estén completamente preparados para trabajar dentro de nuestro sistema.",
+      "paragraph2": "Después de la incorporación, los socios obtienen acceso a nuestra base global de talento, soporte legal y red de empleadores en Polonia, lo que les permite comenzar a seleccionar y colocar candidatos de inmediato. La orientación continua, la comunicación transparente y el apoyo profesional aseguran que todos los socios operen de manera eficiente y ética. Al unirse a EU Career Serwis, las agencias de reclutamiento pueden expandir su negocio, ofrecer soluciones de fuerza laboral confiables y participar en un modelo de reclutamiento internacional legalmente conforme y sostenible.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Expandir Alcance con EU Career Serwis",
+      "heading": "Expandiendo Tu Alcance con EU Career Serwis",
+      "paragraph1": "Asociarse con EU Career Serwis permite a agencias y consultores de reclutamiento ampliar su acceso al mercado laboral polaco y conectarse con una amplia gama de empleadores verificados en ciudades clave como Varsovia, Cracovia, Gdansk, Breslavia y Poznan. Aprovechando nuestra red establecida y experiencia, los socios pueden presentar candidatos a diversas industrias, incluidas logística, construcción, manufactura, hostelería y agricultura, ampliando significativamente sus oportunidades de negocio.",
+      "paragraph2": "Proporcionamos a los socios las herramientas y el apoyo necesarios para operar de manera eficiente, incluida la orientación sobre cumplimiento legal, permisos de trabajo, procesamiento de visados y procedimientos posteriores a la llegada. Este enfoque integrado garantiza que los socios puedan centrarse en hacer crecer su negocio de reclutamiento mientras confían en EU Career Serwis para gestionar las complejidades regulatorias, administrativas y operativas. Al colaborar con nosotros, los socios pueden escalar su alcance, mejorar su credibilidad y ofrecer soluciones de fuerza laboral confiables y legalmente conformes a los empleadores en Polonia.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Reclutamiento Ético para Crecimiento a Largo Plazo",
+      "heading": "Crecimiento a Largo Plazo a Través de Prácticas de Reclutamiento Éticas",
+      "paragraph1": "En EU Career Serwis creemos que el crecimiento sostenible de nuestros socios se construye sobre una base de prácticas de reclutamiento éticas y transparentes. Cada colocación se realiza en pleno cumplimiento con las leyes laborales y regulaciones de inmigración polacas, garantizando que tanto empleadores como trabajadores sean tratados de manera justa y estén protegidos durante todo el proceso de contratación. Al priorizar la integridad y el profesionalismo, ayudamos a los socios a establecer una sólida reputación en el mercado internacional de reclutamiento.",
+      "paragraph2": "Nuestro enfoque ético no solo garantiza el cumplimiento, sino que también fortalece las relaciones comerciales a largo plazo. Los socios se benefician de la reducción de riesgos, fuentes de candidatos confiables y colaboración constante con empleadores verificados, lo que les permite expandir sus operaciones con confianza. A través de estos principios, EU Career Serwis permite a los socios lograr un crecimiento sostenible, credibilidad y éxito duradero en el competitivo mercado de reclutamiento.",
+      "paragraph3": "",
+      "paragraph4": ""
+    }
+  },
+  "jobseeker": {
+    "info": {
+      "heading": "Comienza tu Carrera Europea con EU Career Serwis – Oportunidades te Esperan en Polonia",
+      "title": "Asegura tu Trabajo en Polonia con el Apoyo Completo de EU Career Serwis",
+      "paragraph1": "EU Career Serwis ayuda a los buscadores de empleo a encontrar oportunidades laborales legales en toda Polonia, tanto en puestos calificados como no calificados.",
+      "paragraph2": "Guiamos a los candidatos durante todo el proceso, incluyendo permisos de trabajo, solicitudes de visa y preparación de documentos.",
+      "paragraph3": "Nuestro equipo ayuda con los arreglos de viaje, la llegada y el registro local, incluyendo números PESEL y cuentas bancarias.",
+      "paragraph4": "Nos aseguramos de que cada colocación cumpla plenamente con las leyes laborales polacas y proporcione un inicio sin problemas.",
+      "paragraph5": "Con nuestro apoyo, los candidatos pueden enfocarse en construir su carrera en Europa de manera segura y con confianza."
+    },
+    "step1": {
+      "heading": "Por Qué los Buscadores de Empleo Confían en EU Career Serwis",
+      "bullet1": "Agencia Licenciada y Registrada – Totalmente conforme con las leyes laborales y de inmigración polacas.",
+      "bullet2": "Oportunidades Legales y Seguras – Todas las colocaciones siguen los permisos de trabajo oficiales y regulaciones de visa.",
+      "bullet3": "Proceso Transparente – Contratos claros, sin tarifas ocultas y comunicación honesta.",
+      "bullet4": "Apoyo Integral – Asistencia desde la solicitud, visa, viaje, llegada hasta el registro local.",
+      "bullet5": "Amplia Gama de Trabajos – Oportunidades en roles calificados, semicalificados y no calificados en diversas industrias.",
+      "bullet6": "Asistencia Posterior a la Llegada – Ayuda con alojamiento, número PESEL, cuenta bancaria e integración.",
+      "bullet7": "Confiado por Empleadores – Fuertes asociaciones con empresas verificadas en toda Polonia y Europa."
+    },
+    "step2": {
+      "heading": "Cómo Apoyamos a los Buscadores de Empleo en Cada Paso del Camino",
+      "bullet1": "Orientación al Candidato – Ayudamos a los buscadores de empleo a comprender la elegibilidad, la documentación y los requisitos laborales.",
+      "bullet2": "Asistencia con Permiso de Trabajo – Apoyo en la preparación y presentación de solicitudes a las autoridades polacas.",
+      "bullet3": "Soporte en el Proceso de Visa – Guía en citas en la embajada, verificación de documentos y aprobaciones.",
+      "bullet4": "Arreglos de Viaje – Asistencia con vuelos, planificación de llegada y orientación en Polonia.",
+      "bullet5": "Ayuda Posterior a la Llegada – Apoyo con alojamiento, registro PESEL, cuentas bancarias e integración.",
+      "bullet6": "Apoyo en la Colocación Laboral – Vinculación de candidatos con empleadores verificados de acuerdo con sus habilidades y preferencias.",
+      "bullet7": "Asistencia Continua – Apoyo constante para garantizar que los buscadores de empleo se adapten sin problemas y trabajen legalmente."
+    },
+    "step3": {
+      "heading": "Quién Puede Postularse: Elegibilidad y Requisitos para los Candidatos",
+      "bullet1": "Requisito de Edad – Los candidatos deben cumplir con la edad mínima laboral según las leyes laborales polacas.",
+      "bullet2": "Nivel de Habilidad – Abierto a trabajadores calificados, semicalificados y no calificados según el puesto.",
+      "bullet3": "Nacionalidad – Abierto a candidatos internacionales de Asia, África y Europa.",
+      "bullet4": "Documentos Legales – Debe poseer un pasaporte válido y proporcionar los documentos personales necesarios.",
+      "bullet5": "Salud y Antecedentes – Se puede requerir que los candidatos aprueben chequeos médicos y de antecedentes básicos.",
+      "bullet6": "Habilidades Lingüísticas – No siempre obligatorias, pero las habilidades básicas de comunicación en inglés o polaco son una ventaja.",
+      "bullet7": "Compromiso – Los candidatos deben estar listos para cumplir con las leyes laborales polacas y las condiciones de empleo."
+    },
+    "step4": {
+      "heading": "Oportunidades de Trabajo que Ofrecemos: Roles Calificados, Semicalificados y No Calificados",
+      "bullet1": "Roles Calificados – Puestos que requieren experiencia específica o conocimientos técnicos, como conductores, operadores de máquinas y técnicos.",
+      "bullet2": "Roles Semicalificados – Trabajos que necesitan algo de formación o experiencia, incluyendo personal de almacén, trabajadores de línea de montaje y asistentes de hospitalidad.",
+      "bullet3": "Roles No Calificados – Puestos de nivel inicial que requieren poca experiencia previa, como limpiadores, obreros, trabajadores agrícolas y ayudantes generales.",
+      "bullet4": "Diversidad de Industrias – Oportunidades en múltiples sectores como logística, manufactura, construcción, agricultura y hospitalidad.",
+      "bullet5": "Puestos Flexibles – Disponibles opciones de empleo a corto plazo/temporales y a largo plazo.",
+      "bullet6": "Potencial de Crecimiento Profesional – Muchos puestos ofrecen formación en el trabajo y oportunidades de desarrollo de habilidades.",
+      "bullet7": "Empleadores Verificados – Todos los puestos son con empresas legalmente registradas y de confianza en Polonia."
+    },
+    "step5": {
+      "heading": "La Importancia de Trabajar con una Agencia Registrada y Licenciada",
+      "bullet1": "Cumplimiento Legal – Garantiza que todas las colocaciones sigan las leyes laborales y de inmigración polacas.",
+      "bullet2": "Seguridad y Protección – Protege a los candidatos de prácticas laborales ilegales o explotadoras.",
+      "bullet3": "Contratos Transparentes – Garantiza términos claros, salarios justos y sin tarifas ocultas.",
+      "bullet4": "Empleadores Verificados – Conecta a los candidatos solo con empresas confiables y registradas legalmente.",
+      "bullet5": "Apoyo Profesional – Ofrece orientación durante todo el proceso de permisos de trabajo, visa, viaje y llegada.",
+      "bullet6": "Tranquilidad – Los candidatos pueden enfocarse en su carrera sabiendo que todos los procedimientos se manejan de manera ética.",
+      "bullet7": "Oportunidades a Largo Plazo – Las agencias registradas ayudan a crear caminos laborales sostenibles y confiables."
+    },
+    "step6": {
+      "heading": "De la Solicitud a la Llegada sin Problemas: Tu Viaje Hecho Fácil",
+      "bullet1": "Guía Paso a Paso – Asistencia desde la solicitud inicial hasta asegurar la oferta laboral.",
+      "bullet2": "Soporte con Permisos de Trabajo y Visa – Manejo completo de todos los documentos legales y procedimientos en la embajada.",
+      "bullet3": "Asistencia en Viajes – Ayuda con la organización de vuelos y orientación antes de la partida.",
+      "bullet4": "Apoyo a la Llegada – Orientación, alojamiento y registros locales, incluyendo número PESEL y apertura de cuentas bancarias.",
+      "bullet5": "Integración Fluida – Garantiza que los candidatos comiencen a trabajar de inmediato sin retrasos.",
+      "bullet6": "Asistencia Continua – Apoyo permanente para cualquier desafío después de la llegada a Polonia.",
+      "bullet7": ""
+    },
+    "step7": {
+      "heading": "Haz Crecer tu Carrera con Empleadores Confiables en Toda Europa",
+      "bullet1": "Empleadores Verificados – Conecta a los buscadores de empleo con empresas legalmente registradas y de buena reputación.",
+      "bullet2": "Diversas Oportunidades Laborales – Puestos en múltiples industrias, incluyendo logística, manufactura, construcción, hospitalidad y agricultura.",
+      "bullet3": "Desarrollo Profesional – Muchos puestos ofrecen formación en el trabajo y oportunidades de mejora de habilidades.",
+      "bullet4": "Empleo a Largo Plazo – Opciones de trabajo permanente y temporal para adaptarse a los objetivos profesionales.",
+      "bullet5": "Trabajo Seguro y Legal – Cumplimiento total con las leyes laborales y regulaciones de empleo en toda Europa.",
+      "bullet6": "Entorno de Apoyo – Asistencia con la integración, el alojamiento y la incorporación al lugar de trabajo.",
+      "bullet7": ""
     }
   },
   "governmentLinks": {
