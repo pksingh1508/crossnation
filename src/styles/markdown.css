@@ -1,0 +1,105 @@
+/* GitHub style syntax highlighting for code blocks */
+@import 'highlight.js/styles/github.css';
+
+/* Custom prose styles for better markdown rendering */
+.prose-custom {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3,
+.prose-custom h4,
+.prose-custom h5,
+.prose-custom h6 {
+  @apply text-gray-900 font-bold mt-8 mb-4;
+}
+
+.prose-custom h1 {
+  @apply text-3xl mb-6;
+}
+
+.prose-custom h2 {
+  @apply text-2xl mb-4;
+}
+
+.prose-custom h3 {
+  @apply text-xl mb-3;
+}
+
+.prose-custom p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose-custom a {
+  @apply text-blue-600 hover:text-blue-800 font-medium no-underline hover:underline transition-colors;
+}
+
+.prose-custom ul,
+.prose-custom ol {
+  @apply my-4 pl-6;
+}
+
+.prose-custom li {
+  @apply mb-2;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-blue-500 bg-blue-50 py-4 px-6 my-6 rounded-r-lg italic;
+}
+
+.prose-custom code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose-custom pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose-custom pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose-custom img {
+  @apply rounded-lg shadow-lg my-6 max-w-full h-auto;
+}
+
+.prose-custom table {
+  @apply w-full border-collapse my-6;
+}
+
+.prose-custom th,
+.prose-custom td {
+  @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.prose-custom th {
+  @apply bg-gray-50 font-semibold;
+}
+
+.prose-custom strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose-custom em {
+  @apply italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .prose-custom {
+    @apply text-sm;
+  }
+  
+  .prose-custom h1 {
+    @apply text-2xl;
+  }
+  
+  .prose-custom h2 {
+    @apply text-xl;
+  }
+  
+  .prose-custom h3 {
+    @apply text-lg;
+  }
+}
