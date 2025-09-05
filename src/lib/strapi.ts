@@ -4,17 +4,29 @@ export interface NewsItem {
   id: number;
   attributes?: {
     title: string;
-    publishedAt: string;
+    publishedAt?: string;
+    updatedAt?: string;
     views: number;
     slug: string;
     short_desc: string;
+    news_image?: {
+      data?: {
+        attributes?: {
+          url: string;
+        };
+      };
+    };
   };
   // Alternative structure in case Strapi returns flat data
   title?: string;
   publishedAt?: string;
+  updatedAt?: string;
   views?: number;
   slug?: string;
   short_desc?: string;
+  news_image?: {
+    url: string;
+  };
 }
 
 export interface BlogItem {
@@ -257,5 +269,41 @@ export async function getAllTestimonials(
   } catch (error) {
     console.error("Error fetching all testimonials:", error);
     throw new Error("Failed to fetch all testimonials");
+  }
+}
+
+export async function fetchPaginatedImmigrationNews(
+  token: string,
+  page: number = 1,
+  pageSize: number = 10,
+  locale: string = "en",
+  collection: string
+): Promise<StrapiResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "title",
+        "fields[1]": "short_desc",
+        "fields[2]": "updatedAt",
+        "fields[3]": "views",
+        "fields[4]": "slug",
+        "populate[news_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as StrapiResponse;
+  } catch (error) {
+    console.error("Error fetching paginated immigration news:", error);
+    throw new Error("Failed to fetch paginated immigration news");
   }
 }

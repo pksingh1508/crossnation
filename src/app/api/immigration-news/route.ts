@@ -1,5 +1,5 @@
 "use server";
-import { fetchImmigrationNews } from "@/lib/strapi";
+import { fetchPaginatedImmigrationNews } from "@/lib/strapi";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     }
 
     const collection = "khabars";
-    const response = await fetchImmigrationNews(
+    const response = await fetchPaginatedImmigrationNews(
       token,
       page,
       pageSize,
