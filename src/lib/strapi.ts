@@ -1,0 +1,151 @@
+import axios from "axios";
+
+export interface NewsItem {
+  id: number;
+  attributes?: {
+    title: string;
+    publishedAt: string;
+    views: number;
+    slug: string;
+    short_desc: string;
+  };
+  // Alternative structure in case Strapi returns flat data
+  title?: string;
+  publishedAt?: string;
+  views?: number;
+  slug?: string;
+  short_desc?: string;
+}
+
+export interface BlogItem {
+  id: number;
+  attributes?: {
+    title: string;
+    updatedAt: string;
+    likes_count: number;
+    slug: string;
+    short_desc: string;
+    blog_image?: {
+      data?: {
+        attributes?: {
+          url: string;
+        };
+      };
+    };
+  };
+  // Alternative structure in case Strapi returns flat data
+  title?: string;
+  updatedAt?: string;
+  likes_count?: number;
+  slug?: string;
+  short_desc?: string;
+  blog_image?: {
+    url: string;
+  };
+}
+
+export interface StrapiResponse {
+  data: NewsItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+export interface BlogResponse {
+  data: BlogItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+const DEFAULT_LOCALE = "en";
+
+export async function fetchImmigrationNews(
+  token: string,
+  page: number = 1,
+  pageSize: number = 10,
+  locale: string = "en",
+  collection: string
+): Promise<StrapiResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const fetchFromLocale = async (loc: string) => {
+      const response = await axios.get(BASE_URL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        params: {
+          locale: loc,
+          "pagination[page]": page,
+          "pagination[pageSize]": pageSize,
+          "fields[0]": "title",
+          "fields[1]": "publishedAt",
+          "fields[2]": "views",
+          "fields[3]": "slug",
+          "fields[4]": "short_desc",
+          "sort[0]": "publishedAt:desc",
+        },
+      });
+
+      return response.data as StrapiResponse;
+    };
+
+    // 1. Try the requested locale
+    const data = await fetchFromLocale(locale);
+
+    // 2. If no results, try fallback locale
+    // if (data.data.length === 0 && locale !== DEFAULT_LOCALE) {
+    //   return await fetchFromLocale(DEFAULT_LOCALE);
+    // }
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching immigration news:", error);
+    throw new Error("Failed to fetch immigration news");
+  }
+}
+
+export async function fetchRecentBlogs(
+  token: string,
+  pageSize: number = 3,
+  locale: string = "en",
+  collection: string
+): Promise<BlogResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "slug",
+        "fields[1]": "title",
+        "fields[2]": "updatedAt",
+        "fields[3]": "likes_count",
+        "fields[4]": "short_desc",
+        "populate[blog_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as BlogResponse;
+  } catch (error) {
+    console.error("Error fetching recent blogs:", error);
+    throw new Error("Failed to fetch recent blogs");
+  }
+}

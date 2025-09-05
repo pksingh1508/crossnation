@@ -1,8 +1,9 @@
 import { About } from "@/components/sections/About";
-import { FAQ } from "@/components/sections/FAQ";
 import { Hero } from "@/components/sections/Hero";
 import { TestimonialsSection } from "@/components/sections/Testimonials";
 import { HeroCustomSection } from "@/components/hero/HeroCustomSection";
+import { NewsSection } from "@/components/immigration_faq/NewsSection";
+import { RecentBlog } from "@/components/sections/RecentBlog";
 
 interface PageProps {
   params: Promise<{ lang: string }>; // 👈 mark async
@@ -15,7 +16,8 @@ export default async function HomePage({ params }: PageProps) {
     <div>
       <Hero />
       <About />
-      <FAQ />
+      <NewsSection />
+      <RecentBlog />
       <HeroCustomSection />
       <TestimonialsSection />
     </div>

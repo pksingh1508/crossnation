@@ -10,14 +10,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useLocaleStore } from "@/store/useLocaleStore";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("common");
+  const { setLocale } = useLocaleStore();
 
   const handleLanguageChange = (newLocale: string) => {
+    // set the locale in global state management
+    setLocale(newLocale);
     // Remove the current locale from the pathname
     const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
 

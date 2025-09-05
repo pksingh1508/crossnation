@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "i.ibb.co",
+        hostname: "determined-unity-de531adc95.media.strapiapp.com",
         port: "",
         pathname: "/**",
       },
