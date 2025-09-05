@@ -44,6 +44,35 @@ export interface BlogItem {
   };
 }
 
+export interface TestimonialItem {
+  id: number;
+  attributes?: {
+    name: string;
+    what_they_say: string;
+    slug: string;
+    role?: string;
+    company?: string;
+    updatedAt: string;
+    user_image?: {
+      data?: {
+        attributes?: {
+          url: string;
+        };
+      };
+    };
+  };
+  // Alternative structure in case Strapi returns flat data
+  name?: string;
+  what_they_say?: string;
+  slug?: string;
+  role?: string;
+  company?: string;
+  updatedAt?: string;
+  user_image?: {
+    url: string;
+  };
+}
+
 export interface StrapiResponse {
   data: NewsItem[];
   meta: {
@@ -58,6 +87,18 @@ export interface StrapiResponse {
 
 export interface BlogResponse {
   data: BlogItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+export interface TestimonialResponse {
+  data: TestimonialItem[];
   meta: {
     pagination: {
       page: number;
@@ -147,5 +188,37 @@ export async function fetchRecentBlogs(
   } catch (error) {
     console.error("Error fetching recent blogs:", error);
     throw new Error("Failed to fetch recent blogs");
+  }
+}
+
+export async function fetchRecentTestimonials(
+  token: string,
+  pageSize: number = 3,
+  locale: string = "en",
+  collection: string
+): Promise<TestimonialResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "slug",
+        "fields[1]": "name",
+        "fields[2]": "what_they_say",
+        "populate[user_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as TestimonialResponse;
+  } catch (error) {
+    console.error("Error fetching recent testimonials:", error);
+    throw new Error("Failed to fetch recent testimonials");
   }
 }
