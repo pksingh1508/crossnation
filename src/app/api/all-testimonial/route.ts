@@ -1,13 +1,13 @@
-"use server";
-import { NextRequest, NextResponse } from "next/server";
-import { fetchRecentTestimonials } from "@/lib/strapi";
+import { NextRequest, NextResponse } from 'next/server';
+import { getAllTestimonials } from '@/lib/strapi';
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const locale = searchParams.get("locale") || "en";
-    const pageSize = parseInt(searchParams.get("pageSize") || "3");
-
+    const locale = searchParams.get('locale') || 'en';
+    const page = parseInt(searchParams.get('page') || '1');
+    const pageSize = parseInt(searchParams.get('pageSize') || '10');
+    
     // Get the Strapi token from environment variables
     const token = process.env.STRAPI_ACCESS_TOKEN;
     
@@ -19,18 +19,19 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const testimonials = await fetchRecentTestimonials(
+    const testimonials = await getAllTestimonials(
       token,
+      page,
       pageSize,
       locale,
-      "testimonials" // collection name
+      'testimonials' // collection name
     );
 
     return NextResponse.json(testimonials);
   } catch (error) {
-    console.error("Error in testimonials API route:", error);
+    console.error('Error in all testimonials API route:', error);
     return NextResponse.json(
-      { error: "Failed to fetch testimonials" },
+      { error: 'Failed to fetch testimonials', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }

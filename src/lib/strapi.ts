@@ -50,8 +50,8 @@ export interface TestimonialItem {
     name: string;
     what_they_say: string;
     slug: string;
-    role?: string;
-    company?: string;
+    role: string;
+    view_count?: number;
     updatedAt: string;
     user_image?: {
       data?: {
@@ -65,8 +65,8 @@ export interface TestimonialItem {
   name?: string;
   what_they_say?: string;
   slug?: string;
+  view_count?: number;
   role?: string;
-  company?: string;
   updatedAt?: string;
   user_image?: {
     url: string;
@@ -211,6 +211,7 @@ export async function fetchRecentTestimonials(
         "fields[0]": "slug",
         "fields[1]": "name",
         "fields[2]": "what_they_say",
+        "fields[5]": "updatedAt",
         "populate[user_image][fields][0]": "url",
         "sort[0]": "updatedAt:desc",
       },
@@ -220,5 +221,41 @@ export async function fetchRecentTestimonials(
   } catch (error) {
     console.error("Error fetching recent testimonials:", error);
     throw new Error("Failed to fetch recent testimonials");
+  }
+}
+
+export async function getAllTestimonials(
+  token: string,
+  page: number = 1,
+  pageSize: number = 10,
+  locale: string = "en",
+  collection: string
+): Promise<TestimonialResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "slug",
+        "fields[1]": "name",
+        "fields[2]": "what_they_say",
+        "fields[3]": "view_count",
+        "fields[5]": "updatedAt",
+        "populate[user_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as TestimonialResponse;
+  } catch (error) {
+    console.error("Error fetching all testimonials:", error);
+    throw new Error("Failed to fetch all testimonials");
   }
 }

@@ -25,8 +25,9 @@ export function SingleTestimonial({
     what_they_say:
       testimonial.attributes?.what_they_say || testimonial.what_they_say || "",
     role: testimonial.attributes?.role || testimonial.role || "Client",
-    company: testimonial.attributes?.company || testimonial.company || "",
     slug: testimonial.attributes?.slug || testimonial.slug || "",
+    view_count:
+      testimonial.attributes?.view_count || testimonial.view_count || 0,
     updatedAt: testimonial.attributes?.updatedAt || testimonial.updatedAt || "",
     user_image:
       testimonial.attributes?.user_image?.data?.attributes?.url ||
@@ -121,12 +122,6 @@ export function SingleTestimonial({
               </h4>
               <p className="text-gray-500 text-sm font-medium truncate">
                 {data.role}
-                {data.company && (
-                  <>
-                    <span className="mx-2">•</span>
-                    <span className="text-gray-400">{data.company}</span>
-                  </>
-                )}
               </p>
             </div>
           </div>
