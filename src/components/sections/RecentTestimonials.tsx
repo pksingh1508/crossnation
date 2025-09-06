@@ -185,7 +185,7 @@ export function RecentTestimonials() {
             className="text-center mt-16"
           >
             <Link
-              href={`${locale}/testimonials`}
+              href={`/${locale}/testimonials`}
               className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
             >
               Read More Testimonials

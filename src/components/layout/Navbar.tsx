@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { NAVBAR_LINKS } from "@/constants/data";
@@ -23,8 +24,17 @@ export function Navbar() {
   const tCommon = useTranslations("common");
   const tNav = useTranslations("nav");
   const locale = useLocale();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // Helper function to check if a link is active
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === `/${locale}` || pathname === `/${locale}/`;
+    }
+    return pathname === `/${locale}${href}` || pathname.startsWith(`/${locale}${href}/`);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -143,8 +153,13 @@ export function Navbar() {
           <div className="hidden xl:flex items-center justify-end gap-2">
             <Link
               href={`/${locale}/`}
-              className="hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px]"
-              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
+                isActive('/') ? 'bg-[var(--active-bg)]' : ''
+              }`}
+              style={{ 
+                ["--hover-bg" as any]: colors.yellow.dark,
+                ["--active-bg" as any]: colors.yellow.DEFAULT
+              }}
             >
               <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
             </Link>
@@ -154,8 +169,13 @@ export function Navbar() {
                 <motion.div key={item.href} whileHover={{ y: -2 }}>
                   <Link
                     href={`/${locale}${item.href}`}
-                    className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium`}
-                    style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                    className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium ${
+                      isActive(item.href) ? 'bg-[var(--active-bg)] text-black shadow-lg' : ''
+                    }`}
+                    style={{ 
+                      ["--hover-bg" as any]: colors.yellow.dark,
+                      ["--active-bg" as any]: colors.yellow.DEFAULT
+                    }}
                   >
                     {tNav(key as any)}
                   </Link>
@@ -257,8 +277,13 @@ export function Navbar() {
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               <Link
                 href={`/${locale}/`}
-                className="hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px]"
-                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
+                  isActive('/') ? 'bg-[var(--active-bg)]' : ''
+                }`}
+                style={{ 
+                  ["--hover-bg" as any]: colors.yellow.dark,
+                  ["--active-bg" as any]: colors.yellow.DEFAULT
+                }}
                 onClick={() => setIsOpen(false)}
               >
                 <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
@@ -267,8 +292,13 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={`/${locale}${item.href}`}
-                  className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontInter.className} font-medium`}
-                  style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+                  className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontInter.className} font-medium ${
+                    isActive(item.href) ? 'bg-[var(--active-bg)] text-black' : ''
+                  }`}
+                  style={{ 
+                    ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                    ["--active-bg" as any]: colors.yellow.DEFAULT
+                  }}
                   onClick={() => setIsOpen(false)}
                 >
                   {tNav(item.href.replace(/^\//, "") as any)}
