@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import { CommonContact } from "@/components/sections/CommonContact";
-import { Inspiration } from "@/components/sections/Inspiration";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { AnyQuestion } from "@/components/sections/AnyQuestion";
 import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import { EmployerContent } from "@/components/employer/EmployerContent";
+import { RecentTestimonials } from "@/components/sections/RecentTestimonials";
+import { RecentBlog } from "@/components/sections/RecentBlog";
+import { NewsSection } from "@/components/immigration_faq/NewsSection";
+import { SolveQuery } from "@/components/sections/SolveQuery";
 
 export const metadata: Metadata = {
   title: "Employer Services | CountryNation",
@@ -17,9 +18,10 @@ export default function EmployerPage() {
       <CommonContact />
       {/* some employer realted page content */}
       <EmployerContent />
-      <Inspiration />
-      <WhyChooseUs />
-      <AnyQuestion />
+      <RecentTestimonials />
+      <RecentBlog />
+      <NewsSection />
+      <SolveQuery />
       <GovernmentLinks />
     </div>
   );

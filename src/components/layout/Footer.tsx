@@ -16,37 +16,6 @@ export function Footer() {
 
   return (
     <footer className="mt-auto bg-gray-50 text-gray-800 px-4 xl:px-28">
-      {/* Newsletter Section */}
-      <div>
-        <div className="container mx-auto px-6 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              {t("newsletter.title")}
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              {t("newsletter.description")}
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder={t("newsletter.emailPlaceholder")}
-                className="flex-1 bg-white border-gray-300 text-gray-800 placeholder:text-gray-500 focus:border-amber-500 focus:ring-amber-500/20 px-6 py-3"
-              />
-              <Button
-                type="submit"
-                className="bg-amber-500 text-white hover:bg-amber-600 font-semibold px-8 py-3 transition-all duration-300"
-                style={{
-                  backgroundColor: colors.yellow.DEFAULT,
-                  color: colors.black.light,
-                }}
-              >
-                {t("newsletter.submitButton")}
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

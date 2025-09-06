@@ -34,9 +34,6 @@ export function SomeFAQ() {
             <h2 className="text-xl font-bold text-gray-800 mb-4 md:mb-6">
               {t2("heading")}
             </h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto">
-              {t2("description")}
-            </p>
           </div>
 
           {/* FAQ Accordion */}

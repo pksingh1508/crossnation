@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 import { CommonContact } from "@/components/sections/CommonContact";
-import { Inspiration } from "@/components/sections/Inspiration";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { AnyQuestion } from "@/components/sections/AnyQuestion";
 import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import { RecruiterContent } from "@/components/recruiter/RecruiterContent";
+import { RecentTestimonials } from "@/components/sections/RecentTestimonials";
+import { RecentBlog } from "@/components/sections/RecentBlog";
+import { SolveQuery } from "@/components/sections/SolveQuery";
+import { NewsSection } from "@/components/immigration_faq/NewsSection";
 
 export const metadata: Metadata = {
   title: "Recruiter Services | CountryNation",
@@ -21,9 +22,10 @@ export default function RecruiterPage() {
       <CommonContact />
       {/* custom recruiter page content */}
       <RecruiterContent />
-      <Inspiration />
-      <WhyChooseUs />
-      <AnyQuestion />
+      <RecentTestimonials />
+      <RecentBlog />
+      <NewsSection />
+      <SolveQuery />
       <GovernmentLinks />
     </div>
   );

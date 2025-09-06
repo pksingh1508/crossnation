@@ -22,7 +22,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
         setError(null);
 
         const response = await fetch(
-          `/api/immigration-news?locale=${locale}&page=1&pageSize=7`
+          `/api/immigration-news?locale=${locale}&page=1&pageSize=10`
         );
 
         if (!response.ok) {
