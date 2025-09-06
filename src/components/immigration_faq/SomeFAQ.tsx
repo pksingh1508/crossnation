@@ -7,13 +7,10 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { useLocale } from "next-intl";
-import Link from "next/link";
 
 export function SomeFAQ() {
   const t = useTranslations("faq");
   const t2 = useTranslations("someFAQ");
-  const locale = useLocale();
 
   const faqKeys = [
     "choose",
@@ -33,11 +30,11 @@ export function SomeFAQ() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4 md:mb-6">
+          <div className="text-center mb-6">
+            <h2 className="text-xl font-bold text-gray-800 mb-4 md:mb-6">
               {t2("heading")}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               {t2("description")}
             </p>
           </div>
@@ -51,30 +48,15 @@ export function SomeFAQ() {
                   value={key}
                   className="border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <AccordionTrigger className="text-left text-base md:text-lg">
+                  <AccordionTrigger className="text-left text-base">
                     {t(`questions.${key}.question`)}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm md:text-base">
+                  <AccordionContent className="text-sm">
                     {t(`questions.${key}.answer`)}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
-
-          {/* Contact CTA */}
-          <div className="text-center mt-12 md:mt-16">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-white/20 max-w-2xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">
-                {t("cta1")}
-              </h3>
-              <p className="text-gray-600 mb-6 text-sm md:text-base">
-                {t("cta2")}
-              </p>
-              <button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <Link href={`/${locale}/contact`}>{t("cta3")}</Link>
-              </button>
-            </div>
           </div>
         </div>
       </div>

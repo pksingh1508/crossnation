@@ -64,15 +64,8 @@ export function SingleTestimonial({
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        {/* Quote icon */}
-        <div className="relative mb-6">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full shadow-lg">
-            <Quote className="w-6 h-6 text-white" />
-          </div>
-        </div>
-
         {/* Stars rating */}
-        <div className="relative flex items-center gap-1 mb-4">
+        <div className="relative flex items-center gap-1 mb-2">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
           ))}
@@ -81,7 +74,7 @@ export function SingleTestimonial({
         {/* Testimonial content */}
         <div className="relative mb-8">
           <blockquote className="text-gray-700 text-lg leading-relaxed font-medium">
-            "{data.what_they_say}"
+            "{data.what_they_say.split(" ").slice(0, 30).join(" ")}"
           </blockquote>
         </div>
 

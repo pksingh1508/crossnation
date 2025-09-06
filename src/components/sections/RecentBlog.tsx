@@ -49,7 +49,7 @@ export function RecentBlog() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Recent Blogs
               </h2>
-              <div className="h-1 bg-yellow-700 rounded w-16 mx-auto"></div>
+              <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
             </div>
 
             {/* Loading State */}

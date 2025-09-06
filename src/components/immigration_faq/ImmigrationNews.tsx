@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { NewsItem } from "@/lib/strapi";
 import { SingleNews } from "./SingleNews";
+import { motion, easeOut, Variants } from "framer-motion";
+import Link from "next/link";
 
 interface ImmigrationNewsProps {
   locale?: string;
@@ -18,14 +20,16 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
       try {
         setLoading(true);
         setError(null);
-        
-        const response = await fetch(`/api/immigration-news?locale=${locale}&page=1&pageSize=10`);
-        
+
+        const response = await fetch(
+          `/api/immigration-news?locale=${locale}&page=1&pageSize=7`
+        );
+
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(errorData.error || "Failed to fetch news");
         }
-        
+
         const data = await response.json();
         setNews(data.data);
       } catch (err) {
@@ -102,6 +106,25 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
           <p className="text-gray-600">No news articles found.</p>
         )}
       </div>
+      {/* See all news buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.6,
+          delay: 0.4,
+          ease: easeOut,
+        }}
+        // className="text-center"
+      >
+        <Link
+          href={`${locale}/immigration-news`}
+          className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
+        >
+          See All News
+        </Link>
+      </motion.div>
     </div>
   );
 }

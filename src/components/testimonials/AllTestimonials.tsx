@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { TestimonialItem, TestimonialResponse } from "@/lib/strapi";
 import { SingleOneTestimonial } from "@/components/testimonials/SingleOneTestimonial";
-import { useTranslations } from "@/hooks/useTranslations";
 import {
   Loader2,
   Users,
@@ -36,7 +35,7 @@ export function AllTestimonials() {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const locale = useLocale();
-  const t = useTranslations("testimonials");
+  const testimonialRef = useRef<HTMLDivElement>(null);
 
   const fetchTestimonials = async (page: number = 1) => {
     try {
@@ -75,7 +74,10 @@ export function AllTestimonials() {
     if (newPage >= 1 && newPage <= pagination.pageCount) {
       fetchTestimonials(newPage);
       // Scroll to top when page changes
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({
+        top: testimonialRef.current?.offsetTop,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -219,7 +221,10 @@ export function AllTestimonials() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
+    <div
+      ref={testimonialRef}
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden"
+    >
       {/* Background decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-amber-400/5 rounded-full blur-3xl" />

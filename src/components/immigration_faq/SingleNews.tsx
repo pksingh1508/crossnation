@@ -35,7 +35,7 @@ export function SingleNews({ news }: SingleNewsProps) {
   };
 
   return (
-    <article className="border-b border-gray-200 pb-6 mb-6 last:border-b-0">
+    <article className="border-b border-gray-200 pb-4 mb-4 last:border-b-0">
       <div className="space-y-3">
         {/* Title */}
         <Link href={`/${locale}/immigration-news/${slug}`}>
