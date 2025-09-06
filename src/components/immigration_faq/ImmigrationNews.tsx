@@ -31,6 +31,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
         }
 
         const data = await response.json();
+        console.log("data", data);
         setNews(data.data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load news");

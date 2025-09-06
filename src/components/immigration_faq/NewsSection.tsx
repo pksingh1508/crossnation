@@ -9,7 +9,7 @@ export function NewsSection() {
   const { locale } = useLocaleStore();
 
   return (
-    <div className="py-16 md:pt-16">
+    <div className="py-16 md:py-9">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Desktop Layout: FAQ left, News right */}

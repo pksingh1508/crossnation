@@ -16,15 +16,11 @@ export const metadata: Metadata = {
 
 const lenisOptions: Partial<LenisOptions> = {
   // smoothing controls
-  duration: 1.2, // how long the programmatic scroll takes
-  // custom easing (same default from Lenis)
-  easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  duration: 1.2,
 
   // input multipliers & behavior
   wheelMultiplier: 1, // mouse wheel sensitivity
-  touchMultiplier: 2, // touch/trackpad sensitivity (this replaces `smoothTouch`)
-  syncTouch: false, // whether to mimic native touch inertia (experimental / optional)
-  // autoRaf: true // if you rely on automatic RAF (Lenis autoRaf is default behavior)
+  touchMultiplier: 2,
 };
 
 export default function RootLayout({
