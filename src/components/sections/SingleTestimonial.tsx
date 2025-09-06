@@ -65,25 +65,18 @@ export function SingleTestimonial({
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Stars rating */}
-        <div className="relative flex items-center gap-1 mb-2">
+        {/* <div className="relative flex items-center gap-1 mb-2">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
           ))}
-        </div>
-
-        {/* Testimonial content */}
-        <div className="relative mb-8">
-          <blockquote className="text-gray-700 text-lg leading-relaxed font-medium">
-            "{data.what_they_say.split(" ").slice(0, 30).join(" ")}"
-          </blockquote>
-        </div>
+        </div> */}
 
         {/* Client info */}
         <Link href={`${locale}/testimonials`}>
-          <div className="relative flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+          <div className="relative flex flex-col items-center gap-4 mt-auto ">
             {/* Avatar */}
             <div className="relative">
-              <div className="w-14 h-14 rounded-full overflow-hidden ring-4 ring-white shadow-md">
+              <div className="w-44 h-44 rounded-sm overflow-hidden ring-4 ring-white shadow-md">
                 {data.user_image ? (
                   <Image
                     src={
@@ -92,9 +85,10 @@ export function SingleTestimonial({
                         : `https://determined-unity-de531adc95.strapiapp.com${data.user_image}`
                     }
                     alt={`${data.name} - testimonial`}
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-cover"
+                    // width={56}
+                    // height={56}
+                    fill
+                    className="w-full h-full rounded-md object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
@@ -113,12 +107,16 @@ export function SingleTestimonial({
               <h4 className="font-bold text-gray-900 text-lg truncate">
                 {data.name}
               </h4>
-              <p className="text-gray-500 text-sm font-medium truncate">
-                {data.role}
-              </p>
             </div>
           </div>
         </Link>
+
+        {/* Testimonial content */}
+        <div className="relative mb-8">
+          <blockquote className="text-gray-700 text-md leading-relaxed font-medium">
+            "{data.what_they_say.split(" ").slice(0, 30).join(" ")}"
+          </blockquote>
+        </div>
 
         {/* Hover effect overlay */}
         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
