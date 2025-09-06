@@ -42,7 +42,11 @@ export interface BlogItem {
     updatedAt: string;
     likes_count: number;
     slug: string;
-    short_desc: string;
+    short_desc?: string;
+    contents?: string;
+    comments_count?: number;
+    tags?: string;
+    category?: string;
     blog_image?: {
       data?: {
         attributes?: {
@@ -57,6 +61,10 @@ export interface BlogItem {
   likes_count?: number;
   slug?: string;
   short_desc?: string;
+  contents?: string;
+  comments_count?: number;
+  tags?: string;
+  category?: string;
   blog_image?: {
     url: string;
   };
@@ -346,5 +354,76 @@ export async function getSingleNews(
   } catch (error) {
     console.error("Error fetching single news:", error);
     throw new Error("Failed to fetch single news");
+  }
+}
+
+export async function getPaginatedBlog(
+  token: string,
+  page: number = 1,
+  pageSize: number = 10,
+  locale: string = "en",
+  collection: string
+): Promise<BlogResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "title",
+        "fields[1]": "short_desc",
+        "fields[2]": "updatedAt",
+        "fields[3]": "likes_count",
+        "fields[4]": "slug",
+        "populate[blog_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as BlogResponse;
+  } catch (error) {
+    console.error("Error fetching paginated blogs:", error);
+    throw new Error("Failed to fetch paginated blogs");
+  }
+}
+
+export async function getSingleBlogPost(
+  token: string,
+  slug: string,
+  locale: string = "en",
+  collection: string
+): Promise<BlogResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "filters[slug][$eq]": slug,
+        "fields[0]": "title",
+        "fields[1]": "contents",
+        "fields[2]": "updatedAt",
+        "fields[3]": "comments_count",
+        "fields[4]": "likes_count",
+        "fields[5]": "tags",
+        "fields[6]": "category",
+        "populate[blog_image][fields][0]": "url",
+      },
+    });
+
+    return response.data as BlogResponse;
+  } catch (error) {
+    console.error("Error fetching single blog post:", error);
+    throw new Error("Failed to fetch single blog post");
   }
 }
