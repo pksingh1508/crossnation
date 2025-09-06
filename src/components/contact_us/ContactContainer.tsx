@@ -119,56 +119,110 @@ export function ContactContainer() {
           </p>
         </motion.div>
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
+          {/* Main Container with 3-column grid layout */}
+          <div className="relative bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
+            {/* Large Screen Layout - 3 Columns Grid */}
             <motion.div
-              className="grid lg:grid-cols-2 gap-12 items-start"
+              className="hidden lg:grid lg:grid-cols-[200px_1fr_1fr] gap-12 items-start"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
             >
-              {/* Left Content - Contact Information */}
+              {/* Left Column - Social Media Links */}
+              <motion.div className="space-y-6" variants={itemVariants}>
+                <div className="space-y-4">
+                  <motion.h3
+                    className="text-lg font-bold font-playfair text-gray-900 dark:text-white"
+                    variants={itemVariants}
+                  >
+                    Follow Us
+                  </motion.h3>
+                  <div className="w-8 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
+                </div>
+
+                <motion.div
+                  className="flex flex-col gap-3"
+                  variants={itemVariants}
+                >
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      className={`flex items-center gap-2 p-3 rounded-lg bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-md group`}
+                      variants={iconVariants}
+                      initial="rest"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <social.icon className="w-4 h-4 flex-shrink-0" />
+                      <span className="text-sm font-medium group-hover:translate-x-1 transition-transform">
+                        {social.icon === Facebook
+                          ? "Facebook"
+                          : social.icon === Twitter
+                            ? "Twitter"
+                            : social.icon === Linkedin
+                              ? "LinkedIn"
+                              : "Instagram"}
+                      </span>
+                    </motion.a>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* Middle Column - Contact Form with elevated appearance */}
               <motion.div
-                className="space-y-8 order-2 lg:order-1"
+                className="relative"
                 variants={itemVariants}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <div className="space-y-6">
+                {/* Yellow Background Layer */}
+                <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-xl bg-yellow-500" />
+
+                {/* Main White Box */}
+                <div className="relative bg-white dark:bg-gray-800 rounded-xl p-6 ">
+                  <ContactForm />
+                </div>
+              </motion.div>
+
+              {/* Right Column - Contact Information */}
+              <motion.div className="space-y-6" variants={itemVariants}>
+                <div className="space-y-4">
                   <motion.h2
-                    className="text-3xl lg:text-4xl font-bold font-playfair text-gray-900 dark:text-white"
+                    className="text-2xl font-bold font-playfair text-gray-900 dark:text-white"
                     variants={itemVariants}
                   >
                     {t("info.title")}
                   </motion.h2>
-                  <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
+                  <div className="w-12 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
                 </div>
 
                 {/* Contact Items */}
-                <motion.div className="space-y-6" variants={itemVariants}>
+                <motion.div className="space-y-3" variants={itemVariants}>
                   {contactItems.map((item, index) => (
                     <motion.div
                       key={item.title}
-                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-700/50 transition-all duration-300"
+                      className="group flex items-start gap-3 p-3 rounded-xl hover:bg-white/70 dark:hover:bg-gray-700/50 transition-all duration-300"
                       variants={itemVariants}
-                      whileHover={{ x: 5 }}
+                      whileHover={{ x: 3 }}
                     >
                       <motion.div
-                        className={`p-3 rounded-full bg-gradient-to-r ${item.color} shadow-lg`}
+                        className={`p-2.5 rounded-full bg-gradient-to-r ${item.color} shadow-md flex-shrink-0`}
                         variants={iconVariants}
                         initial="rest"
                         whileHover="hover"
                       >
-                        <item.icon className="w-6 h-6 text-white" />
+                        <item.icon className="w-4 h-4 text-white" />
                       </motion.div>
 
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold font-poppins text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-sm font-semibold font-poppins text-gray-900 dark:text-white mb-1">
                           {item.title}
                         </h3>
-                        <div className="space-y-1">
+                        <div className="space-y-0.5">
                           {item.content.map((line, lineIndex) => (
                             <p
                               key={lineIndex}
-                              className="text-gray-600 dark:text-gray-300 font-inter"
+                              className="text-xs text-gray-600 dark:text-gray-300 font-inter break-words"
                             >
                               {item.link ? (
                                 <a
@@ -187,34 +241,122 @@ export function ContactContainer() {
                     </motion.div>
                   ))}
                 </motion.div>
-
-                {/* Social Links */}
-                <motion.div className="pt-6" variants={itemVariants}>
-                  <div className="flex gap-4">
-                    {socialLinks.map((social, index) => (
-                      <motion.a
-                        key={index}
-                        href={social.href}
-                        className={`p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
-                        variants={iconVariants}
-                        initial="rest"
-                        whileHover="hover"
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <social.icon className="w-5 h-5" />
-                      </motion.a>
-                    ))}
-                  </div>
-                </motion.div>
               </motion.div>
+            </motion.div>
 
-              {/* Right Content - Contact Form */}
+            {/* Mobile/Tablet Layout - Vertical Stack */}
+            <motion.div
+              className="lg:hidden space-y-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {/* 1. Contact Form First */}
               <motion.div
-                className="bg-gray-50/50 dark:bg-gray-700/50 rounded-2xl shadow-lg p-8 order-1 lg:order-2"
+                className="bg-white dark:bg-gray-700 rounded-2xl shadow-[0_10px_30px_rgba(251,191,36,0.2)] border border-yellow-200/20 dark:border-yellow-600/10 p-6"
                 variants={itemVariants}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 <ContactForm />
+              </motion.div>
+
+              {/* 2. Contact Information */}
+              <motion.div className="space-y-6" variants={itemVariants}>
+                <div className="space-y-4">
+                  <motion.h2
+                    className="text-2xl md:text-3xl font-bold font-playfair text-gray-900 dark:text-white"
+                    variants={itemVariants}
+                  >
+                    {t("info.title")}
+                  </motion.h2>
+                  <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
+                </div>
+
+                {/* Contact Items */}
+                <motion.div className="space-y-4" variants={itemVariants}>
+                  {contactItems.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-gray-700/50 transition-all duration-300"
+                      variants={itemVariants}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        className={`p-3 rounded-full bg-gradient-to-r ${item.color} shadow-lg flex-shrink-0`}
+                        variants={iconVariants}
+                        initial="rest"
+                        whileHover="hover"
+                      >
+                        <item.icon className="w-6 h-6 text-white" />
+                      </motion.div>
+
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-semibold font-poppins text-gray-900 dark:text-white mb-2">
+                          {item.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {item.content.map((line, lineIndex) => (
+                            <p
+                              key={lineIndex}
+                              className="text-gray-600 dark:text-gray-300 font-inter break-words"
+                            >
+                              {item.link ? (
+                                <a
+                                  href={item.link}
+                                  className="hover:text-yellow-600 transition-colors duration-200 hover:underline"
+                                >
+                                  {line}
+                                </a>
+                              ) : (
+                                line
+                              )}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* 3. Social Media Links */}
+              <motion.div className="space-y-4" variants={itemVariants}>
+                <motion.h3
+                  className="text-xl font-bold font-playfair text-gray-900 dark:text-white"
+                  variants={itemVariants}
+                >
+                  Follow Us
+                </motion.h3>
+                <div className="w-12 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
+
+                <motion.div
+                  className="flex flex-wrap gap-4"
+                  variants={itemVariants}
+                >
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      className={`flex items-center gap-2 p-3 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
+                      variants={iconVariants}
+                      initial="rest"
+                      whileHover="hover"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <social.icon className="w-5 h-5" />
+                      <span className="font-medium text-sm">
+                        {social.icon === Facebook
+                          ? "Facebook"
+                          : social.icon === Twitter
+                            ? "Twitter"
+                            : social.icon === Linkedin
+                              ? "LinkedIn"
+                              : "Instagram"}
+                      </span>
+                    </motion.a>
+                  ))}
+                </motion.div>
               </motion.div>
             </motion.div>
           </div>
