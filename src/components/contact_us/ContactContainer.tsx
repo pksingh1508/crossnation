@@ -176,10 +176,10 @@ export function ContactContainer() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 {/* Yellow Background Layer */}
-                <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-xl bg-yellow-500" />
+                <div className="absolute -inset-3 rounded-xl bg-yellow-500 z-0" />
 
                 {/* Main White Box */}
-                <div className="relative bg-white dark:bg-gray-800 rounded-xl p-6 ">
+                <div className="relative z-10 bg-white dark:bg-gray-800 rounded-xl p-6 ">
                   <ContactForm />
                 </div>
               </motion.div>

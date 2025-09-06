@@ -124,7 +124,7 @@ export function ContactForm() {
   return (
     <div className="w-full max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
           <FormField label={t("firstName")} required>
             <div className="font-inter">
               <Input
@@ -165,7 +165,7 @@ export function ContactForm() {
 
         <FormField label={t("phoneNumber")} required>
           <div className="font-inter">
-            <div className="flex gap-2 flex-col">
+            <div className="flex gap-2 flex-col md:flex-row">
               <Select
                 value={selectedCountry.iso}
                 onValueChange={(value) => {
