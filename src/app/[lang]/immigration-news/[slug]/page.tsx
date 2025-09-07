@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import "highlight.js/styles/github.css";
+import { LatestNewsPost } from "@/components/immigration_news/LatestNewsPost";
 
 interface SingleNewsPageProps {
   params: Promise<{ slug: string; lang: string }>;
@@ -177,93 +178,95 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30">
-      <article className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Featured Image */}
-        {newsData.news_image && (
+      <div className="max-w-7xl grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-4 mx-auto">
+        <article className="container mx-auto px-3 py-12">
+          {/* Featured Image */}
+          {newsData.news_image && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full h-64 md:h-[30rem] rounded-2xl overflow-hidden mb-8 shadow-xl"
+            >
+              <Image
+                src={
+                  newsData.news_image.startsWith("http")
+                    ? newsData.news_image
+                    : `https://determined-unity-de531adc95.strapiapp.com${newsData.news_image}`
+                }
+                alt={newsData.title}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </motion.div>
+          )}
+
+          {/* Article Header */}
+          <motion.header
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8"
+          >
+            {/* Category and Tags */}
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              {newsData.category && (
+                <div className="flex items-center gap-1.5 bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                  <FolderOpen className="w-4 h-4" />
+                  {newsData.category}
+                </div>
+              )}
+              {tags.map((tag, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-1.5 bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full text-sm font-medium"
+                >
+                  <Tag className="w-3 h-3" />
+                  {tag}
+                </div>
+              ))}
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {newsData.title}
+            </h1>
+
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center gap-6 text-gray-600">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-5 h-5" />
+                <span className="text-sm font-medium">
+                  {formatDate(newsData.updatedAt)}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Eye className="w-5 h-5" />
+                <span className="text-sm font-medium">
+                  {newsData.views.toLocaleString()} views
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5" />
+                <span className="text-sm font-medium">
+                  {Math.ceil(newsData.contents.split(" ").length / 200)} min
+                  read
+                </span>
+              </div>
+            </div>
+          </motion.header>
+
+          {/* Article Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-8 shadow-xl"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white rounded-2xl p-8 md:p-12 shadow-xl"
           >
-            <Image
-              src={
-                newsData.news_image.startsWith("http")
-                  ? newsData.news_image
-                  : `https://determined-unity-de531adc95.strapiapp.com${newsData.news_image}`
-              }
-              alt={newsData.title}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-          </motion.div>
-        )}
-
-        {/* Article Header */}
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-8"
-        >
-          {/* Category and Tags */}
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            {newsData.category && (
-              <div className="flex items-center gap-1.5 bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full text-sm font-medium">
-                <FolderOpen className="w-4 h-4" />
-                {newsData.category}
-              </div>
-            )}
-            {tags.map((tag, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-1.5 bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full text-sm font-medium"
-              >
-                <Tag className="w-3 h-3" />
-                {tag}
-              </div>
-            ))}
-          </div>
-
-          {/* Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            {newsData.title}
-          </h1>
-
-          {/* Meta Information */}
-          <div className="flex flex-wrap items-center gap-6 text-gray-600">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
-              <span className="text-sm font-medium">
-                {formatDate(newsData.updatedAt)}
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Eye className="w-5 h-5" />
-              <span className="text-sm font-medium">
-                {newsData.views.toLocaleString()} views
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span className="text-sm font-medium">
-                {Math.ceil(newsData.contents.split(" ").length / 200)} min read
-              </span>
-            </div>
-          </div>
-        </motion.header>
-
-        {/* Article Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-2xl p-8 md:p-12 shadow-xl"
-        >
-          <div
-            className="prose prose-lg prose-gray max-w-none
+            <div
+              className="prose prose-lg prose-gray max-w-none
                          prose-headings:text-gray-900 prose-headings:font-bold
                          prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-8
                          prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-6
@@ -279,81 +282,88 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
                          prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
                          prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg
                          prose-img:rounded-lg prose-img:shadow-lg prose-img:my-6"
-          >
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight, rehypeRaw]}
-              components={{
-                // Custom image component
-                img: ({ node, ...props }) => {
-                  const src = typeof props.src === "string" ? props.src : "";
-                  const alt = typeof props.alt === "string" ? props.alt : "";
-
-                  return (
-                    <Image
-                      src={src || ""}
-                      alt={alt || ""}
-                      width={800}
-                      height={400}
-                      className="rounded-lg shadow-lg my-6"
-                      style={{ width: "auto", height: "auto" }}
-                    />
-                  );
-                },
-                // Custom link component
-                a: ({ node, ...props }) => {
-                  const href = typeof props.href === "string" ? props.href : "";
-
-                  return (
-                    <a
-                      {...props}
-                      href={href}
-                      className="text-blue-600 hover:text-blue-800 hover:underline font-medium transition-colors"
-                      target={href?.startsWith("http") ? "_blank" : undefined}
-                      rel={
-                        href?.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                    />
-                  );
-                },
-              }}
             >
-              {newsData.contents}
-            </ReactMarkdown>
-          </div>
-        </motion.div>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeHighlight, rehypeRaw]}
+                components={{
+                  // Custom image component
+                  img: ({ node, ...props }) => {
+                    const src = typeof props.src === "string" ? props.src : "";
+                    const alt = typeof props.alt === "string" ? props.alt : "";
 
-        {/* Article Footer */}
-        <motion.footer
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 pt-8 border-t border-gray-200"
-        >
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <span className="text-gray-600 text-sm">Share this article:</span>
-              <Button
-                onClick={handleShare}
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-2"
+                    return (
+                      <Image
+                        src={src || ""}
+                        alt={alt || ""}
+                        width={800}
+                        height={400}
+                        className="rounded-lg shadow-lg my-6"
+                        style={{ width: "auto", height: "auto" }}
+                      />
+                    );
+                  },
+                  // Custom link component
+                  a: ({ node, ...props }) => {
+                    const href =
+                      typeof props.href === "string" ? props.href : "";
+
+                    return (
+                      <a
+                        {...props}
+                        href={href}
+                        className="text-blue-600 hover:text-blue-800 hover:underline font-medium transition-colors"
+                        target={href?.startsWith("http") ? "_blank" : undefined}
+                        rel={
+                          href?.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                      />
+                    );
+                  },
+                }}
               >
-                <Share2 className="w-4 h-4" />
-                Share
-              </Button>
+                {newsData.contents}
+              </ReactMarkdown>
             </div>
-            <Link href={`/${locale}/immigration-news`}>
-              <Button variant="ghost" className="flex items-center gap-2">
-                <ArrowLeft className="w-4 h-4" />
-                Back to All News
-              </Button>
-            </Link>
-          </div>
-        </motion.footer>
-      </article>
+          </motion.div>
+
+          {/* Article Footer */}
+          <motion.footer
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 pt-8 border-t border-gray-200"
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <span className="text-gray-600 text-sm">
+                  Share this article:
+                </span>
+                <Button
+                  onClick={handleShare}
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center gap-2"
+                >
+                  <Share2 className="w-4 h-4" />
+                  Share
+                </Button>
+              </div>
+              <Link href={`/${locale}/immigration-news`}>
+                <Button variant="ghost" className="flex items-center gap-2">
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to All News
+                </Button>
+              </Link>
+            </div>
+          </motion.footer>
+        </article>
+        <div className="my-4 md:mt-20">
+          <LatestNewsPost />
+        </div>
+      </div>
     </div>
   );
 }

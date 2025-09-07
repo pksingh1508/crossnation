@@ -15,6 +15,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LatestNewsPost } from "./LatestNewsPost";
 
 interface PaginationData {
   page: number;
@@ -401,7 +402,7 @@ export function ImmigrationNewsSection() {
               </p>
             </div>
           ) : (
-            <>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -416,6 +417,7 @@ export function ImmigrationNewsSection() {
                   />
                 ))}
               </motion.div>
+              <LatestNewsPost />
 
               {/* Loading overlay for pagination */}
               {loading && (
@@ -426,7 +428,7 @@ export function ImmigrationNewsSection() {
 
               {/* Pagination */}
               <PaginationControls />
-            </>
+            </div>
           )}
         </div>
       </div>

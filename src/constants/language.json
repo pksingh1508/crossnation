@@ -1,6 +1,6 @@
 [
   { "isoCode": "en", "name": "English" },
-  { "isoCode": "es", "name": "Spanish" },
   { "isoCode": "pl", "name": "Polish" },
+  { "isoCode": "es", "name": "Spanish" },
   { "isoCode": "fr", "name": "French" }
 ]

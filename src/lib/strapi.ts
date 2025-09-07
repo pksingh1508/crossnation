@@ -311,6 +311,40 @@ export async function fetchPaginatedImmigrationNews(
         "fields[3]": "views",
         "fields[4]": "slug",
         "populate[news_image][fields][0]": "url",
+      },
+    });
+
+    return response.data as StrapiResponse;
+  } catch (error) {
+    console.error("Error fetching paginated immigration news:", error);
+    throw new Error("Failed to fetch paginated immigration news");
+  }
+}
+
+export async function fetchRecentNews(
+  token: string,
+  page: number = 1,
+  pageSize: number = 10,
+  locale: string = "en",
+  collection: string
+): Promise<StrapiResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "title",
+        "fields[1]": "updatedAt",
+        "fields[2]": "views",
+        "fields[3]": "slug",
+        "populate[news_image][fields][0]": "url",
         "sort[0]": "updatedAt:desc",
       },
     });

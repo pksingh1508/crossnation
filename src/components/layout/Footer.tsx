@@ -28,7 +28,7 @@ export function Footer() {
 
   const updatedLinks = [
     { href: "/blog", label: "Blogs" },
-    { href: "/immigration-news", label: "News" },
+    { href: "/immigration-news", label: "Immigration News" },
   ];
 
   const companyInfoLinks = [
@@ -130,7 +130,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Exlusive Updates
+                  Exclusive Updates
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
