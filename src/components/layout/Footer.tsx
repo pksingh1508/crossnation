@@ -27,8 +27,8 @@ export function Footer() {
   ];
 
   const updatedLinks = [
-    { href: "/blogs", label: "Blogs" },
-    { href: "/news", label: "News" },
+    { href: "/blog", label: "Blogs" },
+    { href: "/immigration-news", label: "News" },
   ];
 
   const companyInfoLinks = [

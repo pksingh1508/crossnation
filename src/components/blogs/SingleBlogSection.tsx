@@ -77,7 +77,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
         <div className="flex flex-col md:flex-row">
           {/* Left side - Image */}
           <div className="md:w-80 md:flex-shrink-0">
-            <div className="relative h-48 md:h-full md:min-h-[200px] overflow-hidden">
+            <div className="relative h-44 md:h-full md:min-h-[200px] overflow-hidden">
               {data.blog_image ? (
                 <Image
                   src={
@@ -112,7 +112,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
           </div>
 
           {/* Right side - Content */}
-          <div className="flex-1 p-6 md:p-8">
+          <div className="flex-1 p-3 md:p-5">
             {/* Meta information */}
             <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
               <div className="flex items-center gap-1.5">
@@ -127,13 +127,13 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
 
             {/* Title */}
             <Link href={blogUrl}>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-purple-600 transition-colors duration-200 cursor-pointer">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors duration-200 cursor-pointer">
                 {data.title}
               </h3>
             </Link>
 
             {/* Description */}
-            <p className="text-gray-600 text-base leading-relaxed mb-6 line-clamp-3">
+            <p className="text-gray-600 text-base leading-relaxed mb-4 line-clamp-3">
               {data.short_desc}
             </p>
 

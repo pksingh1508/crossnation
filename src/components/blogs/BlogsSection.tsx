@@ -15,6 +15,8 @@ import {
   Calendar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RecentBlog } from "../sections/RecentBlog";
+import { LatestBlogPost } from "./LatestBlogPost";
 
 interface PaginationData {
   page: number;
@@ -404,7 +406,7 @@ export function BlogsSection() {
               </p>
             </div>
           ) : (
-            <>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -419,6 +421,7 @@ export function BlogsSection() {
                   />
                 ))}
               </motion.div>
+              <LatestBlogPost />
 
               {/* Loading overlay for pagination */}
               {loading && (
@@ -429,7 +432,7 @@ export function BlogsSection() {
 
               {/* Pagination */}
               <PaginationControls />
-            </>
+            </div>
           )}
         </div>
       </div>

@@ -295,7 +295,7 @@ export async function fetchPaginatedImmigrationNews(
 ): Promise<StrapiResponse> {
   try {
     const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
-    
+
     const response = await axios.get(BASE_URL, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -330,7 +330,7 @@ export async function getSingleNews(
 ): Promise<StrapiResponse> {
   try {
     const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
-    
+
     const response = await axios.get(BASE_URL, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -366,7 +366,7 @@ export async function getPaginatedBlog(
 ): Promise<BlogResponse> {
   try {
     const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
-    
+
     const response = await axios.get(BASE_URL, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -382,7 +382,6 @@ export async function getPaginatedBlog(
         "fields[3]": "likes_count",
         "fields[4]": "slug",
         "populate[blog_image][fields][0]": "url",
-        "sort[0]": "updatedAt:desc",
       },
     });
 
@@ -401,7 +400,7 @@ export async function getSingleBlogPost(
 ): Promise<BlogResponse> {
   try {
     const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
-    
+
     const response = await axios.get(BASE_URL, {
       headers: {
         Authorization: `Bearer ${token}`,
