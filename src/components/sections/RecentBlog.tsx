@@ -6,6 +6,8 @@ import { SingleBlog } from "./SingleBlog";
 import { useLocaleStore } from "@/store/useLocaleStore";
 import Link from "next/link";
 import { useTranslations } from "@/hooks/useTranslations";
+import { RippleButton } from "../ui/ripple-button";
+import { useRouter } from "next/navigation";
 
 export function RecentBlog() {
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
@@ -13,6 +15,7 @@ export function RecentBlog() {
   const [error, setError] = useState<string | null>(null);
   const { locale } = useLocaleStore();
   const t = useTranslations("RecentBlogs");
+  const router = useRouter();
 
   useEffect(() => {
     const loadBlogs = async () => {
@@ -129,12 +132,14 @@ export function RecentBlog() {
               }}
               className="text-center mt-16"
             >
-              <Link
-                href={`/${locale}/blog`}
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
+              <RippleButton
+                variant="brandOutline"
+                size="lg"
+                onClick={() => router.push(`/${locale}/blogs`)}
+                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
                 {t("cta") || "Read More Blogs"}
-              </Link>
+              </RippleButton>
             </motion.div>
           )}
         </div>

@@ -8,10 +8,12 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { fontPoppins, fontMontserrat, fontInter } from "@/fonts";
 import { RippleButton } from "@/components/ui/ripple-button";
+import { useRouter } from "next/navigation";
 
 export function Hero() {
   const t = useTranslations("home");
   const locale = useLocale();
+  const router = useRouter();
 
   const container = {
     hidden: { opacity: 0 },
@@ -32,19 +34,19 @@ export function Hero() {
         <div className="max-w-7xl mx-auto flex flex-col pt-8 md:pt-0 md:flex-row items-center justify-between">
           {/* Main Content */}
 
-          <motion.div className="w-[90%] md:w-[50vw] rounded-md overflow-hidden">
+          <motion.div className="w-[95%] md:w-3xl rounded-md overflow-hidden">
             <Image
               src="/home_compressed.jpg"
               alt="Home"
-              width={160}
-              height={48}
+              width={500}
+              height={400}
               unoptimized
-              className="w-[90vw] md:w-[40vw] h-[70vh] md:h-[70vh] object-cover rounded-md"
+              className="w-[95vw] md:w-[38vw] h-[70vh] object-cover rounded-md"
             />
           </motion.div>
 
           {/* CTA Button */}
-          <div className="w-[50vw] pt-7 md:pt-0 flex items-center justify-center flex-col space-y-8">
+          <div className="w-full md:w-3xl pt-7 md:pt-0 flex items-center justify-center flex-col space-y-8">
             {/* Heading */}
             <div className="text-center">
               <h2
@@ -55,38 +57,39 @@ export function Hero() {
             </div>
 
             {/* First Row Buttons */}
-            <div className="flex gap-6">
+            <div className="grid grid-cols-2 gap-2 md:gap-6 px-3 lg:px-0 w-full lg:w-2/3">
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                className={`bg-yellow-400 hover:bg-yellow-500 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
+                onClick={() => router.push(`/${locale}/recruiter`)}
+                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
-                <Link href={`/${locale}/recruiter`}>{t("btn1")}</Link>
+                {t("btn1")}
               </RippleButton>
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                className={`bg-purple-600 hover:bg-purple-700 rounded-none text-white px-10 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
+                onClick={() => router.push(`/${locale}/jobseeker`)}
+                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
-                <Link href={`/${locale}/jobseeker`}>{t("btn2")}</Link>
+                {t("btn2")}
               </RippleButton>
-            </div>
 
-            {/* Second Row Buttons */}
-            <div className="flex gap-6">
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                className={`bg-teal-500 hover:bg-teal-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
+                onClick={() => router.push(`/${locale}/migrate`)}
+                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
-                <Link href={`/${locale}/migrate`}>{t("btn3")}</Link>
+                {t("btn3")}
               </RippleButton>
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                className={`bg-green-500 hover:bg-green-600 text-white rounded-none px-11 py-6 text-xl font-semibold shadow-md transition-all ${fontMontserrat.className}`}
+                onClick={() => router.push(`/${locale}/employer`)}
+                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
-                <Link href={`/${locale}/employer`}>{t("btn4")}</Link>
+                {t("btn4")}
               </RippleButton>
             </div>
 

@@ -6,10 +6,13 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { HelpCircle, MessageSquare, Users, Phone } from "lucide-react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { RippleButton } from "../ui/ripple-button";
+import { useRouter } from "next/navigation";
 
 export function SolveQuery() {
   const t = useTranslations("solveQuery");
   const locale = useLocale();
+  const router = useRouter();
 
   // Animation variants
   const containerVariants: Variants = {
@@ -107,12 +110,15 @@ export function SolveQuery() {
               </div>
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link href={`/${locale}/contact`}>
-                  <button className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2">
-                    <MessageSquare className="w-5 h-5" />
-                    {t("cta")}
-                  </button>
-                </Link>
+                <RippleButton
+                  variant="brandOutline"
+                  size="lg"
+                  onClick={() => router.push(`/${locale}/contact`)}
+                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  {t("cta")}
+                </RippleButton>
               </div>
             </motion.div>
 

@@ -56,228 +56,234 @@ export function Navbar() {
       }`}
     >
       {/* Top bar */}
-      <div className="container mx-auto px-4 xl:px-28 flex items-center justify-between text-sm">
-        <div className="flex items-center gap-2 md:gap-6 text-gray-400">
-          <a
-            href="tel:+48222095497"
-            className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
-            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-          >
-            <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
-          </a>
-          <a
-            href="tel:+48726635666"
-            className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
-            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-          >
-            <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
-          </a>
-        </div>
-        {/* Top-bar right: large screens (2xl+) show full actions; below that only language */}
-        <div className="hidden 2xl:flex items-center gap-2 text-gray-400">
-          <div className="flex items-center pr-2">
+      <div className="container mx-auto px-4 flex items-center justify-between text-sm">
+        <div className="max-w-7xl w-full flex items-center justify-between m-auto">
+          <div className="flex items-center gap-2 md:gap-6 text-gray-400">
             <a
-              href="https://www.facebook.com/eucareerserwis/"
-              aria-label="Facebook"
-              target="_blank"
-              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+              href="tel:+48222095497"
+              className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
-              <Facebook className="h-4 w-4" />
+              <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
             </a>
             <a
-              href="https://www.instagram.com/eucareerserwis"
-              aria-label="Instagram"
-              target="_blank"
-              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+              href="tel:+48726635666"
+              className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a
-              href="https://x.com/eucareerserwis"
-              aria-label="Twitter"
-              target="_blank"
-              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
-              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-            >
-              <Twitter className="h-4 w-4" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/eu-career-serwis"
-              aria-label="Linkedin"
-              target="_blank"
-              className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
-              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-            >
-              <Linkedin className="h-4 w-4" />
+              <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
             </a>
           </div>
-          <Button
-            asChild
-            variant="outline"
-            className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
-            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-          >
-            {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
-            <Link href={`https://crossnation.youcanbook.me`} target="_blank">
-              {tCommon("book")}
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
-            style={{
-              ["--hover-bg" as any]: colors.yellow.dark,
-              ["--active-bg" as any]: colors.yellow.DEFAULT,
-            }}
-          >
-            <Link
-              href={`/${locale}/contact`}
-              className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+          {/* Top-bar right: large screens (2xl+) show full actions; below that only language */}
+          <div className="hidden 2xl:flex items-center gap-2 text-gray-400">
+            <div className="flex items-center pr-2">
+              <a
+                href="https://www.facebook.com/eucareerserwis/"
+                aria-label="Facebook"
+                target="_blank"
+                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/eucareerserwis"
+                aria-label="Instagram"
+                target="_blank"
+                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://x.com/eucareerserwis"
+                aria-label="Twitter"
+                target="_blank"
+                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              >
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/eu-career-serwis"
+                aria-label="Linkedin"
+                target="_blank"
+                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
+            <Button
+              asChild
+              variant="outline"
+              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
+              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
-              {tCommon("contact")}
-            </Link>
-          </Button>
-          <LanguageSwitcher />
-        </div>
-        {/* Small to xl: only language on the right */}
-        <div className="flex 2xl:hidden items-center gap-2">
-          <LanguageSwitcher />
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-b">
-        <div className="container mx-auto px-4 xl:px-28 grid grid-cols-2 items-center">
-          {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-3">
-            <motion.div whileHover={{ scale: 1.03 }}>
-              <Image
-                src="/mylogo.jpeg"
-                alt="CountryNation Logo"
-                width={160}
-                height={48}
-                className="h-16 w-52 object-cover"
-              />
-            </motion.div>
-          </Link>
-
-          {/* Links (right) - show from xl and up */}
-          <div className="hidden xl:flex items-center justify-end gap-2">
-            <Link
-              href={`/${locale}/`}
-              className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
-                isActive("/") ? "bg-[var(--active-bg)]" : ""
-              }`}
+              {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
+              <Link href={`https://crossnation.youcanbook.me`} target="_blank">
+                {tCommon("book")}
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
               style={{
                 ["--hover-bg" as any]: colors.yellow.dark,
                 ["--active-bg" as any]: colors.yellow.DEFAULT,
               }}
             >
-              <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
-            </Link>
-            {NAVBAR_LINKS.map((item) => {
-              const key = item.href.replace(/^\//, "");
-              return (
-                <motion.div key={item.href} whileHover={{ y: -2 }}>
-                  <Link
-                    href={`/${locale}${item.href}`}
-                    className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium ${
-                      isActive(item.href)
-                        ? "bg-[var(--active-bg)] text-black shadow-lg"
-                        : ""
-                    }`}
-                    style={{
-                      ["--hover-bg" as any]: colors.yellow.dark,
-                      ["--active-bg" as any]: colors.yellow.DEFAULT,
-                    }}
-                  >
-                    {tNav(key as any)}
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Toggle + actions for < xl */}
-          <div className="flex lg:hidden items-center justify-end">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              aria-label="Toggle navigation menu"
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen((prev) => !prev)}
-            >
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
+              <Link
+                href={`/${locale}/contact`}
+                className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
               >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-          {/* From lg to < xl: show Book button left of toggle */}
-          <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
-            <Button
-              asChild
-              size="sm"
-              variant="brandOutline"
-              className={fontMontserrat.className}
-            >
-              <Link href={`https://crossnation.youcanbook.me`} target="_blank">
-                {tCommon("book")}
+                {tCommon("contact")}
               </Link>
             </Button>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              aria-label="Toggle navigation menu"
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen((prev) => !prev)}
-            >
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-                  />
-                )}
-              </svg>
-            </button>
+            <LanguageSwitcher />
           </div>
+          {/* Small to xl: only language on the right */}
+          <div className="flex 2xl:hidden items-center gap-2">
+            <LanguageSwitcher />
+          </div>
+        </div>
+      </div>
 
+      {/* Bottom bar */}
+      <div className="border-t border-b">
+        <div className="max-w-7xl w-full mx-auto flex items-center justify-between">
+          <div className="container mx-auto px-4  grid grid-cols-2 items-center">
+            {/* Logo */}
+            <Link href={`/${locale}`} className="flex items-center gap-3">
+              <motion.div whileHover={{ scale: 1.03 }}>
+                <Image
+                  src="/mylogo.jpeg"
+                  alt="CountryNation Logo"
+                  width={160}
+                  height={48}
+                  className="h-16 w-52 object-cover"
+                />
+              </motion.div>
+            </Link>
+
+            {/* Links (right) - show from xl and up */}
+            <div className="hidden xl:flex items-center justify-end gap-2">
+              <Link
+                href={`/${locale}/`}
+                className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
+                  isActive("/") ? "bg-[var(--active-bg)]" : ""
+                }`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.dark,
+                  ["--active-bg" as any]: colors.yellow.DEFAULT,
+                }}
+              >
+                <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
+              </Link>
+              {NAVBAR_LINKS.map((item) => {
+                const key = item.href.replace(/^\//, "");
+                return (
+                  <motion.div key={item.href} whileHover={{ y: -2 }}>
+                    <Link
+                      href={`/${locale}${item.href}`}
+                      className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium ${
+                        isActive(item.href)
+                          ? "bg-[var(--active-bg)] text-black shadow-lg"
+                          : ""
+                      }`}
+                      style={{
+                        ["--hover-bg" as any]: colors.yellow.dark,
+                        ["--active-bg" as any]: colors.yellow.DEFAULT,
+                      }}
+                    >
+                      {tNav(key as any)}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Toggle + actions for < xl */}
+            <div className="flex lg:hidden items-center justify-end">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                aria-label="Toggle navigation menu"
+                aria-expanded={isOpen}
+                onClick={() => setIsOpen((prev) => !prev)}
+              >
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                >
+                  {isOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
+            {/* From lg to < xl: show Book button left of toggle */}
+            <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
+              <Button
+                asChild
+                size="sm"
+                variant="brandOutline"
+                className={fontMontserrat.className}
+              >
+                <Link
+                  href={`https://crossnation.youcanbook.me`}
+                  target="_blank"
+                >
+                  {tCommon("book")}
+                </Link>
+              </Button>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                aria-label="Toggle navigation menu"
+                aria-expanded={isOpen}
+                onClick={() => setIsOpen((prev) => !prev)}
+              >
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                >
+                  {isOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </div>
           {/* No bottom actions on xl; actions remain in the top bar */}
         </div>
       </div>
@@ -341,8 +347,10 @@ export function Navbar() {
                 <Button
                   asChild
                   variant="outline"
-                  className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
-                  style={{ ["--hover-bg" as any]: colors.yellow.DEFAULT }}
+                  className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+                  style={{
+                    ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                  }}
                 >
                   <Link
                     href={`/${locale}/contact`}

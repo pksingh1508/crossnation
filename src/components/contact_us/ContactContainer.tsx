@@ -140,7 +140,7 @@ export function ContactContainer() {
           <div className="relative bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
             {/* Large Screen Layout - 3 Columns Grid */}
             <motion.div
-              className="hidden lg:grid lg:grid-cols-[220px_1fr_1fr] gap-12 items-start"
+              className="hidden lg:grid lg:grid-cols-[250px_1fr_250px] gap-12 items-start"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"

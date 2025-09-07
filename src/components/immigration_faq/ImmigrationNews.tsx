@@ -6,6 +6,8 @@ import { SingleNews } from "./SingleNews";
 import { motion, easeOut, Variants } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "@/hooks/useTranslations";
+import { RippleButton } from "../ui/ripple-button";
+import { useRouter } from "next/navigation";
 
 interface ImmigrationNewsProps {
   locale?: string;
@@ -16,6 +18,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const t = useTranslations("ImmigrationNews");
+  const router = useRouter();
 
   useEffect(() => {
     const loadNews = async () => {
@@ -120,14 +123,15 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
             delay: 0.4,
             ease: easeOut,
           }}
-          // className="text-center"
         >
-          <Link
-            href={`/${locale}/immigration-news`}
-            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
+          <RippleButton
+            variant="brandOutline"
+            size="lg"
+            onClick={() => router.push(`/${locale}/immigration-news`)}
+            className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
           >
             {t("cta") || "See All News"}
-          </Link>
+          </RippleButton>
         </motion.div>
       )}
     </div>
