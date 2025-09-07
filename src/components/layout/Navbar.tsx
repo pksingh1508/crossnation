@@ -30,10 +30,13 @@ export function Navbar() {
 
   // Helper function to check if a link is active
   const isActive = (href: string) => {
-    if (href === '/') {
+    if (href === "/") {
       return pathname === `/${locale}` || pathname === `/${locale}/`;
     }
-    return pathname === `/${locale}${href}` || pathname.startsWith(`/${locale}${href}/`);
+    return (
+      pathname === `/${locale}${href}` ||
+      pathname.startsWith(`/${locale}${href}/`)
+    );
   };
 
   useEffect(() => {
@@ -74,32 +77,36 @@ export function Navbar() {
         <div className="hidden 2xl:flex items-center gap-2 text-gray-400">
           <div className="flex items-center pr-2">
             <a
-              href="#"
+              href="https://www.facebook.com/eucareerserwis/"
               aria-label="Facebook"
+              target="_blank"
               className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
               <Facebook className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/eucareerserwis"
               aria-label="Instagram"
+              target="_blank"
               className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
               <Instagram className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href="https://x.com/eucareerserwis"
               aria-label="Twitter"
+              target="_blank"
               className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
               <Twitter className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/eu-career-serwis"
               aria-label="Linkedin"
+              target="_blank"
               className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
@@ -121,9 +128,17 @@ export function Navbar() {
             asChild
             variant="outline"
             className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
-            style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+            style={{
+              ["--hover-bg" as any]: colors.yellow.dark,
+              ["--active-bg" as any]: colors.yellow.DEFAULT,
+            }}
           >
-            <Link href={`/${locale}/contact`}>{tCommon("contact")}</Link>
+            <Link
+              href={`/${locale}/contact`}
+              className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+            >
+              {tCommon("contact")}
+            </Link>
           </Button>
           <LanguageSwitcher />
         </div>
@@ -154,11 +169,11 @@ export function Navbar() {
             <Link
               href={`/${locale}/`}
               className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
-                isActive('/') ? 'bg-[var(--active-bg)]' : ''
+                isActive("/") ? "bg-[var(--active-bg)]" : ""
               }`}
-              style={{ 
+              style={{
                 ["--hover-bg" as any]: colors.yellow.dark,
-                ["--active-bg" as any]: colors.yellow.DEFAULT
+                ["--active-bg" as any]: colors.yellow.DEFAULT,
               }}
             >
               <Image src="/homeIcon.png" alt="Home" width={16} height={16} />
@@ -170,11 +185,13 @@ export function Navbar() {
                   <Link
                     href={`/${locale}${item.href}`}
                     className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium ${
-                      isActive(item.href) ? 'bg-[var(--active-bg)] text-black shadow-lg' : ''
+                      isActive(item.href)
+                        ? "bg-[var(--active-bg)] text-black shadow-lg"
+                        : ""
                     }`}
-                    style={{ 
+                    style={{
                       ["--hover-bg" as any]: colors.yellow.dark,
-                      ["--active-bg" as any]: colors.yellow.DEFAULT
+                      ["--active-bg" as any]: colors.yellow.DEFAULT,
                     }}
                   >
                     {tNav(key as any)}
@@ -278,11 +295,11 @@ export function Navbar() {
               <Link
                 href={`/${locale}/`}
                 className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
-                  isActive('/') ? 'bg-[var(--active-bg)]' : ''
+                  isActive("/") ? "bg-[var(--active-bg)]" : ""
                 }`}
-                style={{ 
+                style={{
                   ["--hover-bg" as any]: colors.yellow.dark,
-                  ["--active-bg" as any]: colors.yellow.DEFAULT
+                  ["--active-bg" as any]: colors.yellow.DEFAULT,
                 }}
                 onClick={() => setIsOpen(false)}
               >
@@ -293,11 +310,13 @@ export function Navbar() {
                   key={item.href}
                   href={`/${locale}${item.href}`}
                   className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontInter.className} font-medium ${
-                    isActive(item.href) ? 'bg-[var(--active-bg)] text-black' : ''
+                    isActive(item.href)
+                      ? "bg-[var(--active-bg)] text-black"
+                      : ""
                   }`}
-                  style={{ 
+                  style={{
                     ["--hover-bg" as any]: colors.yellow.DEFAULT,
-                    ["--active-bg" as any]: colors.yellow.DEFAULT
+                    ["--active-bg" as any]: colors.yellow.DEFAULT,
                   }}
                   onClick={() => setIsOpen(false)}
                 >

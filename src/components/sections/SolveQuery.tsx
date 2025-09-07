@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 
 export function SolveQuery() {
-  const t = useTranslations("common");
+  const t = useTranslations("solveQuery");
   const locale = useLocale();
 
   // Animation variants
@@ -77,51 +77,32 @@ export function SolveQuery() {
               <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-amber-200 rounded-full px-6 py-3 shadow-sm">
                 <HelpCircle className="w-6 h-6 text-amber-600" />
                 <span className="text-amber-800 font-semibold text-sm uppercase tracking-wide">
-                  Got Questions?
+                  {t("title")}
                 </span>
               </div>
 
               {/* Heading */}
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                  If you have any{" "}
+                  {t("heading1")}{" "}
                   <span className="text-amber-600 relative">
-                    doubts
+                    {t("doubts")}
                     <div className="absolute -bottom-2 left-0 w-full h-3 bg-amber-200/60 -z-10 rounded-md" />
                   </span>
                 </h2>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600">
-                  Ask your Query?
+                  {t("heading2")}
                 </h3>
               </div>
 
               {/* Description */}
               <div className="space-y-6">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                  If you have any questions regarding{" "}
-                  <span className="font-semibold text-gray-900">
-                    visa applications
-                  </span>
-                  ,{" "}
-                  <span className="font-semibold text-gray-900">
-                    job opportunities
-                  </span>
-                  ,{" "}
-                  <span className="font-semibold text-gray-900">
-                    company verification
-                  </span>
-                  , or{" "}
-                  <span className="font-semibold text-gray-900">
-                    immigration services
-                  </span>{" "}
-                  - we're here to help!
+                  {t("paragraph1")}
                 </p>
 
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Get expert guidance from our professional consultants who
-                  specialize in immigration services, career development, and
-                  international opportunities. We provide personalized solutions
-                  for your unique situation.
+                  {t("paragraph2")}
                 </p>
               </div>
               {/* CTA Buttons */}
@@ -129,7 +110,7 @@ export function SolveQuery() {
                 <Link href={`/${locale}/contact`}>
                   <button className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2">
                     <MessageSquare className="w-5 h-5" />
-                    Ask Your Question
+                    {t("cta")}
                   </button>
                 </Link>
               </div>
@@ -176,7 +157,9 @@ export function SolveQuery() {
                   <div className="text-xl md:text-2xl font-bold text-amber-600">
                     1000+
                   </div>
-                  <div className="text-xs text-gray-600">Queries Solved</div>
+                  <div className="text-xs text-gray-600">
+                    {t("querySolved")}
+                  </div>
                 </div>
               </div>
 
@@ -185,7 +168,7 @@ export function SolveQuery() {
                   <div className="text-xl md:text-2xl font-bold text-blue-600">
                     24/7
                   </div>
-                  <div className="text-xs text-gray-600">Support Available</div>
+                  <div className="text-xs text-gray-600">{t("support")}</div>
                 </div>
               </div>
             </motion.div>

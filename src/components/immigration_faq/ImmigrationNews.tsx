@@ -5,6 +5,7 @@ import { NewsItem } from "@/lib/strapi";
 import { SingleNews } from "./SingleNews";
 import { motion, easeOut, Variants } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "@/hooks/useTranslations";
 
 interface ImmigrationNewsProps {
   locale?: string;
@@ -14,6 +15,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const t = useTranslations("ImmigrationNews");
 
   useEffect(() => {
     const loadNews = async () => {
@@ -49,7 +51,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
         {/* Header */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Immigration News
+            {t("heading") || "Immigration News"}
           </h2>
           <div className="h-1 bg-yellow-500 rounded w-16"></div>
         </div>
@@ -74,7 +76,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
         {/* Header */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Immigration News
+            {t("heading") || "Immigration News"}
           </h2>
           <div className="h-1 bg-yellow-500 rounded w-16"></div>
         </div>
@@ -92,7 +94,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
       {/* Header */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Immigration News
+          {t("heading") || "Immigration News"}
         </h2>
         <div className="h-1 bg-yellow-500 rounded w-16"></div>
       </div>
@@ -123,7 +125,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
           href={`/${locale}/immigration-news`}
           className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
         >
-          See All News
+          {t("cta") || "See All News"}
         </Link>
       </motion.div>
     </div>

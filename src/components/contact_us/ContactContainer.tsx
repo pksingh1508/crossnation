@@ -17,6 +17,7 @@ import { ContactForm } from "./ContactForm";
 
 export function ContactContainer() {
   const t = useTranslations("pages.contact");
+  const tF = useTranslations("pages.contact.follow");
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -67,20 +68,20 @@ export function ContactContainer() {
         t("info.address.zipCode"),
         t("info.address.city"),
       ],
-      color: "from-blue-500 to-blue-600",
+      color: "from-yellow-500 to-yellow-600",
     },
     {
       icon: Phone,
       title: t("info.callUs.title"),
       content: [t("info.callUs.phone")],
-      color: "from-green-500 to-green-600",
+      color: "from-yellow-500 to-yellow-600",
       link: `tel:${t("info.callUs.phone")}`,
     },
     {
       icon: MessageCircle,
       title: t("info.whatsapp.title"),
       content: [t("info.whatsapp.number")],
-      color: "from-emerald-500 to-emerald-600",
+      color: "from-yellow-500 to-yellow-600",
       link: `tel:${t("info.whatsapp.number")}`,
     },
     {
@@ -93,10 +94,26 @@ export function ContactContainer() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-600" },
-    { icon: Twitter, href: "#", color: "hover:text-blue-400" },
-    { icon: Linkedin, href: "#", color: "hover:text-blue-700" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-600" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/eucareerserwis/",
+      color: "hover:bg-yellow-300 hover:text-blue-600",
+    },
+    {
+      icon: Twitter,
+      href: "https://x.com/eucareerserwis",
+      color: "hover:bg-yellow-300 hover:text-blue-400",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/eu-career-serwis",
+      color: "hover:bg-yellow-300 hover:text-blue-700",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/eucareerserwis/",
+      color: "hover:bg-yellow-300 hover:text-pink-600",
+    },
   ];
 
   return (
@@ -123,7 +140,7 @@ export function ContactContainer() {
           <div className="relative bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
             {/* Large Screen Layout - 3 Columns Grid */}
             <motion.div
-              className="hidden lg:grid lg:grid-cols-[200px_1fr_1fr] gap-12 items-start"
+              className="hidden lg:grid lg:grid-cols-[220px_1fr_1fr] gap-12 items-start"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -136,7 +153,7 @@ export function ContactContainer() {
                     className="text-lg font-bold font-playfair text-gray-900 dark:text-white"
                     variants={itemVariants}
                   >
-                    Follow Us
+                    {tF("title")}
                   </motion.h3>
                   <div className="w-8 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
                 </div>
@@ -149,9 +166,10 @@ export function ContactContainer() {
                     <motion.a
                       key={index}
                       href={social.href}
-                      className={`flex items-center gap-2 p-3 rounded-lg bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-md group`}
+                      className={`flex items-center gap-2 p-3 rounded-lg bg-white dark:bg-gray-700 text-yellow-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-md group`}
                       variants={iconVariants}
                       initial="rest"
+                      target="_blank"
                       whileTap={{ scale: 0.95 }}
                     >
                       <social.icon className="w-4 h-4 flex-shrink-0" />

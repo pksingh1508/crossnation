@@ -131,7 +131,7 @@ export function ContactForm() {
                 placeholder={t("firstNamePlaceholder")}
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
-                className="font-inter"
+                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
                 required
               />
             </div>
@@ -143,7 +143,7 @@ export function ContactForm() {
                 placeholder={t("lastNamePlaceholder")}
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
-                className="font-inter"
+                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
                 required
               />
             </div>
@@ -157,7 +157,7 @@ export function ContactForm() {
               placeholder={t("emailPlaceholder")}
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="font-inter"
+              className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
               required
             />
           </div>
@@ -209,7 +209,7 @@ export function ContactForm() {
                 placeholder={t("phonePlaceholder")}
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                className="flex-1 font-inter py-2"
+                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px] flex-1 py-2"
                 required
               />
             </div>
@@ -253,7 +253,7 @@ export function ContactForm() {
               placeholder={t("subjectPlaceholder")}
               value={formData.subject}
               onChange={(e) => handleInputChange("subject", e.target.value)}
-              className="font-inter"
+              className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
               required
             />
           </div>

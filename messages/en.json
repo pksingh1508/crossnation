@@ -104,8 +104,7 @@
   },
   "testimonials": {
     "heading": "Testimonials",
-    "title": "What Our Clients Say",
-    "subtitle": "Hear from thousands of satisfied clients who achieved their global dreams with our support",
+    "cta": "Read More Testimonials",
     "roles": {
       "International Student": "International Student",
       "Investor": "Investor",
@@ -116,6 +115,14 @@
       "Healthcare Professional": "Healthcare Professional",
       "Tech Entrepreneur": "Tech Entrepreneur"
     }
+  },
+  "RecentBlogs": {
+    "heading": "Recent Blogs",
+    "cta": "Read More Blogs"
+  },
+  "ImmigrationNews": {
+    "heading": "Immigration News",
+    "cta": "See All News"
   },
   "pages": {
     "study": {
@@ -322,6 +329,9 @@
           "title": "Email us at",
           "address": "info@atozerwisplus.pl"
         }
+      },
+      "follow": {
+        "title": "Follow Us"
       }
     },
     "myForm": {
@@ -370,15 +380,6 @@
         "secure": "Secure and confidential communication"
       },
       "formInstruction": "Fill out the form below and we'll get back to you soon."
-    }
-  },
-  "anyQuestion": {
-    "title": "Do you have any questions?",
-    "description": "At EU Career Serwis, we guide you every step of the way. Our experts provide comprehensive support, including job search assistance, Poland work visa applications, qualification recognition, and basic Polish language learning. Whether you're a skilled worker or a first-time applicant, we make your migration journey smooth and reliable. To get started on your path to living and working in Poland, click one of the contact icons below and connect with our team today.",
-    "contactOptions": {
-      "contact": "Contact",
-      "email": "Email",
-      "faq": "FAQ"
     }
   },
   "works": {
@@ -675,32 +676,16 @@
     "title": "Government of Poland: Useful Links",
     "description": "Click on any logo to visit the official government website"
   },
-  "whyChooseUs": {
-    "heading": "Why Choose EU Career Serwis?",
-    "description": "At EU Career Serwis, we help you build your future in Poland by offering trusted support for legal jobs, work permits, and visa processing—all tailored to your career goals.",
-    "readMore": "Read More",
-    "stats": {
-      "visaSuccess": {
-        "number": "1000+",
-        "label": "Visa Success"
-      },
-      "guidedClients": {
-        "number": "1M+",
-        "label": "Guided"
-      },
-      "experts": {
-        "number": "50+",
-        "label": "Experts"
-      },
-      "offices": {
-        "number": "10+",
-        "label": "Offices"
-      },
-      "onlineServices": {
-        "number": "24/7",
-        "label": "Online Services"
-      }
-    }
+  "solveQuery": {
+    "title": "GOT QUESTIONS?",
+    "heading1": "If you have any ",
+    "doubts": "doubts",
+    "heading2": "Ask Your Query?",
+    "paragraph1": "If you have any questions regarding visa applications, job opportunities, company verification, or immigration services - we're here to help!",
+    "paragraph2": "Get expert guidance from our professional consultants who specialize in immigration services, career development, and international opportunities. We provide personalized solutions for your unique situation.",
+    "cta": "Ask Your Question",
+    "querySolved": "Query Solved",
+    "support": "Support Available"
   },
   "customHero": {
     "heading": "Work",

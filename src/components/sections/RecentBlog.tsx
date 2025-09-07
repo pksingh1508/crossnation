@@ -5,12 +5,14 @@ import { BlogItem } from "@/lib/strapi";
 import { SingleBlog } from "./SingleBlog";
 import { useLocaleStore } from "@/store/useLocaleStore";
 import Link from "next/link";
+import { useTranslations } from "@/hooks/useTranslations";
 
 export function RecentBlog() {
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const { locale } = useLocaleStore();
+  const t = useTranslations("RecentBlogs");
 
   useEffect(() => {
     const loadBlogs = async () => {
@@ -47,7 +49,7 @@ export function RecentBlog() {
             {/* Header */}
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Recent Blogs
+                {t("heading") || "Recent Blogs"}
               </h2>
               <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
             </div>
@@ -100,7 +102,7 @@ export function RecentBlog() {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Recent Blogs
+              {t("heading") || "Recent Blogs"}
             </h2>
             <div className="h-1 bg-blue-500 rounded w-16 mx-auto"></div>
           </div>
@@ -130,7 +132,7 @@ export function RecentBlog() {
               href={`/${locale}/blog`}
               className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
             >
-              Read More Blogs
+              {t("cta") || "Read More Blogs"}
             </Link>
           </motion.div>
         </div>
