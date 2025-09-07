@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLocaleStore } from "@/store/useLocaleStore";
+import language from "@/constants/language.json";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -32,12 +33,15 @@ export function LanguageSwitcher() {
   return (
     <Select value={locale} onValueChange={handleLanguageChange}>
       <SelectTrigger className="w-[100px]">
-        <SelectValue />
+        <SelectValue>
+          {language.find((lang) => lang.isoCode === locale)?.name ||
+            t("language")}
+        </SelectValue>
       </SelectTrigger>
       <SelectContent>
-        {siteConfig.supportedLanguages.map((lang) => (
-          <SelectItem key={lang} value={lang}>
-            {lang === "en" ? "English" : "Español"}
+        {language.map((lang) => (
+          <SelectItem key={lang.name} value={lang.isoCode}>
+            <span>{lang.name}</span>
           </SelectItem>
         ))}
       </SelectContent>

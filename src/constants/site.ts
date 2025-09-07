@@ -11,7 +11,7 @@ export const siteConfig = {
     email: "contact@yourcompany.com",
     phone: "+1 (555) 123-4567",
   },
-  supportedLanguages: ["en", "es"] as const,
+  supportedLanguages: ["en", "es", "pl", "fr"] as const,
   defaultLanguage: "en" as const,
 };
 

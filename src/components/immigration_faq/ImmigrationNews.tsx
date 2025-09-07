@@ -110,24 +110,26 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
         )}
       </div>
       {/* See all news buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.6,
-          delay: 0.4,
-          ease: easeOut,
-        }}
-        // className="text-center"
-      >
-        <Link
-          href={`/${locale}/immigration-news`}
-          className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
+      {news.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.6,
+            delay: 0.4,
+            ease: easeOut,
+          }}
+          // className="text-center"
         >
-          {t("cta") || "See All News"}
-        </Link>
-      </motion.div>
+          <Link
+            href={`/${locale}/immigration-news`}
+            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:scale-105 whitespace-nowrap"
+          >
+            {t("cta") || "See All News"}
+          </Link>
+        </motion.div>
+      )}
     </div>
   );
 }

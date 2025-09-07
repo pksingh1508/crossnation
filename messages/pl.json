@@ -1,0 +1,806 @@
+{
+  "common": {
+    "welcome": "Witamy",
+    "home": "Dom",
+    "about": "O nas",
+    "services": "Usługi",
+    "contact": "Kontakt",
+    "book": "Umów spotkanie"
+  },
+  "nav": {
+    "work": "Praca",
+    "migrate": "Migracja",
+    "employer": "Pracodawca",
+    "recruiter": "Rekruter",
+    "jobseeker": "Poszukujący"
+  },
+  "home": {
+    "title1": "Jak możemy Cię wesprzeć?",
+    "title2": "",
+    "btn1": "Rekruter",
+    "btn2": "Poszukujący pracy",
+    "btn3": "Migracja",
+    "btn4": "Pracodawca",
+    "cta1": "Jeśli nie jesteś pewien swoich opcji",
+    "cta2": "oferujemy bezpłatne profesjonalne doradztwo."
+  },
+  "about": {
+    "smallTitle": "O EU Career Serwis",
+    "title": "Europejska Wiodąca Konsultacja Imigracyjna i Rekrutacyjna",
+    "description": {
+      "paragraph1": "EU Career Serwis to zaufana europejska konsultacja specjalizująca się w wizach pracowniczych, doradztwie kariery i rekrutacji międzynarodowej. Zapewniamy dostosowane rozwiązania imigracyjne i siły roboczej dla osób prywatnych i firm, obejmując wykwalifikowane, półwykwalifikowane i niewykwalifikowane miejsca pracy w całej Europie.",
+      "paragraph2": "Działając pod kierownictwem wykwalifikowanych polskich prawników, zapewniamy zgodność z prawem, przejrzystość i profesjonalizm w każdej sprawie. Naszą misją jest pomóc osobom w osiągnięciu ich celów kariery za granicą, jednocześnie wspierając firmy w skutecznym i etycznym pozyskiwaniu odpowiednich talentów."
+    },
+    "stats": {
+      "experience": "Lat Doświadczenia",
+      "successRate": "Wskaźnik Sukcesu"
+    },
+    "imageAlt": "Doradztwo",
+    "trustedBadge": "Europejska Wiodąca Imigracja"
+  },
+  "faq": {
+    "title": "Często Zadawane Pytania",
+    "subtitle": "Uzyskaj odpowiedzi na typowe pytania dotyczące naszych usług i procesów",
+    "questions": {
+      "choose": {
+        "question": "Dlaczego powinienem wybrać EU Career Serwis dla mojej kariery w Europie?",
+        "answer": "Ponieważ jesteśmy zarejestrowaną i zaufaną firmą rekrutacyjną w Polsce, w pełni zgodną z prawem UE, zapewniającą przejrzystość, bezpieczeństwo prawne i wiarygodne możliwości."
+      },
+      "trust": {
+        "question": "Dlaczego powinienem zaufać EU Career Serwis dzisiaj?",
+        "answer": "Ponieważ stawiamy ludzi na pierwszym miejscu - chroniąc kandydatów przed oszustwami, zapewniając legalne miejsca pracy i pomagając firmom rozwijać się z odpowiednią siłą roboczą."
+      },
+      "realJobs": {
+        "question": "Skąd mam wiedzieć, że miejsca pracy są prawdziwe i bezpieczne?",
+        "answer": "Współpracujemy tylko z zweryfikowanymi pracodawcami, którzy spełniają standardy pracy UE, gwarantując prawdziwe kontrakty i bezpieczne warunki pracy."
+      },
+      "documents": {
+        "question": "Czy możecie pomóc z pozwoleniami na pracę i dokumentami?",
+        "answer": "Tak. Współpracujemy z ekspertami prawnymi, aby przygotować i przetworzyć wszystkie dokumenty - pozwolenia na pracę, wizy i kontrakty - abyście nie doświadczyli stresu lub opóźnień."
+      },
+      "industries": {
+        "question": "Do jakich branż rekrutujecie?",
+        "answer": "Specjalizujemy się w logistyce, budownictwie, produkcji, hotelarstwie i pracach sezonowych, łącząc kandydatów z sektorami, które najbardziej potrzebują pracowników."
+      },
+      "startWork": {
+        "question": "Jak szybko mogę rozpocząć pracę?",
+        "answer": "Wiele miejsc pracy jest wypełnianych w ciągu 2-6 tygodni, w zależności od roli i kraju, dzięki naszemu szybkiemu i efektywnemu procesowi rekrutacji."
+      },
+      "support": {
+        "question": "Czy zapewniacie wsparcie po otrzymaniu pracy?",
+        "answer": "Tak. Pomagamy w wdrożeniu, zakwaterowaniu, relokacji i ciągłym wsparciu, abyście czuli się bezpiecznie i pewnie za granicą."
+      },
+      "employers": {
+        "question": "Czy EU Career Serwis może również pomóc pracodawcom znaleźć pracowników?",
+        "answer": "Absolutnie. Zapewniamy rozwiązania kadrowe i outsourcingowe firmom w całej Europie, zapewniając niezawodnych, wykwalifikowanych i zmotywowanych pracowników."
+      },
+      "difference": {
+        "question": "Co wyróżnia EU Career Serwis od innych agencji?",
+        "answer": "Łączymy wiedzę prawniczą, doświadczenie w rekrutacji międzynarodowej i osobistą opiekę nad każdym klientem - budując zaufanie i długoterminowy sukces."
+      },
+      "clients": {
+        "question": "Jak EU Career Serwis traktuje swoich klientów?",
+        "answer": "Traktujemy każdego klienta z szacunkiem, uczciwością i profesjonalizmem. Czy jesteś poszukującym pracy, czy pracodawcą, słuchamy twoich potrzeb, zapewniamy jasne informacje i oferujemy pełne wsparcie przez cały proces. Naszym priorytetem jest budowanie długoterminowego zaufania i relacji, nie tylko krótkoterminowych rezultatów."
+      }
+    },
+    "cta1": "Masz jeszcze pytania?",
+    "cta2": "Nasi eksperci konsultanci są tutaj, aby pomóc ci z personalizowanym doradztwem.",
+    "cta3": "Skontaktuj się z Naszymi Ekspertami"
+  },
+  "someFAQ": {
+    "heading": "Co Czyni EU Career Serwis Najlepszym?",
+    "description": "Dzięki głębokiej wiedzy fachowej i silnej znajomości branży, kierujemy studentów do osiągnięcia światowej klasy edukacji i przekształcamy ją w satysfakcjonujące możliwości kariery. Nasze unikalne usługi wspierają każdy etap ich podróży, czy celem jest studiowanie, praca czy budowanie życia za granicą."
+  },
+  "migrate": {
+    "title": "Migruj z Łatwością",
+    "description": "Migruj do Europy z EU Career Serwis i zrób pierwszy krok w kierunku udanej i satysfakcjonującej przyszłości za granicą. Specjalizujemy się w kierowaniu profesjonalistów takich jak ty do odpowiedniego kraju, odpowiedniej możliwości i odpowiedniej ścieżki kariery.",
+    "features": {
+      "skilled": "Wnioski o wizę dla wykwalifikowanych pracowników i rodziny",
+      "express": "Ekspresowe programy wjazdu i prowincjonalne programy nominacji",
+      "document": "Przygotowanie i weryfikacja dokumentów",
+      "settlement": "Usługi osiedlenia i orientacji"
+    },
+    "cta": "Rozpocznij Proces Migracji"
+  },
+  "testimonials": {
+    "heading": "Referencje",
+    "cta": "Przeczytaj Więcej Referencji",
+    "roles": {
+      "International Student": "Student Międzynarodowy",
+      "Investor": "Inwestor",
+      "Migrant": "Migrant",
+      "Job Seeker": "Poszukujący Pracy",
+      "Business Owner": "Właściciel Firmy",
+      "PhD Student": "Student PhD",
+      "Healthcare Professional": "Profesjonalista Opieki Zdrowotnej",
+      "Tech Entrepreneur": "Przedsiębiorca Technologiczny"
+    }
+  },
+  "RecentBlogs": {
+    "heading": "Najnowsze Blogi",
+    "cta": "Przeczytaj Więcej Blogów"
+  },
+  "ImmigrationNews": {
+    "heading": "Wiadomości Imigracyjne",
+    "cta": "Zobacz Wszystkie Wiadomości"
+  },
+  "pages": {
+    "study": {
+      "title": "Usługi Studiowania za Granicą",
+      "description": "Kompleksowe wsparcie i doradztwo dotyczące studiowania za granicą, aby pomóc ci osiągnąć twoje cele edukacyjne na całym świecie.",
+      "services": {
+        "consultation": {
+          "title": "Konsultacja Edukacyjna",
+          "description": "Spersonalizowane doradztwo w wyborze odpowiedniej uczelni i programu dla twoich celów kariery."
+        },
+        "application": {
+          "title": "Wsparcie w Aplikacji",
+          "description": "Kompletna pomoc w aplikacjach uczelnianych, esejach i dokumentacji."
+        },
+        "visa": {
+          "title": "Pomoc w Wizie",
+          "description": "Ekspercka pomoc w aplikacjach wizowych dla studentów i przygotowaniu do rozmów."
+        }
+      }
+    },
+    "work": {
+      "title": "Możliwości Pracy",
+      "description": "Znajdź międzynarodowe możliwości pracy i otrzymaj kompleksowe wsparcie dla twojej kariery za granicą.",
+      "services": {
+        "jobSearch": {
+          "title": "Wsparcie w Poszukiwaniu Pracy",
+          "description": "Dostęp do międzynarodowych rynków pracy i spersonalizowanych usług dopasowania pracy."
+        },
+        "workVisa": {
+          "title": "Pomoc w Wizie Pracowniczej",
+          "description": "Kompletne wsparcie w aplikacjach o pozwolenia na pracę i wizy na całym świecie."
+        },
+        "careerGuidance": {
+          "title": "Doradztwo Kariery",
+          "description": "Profesjonalne doradztwo kariery i zalecenia rozwoju umiejętności."
+        }
+      }
+    },
+    "invest": {
+      "title": "Usługi Inwestycyjne",
+      "description": "Poznaj międzynarodowe możliwości inwestycyjne z eksperckim doradztwem i kompleksowym wsparciem.",
+      "services": {
+        "realEstate": {
+          "title": "Inwestycje w Nieruchomości",
+          "description": "Międzynarodowe możliwości inwestowania w nieruchomości i analiza rynku."
+        },
+        "business": {
+          "title": "Inwestycje Biznesowe",
+          "description": "Przejęcia biznesowe, partnerstwa i doradztwo w inwestycjach startupowych."
+        },
+        "portfolio": {
+          "title": "Zarządzanie Portfelem",
+          "description": "Zdywersyfikowane zarządzanie portfelem inwestycyjnym i planowanie finansowe."
+        }
+      }
+    },
+    "migrate": {
+      "title": "Usługi Migracyjne",
+      "description": "Kompleksowa pomoc w migracji i relokacji, aby pomóc ci rozpocząć nowe życie za granicą.",
+      "services": {
+        "visaAssistance": {
+          "title": "Pomoc w Wizie",
+          "description": "Kompleksowe wsparcie we wszystkich rodzajach wiz i pozwoleń migracyjnych."
+        },
+        "relocation": {
+          "title": "Wsparcie w Relokacji",
+          "description": "Kompletne usługi relokacji, w tym pomoc w mieszkaniu i osiedleniu."
+        },
+        "settlement": {
+          "title": "Usługi Osiedlenia",
+          "description": "Wsparcie po przyjeździe, aby pomóc ci zintegrować się z nową społecznością."
+        }
+      }
+    },
+    "employer": {
+      "title": "Usługi dla Pracodawców",
+      "description": "Międzynarodowe usługi rekrutacji i wsparcia pracodawców w znajdowaniu odpowiednich talentów globalnie.",
+      "services": {
+        "recruitment": {
+          "title": "Globalna Rekrutacja",
+          "description": "Dostęp do międzynarodowych pul talentów i usług rekrutacyjnych."
+        },
+        "compliance": {
+          "title": "Wsparcie w Zgodności",
+          "description": "Zgodność imigracyjna i pomoc w pozwoleniach na pracę dla pracodawców."
+        },
+        "onboarding": {
+          "title": "Wdrażanie Pracowników",
+          "description": "Kompleksowe wsparcie wdrażania dla pracowników międzynarodowych."
+        }
+      }
+    },
+    "institution": {
+      "title": "Usługi dla Instytucji",
+      "description": "Partnerstwa instytucji edukacyjnych i usługi wsparcia dla współpracy międzynarodowej.",
+      "services": {
+        "partnerships": {
+          "title": "Partnerstwa Międzynarodowe",
+          "description": "Ułatwianie partnerstw między instytucjami edukacyjnymi na całym świecie."
+        },
+        "studentServices": {
+          "title": "Usługi Wsparcia Studentów",
+          "description": "Kompleksowe usługi wsparcia dla studentów międzynarodowych."
+        },
+        "accreditation": {
+          "title": "Wsparcie w Akredytacji",
+          "description": "Pomoc w akredytacji międzynarodowej i zapewnieniu jakości."
+        }
+      }
+    },
+    "recruiter": {
+      "title": "Usługi dla Rekruterów",
+      "description": "Profesjonalne usługi rekrutacji i wsparcie pozyskiwania talentów dla globalnych rynków.",
+      "services": {
+        "talentAcquisition": {
+          "title": "Pozyskiwanie Talentów",
+          "description": "Strategiczne usługi pozyskiwania talentów dla rynków międzynarodowych."
+        },
+        "screening": {
+          "title": "Sprawdzanie Kandydatów",
+          "description": "Kompleksowe usługi sprawdzania i oceny kandydatów."
+        },
+        "placement": {
+          "title": "Usługi Zatrudnienia",
+          "description": "Kompleksowe usługi zatrudnienia z ciągłym wsparciem."
+        }
+      }
+    },
+    "jobseeker": {
+      "title": "Usługi dla Poszukujących Pracy",
+      "description": "Doradztwo kariery i usługi zatrudnienia dla możliwości międzynarodowych.",
+      "services": {
+        "careerCounseling": {
+          "title": "Doradztwo Kariery",
+          "description": "Profesjonalne doradztwo kariery i planowanie rozwoju."
+        },
+        "resumeBuilding": {
+          "title": "Tworzenie CV",
+          "description": "Profesjonalne usługi pisania CV i listów motywacyjnych."
+        },
+        "jobMatching": {
+          "title": "Dopasowanie Pracy",
+          "description": "Spersonalizowane dopasowanie pracy na podstawie twoich umiejętności i preferencji."
+        }
+      }
+    },
+    "traineeship": {
+      "title": "Programy Stażowe",
+      "description": "Międzynarodowe możliwości stażów i praktyk dla rozwoju umiejętności.",
+      "services": {
+        "internships": {
+          "title": "Międzynarodowe Staże",
+          "description": "Dostęp do możliwości stażowych w wiodących firmach na całym świecie."
+        },
+        "skillDevelopment": {
+          "title": "Rozwój Umiejętności",
+          "description": "Kompleksowe programy rozwoju umiejętności i szkoleń."
+        },
+        "mentorship": {
+          "title": "Programy Mentorskie",
+          "description": "Profesjonalne mentorstwo i wsparcie przez cały staż."
+        }
+      }
+    },
+    "book": {
+      "title": "Umów Spotkanie",
+      "description": "Zaplanuj konsultację z naszymi ekspertami, aby omówić twoje cele i otrzymać spersonalizowane doradztwo.",
+      "form": {
+        "title": "Zaplanuj Swoją Konsultację",
+        "description": "Wybierz dogodny czas na rozmowę z naszymi ekspertami o twoich celach.",
+        "placeholder": "Widget rezerwacji zostanie zintegrowany tutaj (Cal.com/Calendly)"
+      }
+    },
+    "contact": {
+      "title": "Skontaktuj się z Nami",
+      "description": "Zarejestruj się na bezpłatną konsultację ekspercką",
+      "form": {
+        "title": "Wyślij nam Wiadomość",
+        "name": "Imię i Nazwisko",
+        "namePlaceholder": "Wprowadź swoje imię i nazwisko",
+        "email": "Adres Email",
+        "emailPlaceholder": "Wprowadź swój adres email",
+        "message": "Wiadomość",
+        "messagePlaceholder": "Powiedz nam, jak możemy ci pomóc",
+        "submit": "Wyślij Wiadomość"
+      },
+      "info": {
+        "title": "Skontaktuj się z Naszym Zespołem Ekspertów",
+        "address": {
+          "title": "Adres",
+          "street": "Ulica: Ul Ludwika Idzikowskiego 16, 4 piętro",
+          "zipCode": "Kod pocztowy: 00-710 Warszawa",
+          "city": "Miasto: Warszawa, Kraj: Polska"
+        },
+        "callUs": {
+          "title": "Zadzwoń do nas",
+          "phone": "+48 22 268 3497"
+        },
+        "whatsapp": {
+          "title": "Whatsapp",
+          "number": "+48 79 835 6664"
+        },
+        "email": {
+          "title": "Napisz do nas",
+          "address": "info@atozerwisplus.pl"
+        }
+      },
+      "follow": {
+        "title": "Śledź Nas"
+      }
+    },
+    "myForm": {
+      "firstName": "Imię",
+      "firstNamePlaceholder": "Wprowadź swoje imię",
+      "lastName": "Nazwisko",
+      "lastNamePlaceholder": "Wprowadź swoje nazwisko",
+      "email": "Email",
+      "emailPlaceholder": "Wprowadź swój email",
+      "phoneNumber": "Numer Telefonu",
+      "phonePlaceholder": "Wprowadź numer telefonu",
+      "userType": "Jestem",
+      "userTypePlaceholder": "Wybierz swoją rolę",
+      "userTypes": {
+        "student": "Student",
+        "jobseeker": "Poszukujący Pracy",
+        "agent": "Agent/Rekruter Zagraniczny",
+        "employer": "Pracodawca",
+        "institution": "Instytucja/Uniwersytet",
+        "investor": "Inwestor/Rejestracja Firmy"
+      },
+      "subject": "Temat",
+      "subjectPlaceholder": "Wprowadź temat",
+      "message": "Wiadomość",
+      "messagePlaceholder": "Powiedz nam, jak możemy ci pomóc",
+      "termsText": "Akceptuję",
+      "termsLink": "Regulamin",
+      "submitButton": "Wyślij Wiadomość",
+      "loadingMessage": "Wysyłanie...",
+      "successMessage": "Formularz wysłany pomyślnie! Skontaktujemy się z tobą wkrótce.",
+      "errorMessage": "Proszę wypełnić wszystkie wymagane pola i zaakceptować regulamin",
+      "required": "wymagane"
+    },
+    "commonContact": {
+      "title": "Szukasz Pracy, Chcesz Zatrudnić lub Współpracować?",
+      "description": "Gotowy na następny krok? Czy szukasz możliwości pracy, opcji inwestycyjnych, rozwiązań rekrutacyjnych czy możliwości partnerstwa, jesteśmy tutaj, aby pomóc ci połączyć się z odpowiednimi ludźmi i możliwościami.",
+      "buttons": {
+        "work": "Praca",
+        "migrate": "Migracja",
+        "employer": "Pracodawca",
+        "recruiter": "Rekruter"
+      },
+      "features": {
+        "quickResponse": "Szybka odpowiedź w ciągu 24 godzin",
+        "consultation": "Dostępna profesjonalna konsultacja",
+        "secure": "Bezpieczna i poufna komunikacja"
+      },
+      "formInstruction": "Wypełnij formularz poniżej, a skontaktujemy się z tobą wkrótce."
+    }
+  },
+  "works": {
+    "steps": {
+      "poland": {
+        "imageAlt": "Możliwości pracy w Polsce",
+        "heading": "Dlaczego Powinieneś Pracować w Polsce (Europa)",
+        "paragraph1": "Możliwości zatrudnienia w Europie, szczególnie w Polsce, są bezpieczne, legalne i dostępne w różnych branżach. Polskie prawo pracy zapewnia silną ochronę pracowników, gwarantując uczciwe wynagrodzenia, regulowane godziny pracy i dostęp do świadczeń socjalnych. Dostępna jest szeroka gama stanowisk wykwalifikowanych i niewykwalifikowanych, co ułatwia zmotywowanym osobom rozpoczęcie kariery w Europie. EU Career Serwis wspiera kandydatów na każdym etapie, w tym pozwolenia na pracę, przetwarzanie wiz i przygotowanie całej niezbędnej dokumentacji prawnej.",
+        "paragraph2": "Kontrakty o pracę są formalne, przejrzyste i jasno określają warunki wynagrodzenia, godzin pracy i świadczeń pracowniczych. Kultura pracy w Polsce jest profesjonalna i współpracująca, podkreślając niezawodność, zaangażowanie i skuteczną pracę zespołową. Kluczowe sektory o wysokim popycie obejmują logistykę, budownictwo, produkcję, hotelarstwo, rolnictwo i transport. Główne miasta oferujące liczne możliwości zatrudnienia to Warszawa, Kraków, Gdańsk, Wrocław i Poznań.",
+        "paragraph3": "Dostępne są zarówno stanowiska sezonowe, jak i długoterminowe, zapewniając elastyczność dostosowaną do różnych celów kariery. Pracownicy mają możliwość rozwijania praktycznych umiejętności, poprawienia znajomości języka i zdobycia cennego europejskiego doświadczenia zawodowego.",
+        "paragraph4": "Wsparcie w zakwaterowaniu i relokacji zapewnia komfortowe i bezpieczne przejście dla pracowników zagranicznych. Ogólnie, Polska oferuje kombinację możliwości ekonomicznych, ochrony prawnej i rozwoju osobistego, czyniąc ją idealnym miejscem do budowania udanej kariery w Europie."
+      },
+      "step1": {
+        "imageAlt": "Złóż wniosek o pozwolenie na pracę w Polsce",
+        "heading": "Krok 1: Złóż wniosek o pozwolenie na pracę",
+        "paragraph1": "Proces uzyskania pozwolenia na pracę w Polsce rozpoczyna się od złożenia przez pracodawcę oficjalnego wniosku do lokalnego Urzędu Wojewódzkiego. Ten wniosek zawiera szczegółowe informacje o stanowisku, które będziesz pełnić, w tym tytuł pracy i główne obowiązki. Określa również proponowane wynagrodzenie, zapewniając, że spełnia legalne minimalne wymagania zgodnie z polskim prawem pracy. Pracodawca musi wyjaśnić powód zatrudnienia pracownika zagranicznego, wykazując, że nie ma dostępnego odpowiedniego lokalnego kandydata.",
+        "paragraph2": "Poprzez złożenie tego wniosku pracodawca zapewnia, że zatrudnienie jest w pełni legalne i zgodne z polskimi regulacjami prawa pracy. Władze dokładnie sprawdzają wniosek, aby zweryfikować, że stanowisko spełnia wszystkie prawne i branżowe standardy.",
+        "paragraph3": "Ten krok chroni zarówno pracodawcę, jak i pracownika, zapewniając przejrzystość i odpowiedzialność w procesie rekrutacji. Tworzy również formalny zapis planowanego zatrudnienia, który jest niezbędny dla wszystkich kolejnych kroków w procesie pozwolenia na pracę i wizy.",
+        "paragraph4": ""
+      },
+      "step2": {
+        "imageAlt": "Otrzymaj pozwolenie na pracę w Polsce i przygotuj dokumentację",
+        "heading": "Krok 2: Otrzymaj pozwolenie na pracę i przygotuj dokumentację",
+        "paragraph1": "Po zatwierdzeniu pozwolenia na pracę kandydat oficjalnie otrzymuje dokument, który potwierdza, że zatrudnienie zostało autoryzowane przez polskie władze. Otrzymanie pozwolenia na pracę jest kluczowym kamieniem milowym w procesie legalnego zatrudnienia, ponieważ potwierdza zarówno pracodawcę, jak i pracownika do pracy w Polsce. To pozwolenie służy jako oficjalne potwierdzenie, że stanowisko spełnia polskie prawo pracy i że zatrudnienie pracownika zagranicznego jest legalne. Po uzyskaniu pozwolenia na pracę kandydat musi przygotować wszystkie niezbędne dokumenty wymagane na następny etap procesu.",
+        "paragraph2": "Kluczowe dokumenty obejmują ważny paszport, który będzie używany do wniosków wizowych i wjazdu do Polski. Kontrakt o pracę musi być również starannie przejrzany i przygotowany, określając warunki takie jak wynagrodzenie, godziny pracy, świadczenia i czas trwania zatrudnienia. Dodatkowe dokumenty mogą obejmować dowód zakwaterowania, ubezpieczenie zdrowotne i wszelkie formularze wymagane przez polskie konsulaty lub ambasady. Ważne jest, aby wszystkie dokumenty były kompletne, dokładne i zgodne ze szczegółami podanymi we wniosku o pozwolenie na pracę.",
+        "paragraph3": "Odpowiednie przygotowanie tych dokumentów zapewnia płynny i terminowy proces składania wniosku wizowego. Pokazuje również władzom, że zarówno pracodawca, jak i pracownik przestrzegają wymagań prawnych.",
+        "paragraph4": ""
+      },
+      "step3": {
+        "imageAlt": "Zatwierdzenie wizy pracowniczej do Polski",
+        "heading": "Krok 3: Zatwierdzenie wizy",
+        "paragraph1": "Po otrzymaniu zatwierdzonego pozwolenia na pracę obywatele spoza UE muszą złożyć wniosek o wizę krajową (typu D) w najbliższym polskim konsulacie lub ambasadzie w swoim kraju pochodzenia. Ta wiza jest niezbędna do legalnego wjazdu do Polski w celach zatrudnienia i zazwyczaj obejmuje pobyty dłuższe niż 90 dni. Proces aplikacyjny zapewnia, że zatrudnienie kandydata jest w pełni zgodne z polskim i unijnym prawem imigracyjnym.",
+        "paragraph2": "Wnioskodawcy są zobowiązani do przedstawienia kilku kluczowych dokumentów wspierających ich wniosek wizowy i wykazania uprawnień. Kluczowe dokumenty obejmują zatwierdzone pozwolenie na pracę, które potwierdza, że pracodawca jest upoważniony do zatrudnienia pracownika zagranicznego. Wymagany jest również kontrakt o pracę, określający warunki zatrudnienia, wynagrodzenie, czas trwania i obowiązki służbowe.",
+        "paragraph3": "Należy przedstawić ważny paszport, zapewniając odpowiednią identyfikację i autoryzację podróży do wjazdu do Polski. Często wymagany jest dowód zakwaterowania, aby pokazać, że kandydat ma miejsce do zamieszkania po przyjeździe, spełniając podstawowe wymagania mieszkaniowe.",
+        "paragraph4": ""
+      },
+      "step4": {
+        "imageAlt": "Przyjazd do Polski do pracy",
+        "heading": "Krok 4: Przyjazd do Polski",
+        "paragraph1": "Po zatwierdzeniu wizy krajowej (typu D) i pozwolenia na pracę kandydat może legalnie podróżować do Polski w celach zatrudnienia. Ważne jest wjechanie do kraju przy użyciu zatwierdzonych dokumentów, aby zapewnić zgodność z polskim prawem imigracyjnym.",
+        "paragraph2": "Po przyjeździe kandydaci muszą wykonać obowiązkowe procedury administracyjne wymagane dla pracowników zagranicznych. Jednym z pierwszych kroków jest zarejestrowanie adresu zamieszkania w lokalnym urzędzie miejskim (Urząd Miasta lub Urząd Gminy). Rejestracja adresu jest wymogiem prawnym i jest niezbędna do dostępu do usług socjalnych i oficjalnej korespondencji. Kandydaci są również zobowiązani do zapisania się do polskiego systemu ubezpieczeń społecznych (ZUS), aby zapewnić odpowiednie opodatkowanie i ubezpieczenie zdrowotne. Rejestracja ubezpieczenia zdrowotnego jest często włączona w ten proces, zapewniając dostęp do usług medycznych podczas pobytu. Szybkie wykonanie tych procedur pomaga uniknąć grzywien, problemów prawnych lub opóźnień w zatrudnieniu.",
+        "paragraph3": "Po przyjeździe do Polski EU Career Serwis pomaga w otwarciu lokalnego konta bankowego, aby bezpiecznie otrzymywać wynagrodzenie. Pomagamy również w uzyskaniu numeru PESEL, który jest wymagany do podatków, ubezpieczeń społecznych i dostępu do usług publicznych.",
+        "paragraph4": "To wsparcie zapewnia, że możesz legalnie rozpocząć pracę, zarządzać finansami i płynnie osiedlić się w Polsce."
+      },
+      "step5": {
+        "imageAlt": "Podpisz kontrakt i rozpocznij pracę w Polsce",
+        "heading": "Krok 5: Podpisz kontrakt i rozpocznij pracę",
+        "paragraph1": "Ostatnim krokiem w procesie zatrudnienia jest oficjalne podpisanie kontraktu o pracę z pracodawcą w Polsce. Ten kontrakt formalizuje warunki zatrudnienia, w tym wynagrodzenie, godziny pracy, świadczenia i obowiązki służbowe. Podpisanie kontraktu zapewnia, że zarówno pracownik, jak i pracodawca są prawnie związani polskim prawem pracy. Zapewnia jasność i bezpieczeństwo dla obu stron, zmniejszając ryzyko nieporozumień lub sporów.",
+        "paragraph2": "Ze wszystkimi przygotowanymi dokumentami - w tym pozwoleniem na pracę, wizą, numerem PESEL i kontem bankowym - jesteś w pełni gotowy do rozpoczęcia pracy. Rozpoczęcie legalnego zatrudnienia potwierdza, że wszystkie wymagania zgodnie z polskimi i unijnymi regulacjami prawa pracy zostały spełnione.",
+        "paragraph3": "Pracodawca może zapewnić orientację lub szkolenie, aby zapoznać cię z procedurami i oczekiwaniami miejsca pracy. Twój kontrakt o pracę służy jako podstawa twojej profesjonalnej relacji w Polsce, chroniąc twoje prawa.",
+        "paragraph4": "EU Career Serwis kontynuuje zapewnianie wskazówek i wsparcia podczas pierwszych dni pracy, zapewniając płynne przejście. Po wykonaniu wszystkich kroków prawnych i administracyjnych możesz całkowicie skupić się na efektywnym wykonywaniu swoich obowiązków. Ten etap oznacza pomyślne zakończenie procesu rekrutacji i relokacji."
+      }
+    },
+    "info": {
+      "heading": "EU Career Serwis Działa",
+      "title": "Bezpieczne i Legalne Możliwości Pracy Niewykwalifikowanej w Europie",
+      "paragraph": "W EU Career Serwis zapewniamy bezpieczne i legalne możliwości pracy niewykwalifikowanej w wielu krajach europejskich. Nie są potrzebne zaawansowane kwalifikacje - tylko twoja chęć do pracy i rozwoju. Załatwiamy pozwolenia, kontrakty i wsparcie relokacji, aby proces był bezstresowy. Zakwaterowanie i wsparcie są zorganizowane dla twojego komfortu i bezpieczeństwa."
+    }
+  },
+  "employer": {
+    "info": {
+      "heading": "Spełnij Wszystkie Swoje Legalne Potrzeby Siły Roboczej z EU Career Serwis",
+      "paragraph1": "EU Career Serwis to licencjonowana konsultacja rekrutacyjna z siedzibą w Polsce, specjalizująca się w outsourcingu i rozwiązaniach kadrowych offshore dla firm europejskich.",
+      "paragraph2": "Nasze usługi są przejrzyste, opłacalne i zgodne zarówno z polskim, jak i europejskim prawem pracy.",
+      "paragraph3": "Obsługujemy pełny cykl rekrutacyjny od początku do końca.",
+      "paragraph4": "W EU Career Serwis skupiamy się na budowaniu długoterminowych partnerstw z pracodawcami.",
+      "paragraph5": "Z EU Career Serwis możesz być pewien, że twoje potrzeby kadrowe są zarządzane efektywnie i odpowiedzialnie."
+    },
+    "step1": {
+      "imageAlt": "Dostosowane rozwiązania rekrutacyjne dla polskich pracodawców",
+      "heading": "Dostosowane Rozwiązania Rekrutacyjne dla Polskich Pracodawców",
+      "paragraph1": "W EU Career Serwis rozumiemy, że każdy polski pracodawca ma unikalne potrzeby kadrowe.",
+      "paragraph2": "Zajmujemy się całym procesem rekrutacyjnym w twoim imieniu.",
+      "paragraph3": "Nasze rozwiązania nie tylko pomagają ci oszczędzić czas i zmniejszyć koszty, ale także gwarantują, że twoja siła robocza jest gotowa do wykonywania zadań od pierwszego dnia.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Globalne pozyskiwanie talentów w różnych regionach",
+      "heading": "Globalne Pozyskiwanie Talentów w Różnych Regionach",
+      "paragraph1": "W EU Career Serwis specjalizujemy się w łączeniu polskich pracodawców z różnorodną pulą międzynarodowych talentów.",
+      "paragraph2": "Współpracujemy ściśle z zaufanymi partnerami rekrutacyjnymi za granicą.",
+      "paragraph3": "Nasza międzynarodowa strategia pozyskiwania jest oparta na przejrzystości, zgodności i efektywności.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Dostępne różnorodne kategorie siły roboczej",
+      "heading": "Dostępne Różnorodne Kategorie Siły Roboczej",
+      "paragraph1": "W EU Career Serwis zapewniamy polskim pracodawcom dostęp do szerokiej gamy kategorii siły roboczej.",
+      "paragraph2": "Dla ról niewykwalifikowanych dostarczamy niezawodnych pracowników.",
+      "paragraph3": "Dla stanowisk wykwalifikowanych i półwykwalifikowanych rekrutujemy kandydatów z doświadczeniem.",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Sektory, w których wywieramy wpływ",
+      "heading": "Sektory, w Których Wywieramy Wpływ",
+      "paragraph1": "W EU Career Serwis zapewniamy rozwiązania siły roboczej dostosowane do unikalnych potrzeb wielu branż w Polsce.",
+      "paragraph2": "Nasza rekrutacja wspiera produkcję, logistykę, budownictwo, hotelarstwo, rolnictwo, transport i magazynowanie.",
+      "paragraph3": "Dostarczamy zarówno wykwalifikowanych, jak i niewykwalifikowanych pracowników.",
+      "paragraph4": "Naszym celem jest wzmocnienie każdego sektora odpowiednim talentem."
+    },
+    "step5": {
+      "imageAlt": "Od aplikacji do przyjazdu: podróż rekrutacyjna",
+      "heading": "Od Aplikacji do Przyjazdu: Podróż Rekrutacyjna",
+      "paragraph1": "W EU Career Serwis zarządzamy całym procesem rekrutacji międzynarodowej.",
+      "paragraph2": "Po przyjeździe zapewniamy pełne wsparcie w nawigacji po lokalnym systemie.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Zapewnianie legalnych i etycznych standardów rekrutacji",
+      "heading": "Zapewnianie Legalnych i Etycznych Standardów Rekrutacji",
+      "paragraph1": "W EU Career Serwis priorytetem jest pełna zgodność z polskim prawem pracy.",
+      "paragraph2": "Nasze praktyki rekrutacyjne są oparte na etyce, przejrzystości i uczciwości.",
+      "paragraph3": "To podejście nie tylko minimalizuje ryzyko prawne dla pracodawców.",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Budowanie długoterminowych partnerstw siły roboczej",
+      "heading": "Budowanie Długoterminowych Partnerstw Siły Roboczej",
+      "paragraph1": "W EU Career Serwis skupiamy się na tworzeniu trwałych relacji z pracodawcami i pracownikami.",
+      "paragraph2": "Oferując przejrzyste procesy, zgodność prawną i ciągłe wsparcie.",
+      "paragraph3": "Poprzez te partnerstwa EU Career Serwis staje się więcej niż agencją rekrutacyjną.",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Dlaczego współpracować z EU Career Serwis w rekrutacji w Polsce",
+      "heading": "Dlaczego Współpracować z EU Career Serwis w Rekrutacji w Polsce",
+      "paragraph1": "EU Career Serwis to licencjonowana europejska konsultacja rekrutacyjna.",
+      "paragraph2": "Nasze usługi są w pełni zgodne z polskim prawem pracy.",
+      "paragraph3": "Wierzymy w jasność i uczciwość.",
+      "paragraph4": "Zaufani przez firmy w całej Polsce."
+    }
+  },
+  "recruiter": {
+    "info": {
+      "heading": "Jak EU Career Serwis Wspiera Naszych Międzynarodowych Partnerów Rekrutacyjnych",
+      "description": "EU Career Serwis współpracuje z agencjami rekrutacyjnymi w Azji i Afryce, aby legalnie zatrudniać pracowników w Polsce.",
+      "bullets": {
+        "b1": "Autoryzacja Prawna - Jesteśmy licencjonowaną konsultacją rekrutacyjną w Polsce.",
+        "b2": "Przetwarzanie Pozwoleń na Pracę i Wiz - Obsługujemy pełną dokumentację.",
+        "b3": "Przejrzysta Współpraca - Zapewniamy jasne kontrakty i otwartą komunikację.",
+        "b4": "Wsparcie Kandydatów w Polsce - Pomagamy w zakwaterowaniu i orientacji.",
+        "b5": "Dostęp do Pracodawców w Polsce - Łączymy z zweryfikowanymi firmami.",
+        "b6": "Ciągły Rozwój Partnerstwa - Wspieramy rozwój biznesu."
+      }
+    },
+    "step1": {
+      "imageAlt": "Współpraca z EU Career Serwis",
+      "heading": "Współpraca z EU Career Serwis",
+      "paragraph1": "Współpraca z EU Career Serwis otwiera drzwi do szerokiej gamy możliwości rekrutacyjnych.",
+      "paragraph2": "Zapewniamy naszym partnerom kompleksowe wsparcie.",
+      "paragraph3": "Współpracując z EU Career Serwis, partnerzy mogą pewnie rozszerzyć zakres swojej działalności.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Globalny model rekrutacji B2B2C",
+      "heading": "Nasz Globalny Model Rekrutacji B2B2C Wyjaśniony",
+      "paragraph1": "W EU Career Serwis działamy na nowoczesnym modelu rekrutacji B2B2C.",
+      "paragraph2": "Ten model tworzy wartość dla wszystkich zaangażowanych stron.",
+      "paragraph3": "Nasz system B2B2C to więcej niż metoda zatrudniania.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Kwalifikowalność sojusznika rekrutacyjnego",
+      "heading": "Kto Może Dołączyć jako Sojusznik Rekrutacyjny?",
+      "paragraph1": "EU Career Serwis z przyjemnością przyjmuje agencje rekrutacyjne z całego świata.",
+      "paragraph2": "Współpracując z nami, zyskujesz dostęp do prawnie ustrukturyzowanych ram.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Wartość i korzyści dla partnerów",
+      "heading": "Wartość i Korzyści, Które Dostarczamy Naszym Partnerom",
+      "paragraph1": "W EU Career Serwis zapewniamy naszym partnerom kompleksowy zakres korzyści.",
+      "paragraph2": "Z EU Career Serwis partnerzy nie tylko rozszerzają swój zasięg biznesowy.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step5": {
+      "imageAlt": "Zgodność i bezpieczeństwo prawne",
+      "heading": "Zgodność, Pozwolenia i Bezpieczeństwo Prawne w Rekrutacji",
+      "paragraph1": "W EU Career Serwis zgodność prawna jest kamieniem węgielnym naszych usług.",
+      "paragraph2": "Nasz zespół prowadzi partnerów przez wszystkie procedury regulacyjne.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Certyfikowane wdrażanie partnera rekrutacyjnego",
+      "heading": "Jak Rozpocząć jako Certyfikowany Partner Rekrutacyjny",
+      "paragraph1": "Zostanie certyfikowanym partnerem rekrutacyjnym z EU Career Serwis to prosty proces.",
+      "paragraph2": "Dołączając do EU Career Serwis, agencje rekrutacyjne mogą rozszerzyć swój biznes.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Rozszerzanie zasięgu z EU Career Serwis",
+      "heading": "Rozszerzanie Twojego Zasięgu z EU Career Serwis",
+      "paragraph1": "Partnerstwo z EU Career Serwis pozwala rozszerzyć dostęp do polskiego rynku pracy.",
+      "paragraph2": "Współpracując z nami, partnerzy mogą skalować swój zasięg.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Etyczna rekrutacja dla długoterminowego wzrostu",
+      "heading": "Długoterminowy Wzrost Poprzez Etyczne Praktyki Rekrutacyjne",
+      "paragraph1": "W EU Career Serwis wierzymy, że zrównoważony wzrost jest budowany na etycznych praktykach.",
+      "paragraph2": "Poprzez te zasady EU Career Serwis umożliwia partnerom osiągnięcie sukcesu.",
+      "paragraph3": "",
+      "paragraph4": ""
+    }
+  },
+  "jobseeker": {
+    "info": {
+      "heading": "Rozpocznij Swoją Europejską Karierę z EU Career Serwis",
+      "title": "Zabezpiecz Swoją Pracę w Polsce z Kompleksowym Wsparciem",
+      "paragraph1": "EU Career Serwis pomaga poszukującym pracy znaleźć legalne możliwości zatrudnienia w Polsce.",
+      "paragraph2": "Prowadzimy kandydatów przez cały proces.",
+      "paragraph3": "Nasz zespół pomaga w organizacji podróży i lokalnej rejestracji.",
+      "paragraph4": "Zapewniamy, że każde zatrudnienie jest w pełni zgodne z polskim prawem pracy.",
+      "paragraph5": "Z naszym wsparciem kandydaci mogą skupić się na budowaniu kariery w Europie."
+    },
+    "step1": {
+      "heading": "Dlaczego Poszukujący Pracy Ufają EU Career Serwis",
+      "bullet1": "Licencjonowana i Zarejestrowana Agencja",
+      "bullet2": "Legalne i Bezpieczne Możliwości",
+      "bullet3": "Przejrzysty Proces",
+      "bullet4": "Wsparcie End-to-End",
+      "bullet5": "Szeroka Gama Prac",
+      "bullet6": "Pomoc Po Przyjeździe",
+      "bullet7": "Zaufani przez Pracodawców"
+    },
+    "step2": {
+      "heading": "Jak Wspieramy Poszukujących Pracy na Każdym Kroku",
+      "bullet1": "Wsparcie Kandydatów",
+      "bullet2": "Pomoc w Pozwoleniu na Pracę",
+      "bullet3": "Wsparcie Przetwarzania Wiz",
+      "bullet4": "Organizacja Podróży",
+      "bullet5": "Pomoc Po Przyjeździe",
+      "bullet6": "Wsparcie Zatrudnienia",
+      "bullet7": "Ciągła Pomoc"
+    },
+    "step3": {
+      "heading": "Kto Może Aplikować: Kwalifikowalność i Wymagania",
+      "bullet1": "Wymóg Wieku",
+      "bullet2": "Poziom Umiejętności",
+      "bullet3": "Narodowość",
+      "bullet4": "Dokumenty Prawne",
+      "bullet5": "Zdrowie i Przeszłość",
+      "bullet6": "Umiejętności Językowe",
+      "bullet7": "Zaangażowanie"
+    },
+    "step4": {
+      "heading": "Możliwości Pracy: Role Wykwalifikowane i Niewykwalifikowane",
+      "bullet1": "Role Wykwalifikowane",
+      "bullet2": "Role Półwykwalifikowane",
+      "bullet3": "Role Niewykwalifikowane",
+      "bullet4": "Różnorodność Branżowa",
+      "bullet5": "Elastyczne Stanowiska",
+      "bullet6": "Potencjał Rozwoju Kariery",
+      "bullet7": "Zweryfikowani Pracodawcy"
+    },
+    "step5": {
+      "heading": "Znaczenie Pracy z Zarejestrowaną Agencją",
+      "bullet1": "Zgodność Prawna",
+      "bullet2": "Bezpieczeństwo i Ochrona",
+      "bullet3": "Przejrzyste Kontrakty",
+      "bullet4": "Zweryfikowani Pracodawcy",
+      "bullet5": "Profesjonalne Wsparcie",
+      "bullet6": "Spokój Ducha",
+      "bullet7": "Długoterminowe Możliwości"
+    },
+    "step6": {
+      "heading": "Bezproblemowa Podróż od Aplikacji do Przyjazdu",
+      "bullet1": "Wsparcie Krok Po Kroku",
+      "bullet2": "Wsparcie Pozwolenia na Pracę i Wizy",
+      "bullet3": "Pomoc Podróżna",
+      "bullet4": "Wsparcie Przyjazdu",
+      "bullet5": "Płynne Wdrożenie",
+      "bullet6": "Ciągła Pomoc",
+      "bullet7": ""
+    },
+    "step7": {
+      "heading": "Rozwijaj Swoją Karierę z Zaufanymi Pracodawcami",
+      "bullet1": "Zweryfikowani Pracodawcy",
+      "bullet2": "Różnorodne Możliwości Pracy",
+      "bullet3": "Rozwój Kariery",
+      "bullet4": "Zatrudnienie Długoterminowe",
+      "bullet5": "Bezpieczna i Legalna Praca",
+      "bullet6": "Wspierające Środowisko",
+      "bullet7": ""
+    }
+  },
+  "governmentLinks": {
+    "title": "Rząd Polski: Przydatne Linki",
+    "description": "Kliknij na dowolne logo, aby odwiedzić oficjalną stronę rządową"
+  },
+  "solveQuery": {
+    "title": "MASZ PYTANIA?",
+    "heading1": "Jeśli masz jakieś ",
+    "doubts": "wątpliwości",
+    "heading2": "Zadaj Swoje Pytanie?",
+    "paragraph1": "Jeśli masz pytania dotyczące wiz, pracy czy usług imigracyjnych - jesteśmy tutaj, aby pomóc!",
+    "paragraph2": "Uzyskaj eksperckie wsparcie od naszych profesjonalnych konsultantów.",
+    "cta": "Zadaj Swoje Pytanie",
+    "querySolved": "Pytanie Rozwiązane",
+    "support": "Dostępne Wsparcie"
+  },
+  "customHero": {
+    "heading": "Praca",
+    "paragraph1": "Nie jesteś pewien, który kraj europejski najlepiej pasuje do twojego profilu?",
+    "paragraph2": "W EU Career Serwis zapewniamy spersonalizowane doradztwo kariery.",
+    "buttons": [
+      { "text": "Polska" },
+      { "text": "Słowacja" },
+      { "text": "Litwa" },
+      { "text": "Republika Czeska" },
+      { "text": "Serbia" },
+      { "text": "Hiszpania" },
+      { "text": "Chorwacja" }
+    ],
+    "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
+    "imageAlt": "Europejskie możliwości kariery"
+  },
+  "customHeroMigrate": {
+    "heading": "Migracja",
+    "paragraph1": "Migruj do Europy z EU Career Serwis i rozpocznij udaną przyszłość za granicą.",
+    "buttons": [
+      { "text": "Niemcy" },
+      { "text": "Hiszpania" },
+      { "text": "Włochy" },
+      { "text": "Finlandia" }
+    ],
+    "imageSrc": "/migrate.webp",
+    "imageAlt": "Możliwości migracji do Europy"
+  },
+  "customHeroTraineeship": {
+    "heading": "Staż",
+    "paragraph1": "Zapewniamy możliwości stażowe w wielu krajach dla wykwalifikowanych profesjonalistów.",
+    "buttons": [
+      { "text": "Hiszpania" },
+      { "text": "Polska" },
+      { "text": "Włochy" },
+      { "text": "Portugalia" }
+    ],
+    "imageSrc": "/traineeship.webp",
+    "imageAlt": "Możliwości stażowe w Europie"
+  },
+  "customHeroStudy": {
+    "heading": "Studia",
+    "paragraph1": "Studiowanie w Europie to możliwość uzyskania edukacji światowej klasy.",
+    "buttons": [
+      { "text": "Polska" },
+      { "text": "Finlandia" },
+      { "text": "Niemcy" },
+      { "text": "Hiszpania" },
+      { "text": "Portugalia" },
+      { "text": "Łotwa" },
+      { "text": "Wielka Brytania" },
+      { "text": "Irlandia" },
+      { "text": "Kanada" }
+    ],
+    "imageSrc": "/study.webp",
+    "imageAlt": "Możliwości studiowania w Europie"
+  },
+  "customHeroInvestor": {
+    "heading": "Inwestor",
+    "paragraph1": "Jeśli jesteś inwestorem poszukującym możliwości w Europie, oferujemy wiele projektów.",
+    "buttons": [
+      { "text": "Niemcy" },
+      { "text": "Słowacja" },
+      { "text": "Hiszpania" },
+      { "text": "Litwa" },
+      { "text": "Finlandia" }
+    ],
+    "imageSrc": "/invest.webp",
+    "imageAlt": "Możliwości inwestycyjne w Europie"
+  },
+  "customHeroVisit": {
+    "heading": "Odwiedź",
+    "paragraph1": "Jeśli chcesz zwiedzić Europę, zapewniamy kompleksowe wsparcie wizowe.",
+    "buttons": [
+      { "text": "Polska" },
+      { "text": "Szwajcaria" },
+      { "text": "Niemcy" },
+      { "text": "Łotwa" },
+      { "text": "Finlandia" },
+      { "text": "Luksemburg" }
+    ],
+    "imageSrc": "/visit.webp",
+    "imageAlt": "Możliwości odwiedzin Europy"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Nasze Newslettery",
+      "description": "Otrzymuj najnowsze aktualizacje, wskazówki i zasoby.",
+      "emailPlaceholder": "Email",
+      "submitButton": "Wyślij"
+    },
+    "company": {
+      "name": "CountryNation",
+      "tagline": "Usługi Globalne",
+      "description": "Twój zaufany partner dla globalnych możliwości w edukacji, migracji i inwestycjach.",
+      "location": "Obsługujemy klientów na całym świecie"
+    },
+    "sections": {
+      "navigation": "Nawigacja",
+      "quickLink": "Szybki Link",
+      "workHours": "Godziny Pracy"
+    },
+    "contact": {
+      "businessHours": "7:00 - 17:00, Pon - Sob",
+      "businessHoursLabel": "Godziny Pracy",
+      "callUs": "Zadzwoń do Nas",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "bottom": {
+      "copyright": "© {year} CountryNation. Wszystkie prawa zastrzeżone.",
+      "privacyPolicy": "Polityka Prywatności",
+      "termsOfService": "Regulamin",
+      "refundPolicy": "Polityka Zwrotów",
+      "antiFraudPolicy": "Polityka Anty-Oszustw"
+    }
+  }
+}
