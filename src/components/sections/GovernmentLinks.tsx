@@ -19,28 +19,28 @@ export function GovernmentLinks() {
       name: "Ministry of Foreign Affairs",
       logo: "/960px-Ministerstwo_Spraw_Zagranicznych_logo_2022.png",
       url: "https://www.gov.pl/web/dyplomacja",
-      alt: "Ministry of Foreign Affairs Republic of Poland"
+      alt: "Ministry of Foreign Affairs Republic of Poland",
     },
     {
       name: "Council of Ministers",
-      logo: "/Logo-kprm.png", 
+      logo: "/Logo-kprm.png",
       url: "https://www.gov.pl/web/premier",
-      alt: "Council of Ministers Republic of Poland"
+      alt: "Council of Ministers Republic of Poland",
     },
     {
       name: "National Bank of Poland",
       logo: "/Narodowy_Bank_Polski_logo_and_wordmark.png",
       url: "https://www.nbp.pl/",
-      alt: "National Bank of Poland"
-    }
+      alt: "National Bank of Poland",
+    },
   ];
 
   const handleLinkClick = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className="w-full bg-gray-50 dark:bg-gray-900 py-16">
+    <div className="w-full bg-gray-50 dark:bg-gray-900 pt-16 pb-10">
       <div className="container mx-auto max-w-7xl px-4">
         {/* Title */}
         <div className="text-center mb-12">

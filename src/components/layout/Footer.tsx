@@ -2,141 +2,258 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { NAVBAR_LINKS, FOOTER_SERVICES } from "@/constants/data";
-import { colors } from "@/constants/color";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 
 export function Footer() {
   const locale = useLocale();
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const tCommon = useTranslations("common");
+
+  const solutionLinks = [
+    { href: "/work", label: tNav("work") },
+    { href: "/migrate", label: tNav("migrate") },
+    { href: "/employer", label: tNav("employer") },
+    { href: "/recruiter", label: tNav("recruiter") },
+    { href: "/jobseeker", label: tNav("jobseeker") },
+  ];
+
+  const governmentLinks = [
+    { href: "https://gov.pl", label: "Government of Poland" },
+    { href: "https://migri.fi", label: "Finnish Immigration Service" },
+    { href: "https://bamf.de", label: "German Federal Office" },
+    { href: "https://europa.eu", label: "European Union" },
+  ];
+
+  const updatedLinks = [
+    { href: "/blogs", label: "Blogs" },
+    { href: "/news", label: "News" },
+  ];
+
+  const companyInfoLinks = [
+    { href: "/about", label: tCommon("about") },
+    { href: "/contact", label: tCommon("contact") },
+    { href: "/services", label: tCommon("services") },
+  ];
+
+  const successStoryLinks = [
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/case-studies", label: "Case Studies" },
+    { href: "/success-stories", label: "Success Stories" },
+  ];
+
+  const socialLinks = [
+    { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
+    { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
+    { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
+    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
+  ];
+
+  const termsLinks = [
+    { href: "/privacy-policy", label: t("bottom.privacyPolicy") },
+    { href: "/terms-and-conditions", label: t("bottom.termsOfService") },
+    { href: "/refund-policy", label: t("bottom.refundPolicy") },
+    { href: "/antiFraud-policy", label: t("bottom.antiFraudPolicy") },
+  ];
 
   return (
-    <footer className="mt-auto bg-gray-50 text-gray-800 px-4 xl:px-28">
+    <footer className="mt-auto bg-gray-100 text-gray-800 border-t border-gray-200">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="/mylogo.jpeg"
-                alt="Logo"
-                width={160}
-                height={48}
-                className="h-16 w-52 object-cover"
-              />
-            </div>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              {t("company.description")}
-            </p>
-            <div className="flex items-center gap-2 text-gray-600">
-              <MapPin
-                className="w-4 h-4"
-                style={{ color: colors.yellow.DEFAULT }}
-              />
-              <span className="text-sm">{t("company.location")}</span>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="flex flex-col lg:items-center items-start">
-            <h4 className="text-lg font-semibold text-gray-800 mb-6">
-              {t("sections.navigation")}
-            </h4>
-            <ul className="space-y-3">
-              {NAVBAR_LINKS.slice(0, 6).map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={`/${locale}${link.href}`}
-                    className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm font-medium"
-                  >
-                    {tNav(link.href.replace(/^\//, "") as any)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="flex flex-col items-start lg:items-center">
-            <h4 className="text-lg font-semibold text-gray-800 mb-6">
-              {t("sections.workHours")}
-            </h4>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <Clock
-                    className="w-4 h-4"
-                    style={{ color: colors.yellow.DEFAULT }}
-                  />
-                </div>
-                <div>
-                  <p className="text-gray-800 font-medium text-sm">
-                    {t("contact.businessHours")}
-                  </p>
-                  <p className="text-gray-500 text-xs">
-                    {t("contact.businessHoursLabel")}
-                  </p>
-                </div>
+      <div className="container mx-auto px-8 lg:px-16 xl:px-24 py-8">
+        <div className="max-w-7xl mx-auto p-0 lg:pl-4">
+          {/* First Row - 4 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Column 1: Logo and Description */}
+            <div className="">
+              <div className="mb-8">
+                <Image
+                  src="/mylogo.jpeg"
+                  alt="Logo"
+                  width={180}
+                  height={54}
+                  className="h-16 w-auto object-contain"
+                />
               </div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <Phone
-                    className="w-4 h-4"
-                    style={{ color: colors.yellow.DEFAULT }}
-                  />
-                </div>
-                <div>
-                  <p className="text-gray-800 font-medium text-sm">
-                    +48 22 209 5497
-                  </p>
-                  <p className="text-gray-500 text-xs">{t("contact.callUs")}</p>
-                </div>
-              </div>
-
-              <p className="text-gray-600 text-sm leading-relaxed mt-4">
-                {t("contact.description")}
+              <p className="text-gray-600 leading-relaxed text-sm pr-4">
+                {t("company.description")}
               </p>
             </div>
-          </div>
-        </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-300 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              {t("bottom.copyright", { year: new Date().getFullYear() })}
-            </p>
-            <div className="flex items-center gap-6">
-              <Link
-                href={`/${locale}/privacy-policy`}
-                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
-              >
-                {t("bottom.privacyPolicy")}
-              </Link>
-              <Link
-                href={`/${locale}/terms-and-conditions`}
-                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
-              >
-                {t("bottom.termsOfService")}
-              </Link>
-              <Link
-                href={`/${locale}/refund-policy`}
-                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
-              >
-                {t("bottom.refundPolicy")}
-              </Link>
-              <Link
-                href={`/${locale}/antiFraud-policy`}
-                className="text-gray-500 hover:text-amber-500 text-sm transition-colors"
-              >
-                {t("bottom.antiFraudPolicy")}
-              </Link>
+            {/* Column 2: Our Solution */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Our Solution
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <ul className="space-y-3">
+                {solutionLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={`/${locale}${link.href}`}
+                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Government Links */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Government Links
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <ul className="space-y-3">
+                {governmentLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Updated */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Exlusive Updates
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <ul className="space-y-3">
+                {updatedLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={`/${locale}${link.href}`}
+                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Second Row - 4 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Column 1: Company Info */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Company Info
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <ul className="space-y-3">
+                {companyInfoLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={`/${locale}${link.href}`}
+                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 2: Our Success Story */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Our Success Story
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <ul className="space-y-3">
+                {successStoryLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={`/${locale}${link.href}`}
+                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Our Social Media */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Our Social Media
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <div className="flex flex-col space-y-3">
+                {socialLinks.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <Link
+                      key={social.href}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-600 hover:text-amber-500 transition-colors duration-200 group"
+                      title={social.label}
+                    >
+                      <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
+                        <IconComponent className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">{social.label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Column 4: Terms & Conditions */}
+            <div className="">
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  Terms & Conditions
+                </h4>
+                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+              </div>
+              <ul className="space-y-3">
+                {termsLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={`/${locale}${link.href}`}
+                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Copyright Section */}
+          <div className="border-t border-gray-200 pt-8 mt-12">
+            <div className="text-center">
+              <p className="text-gray-500 text-sm">
+                {t("bottom.copyright", { year: new Date().getFullYear() })}
+              </p>
             </div>
           </div>
         </div>
