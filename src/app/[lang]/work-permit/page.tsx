@@ -1,5 +1,6 @@
+import { AllPermitImage } from "@/components/work_permit/AllPermitImage";
 import React from "react";
 
 export default function page() {
-  return <div>Work Permit</div>;
+  return <AllPermitImage />;
 }

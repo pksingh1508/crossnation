@@ -99,6 +99,29 @@ export interface TestimonialItem {
   };
 }
 
+export interface SuccessItem {
+  id: number;
+  attributes?: {
+    name: string;
+    story: string;
+    updatedAt: string;
+    success_image?: {
+      data?: {
+        attributes?: {
+          url: string;
+        };
+      };
+    };
+  };
+  // Alternative structure in case Strapi returns flat data
+  name?: string;
+  story?: string;
+  updatedAt?: string;
+  success_image?: {
+    url: string;
+  };
+}
+
 export interface StrapiResponse {
   data: NewsItem[];
   meta: {
@@ -125,6 +148,80 @@ export interface BlogResponse {
 
 export interface TestimonialResponse {
   data: TestimonialItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+export interface SuccessStoryResponse {
+  data: SuccessItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+export interface PermitItem {
+  id: number;
+  attributes?: {
+    updatedAt: string;
+    permit_image?: {
+      data?: {
+        attributes?: {
+          url: string;
+        };
+      };
+    };
+  };
+  // Alternative structure in case Strapi returns flat data
+  updatedAt?: string;
+  permit_image?: {
+    url: string;
+  };
+}
+
+export interface PermitResponse {
+  data: PermitItem[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+export interface VisaStampItem {
+  id: number;
+  attributes?: {
+    updatedAt: string;
+    stamp_image?: {
+      data?: {
+        attributes?: {
+          url: string;
+        };
+      };
+    };
+  };
+  // Alternative structure in case Strapi returns flat data
+  updatedAt?: string;
+  stamp_image?: {
+    url: string;
+  };
+}
+
+export interface VisaStampResponse {
+  data: VisaStampItem[];
   meta: {
     pagination: {
       page: number;
@@ -458,5 +555,89 @@ export async function getSingleBlogPost(
   } catch (error) {
     console.error("Error fetching single blog post:", error);
     throw new Error("Failed to fetch single blog post");
+  }
+}
+
+export async function getAllSuccessStories(
+  token: string,
+  page: number = 1,
+  pageSize: number = 10,
+  locale: string = "en",
+  collection: string
+): Promise<SuccessStoryResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
+        "fields[0]": "name",
+        "fields[1]": "story",
+        "fields[2]": "updatedAt",
+        "populate[success_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as SuccessStoryResponse;
+  } catch (error) {
+    console.error("Error fetching all success stories:", error);
+    throw new Error("Failed to fetch all success stories");
+  }
+}
+
+export async function getAllPermitImages(
+  token: string,
+  collection: string
+): Promise<PermitResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        "populate[permit_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as PermitResponse;
+  } catch (error) {
+    console.error("Error fetching all permit images:", error);
+    throw new Error("Failed to fetch all permit images");
+  }
+}
+
+export async function getAllStampImages(
+  token: string,
+  collection: string
+): Promise<VisaStampResponse> {
+  try {
+    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        "populate[stamp_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
+      },
+    });
+
+    return response.data as VisaStampResponse;
+  } catch (error) {
+    console.error("Error fetching all stamp images:", error);
+    throw new Error("Failed to fetch all stamp images");
   }
 }
