@@ -106,7 +106,7 @@ export function RecentBlog() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               {t("heading") || "Recent Blogs"}
             </h2>
-            <div className="h-1 bg-blue-500 rounded w-16 mx-auto"></div>
+            <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
           </div>
           {/* Blog post */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
@@ -135,7 +135,7 @@ export function RecentBlog() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/blog`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className="h-12 text-base font-semibold font-montserrat border-3 text-yellow-700 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
                 {t("cta") || "Read More Blogs"}
               </RippleButton>

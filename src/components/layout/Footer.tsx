@@ -9,7 +9,6 @@ export function Footer() {
   const locale = useLocale();
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
-  const tCommon = useTranslations("common");
 
   const solutionLinks = [
     { href: "/work", label: tNav("work") },
@@ -32,22 +31,34 @@ export function Footer() {
   ];
 
   const companyInfoLinks = [
-    { href: "/about", label: tCommon("about") },
-    { href: "/contact", label: tCommon("contact") },
-    { href: "/services", label: tCommon("services") },
+    { href: "#1", label: "NIP Number: 521-378-45-92" },
+    { href: "#2", label: "KRS Number: 0000765432" },
+    { href: "#3", label: "REGON Number: 382914765" },
   ];
 
   const successStoryLinks = [
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/case-studies", label: "Case Studies" },
     { href: "/success-stories", label: "Success Stories" },
+    { href: "/work-permit", label: "Work Permit" },
+    { href: "/visa-stamp", label: "Visa Stamp" },
   ];
 
   const socialLinks = [
-    { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
-    { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
-    { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
-    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
+    {
+      href: "https://www.facebook.com/eucareerserwis/",
+      icon: Facebook,
+      label: "Facebook",
+    },
+    { href: "https://x.com/eucareerserwis", icon: Twitter, label: "Twitter" },
+    {
+      href: "https://instagram.com/eucareerserwis",
+      icon: Instagram,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.linkedin.com/company/eu-career-serwis",
+      icon: Linkedin,
+      label: "LinkedIn",
+    },
   ];
 
   const termsLinks = [
@@ -93,7 +104,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -117,7 +128,7 @@ export function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -139,7 +150,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -160,14 +171,11 @@ export function Footer() {
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
-                {companyInfoLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
-                    >
+                {companyInfoLinks.map((link, index) => (
+                  <li key={index}>
+                    <p className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm">
                       {link.label}
-                    </Link>
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -186,7 +194,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -212,10 +220,10 @@ export function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-600 hover:text-amber-500 transition-colors duration-200 group"
+                      className="flex items-center gap-3 text-gray-600 hover:text-yellow-600 transition-colors duration-200 group"
                       title={social.label}
                     >
-                      <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
+                      <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-yellow-600 group-hover:text-white transition-all duration-200">
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <span className="text-sm">{social.label}</span>
@@ -238,7 +246,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-500 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>

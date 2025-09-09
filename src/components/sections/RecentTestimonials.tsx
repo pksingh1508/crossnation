@@ -176,7 +176,7 @@ export function RecentTestimonials() {
           </motion.div>
 
           {/* Call to Action */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -195,7 +195,7 @@ export function RecentTestimonials() {
             >
               {t("cta") || "Read More Testimonials"}
             </RippleButton>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

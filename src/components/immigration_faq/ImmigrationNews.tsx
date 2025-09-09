@@ -128,7 +128,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
             variant="brandOutline"
             size="lg"
             onClick={() => router.push(`/${locale}/immigration-news`)}
-            className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+            className="h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-700 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
           >
             {t("cta") || "See All News"}
           </RippleButton>

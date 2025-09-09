@@ -114,7 +114,7 @@ export function SolveQuery() {
                   variant="brandOutline"
                   size="lg"
                   onClick={() => router.push(`/${locale}/contact`)}
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                  className="h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-700 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
                 >
                   <MessageSquare className="w-5 h-5" />
                   {t("cta")}

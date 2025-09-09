@@ -123,7 +123,7 @@ export function MyForm() {
                 placeholder={t("firstNamePlaceholder")}
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
-                className="font-inter"
+                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
                 required
               />
             </div>
@@ -135,7 +135,7 @@ export function MyForm() {
                 placeholder={t("lastNamePlaceholder")}
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
-                className="font-inter"
+                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
                 required
               />
             </div>
@@ -149,7 +149,7 @@ export function MyForm() {
               placeholder={t("emailPlaceholder")}
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="font-inter"
+              className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
               required
             />
           </div>

@@ -3,9 +3,10 @@
 import { TestimonialItem } from "@/lib/strapi";
 import Image from "next/image";
 import { motion, easeInOut } from "framer-motion";
-import { Quote, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { RippleButton } from "../ui/ripple-button";
+import { useRouter } from "next/navigation";
 
 interface SingleTestimonialProps {
   testimonial: TestimonialItem;
@@ -34,6 +35,16 @@ export function SingleTestimonial({
       testimonial.user_image?.url ||
       null,
   };
+  const router = useRouter();
+
+  const btnName =
+    index === 0 ? "Success Story" : index === 1 ? "Work Permit" : "Visa Stamp";
+  const url =
+    index === 0
+      ? "/success-stories"
+      : index === 1
+        ? "/work-permit"
+        : "/visa-stamp";
 
   // Animation variants
   const cardVariants = {
@@ -60,16 +71,9 @@ export function SingleTestimonial({
       whileHover={{ y: -8 }}
       className="h-full"
     >
-      <Card className="relative h-full p-6 md:p-8 bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-2xl group overflow-hidden">
+      <Card className="relative h-fit p-6 md:p-8 bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-2xl group overflow-hidden">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-        {/* Stars rating */}
-        {/* <div className="relative flex items-center gap-1 mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-          ))}
-        </div> */}
 
         {/* Client info */}
         <Link href={`${locale}/testimonials`}>
@@ -121,6 +125,18 @@ export function SingleTestimonial({
         {/* Hover effect overlay */}
         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
       </Card>
+      <div className="mx-auto flex justify-center mt-6">
+        <RippleButton
+          variant="brandOutline"
+          size="lg"
+          onClick={() => {
+            router.push(`${locale}${url}`);
+          }}
+          className="h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-600 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+        >
+          {btnName}
+        </RippleButton>
+      </div>
     </motion.div>
   );
 }
