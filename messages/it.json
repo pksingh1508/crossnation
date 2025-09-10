@@ -1,0 +1,852 @@
+{
+  "common": {
+    "welcome": "Benvenuto",
+    "home": "Home",
+    "about": "Chi siamo",
+    "services": "Servizi",
+    "contact": "Contatti",
+    "book": "Prenota un appuntamento"
+  },
+  "nav": {
+    "work": "Lavoro",
+    "migrate": "Migrare",
+    "employer": "Datore di",
+    "recruiter": "Recruiter",
+    "jobseeker": "Candidato"
+  },
+  "home": {
+    "title1": "Come possiamo supportarti?",
+    "title2": "",
+    "btn1": "Recruiter",
+    "btn2": "Candidato",
+    "btn3": "Migrare",
+    "btn4": "Datore di lavoro",
+    "cta1": "Se non sei sicuro delle tue opzioni",
+    "cta2": "offriamo consulenza professionale gratuita."
+  },
+  "about": {
+    "smallTitle": "Informazioni su EU Career Serwis",
+    "title": "La principale consulenza europea per immigrazione e reclutamento",
+    "description": {
+      "paragraph1": "EU Career Serwis è una consulenza europea affidabile specializzata in visti di lavoro, orientamento professionale e reclutamento internazionale. Forniamo soluzioni su misura di immigrazione e forza lavoro per privati e aziende, coprendo inserimenti qualificati, semi-qualificati e non qualificati in tutta Europa.",
+      "paragraph2": "Operando sotto la guida di avvocati polacchi qualificati, garantiamo conformità legale, trasparenza e professionalità in ogni caso. La nostra missione è aiutare le persone a raggiungere i propri obiettivi di carriera all'estero supportando al contempo le aziende nell'assicurarsi il talento giusto in modo efficiente ed etico."
+    },
+    "stats": {
+      "experience": "Anni di esperienza",
+      "successRate": "Tasso di successo"
+    },
+    "imageAlt": "Consulenza",
+    "trustedBadge": "La principale immigrazione in Europa"
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "subtitle": "Ottieni risposte alle domande comuni sui nostri servizi e processi",
+    "questions": {
+      "choose": {
+        "question": "Perché dovrei scegliere EU Career Serwis per la mia carriera in Europa?",
+        "answer": "Perché siamo un'agenzia di reclutamento registrata e affidabile in Polonia, pienamente conforme alle leggi UE, che garantisce trasparenza, sicurezza legale e opportunità affidabili."
+      },
+      "trust": {
+        "question": "Perché dovrei fidarmi oggi di EU Career Serwis?",
+        "answer": "Perché mettiamo le persone al primo posto—proteggendo i candidati dalle frodi, garantendo lavori legali e aiutando le aziende a crescere con la giusta forza lavoro."
+      },
+      "realJobs": {
+        "question": "Come faccio a sapere che i lavori sono reali e sicuri?",
+        "answer": "Lavoriamo solo con datori di lavoro verificati che rispettano gli standard del lavoro dell'UE, garantendo contratti autentici e condizioni di lavoro sicure."
+      },
+      "documents": {
+        "question": "Potete aiutare con permessi di lavoro e documenti?",
+        "answer": "Sì. Collaboriamo con esperti legali per preparare e processare tutti i documenti—permessi di lavoro, visti e contratti—così non affronterai stress o ritardi."
+      },
+      "industries": {
+        "question": "Per quali settori reclutate?",
+        "answer": "Siamo specializzati in logistica, edilizia, manifattura, ospitalità e lavoro stagionale, collegando i candidati ai settori con maggiore richiesta."
+      },
+      "startWork": {
+        "question": "Quanto velocemente posso iniziare a lavorare?",
+        "answer": "Molti inserimenti vengono completati entro 2–6 settimane, a seconda del ruolo e del paese, grazie al nostro processo di selezione rapido ed efficiente."
+      },
+      "support": {
+        "question": "Fornite supporto dopo che ho ottenuto il lavoro?",
+        "answer": "Sì. Assistiamo con onboarding, alloggio, trasferimento e supporto continuo affinché ti senta sicuro e tranquillo all'estero."
+      },
+      "employers": {
+        "question": "EU Career Serwis può aiutare anche i datori di lavoro a trovare personale?",
+        "answer": "Assolutamente. Forniamo soluzioni di staffing e outsourcing alle aziende in tutta Europa, garantendo lavoratori affidabili, qualificati e motivati."
+      },
+      "difference": {
+        "question": "Cosa rende EU Career Serwis diversa dalle altre agenzie?",
+        "answer": "Combiniamo competenza legale, esperienza nel reclutamento internazionale e attenzione personale per ogni cliente—costruendo fiducia e successo a lungo termine."
+      },
+      "clients": {
+        "question": "Come tratta EU Career Serwis i propri clienti?",
+        "answer": "Trattiamo ogni cliente con rispetto, onestà e professionalità. Che tu sia un candidato o un datore di lavoro, ascoltiamo le tue esigenze, forniamo informazioni chiare e offriamo supporto completo durante tutto il processo. La nostra priorità è costruire fiducia e relazioni a lungo termine, non solo risultati immediati."
+      }
+    },
+    "cta1": "Hai ancora domande?",
+    "cta2": "I nostri consulenti esperti sono qui per aiutarti con una guida personalizzata.",
+    "cta3": "Contatta i nostri esperti"
+  },
+  "someFAQ": {
+    "heading": "Cosa rende EU Career Serwis la migliore?",
+    "description": "Con una profonda esperienza e una solida conoscenza del settore, guidiamo gli studenti a ottenere un'istruzione di livello mondiale e a trasformarla in opportunità di carriera gratificanti. I nostri servizi unici supportano ogni fase del loro percorso, che l'obiettivo sia studiare, lavorare o costruire una vita all'estero."
+  },
+  "migrate": {
+    "title": "Migra con facilità",
+    "description": "Migra in Europa con EU Career Serwis e fai il primo passo verso un futuro di successo e soddisfazione all'estero. Siamo specializzati nell'orientare professionisti come te verso il paese giusto, l'opportunità giusta e il percorso di carriera giusto.",
+    "features": {
+      "skilled": "Domande di visto per lavoratori qualificati e familiari",
+      "express": "Express entry e programmi di nomina provinciale",
+      "document": "Preparazione e verifica dei documenti",
+      "settlement": "Servizi di insediamento e orientamento"
+    },
+    "cta": "Avvia il processo di migrazione"
+  },
+  "testimonials": {
+    "heading": "Testimonianze",
+    "cta": "Leggi altre testimonianze",
+    "loading": "Caricamento testimonianze...",
+    "error": "Impossibile caricare le testimonianze. Riprova più tardi.",
+    "noData": "Nessuna testimonianza disponibile al momento."
+  },
+  "RecentBlogs": {
+    "heading": "Blog recenti",
+    "cta": "Leggi altri blog"
+  },
+  "ImmigrationNews": {
+    "heading": "Notizie sull'immigrazione",
+    "cta": "Vedi tutte le notizie",
+    "latest": "Ultime notizie sull'immigrazione"
+  },
+  "pages": {
+    "study": {
+      "title": "Servizi per studiare all'estero",
+      "description": "Guida e supporto completi per studiare all'estero per aiutarti a raggiungere i tuoi obiettivi educativi in tutto il mondo.",
+      "services": {
+        "consultation": {
+          "title": "Consulenza educativa",
+          "description": "Guida personalizzata per scegliere l'università e il programma giusti per i tuoi obiettivi di carriera."
+        },
+        "application": {
+          "title": "Supporto alle candidature",
+          "description": "Assistenza completa per candidature universitarie, saggi e documentazione."
+        },
+        "visa": {
+          "title": "Assistenza visto",
+          "description": "Supporto esperto per le domande di visto studentesco e la preparazione ai colloqui."
+        }
+      }
+    },
+    "work": {
+      "title": "Opportunità di lavoro",
+      "description": "Trova opportunità di lavoro internazionali e ottieni un supporto completo per la tua carriera all'estero.",
+      "services": {
+        "jobSearch": {
+          "title": "Supporto alla ricerca lavoro",
+          "description": "Accesso ai mercati del lavoro internazionali e servizi di matching personalizzati."
+        },
+        "workVisa": {
+          "title": "Assistenza per visti di lavoro",
+          "description": "Supporto completo per permessi di lavoro e domande di visto in tutto il mondo."
+        },
+        "careerGuidance": {
+          "title": "Orientamento professionale",
+          "description": "Consulenza professionale di carriera e raccomandazioni per lo sviluppo delle competenze."
+        }
+      }
+    },
+    "invest": {
+      "title": "Servizi di investimento",
+      "description": "Esplora opportunità di investimento internazionali con guida esperta e supporto completo.",
+      "services": {
+        "realEstate": {
+          "title": "Investimenti immobiliari",
+          "description": "Opportunità di investimento immobiliare internazionali e analisi di mercato."
+        },
+        "business": {
+          "title": "Investimenti aziendali",
+          "description": "Acquisizione di aziende, partnership e guida agli investimenti in startup."
+        },
+        "portfolio": {
+          "title": "Gestione del portafoglio",
+          "description": "Gestione di portafogli di investimento diversificati e pianificazione finanziaria."
+        }
+      }
+    },
+    "migrate": {
+      "title": "Servizi di migrazione",
+      "description": "Assistenza completa per migrazione e trasferimento per aiutarti a iniziare la tua nuova vita all'estero.",
+      "services": {
+        "visaAssistance": {
+          "title": "Assistenza visto",
+          "description": "Supporto completo per tutti i tipi di visti e permessi di migrazione."
+        },
+        "relocation": {
+          "title": "Supporto al trasferimento",
+          "description": "Servizi completi di trasferimento inclusi alloggio e assistenza all'insediamento."
+        },
+        "settlement": {
+          "title": "Servizi di insediamento",
+          "description": "Supporto post-arrivo per aiutarti a integrarti nella tua nuova comunità."
+        }
+      }
+    },
+    "employer": {
+      "title": "Servizi per datori di lavoro",
+      "description": "Reclutamento internazionale e supporto ai datori di lavoro per trovare i talenti giusti a livello globale.",
+      "services": {
+        "recruitment": {
+          "title": "Reclutamento globale",
+          "description": "Accesso a bacini di talenti internazionali e servizi di reclutamento."
+        },
+        "compliance": {
+          "title": "Supporto alla conformità",
+          "description": "Conformità all'immigrazione e assistenza per i permessi di lavoro per i datori di lavoro."
+        },
+        "onboarding": {
+          "title": "Onboarding dei dipendenti",
+          "description": "Supporto completo all'onboarding per i dipendenti internazionali."
+        }
+      }
+    },
+    "institution": {
+      "title": "Servizi per istituzioni",
+      "description": "Partnership e servizi di supporto per istituzioni educative per la collaborazione internazionale.",
+      "services": {
+        "partnerships": {
+          "title": "Partnership internazionali",
+          "description": "Facilitiamo partnership tra istituzioni educative di tutto il mondo."
+        },
+        "studentServices": {
+          "title": "Servizi di supporto agli studenti",
+          "description": "Servizi di supporto completi per studenti internazionali."
+        },
+        "accreditation": {
+          "title": "Supporto all'accreditamento",
+          "description": "Assistenza per l'accreditamento internazionale e l'assicurazione qualità."
+        }
+      }
+    },
+    "recruiter": {
+      "title": "Servizi per recruiter",
+      "description": "Servizi professionali di reclutamento e supporto all'acquisizione di talenti per i mercati globali.",
+      "services": {
+        "talentAcquisition": {
+          "title": "Acquisizione di talenti",
+          "description": "Servizi strategici di acquisizione talenti per i mercati internazionali."
+        },
+        "screening": {
+          "title": "Screening dei candidati",
+          "description": "Servizi completi di screening e valutazione dei candidati."
+        },
+        "placement": {
+          "title": "Servizi di placement",
+          "description": "Servizi di inserimento end-to-end con supporto continuo."
+        }
+      }
+    },
+    "jobseeker": {
+      "title": "Servizi per candidati",
+      "description": "Orientamento professionale e servizi di placement per opportunità internazionali.",
+      "services": {
+        "careerCounseling": {
+          "title": "Consulenza di carriera",
+          "description": "Orientamento professionale e pianificazione dello sviluppo."
+        },
+        "resumeBuilding": {
+          "title": "Creazione CV",
+          "description": "Servizi professionali di redazione di CV e lettera di presentazione."
+        },
+        "jobMatching": {
+          "title": "Job matching",
+          "description": "Abbinamento personalizzato dei lavori in base a competenze e preferenze."
+        }
+      }
+    },
+    "traineeship": {
+      "title": "Programmi di tirocinio",
+      "description": "Opportunità internazionali di tirocinio e stage per lo sviluppo delle competenze.",
+      "services": {
+        "internships": {
+          "title": "Tirocini internazionali",
+          "description": "Accesso a opportunità di tirocinio in aziende leader nel mondo."
+        },
+        "skillDevelopment": {
+          "title": "Sviluppo delle competenze",
+          "description": "Programmi completi di sviluppo e formazione delle competenze."
+        },
+        "mentorship": {
+          "title": "Programmi di mentorship",
+          "description": "Mentorship professionale e guida durante tutto il tirocinio."
+        }
+      }
+    },
+    "book": {
+      "title": "Prenota un appuntamento",
+      "description": "Prenota una consulenza con i nostri esperti per discutere i tuoi obiettivi e ricevere una guida personalizzata.",
+      "form": {
+        "title": "Programma la tua consulenza",
+        "description": "Scegli un orario comodo per parlare con i nostri esperti dei tuoi obiettivi.",
+        "placeholder": "Il widget di prenotazione verrà integrato qui (Cal.com/Calendly)"
+      }
+    },
+    "contact": {
+      "title": "Contattaci",
+      "description": "Iscriviti per una consulenza gratuita con un esperto",
+      "form": {
+        "title": "Inviaci un messaggio",
+        "name": "Nome e cognome",
+        "namePlaceholder": "Inserisci il tuo nome completo",
+        "email": "Indirizzo email",
+        "emailPlaceholder": "Inserisci il tuo indirizzo email",
+        "message": "Messaggio",
+        "messagePlaceholder": "Dicci come possiamo aiutarti",
+        "submit": "Invia messaggio"
+      },
+      "info": {
+        "title": "Contatta il nostro team di esperti",
+        "address": {
+          "title": "Indirizzo",
+          "street": "Via: Ul Ludwika Idzikowskiego 16, 4° piano",
+          "zipCode": "CAP: 00-710 Varsavia",
+          "city": "Città: Varsavia, Paese: Polonia"
+        },
+        "callUs": {
+          "title": "Chiamaci",
+          "phone": "+48 22 268 3497"
+        },
+        "whatsapp": {
+          "title": "Whatsapp",
+          "number": "+48 79 835 6664"
+        },
+        "email": {
+          "title": "Scrivici a",
+          "address": "info@atozerwisplus.pl"
+        }
+      },
+      "follow": {
+        "title": "Seguici"
+      }
+    },
+    "myForm": {
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Inserisci il nome",
+      "lastName": "Cognome",
+      "lastNamePlaceholder": "Inserisci il cognome",
+      "email": "Email",
+      "emailPlaceholder": "Inserisci la tua email",
+      "phoneNumber": "Numero di telefono",
+      "phonePlaceholder": "Inserisci il numero di telefono",
+      "userType": "Io sono",
+      "userTypePlaceholder": "Seleziona il tuo ruolo",
+      "userTypes": {
+        "student": "Studente",
+        "jobseeker": "Candidato",
+        "agent": "Agente/Recruiter estero",
+        "employer": "Datore di lavoro",
+        "institution": "Istituzione/Università",
+        "investor": "Investitore/Registrazione azienda"
+      },
+      "subject": "Oggetto",
+      "subjectPlaceholder": "Inserisci l'oggetto",
+      "message": "Messaggio",
+      "messagePlaceholder": "Dicci come possiamo aiutarti",
+      "termsText": "Accetto i",
+      "termsLink": "Termini e condizioni",
+      "submitButton": "Invia messaggio",
+      "loadingMessage": "Invio in corso...",
+      "successMessage": "Modulo inviato con successo! Ti ricontatteremo presto.",
+      "errorMessage": "Compila tutti i campi obbligatori e accetta i termini",
+      "required": "obbligatorio"
+    },
+    "commonContact": {
+      "title": "Cerchi lavoro, assunzioni o partnership?",
+      "description": "Pronto a fare il passo successivo? Che tu stia cercando opportunità di lavoro, opzioni di investimento, soluzioni di assunzione o possibilità di partnership, siamo qui per aiutarti a connetterti con le persone e le opportunità giuste.",
+      "buttons": {
+        "work": "Lavoro",
+        "migrate": "Migrare",
+        "employer": "Datore di lavoro",
+        "recruiter": "Recruiter"
+      },
+      "features": {
+        "quickResponse": "Risposta rapida entro 24 ore",
+        "consultation": "Consulenza professionale disponibile",
+        "secure": "Comunicazione sicura e confidenziale"
+      },
+      "formInstruction": "Compila il modulo qui sotto e ti ricontatteremo presto."
+    }
+  },
+  "works": {
+    "steps": {
+      "poland": {
+        "imageAlt": "Opportunità di lavoro in Polonia",
+        "heading": "Perché dovresti lavorare in Polonia (Europa)",
+        "paragraph1": "Le opportunità di lavoro in Europa, in particolare in Polonia, sono sicure, legali e disponibili in vari settori. Le leggi sul lavoro polacche offrono una forte tutela ai lavoratori, garantendo salari equi, orari regolamentati e accesso ai benefici sociali. È disponibile un'ampia gamma di posizioni qualificate e non qualificate, rendendo più facile per le persone motivate iniziare una carriera in Europa. EU Career Serwis supporta i candidati in ogni fase, inclusi permessi di lavoro, elaborazione del visto e preparazione di tutta la documentazione legale necessaria.",
+        "paragraph2": "I contratti di lavoro sono formali, trasparenti e definiscono chiaramente i termini relativi a salario, orari e benefici. La cultura del lavoro in Polonia è professionale e collaborativa, con enfasi su affidabilità, dedizione e lavoro di squadra. I settori chiave con alta domanda includono logistica, edilizia, manifattura, ospitalità, agricoltura e trasporti. Le principali città con abbondanti opportunità sono Varsavia, Cracovia, Danzica, Breslavia e Poznań.",
+        "paragraph3": "Sono disponibili sia posizioni stagionali sia a lungo termine, offrendo flessibilità per diversi obiettivi di carriera. I dipendenti possono sviluppare competenze pratiche, migliorare la lingua e acquisire preziosa esperienza lavorativa europea.",
+        "paragraph4": "Il supporto per alloggio e trasferimento garantisce una transizione confortevole e sicura per i lavoratori stranieri. In generale, la Polonia offre opportunità economiche, tutela legale e crescita personale, rendendola una destinazione ideale per costruire una carriera di successo in Europa."
+      },
+      "step1": {
+        "imageAlt": "Richiedi il permesso di lavoro per la Polonia",
+        "heading": "Passo 1: Richiedi il permesso di lavoro",
+        "paragraph1": "Il processo del permesso di lavoro in Polonia inizia con il tuo datore di lavoro che presenta una domanda ufficiale presso l'Ufficio del Voivodato locale. Questa domanda fornisce informazioni dettagliate sulla posizione che ricoprirai, incluso il titolo e le principali responsabilità. Specifica inoltre lo stipendio proposto, assicurando che soddisfi i requisiti minimi legali secondo la legge sul lavoro polacca. Il datore di lavoro deve spiegare il motivo dell'assunzione di un lavoratore straniero, dimostrando che non è disponibile un candidato locale idoneo.",
+        "paragraph2": "Presentando questa domanda, il datore di lavoro garantisce che l'impiego sia pienamente legale e conforme alle normative del lavoro polacche. Le autorità esaminano attentamente la domanda per verificare che la posizione soddisfi tutti gli standard legali e specifici del settore.",
+        "paragraph3": "Questo passaggio tutela sia il datore di lavoro sia il dipendente, garantendo trasparenza e responsabilità nel processo di assunzione. Crea inoltre un registro formale dell'impiego previsto, essenziale per le fasi successive del permesso di lavoro e del visto.",
+        "paragraph4": ""
+      },
+      "step2": {
+        "imageAlt": "Ricevi il permesso di lavoro per la Polonia e prepara i documenti",
+        "heading": "Passo 2: Ricevi il permesso di lavoro e prepara la documentazione",
+        "paragraph1": "Una volta approvato il permesso di lavoro, il candidato riceve ufficialmente il documento che conferma che l'impiego è stato autorizzato dalle autorità polacche. Ricevere il permesso è una tappa fondamentale del processo di lavoro legale, poiché convalida sia il datore di lavoro sia il dipendente. Questo permesso costituisce la conferma ufficiale che la posizione rispetta le leggi sul lavoro polacche e che l'assunzione di un lavoratore straniero è legittima. Dopo aver ottenuto il permesso, il candidato deve preparare tutta la documentazione necessaria per la fase successiva.",
+        "paragraph2": "I documenti principali includono un passaporto valido, utilizzato per le domande di visto e l'ingresso in Polonia. Il contratto di lavoro deve essere attentamente esaminato e preparato, indicando termini come stipendio, orari, benefici e durata dell'impiego. Possono essere richiesti ulteriori documenti, come prova di alloggio, assicurazione sanitaria e moduli richiesti dal consolato o ambasciata polacca. È essenziale che tutta la documentazione sia completa, accurata e coerente con i dati forniti nella domanda di permesso.",
+        "paragraph3": "Una preparazione corretta dei documenti garantisce un processo di richiesta del visto fluido e puntuale. Dimostra inoltre alle autorità che sia il datore di lavoro sia il dipendente rispettano i requisiti legali.",
+        "paragraph4": ""
+      },
+      "step3": {
+        "imageAlt": "Approvazione del visto di lavoro per la Polonia",
+        "heading": "Passo 3: Approvazione del visto",
+        "paragraph1": "Dopo aver ricevuto il permesso di lavoro approvato, i cittadini extra-UE devono richiedere un visto nazionale (tipo D) presso il consolato o l'ambasciata polacca più vicina nel proprio paese. Questo visto è essenziale per entrare legalmente in Polonia per motivi di lavoro e in genere copre soggiorni superiori a 90 giorni. Il processo di richiesta assicura che l'impiego del candidato sia pienamente conforme alle leggi sull'immigrazione polacche ed europee.",
+        "paragraph2": "I richiedenti devono presentare diversi documenti fondamentali a supporto della domanda e per dimostrare l'idoneità. Tra i documenti chiave vi sono il permesso di lavoro approvato, che conferma che il datore di lavoro è autorizzato ad assumere il lavoratore straniero, e il contratto di lavoro, che specifica termini, salario, durata e responsabilità.",
+        "paragraph3": "È necessario presentare un passaporto valido per l'identificazione e l'autorizzazione al viaggio. Spesso è richiesta anche la prova di alloggio per dimostrare che il candidato avrà un luogo in cui soggiornare all'arrivo, soddisfacendo i requisiti minimi di vita.",
+        "paragraph4": ""
+      },
+      "step4": {
+        "imageAlt": "Arrivo in Polonia per lavorare",
+        "heading": "Passo 4: Arrivo in Polonia",
+        "paragraph1": "Una volta approvati il visto nazionale (tipo D) e il permesso di lavoro, il candidato può recarsi legalmente in Polonia per lavorare. È fondamentale entrare nel paese utilizzando i documenti approvati per garantire la conformità alle leggi sull'immigrazione polacche.",
+        "paragraph2": "All'arrivo, i candidati devono completare le procedure amministrative obbligatorie previste per i lavoratori stranieri. Uno dei primi passaggi è registrare il proprio indirizzo di residenza presso il municipio locale. La registrazione dell'indirizzo è un requisito legale ed è necessaria per l'accesso ai servizi sociali e alla corrispondenza ufficiale. È inoltre richiesta l'iscrizione al sistema di previdenza sociale (ZUS) per garantire tassazione e copertura sanitaria adeguate. Completare tempestivamente queste procedure aiuta a evitare multe, problemi legali o ritardi nell'impiego.",
+        "paragraph3": "Dopo l'arrivo in Polonia, EU Career Serwis ti assiste nell'apertura di un conto bancario locale per ricevere lo stipendio in sicurezza. Ti aiutiamo anche a ottenere il numero PESEL, necessario per tasse, previdenza sociale e accesso ai servizi pubblici.",
+        "paragraph4": "Questo supporto ti consente di iniziare a lavorare legalmente, gestire le finanze e stabilirti senza problemi in Polonia."
+      },
+      "step5": {
+        "imageAlt": "Firma il contratto e inizia a lavorare in Polonia",
+        "heading": "Passo 5: Firma il contratto e inizia a lavorare",
+        "paragraph1": "L'ultima fase del processo di impiego è la firma ufficiale del contratto di lavoro con il datore di lavoro in Polonia. Il contratto formalizza i termini del tuo impiego, inclusi stipendio, orari, benefici e responsabilità. La firma del contratto garantisce che entrambi—dipendente e datore di lavoro—siano legalmente vincolati dalle leggi sul lavoro polacche e offre chiarezza e sicurezza, riducendo il rischio di incomprensioni o controversie.",
+        "paragraph2": "Con tutta la documentazione pronta—permesso di lavoro, visto, numero PESEL e conto bancario—sei completamente preparato per iniziare. L'avvio dell'impiego legale conferma che tutti i requisiti previsti dalle normative sul lavoro polacche ed europee sono stati soddisfatti.",
+        "paragraph3": "Il datore di lavoro può fornire orientamento o formazione per familiarizzare con le procedure e le aspettative del luogo di lavoro. Il tuo contratto di lavoro è la base della relazione professionale in Polonia, tutelando i tuoi diritti.",
+        "paragraph4": "EU Career Serwis continua a fornirti guida e supporto durante i primi giorni di lavoro, garantendo una transizione fluida. Dopo aver completato tutte le fasi legali e amministrative, puoi concentrarti completamente sulle tue mansioni. Questa fase segna il completamento con successo del processo di selezione e trasferimento."
+      }
+    },
+    "info": {
+      "heading": "EU Career Serwis Works",
+      "title": "Opportunità di lavoro non qualificato sicure e legali in Europa",
+      "paragraph": "In EU Career Serwis offriamo opportunità di lavoro sicure e legali in molti paesi europei. Non servono qualifiche avanzate—solo la volontà di lavorare e crescere. Gestiamo permessi, contratti e supporto al trasferimento per rendere il processo senza stress. Alloggio e guida sono organizzati per comfort e sicurezza. I ruoli disponibili includono: Autisti di camion, tassisti, corrieri, magazzinieri, carrellisti, addetti carico/scarico, traslocatori, addetti al confezionamento, operai di linea, operatori di macchine (base), addetti al packaging, assistenti controllo qualità, aiuto produzione, operai tessili, addetti in impianti elettronica/automotive, manovali, aiutanti elettricisti/idraulici/falegnami, imbianchini e decoratori, operai stradali, addetti alle pulizie, giardinieri, raccoglitori di frutta/verdura, lavoratori in serre, assistenti agricoli (animali e colture), stagionali del raccolto, aiuto in vivai/fiore, housekeeping in hotel, aiuto cucina, lavapiatti, personale ristorazione/fast-food, addetti lavanderia, assistenti case di cura, addetti sanificazione e guardie giurate (livello base)."
+    }
+  },
+  "employer": {
+    "info": {
+      "heading": "Soddisfa tutte le tue esigenze legali di forza lavoro con EU Career Serwis",
+      "paragraph1": "EU Career Serwis è una consulenza di reclutamento con licenza con sede in Polonia, specializzata in soluzioni di outsourcing e staffing offshore per aziende europee. Forniamo lavoratori qualificati e non qualificati da Asia, Africa e altre regioni, aiutando le imprese in tutta Europa a far fronte efficacemente alla carenza di manodopera garantendo piena conformità legale.",
+      "paragraph2": "I nostri servizi sono trasparenti, convenienti e allineati alle leggi sul lavoro polacche ed europee. I datori di lavoro non affrontano costi nascosti, poiché seguiamo pratiche eque ed etiche che creano una situazione win‑win sia per le aziende che per i candidati. Con accesso a un ampio bacino di talenti, copriamo settori come manifattura, logistica, edilizia, ospitalità, agricoltura e trasporti.",
+      "paragraph3": "Gestiamo l'intero ciclo di reclutamento dall'inizio alla fine, inclusi sourcing dei candidati, verifica dei precedenti e supporto alla documentazione, oltre alla gestione di permessi di lavoro, visti e assistenza al trasferimento. Tutte le procedure legali sono supervisionate da avvocati polacchi esperti, assicurando che ogni inserimento sia sicuro, affidabile e pienamente conforme alle normative sull'immigrazione e sul lavoro.",
+      "paragraph4": "In EU Career Serwis ci concentriamo sulla costruzione di partnership a lungo termine con i datori di lavoro offrendo soluzioni di forza lavoro professionali, puntuali e su misura per le esigenze di ciascuna azienda. La nostra dedizione a qualità, integrità e conformità legale ci ha resi un partner di reclutamento affidabile per le imprese nelle principali città europee.",
+      "paragraph5": "Che tu abbia bisogno di personale stagionale o dipendenti permanenti, offriamo un processo di reclutamento senza soluzione di continuità che fa risparmiare tempo, riduce l'onere amministrativo e garantisce stabilità della forza lavoro. Con EU Career Serwis puoi essere certo che le tue esigenze di personale sono gestite in modo efficiente e responsabile."
+    },
+    "step1": {
+      "imageAlt": "Soluzioni di assunzione su misura per datori di lavoro polacchi",
+      "heading": "Soluzioni di assunzione su misura per datori di lavoro polacchi",
+      "paragraph1": "In EU Career Serwis comprendiamo che ogni datore di lavoro polacco ha esigenze di personale uniche. Per questo forniamo soluzioni di reclutamento personalizzate per le specifiche richieste della tua attività. Che tu abbia bisogno di specialisti qualificati, lavoratori semi-qualificati o manodopera generale, reperiamo i candidati giusti da regioni internazionali affidabili, garantendo qualità e affidabilità.",
+      "paragraph2": "Ci occupiamo dell'intero processo di reclutamento per tuo conto, inclusa selezione dei candidati, permessi di lavoro, visti e supporto al trasferimento. Tutte le procedure legali sono gestite con la guida di avvocati polacchi esperti, dandoti piena fiducia nel rispetto delle leggi sul lavoro e sull'immigrazione.",
+      "paragraph3": "Le nostre soluzioni ti aiutano a risparmiare tempo e costi, garantendo al contempo che la tua forza lavoro sia pronta a operare fin dal primo giorno. Combinando efficienza e pratiche etiche, aiutiamo i datori di lavoro polacchi a superare la carenza di personale, ottenere stabilità operativa e concentrarsi sulla crescita a lungo termine.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Ricerca di talenti globale",
+      "heading": "Ricerca di talenti globale in più regioni",
+      "paragraph1": "In EU Career Serwis colleghiamo i datori di lavoro polacchi a un ampio bacino di talenti internazionali provenienti da Asia, Africa e Europa orientale. La nostra rete di reclutamento ci consente di identificare, valutare e fornire candidati motivati pronti a ricoprire ruoli sia qualificati che non qualificati, aiutando a superare le carenze locali e mantenere una forza lavoro affidabile.",
+      "paragraph2": "Collaboriamo con partner di reclutamento esteri affidabili per garantire la selezione di soli candidati qualificati e pre-verificati. Ogni lavoratore affronta un processo di valutazione per confermare competenze, esperienza e prontezza ad adattarsi all'ambiente di lavoro polacco. Che servano lavoratori stagionali, per progetto o a lungo termine, la nostra portata globale assicura soluzioni tempestive ed efficaci.",
+      "paragraph3": "La nostra strategia internazionale si basa su trasparenza, conformità ed efficienza. Ogni candidato è supportato con la documentazione necessaria, inclusi permessi di lavoro, visti e assistenza al trasferimento, garantendo un'esperienza di assunzione fluida per i datori di lavoro.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Categorie di forza lavoro disponibili",
+      "heading": "Categorie di forza lavoro disponibili",
+      "paragraph1": "Forniamo ai datori di lavoro polacchi accesso a un'ampia gamma di categorie di forza lavoro su misura per le esigenze specifiche dei settori. Dai manovali ai professionisti specializzati, assicuriamo che le aziende trovino il talento giusto per ogni ruolo.",
+      "paragraph2": "Per i ruoli non qualificati forniamo lavoratori affidabili in ambiti come logistica, magazzino, supporto edile, agricoltura, ospitalità, pulizie e manifattura.",
+      "paragraph3": "Per posizioni qualificate e semi-qualificate reclutiamo autisti, operatori di macchine, saldatori, tecnici e personale dell'ospitalità con esperienza comprovata, selezionati accuratamente per rispondere ai requisiti dei datori di lavoro.",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Settori in cui facciamo la differenza",
+      "heading": "Settori in cui facciamo la differenza",
+      "paragraph1": "Forniamo soluzioni di forza lavoro su misura per le esigenze di più settori in tutta la Polonia.",
+      "paragraph2": "Il nostro reclutamento supporta manifattura, logistica, edilizia, ospitalità, agricoltura, trasporti e magazzino, assicurando operazioni senza intoppi.",
+      "paragraph3": "Forniamo lavoratori qualificati e non, aiutando le aziende a raggiungere obiettivi produttivi, richieste stagionali e traguardi di lungo periodo.",
+      "paragraph4": "Collegando i datori di lavoro a candidati affidabili e preselezionati, riduciamo rischi di reclutamento e oneri amministrativi. Il nostro obiettivo è dotare ogni settore del talento giusto, favorendo crescita sostenibile ed efficienza operativa."
+    },
+    "step5": {
+      "imageAlt": "Dalla domanda all'arrivo: il percorso di assunzione",
+      "heading": "Dalla domanda all'arrivo: il percorso di assunzione",
+      "paragraph1": "Gestiamo l'intero processo per il reclutamento internazionale, assicurando una transizione fluida e legale per i candidati che arrivano in Polonia: permesso di lavoro, supporto alla domanda di visto, documenti e appuntamenti consolari, fino ai viaggi.",
+      "paragraph2": "All'arrivo, supportiamo nell'ottenimento del PESEL per tasse, previdenza e sanità, e nell'apertura del conto bancario per stipendio e spese quotidiane. Gestendo ogni fase—dal permesso di lavoro al visto, arrivo, registrazioni e setup finanziario—garantiamo candidati pronti e conformi.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Standard legali ed etici nel reclutamento",
+      "heading": "Garantire standard legali ed etici di reclutamento",
+      "paragraph1": "Diamo priorità alla piena conformità con le leggi sul lavoro polacche e le normative europee in ogni fase del reclutamento: permessi, visti, contratti e buste paga, proteggendo datori di lavoro e dipendenti.",
+      "paragraph2": "Le nostre pratiche sono etiche, trasparenti e corrette. Ogni candidato è valutato accuratamente e i termini d'impiego sono comunicati chiaramente, garantendo rispetto e diritti legali. Con supervisione professionale e guida legale, forniamo talenti conformi e affidabili mantenendo i più alti standard d'integrità.",
+      "paragraph3": "Questo approccio riduce i rischi legali per i datori di lavoro e favorisce fiducia, partnership durature e un ambiente di lavoro positivo.",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Partnership di lungo periodo",
+      "heading": "Costruire partnership di forza lavoro a lungo termine",
+      "paragraph1": "Creiamo relazioni durature offrendo soluzioni di reclutamento costanti, affidabili e di alta qualità. Non ci limitiamo a coprire posizioni: comprendiamo le esigenze uniche di ciascuna azienda e forniamo strategie di personale su misura.",
+      "paragraph2": "Grazie a processi trasparenti, conformità legale e supporto continuo, riduciamo il turnover, aumentiamo la produttività e costruiamo team stabili e motivati.",
+      "paragraph3": "Diventiamo un alleato strategico della forza lavoro, aiutando a soddisfare le esigenze in evoluzione e favorendo esperienze di lavoro positive a lungo termine.",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Perché collaborare con EU Career Serwis",
+      "heading": "Perché collaborare con EU Career Serwis per assumere in Polonia",
+      "paragraph1": "Siamo una consulenza europea con licenza, dedicata a fornire soluzioni di staffing end‑to‑end ai datori di lavoro in tutta la Polonia, collegandoli a lavoratori qualificati, semi-qualificati e generici pronti a contribuire fin da subito.",
+      "paragraph2": "I nostri servizi sono pienamente conformi alle leggi sul lavoro e alle normative sull'immigrazione, assicurando inserimenti legali, trasparenti e senza rischi. Gestiamo sourcing, preselezione, permessi, visti e trasferimento in modo efficiente.",
+      "paragraph3": "Crediamo in chiarezza ed equità—contratti e prezzi trasparenti senza costi nascosti. Offriamo supporto post‑arrivo: onboarding, alloggio, assicurazione sanitaria e registrazioni locali.",
+      "paragraph4": "Affidati a EU Career Serwis per un reclutamento internazionale legale, efficiente e di successo a Varsavia, Cracovia, Danzica, Breslavia, Poznań e oltre."
+    }
+  },
+  "recruiter": {
+    "info": {
+      "heading": "Come EU Career Serwis supporta i nostri partner di reclutamento internazionali",
+      "description": "Collaboriamo con agenzie di reclutamento in Asia e Africa per inserire legalmente ed efficacemente lavoratori in Polonia. In quanto consulenza autorizzata, gestiamo l'intero processo—dai permessi di lavoro e visti al supporto post‑arrivo.",
+      "bullets": {
+        "b1": "Autorizzazione legale – Siamo una consulenza con licenza in Polonia, garantendo che tutti i candidati siano trattati secondo la legge.",
+        "b2": "Permessi di lavoro e visti – Gestiamo tutta la documentazione, coordinamento con ambasciate e approvazioni.",
+        "b3": "Collaborazione trasparente – Contratti chiari, tempistiche concordate e comunicazione aperta per costruire fiducia.",
+        "b4": "Supporto ai candidati in Polonia – Alloggio, registrazione PESEL, conti bancari e orientamento per un avvio fluido.",
+        "b5": "Accesso ai datori di lavoro in Polonia – Collegamento con aziende verificate in logistica, edilizia, manifattura, ospitalità e agricoltura.",
+        "b6": "Crescita della partnership – Sosteniamo i partner nell'espandere l'attività attraverso un reclutamento etico e affidabile."
+      }
+    },
+    "step1": {
+      "imageAlt": "Collabora con EU Career Serwis",
+      "heading": "Collaborare con EU Career Serwis",
+      "paragraph1": "Collaborare con noi apre la porta a numerose opportunità di reclutamento nei settori in crescita della Polonia. In qualità di consulenza autorizzata e conforme, fungiamo da ponte affidabile tra partner internazionali ed aziende polacche, offrendo un processo strutturato, supporto legale e una rete solida.",
+      "paragraph2": "Oltre a coprire le posizioni, creiamo partnership a lungo termine che generano valore costante per tutti. Forniamo guida end‑to‑end—permessi, visti, onboarding e supporto post‑arrivo.",
+      "paragraph3": "Con EU Career Serwis puoi ampliare l'operatività, rafforzare la reputazione e contribuire a una mobilità della forza lavoro etica, aiutando i datori polacchi a superare carenze critiche.",
+      "paragraph4": ""
+    },
+    "step2": {
+      "imageAlt": "Modello di reclutamento B2B2C globale",
+      "heading": "Il nostro modello di reclutamento globale B2B2C",
+      "paragraph1": "Operiamo con un modello B2B2C moderno che semplifica l'assunzione internazionale per datori polacchi e partner nel mondo. Collaboriamo con agenzie fidate (B2B) che ci connettono con candidati idonei (B2C), gestendo in modo efficiente, legale e trasparente tutte le fasi—dal sourcing all'approvazione del visto.",
+      "paragraph2": "Questo modello crea valore per tutti: i datori ricevono forza lavoro affidabile, i partner un quadro legale sicuro e i lavoratori un percorso protetto verso l'impiego in Polonia.",
+      "paragraph3": "Combinando portata internazionale ed esperienza locale, assicuriamo conformità alle leggi polacche e standard etici in ogni inserimento.",
+      "paragraph4": ""
+    },
+    "step3": {
+      "imageAlt": "Idoneità dei partner",
+      "heading": "Chi può diventare partner di reclutamento?",
+      "paragraph1": "Accogliamo agenzie, consulenti indipendenti e centri di formazione di Asia, Africa e altre regioni impegnati in pratiche etiche e trasparenti. Dalle piccole agenzie a quelle con grandi volumi, puoi diventare nostro alleato affidabile nel fornire lavoratori alla Polonia.",
+      "paragraph2": "Offriamo un quadro legale strutturato, guida completa su permessi, visti, contratti e supporto post‑arrivo, rendendo la collaborazione vantaggiosa e sostenibile.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step4": {
+      "imageAlt": "Valore e benefici per i partner",
+      "heading": "Valore e benefici per i nostri partner",
+      "paragraph1": "Forniamo una gamma completa di benefici: talent pool preselezionato, processi strutturati e collegamenti diretti con datori verificati in Polonia. Il nostro supporto legale assicura piena conformità, riducendo oneri e rischi.",
+      "paragraph2": "Oltre al supporto operativo, offriamo comunicazione trasparente, tempistiche affidabili e assistenza post‑inserimento, aiutando a costruire fiducia con candidati e datori e favorendo una crescita sostenibile.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step5": {
+      "imageAlt": "Conformità e sicurezza legale",
+      "heading": "Conformità, permessi e sicurezza legale",
+      "paragraph1": "La conformità legale è la base dei nostri servizi: ogni inserimento segue rigorosamente le leggi sul lavoro e le normative sull'immigrazione in Polonia, inclusi permessi, visti e contratti.",
+      "paragraph2": "Guidiamo i partner in tutte le procedure regolatorie, dalla preparazione documenti al coordinamento con le ambasciate e alle registrazioni post‑arrivo, creando un ambiente sicuro e conforme.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step6": {
+      "imageAlt": "Onboarding partner certificati",
+      "heading": "Come iniziare come partner di reclutamento certificato",
+      "paragraph1": "Diventare partner certificato è semplice: invia credenziali e dati societari per la verifica. Una volta approvati, ti forniamo un onboarding completo sul nostro framework, requisiti legali e procedure operative.",
+      "paragraph2": "Dopo l'onboarding avrai accesso al nostro talent pool globale, supporto legale e rete di datori in Polonia, con guida continua e comunicazione trasparente per operare in modo etico ed efficiente.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step7": {
+      "imageAlt": "Espandi la portata con EU Career Serwis",
+      "heading": "Espandere la portata con EU Career Serwis",
+      "paragraph1": "La partnership consente ad agenzie e consulenti di accedere al mercato del lavoro polacco e connettersi con datori verificati in città chiave come Varsavia, Cracovia, Danzica, Breslavia e Poznań.",
+      "paragraph2": "Forniamo strumenti e supporto per operare in conformità legale, permessi, visti e procedure post‑arrivo, così puoi concentrarti sulla crescita mentre gestiamo complessità regolatorie e operative.",
+      "paragraph3": "",
+      "paragraph4": ""
+    },
+    "step8": {
+      "imageAlt": "Crescita a lungo termine con pratiche etiche",
+      "heading": "Crescita a lungo termine attraverso pratiche etiche",
+      "paragraph1": "Crediamo che la crescita sostenibile si basi su pratiche di reclutamento etiche e trasparenti. Ogni inserimento è conforme alle leggi sul lavoro e alle normative sull'immigrazione, tutelando datori e lavoratori.",
+      "paragraph2": "Questo approccio rafforza le relazioni a lungo termine, riduce i rischi e consente di espandere le operazioni con sicurezza collaborando con datori verificati.",
+      "paragraph3": "",
+      "paragraph4": ""
+    }
+  },
+  "jobseeker": {
+    "info": {
+      "heading": "Inizia la tua carriera europea con EU Career Serwis – Opportunità in Polonia",
+      "title": "Ottieni un lavoro in Polonia con il supporto completo di EU Career Serwis",
+      "paragraph1": "Aiutiamo i candidati a trovare opportunità legali in tutta la Polonia in ruoli qualificati e non qualificati.",
+      "paragraph2": "Guidiamo i candidati in tutto il processo, inclusi permessi di lavoro, visti e preparazione dei documenti.",
+      "paragraph3": "Assistiamo con viaggi, arrivo e registrazioni locali, inclusi numero PESEL e conti bancari.",
+      "paragraph4": "Garantiamo che ogni inserimento sia pienamente conforme alle leggi sul lavoro polacche e che l'avvio sia fluido.",
+      "paragraph5": "Con il nostro supporto, puoi concentrarti sul costruire la tua carriera in Europa in sicurezza e fiducia."
+    },
+    "step1": {
+      "heading": "Perché i candidati si fidano di EU Career Serwis",
+      "bullet1": "Agenzia con licenza e registrata – Pienamente conforme alle leggi sul lavoro e sull'immigrazione.",
+      "bullet2": "Opportunità legali e sicure – Tutti gli inserimenti seguono permessi e visti ufficiali.",
+      "bullet3": "Processo trasparente – Contratti chiari, nessun costo nascosto e comunicazione onesta.",
+      "bullet4": "Supporto end‑to‑end – Dalla candidatura al visto, viaggio, arrivo e registrazioni locali.",
+      "bullet5": "Ampia gamma di lavori – Ruoli qualificati, semi‑qualificati e non in diversi settori.",
+      "bullet6": "Assistenza post‑arrivo – Alloggio, PESEL, conto bancario e onboarding.",
+      "bullet7": "Fiducia dei datori – Solide partnership con aziende verificate in Polonia e in Europa."
+    },
+    "step2": {
+      "heading": "Come supportiamo i candidati in ogni fase",
+      "bullet1": "Guida al candidato – Ti aiutiamo a comprendere requisiti, documenti e idoneità.",
+      "bullet2": "Permesso di lavoro – Supporto nella preparazione e presentazione delle domande alle autorità polacche.",
+      "bullet3": "Visto – Guida su appuntamenti, verifica documenti e approvazioni consolari.",
+      "bullet4": "Viaggio – Assistenza per voli, arrivo e orientamento in Polonia.",
+      "bullet5": "Post‑arrivo – Alloggio, registrazione PESEL, conti bancari e onboarding.",
+      "bullet6": "Placement – Abbinamento con datori verificati in base a competenze e preferenze.",
+      "bullet7": "Assistenza continua – Supporto costante per un inserimento legale e senza intoppi."
+    },
+    "step3": {
+      "heading": "Chi può candidarsi: requisiti e idoneità",
+      "bullet1": "Età minima – In conformità con le leggi sul lavoro polacche.",
+      "bullet2": "Livello di competenza – Aperto a lavoratori qualificati, semi‑qualificati e non.",
+      "bullet3": "Nazionalità – Aperto a candidati internazionali da Asia, Africa ed Europa.",
+      "bullet4": "Documenti legali – Passaporto valido e documenti personali richiesti.",
+      "bullet5": "Salute e precedenti – Possibili controlli medici e di background.",
+      "bullet6": "Lingua – Non sempre obbligatoria, ma l'inglese o il polacco di base sono un vantaggio.",
+      "bullet7": "Impegno – Disponibilità a rispettare le leggi sul lavoro e i termini occupazionali."
+    },
+    "step4": {
+      "heading": "Le opportunità che offriamo: ruoli qualificati, semi‑qualificati e non",
+      "bullet1": "Ruoli qualificati – Posizioni con esperienza specifica o tecnica (autisti, operatori, tecnici, ecc.).",
+      "bullet2": "Ruoli semi‑qualificati – Impieghi con formazione/esperienza, tra cui magazzino, linea di assemblaggio, assistenza ospitalità.",
+      "bullet3": "Ruoli non qualificati – Posizioni entry‑level con minima esperienza (pulizie, manovali, agricoltura, aiuti generici).",
+      "bullet4": "Diversità settoriale – Opportunità in logistica, manifattura, edilizia, agricoltura e ospitalità.",
+      "bullet5": "Flessibilità – Opzioni stagionali/breve termine e a lungo termine.",
+      "bullet6": "Crescita – Molti ruoli offrono formazione sul lavoro e sviluppo competenze.",
+      "bullet7": "Datori verificati – Solo aziende legalmente registrate e affidabili in Polonia."
+    },
+    "step5": {
+      "heading": "L'importanza di lavorare con un'agenzia registrata",
+      "bullet1": "Conformità legale – Tutti gli inserimenti seguono le leggi sul lavoro e sull'immigrazione.",
+      "bullet2": "Sicurezza – Protezione da pratiche illegali o sfruttamento.",
+      "bullet3": "Contratti trasparenti – Termini chiari, salari equi e nessun costo nascosto.",
+      "bullet4": "Datori verificati – Collegamento solo con aziende affidabili e registrate.",
+      "bullet5": "Supporto professionale – Guida per permesso, visto, viaggio e post‑arrivo.",
+      "bullet6": "Tranquillità – Puoi concentrarti sulla carriera sapendo che tutto è gestito eticamente.",
+      "bullet7": "Opportunità a lungo termine – Percorsi occupazionali sostenibili e affidabili."
+    },
+    "step6": {
+      "heading": "Dalla candidatura all'arrivo: un percorso senza intoppi",
+      "bullet1": "Guida passo‑passo – Dalla candidatura iniziale fino all'offerta.",
+      "bullet2": "Permesso e visto – Gestione completa dei documenti e delle procedure consolari.",
+      "bullet3": "Viaggio – Assistenza per voli e guida pre‑partenza.",
+      "bullet4": "Arrivo – Orientamento, alloggio e registrazioni locali (PESEL e conto bancario).",
+      "bullet5": "Onboarding – Avvio immediato senza ritardi.",
+      "bullet6": "Assistenza continua – Supporto dopo l'arrivo per ogni esigenza.",
+      "bullet7": ""
+    },
+    "step7": {
+      "heading": "Fai crescere la tua carriera con datori affidabili in Europa",
+      "bullet1": "Datori verificati – Collegamento con aziende registrate e reputate.",
+      "bullet2": "Opportunità diverse – Ruoli in logistica, manifattura, edilizia, ospitalità e agricoltura.",
+      "bullet3": "Sviluppo carriera – Formazione sul lavoro e crescita delle competenze.",
+      "bullet4": "Occupazione a lungo termine – Opzioni permanenti e stagionali.",
+      "bullet5": "Lavoro sicuro e legale – Piena conformità alle leggi sul lavoro in Europa.",
+      "bullet6": "Ambiente di supporto – Onboarding, alloggio e integrazione sul posto di lavoro.",
+      "bullet7": ""
+    }
+  },
+  "governmentLinks": {
+    "title": "Governo della Polonia: link utili",
+    "description": "Clicca su un logo per visitare il sito ufficiale"
+  },
+  "solveQuery": {
+    "title": "DOMANDE?",
+    "heading1": "Se hai qualche ",
+    "doubts": "dubbio",
+    "heading2": "Fai la tua domanda",
+    "paragraph1": "Se hai domande su visti, opportunità di lavoro, verifica aziendale o servizi di immigrazione—siamo qui per aiutarti!",
+    "paragraph2": "Ottieni guida esperta dai nostri consulenti specializzati in immigrazione, sviluppo di carriera e opportunità internazionali. Offriamo soluzioni personalizzate per la tua situazione unica.",
+    "cta": "Fai la tua domanda",
+    "querySolved": "Domanda risolta",
+    "support": "Supporto disponibile"
+  },
+  "customHero": {
+    "heading": "Lavoro",
+    "paragraph1": "Non sai quale paese europeo si adatta meglio al tuo profilo, competenze ed esperienza? Scegliere il percorso giusto è il primo passo verso un futuro sicuro e gratificante.",
+    "paragraph2": "Noi di [EU Career Serwis] offriamo orientamento personalizzato per esplorare opportunità con datori di lavoro europei affidabili. Valuteremo attentamente le tue qualifiche e consiglieremo le opzioni più adatte alla tua crescita professionale.",
+    "buttons": [
+      { "text": "Polonia" },
+      { "text": "Slovacchia" },
+      { "text": "Lituania" },
+      { "text": "Repubblica Ceca" },
+      { "text": "Serbia" },
+      { "text": "Spagna" },
+      { "text": "Croazia" }
+    ],
+    "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
+    "imageAlt": "Opportunità di carriera in Europa"
+  },
+  "customHeroMigrate": {
+    "heading": "Migrare",
+    "paragraph1": "Migra in Europa con EU Career Serwis e fai il primo passo verso un futuro di successo e soddisfazione all'estero. Siamo specializzati nell'orientare professionisti come te verso il paese, l'opportunità e il percorso giusti.",
+    "buttons": [
+      { "text": "Germania" },
+      { "text": "Spagna" },
+      { "text": "Italia" },
+      { "text": "Finlandia" }
+    ],
+    "imageSrc": "/migrate.webp",
+    "imageAlt": "Migrazione verso l'Europa"
+  },
+  "customHeroTraineeship": {
+    "heading": "Tirocinio",
+    "paragraph1": "Offriamo opportunità di tirocinio in più paesi per professionisti qualificati. Al termine riceverai certificazione e supporto all'inserimento presso aziende affidabili, per un percorso in linea con i tuoi obiettivi.",
+    "buttons": [
+      { "text": "Spagna" },
+      { "text": "Polonia" },
+      { "text": "Italia" },
+      { "text": "Portogallo" }
+    ],
+    "imageSrc": "/traineeship.webp",
+    "imageAlt": "Opportunità di tirocinio in Europa"
+  },
+  "customHeroStudy": {
+    "heading": "Studio",
+    "paragraph1": "Studiare in Europa significa molto più che conseguire una laurea: è un'opportunità per ottenere un'istruzione di livello mondiale, vivere culture diverse e costruire solide basi per la tua carriera",
+    "buttons": [
+      { "text": "Polonia" },
+      { "text": "Finlandia" },
+      { "text": "Germania" },
+      { "text": "Spagna" },
+      { "text": "Portogallo" },
+      { "text": "Lettonia" },
+      { "text": "Regno Unito" },
+      { "text": "Irlanda" },
+      { "text": "Canada" }
+    ],
+    "imageSrc": "/study.webp",
+    "imageAlt": "Opportunità di studio in Europa e oltre"
+  },
+  "customHeroInvestor": {
+    "heading": "Investitore",
+    "paragraph1": "Se sei un investitore e vuoi esplorare opportunità in Europa, offriamo progetti in vari settori orientati alla crescita e alla redditività. Forniamo supporto end‑to‑end per identificare l'investimento giusto, navigare le normative e raggiungere i tuoi obiettivi nel mercato europeo.",
+    "buttons": [
+      { "text": "Germania" },
+      { "text": "Slovacchia" },
+      { "text": "Spagna" },
+      { "text": "Lituania" },
+      { "text": "Finlandia" }
+    ],
+    "imageSrc": "/invest.webp",
+    "imageAlt": "Opportunità di investimento in Europa"
+  },
+  "customHeroVisit": {
+    "heading": "Visita",
+    "paragraph1": "Se desideri esplorare l'Europa e richiedere un visto turistico, contatta il nostro team di supporto. Forniamo guida e assistenza complete durante l'intero processo, per un'esperienza di visto senza intoppi.",
+    "buttons": [
+      { "text": "Polonia" },
+      { "text": "Svizzera" },
+      { "text": "Germania" },
+      { "text": "Lettonia" },
+      { "text": "Finlandia" },
+      { "text": "Lussemburgo" }
+    ],
+    "imageSrc": "/visit.webp",
+    "imageAlt": "Visita l'Europa"
+  },
+  "footer": {
+    "company": {
+      "name": "EU Career Serwis",
+      "description": "Il tuo partner di fiducia per opportunità globali in istruzione, migrazione e investimenti. Ti aiutiamo a realizzare i tuoi sogni internazionali con guida esperta e supporto personalizzato."
+    },
+    "bottom": {
+      "copyright": "© {year} EU Career Serwis. Tutti i diritti riservati.",
+      "privacyPolicy": "Informativa sulla privacy",
+      "termsOfService": "Termini di servizio",
+      "refundPolicy": "Politica di rimborso",
+      "antiFraudPolicy": "Politica anti-frode"
+    },
+    "heading": {
+      "solution": "Le nostre soluzioni",
+      "links": "Link governativi",
+      "update": "Aggiornamenti esclusivi",
+      "info": "Informazioni sull'azienda",
+      "story": "Le nostre storie di successo",
+      "media": "I nostri social media",
+      "condition": "Termini e condizioni"
+    },
+    "successStory": {
+      "story1": "Storie di successo",
+      "story2": "Permesso di lavoro",
+      "story3": "Visto timbrato"
+    },
+    "updates": {
+      "blog": "Blog",
+      "news": "Notizie sull'immigrazione"
+    },
+    "governmentLinks": {
+      "link1": "Governo della Polonia",
+      "link2": "Servizio immigrazione finlandese",
+      "link3": "Ufficio federale tedesco",
+      "link4": "Unione Europea",
+      "link5": "Statistiche Polonia"
+    },
+    "info": {
+      "NIP": "Numero NIP",
+      "REGON": "Numero REGON",
+      "KRS": "Numero KRS"
+    }
+  },
+  "blogsPage": {
+    "title": "ARTICOLI DEL BLOG",
+    "heading": "I nostri ultimi articoli",
+    "description": "Scopri approfondimenti, consigli e storie su immigrazione, carriera e vita all'estero",
+    "totalPost": "Articoli totali",
+    "totalLikes": "Mi piace totali",
+    "cachedPage": "Pagine in cache",
+    "refresh": "Aggiorna",
+    "searchPlaceholder": "Cerca articoli del blog..."
+  },
+  "immigrationPage": {
+    "title": "NOTIZIE SULL'IMMIGRAZIONE",
+    "heading": "Ultimi aggiornamenti sull'immigrazione",
+    "description": "Rimani informato con le ultime notizie sull'immigrazione, cambi di policy e aggiornamenti importanti da tutto il mondo",
+    "totalArticle": "Articoli totali",
+    "totalPage": "Pagine totali",
+    "cachedPage": "Pagine in cache",
+    "refresh": "Aggiorna",
+    "searchPlaceholder": "Cerca notizie...",
+    "latest": "Ultime notizie sull'immigrazione"
+  },
+  "pagination": {
+    "previous": "Precedente",
+    "next": "Successivo"
+  },
+  "successStory": {
+    "title": "STORIE DI SUCCESSO",
+    "heading": "Le nostre storie di successo",
+    "description": "Leggi storie ispiranti dei nostri clienti che hanno raggiunto i loro obiettivi di immigrazione con il nostro aiuto",
+    "refresh": "Aggiorna"
+  },
+  "workPermit": {
+    "title": "PERMESSO DI LAVORO",
+    "heading": "Galleria dei permessi di lavoro",
+    "description": "Sfoglia la nostra raccolta di permessi di lavoro approvati con successo"
+  },
+  "visaStamp": {
+    "title": "VISTO TIMBRATO",
+    "heading": "Galleria dei visti timbrati",
+    "description": "Esplora la nostra raccolta di visti timbrati approvati da vari paesi"
+  }
+}

@@ -2,5 +2,7 @@
   { "isoCode": "en", "name": "English" },
   { "isoCode": "pl", "name": "Polish" },
   { "isoCode": "es", "name": "Spanish" },
-  { "isoCode": "fr", "name": "French" }
+  { "isoCode": "fr", "name": "French" },
+  { "isoCode": "it", "name": "Italian" },
+  { "isoCode": "de", "name": "German" }
 ]
