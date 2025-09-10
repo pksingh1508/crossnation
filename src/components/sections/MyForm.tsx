@@ -77,17 +77,18 @@ export function MyForm() {
     // Set loading to true when starting the API call
     setLoading(true);
 
-    // try to send data to supabase
+    // try to send data to Zoho CRM
     try {
-      const res = await axios.post("/api/form-submitted", {
-        firstname: formData.firstName,
-        lastname: formData.lastName,
+      const res = await axios.post("/api/zoho/submit", {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
         email: formData.email,
         phone: `${selectedCountry.code} ${formData.phone}`,
-        usertype: formData.userType,
-        isconsulted: false,
+        option: formData.userType,
+        subject: "Enquiry -",
+        message: "I am filling this form to know more about your serwis.",
       });
-      if (res.status === 201) {
+      if (res.status === 200) {
         clearForm();
         // window.alert(t("successMessage"));
         toast.success(t("successMessage"), {

@@ -83,19 +83,18 @@ export function ContactForm() {
     // Set loading to true when starting the API call
     setLoading(true);
 
-    // try to send data to database
+    // try to send data to ZOHO CRM
     try {
-      const res = await axios.post("/api/contact", {
-        firstname: formData.firstName,
-        lastname: formData.lastName,
+      const res = await axios.post("/api/zoho/submit", {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
         email: formData.email,
         phone: `${selectedCountry.code} ${formData.phone}`,
-        usertype: formData.userType,
+        option: formData.userType,
         subject: formData.subject,
         message: formData.message,
-        isconsulted: false,
       });
-      if (res.status === 201) {
+      if (res.status === 200) {
         clearForm();
         // window.alert(t("successMessage"));
         toast.success(t("successMessage"), {
