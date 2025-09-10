@@ -105,16 +105,9 @@
   "testimonials": {
     "heading": "Testimonios",
     "cta": "Leer Más Testimonios",
-    "roles": {
-      "International Student": "Estudiante Internacional",
-      "Investor": "Inversor",
-      "Migrant": "Migrante",
-      "Job Seeker": "Buscador de Empleo",
-      "Business Owner": "Propietario de Negocio",
-      "PhD Student": "Estudiante de Doctorado",
-      "Healthcare Professional": "Profesional de la Salud",
-      "Tech Entrepreneur": "Emprendedor Tecnológico"
-    }
+    "loading": "Cargando testimonios...",
+    "error": "No se pudieron cargar los testimonios. Por favor, inténtalo de nuevo más tarde.",
+    "noData": "No hay testimonios disponibles en este momento."
   },
   "RecentBlogs": {
     "heading": "Blogs Recientes",
@@ -122,7 +115,8 @@
   },
   "ImmigrationNews": {
     "heading": "Noticias de Inmigración",
-    "cta": "Ver Todas las Noticias"
+    "cta": "Ver Todas las Noticias",
+    "latest": "Últimas Noticias de Inmigración"
   },
   "pages": {
     "study": {
@@ -772,35 +766,87 @@
     "imageAlt": "Oportunidades de visita a Europa"
   },
   "footer": {
-    "newsletter": {
-      "title": "Nuestros Boletines",
-      "description": "Obtén las últimas actualizaciones, consejos y recursos.",
-      "emailPlaceholder": "Correo Electrónico",
-      "submitButton": "Enviar"
-    },
     "company": {
-      "name": "CountryNation",
-      "tagline": "Servicios Globales",
-      "description": "Tu socio de confianza para oportunidades globales en educación, migración e inversión. Te ayudamos a lograr tus sueños internacionales con orientación experta y apoyo personalizado.",
-      "location": "Sirviendo clientes en todo el mundo"
-    },
-    "sections": {
-      "navigation": "Navegación",
-      "quickLink": "Enlaces Rápidos",
-      "workHours": "Horario de Trabajo"
-    },
-    "contact": {
-      "businessHours": "7 AM - 5 PM, Lun - Sáb",
-      "businessHoursLabel": "Horario Comercial",
-      "callUs": "Llámanos",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "name": "EU Career Serwis",
+      "description": "Su socio de confianza para oportunidades globales en educación, migración e inversión. Le ayudamos a alcanzar sus sueños internacionales con asesoramiento experto y apoyo personalizado."
     },
     "bottom": {
-      "copyright": "© {year} CountryNation. Todos los derechos reservados.",
+      "copyright": "© {year} EU Career Serwis. Todos los derechos reservados.",
       "privacyPolicy": "Política de Privacidad",
       "termsOfService": "Términos de Servicio",
       "refundPolicy": "Política de Reembolso",
-      "antiFraudPolicy": "Política Anti-Fraude"
+      "antiFraudPolicy": "Política Antifraude"
+    },
+    "heading": {
+      "solution": "Nuestras Soluciones",
+      "links": "Enlaces Gubernamentales",
+      "update": "Actualizaciones Exclusivas",
+      "info": "Información de la Empresa",
+      "story": "Nuestra Historia de Éxito",
+      "media": "Nuestras Redes Sociales",
+      "condition": "Términos y Condiciones"
+    },
+    "successStory": {
+      "story1": "Historias de Éxito",
+      "story2": "Permiso de Trabajo",
+      "story3": "Sello de Visa"
+    },
+    "updates": {
+      "blog": "Blogs",
+      "news": "Noticias de Inmigración"
+    },
+    "governmentLinks": {
+      "link1": "Gobierno de Polonia",
+      "link2": "Servicio de Inmigración de Finlandia",
+      "link3": "Oficina Federal de Alemania",
+      "link4": "Unión Europea",
+      "link5": "Estadísticas de Polonia"
+    },
+    "info": {
+      "NIP": "Número NIP",
+      "REGON": "Número REGON",
+      "KRS": "Número KRS"
     }
+  },
+  "blogsPage": {
+    "title": "PUBLICACIONES DEL BLOG",
+    "heading": "Nuestras Últimas Publicaciones del Blog",
+    "description": "Descubre ideas, consejos e historias sobre inmigración, desarrollo profesional y vida en el extranjero",
+    "totalPost": "Publicaciones Totales",
+    "totalLikes": "Me gusta Totales",
+    "cachedPage": "Página en Caché",
+    "refresh": "Actualizar",
+    "searchPlaceholder": "Buscar publicaciones del blog..."
+  },
+  "immigrationPage": {
+    "title": "NOTICIAS DE INMIGRACIÓN",
+    "heading": "Últimas Actualizaciones de Inmigración",
+    "description": "Mantente informado con las últimas noticias de inmigración, cambios en las políticas y actualizaciones importantes de todo el mundo",
+    "totalArticle": "Artículos Totales",
+    "totalPage": "Páginas Totales",
+    "cachedPage": "Página en Caché",
+    "refresh": "Actualizar",
+    "searchPlaceholder": "Buscar noticias...",
+    "latest": "Últimas Noticias de Inmigración"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "successStory": {
+    "title": "HISTORIAS DE ÉXITO",
+    "heading": "Nuestras Historias de Éxito",
+    "description": "Lee historias inspiradoras de nuestros clientes que lograron sus metas de inmigración con nuestra ayuda",
+    "refresh": "Actualizar"
+  },
+  "workPermit": {
+    "title": "PERMISO DE TRABAJO",
+    "heading": "Galería de Permisos de Trabajo",
+    "description": "Explora nuestra colección de aprobaciones exitosas de permisos de trabajo"
+  },
+  "visaStamp": {
+    "title": "SELLO DE VISA",
+    "heading": "Galería de Sellos de Visa",
+    "description": "Descubre nuestra colección de aprobaciones exitosas de sellos de visa de varios países"
   }
 }

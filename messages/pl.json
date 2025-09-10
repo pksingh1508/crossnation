@@ -105,16 +105,9 @@
   "testimonials": {
     "heading": "Referencje",
     "cta": "Przeczytaj Więcej Referencji",
-    "roles": {
-      "International Student": "Student Międzynarodowy",
-      "Investor": "Inwestor",
-      "Migrant": "Migrant",
-      "Job Seeker": "Poszukujący Pracy",
-      "Business Owner": "Właściciel Firmy",
-      "PhD Student": "Student PhD",
-      "Healthcare Professional": "Profesjonalista Opieki Zdrowotnej",
-      "Tech Entrepreneur": "Przedsiębiorca Technologiczny"
-    }
+    "loading": "Ładowanie opinii...",
+    "error": "Nie udało się załadować opinii. Spróbuj ponownie później.",
+    "noData": "Brak dostępnych opinii w tej chwili."
   },
   "RecentBlogs": {
     "heading": "Najnowsze Blogi",
@@ -122,7 +115,8 @@
   },
   "ImmigrationNews": {
     "heading": "Wiadomości Imigracyjne",
-    "cta": "Zobacz Wszystkie Wiadomości"
+    "cta": "Zobacz Wszystkie Wiadomości",
+    "latest": "Najnowsze Wiadomości Imigracyjne"
   },
   "pages": {
     "study": {
@@ -772,35 +766,87 @@
     "imageAlt": "Możliwości odwiedzin Europy"
   },
   "footer": {
-    "newsletter": {
-      "title": "Nasze Newslettery",
-      "description": "Otrzymuj najnowsze aktualizacje, wskazówki i zasoby.",
-      "emailPlaceholder": "Email",
-      "submitButton": "Wyślij"
-    },
     "company": {
-      "name": "CountryNation",
-      "tagline": "Usługi Globalne",
-      "description": "Twój zaufany partner dla globalnych możliwości w edukacji, migracji i inwestycjach.",
-      "location": "Obsługujemy klientów na całym świecie"
-    },
-    "sections": {
-      "navigation": "Nawigacja",
-      "quickLink": "Szybki Link",
-      "workHours": "Godziny Pracy"
-    },
-    "contact": {
-      "businessHours": "7:00 - 17:00, Pon - Sob",
-      "businessHoursLabel": "Godziny Pracy",
-      "callUs": "Zadzwoń do Nas",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "name": "EU Career Serwis",
+      "description": "Twój zaufany partner w zakresie globalnych możliwości w edukacji, migracji i inwestycjach. Pomagamy Ci spełniać międzynarodowe marzenia, oferując fachowe doradztwo i indywidualne wsparcie."
     },
     "bottom": {
-      "copyright": "© {year} CountryNation. Wszystkie prawa zastrzeżone.",
+      "copyright": "© {year} EU Career Serwis. Wszelkie prawa zastrzeżone.",
       "privacyPolicy": "Polityka Prywatności",
       "termsOfService": "Regulamin",
       "refundPolicy": "Polityka Zwrotów",
-      "antiFraudPolicy": "Polityka Anty-Oszustw"
+      "antiFraudPolicy": "Polityka Antyfraudowa"
+    },
+    "heading": {
+      "solution": "Nasze Rozwiązania",
+      "links": "Linki Rządowe",
+      "update": "Ekskluzywne Aktualizacje",
+      "info": "Informacje o Firmie",
+      "story": "Nasza Historia Sukcesu",
+      "media": "Nasze Media Społecznościowe",
+      "condition": "Regulamin i Warunki"
+    },
+    "successStory": {
+      "story1": "Historie Sukcesu",
+      "story2": "Zezwolenie na Pracę",
+      "story3": "Wiza – Stempel"
+    },
+    "updates": {
+      "blog": "Blogi",
+      "news": "Wiadomości Imigracyjne"
+    },
+    "governmentLinks": {
+      "link1": "Rząd Polski",
+      "link2": "Fiński Urząd ds. Imigracji",
+      "link3": "Niemiecki Federalny Urząd",
+      "link4": "Unia Europejska",
+      "link5": "Statystyka Polska"
+    },
+    "info": {
+      "NIP": "Numer NIP",
+      "REGON": "Numer REGON",
+      "KRS": "Numer KRS"
     }
+  },
+  "blogsPage": {
+    "title": "WPISY NA BLOGU",
+    "heading": "Nasze Najnowsze Wpisy na Blogu",
+    "description": "Odkryj spostrzeżenia, wskazówki i historie o imigracji, rozwoju kariery i życiu za granicą",
+    "totalPost": "Łączna Liczba Wpisów",
+    "totalLikes": "Łączna Liczba Polubień",
+    "cachedPage": "Strona w Pamięci Podręcznej",
+    "refresh": "Odśwież",
+    "searchPlaceholder": "Szukaj wpisów na blogu..."
+  },
+  "immigrationPage": {
+    "title": "WIADOMOŚCI IMIGRACYJNE",
+    "heading": "Najnowsze Aktualizacje Imigracyjne",
+    "description": "Bądź na bieżąco z najnowszymi wiadomościami o imigracji, zmianami w polityce i ważnymi aktualizacjami z całego świata",
+    "totalArticle": "Łączna Liczba Artykułów",
+    "totalPage": "Łączna Liczba Stron",
+    "cachedPage": "Strona w Pamięci Podręcznej",
+    "refresh": "Odśwież",
+    "searchPlaceholder": "Szukaj wiadomości...",
+    "latest": "Najnowsze Wiadomości Imigracyjne"
+  },
+  "pagination": {
+    "previous": "Poprzednia",
+    "next": "Następna"
+  },
+  "successStory": {
+    "title": "HISTORIE SUKCESU",
+    "heading": "Nasze Historie Sukcesu",
+    "description": "Przeczytaj inspirujące historie naszych klientów, którzy osiągnęli swoje cele imigracyjne z naszą pomocą",
+    "refresh": "Odśwież"
+  },
+  "workPermit": {
+    "title": "ZEZWOLENIE NA PRACĘ",
+    "heading": "Galeria Zezwoleń na Pracę",
+    "description": "Przejrzyj naszą kolekcję pomyślnie zatwierdzonych zezwoleń na pracę"
+  },
+  "visaStamp": {
+    "title": "WIZA – STEMPEL",
+    "heading": "Galeria Wizowych Stemplów",
+    "description": "Poznaj naszą kolekcję pomyślnie zatwierdzonych wizowych stempli z różnych krajów"
   }
 }

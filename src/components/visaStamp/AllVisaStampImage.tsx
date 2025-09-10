@@ -14,6 +14,7 @@ import {
   Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 export function AllVisaStampImage() {
   const [stampImages, setStampImages] = useState<VisaStampItem[]>([]);
@@ -22,6 +23,7 @@ export function AllVisaStampImage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
+  const t = useTranslations("visaStamp");
 
   useEffect(() => {
     fetchStampImages();
@@ -115,7 +117,6 @@ export function AllVisaStampImage() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-blue-500 mb-4" />
-              <p className="text-gray-600 text-lg">Loading visa stamps...</p>
             </div>
           </div>
         </div>
@@ -166,7 +167,7 @@ export function AllVisaStampImage() {
             >
               <Stamp className="w-5 h-5 text-blue-600" />
               <span className="text-blue-700 font-semibold text-sm uppercase tracking-wide">
-                Visa Stamps
+                {t("title")}
               </span>
             </motion.div>
 
@@ -176,7 +177,7 @@ export function AllVisaStampImage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             >
-              Visa Stamp Gallery
+              {t("heading")}
             </motion.h1>
 
             <motion.p
@@ -185,8 +186,7 @@ export function AllVisaStampImage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              Explore our collection of successful visa stamp approvals from
-              various countries
+              {t("description")}
             </motion.p>
           </div>
 

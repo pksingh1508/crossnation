@@ -105,16 +105,9 @@
   "testimonials": {
     "heading": "Testimonials",
     "cta": "Read More Testimonials",
-    "roles": {
-      "International Student": "International Student",
-      "Investor": "Investor",
-      "Migrant": "Migrant",
-      "Job Seeker": "Job Seeker",
-      "Business Owner": "Business Owner",
-      "PhD Student": "PhD Student",
-      "Healthcare Professional": "Healthcare Professional",
-      "Tech Entrepreneur": "Tech Entrepreneur"
-    }
+    "loading": "Loading testimonials...",
+    "error": "Failed to load testimonials. Please try again later.",
+    "noData": "No testimonials available at the moment."
   },
   "RecentBlogs": {
     "heading": "Recent Blogs",
@@ -122,7 +115,8 @@
   },
   "ImmigrationNews": {
     "heading": "Immigration News",
-    "cta": "See All News"
+    "cta": "See All News",
+    "latest": "Latest Immigration News"
   },
   "pages": {
     "study": {
@@ -772,35 +766,87 @@
     "imageAlt": "Visit Europe opportunities"
   },
   "footer": {
-    "newsletter": {
-      "title": "Our Newsletters",
-      "description": "Get the latest updates, tips, and resources.",
-      "emailPlaceholder": "Email",
-      "submitButton": "Submit Button"
-    },
     "company": {
-      "name": "CountryNation",
-      "tagline": "Global Services",
-      "description": "Your trusted partner for global opportunities in education, migration, and investment. We help you achieve your international dreams with expert guidance and personalized support.",
-      "location": "Serving clients worldwide"
-    },
-    "sections": {
-      "navigation": "Navigation",
-      "quickLink": "Quick Link",
-      "workHours": "Work Hours"
-    },
-    "contact": {
-      "businessHours": "7 AM - 5 PM, Mon - Sat",
-      "businessHoursLabel": "Business Hours",
-      "callUs": "Call Us",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "name": "EU Career Serwis",
+      "description": "Your trusted partner for global opportunities in education, migration, and investment. We help you achieve your international dreams with expert guidance and personalized support."
     },
     "bottom": {
-      "copyright": "© {year} CountryNation. All rights reserved.",
+      "copyright": "© {year} EU Career Serwis. All rights reserved.",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "refundPolicy": "Refund Policy",
       "antiFraudPolicy": "Anti-Fraud Policy"
+    },
+    "heading": {
+      "solution": "Our Solutions",
+      "links": "Government Links",
+      "update": "Exclusive Updates",
+      "info": "Company Info",
+      "story": "Our Success Story",
+      "media": "Our Social Media",
+      "condition": "Terms & Conditions"
+    },
+    "successStory": {
+      "story1": "Success Stories",
+      "story2": "Work Permit",
+      "story3": "Visa Stamp"
+    },
+    "updates": {
+      "blog": "Blogs",
+      "news": "Immigration News"
+    },
+    "governmentLinks": {
+      "link1": "Government of Poland",
+      "link2": "Finnish Immigration Service",
+      "link3": "German Federal Office",
+      "link4": "European Union",
+      "link5": "Statistics Poland"
+    },
+    "info": {
+      "NIP": "NIP Number",
+      "REGON": "REGON Number",
+      "KRS": "KRS Number"
     }
+  },
+  "blogsPage": {
+    "title": "BLOG POSTS",
+    "heading": "Our Latest Blog Posts",
+    "description": "Discover insights, tips, and stories about immigration, career development, and life abroad",
+    "totalPost": "Total Posts",
+    "totalLikes": "Total Likes",
+    "cachedPage": "Cached Page",
+    "refresh": "Refresh",
+    "searchPlaceholder": "Search blog posts..."
+  },
+  "immigrationPage": {
+    "title": "IMMIGRATION NEWS",
+    "heading": "Latest Immigration Updates",
+    "description": "Stay informed with the latest immigration news, policy changes, and important updates from around the world",
+    "totalArticle": "Total Articles",
+    "totalPage": "Total Pages",
+    "cachedPage": "Cached Page",
+    "refresh": "Refresh",
+    "searchPlaceholder": "Search news...",
+    "latest": "Latest Immigration News"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "successStory": {
+    "title": "SUCCESS STORIES",
+    "heading": "Our Success Stories",
+    "description": "Read inspiring stories from our clients who achieved their immigration goals with our help",
+    "refresh": "Refresh"
+  },
+  "workPermit": {
+    "title": "WORK PERMIT",
+    "heading": "Work Permit Gallery",
+    "description": "Browse through our collection of successful work permit approvals"
+  },
+  "visaStamp": {
+    "title": "VISA STAMP",
+    "heading": "Visa Stamp Gallery",
+    "description": "Explore our collection of successful visa stamp approvals from various countries"
   }
 }

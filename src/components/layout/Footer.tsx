@@ -8,6 +8,11 @@ import Image from "next/image";
 export function Footer() {
   const locale = useLocale();
   const t = useTranslations("footer");
+  const tgl = useTranslations("footer.governmentLinks");
+  const tupdate = useTranslations("footer.updates");
+  const tinfo = useTranslations("footer.info");
+  const tsuccess = useTranslations("footer.successStory");
+  const theading = useTranslations("footer.heading");
   const tNav = useTranslations("nav");
 
   const solutionLinks = [
@@ -19,27 +24,28 @@ export function Footer() {
   ];
 
   const governmentLinks = [
-    { href: "https://gov.pl", label: "Government of Poland" },
-    { href: "https://migri.fi", label: "Finnish Immigration Service" },
-    { href: "https://bamf.de", label: "German Federal Office" },
-    { href: "https://europa.eu", label: "European Union" },
+    { href: "https://gov.pl", label: tgl("link1") },
+    { href: "https://migri.fi", label: tgl("link2") },
+    { href: "https://bamf.de", label: tgl("link3") },
+    { href: "https://europa.eu", label: tgl("link4") },
+    { href: "https://stat.gov.pl/en/", label: tgl("link5") },
   ];
 
   const updatedLinks = [
-    { href: "/blog", label: "Blogs" },
-    { href: "/immigration-news", label: "Immigration News" },
+    { href: "/blog", label: tupdate("blog") },
+    { href: "/immigration-news", label: tupdate("news") },
   ];
 
   const companyInfoLinks = [
-    { href: "#1", label: "NIP Number: 521-378-45-92" },
-    { href: "#2", label: "KRS Number: 0000765432" },
-    { href: "#3", label: "REGON Number: 382914765" },
+    { href: "#1", label: tinfo("NIP") },
+    { href: "#2", label: tinfo("KRS") },
+    { href: "#3", label: tinfo("REGON") },
   ];
 
   const successStoryLinks = [
-    { href: "/success-stories", label: "Success Stories" },
-    { href: "/work-permit", label: "Work Permit" },
-    { href: "/visa-stamp", label: "Visa Stamp" },
+    { href: "/success-stories", label: tsuccess("story1") },
+    { href: "/work-permit", label: tsuccess("story2") },
+    { href: "/visa-stamp", label: tsuccess("story3") },
   ];
 
   const socialLinks = [
@@ -95,7 +101,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Our Solution
+                  {theading("solution")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
@@ -117,7 +123,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Government Links
+                  {theading("links")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
@@ -141,7 +147,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Exclusive Updates
+                  {theading("update")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
@@ -166,7 +172,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Company Info
+                  {theading("info")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
@@ -185,7 +191,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Our Success Story
+                  {theading("story")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
@@ -207,7 +213,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Our Social Media
+                  {theading("media")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>
@@ -237,7 +243,7 @@ export function Footer() {
             <div className="">
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  Terms & Conditions
+                  {theading("condition")}
                 </h4>
                 <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
               </div>

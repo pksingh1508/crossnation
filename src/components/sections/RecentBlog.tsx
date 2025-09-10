@@ -84,7 +84,7 @@ export function RecentBlog() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Recent Blogs
+                {t("heading") || "Recent Blogs"}
               </h2>
               <div className="h-1 bg-blue-500 rounded w-16 mx-auto mb-8"></div>
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-md mx-auto">

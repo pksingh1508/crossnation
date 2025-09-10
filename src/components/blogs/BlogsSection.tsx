@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { BlogItem, BlogResponse } from "@/lib/strapi";
 import { SingleBlogSection } from "./SingleBlogSection";
@@ -47,6 +47,8 @@ export function BlogsSection() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const tP = useTranslations("pagination");
+  const tBlog = useTranslations("blogsPage");
 
   const locale = useLocale();
 
@@ -205,7 +207,7 @@ export function BlogsSection() {
           className="flex items-center gap-2"
         >
           <ChevronLeft className="w-4 h-4" />
-          Previous
+          {tP("previous")}
         </Button>
 
         <div className="flex items-center gap-1">
@@ -234,7 +236,7 @@ export function BlogsSection() {
           disabled={pagination.page >= pagination.pageCount}
           className="flex items-center gap-2"
         >
-          Next
+          {tP("next")}
           <ChevronRight className="w-4 h-4" />
         </Button>
       </div>
@@ -248,7 +250,6 @@ export function BlogsSection() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-purple-500 mb-4" />
-              <p className="text-gray-600 text-lg">Loading blog posts...</p>
             </div>
           </div>
         </div>
@@ -300,7 +301,7 @@ export function BlogsSection() {
             >
               <BookOpen className="w-5 h-5 text-purple-600" />
               <span className="text-purple-700 font-semibold text-sm uppercase tracking-wide">
-                Blog Posts
+                {tBlog("title")}
               </span>
             </motion.div>
 
@@ -310,7 +311,7 @@ export function BlogsSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             >
-              Our Latest Blog Posts
+              {tBlog("heading")}
             </motion.h1>
 
             <motion.p
@@ -319,8 +320,7 @@ export function BlogsSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              Discover insights, tips, and stories about immigration, career
-              development, and life abroad
+              {tBlog("description")}
             </motion.p>
 
             {/* Stats */}
@@ -335,7 +335,7 @@ export function BlogsSection() {
                   {pagination.total}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  Total Posts
+                  {tBlog("totalPost")}
                 </div>
               </div>
               <div className="w-px h-12 bg-gray-300" />
@@ -344,7 +344,7 @@ export function BlogsSection() {
                   {getTotalLikes()}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  Total Likes
+                  {tBlog("totalLikes")}
                 </div>
               </div>
               <div className="w-px h-12 bg-gray-300" />
@@ -353,7 +353,7 @@ export function BlogsSection() {
                   {blogCache.size}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  Cached Pages
+                  {tBlog("cachedPage")}
                 </div>
               </div>
             </motion.div>
@@ -383,7 +383,7 @@ export function BlogsSection() {
                 disabled={loading}
               >
                 <Calendar className="w-4 h-4" />
-                {loading ? "Refreshing..." : "Refresh"}
+                {loading ? "Refreshing..." : `${tBlog("refresh")}`}
               </Button>
             </motion.div>
           </div>

@@ -105,16 +105,9 @@
   "testimonials": {
     "heading": "Témoignages",
     "cta": "Lire Plus de Témoignages",
-    "roles": {
-      "International Student": "Étudiant International",
-      "Investor": "Investisseur",
-      "Migrant": "Migrant",
-      "Job Seeker": "Demandeur d'Emploi",
-      "Business Owner": "Propriétaire d'Entreprise",
-      "PhD Student": "Étudiant en Doctorat",
-      "Healthcare Professional": "Professionnel de la Santé",
-      "Tech Entrepreneur": "Entrepreneur Tech"
-    }
+    "loading": "Chargement des témoignages...",
+    "error": "Échec du chargement des témoignages. Veuillez réessayer plus tard.",
+    "noData": "Aucun témoignage disponible pour le moment."
   },
   "RecentBlogs": {
     "heading": "Blogs Récents",
@@ -122,7 +115,8 @@
   },
   "ImmigrationNews": {
     "heading": "Actualités d'Immigration",
-    "cta": "Voir Toutes les Actualités"
+    "cta": "Voir Toutes les Actualités",
+    "latest": "Dernières Actualités sur l’Immigration"
   },
   "pages": {
     "study": {
@@ -772,35 +766,87 @@
     "imageAlt": "Opportunités de visite en Europe"
   },
   "footer": {
-    "newsletter": {
-      "title": "Nos Newsletters",
-      "description": "Obtenez les dernières mises à jour, conseils et ressources.",
-      "emailPlaceholder": "E-mail",
-      "submitButton": "Soumettre"
-    },
     "company": {
-      "name": "CountryNation",
-      "tagline": "Services Globaux",
-      "description": "Votre partenaire de confiance pour les opportunités globales en éducation, migration et investissement.",
-      "location": "Servant les clients dans le monde entier"
-    },
-    "sections": {
-      "navigation": "Navigation",
-      "quickLink": "Lien Rapide",
-      "workHours": "Heures de Travail"
-    },
-    "contact": {
-      "businessHours": "7h - 17h, Lun - Sam",
-      "businessHoursLabel": "Heures d'Affaires",
-      "callUs": "Appelez-Nous",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "name": "EU Career Serwis",
+      "description": "Votre partenaire de confiance pour les opportunités mondiales dans l’éducation, la migration et l’investissement. Nous vous aidons à réaliser vos rêves internationaux grâce à des conseils d’experts et un accompagnement personnalisé."
     },
     "bottom": {
-      "copyright": "© {year} CountryNation. Tous droits réservés.",
+      "copyright": "© {year} EU Career Serwis. Tous droits réservés.",
       "privacyPolicy": "Politique de Confidentialité",
-      "termsOfService": "Conditions de Service",
+      "termsOfService": "Conditions d’Utilisation",
       "refundPolicy": "Politique de Remboursement",
-      "antiFraudPolicy": "Politique Anti-Fraude"
+      "antiFraudPolicy": "Politique Antifraude"
+    },
+    "heading": {
+      "solution": "Nos Solutions",
+      "links": "Liens Gouvernementaux",
+      "update": "Mises à Jour Exclusives",
+      "info": "Informations sur l’Entreprise",
+      "story": "Notre Histoire de Succès",
+      "media": "Nos Réseaux Sociaux",
+      "condition": "Termes et Conditions"
+    },
+    "successStory": {
+      "story1": "Histoires de Succès",
+      "story2": "Permis de Travail",
+      "story3": "Tampon de Visa"
+    },
+    "updates": {
+      "blog": "Blogs",
+      "news": "Actualités sur l’Immigration"
+    },
+    "governmentLinks": {
+      "link1": "Gouvernement de la Pologne",
+      "link2": "Service d’Immigration Finlandais",
+      "link3": "Office Fédéral Allemand",
+      "link4": "Union Européenne",
+      "link5": "Statistiques de la Pologne"
+    },
+    "info": {
+      "NIP": "Numéro NIP",
+      "REGON": "Numéro REGON",
+      "KRS": "Numéro KRS"
     }
+  },
+  "blogsPage": {
+    "title": "ARTICLES DE BLOG",
+    "heading": "Nos Derniers Articles de Blog",
+    "description": "Découvrez des idées, des conseils et des histoires sur l’immigration, le développement de carrière et la vie à l’étranger",
+    "totalPost": "Nombre Total d’Articles",
+    "totalLikes": "Nombre Total de J’aime",
+    "cachedPage": "Page en Cache",
+    "refresh": "Rafraîchir",
+    "searchPlaceholder": "Rechercher des articles de blog..."
+  },
+  "immigrationPage": {
+    "title": "ACTUALITÉS SUR L’IMMIGRATION",
+    "heading": "Dernières Mises à Jour sur l’Immigration",
+    "description": "Restez informé des dernières actualités sur l’immigration, des changements de politiques et des mises à jour importantes dans le monde entier",
+    "totalArticle": "Nombre Total d’Articles",
+    "totalPage": "Nombre Total de Pages",
+    "cachedPage": "Page en Cache",
+    "refresh": "Rafraîchir",
+    "searchPlaceholder": "Rechercher des actualités...",
+    "latest": "Dernières Actualités sur l’Immigration"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "successStory": {
+    "title": "HISTOIRES DE SUCCÈS",
+    "heading": "Nos Histoires de Succès",
+    "description": "Lisez des histoires inspirantes de nos clients qui ont atteint leurs objectifs d’immigration grâce à notre aide",
+    "refresh": "Rafraîchir"
+  },
+  "workPermit": {
+    "title": "PERMIS DE TRAVAIL",
+    "heading": "Galerie des Permis de Travail",
+    "description": "Parcourez notre collection d’approbations réussies de permis de travail"
+  },
+  "visaStamp": {
+    "title": "TAMPON DE VISA",
+    "heading": "Galerie des Tampons de Visa",
+    "description": "Découvrez notre collection d’approbations réussies de tampons de visa provenant de différents pays"
   }
 }

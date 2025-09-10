@@ -82,9 +82,7 @@ export function LatestNewsPost() {
     <div>
       {/* Header */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Latest Immigration News
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t("latest")}</h2>
         <div className="h-1 bg-yellow-500 rounded w-16"></div>
       </div>
 

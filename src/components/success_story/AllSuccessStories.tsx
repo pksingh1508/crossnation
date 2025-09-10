@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { useLocale } from "next-intl";
+import { useEffect, useState, useCallback, use } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { SuccessItem, SuccessStoryResponse } from "@/lib/strapi";
 import { SingleSuccessStory } from "./SingleSuccessStory";
@@ -47,7 +47,8 @@ export function AllSuccessStories() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const t = useTranslations("successStory");
+  const tP = useTranslations("pagination");
   const locale = useLocale();
 
   // Cache timeout - 5 minutes
@@ -196,7 +197,7 @@ export function AllSuccessStories() {
           className="flex items-center gap-2"
         >
           <ChevronLeft className="w-4 h-4" />
-          Previous
+          {tP("previous")}
         </Button>
 
         <div className="flex items-center gap-1">
@@ -225,7 +226,7 @@ export function AllSuccessStories() {
           disabled={pagination.page >= pagination.pageCount}
           className="flex items-center gap-2"
         >
-          Next
+          {tP("next")}
           <ChevronRight className="w-4 h-4" />
         </Button>
       </div>
@@ -239,9 +240,6 @@ export function AllSuccessStories() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-purple-500 mb-4" />
-              <p className="text-gray-600 text-lg">
-                Loading success stories...
-              </p>
             </div>
           </div>
         </div>
@@ -293,7 +291,7 @@ export function AllSuccessStories() {
             >
               <Users className="w-5 h-5 text-purple-600" />
               <span className="text-purple-700 font-semibold text-sm uppercase tracking-wide">
-                Success Stories
+                {t("title")}
               </span>
             </motion.div>
 
@@ -303,7 +301,7 @@ export function AllSuccessStories() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             >
-              Our Success Stories
+              {t("heading")}
             </motion.h1>
 
             <motion.p
@@ -312,8 +310,7 @@ export function AllSuccessStories() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              Read inspiring stories from our clients who achieved their
-              immigration goals with our help
+              {t("description")}
             </motion.p>
 
             {/* Search and Actions */}
@@ -341,7 +338,7 @@ export function AllSuccessStories() {
                 disabled={loading}
               >
                 <Calendar className="w-4 h-4" />
-                {loading ? "Refreshing..." : "Refresh"}
+                {loading ? "Refreshing..." : `${t("refresh")}`}
               </Button>
             </motion.div>
           </div>

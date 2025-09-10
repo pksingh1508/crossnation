@@ -6,8 +6,6 @@ import { motion, easeOut, Variants } from "framer-motion";
 import { TestimonialItem, TestimonialResponse } from "@/lib/strapi";
 import { SingleTestimonial } from "./SingleTestimonial";
 import { Loader2, Users, MessageCircle } from "lucide-react";
-import Link from "next/link";
-import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
 
 export function RecentTestimonials() {
@@ -16,7 +14,6 @@ export function RecentTestimonials() {
   const [error, setError] = useState<string | null>(null);
   const locale = useLocale();
   const t = useTranslations("testimonials");
-  const router = useRouter();
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -81,7 +78,7 @@ export function RecentTestimonials() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-amber-500 mb-4" />
-              <p className="text-gray-600 text-lg">Loading testimonials...</p>
+              <p className="text-gray-600 text-lg">{t("loading")}</p>
             </div>
           </div>
         </div>
@@ -99,7 +96,7 @@ export function RecentTestimonials() {
                 <MessageCircle className="w-8 h-8 text-red-500" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Unable to load testimonials
+                {t("error") || "Error loading testimonials"}
               </h3>
               <p className="text-gray-600 max-w-md">{error}</p>
             </div>
@@ -119,11 +116,8 @@ export function RecentTestimonials() {
                 <Users className="w-8 h-8 text-gray-400" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                No testimonials available
+                {t("noData") || "No testimonials available"}
               </h3>
-              <p className="text-gray-600 max-w-md">
-                Check back later for client testimonials.
-              </p>
             </div>
           </div>
         </div>
@@ -174,28 +168,6 @@ export function RecentTestimonials() {
               />
             ))}
           </motion.div>
-
-          {/* Call to Action */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              delay: 0.4,
-              ease: easeOut,
-            }}
-            className="text-center mt-16"
-          >
-            <RippleButton
-              variant="brandOutline"
-              size="lg"
-              onClick={() => router.push(`/${locale}/testimonials`)}
-              className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
-            >
-              {t("cta") || "Read More Testimonials"}
-            </RippleButton>
-          </motion.div> */}
         </div>
       </div>
     </section>

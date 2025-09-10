@@ -33,7 +33,7 @@ export default function RootLayout({
       <ReactLenis root options={lenisOptions}>
         <body className={fonts}>
           {children}
-          <Toaster />
+          <Toaster position="top-right" reverseOrder={false} />
         </body>
       </ReactLenis>
     </html>

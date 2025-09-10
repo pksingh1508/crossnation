@@ -14,6 +14,7 @@ import {
   Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 export function AllPermitImage() {
   const [permitImages, setPermitImages] = useState<PermitItem[]>([]);
@@ -22,6 +23,7 @@ export function AllPermitImage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
+  const t = useTranslations("workPermit");
 
   useEffect(() => {
     fetchPermitImages();
@@ -117,7 +119,6 @@ export function AllPermitImage() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-purple-500 mb-4" />
-              <p className="text-gray-600 text-lg">Loading work permits...</p>
             </div>
           </div>
         </div>
@@ -168,7 +169,7 @@ export function AllPermitImage() {
             >
               <FileImage className="w-5 h-5 text-purple-600" />
               <span className="text-purple-700 font-semibold text-sm uppercase tracking-wide">
-                Work Permits
+                {t("title")}
               </span>
             </motion.div>
 
@@ -178,7 +179,7 @@ export function AllPermitImage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             >
-              Work Permit Gallery
+              {t("heading")}
             </motion.h1>
 
             <motion.p
@@ -187,7 +188,7 @@ export function AllPermitImage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              Browse through our collection of successful work permit approvals
+              {t("description")}
             </motion.p>
           </div>
 

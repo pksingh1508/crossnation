@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { NewsItem, StrapiResponse } from "@/lib/strapi";
 import { SingleImmigrationNews } from "./SingleImmigrationNews";
@@ -46,6 +46,8 @@ export function ImmigrationNewsSection() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const t = useTranslations("pagination");
+  const tNews = useTranslations("immigrationPage");
 
   const locale = useLocale();
 
@@ -201,7 +203,7 @@ export function ImmigrationNewsSection() {
           className="flex items-center gap-2"
         >
           <ChevronLeft className="w-4 h-4" />
-          Previous
+          {t("previous")}
         </Button>
 
         <div className="flex items-center gap-1">
@@ -230,7 +232,7 @@ export function ImmigrationNewsSection() {
           disabled={pagination.page >= pagination.pageCount}
           className="flex items-center gap-2"
         >
-          Next
+          {t("next")}
           <ChevronRight className="w-4 h-4" />
         </Button>
       </div>
@@ -244,9 +246,6 @@ export function ImmigrationNewsSection() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-amber-500 mb-4" />
-              <p className="text-gray-600 text-lg">
-                Loading immigration news...
-              </p>
             </div>
           </div>
         </div>
@@ -298,7 +297,7 @@ export function ImmigrationNewsSection() {
             >
               <Newspaper className="w-5 h-5 text-blue-600" />
               <span className="text-blue-700 font-semibold text-sm uppercase tracking-wide">
-                Immigration News
+                {tNews("title")}
               </span>
             </motion.div>
 
@@ -308,7 +307,7 @@ export function ImmigrationNewsSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             >
-              Latest Immigration Updates
+              {tNews("heading")}
             </motion.h1>
 
             <motion.p
@@ -317,8 +316,7 @@ export function ImmigrationNewsSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              Stay informed with the latest immigration news, policy changes,
-              and important updates from around the world
+              {tNews("description")}
             </motion.p>
 
             {/* Stats */}
@@ -333,7 +331,7 @@ export function ImmigrationNewsSection() {
                   {pagination.total}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  Total Articles
+                  {tNews("totalArticle")}
                 </div>
               </div>
               <div className="w-px h-12 bg-gray-300" />
@@ -341,7 +339,9 @@ export function ImmigrationNewsSection() {
                 <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
                   {pagination.pageCount}
                 </div>
-                <div className="text-sm text-gray-500 font-medium">Pages</div>
+                <div className="text-sm text-gray-500 font-medium">
+                  {tNews("totalPage")}
+                </div>
               </div>
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
@@ -349,7 +349,7 @@ export function ImmigrationNewsSection() {
                   {newsCache.size}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  Cached Pages
+                  {tNews("cachedPage")}
                 </div>
               </div>
             </motion.div>
@@ -379,7 +379,7 @@ export function ImmigrationNewsSection() {
                 disabled={loading}
               >
                 <Calendar className="w-4 h-4" />
-                {loading ? "Refreshing..." : "Refresh"}
+                {loading ? "Refreshing..." : `${tNews("refresh")}`}
               </Button>
             </motion.div>
           </div>

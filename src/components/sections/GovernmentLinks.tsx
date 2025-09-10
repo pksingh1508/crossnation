@@ -33,6 +33,18 @@ export function GovernmentLinks() {
       url: "https://www.nbp.pl/",
       alt: "National Bank of Poland",
     },
+    {
+      name: "European Union",
+      logo: "/europeanUnion.png",
+      url: "https://european-union.europa.eu/index_en",
+      alt: "National Bank of Poland",
+    },
+    {
+      name: "Statistics Poland",
+      logo: "/static.png",
+      url: "https://stat.gov.pl/en/",
+      alt: "Statistics Poland",
+    },
   ];
 
   const handleLinkClick = (url: string) => {
