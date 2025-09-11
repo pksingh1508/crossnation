@@ -23,15 +23,15 @@ export async function POST(req: Request) {
   const accessToken = await getAccessToken();
 
   // Decide which module to hit
-  let moduleUrl = "https://www.zohoapis.eu/crm/v2/Contacts";
+  let moduleUrl = "https://www.zohoapis.eu/bigin/v2/Contacts";
   let data: any = {
     First_Name: firstName,
     Last_Name: lastName,
     Email: email,
     Phone: phone,
-    Description: `${subject}\n\n${message}`,
-    Lead_Source: option, // custom field if exists
-    AccountName: option,
+    Title: subject,
+    Description: message,
+    Who_They_Are: option,
   };
 
   // Post to Zoho CRM

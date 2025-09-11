@@ -85,7 +85,7 @@ export function MyForm() {
         email: formData.email,
         phone: `${selectedCountry.code} ${formData.phone}`,
         option: formData.userType,
-        subject: "Enquiry -",
+        subject: "Enquiry : Know More About Your Services",
         message: "I am filling this form to know more about your serwis.",
       });
       if (res.status === 200) {
