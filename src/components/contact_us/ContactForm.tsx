@@ -27,9 +27,11 @@ interface CountryCode {
 export function ContactForm() {
   const locale = useLocale();
   const t = useTranslations("pages.myForm");
-  const [selectedCountry, setSelectedCountry] = useState<CountryCode>(
-    countryData.find((country) => country.iso === "US") || countryData[0]
+  const [detectedCountry, setDetectedCountry] = useState<CountryCode>(
+    countryData.find((c) => c.iso === "US") || countryData[0]
   );
+  const [selectedCountry, setSelectedCountry] =
+    useState<CountryCode>(detectedCountry);
 
   // useEffect for auto-detect the country
   React.useEffect(() => {
@@ -37,12 +39,12 @@ export function ContactForm() {
     fetch("https://ipapi.co/json/")
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.country_code) {
+        if (data?.country_code) {
           const userCountry =
-            countryData.find((c) => c.iso === data.country_code) || null;
-          if (userCountry) {
-            setSelectedCountry(userCountry);
-          }
+            countryData.find((c) => c.iso === data.country_code) ||
+            detectedCountry;
+          setDetectedCountry(userCountry);
+          setSelectedCountry(userCountry);
         }
       });
   }, []);
@@ -74,9 +76,7 @@ export function ContactForm() {
       message: "",
       acceptTerms: false,
     });
-    setSelectedCountry(
-      countryData.find((country) => country.iso === "US") || countryData[0]
-    );
+    setSelectedCountry(detectedCountry);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
