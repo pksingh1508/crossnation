@@ -30,6 +30,23 @@ export function ContactForm() {
   const [selectedCountry, setSelectedCountry] = useState<CountryCode>(
     countryData.find((country) => country.iso === "US") || countryData[0]
   );
+
+  // useEffect for auto-detect the country
+  React.useEffect(() => {
+    // Detect country via IP
+    fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.country_code) {
+          const userCountry =
+            countryData.find((c) => c.iso === data.country_code) || null;
+          if (userCountry) {
+            setSelectedCountry(userCountry);
+          }
+        }
+      });
+  }, []);
+
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
