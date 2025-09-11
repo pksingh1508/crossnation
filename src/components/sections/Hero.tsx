@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 import { fontPoppins, fontMontserrat, fontInter } from "@/fonts";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export function Hero() {
   const t = useTranslations("home");

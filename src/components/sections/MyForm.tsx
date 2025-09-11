@@ -94,8 +94,8 @@ export function MyForm() {
         toast.success(t("successMessage"), {
           style: {
             borderRadius: "10px",
-            background: "#333",
-            color: "#fff",
+            background: "#fecc00",
+            color: "#111827",
           },
         });
       }
@@ -104,8 +104,8 @@ export function MyForm() {
       toast.error("Error submitting form", {
         style: {
           borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          background: "#fecc00",
+          color: "#111827",
         },
       });
     } finally {
