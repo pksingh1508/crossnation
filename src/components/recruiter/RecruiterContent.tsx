@@ -18,7 +18,7 @@ export function RecruiterContent() {
       <RecruiterInfo />
       {/* Step 1 */}
       <StepWork
-        image="/recruit1.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/partnering%20Recruiter.webp"
         imageAlt={tStep1("imageAlt")}
         heading={tStep1("heading")}
         paragraph1={tStep1("paragraph1")}
@@ -28,7 +28,7 @@ export function RecruiterContent() {
       />
       {/* Step 2 */}
       <StepWork
-        image="/recruit2.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/B2B2C.webp"
         imageAlt={tStep2("imageAlt")}
         heading={tStep2("heading")}
         paragraph1={tStep2("paragraph1")}
@@ -39,7 +39,7 @@ export function RecruiterContent() {
       />
       {/* Step 3 */}
       <StepWork
-        image="/recruit3.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/Recruitment%20ally.webp"
         imageAlt={tStep3("imageAlt")}
         heading={tStep3("heading")}
         paragraph1={tStep3("paragraph1")}
@@ -49,7 +49,7 @@ export function RecruiterContent() {
       />
       {/* Step 4 */}
       <StepWork
-        image="/recruit4.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/Value%20and%20partner.webp"
         imageAlt={tStep4("imageAlt")}
         heading={tStep4("heading")}
         paragraph1={tStep4("paragraph1")}
@@ -60,7 +60,7 @@ export function RecruiterContent() {
       />
       {/* Step 5 */}
       <StepWork
-        image="/recruit5.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/Compilance%20legal,%20permt.webp"
         imageAlt={tStep5("imageAlt")}
         heading={tStep5("heading")}
         paragraph1={tStep5("paragraph1")}
@@ -70,7 +70,7 @@ export function RecruiterContent() {
       />
       {/* Step 6 */}
       <StepWork
-        image="/recruit1.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/Certified%20recruitment.webp"
         imageAlt={tStep6("imageAlt")}
         heading={tStep6("heading")}
         paragraph1={tStep6("paragraph1")}
@@ -81,7 +81,7 @@ export function RecruiterContent() {
       />
       {/* Step 7 */}
       <StepWork
-        image="/recruit2.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/expand%20your%20reach.webp"
         imageAlt={tStep7("imageAlt")}
         heading={tStep7("heading")}
         paragraph1={tStep7("paragraph1")}
@@ -91,7 +91,7 @@ export function RecruiterContent() {
       />
       {/* Step 8 */}
       <StepWork
-        image="/recruit4.webp"
+        image="https://ik.imagekit.io/eucareerserwis/Recruiter/Ethical%20recruitment%20process.webp"
         imageAlt={tStep8("imageAlt")}
         heading={tStep8("heading")}
         paragraph1={tStep8("paragraph1")}

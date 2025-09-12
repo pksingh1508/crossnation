@@ -13,14 +13,14 @@ export function CommonContact() {
   const router = useRouter();
   return (
     <div className="w-full min-h-[80vh] bg-white">
-      <div className="container mx-auto max-w-7xl px-4 py-10">
-        <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+      <div className="container mx-auto max-w-7xl px-4 py-12">
+        <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl px-3 py-5">
+          <div className="grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-6 items-stretch">
             {/* Left Section - Image + Content at Bottom */}
-            <div className="relative flex flex-col justify-end p-3 order-2 lg:order-1 rounded-2xl overflow-hidden">
+            <div className="relative flex flex-col justify-end p-3 order-2 lg:order-1 rounded-2xl overflow-hidden h-[90vh]">
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-50"
+                className="absolute inset-0 bg-cover bg-center opacity-60"
                 style={{
                   backgroundImage:
                     "url('https://ik.imagekit.io/eucareerserwis/home/Untitled%20design%20(7).webp')",
@@ -29,17 +29,19 @@ export function CommonContact() {
 
               {/* Foreground Content */}
               <div className="relative z-10 space-y-4">
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold font-montserrat text-gray-900 dark:text-white leading-tight">
-                  Interested in Working With Us As an Employee, Employer, or
-                  Partner?
-                </h2>
+                <p className="text-3xl lg:text-4xl xl:text-5xl font-bold font-montserrat text-gray-900 dark:text-white leading-tight">
+                  Interested in Working With Us
+                </p>
+                <p className="text-3xl lg:text-4xl font-bold font-montserrat text-gray-900 dark:text-white leading-tight">
+                  As an Employee, Employer, or Partner?
+                </p>
               </div>
             </div>
 
             {/* Right Section - Form */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 lg:p-10 order-1 lg:order-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-2 lg:p-6 order-1 lg:order-2">
               <div className="mb-8">
-                <p className="text-gray-600 dark:text-gray-300 font-inter">
+                <p className="text-gray-600 dark:text-gray-300 font-inter text-center">
                   {t("formInstruction")}
                 </p>
               </div>
