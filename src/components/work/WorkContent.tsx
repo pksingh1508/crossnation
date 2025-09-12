@@ -21,7 +21,7 @@ export function WorkContent() {
     <>
       {/* Step - 0 */}
       <StepWork
-        image="/work-in-poland.webp"
+        image="https://ik.imagekit.io/eucareerserwis/work/apply%20work%20permmit.webp"
         imageAlt={tPoland("imageAlt")}
         heading={tPoland("heading")}
         paragraph1={tPoland("paragraph1")}
@@ -34,7 +34,7 @@ export function WorkContent() {
 
       {/* Step - 1 */}
       <StepWork
-        image="/poland-work-permit-1.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/document%20prepare.webp"
         imageAlt={tStep1("imageAlt")}
         heading={tStep1("heading")}
         paragraph1={tStep1("paragraph1")}
@@ -45,7 +45,7 @@ export function WorkContent() {
       />
       {/* Step - 2 */}
       <StepWork
-        image="/poland-employer-2.webp"
+        image="https://ik.imagekit.io/eucareerserwis/work/work%202.webp"
         imageAlt={tStep2("imageAlt")}
         heading={tStep2("heading")}
         paragraph1={tStep2("paragraph1")}
@@ -55,7 +55,7 @@ export function WorkContent() {
       />
       {/* Step - 3 */}
       <StepWork
-        image="/poland-work-3.webp"
+        image="https://ik.imagekit.io/eucareerserwis/work/work%203.webp"
         imageAlt={tStep3("imageAlt")}
         heading={tStep3("heading")}
         paragraph1={tStep3("paragraph1")}
@@ -66,7 +66,7 @@ export function WorkContent() {
       />
       {/* Step - 4 */}
       <StepWork
-        image="/poland-work-permit-1.webp"
+        image="https://ik.imagekit.io/eucareerserwis/work/work%204.webp"
         imageAlt={tStep4("imageAlt")}
         heading={tStep4("heading")}
         paragraph1={tStep4("paragraph1")}
@@ -76,7 +76,7 @@ export function WorkContent() {
       />
       {/* Step - 5 */}
       <StepWork
-        image="/poland-employer-2.webp"
+        image="https://ik.imagekit.io/eucareerserwis/work/work%205.webp"
         imageAlt={tStep5("imageAlt")}
         heading={tStep5("heading")}
         paragraph1={tStep5("paragraph1")}

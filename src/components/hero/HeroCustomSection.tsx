@@ -30,7 +30,9 @@ export function HeroCustomSection() {
         paragraph1={tWork("paragraph1")}
         paragraph2={tWork("paragraph2")}
         buttons={workButtonsData}
-        imageSrc={tWork("imageSrc")}
+        imageSrc={
+          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__53435.webp"
+        }
         imageAlt={tWork("imageAlt")}
       />
 
@@ -51,7 +53,9 @@ export function HeroCustomSection() {
         paragraph1={tTraineeship("paragraph1")}
         paragraph2=""
         buttons={traineeshipButtonsData}
-        imageSrc={tTraineeship("imageSrc")}
+        imageSrc={
+          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__33230.webp"
+        }
         imageAlt={tTraineeship("imageAlt")}
       />
 
@@ -61,7 +65,9 @@ export function HeroCustomSection() {
         paragraph1={tStudy("paragraph1")}
         paragraph2=""
         buttons={studyButtonsData}
-        imageSrc={tStudy("imageSrc")}
+        imageSrc={
+          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__51386.webp"
+        }
         imageAlt={tStudy("imageAlt")}
         isReversed={true}
       />

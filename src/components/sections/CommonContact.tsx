@@ -17,8 +17,16 @@ export function CommonContact() {
         <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Section - Content */}
-            <div className="space-y-8 order-2 lg:order-1">
-              <div className="space-y-4">
+            <div className="relative space-y-8 order-2 lg:order-1 p-3">
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover mb-0 bg-center opacity-30 rounded-2xl"
+                style={{
+                  backgroundImage:
+                    "url('https://ik.imagekit.io/eucareerserwis/home/Untitled%20design%20(7).webp')",
+                }}
+              ></div>
+              <div className="relative space-y-4">
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold font-montserrat text-gray-900 dark:text-white leading-tight">
                   {t("title")}
                 </h2>

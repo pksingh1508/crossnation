@@ -9,7 +9,6 @@ import { useLocale } from "next-intl";
 import { fontPoppins, fontMontserrat, fontInter } from "@/fonts";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
 export function Hero() {
   const t = useTranslations("home");
@@ -37,11 +36,10 @@ export function Hero() {
 
           <motion.div className="w-[95%] md:w-3xl rounded-md overflow-hidden">
             <Image
-              src="/home_compressed.jpg"
+              src="https://ik.imagekit.io/eucareerserwis/employer/side-view-woman-working-indoors.webp"
               alt="Home"
               width={500}
               height={400}
-              unoptimized
               className="w-[95vw] md:w-[38vw] h-[70vh] object-cover rounded-md"
             />
           </motion.div>

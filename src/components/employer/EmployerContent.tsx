@@ -19,7 +19,7 @@ export function EmployerContent() {
       <EmployerInfo />
       {/* step 1 */}
       <StepWork
-        image="/emp1.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/polish%20employer.webp"
         imageAlt={tStep1("imageAlt")}
         heading={tStep1("heading")}
         paragraph1={tStep1("paragraph1")}
@@ -29,7 +29,7 @@ export function EmployerContent() {
       />
       {/* step 2 */}
       <StepWork
-        image="/emp2.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/recruitment%20standsrd.webp"
         imageAlt={tStep2("imageAlt")}
         heading={tStep2("heading")}
         paragraph1={tStep2("paragraph1")}
@@ -40,7 +40,7 @@ export function EmployerContent() {
       />
       {/* step 3 */}
       <StepWork
-        image="/emp3.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/workforce%20category%20available.webp"
         imageAlt={tStep3("imageAlt")}
         heading={tStep3("heading")}
         paragraph1={tStep3("paragraph1")}
@@ -50,7 +50,7 @@ export function EmployerContent() {
       />
       {/* step 4 */}
       <StepWork
-        image="/emp4.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/make%20an%20impact.webp"
         imageAlt={tStep4("imageAlt")}
         heading={tStep4("heading")}
         paragraph1={tStep4("paragraph1")}
@@ -61,7 +61,7 @@ export function EmployerContent() {
       />
       {/* step 5 */}
       <StepWork
-        image="/emp5.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/hiring%20journey.webp"
         imageAlt={tStep5("imageAlt")}
         heading={tStep5("heading")}
         paragraph1={tStep5("paragraph1")}
@@ -71,7 +71,7 @@ export function EmployerContent() {
       />
       {/* step 6 */}
       <StepWork
-        image="/emp6.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/across%20region.webp"
         imageAlt={tStep6("imageAlt")}
         heading={tStep6("heading")}
         paragraph1={tStep6("paragraph1")}
@@ -82,7 +82,7 @@ export function EmployerContent() {
       />
       {/* step 7 */}
       <StepWork
-        image="/emp2.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/partnership.webp"
         imageAlt={tStep7("imageAlt")}
         heading={tStep7("heading")}
         paragraph1={tStep7("paragraph1")}
@@ -92,7 +92,7 @@ export function EmployerContent() {
       />
       {/* step 8 */}
       <StepWork
-        image="/emp4.webp"
+        image="https://ik.imagekit.io/eucareerserwis/employer/whyeu.webp"
         imageAlt={tStep8("imageAlt")}
         heading={tStep8("heading")}
         paragraph1={tStep8("paragraph1")}
