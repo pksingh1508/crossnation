@@ -14,10 +14,10 @@ export function CommonContact() {
   return (
     <div className="w-full min-h-[80vh] bg-white">
       <div className="container mx-auto max-w-7xl px-4 py-12">
-        <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl px-3 py-5">
+        <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-2xl">
           <div className="grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-6 items-stretch">
             {/* Left Section - Image + Content at Bottom */}
-            <div className="relative flex flex-col justify-end p-3 order-2 lg:order-1 rounded-2xl overflow-hidden h-[90vh]">
+            <div className="relative flex flex-col justify-end p-3 order-2 lg:order-1 rounded-2xl overflow-hidden h-[90vh] border-7 border-yellow-500">
               {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-60"
@@ -39,7 +39,7 @@ export function CommonContact() {
             </div>
 
             {/* Right Section - Form */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-2 lg:p-6 order-1 lg:order-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-3 lg:p-6 order-1 lg:order-2 border-7 border-yellow-500">
               <div className="mb-8">
                 <p className="text-gray-600 dark:text-gray-300 font-inter text-center">
                   {t("formInstruction")}
