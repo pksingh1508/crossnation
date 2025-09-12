@@ -63,7 +63,7 @@ export function About() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 {/* Placeholder for the consulting image */}
                 <Image
-                  src="https://ik.imagekit.io/eucareerserwis/home/Untitled%20design%20(7).webp"
+                  src="https://ik.imagekit.io/eucareerserwis/home/about.webp"
                   alt="Consulting"
                   width={600}
                   height={400}

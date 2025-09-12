@@ -36,7 +36,7 @@ export function Hero() {
 
           <motion.div className="w-[95%] md:w-3xl rounded-md overflow-hidden">
             <Image
-              src="https://ik.imagekit.io/eucareerserwis/employer/side-view-woman-working-indoors.webp"
+              src="https://ik.imagekit.io/eucareerserwis/home/HomeLogo.webp"
               alt="Home"
               width={500}
               height={400}

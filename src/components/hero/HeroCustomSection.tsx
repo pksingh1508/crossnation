@@ -54,7 +54,7 @@ export function HeroCustomSection() {
         paragraph2=""
         buttons={traineeshipButtonsData}
         imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__33230.webp"
+          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__51386.webp"
         }
         imageAlt={tTraineeship("imageAlt")}
       />
@@ -66,7 +66,7 @@ export function HeroCustomSection() {
         paragraph2=""
         buttons={studyButtonsData}
         imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__51386.webp"
+          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__33230.webp"
         }
         imageAlt={tStudy("imageAlt")}
         isReversed={true}
@@ -78,7 +78,7 @@ export function HeroCustomSection() {
         paragraph1={tInvestor("paragraph1")}
         paragraph2=""
         buttons={investorButtonsData}
-        imageSrc={tInvestor("imageSrc")}
+        imageSrc={"https://ik.imagekit.io/eucareerserwis/home/investor.webp"}
         imageAlt={tInvestor("imageAlt")}
       />
 
@@ -88,7 +88,9 @@ export function HeroCustomSection() {
         paragraph1={tVisit("paragraph1")}
         paragraph2=""
         buttons={visitButtonsData}
-        imageSrc={tVisit("imageSrc")}
+        imageSrc={
+          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__53435.webp"
+        }
         imageAlt={tVisit("imageAlt")}
         isReversed={true}
       />

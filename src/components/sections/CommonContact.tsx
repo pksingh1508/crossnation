@@ -15,82 +15,24 @@ export function CommonContact() {
     <div className="w-full min-h-[80vh] bg-white">
       <div className="container mx-auto max-w-7xl px-4 py-10">
         <div className="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 sm:p-8 lg:p-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Section - Content */}
-            <div className="relative space-y-8 order-2 lg:order-1 p-3">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+            {/* Left Section - Image + Content at Bottom */}
+            <div className="relative flex flex-col justify-end p-3 order-2 lg:order-1 rounded-2xl overflow-hidden">
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover mb-0 bg-center opacity-30 rounded-2xl"
+                className="absolute inset-0 bg-cover bg-center opacity-50"
                 style={{
                   backgroundImage:
                     "url('https://ik.imagekit.io/eucareerserwis/home/Untitled%20design%20(7).webp')",
                 }}
               ></div>
-              <div className="relative space-y-4">
+
+              {/* Foreground Content */}
+              <div className="relative z-10 space-y-4">
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold font-montserrat text-gray-900 dark:text-white leading-tight">
-                  {t("title")}
+                  Interested in Working With Us As an Employee, Employer, or
+                  Partner?
                 </h2>
-                <p className="text-lg font-open-sans text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {t("description")}
-                </p>
-              </div>
-
-              {/* Four Buttons */}
-              <div className="grid grid-cols-2 gap-4">
-                <RippleButton
-                  variant="brandOutline"
-                  size="lg"
-                  onClick={() => router.push(`/${locale}/work`)}
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
-                >
-                  {t("buttons.work")}
-                </RippleButton>
-                <RippleButton
-                  variant="brandOutline"
-                  size="lg"
-                  onClick={() => router.push(`/${locale}/migrate`)}
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
-                >
-                  {t("buttons.migrate")}
-                </RippleButton>
-                <RippleButton
-                  variant="brandOutline"
-                  size="lg"
-                  onClick={() => router.push(`/${locale}/employer`)}
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-black hover:text-white hover:border-black cursor-pointer"
-                >
-                  {t("buttons.employer")}
-                </RippleButton>
-                <RippleButton
-                  variant="brandOutline"
-                  size="lg"
-                  onClick={() => router.push(`/${locale}/recruiter`)}
-                  className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-black hover:text-white hover:border-black cursor-pointer"
-                >
-                  {t("buttons.recruiter")}
-                </RippleButton>
-              </div>
-
-              {/* Additional Info */}
-              <div className="space-y-3 pt-4">
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="font-inter text-sm">
-                    {t("features.quickResponse")}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="font-inter text-sm">
-                    {t("features.consultation")}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="font-inter text-sm">
-                    {t("features.secure")}
-                  </span>
-                </div>
               </div>
             </div>
 
