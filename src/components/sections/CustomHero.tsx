@@ -122,7 +122,7 @@ export function CustomHero({
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[550px] object-cover"
                 />
               </div>
             ) : (

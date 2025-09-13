@@ -166,7 +166,7 @@ export function ContactContainer() {
                     <motion.a
                       key={index}
                       href={social.href}
-                      className={`flex items-center gap-2 p-3 rounded-lg bg-white dark:bg-gray-700 text-yellow-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-md group`}
+                      className={`flex items-center gap-2 p-3 rounded-lg bg-white dark:bg-gray-700 text-yellow-500 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-md group`}
                       variants={iconVariants}
                       initial="rest"
                       target="_blank"

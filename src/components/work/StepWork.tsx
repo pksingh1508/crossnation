@@ -28,7 +28,7 @@ export function StepWork({
     <div className="w-full">
       <div className="container mx-auto max-w-7xl px-4 lg:py-16 py-8">
         <div
-          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${isReversed ? "lg:flex-row-reverse" : ""}`}
+          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 ${isReversed ? "lg:flex-row-reverse" : ""}`}
         >
           {/* Image Section */}
           <div
@@ -40,7 +40,7 @@ export function StepWork({
                 alt={imageAlt}
                 width={500}
                 height={400}
-                className="w-full h-auto object-cover rounded-md shadow-lg"
+                className="w-full h-[550px] object-cover rounded-md shadow-lg"
                 priority
               />
             </div>
@@ -55,19 +55,19 @@ export function StepWork({
             </h2>
 
             <div className="space-y-2">
-              <p className="font-inter text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              <p className="font-inter text-gray-600 dark:text-gray-300">
                 {paragraph1}
               </p>
 
-              <p className="font-inter text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              <p className="font-inter text-gray-600 dark:text-gray-300">
                 {paragraph2}
               </p>
 
-              <p className="font-inter text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              <p className="font-inter text-gray-600 dark:text-gray-300">
                 {paragraph3}
               </p>
 
-              <p className="font-inter text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              <p className="font-inter text-gray-600 dark:text-gray-300">
                 {paragraph4}
               </p>
             </div>
