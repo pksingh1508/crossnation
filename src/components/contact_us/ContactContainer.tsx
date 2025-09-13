@@ -68,27 +68,27 @@ export function ContactContainer() {
         t("info.address.zipCode"),
         t("info.address.city"),
       ],
-      color: "from-yellow-500 to-yellow-600",
+      color: "from-yellow-500 to-yellow-500",
     },
     {
       icon: Phone,
       title: t("info.callUs.title"),
       content: [t("info.callUs.phone")],
-      color: "from-yellow-500 to-yellow-600",
+      color: "from-yellow-500 to-yellow-500",
       link: `tel:${t("info.callUs.phone")}`,
     },
     {
       icon: MessageCircle,
       title: t("info.whatsapp.title"),
       content: [t("info.whatsapp.number")],
-      color: "from-yellow-500 to-yellow-600",
+      color: "from-yellow-500 to-yellow-500",
       link: `tel:${t("info.whatsapp.number")}`,
     },
     {
       icon: Mail,
       title: t("info.email.title"),
       content: [t("info.email.address")],
-      color: "from-yellow-500 to-yellow-600",
+      color: "from-yellow-500 to-yellow-500",
       link: `mailto:${t("info.email.address")}`,
     },
   ];
@@ -97,22 +97,22 @@ export function ContactContainer() {
     {
       icon: Facebook,
       href: "https://www.facebook.com/eucareerserwis/",
-      color: "hover:bg-yellow-300 hover:text-blue-600",
+      color: "hover:bg-yellow-300 hover:text-black",
     },
     {
       icon: Twitter,
       href: "https://x.com/eucareerserwis",
-      color: "hover:bg-yellow-300 hover:text-blue-400",
+      color: "hover:bg-yellow-300 hover:text-black",
     },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/company/eu-career-serwis",
-      color: "hover:bg-yellow-300 hover:text-blue-700",
+      color: "hover:bg-yellow-300 hover:text-black",
     },
     {
       icon: Instagram,
       href: "https://www.instagram.com/eucareerserwis/",
-      color: "hover:bg-yellow-300 hover:text-pink-600",
+      color: "hover:bg-yellow-300 hover:text-black",
     },
   ];
 

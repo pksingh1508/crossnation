@@ -135,7 +135,7 @@ export function RecentBlog() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/blog`)}
-                className="h-12 text-base font-semibold font-montserrat border-3 text-yellow-700 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className="h-12 text-base font-semibold font-montserrat border-3 text-yellow-500 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
               >
                 {t("cta") || "Read More Blogs"}
               </RippleButton>

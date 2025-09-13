@@ -101,7 +101,7 @@ export function CustomHero({
                     onClick={button.onClick || handleButtonClick}
                     className={cn(
                       "h-8 sm:h-10 text-sm sm:text-base font-medium transition-all duration-200",
-                      "border-yellow-400 text-yellow-600 hover:bg-yellow-400 hover:text-black",
+                      "border-yellow-400 text-yellow-500 hover:bg-yellow-400 hover:text-black",
                       "focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 cursor-pointer",
                       fontInter.className
                     )}

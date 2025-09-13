@@ -103,14 +103,14 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("solution")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
                 {solutionLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -125,7 +125,7 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("links")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
                 {governmentLinks.map((link) => (
@@ -134,7 +134,7 @@ export function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -149,14 +149,14 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("update")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
                 {updatedLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -174,12 +174,12 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("info")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
                 {companyInfoLinks.map((link, index) => (
                   <li key={index}>
-                    <p className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm">
+                    <p className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm">
                       {link.label}
                     </p>
                   </li>
@@ -193,14 +193,14 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("story")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
                 {successStoryLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -215,7 +215,7 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("media")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <div className="flex flex-col space-y-3">
                 {socialLinks.map((social) => {
@@ -226,10 +226,10 @@ export function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-600 hover:text-yellow-600 transition-colors duration-200 group"
+                      className="flex items-center gap-3 text-gray-600 hover:text-yellow-500 transition-colors duration-200 group"
                       title={social.label}
                     >
-                      <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-yellow-600 group-hover:text-white transition-all duration-200">
+                      <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-white transition-all duration-200">
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <span className="text-sm">{social.label}</span>
@@ -245,14 +245,14 @@ export function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {theading("condition")}
                 </h4>
-                <div className="h-1 w-16 bg-amber-400 rounded-full"></div>
+                <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
               </div>
               <ul className="space-y-3">
                 {termsLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-amber-600 transition-colors duration-200 text-sm"
+                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
                     >
                       {link.label}
                     </Link>

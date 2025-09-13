@@ -39,7 +39,7 @@ export function SingleNews({ news }: SingleNewsProps) {
       <div className="space-y-3">
         {/* Title */}
         <Link href={`/${locale}/immigration-news/${slug}`}>
-          <h3 className="text-lg font-semibold text-gray-800 leading-tight hover:text-yellow-600 cursor-pointer transition-colors">
+          <h3 className="text-lg font-semibold text-gray-800 leading-tight hover:text-yellow-500 cursor-pointer transition-colors">
             {title}
           </h3>
         </Link>
@@ -53,7 +53,7 @@ export function SingleNews({ news }: SingleNewsProps) {
 
               {/* Read More */}
               <Link href={`/${locale}/immigration-news/${slug}`}>
-                <span className="text-yellow-600 cursor-pointer hover:underline ml-1">
+                <span className="text-yellow-500 cursor-pointer hover:underline ml-1">
                   [Read More...]
                 </span>
               </Link>
