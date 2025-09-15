@@ -21,7 +21,11 @@ export function GovernmentLinks() {
   const t = useTranslations("governmentLinks");
 
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true, // only pause when hovering on desktop
+    })
   );
 
   const governmentLinks: GovernmentLink[] = [
