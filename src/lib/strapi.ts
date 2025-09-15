@@ -594,6 +594,8 @@ export async function getAllSuccessStories(
 
 export async function getAllPermitImages(
   token: string,
+  page: number = 1,
+  pageSize: number = 20,
   collection: string
 ): Promise<PermitResponse> {
   try {
@@ -605,6 +607,8 @@ export async function getAllPermitImages(
         "Content-Type": "application/json",
       },
       params: {
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
         "populate[permit_image][fields][0]": "url",
         "sort[0]": "updatedAt:desc",
       },
@@ -619,6 +623,8 @@ export async function getAllPermitImages(
 
 export async function getAllStampImages(
   token: string,
+  page: number = 1,
+  pageSize: number = 20,
   collection: string
 ): Promise<VisaStampResponse> {
   try {
@@ -630,6 +636,8 @@ export async function getAllStampImages(
         "Content-Type": "application/json",
       },
       params: {
+        "pagination[page]": page,
+        "pagination[pageSize]": pageSize,
         "populate[stamp_image][fields][0]": "url",
         "sort[0]": "updatedAt:desc",
       },

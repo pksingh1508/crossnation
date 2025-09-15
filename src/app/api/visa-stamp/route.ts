@@ -3,6 +3,9 @@ import { getAllStampImages } from "@/lib/strapi";
 
 export async function GET(request: NextRequest) {
   try {
+    const { searchParams } = new URL(request.url);
+    const page = parseInt(searchParams.get("page") || "1");
+    const pageSize = parseInt(searchParams.get("pageSize") || "20");
     // Get the Strapi token from environment variables
     const token = process.env.STRAPI_ACCESS_TOKEN;
 
@@ -16,13 +19,12 @@ export async function GET(request: NextRequest) {
 
     const allStampImages = await getAllStampImages(
       token,
+      page,
+      pageSize,
       "visa-stamps" // collection name
     );
 
-    if (
-      !allStampImages ||
-      !allStampImages.data
-    ) {
+    if (!allStampImages || !allStampImages.data) {
       return NextResponse.json(
         { error: "Stamp images not found" },
         { status: 404 }

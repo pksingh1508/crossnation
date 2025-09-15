@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { PermitItem, PermitResponse } from "@/lib/strapi";
@@ -19,40 +19,199 @@ import { useTranslations } from "next-intl";
 export function AllPermitImage() {
   const [permitImages, setPermitImages] = useState<PermitItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [hasNextPage, setHasNextPage] = useState(true);
+  const [totalPages, setTotalPages] = useState(0);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const lastImageRef = useRef<HTMLDivElement | null>(null);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations("workPermit");
+
+  const fetchPermitImages = useCallback(
+    async (page: number = 1, append: boolean = false) => {
+      try {
+        if (append) {
+          setLoadingMore(true);
+        } else {
+          setLoading(true);
+        }
+        setError(null);
+
+        const response = await fetch(
+          `/api/work-permit?page=${page}&pageSize=20`
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `Failed to fetch permit images: ${response.statusText}`
+          );
+        }
+
+        const data: PermitResponse = await response.json();
+
+        // Update state based on whether we're appending or replacing
+        if (append) {
+          setPermitImages((prev) => [...prev, ...(data.data || [])]);
+        } else {
+          setPermitImages(data.data || []);
+        }
+
+        // Update pagination info
+        if (data.meta?.pagination) {
+          setTotalPages(data.meta.pagination.pageCount || 0);
+          setCurrentPage(data.meta.pagination.page || page);
+          setHasNextPage(
+            (data.meta.pagination.page || page) <
+              (data.meta.pagination.pageCount || 0)
+          );
+        } else {
+          // Fallback logic if pagination meta is not available
+          const hasMore = (data.data || []).length === 20; // Assuming pageSize is 20
+          setHasNextPage(hasMore);
+          setCurrentPage(page);
+        }
+      } catch (err) {
+        console.error("Error fetching permit images:", err);
+        setError(
+          err instanceof Error ? err.message : "Failed to fetch permit images"
+        );
+      } finally {
+        if (append) {
+          setLoadingMore(false);
+        } else {
+          setLoading(false);
+        }
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     fetchPermitImages();
-  }, []);
+  }, [fetchPermitImages]);
 
-  const fetchPermitImages = async () => {
-    try {
-      setLoading(true);
-      setError(null);
+  // Load more images function
+  const loadMore = useCallback(async () => {
+    if (loadingMore || !hasNextPage || loading) return;
 
-      const response = await fetch("/api/work-permit");
+    const nextPage = currentPage + 1;
+    await fetchPermitImages(nextPage, true);
+  }, [currentPage, hasNextPage, loadingMore, loading, fetchPermitImages]);
 
-      if (!response.ok) {
-        throw new Error(
-          `Failed to fetch permit images: ${response.statusText}`
-        );
+  // Scroll event handler for infinite scroll with throttling
+  const handleScroll = useCallback(() => {
+    // Clear existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+
+    // Throttle scroll events
+    scrollTimeoutRef.current = setTimeout(() => {
+      if (loadingMore || !hasNextPage || loading) {
+        console.log("Scroll check - conditions not met:", {
+          loadingMore,
+          hasNextPage,
+          loading,
+        });
+        return;
       }
 
-      const data: PermitResponse = await response.json();
-      setPermitImages(data.data || []);
-    } catch (err) {
-      console.error("Error fetching permit images:", err);
-      setError(
-        err instanceof Error ? err.message : "Failed to fetch permit images"
-      );
-    } finally {
-      setLoading(false);
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = window.innerHeight;
+
+      const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
+
+      // Debug logging
+      console.log("Scroll Debug:", {
+        scrollTop,
+        scrollHeight,
+        clientHeight,
+        distanceFromBottom,
+        hasNextPage,
+        loadingMore,
+        loading,
+        currentPage,
+        totalImages: permitImages.length,
+      });
+
+      // Load more when user is within 300px of the bottom
+      if (distanceFromBottom <= 300) {
+        console.log(
+          "🚀 Triggering load more - distance from bottom:",
+          distanceFromBottom
+        );
+        loadMore();
+      }
+    }, 100); // 100ms throttle
+  }, [
+    loadMore,
+    loadingMore,
+    hasNextPage,
+    loading,
+    currentPage,
+    permitImages.length,
+  ]);
+
+  // Set up scroll event listener
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Clear any pending timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [handleScroll]);
+
+  // Intersection observer as backup (for better UX)
+  const handleObserver = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      const target = entries[0];
+      if (target.isIntersecting && hasNextPage && !loadingMore && !loading) {
+        loadMore();
+      }
+    },
+    [hasNextPage, loadingMore, loading, loadMore]
+  );
+
+  // Set up intersection observer
+  useEffect(() => {
+    const option = {
+      root: null,
+      rootMargin: "200px", // Load more when user is 200px from the element
+      threshold: 0.1,
+    };
+
+    observerRef.current = new IntersectionObserver(handleObserver, option);
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [handleObserver]);
+
+  // Observe the last image element
+  useEffect(() => {
+    if (lastImageRef.current && observerRef.current) {
+      observerRef.current.observe(lastImageRef.current);
     }
-  };
+
+    return () => {
+      if (lastImageRef.current && observerRef.current) {
+        observerRef.current.unobserve(lastImageRef.current);
+      }
+    };
+  }, [permitImages.length]); // Changed from permitImages to imageUrls.length
 
   const handleImageClick = (index: number) => {
     setSelectedImageIndex(index);
@@ -139,7 +298,10 @@ export function AllPermitImage() {
                 Unable to load work permits
               </h3>
               <p className="text-gray-600 max-w-md mb-6">{error}</p>
-              <Button onClick={fetchPermitImages} variant="outline">
+              <Button
+                onClick={() => fetchPermitImages(1, false)}
+                variant="outline"
+              >
                 Try Again
               </Button>
             </div>
@@ -206,39 +368,67 @@ export function AllPermitImage() {
               </p>
             </div>
           ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-            >
-              {imageUrls.map((imageUrl, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-                  onClick={() => handleImageClick(index)}
-                >
-                  {/* Image */}
-                  <div className="relative aspect-[3/4] overflow-hidden">
-                    <Image
-                      src={imageUrl}
-                      alt={`Work Permit ${index + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    />
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+              >
+                {imageUrls.map((imageUrl, index) => (
+                  <motion.div
+                    key={index}
+                    ref={index === imageUrls.length - 1 ? lastImageRef : null}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    onClick={() => handleImageClick(index)}
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-[3/4] overflow-hidden">
+                      <Image
+                        src={imageUrl}
+                        alt={`Work Permit ${index + 1}`}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      />
 
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300" />
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                        <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300" />
+                      </div>
                     </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Loading more indicator */}
+              {loadingMore && (
+                <div className="flex justify-center items-center py-8 mt-8">
+                  <Loader2 className="w-8 h-8 animate-spin text-purple-500 mr-2" />
+                  <span className="text-gray-600">Loading more images...</span>
+                </div>
+              )}
+
+              {/* Manual Load More button (fallback) */}
+              {hasNextPage &&
+                !loadingMore &&
+                !loading &&
+                imageUrls.length > 0 && (
+                  <div className="flex justify-center py-8 mt-8">
+                    <Button
+                      onClick={() => loadMore()}
+                      variant="outline"
+                      className="bg-white hover:bg-purple-50 border-purple-200 text-purple-600 hover:text-purple-700"
+                    >
+                      <FileImage className="w-4 h-4 mr-2" />
+                      Load More Images
+                    </Button>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                )}
+            </>
           )}
         </div>
       </div>

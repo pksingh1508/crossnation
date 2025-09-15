@@ -3,6 +3,9 @@ import { getAllPermitImages } from "@/lib/strapi";
 
 export async function GET(request: NextRequest) {
   try {
+    const { searchParams } = new URL(request.url);
+    const page = parseInt(searchParams.get("page") || "1");
+    const pageSize = parseInt(searchParams.get("pageSize") || "20");
     // Get the Strapi token from environment variables
     const token = process.env.STRAPI_ACCESS_TOKEN;
 
@@ -16,13 +19,12 @@ export async function GET(request: NextRequest) {
 
     const allPermitImages = await getAllPermitImages(
       token,
+      page,
+      pageSize,
       "work-permits" // collection name
     );
 
-    if (
-      !allPermitImages ||
-      !allPermitImages.data
-    ) {
+    if (!allPermitImages || !allPermitImages.data) {
       return NextResponse.json(
         { error: "Permit images not found" },
         { status: 404 }
