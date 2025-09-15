@@ -3,6 +3,12 @@
 import * as React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface GovernmentLink {
   name: string;
@@ -13,6 +19,10 @@ interface GovernmentLink {
 
 export function GovernmentLinks() {
   const t = useTranslations("governmentLinks");
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
 
   const governmentLinks: GovernmentLink[] = [
     {
@@ -45,6 +55,18 @@ export function GovernmentLinks() {
       url: "https://stat.gov.pl/en/",
       alt: "Statistics Poland",
     },
+    {
+      name: "Statistics Poland",
+      logo: "/govlink.png",
+      url: "https://www.santander.pl/klient-indywidualny",
+      alt: "Statistics Poland",
+    },
+    {
+      name: "Statistics Poland",
+      logo: "/govlink2.png",
+      url: "https://nbp.pl/",
+      alt: "Statistics Poland",
+    },
   ];
 
   const handleLinkClick = (url: string) => {
@@ -62,27 +84,40 @@ export function GovernmentLinks() {
           <div className="w-16 h-1 bg-yellow-500 mx-auto"></div>
         </div>
 
-        {/* Government Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {governmentLinks.map((link, index) => (
-            <div
-              key={index}
-              onClick={() => handleLinkClick(link.url)}
-              className="flex justify-center items-center p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 border border-gray-200 dark:border-gray-700"
-            >
-              <div className="relative w-full h-20 flex items-center justify-center">
-                <Image
-                  src={link.logo}
-                  alt={link.alt}
-                  width={200}
-                  height={80}
-                  className="max-w-full max-h-full object-contain filter hover:brightness-110 transition-all duration-300"
-                  priority={index < 3}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Government Links Carousel */}
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full max-w-6xl mx-auto"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {governmentLinks.map((link, index) => (
+              <CarouselItem
+                key={index}
+                className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+              >
+                <div
+                  onClick={() => handleLinkClick(link.url)}
+                  className="flex justify-center items-center p-6 lg:p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 border border-gray-200 dark:border-gray-700 h-32"
+                >
+                  <div className="relative w-full h-20 flex items-center justify-center">
+                    <Image
+                      src={link.logo}
+                      alt={link.alt}
+                      width={200}
+                      height={80}
+                      className="max-w-full max-h-full object-contain filter hover:brightness-110 transition-all duration-300"
+                      priority={index < 3}
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
         {/* Additional Info */}
         <div className="text-center mt-8">
