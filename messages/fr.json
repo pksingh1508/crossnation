@@ -848,5 +848,277 @@
     "title": "TAMPON DE VISA",
     "heading": "Galerie des Tampons de Visa",
     "description": "Découvrez notre collection d’approbations réussies de tampons de visa provenant de différents pays"
+  },
+  "bookAppointment": {
+    "heading1": "Conseil pour les Chercheurs d’Emploi – Clients Internationaux",
+    "description1": "Nous proposons des séances de conseil professionnel individuelles pour les chercheurs d’emploi souhaitant travailler en Pologne et à travers l’Europe. Nos conseils sont adaptés à vos besoins, vous aidant à comprendre les opportunités, les procédures de recrutement et les meilleures étapes pour votre parcours professionnel.",
+    "heading2": "Services de Conseil en Recrutement pour Clients B2B",
+    "description2": "Nous aidons les entreprises internationales à répondre à leurs besoins en personnel grâce à des séances de conseil professionnel en recrutement. Nos services sont conçus pour aider les entreprises à comprendre le marché du travail européen, les exigences de conformité et les stratégies efficaces d’embauche.",
+    "meeting1": "Consultation en ligne via Zoom",
+    "meeting2": "Consultation en personne dans nos bureaux",
+    "meeting3": "Consultation rapide via WhatsApp",
+    "min": "minutes"
+  },
+  "term&Conditions": {
+    "mainHeading": "EU Career Serwis – Conditions Générales et Politiques",
+    "heading1": {
+      "title": "Affiliation de l’Organisation et Avertissement",
+      "point1": "EU Career Serwis facture des frais de service et fournit des informations générales sur l’immigration et les marchés du travail via son site privé www.atozserwisplus.pl.",
+      "point2": "Nous ne sommes affiliés à aucun gouvernement, ambassade ou consulat.",
+      "point3": "Nous ne sommes pas un cabinet d’avocats et n’offrons pas de représentation légale.",
+      "point4": "Les informations sur notre site sont uniquement à titre indicatif et ne doivent pas être considérées comme des conseils juridiques.",
+      "point5": "En achetant un service, vous acceptez d’être lié par nos Conditions d’Utilisation."
+    },
+    "heading2": {
+      "title": "Certifications et Légitimité",
+      "point1": "EU Career Serwis a subi des vérifications afin de prouver sa légitimité.",
+      "point2": "L’entreprise est enregistrée en Pologne et soutenue par des professionnels du droit qui garantissent que tous les services et documents sont conformes aux réglementations."
+    },
+    "heading3": {
+      "title": "Droits de Propriété Intellectuelle",
+      "point1": "Le contenu du site, y compris le design, le texte, les graphiques, les logos et les données, appartient à EU Career Serwis sauf indication contraire.",
+      "point2": "Il est protégé par le droit d’auteur polonais et international.",
+      "point3": "Toute utilisation, copie ou distribution non autorisée est strictement interdite et peut entraîner des poursuites judiciaires."
+    },
+    "heading4": {
+      "title": "Limitation de Responsabilité",
+      "point1": "EU Career Serwis ne saurait être tenu responsable de tout dommage direct, indirect ou consécutif résultant de l’utilisation de nos services ou de notre site.",
+      "point2": "Cette limitation s’applique même si nous avons été informés de dommages éventuels.",
+      "point3": "Certaines juridictions peuvent ne pas autoriser de telles limitations, auquel cas la loi locale s’applique."
+    },
+    "heading5": {
+      "title": "Structure Juridique et Droit Applicable",
+      "point1": "En utilisant notre site ou nos services, vous acceptez de conclure un accord juridiquement contraignant avec EU Career Serwis.",
+      "point2": "En cas de litige, la partie gagnante pourra récupérer les frais juridiques.",
+      "point3": "Toutes les affaires seront régies par la juridiction des tribunaux de Varsovie, Pologne."
+    },
+    "heading6": {
+      "title": "Limitations pour un Usage Personnel",
+      "point1": "Les services, contenus et produits sont strictement réservés à un usage personnel et non commercial.",
+      "point2": "Vous ne pouvez pas copier, modifier, revendre ou distribuer notre contenu sans autorisation."
+    },
+    "heading7": {
+      "title": "Erreurs de Prix et Fautes Typographiques",
+      "point1": "Bien que nous visons l’exactitude, des erreurs de prix ou de détails peuvent survenir.",
+      "point2": "EU Career Serwis se réserve le droit de refuser ou d’annuler les commandes mentionnant des prix incorrects.",
+      "point3": "Les remboursements seront effectués si le paiement a déjà été effectué."
+    },
+    "heading8": {
+      "title": "Politique de Bulletin et Newsletter",
+      "point1": "Les clients peuvent s’abonner pour recevoir des bulletins, des guides et des mises à jour.",
+      "point2": "Vous pouvez vous désabonner à tout moment.",
+      "point3": "Nous ne vendons pas les données des abonnés.",
+      "point4": "Les liens externes contenus dans les bulletins sont uniquement informatifs, et EU Career Serwis n’est pas responsable du contenu de tiers."
+    },
+    "heading9": {
+      "title": "Politique de Remboursement",
+      "point1": "Services non remboursables : évaluations, guides, annuaires, outils de recherche d’emploi.",
+      "point2": "Aucun remboursement n’est accordé si : le client se retire après paiement ; les documents sont faux ou incomplets ; les contrôles médicaux ou de sécurité échouent ; les fonds sont insuffisants ; le client a des antécédents d’infractions en matière d’immigration.",
+      "point3": "Les remboursements, s’ils sont approuvés, peuvent prendre jusqu’à 45 jours ouvrables.",
+      "point4": "Les remboursements sont émis uniquement par chèque de l’entreprise.",
+      "point5": "Les clients acceptent de ne pas initier de rétrofacturations (chargebacks)."
+    },
+    "heading10": {
+      "title": "Services et Produits",
+      "point1": "Évaluations – évaluations de profil sous 48 heures (non remboursables).",
+      "point2": "Orientation en Immigration – conseils et assistance documentaire.",
+      "point3": "Guides et Kits – ressources d’information pour les clients.",
+      "point4": "Annuaires – listes sélectionnées d’employeurs et d’agences.",
+      "point5": "Formulaires Officiels – formulaires officiels provenant de sources gouvernementales."
+    },
+    "heading11": {
+      "title": "Droits d’Auteur et Règles de Distribution",
+      "point1": "Les produits numériques sont protégés par le droit d’auteur.",
+      "point2": "Le partage, la copie ou la republication sans autorisation est interdit.",
+      "point3": "Les violations donneront lieu à des poursuites judiciaires."
+    },
+    "heading12": {
+      "title": "Politique d’Expédition",
+      "point1": "La plupart des produits sont livrés électroniquement par e-mail.",
+      "point2": "La livraison physique (le cas échéant) est effectuée à l’adresse fournie par le client.",
+      "point3": "Nous ne sommes pas responsables des retards postaux ou de messagerie."
+    },
+    "heading13": {
+      "title": "Clause de Non-Garantie",
+      "point1": "Les services sont fournis « tels quels ». ",
+      "point2": "Nous ne garantissons pas l’obtention de visas, d’emplois ou de résidences.",
+      "point3": "Les décisions finales appartiennent aux autorités gouvernementales."
+    },
+    "heading14": {
+      "title": "Amendements aux Conditions Générales",
+      "point1": "Nous pouvons mettre à jour ou réviser ces conditions sans préavis.",
+      "point2": "L’utilisation continue des services implique l’acceptation des politiques mises à jour."
+    },
+    "heading15": {
+      "title": "Protection des Données et Vie Privée",
+      "point1": "EU Career Serwis suit des protocoles stricts de confidentialité.",
+      "point2": "Les données sont utilisées uniquement pour fournir le service et ne sont jamais vendues à des tiers.",
+      "point3": "Nous respectons le RGPD et les lois polonaises sur la protection des données."
+    },
+    "heading16": {
+      "title": "Principes du RGPD et Données Sensibles",
+      "point1": "Équité, transparence et légalité.",
+      "point2": "Utilisation limitée des données à des fins spécifiques.",
+      "point3": "Exactitude et responsabilité.",
+      "point4": "Protection spéciale des données sensibles (médicales, biométriques, casiers judiciaires).",
+      "point5": "Les clients peuvent demander la correction ou la suppression de leurs données personnelles."
+    },
+    "heading17": {
+      "title": "Cookies et Technologies de Suivi",
+      "point1": "Notre site utilise des cookies pour améliorer la fonctionnalité.",
+      "point2": "Les clients peuvent désactiver les cookies, bien que cela puisse limiter certaines fonctionnalités.",
+      "point3": "Nous n’utilisons pas de cookies pour de la publicité intrusive."
+    },
+    "heading18": {
+      "title": "Droits des Personnes Concernées",
+      "point1": "Demander l’accès à vos données.",
+      "point2": "Corriger les inexactitudes.",
+      "point3": "Demander la suppression (« droit à l’oubli »).",
+      "point4": "S’opposer à certains traitements.",
+      "point5": "Déposer une plainte auprès des autorités de contrôle."
+    },
+    "heading19": {
+      "title": "Avis de Confidentialité CCPA (Résidents de Californie)",
+      "point1": "Vous pouvez demander des détails sur les données collectées.",
+      "point2": "Vous pouvez demander la suppression de vos données personnelles.",
+      "point3": "Nous ne vendons pas les données des clients.",
+      "point4": "Les demandes peuvent être faites par écrit ou par voie électronique."
+    },
+    "heading20": {
+      "title": "Marque Déposée et Protection Juridique",
+      "point1": "EU Career Serwis, son nom et son logo sont des marques déposées protégées.",
+      "point2": "Toute utilisation abusive, imitation ou représentation trompeuse est interdite.",
+      "point3": "Nous faisons activement respecter nos droits en vertu de la loi polonaise, européenne et internationale."
+    }
+  },
+  "refundPolicy": {
+    "mainHeading": "EU Career Serwis – Politique de Remboursement et de Service",
+    "heading1": {
+      "title": "Éligibilité au Remboursement",
+      "point1": "Les pourcentages de remboursement s’appliquent à la totalité des frais de service, et non aux paiements partiels.",
+      "point2": "Les remboursements ne sont envisagés que si la totalité des frais de service a été payée à l’avance et qu’aucun solde n’est dû.",
+      "point3": "Seuls les demandeurs qui remplissent tous les critères d’éligibilité ont droit à un remboursement."
+    },
+    "heading2": {
+      "title": "Inscription Anticipée et Règles d’Immigration",
+      "point1": "Les règles d’immigration peuvent changer en fonction des attentes futures.",
+      "point2": "Afin de sécuriser des opportunités dans le cadre du système de quotas, les clients peuvent s’inscrire à l’avance, même avant que leurs qualifications ne soient officiellement reconnues.",
+      "point3": "En s’inscrivant à l’avance, les clients acceptent la responsabilité de préparer la documentation avant les annonces officielles.",
+      "point4": "Si l’éligibilité n’est pas remplie après les mises à jour, des options alternatives peuvent être envisagées."
+    },
+    "heading3": {
+      "title": "Politique de Rétrofacturation",
+      "point1": "Tolérance zéro vis-à-vis des rétrofacturations. Tout client contestant un paiement valide sera définitivement exclu des services de EU Career Serwis.",
+      "point2": "Les soldes impayés seront transmis aux agences de recouvrement et les dettes pourront être signalées aux bureaux de crédit."
+    },
+    "heading4": {
+      "title": "Facturation et Taxes",
+      "point1": "Toutes les factures incluent les frais de consultation ainsi que les taxes applicables.",
+      "point2": "Les remboursements, lorsqu’ils sont applicables, sont calculés uniquement sur les frais de service et non sur les frais de tiers."
+    },
+    "heading5": {
+      "title": "Rejet par les Autorités d’Immigration/Visa",
+      "point1": "Si votre demande de visa est officiellement rejetée, les remboursements seront traités conformément à l’Accord signé.",
+      "point2": "Les clients doivent fournir : Formulaire de demande de remboursement, Lettre/tampon de rejet des autorités, Preuve de paiement (reçu).",
+      "point3": "Les remboursements sont traités dans les 35 jours ouvrables suivant la réception des documents requis.",
+      "point4": "L’absence de documents rend le client inéligible à un remboursement."
+    },
+    "heading6": {
+      "title": "Retards et Services de Tiers",
+      "point1": "EU Career Serwis n’est pas responsable des retards causés par des tiers (ex. services de messagerie, consulats).",
+      "point2": "Les frais de service ne sont pas remboursables en cas de tels retards."
+    },
+    "heading7": {
+      "title": "Frais Externes Non Remboursables",
+      "point1": "Les frais payés aux organismes d’évaluation, bureaux d’immigration, ambassades ou centres de test ne sont remboursables en aucun cas.",
+      "point2": "Nos frais de service couvrent strictement les services de conseil et d’assistance de EU Career Serwis."
+    },
+    "heading8": {
+      "title": "Paiements en Ligne et Transactions par Carte",
+      "point1": "Les clients doivent informer immédiatement EU Career Serwis de tout problème lié à la carte.",
+      "point2": "Les paiements effectués par carte de crédit/virement bancaire ne peuvent pas être contestés ou annulés une fois autorisés.",
+      "point3": "Tout usage abusif ou tentative de rétrofacturation sera défendu auprès des autorités compétentes."
+    },
+    "heading9": {
+      "title": "Frais de Service et Tarification",
+      "point1": "Les frais de service sont basés sur les standards de EU Career Serwis, et non sur les prix du marché.",
+      "point2": "Les plaintes concernant les frais après inscription ne seront pas prises en considération."
+    },
+    "heading10": {
+      "title": "Preuve de Fonds",
+      "point1": "Les clients sont responsables de satisfaire aux exigences financières fixées par les autorités d’immigration.",
+      "point2": "Le fait de ne pas démontrer de fonds suffisants disqualifie l’éligibilité à un remboursement."
+    },
+    "heading11": {
+      "title": "Documentation et Délais",
+      "point1": "Les clients doivent fournir tous les documents requis dans les 30 jours suivant la demande.",
+      "point2": "Le non-respect entraîne la perte des frais de conseil/assistance."
+    },
+    "heading12": {
+      "title": "Communication avec le Client",
+      "point1": "Les clients doivent informer EU Career Serwis de toute correspondance ou mise à jour reçue des bureaux d’immigration dans un délai de 7 jours.",
+      "point2": "Ne pas signaler ces mises à jour annule l’éligibilité au remboursement."
+    },
+    "heading13": {
+      "title": "Entretiens et Rendez-vous",
+      "point1": "Les clients sont responsables de se présenter aux entretiens de visa et évaluations à leurs propres frais.",
+      "point2": "Manquer des entretiens programmés ou ne pas suivre les instructions entraîne la perte des frais."
+    },
+    "heading14": {
+      "title": "Exclusions de Remboursement",
+      "point1": "Aucun remboursement ne sera accordé si le client manque un entretien d’immigration.",
+      "point2": "Aucun remboursement ne sera accordé si les documents médicaux, policiers ou financiers requis ne sont pas fournis.",
+      "point3": "Aucun remboursement ne sera accordé si les exigences de test de langue ne sont pas respectées.",
+      "point4": "Aucun remboursement ne sera accordé si les documents supplémentaires demandés sont soumis en retard.",
+      "point5": "Aucun remboursement ne sera accordé si le client abandonne le dossier ou cesse toute communication pendant plus de 30 jours."
+    },
+    "heading15": {
+      "title": "Test de Langue et Personnes à Charge",
+      "point1": "La réussite au test de langue requis est obligatoire.",
+      "point2": "Les personnes à charge (conjoint/enfants de plus de 18 ans) doivent également satisfaire aux critères de langue, le cas échéant.",
+      "point3": "L’échec aux exigences linguistiques ne donne pas droit à un remboursement."
+    },
+    "heading16": {
+      "title": "Retrait et Résiliation du Service",
+      "point1": "EU Career Serwis se réserve le droit de mettre fin aux services sans remboursement si le client ne fournit pas d’informations exactes ou véridiques.",
+      "point2": "Les services peuvent être résiliés en cas de fraude, d’abus ou de non-coopération.",
+      "point3": "Les services peuvent être résiliés si le client adopte un comportement qui entrave la prestation du service."
+    },
+    "heading17": {
+      "title": "Limitations de Responsabilité",
+      "point1": "Les approbations d’immigration sont soumises aux règles gouvernementales et aux systèmes de quotas.",
+      "point2": "Même si les critères sont remplis, les approbations peuvent être refusées une fois les limites annuelles atteintes.",
+      "point3": "EU Career Serwis ne garantit ni emploi ni approbation de visa."
+    },
+    "heading18": {
+      "title": "Délai de Traitement des Remboursements",
+      "point1": "Les remboursements éligibles sont traités dans un délai de 15 à 30 jours ouvrables."
+    },
+    "heading19": {
+      "title": "Responsabilités du Client",
+      "point1": "Informer EU Career Serwis de tout changement (adresse, état civil, affaires judiciaires, nouveaux membres de la famille, etc.).",
+      "point2": "Fournir des informations exactes et à jour en tout temps.",
+      "point3": "Assurer la pleine conformité avec les exigences de visa et la documentation."
+    },
+    "heading20": {
+      "title": "Confidentialité et Protection des Données",
+      "point1": "EU Career Serwis protège toutes les données clients conformément aux lois sur la protection de la vie privée applicables.",
+      "point2": "Les informations sont utilisées uniquement à des fins d’immigration et de conseil, jamais à des fins non autorisées."
+    },
+    "heading21": {
+      "title": "Loi Applicable",
+      "point1": "EU Career Serwis opère sous les lois de la Pologne.",
+      "point2": "La juridiction pour les litiges relève exclusivement des tribunaux de Varsovie, Voïvodie de Mazovie."
+    },
+    "heading22": {
+      "title": "Force Majeure",
+      "point1": "EU Career Serwis n’est pas responsable des retards causés par des événements indépendants de sa volonté (grèves, guerres, catastrophes naturelles, épidémies, restrictions gouvernementales, etc.)."
+    },
+    "heading23": {
+      "title": "Accord Final",
+      "point1": "En s’inscrivant aux services, les clients confirment avoir lu, compris et accepté ces conditions.",
+      "point2": "Les remboursements sont strictement limités aux conditions décrites ci-dessus.",
+      "point3": "Une fois les services commencés, les demandes de retrait ou de remboursement ne seront pas acceptées, sauf si elles sont spécifiquement couvertes par cette politique."
+    }
   }
 }

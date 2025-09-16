@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { Refund_Policy } from "@/components/Terms_Conditions/Refund_Policy";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,11 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function RefundPolicyPage() {
-  // const t = useTranslations("policies.refund");
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
-      <h1>Refund Policy</h1>
-    </div>
-  );
+  return <Refund_Policy />;
 }

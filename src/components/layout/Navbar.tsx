@@ -117,13 +117,13 @@ export function Navbar() {
             <Button
               asChild
               variant="outline"
-              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
-              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+              style={{
+                ["--hover-bg" as any]: colors.yellow.DEFAULT,
+              }}
             >
               {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
-              <Link href={`https://crossnation.youcanbook.me`} target="_blank">
-                {tCommon("book")}
-              </Link>
+              <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
             </Button>
             <Button
               asChild
@@ -243,14 +243,12 @@ export function Navbar() {
                 asChild
                 size="sm"
                 variant="brandOutline"
-                className={fontMontserrat.className}
+                className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                }}
               >
-                <Link
-                  href={`https://crossnation.youcanbook.me`}
-                  target="_blank"
-                >
-                  {tCommon("book")}
-                </Link>
+                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
               </Button>
               <button
                 type="button"
@@ -334,11 +332,13 @@ export function Navbar() {
                 <Button
                   asChild
                   variant="brandOutline"
-                  className={`w-full ${fontMontserrat.className}`}
+                  className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+                  style={{
+                    ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                  }}
                 >
                   <Link
-                    href={`https://crossnation.youcanbook.me`}
-                    target="_blank"
+                    href={`/${locale}/book`}
                     onClick={() => setIsOpen(false)}
                   >
                     {tCommon("book")}

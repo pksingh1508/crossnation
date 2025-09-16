@@ -69,7 +69,6 @@ export function Footer() {
 
   const termsLinks = [
     { href: "/privacy-policy", label: t("bottom.privacyPolicy") },
-    { href: "/terms-and-conditions", label: t("bottom.termsOfService") },
     { href: "/refund-policy", label: t("bottom.refundPolicy") },
     { href: "/antiFraud-policy", label: t("bottom.antiFraudPolicy") },
   ];

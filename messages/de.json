@@ -848,5 +848,277 @@
     "title": "VISA-STEMPEL",
     "heading": "Visa-Stempel-Galerie",
     "description": "Erkunden Sie unsere Sammlung erfolgreicher Visa-Stempel-Genehmigungen aus verschiedenen Ländern"
+  },
+  "bookAppointment": {
+    "heading1": "Beratung für Arbeitssuchende – Internationale Kunden",
+    "description1": "Wir bieten professionelle Einzelberatungen für Arbeitssuchende an, die in Polen und in ganz Europa arbeiten möchten. Unsere Beratung ist auf Ihre Bedürfnisse zugeschnitten und hilft Ihnen, Chancen, Rekrutierungsverfahren und die besten Schritte für Ihre Karriere zu verstehen.",
+    "heading2": "Beratungsdienste für Personalbeschaffung für B2B-Kunden",
+    "description2": "Wir unterstützen internationale Unternehmen bei der Deckung ihres Personalbedarfs durch professionelle Beratungen zur Personalbeschaffung. Unsere Dienstleistungen helfen Unternehmen, den europäischen Arbeitsmarkt, Compliance-Anforderungen und effektive Einstellungsstrategien zu verstehen.",
+    "meeting1": "Online-Beratung über Zoom",
+    "meeting2": "Persönliche Beratung in unserem Büro",
+    "meeting3": "Schnellberatung über WhatsApp",
+    "min": "Minuten"
+  },
+  "term&Conditions": {
+    "mainHeading": "EU Career Serwis – Allgemeine Geschäftsbedingungen und Richtlinien",
+    "heading1": {
+      "title": "Organisationszugehörigkeit und Haftungsausschluss",
+      "point1": "EU Career Serwis erhebt eine Servicegebühr und stellt allgemeine Informationen über Einwanderung und Arbeitsmärkte über seine private Website www.atozserwisplus.pl bereit.",
+      "point2": "Wir sind mit keiner Regierung, Botschaft oder einem Konsulat verbunden.",
+      "point3": "Wir sind keine Anwaltskanzlei und bieten keine rechtliche Vertretung an.",
+      "point4": "Die Informationen auf unserer Website dienen nur zur Orientierung und stellen keine Rechtsberatung dar.",
+      "point5": "Durch den Kauf einer Dienstleistung erklären Sie sich mit unseren Nutzungsbedingungen einverstanden."
+    },
+    "heading2": {
+      "title": "Zertifizierungen und Legitimität",
+      "point1": "EU Career Serwis hat Überprüfungen durchlaufen, um seine Legitimität nachzuweisen.",
+      "point2": "Das Unternehmen ist in Polen registriert und wird von Juristen unterstützt, die sicherstellen, dass alle Dienstleistungen und Dokumente den Vorschriften entsprechen."
+    },
+    "heading3": {
+      "title": "Rechte am Geistigen Eigentum",
+      "point1": "Die Inhalte der Website, einschließlich Design, Text, Grafiken, Logos und Daten, gehören EU Career Serwis, sofern nicht anders angegeben.",
+      "point2": "Sie sind durch das polnische und internationale Urheberrecht geschützt.",
+      "point3": "Unautorisierte Nutzung, Vervielfältigung oder Verbreitung sind strengstens untersagt und können rechtliche Schritte nach sich ziehen."
+    },
+    "heading4": {
+      "title": "Haftungsbeschränkung",
+      "point1": "EU Career Serwis haftet nicht für direkte, indirekte oder Folgeschäden, die aus der Nutzung unserer Dienstleistungen oder Website entstehen.",
+      "point2": "Diese Einschränkung gilt auch dann, wenn wir auf mögliche Schäden hingewiesen wurden.",
+      "point3": "Einige Gerichtsbarkeiten erlauben keine vollständigen Haftungsbeschränkungen, in diesem Fall gilt das örtliche Recht."
+    },
+    "heading5": {
+      "title": "Rechtsstruktur und Anwendbares Recht",
+      "point1": "Durch die Nutzung unserer Website oder Dienstleistungen stimmen Sie einem rechtsverbindlichen Vertrag mit EU Career Serwis zu.",
+      "point2": "Im Falle von Streitigkeiten kann die obsiegende Partei die Anwaltskosten zurückfordern.",
+      "point3": "Alle Angelegenheiten unterliegen der Zuständigkeit der Gerichte in Warschau, Polen."
+    },
+    "heading6": {
+      "title": "Einschränkungen für den Persönlichen Gebrauch",
+      "point1": "Dienstleistungen, Inhalte und Produkte sind ausschließlich für den persönlichen, nicht kommerziellen Gebrauch bestimmt.",
+      "point2": "Sie dürfen unsere Inhalte nicht ohne Genehmigung kopieren, ändern, weiterverkaufen oder verbreiten."
+    },
+    "heading7": {
+      "title": "Preisfehler und Tippfehler",
+      "point1": "Obwohl wir Genauigkeit anstreben, können Fehler bei Preisen oder Details auftreten.",
+      "point2": "EU Career Serwis behält sich das Recht vor, Bestellungen mit falschen Preisen abzulehnen oder zu stornieren.",
+      "point3": "Rückerstattungen werden bearbeitet, wenn die Zahlung bereits erfolgt ist."
+    },
+    "heading8": {
+      "title": "Richtlinie für Bulletins und Newsletter",
+      "point1": "Kunden können sich anmelden, um Newsletter, Leitfäden und Updates zu erhalten.",
+      "point2": "Sie können sich jederzeit abmelden.",
+      "point3": "Wir verkaufen keine Abonnentendaten.",
+      "point4": "Externe Links in Bulletins dienen nur zu Informationszwecken, und EU Career Serwis ist nicht für Inhalte Dritter verantwortlich."
+    },
+    "heading9": {
+      "title": "Rückerstattungsrichtlinie",
+      "point1": "Nicht erstattungsfähige Dienstleistungen: Bewertungen, Leitfäden, Verzeichnisse, Tools zur Arbeitssuche.",
+      "point2": "Es werden keine Rückerstattungen gewährt, wenn: der Kunde sich nach der Zahlung zurückzieht; Dokumente falsch oder unvollständig sind; medizinische oder Sicherheitsüberprüfungen nicht bestanden werden; Gelder unzureichend sind; der Kunde frühere Einwanderungsverstöße hat.",
+      "point3": "Rückerstattungen, falls genehmigt, können bis zu 45 Werktage dauern.",
+      "point4": "Rückerstattungen werden nur per Firmen-Scheck ausgestellt.",
+      "point5": "Kunden stimmen zu, keine Rückbuchungen (Chargebacks) einzuleiten."
+    },
+    "heading10": {
+      "title": "Dienstleistungen und Produkte",
+      "point1": "Bewertungen – Profilbewertungen innerhalb von 48 Stunden (nicht erstattungsfähig).",
+      "point2": "Immigrationsberatung – Beratung und Unterstützung bei Dokumenten.",
+      "point3": "Leitfäden und Kits – Informationsressourcen für Kunden.",
+      "point4": "Verzeichnisse – kuratierte Listen von Arbeitgebern und Agenturen.",
+      "point5": "Amtliche Formulare – offizielle Formulare aus staatlichen Quellen."
+    },
+    "heading11": {
+      "title": "Urheberrecht und Verteilungsregeln",
+      "point1": "Digitale Produkte sind urheberrechtlich geschützt.",
+      "point2": "Teilen, Kopieren oder erneutes Veröffentlichen ohne Genehmigung ist verboten.",
+      "point3": "Verstöße führen zu rechtlichen Schritten."
+    },
+    "heading12": {
+      "title": "Versandrichtlinie",
+      "point1": "Die meisten Produkte werden elektronisch per E-Mail geliefert.",
+      "point2": "Die physische Lieferung (falls zutreffend) erfolgt an die vom Kunden angegebene Adresse.",
+      "point3": "Wir sind nicht verantwortlich für Post- oder Kurierverzögerungen."
+    },
+    "heading13": {
+      "title": "Haftungsausschluss für Garantien",
+      "point1": "Dienstleistungen werden „wie sie sind“ bereitgestellt.",
+      "point2": "Wir garantieren keine Visaerteilungen, Beschäftigungen oder Aufenthalte.",
+      "point3": "Endgültige Entscheidungen liegen bei den Regierungsbehörden."
+    },
+    "heading14": {
+      "title": "Änderungen der Geschäftsbedingungen",
+      "point1": "Wir können diese Bedingungen jederzeit ohne vorherige Ankündigung aktualisieren oder ändern.",
+      "point2": "Die fortgesetzte Nutzung der Dienste bedeutet die Zustimmung zu den aktualisierten Richtlinien."
+    },
+    "heading15": {
+      "title": "Datenschutz und Privatsphäre",
+      "point1": "EU Career Serwis folgt strengen Datenschutzprotokollen.",
+      "point2": "Daten werden ausschließlich zur Erbringung der Dienstleistung verwendet und niemals an Dritte verkauft.",
+      "point3": "Wir halten uns an die DSGVO und das polnische Datenschutzrecht."
+    },
+    "heading16": {
+      "title": "DSGVO-Grundsätze und Sensible Daten",
+      "point1": "Fairness, Transparenz und Rechtmäßigkeit.",
+      "point2": "Eingeschränkte Nutzung von Daten für bestimmte Zwecke.",
+      "point3": "Genauigkeit und Verantwortlichkeit.",
+      "point4": "Besonderer Schutz für sensible Daten (medizinische, biometrische, strafrechtliche Daten).",
+      "point5": "Kunden können die Berichtigung oder Löschung ihrer personenbezogenen Daten verlangen."
+    },
+    "heading17": {
+      "title": "Cookies und Tracking-Technologien",
+      "point1": "Unsere Website verwendet Cookies, um die Funktionalität zu verbessern.",
+      "point2": "Kunden können Cookies deaktivieren, auch wenn dadurch bestimmte Funktionen eingeschränkt werden können.",
+      "point3": "Wir verwenden keine Cookies für aufdringliche Werbung."
+    },
+    "heading18": {
+      "title": "Rechte der Betroffenen",
+      "point1": "Fordern Sie Zugriff auf Ihre Daten an.",
+      "point2": "Korrigieren Sie Ungenauigkeiten.",
+      "point3": "Verlangen Sie die Löschung („Recht auf Vergessenwerden“).",
+      "point4": "Widersprechen Sie bestimmten Verarbeitungen.",
+      "point5": "Reichen Sie eine Beschwerde bei den Aufsichtsbehörden ein."
+    },
+    "heading19": {
+      "title": "CCPA-Datenschutzhinweis (Einwohner von Kalifornien)",
+      "point1": "Sie können Einzelheiten zu den gesammelten Daten anfordern.",
+      "point2": "Sie können die Löschung personenbezogener Daten verlangen.",
+      "point3": "Wir verkaufen keine Kundendaten.",
+      "point4": "Anfragen können schriftlich oder elektronisch gestellt werden."
+    },
+    "heading20": {
+      "title": "Markenschutz und Rechtlicher Schutz",
+      "point1": "EU Career Serwis, sein Name und Logo sind geschützte Marken.",
+      "point2": "Jeglicher Missbrauch, Nachahmung oder falsche Darstellung ist verboten.",
+      "point3": "Wir setzen unsere Rechte aktiv nach polnischem, EU- und internationalem Recht durch."
+    }
+  },
+  "refundPolicy": {
+    "mainHeading": "EU Career Serwis – Rückerstattungs- und Servicepolitik",
+    "heading1": {
+      "title": "Erstattungsberechtigung",
+      "point1": "Rückerstattungsprozentsätze gelten für die gesamte Servicegebühr, nicht für Teilzahlungen.",
+      "point2": "Rückerstattungen werden nur berücksichtigt, wenn die gesamte Servicegebühr im Voraus bezahlt wurde und kein Restbetrag offen ist.",
+      "point3": "Nur Antragsteller, die alle Anspruchskriterien erfüllen, haben Anspruch auf Rückerstattungen."
+    },
+    "heading2": {
+      "title": "Frühzeitige Registrierung und Einwanderungsregeln",
+      "point1": "Einwanderungsregeln können sich je nach zukünftigen Erwartungen ändern.",
+      "point2": "Um Chancen im Quotensystem zu sichern, können sich Kunden frühzeitig registrieren – auch bevor ihre Qualifikationen offiziell anerkannt sind.",
+      "point3": "Durch die frühzeitige Registrierung übernehmen Kunden die Verantwortung, die Dokumentation vor offiziellen Ankündigungen vorzubereiten.",
+      "point4": "Wenn die Anspruchsvoraussetzungen nach Aktualisierungen nicht erfüllt werden, können alternative Optionen in Betracht gezogen werden."
+    },
+    "heading3": {
+      "title": "Chargeback-Richtlinie",
+      "point1": "Null Toleranz bei Rückbuchungen. Jeder Kunde, der eine gültige Zahlung anficht, wird dauerhaft von den Diensten von EU Career Serwis ausgeschlossen.",
+      "point2": "Offene Beträge werden an Inkassobüros weitergeleitet, und unbezahlte Schulden können den Kreditauskunfteien gemeldet werden."
+    },
+    "heading4": {
+      "title": "Abrechnung und Steuern",
+      "point1": "Alle Rechnungen beinhalten die Beratungsgebühr sowie die anfallenden Steuern.",
+      "point2": "Rückerstattungen, soweit zutreffend, werden nur auf die Servicegebühren berechnet, nicht auf Gebühren Dritter."
+    },
+    "heading5": {
+      "title": "Ablehnung durch Einwanderungs-/Visabehörden",
+      "point1": "Wenn Ihr Visumantrag offiziell abgelehnt wird, erfolgt die Rückerstattung gemäß der unterzeichneten Vereinbarung.",
+      "point2": "Kunden müssen einreichen: Rückerstattungsformular, Ablehnungsschreiben/-stempel der Behörden, Zahlungsnachweis (Beleg).",
+      "point3": "Rückerstattungen werden innerhalb von 35 Werktagen nach Erhalt der erforderlichen Dokumente bearbeitet.",
+      "point4": "Fehlende Dokumente machen den Kunden nicht erstattungsberechtigt."
+    },
+    "heading6": {
+      "title": "Verzögerungen und Dienstleistungen Dritter",
+      "point1": "EU Career Serwis haftet nicht für Verzögerungen, die durch Dritte verursacht werden (z. B. Kuriere, Konsulate).",
+      "point2": "Servicegebühren sind in solchen Fällen nicht erstattungsfähig."
+    },
+    "heading7": {
+      "title": "Nicht erstattungsfähige externe Gebühren",
+      "point1": "Gebühren, die an Bewertungsstellen, Einwanderungsbehörden, Botschaften oder Prüfungszentren gezahlt wurden, sind unter keinen Umständen erstattungsfähig.",
+      "point2": "Unsere Servicegebühr deckt ausschließlich die Beratungs- und Konsultationsdienste von EU Career Serwis ab."
+    },
+    "heading8": {
+      "title": "Online-Zahlungen und Kartentransaktionen",
+      "point1": "Kunden müssen EU Career Serwis sofort über Kartenprobleme informieren.",
+      "point2": "Zahlungen per Kreditkarte/Online-Banking können nach der Autorisierung nicht angefochten oder rückgängig gemacht werden.",
+      "point3": "Jeder Missbrauch oder Versuch einer Rückbuchung wird bei den zuständigen Behörden verfolgt."
+    },
+    "heading9": {
+      "title": "Servicegebühren und Preise",
+      "point1": "Die Servicegebühren basieren auf den Standards von EU Career Serwis, nicht auf Marktpreisen.",
+      "point2": "Beschwerden über Gebühren nach der Registrierung werden nicht berücksichtigt."
+    },
+    "heading10": {
+      "title": "Nachweis von Finanzmitteln",
+      "point1": "Kunden sind dafür verantwortlich, die finanziellen Anforderungen der Einwanderungsbehörden zu erfüllen.",
+      "point2": "Das Nichtvorweisen ausreichender Mittel schließt die Erstattungsberechtigung aus."
+    },
+    "heading11": {
+      "title": "Dokumentation und Fristen",
+      "point1": "Kunden müssen alle erforderlichen Dokumente innerhalb von 30 Tagen nach Anforderung vorlegen.",
+      "point2": "Die Nichteinhaltung führt zum Verlust der Beratungs-/Servicegebühren."
+    },
+    "heading12": {
+      "title": "Kundenkommunikation",
+      "point1": "Kunden müssen EU Career Serwis über jegliche Korrespondenz oder Aktualisierungen von Einwanderungsbehörden innerhalb von 7 Tagen informieren.",
+      "point2": "Das Versäumnis solcher Mitteilungen macht den Kunden nicht erstattungsberechtigt."
+    },
+    "heading13": {
+      "title": "Interviews und Termine",
+      "point1": "Kunden sind dafür verantwortlich, Vorstellungsgespräche und Bewertungen auf eigene Kosten wahrzunehmen.",
+      "point2": "Das Versäumen geplanter Termine oder das Nichtbefolgen von Anweisungen führt zum Verlust der Gebühren."
+    },
+    "heading14": {
+      "title": "Ausschlüsse von Rückerstattungen",
+      "point1": "Es werden keine Rückerstattungen gewährt, wenn der Kunde ein Einwanderungsinterview verpasst.",
+      "point2": "Es werden keine Rückerstattungen gewährt, wenn erforderliche medizinische, polizeiliche oder finanzielle Dokumente nicht bereitgestellt werden.",
+      "point3": "Es werden keine Rückerstattungen gewährt, wenn Sprachtestanforderungen nicht erfüllt werden.",
+      "point4": "Es werden keine Rückerstattungen gewährt, wenn zusätzliche angeforderte Dokumente verspätet eingereicht werden.",
+      "point5": "Es werden keine Rückerstattungen gewährt, wenn der Kunde den Fall aufgibt oder die Kommunikation länger als 30 Tage einstellt."
+    },
+    "heading15": {
+      "title": "Sprachtest und Angehörige",
+      "point1": "Das Bestehen des erforderlichen Sprachtests ist obligatorisch.",
+      "point2": "Angehörige (Ehepartner/Kinder über 18 Jahre) müssen ebenfalls die Sprachkriterien erfüllen, falls zutreffend.",
+      "point3": "Das Nichtbestehen der Sprachprüfung berechtigt nicht zu einer Rückerstattung."
+    },
+    "heading16": {
+      "title": "Dienstbeendigung und Kündigung",
+      "point1": "EU Career Serwis behält sich das Recht vor, Dienstleistungen ohne Rückerstattung zu beenden, wenn der Kunde keine genauen oder wahrheitsgemäßen Angaben macht.",
+      "point2": "Dienste können beendet werden, wenn Missbrauch, Betrug oder mangelnde Zusammenarbeit vorliegen.",
+      "point3": "Dienste können beendet werden, wenn das Verhalten des Kunden die Leistungserbringung behindert."
+    },
+    "heading17": {
+      "title": "Haftungsbeschränkungen",
+      "point1": "Einwanderungsgenehmigungen unterliegen staatlichen Vorschriften und Quotensystemen.",
+      "point2": "Auch wenn Kriterien erfüllt sind, können Genehmigungen verweigert werden, sobald Jahreslimits erreicht sind.",
+      "point3": "EU Career Serwis garantiert weder Beschäftigung noch Visagenehmigungen."
+    },
+    "heading18": {
+      "title": "Bearbeitungszeit für Rückerstattungen",
+      "point1": "Berechtigte Rückerstattungen werden innerhalb von 15–30 Werktagen bearbeitet."
+    },
+    "heading19": {
+      "title": "Pflichten des Kunden",
+      "point1": "EU Career Serwis über Änderungen informieren (Adresse, Familienstand, Gerichtsverfahren, neue Familienmitglieder usw.).",
+      "point2": "Jederzeit genaue und aktuelle Informationen bereitstellen.",
+      "point3": "Die vollständige Einhaltung der Visaanforderungen und Dokumentation sicherstellen."
+    },
+    "heading20": {
+      "title": "Vertraulichkeit und Datenschutz",
+      "point1": "EU Career Serwis schützt alle Kundendaten gemäß den geltenden Datenschutzgesetzen.",
+      "point2": "Informationen werden ausschließlich für Einwanderungs- und Beratungszwecke verwendet, niemals für unautorisierte Zwecke."
+    },
+    "heading21": {
+      "title": "Anwendbares Recht",
+      "point1": "EU Career Serwis arbeitet nach polnischem Recht.",
+      "point2": "Die Zuständigkeit für Streitigkeiten liegt ausschließlich bei den Gerichten in Warschau, Woiwodschaft Masowien."
+    },
+    "heading22": {
+      "title": "Höhere Gewalt",
+      "point1": "EU Career Serwis haftet nicht für Verzögerungen, die durch unvorhersehbare Ereignisse verursacht werden (Streiks, Kriege, Naturkatastrophen, Epidemien, staatliche Einschränkungen usw.)."
+    },
+    "heading23": {
+      "title": "Endgültige Vereinbarung",
+      "point1": "Mit der Anmeldung zu den Diensten bestätigen Kunden, dass sie diese Bedingungen gelesen, verstanden und akzeptiert haben.",
+      "point2": "Rückerstattungen sind streng auf die oben genannten Bedingungen beschränkt.",
+      "point3": "Sobald die Dienstleistungen begonnen haben, werden Rücktritts- oder Rückerstattungsanträge nicht akzeptiert, es sei denn, sie sind ausdrücklich in dieser Richtlinie vorgesehen."
+    }
   }
 }

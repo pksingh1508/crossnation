@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 import BookingWidget from "@/components/simplyBookMe/BookingWidget";
+import { BookAppointment } from "@/components/bookAppointment/BookAppointment";
 
 export const metadata: Metadata = {
   title: "Book Appointment | CountryNation",
@@ -8,8 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
-  // const t = useTranslations("pages.book");
-
-  // return <BookingWidget />;
-  return <div>Booking Widget</div>;
+  return <BookAppointment />;
 }

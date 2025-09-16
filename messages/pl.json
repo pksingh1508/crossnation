@@ -848,5 +848,277 @@
     "title": "WIZA – STEMPEL",
     "heading": "Galeria Wizowych Stemplów",
     "description": "Poznaj naszą kolekcję pomyślnie zatwierdzonych wizowych stempli z różnych krajów"
+  },
+  "bookAppointment": {
+    "heading1": "Doradztwo dla Osób Poszukujących Pracy – Klienci Międzynarodowi",
+    "description1": "Oferujemy profesjonalne indywidualne sesje doradcze dla osób poszukujących pracy w Polsce i całej Europie. Nasze doradztwo jest dostosowane do Twoich potrzeb, pomagając Ci zrozumieć możliwości, procedury rekrutacyjne oraz najlepsze kroki w rozwoju kariery.",
+    "heading2": "Usługi Doradztwa Rekrutacyjnego dla Klientów B2B",
+    "description2": "Wspieramy międzynarodowe firmy w zaspokajaniu potrzeb kadrowych poprzez profesjonalne sesje doradztwa rekrutacyjnego. Nasze usługi pomagają firmom zrozumieć europejski rynek pracy, wymagania dotyczące zgodności oraz skuteczne strategie zatrudniania.",
+    "meeting1": "Konsultacja online przez Zoom",
+    "meeting2": "Konsultacja osobista w naszym biurze",
+    "meeting3": "Szybka konsultacja przez WhatsApp",
+    "min": "minuty"
+  },
+  "term&Conditions": {
+    "mainHeading": "EU Career Serwis – Warunki, Zasady i Polityki",
+    "heading1": {
+      "title": "Powiązanie Organizacyjne i Zastrzeżenie",
+      "point1": "EU Career Serwis pobiera opłatę za usługę i udostępnia ogólne informacje o imigracji i rynkach pracy poprzez swoją prywatną stronę internetową www.atozserwisplus.pl.",
+      "point2": "Nie jesteśmy powiązani z żadnym rządem, ambasadą ani konsulatem.",
+      "point3": "Nie jesteśmy kancelarią prawną i nie oferujemy reprezentacji prawnej.",
+      "point4": "Informacje na naszej stronie służą wyłącznie jako wskazówki i nie powinny być traktowane jako porada prawna.",
+      "point5": "Kupując jakąkolwiek usługę, zgadzasz się przestrzegać naszych Warunków Użytkowania."
+    },
+    "heading2": {
+      "title": "Certyfikaty i Legalność",
+      "point1": "EU Career Serwis przeszedł kontrole weryfikacyjne, aby potwierdzić swoją wiarygodność.",
+      "point2": "Firma jest zarejestrowana w Polsce i wspierana przez prawników, którzy zapewniają, że wszystkie usługi i dokumenty są zgodne z przepisami."
+    },
+    "heading3": {
+      "title": "Prawa Własności Intelektualnej",
+      "point1": "Treść strony internetowej, w tym projekt, tekst, grafiki, logotypy i dane, należy do EU Career Serwis, chyba że wskazano inaczej.",
+      "point2": "Chronione są one polskim i międzynarodowym prawem autorskim.",
+      "point3": "Nieautoryzowane użycie, kopiowanie lub dystrybucja są surowo zabronione i mogą skutkować działaniami prawnymi."
+    },
+    "heading4": {
+      "title": "Ograniczenie Odpowiedzialności",
+      "point1": "EU Career Serwis nie ponosi odpowiedzialności za jakiekolwiek szkody bezpośrednie, pośrednie lub wynikowe wynikające z korzystania z naszych usług lub strony internetowej.",
+      "point2": "To ograniczenie ma zastosowanie nawet wtedy, gdy poinformowano nas o możliwych szkodach.",
+      "point3": "Niektóre jurysdykcje mogą nie zezwalać na pełne ograniczenia, w takim przypadku obowiązuje prawo lokalne."
+    },
+    "heading5": {
+      "title": "Struktura Prawna i Prawo Właściwe",
+      "point1": "Korzystając z naszej strony lub usług, zgadzasz się zawrzeć prawnie wiążącą umowę z EU Career Serwis.",
+      "point2": "W przypadku sporów strona wygrywająca może odzyskać koszty sądowe.",
+      "point3": "Wszystkie sprawy będą rozpatrywane przez sądy w Warszawie, Polska."
+    },
+    "heading6": {
+      "title": "Ograniczenia w Użytku Osobistym",
+      "point1": "Usługi, treści i produkty są przeznaczone wyłącznie do użytku osobistego, niekomercyjnego.",
+      "point2": "Nie możesz kopiować, modyfikować, odsprzedawać ani dystrybuować naszych treści bez zgody."
+    },
+    "heading7": {
+      "title": "Błędy Cenowe i Literowe",
+      "point1": "Chociaż staramy się o dokładność, mogą wystąpić błędy w cenach lub szczegółach.",
+      "point2": "EU Career Serwis zastrzega sobie prawo do odmowy lub anulowania zamówień z nieprawidłowymi cenami.",
+      "point3": "Zwroty zostaną przetworzone, jeśli płatność została już dokonana."
+    },
+    "heading8": {
+      "title": "Polityka Biuletynów i Newsletterów",
+      "point1": "Klienci mogą subskrybować, aby otrzymywać biuletyny, przewodniki i aktualizacje.",
+      "point2": "Możesz zrezygnować w dowolnym momencie.",
+      "point3": "Nie sprzedajemy danych subskrybentów.",
+      "point4": "Linki zewnętrzne w biuletynach mają charakter wyłącznie informacyjny i EU Career Serwis nie ponosi odpowiedzialności za treści stron trzecich."
+    },
+    "heading9": {
+      "title": "Polityka Zwrotów",
+      "point1": "Usługi bezzwrotne: oceny, przewodniki, katalogi, narzędzia do poszukiwania pracy.",
+      "point2": "Zwroty nie są udzielane, jeśli: klient wycofa się po dokonaniu płatności; dokumenty są fałszywe lub niekompletne; niepowodzenie badań lekarskich lub kontroli bezpieczeństwa; środki są niewystarczające; klient ma wcześniejsze naruszenia przepisów imigracyjnych.",
+      "point3": "Zwroty, jeśli zostaną zatwierdzone, mogą potrwać do 45 dni roboczych.",
+      "point4": "Zwroty są realizowane wyłącznie czekiem firmowym.",
+      "point5": "Klienci zgadzają się nie inicjować obciążeń zwrotnych (chargebacks)."
+    },
+    "heading10": {
+      "title": "Usługi i Produkty",
+      "point1": "Oceny – oceny profilu w ciągu 48 godzin (bezzwrotne).",
+      "point2": "Doradztwo Imigracyjne – konsultacje i wsparcie w dokumentach.",
+      "point3": "Przewodniki i Zestawy – materiały informacyjne dla klientów.",
+      "point4": "Katalogi – wyselekcjonowane listy pracodawców i agencji.",
+      "point5": "Formularze Urzędowe – oficjalne formularze z rządowych źródeł."
+    },
+    "heading11": {
+      "title": "Prawa Autorskie i Zasady Dystrybucji",
+      "point1": "Produkty cyfrowe są chronione prawem autorskim.",
+      "point2": "Udostępnianie, kopiowanie lub ponowne publikowanie bez zgody jest zabronione.",
+      "point3": "Naruszenia będą skutkować działaniami prawnymi."
+    },
+    "heading12": {
+      "title": "Polityka Wysyłki",
+      "point1": "Większość produktów dostarczana jest elektronicznie przez e-mail.",
+      "point2": "Dostawa fizyczna (jeśli dotyczy) realizowana jest na adres podany przez klienta.",
+      "point3": "Nie ponosimy odpowiedzialności za opóźnienia pocztowe lub kurierskie."
+    },
+    "heading13": {
+      "title": "Zastrzeżenie Gwarancji",
+      "point1": "Usługi są świadczone w stanie „takim, jakie są”.",
+      "point2": "Nie gwarantujemy zatwierdzenia wiz, zatrudnienia ani pobytu.",
+      "point3": "Ostateczne decyzje należą do władz rządowych."
+    },
+    "heading14": {
+      "title": "Zmiany w Warunkach i Zasadach",
+      "point1": "Możemy aktualizować lub zmieniać te warunki bez wcześniejszego powiadomienia.",
+      "point2": "Dalsze korzystanie z usług oznacza akceptację zaktualizowanych zasad."
+    },
+    "heading15": {
+      "title": "Ochrona Danych i Prywatność",
+      "point1": "EU Career Serwis stosuje rygorystyczne protokoły prywatności.",
+      "point2": "Dane są wykorzystywane wyłącznie do realizacji usług i nigdy nie są sprzedawane podmiotom trzecim.",
+      "point3": "Przestrzegamy RODO i polskich przepisów o ochronie danych."
+    },
+    "heading16": {
+      "title": "Zasady RODO i Dane Wrażliwe",
+      "point1": "Rzetelność, przejrzystość i zgodność z prawem.",
+      "point2": "Ograniczone wykorzystanie danych do określonych celów.",
+      "point3": "Dokładność i odpowiedzialność.",
+      "point4": "Szczególna ochrona danych wrażliwych (medycznych, biometrycznych, karnych).",
+      "point5": "Klienci mogą zażądać poprawienia lub usunięcia swoich danych osobowych."
+    },
+    "heading17": {
+      "title": "Pliki Cookie i Technologie Śledzące",
+      "point1": "Nasza strona używa plików cookie w celu zwiększenia funkcjonalności.",
+      "point2": "Klienci mogą wyłączyć pliki cookie, choć może to ograniczyć niektóre funkcje.",
+      "point3": "Nie używamy plików cookie do inwazyjnej reklamy."
+    },
+    "heading18": {
+      "title": "Prawa Osób, Których Dane Dotyczą",
+      "point1": "Zażądaj dostępu do swoich danych.",
+      "point2": "Popraw niedokładności.",
+      "point3": "Zażądaj usunięcia („prawo do bycia zapomnianym”).",
+      "point4": "Sprzeciw wobec określonych działań przetwarzania.",
+      "point5": "Złóż skargę do organów nadzorczych."
+    },
+    "heading19": {
+      "title": "Polityka Prywatności CCPA (Rezydenci Kalifornii)",
+      "point1": "Możesz zażądać szczegółów dotyczących zebranych danych.",
+      "point2": "Możesz zażądać usunięcia danych osobowych.",
+      "point3": "Nie sprzedajemy danych klientów.",
+      "point4": "Wnioski mogą być składane pisemnie lub elektronicznie."
+    },
+    "heading20": {
+      "title": "Znak Towarowy i Ochrona Prawna",
+      "point1": "EU Career Serwis, jego nazwa i logo są chronionymi znakami towarowymi.",
+      "point2": "Jakiekolwiek nadużycie, imitacja lub fałszywe przedstawienie są zabronione.",
+      "point3": "Aktywnie egzekwujemy nasze prawa zgodnie z prawem polskim, unijnym i międzynarodowym."
+    }
+  },
+  "refundPolicy": {
+    "mainHeading": "EU Career Serwis – Polityka Zwrotów i Usług",
+    "heading1": {
+      "title": "Kwalifikowalność do Zwrotu",
+      "point1": "Procenty zwrotu odnoszą się do całkowitej opłaty za usługę, a nie do płatności częściowych.",
+      "point2": "Zwroty są rozpatrywane tylko wtedy, gdy pełna opłata za usługę została uiszczona z góry i nie pozostaje żadne saldo.",
+      "point3": "Tylko wnioskodawcy spełniający wszystkie kryteria kwalifikowalności mają prawo do zwrotu."
+    },
+    "heading2": {
+      "title": "Wczesna Rejestracja i Zasady Imigracyjne",
+      "point1": "Zasady imigracyjne mogą się zmieniać w zależności od przyszłych oczekiwań.",
+      "point2": "Aby zabezpieczyć możliwości w ramach systemu limitów, klienci mogą rejestrować się wcześniej – nawet przed oficjalnym uznaniem ich kwalifikacji.",
+      "point3": "Rejestrując się z wyprzedzeniem, klienci akceptują odpowiedzialność za przygotowanie dokumentacji przed oficjalnymi ogłoszeniami.",
+      "point4": "Jeśli po aktualizacjach kryteria kwalifikowalności nie zostaną spełnione, mogą zostać rozważone opcje alternatywne."
+    },
+    "heading3": {
+      "title": "Polityka Obciążeń Zwrotnych (Chargeback)",
+      "point1": "Zero tolerancji dla obciążeń zwrotnych. Każdy klient kwestionujący prawidłową płatność zostanie trwale wykluczony z usług EU Career Serwis.",
+      "point2": "Zaległe salda zostaną przekazane do windykacji, a niezapłacone należności mogą zostać zgłoszone do biur kredytowych."
+    },
+    "heading4": {
+      "title": "Fakturowanie i Podatki",
+      "point1": "Wszystkie faktury zawierają opłatę konsultacyjną oraz obowiązujące podatki.",
+      "point2": "Zwroty, jeśli są możliwe, obliczane są wyłącznie na podstawie opłat za usługi, a nie opłat stron trzecich."
+    },
+    "heading5": {
+      "title": "Odrzucenie przez Władze Imigracyjne/Wizowe",
+      "point1": "Jeśli wniosek wizowy zostanie oficjalnie odrzucony, zwroty zostaną przetworzone zgodnie z podpisaną Umową.",
+      "point2": "Klienci muszą złożyć: Formularz żądania zwrotu, List/pieczątkę odmowy od władz, Dowód płatności (paragon).",
+      "point3": "Zwroty są przetwarzane w ciągu 35 dni roboczych od otrzymania wymaganych dokumentów.",
+      "point4": "Brak dokumentów sprawia, że klient nie kwalifikuje się do zwrotu."
+    },
+    "heading6": {
+      "title": "Opóźnienia i Usługi Stron Trzecich",
+      "point1": "EU Career Serwis nie ponosi odpowiedzialności za opóźnienia spowodowane przez strony trzecie (np. kurierów, konsulaty).",
+      "point2": "Opłaty za usługi nie podlegają zwrotowi w przypadku takich opóźnień."
+    },
+    "heading7": {
+      "title": "Niezwracalne Opłaty Zewnętrzne",
+      "point1": "Opłaty uiszczone na rzecz instytucji oceniających, urzędów imigracyjnych, ambasad czy centrów egzaminacyjnych nie podlegają zwrotowi w żadnych okolicznościach.",
+      "point2": "Nasza opłata za usługę obejmuje wyłącznie doradztwo i konsultacje EU Career Serwis."
+    },
+    "heading8": {
+      "title": "Płatności Online i Transakcje Kartą",
+      "point1": "Klienci muszą niezwłocznie poinformować EU Career Serwis o wszelkich problemach związanych z kartą.",
+      "point2": "Płatności dokonane kartą kredytową/przelewem online nie mogą być kwestionowane ani cofnięte po autoryzacji.",
+      "point3": "Jakiekolwiek nadużycia lub próby obciążeń zwrotnych będą zgłaszane odpowiednim organom."
+    },
+    "heading9": {
+      "title": "Opłaty za Usługi i Cennik",
+      "point1": "Opłaty za usługi opierają się na standardach EU Career Serwis, a nie na cenach rynkowych.",
+      "point2": "Reklamacje dotyczące opłat po rejestracji nie będą rozpatrywane."
+    },
+    "heading10": {
+      "title": "Dowód Środków Finansowych",
+      "point1": "Klienci są odpowiedzialni za spełnienie wymogów finansowych określonych przez władze imigracyjne.",
+      "point2": "Brak udokumentowania wystarczających środków wyklucza z prawa do zwrotu."
+    },
+    "heading11": {
+      "title": "Dokumentacja i Terminy",
+      "point1": "Klienci muszą dostarczyć wszystkie wymagane dokumenty w ciągu 30 dni od zgłoszenia prośby.",
+      "point2": "Niedotrzymanie tego terminu skutkuje utratą opłat za doradztwo/konsultacje."
+    },
+    "heading12": {
+      "title": "Komunikacja z Klientem",
+      "point1": "Klienci muszą poinformować EU Career Serwis o wszelkiej korespondencji lub aktualizacjach otrzymanych od urzędów imigracyjnych w ciągu 7 dni.",
+      "point2": "Brak powiadomienia unieważnia prawo do zwrotu."
+    },
+    "heading13": {
+      "title": "Rozmowy i Spotkania",
+      "point1": "Klienci są odpowiedzialni za uczestnictwo w rozmowach wizowych i ocenach na własny koszt.",
+      "point2": "Nieobecność na zaplanowanych spotkaniach lub brak stosowania się do instrukcji skutkuje utratą opłat."
+    },
+    "heading14": {
+      "title": "Wyłączenia z Zwrotu",
+      "point1": "Zwroty nie będą przyznane, jeśli klient nie stawi się na rozmowę imigracyjną.",
+      "point2": "Zwroty nie będą przyznane, jeśli nie zostaną dostarczone wymagane dokumenty medyczne, policyjne lub finansowe.",
+      "point3": "Zwroty nie będą przyznane, jeśli nie zostaną spełnione wymagania dotyczące testów językowych.",
+      "point4": "Zwroty nie będą przyznane, jeśli dodatkowe wymagane dokumenty zostaną dostarczone z opóźnieniem.",
+      "point5": "Zwroty nie będą przyznane, jeśli klient porzuci sprawę lub przerwie kontakt na ponad 30 dni."
+    },
+    "heading15": {
+      "title": "Test Językowy i Osoby na Utrzymaniu",
+      "point1": "Zdanie wymaganego testu językowego jest obowiązkowe.",
+      "point2": "Osoby na utrzymaniu (małżonek/dzieci powyżej 18 lat) muszą również spełniać kryteria językowe, jeśli dotyczy.",
+      "point3": "Niezdanie testu językowego nie uprawnia do zwrotu."
+    },
+    "heading16": {
+      "title": "Wycofanie i Rozwiązanie Usługi",
+      "point1": "EU Career Serwis zastrzega sobie prawo do zakończenia usług bez zwrotu, jeśli klient nie poda dokładnych lub prawdziwych informacji.",
+      "point2": "Usługi mogą zostać zakończone w przypadku nadużyć, oszustw lub braku współpracy.",
+      "point3": "Usługi mogą zostać zakończone, jeśli klient podejmuje działania utrudniające świadczenie usług."
+    },
+    "heading17": {
+      "title": "Ograniczenia Odpowiedzialności",
+      "point1": "Zatwierdzenia imigracyjne podlegają zasadom rządowym i systemom limitów.",
+      "point2": "Nawet jeśli kryteria są spełnione, wnioski mogą zostać odrzucone po osiągnięciu rocznych limitów.",
+      "point3": "EU Career Serwis nie gwarantuje zatrudnienia ani zatwierdzenia wiz."
+    },
+    "heading18": {
+      "title": "Czas Realizacji Zwrotów",
+      "point1": "Kwalifikujące się zwroty są realizowane w ciągu 15–30 dni roboczych."
+    },
+    "heading19": {
+      "title": "Obowiązki Klienta",
+      "point1": "Informowanie EU Career Serwis o wszelkich zmianach (adres, stan cywilny, sprawy sądowe, nowi członkowie rodziny itd.).",
+      "point2": "Podawanie dokładnych i aktualnych informacji przez cały czas.",
+      "point3": "Zapewnienie pełnej zgodności z wymaganiami wizowymi i dokumentacyjnymi."
+    },
+    "heading20": {
+      "title": "Poufność i Ochrona Danych",
+      "point1": "EU Career Serwis chroni wszystkie dane klientów zgodnie z obowiązującymi przepisami o ochronie prywatności.",
+      "point2": "Informacje są wykorzystywane wyłącznie do celów imigracyjnych i doradczych, nigdy do nieautoryzowanych zastosowań."
+    },
+    "heading21": {
+      "title": "Prawo Właściwe",
+      "point1": "EU Career Serwis działa zgodnie z prawem polskim.",
+      "point2": "Jurysdykcja w sprawach spornych należy wyłącznie do sądów w Warszawie, Województwo Mazowieckie."
+    },
+    "heading22": {
+      "title": "Siła Wyższa",
+      "point1": "EU Career Serwis nie ponosi odpowiedzialności za opóźnienia spowodowane wydarzeniami poza kontrolą (strajki, wojny, klęski żywiołowe, epidemie, ograniczenia rządowe itd.)."
+    },
+    "heading23": {
+      "title": "Ostateczna Umowa",
+      "point1": "Rejestrując się na usługi, klienci potwierdzają, że przeczytali, zrozumieli i zaakceptowali te warunki.",
+      "point2": "Zwroty są ściśle ograniczone do warunków określonych powyżej.",
+      "point3": "Po rozpoczęciu świadczenia usług wnioski o wycofanie lub zwrot nie będą akceptowane, chyba że są wyraźnie przewidziane w tej polityce."
+    }
   }
 }
