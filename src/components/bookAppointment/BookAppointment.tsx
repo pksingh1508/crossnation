@@ -125,7 +125,7 @@ export function BookAppointment() {
                 <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-yellow-600 mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-6 w-2xl lg:w-full mx-auto">
+              <div className="space-y-6 max-w-2xl lg:max-w-full mx-auto">
                 {meetings.map((meeting, index) => (
                   <motion.div
                     key={`job-seeker-${index}`}
@@ -205,7 +205,7 @@ export function BookAppointment() {
                 <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-amber-600 mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-6 w-2xl lg:w-full mx-auto">
+              <div className="space-y-6 max-w-2xl lg:max-w-full mx-auto">
                 {meetings.map((meeting, index) => (
                   <motion.div
                     key={`recruitment-${index}`}
