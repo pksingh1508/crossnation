@@ -340,12 +340,9 @@
       "userType": "I am",
       "userTypePlaceholder": "Select your role",
       "userTypes": {
-        "student": "Student",
         "jobseeker": "Job Seeker",
-        "agent": "Agent/Overseas Recruiter",
-        "employer": "Employer",
-        "institution": "Institution/University",
-        "investor": "Investor/Company Registration"
+        "agent": "Agent",
+        "employer": "Employer"
       },
       "subject": "Subject",
       "subjectPlaceholder": "Enter subject",

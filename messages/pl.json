@@ -340,12 +340,9 @@
       "userType": "Jestem",
       "userTypePlaceholder": "Wybierz swoją rolę",
       "userTypes": {
-        "student": "Student",
         "jobseeker": "Poszukujący Pracy",
         "agent": "Agent/Rekruter Zagraniczny",
-        "employer": "Pracodawca",
-        "institution": "Instytucja/Uniwersytet",
-        "investor": "Inwestor/Rejestracja Firmy"
+        "employer": "Pracodawca"
       },
       "subject": "Temat",
       "subjectPlaceholder": "Wprowadź temat",

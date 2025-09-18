@@ -340,12 +340,9 @@
       "userType": "Ich bin",
       "userTypePlaceholder": "Wählen Sie Ihre Rolle",
       "userTypes": {
-        "student": "Student",
         "jobseeker": "Arbeitssuchender",
-        "agent": "Agent/Ausländischer Personalvermittler",
-        "employer": "Arbeitgeber",
-        "institution": "Institution/Universität",
-        "investor": "Investor/Unternehmensregistrierung"
+        "agent": "Agent/Ausländischer",
+        "employer": "Arbeitgeber"
       },
       "subject": "Betreff",
       "subjectPlaceholder": "Betreff eingeben",

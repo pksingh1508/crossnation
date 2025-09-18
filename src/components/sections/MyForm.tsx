@@ -236,21 +236,12 @@ export function MyForm() {
                 <SelectValue placeholder={t("userTypePlaceholder")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="student">
-                  {t("userTypes.student")}
-                </SelectItem>
                 <SelectItem value="jobseeker">
                   {t("userTypes.jobseeker")}
                 </SelectItem>
                 <SelectItem value="agent">{t("userTypes.agent")}</SelectItem>
                 <SelectItem value="employer">
                   {t("userTypes.employer")}
-                </SelectItem>
-                <SelectItem value="institution">
-                  {t("userTypes.institution")}
-                </SelectItem>
-                <SelectItem value="investor">
-                  {t("userTypes.investor")}
                 </SelectItem>
               </SelectContent>
             </Select>
@@ -272,7 +263,7 @@ export function MyForm() {
           >
             {t("termsText")}{" "}
             <a
-              href={`/${locale}/terms-and-conditions`}
+              href={`/${locale}/terms-conditions`}
               className="text-yellow-600 hover:text-yellow-700 underline font-medium"
               target="_blank"
               rel="noopener noreferrer"

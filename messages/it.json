@@ -340,12 +340,9 @@
       "userType": "Io sono",
       "userTypePlaceholder": "Seleziona il tuo ruolo",
       "userTypes": {
-        "student": "Studente",
         "jobseeker": "Candidato",
         "agent": "Agente/Recruiter estero",
-        "employer": "Datore di lavoro",
-        "institution": "Istituzione/Università",
-        "investor": "Investitore/Registrazione azienda"
+        "employer": "Datore di lavoro"
       },
       "subject": "Oggetto",
       "subjectPlaceholder": "Inserisci l'oggetto",

@@ -242,21 +242,12 @@ export function ContactForm() {
                 <SelectValue placeholder={t("userTypePlaceholder")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="student">
-                  {t("userTypes.student")}
-                </SelectItem>
                 <SelectItem value="jobseeker">
                   {t("userTypes.jobseeker")}
                 </SelectItem>
                 <SelectItem value="agent">{t("userTypes.agent")}</SelectItem>
                 <SelectItem value="employer">
                   {t("userTypes.employer")}
-                </SelectItem>
-                <SelectItem value="institution">
-                  {t("userTypes.institution")}
-                </SelectItem>
-                <SelectItem value="investor">
-                  {t("userTypes.investor")}
                 </SelectItem>
               </SelectContent>
             </Select>
