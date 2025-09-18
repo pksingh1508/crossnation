@@ -70,13 +70,14 @@ export function Footer() {
   const termsLinks = [
     { href: "/privacy-policy", label: t("bottom.privacyPolicy") },
     { href: "/refund-policy", label: t("bottom.refundPolicy") },
+    { href: "/terms-conditions", label: t("bottom.termsOfService") },
     { href: "/antiFraud-policy", label: t("bottom.antiFraudPolicy") },
   ];
 
   return (
     <footer className="mt-auto bg-gray-100 text-gray-800 border-t border-gray-200">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-8 lg:px-16 xl:px-24 py-8">
+      <div className="container mx-auto px-8 lg:px-16 py-8">
         <div className="max-w-7xl mx-auto p-0 lg:pl-4">
           {/* First Row - 4 Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">

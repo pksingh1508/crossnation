@@ -784,7 +784,7 @@
       "info": "Company Info",
       "story": "Our Success Story",
       "media": "Our Social Media",
-      "condition": "Terms & Conditions"
+      "condition": "Our Policy"
     },
     "successStory": {
       "story1": "Success Stories",
@@ -1119,6 +1119,237 @@
       "point1": "By signing up for services, clients confirm they have read, understood, and accepted these terms.",
       "point2": "Refunds are strictly limited to the conditions outlined above.",
       "point3": "Once services have started, withdrawal or refund requests will not be accepted unless specifically covered under this policy."
+    }
+  },
+  "antiFraudPolicy": {
+    "mainHeading": "EU Career Serwis - Payment and Service Policy",
+    "heading1": {
+      "title": "Making Payments to EU Career Serwis",
+      "paragraph1": "All payments must be made directly to EU Career Serwis. Upon payment, clients may request an official receipt. The company always issues receipts for every payment received.",
+      "paragraph2": "All payments are also acknowledged in our central software system. For any queries related to your fees or payment details, you may contact us at info@eucareerserwis.pl"
+    },
+    "heading2": {
+      "title": "Payments to Employees",
+      "paragraph1": "Clients are strictly advised not to make any additional payments to EU Career Serwis employees.",
+      "paragraph2": "If any staff member offers to prepare your profile, arrange documents, or request money for personal services, please inform management immediately so that corrective measures can be taken.",
+      "paragraph3": {
+        "subTitle": "Responsibility",
+        "subPara1": "The company will not be liable for any verbal or written agreements you enter into with an employee or their reference.",
+        "subPara2": "If you have already made such payments, EU Career Serwis cannot be held responsible for the outcome."
+      }
+    },
+    "heading3": {
+      "title": "Vendors Referred by Employees",
+      "paragraph1": "EU Career Serwis does not authorise staff to recommend vendors.",
+      "paragraph2": "Using vendors suggested by an employee is discouraged, as it may expose clients to fraud.",
+      "paragraph3": "The company will not be responsible for any financial losses resulting from such referrals."
+    },
+    "heading4": {
+      "title": "Accuracy of Information and Documentation",
+      "paragraph1": "EU Career Serwis processes cases solely based on the information provided by clients, assuming it is truthful and accurate.",
+      "paragraph2": "The company does not prepare documents on behalf of applicants.",
+      "paragraph3": {
+        "subTitle": "Fraudulent Documentation",
+        "subPara1": "Submission of false, misleading, or fraudulent documents is strictly prohibited.",
+        "subPara2": "Cases based on fraudulent data will not be accepted, and EU Career Serwis cannot be held accountable."
+      }
+    },
+    "heading5": {
+      "title": "Preventing Fraud and Scams",
+      "paragraph1": "Dishonest staff may attempt to persuade applicants to submit forged documents for visa applications. This is strictly prohibited and could result in rejection and legal investigation.",
+      "paragraph2": "Employees cannot influence visa application processing times or decisions, regardless of any payments or promises. Visa outcomes are determined only by authorised visa officers.",
+      "paragraph3": {
+        "subTitle": "Scam Awareness",
+        "subPara1": "Beware of individuals posing as visa officers. Genuine officers conduct meetings exclusively in official embassy or consulate premises and never solicit payments.",
+        "subPara2": "Be cautious of fake websites, job scams, or offers that seem 'too good to be true'."
+      }
+    },
+    "heading6": {
+      "title": "Fraud Consequences in Europe",
+      "paragraph1": "Some applicants have been misled by unethical staff into providing false documents or entering illegal arrangements. Such practices carry serious risks.",
+      "paragraph2": "Immigration authorities in Poland, Portugal, Germany, and other EU countries enforce zero tolerance for fraud.",
+      "paragraph3": {
+        "subTitle": "Consequences",
+        "subPara1": "Immediate visa refusal and a ten-year entry ban.",
+        "subPara2": "Potential legal action under criminal law. Applicants remain personally responsible for their visa submissions."
+      }
+    },
+    "heading7": {
+      "title": "Company Position on Honesty",
+      "paragraph1": "EU Career Serwis management strongly advises clients to provide only truthful and accurate details when completing their profiles.",
+      "paragraph2": "Fraudulent activity or misrepresentation can lead to a long-term ban and legal penalties.",
+      "paragraph3": "Clients must remain vigilant against individuals who attempt to exploit their situation."
+    },
+    "heading8": {
+      "title": "Employment and Education Services",
+      "paragraph1": "EU Career Serwis is a leading overseas career consulting firm in Poland and one of the largest B2C and B2B immigration consultancies in Europe.",
+      "paragraph2": "Company Registration Numbers: REGON: 382604058, NIP: 5252780856, KRS: 0000770916.",
+      "paragraph3": {
+        "subTitle": "Collaboration",
+        "subPara1": "The company collaborates with international universities, employers, and placement agencies to facilitate opportunities.",
+        "subPara2": "However, EU Career Serwis does not guarantee employment or university admission, nor does it charge candidates for confirmations."
+      }
+    },
+    "heading9": {
+      "title": "Guarantees and Limitations",
+      "paragraph1": "EU Career Serwis cannot guarantee a job offer, university admission, or visa outcome.",
+      "paragraph2": "Final decisions rest exclusively with immigration authorities, employers, and universities.",
+      "paragraph3": "Employees are not authorised to make promises about guaranteed outcomes."
+    },
+    "heading10": {
+      "title": "Contact Information",
+      "paragraph1": "For questions or complaints, clients may reach out to our Service Integrity Officer at: +48 22 208 5497.",
+      "paragraph2": "Our Job Search Service for students includes Resume Writing, LinkedIn Profile Optimisation, and Resume Marketing.",
+      "paragraph3": "This is not a placement or recruitment service and does not guarantee employment or admission."
+    },
+    "heading11": {
+      "title": "Legal Compliance",
+      "paragraph1": "All services are delivered exclusively through our Registered Centres.",
+      "paragraph2": "Official company websites operate across more than five European countries.",
+      "paragraph3": "Registration Numbers: REGON: 382604058, NIP: 5252780856, KRS: 0000770916."
+    }
+  },
+  "termsAndConditions": {
+    "mainHeading": "EU Career Serwis – Terms and Conditions",
+    "heading1": {
+      "title": "Company Overview and Data Protection Commitment",
+      "paragraph1": "EU Career Serwis (NIP , KRS:  , REGON:  ) is committed to maintaining the highest standards of confidentiality and privacy. We operate in full compliance with European and Polish data protection regulations, including the General Data Protection Regulation (GDPR).",
+      "paragraph2": "All reasonable steps are taken to protect client information from unauthorized access, misuse, loss, alteration, or disclosure.",
+      "paragraph3": "Data is collected exclusively for business operations, legal compliance, client communication, and service improvement.",
+      "paragraph4": "Client data will never be disclosed to third parties without explicit consent, unless required by law.",
+      "paragraph5": "By engaging with EU Career Serwis, clients acknowledge and agree to these terms and our data protection practices.",
+      "subParagraphs": {}
+    },
+    "heading2": {
+      "title": "Scope of Services and Client Eligibility",
+      "paragraph1": "EU Career Serwis provides consultancy and advisory support in immigration, legal, and regulatory processes.",
+      "paragraph2": "Services include assistance with document preparation, application guidance, and procedural support.",
+      "paragraph3": "Service scope may differ depending on the client’s individual needs.",
+      "paragraph4": "All immigration and regulatory outcomes remain at the sole discretion of competent authorities.",
+      "paragraph5": "EU Career Serwis does not guarantee successful immigration approvals, employment offers, or related outcomes.",
+      "paragraph6": "Services are advisory in nature and are not a substitute for formal legal advice.",
+      "subParagraphs": {}
+    },
+    "heading3": {
+      "title": "Payment Conditions",
+      "paragraph1": "All service fees must be paid in full before commencement of the consulting process.",
+      "paragraph2": "EU Career Serwis charges are separate from external costs such as fees charged by:",
+      "paragraph3": "Clients are solely responsible for covering these third-party fees.",
+      "subParagraphs": {
+        "subParagraph1": "Immigration authorities",
+        "subParagraph2": "Consulates",
+        "subParagraph3": "Testing centers",
+        "subParagraph4": "Other regulatory entities"
+      }
+    },
+    "heading4": {
+      "title": "Refund Eligibility",
+      "paragraph1": "Refund eligibility applies only to clients who have paid the full service fee without outstanding balances.",
+      "paragraph2": "Refunds are limited to consulting fees paid to EU Career Serwis and exclude non-refundable taxes or administrative charges.",
+      "paragraph3": "Refunds may be considered if an application is officially rejected by the relevant authority, provided that:",
+      "paragraph4": "Approved refunds are processed within 15–30 working days, subject to potential external delays.",
+      "subParagraphs": {
+        "subParagraph1": "The client submits a complete Online Refund Claim Form.",
+        "subParagraph2": "Supporting documents, such as a formal rejection letter, are provided."
+      }
+    },
+    "heading5": {
+      "title": "Force Majeure and Exceptional Circumstances",
+      "paragraph1": "EU Career Serwis is not responsible for service disruptions caused by events outside its control, including:",
+      "paragraph2": "Natural disasters",
+      "paragraph3": "Pandemics",
+      "paragraph4": "Acts of war or terrorism",
+      "paragraph5": "Government restrictions",
+      "paragraph6": "Significant changes in immigration policy",
+      "paragraph7": "In such cases, services will resume once feasible. Refunds are not issued for delays caused by uncontrollable circumstances.",
+      "paragraph8": "If a procedural issue on the company’s part affects a client’s case, EU Career Serwis may review the matter in good faith and, at its discretion, provide a partial refund or alternative resolution.",
+      "subParagraphs": {}
+    },
+    "heading6": {
+      "title": "Third-Party Fees and Charges",
+      "paragraph1": "Service fees paid to EU Career Serwis are entirely separate from third-party fees (immigration authorities, testing centers, consulates, etc.).",
+      "paragraph2": "These external charges remain the sole responsibility of the client.",
+      "paragraph3": "EU Career Serwis fees are determined independently to reflect service quality and cannot be contested once registration is completed.",
+      "paragraph4": "Refunds or transfers of services are not permitted if the client voluntarily discontinues services.",
+      "subParagraphs": {}
+    },
+    "heading7": {
+      "title": "Confidentiality and Data Protection Obligations",
+      "paragraph1": "EU Career Serwis guarantees full compliance with GDPR standards, ensuring client data remains confidential and secure.",
+      "paragraph2": "Clients must provide accurate and complete information relevant to the immigration process.",
+      "paragraph3": "Withholding critical details (e.g., criminal history, financial background) may:",
+      "paragraph4": "Transparency and cooperation are required to ensure effective consultancy.",
+      "subParagraphs": {
+        "subParagraph1": "Negatively impact the immigration case.",
+        "subParagraph2": "Lead to disqualification from refund eligibility."
+      }
+    },
+    "heading8": {
+      "title": "Limited Liability in Case of Immigration Policy Changes",
+      "paragraph1": "EU Career Serwis cannot control or predict government policy changes, quota limits, or procedural updates.",
+      "paragraph2": "Such changes may affect:",
+      "paragraph3": "Clients accept that EU Career Serwis is not responsible for visa denials or delays resulting from policy or regulatory changes.",
+      "paragraph4": "Refunds will not be issued under these circumstances.",
+      "subParagraphs": {
+        "subParagraph1": "Eligibility criteria",
+        "subParagraph2": "Timelines",
+        "subParagraph3": "Final outcomes"
+      }
+    },
+    "heading9": {
+      "title": "No Guarantee of Outcome or Employment",
+      "paragraph1": "EU Career Serwis cannot guarantee:",
+      "paragraph2": "Final decisions lie exclusively with relevant government authorities, employers, and universities.",
+      "paragraph3": "Clients acknowledge that no consultant, employee, or partner of EU Career Serwis may lawfully promise guaranteed results.",
+      "subParagraphs": {
+        "subParagraph1": "Immigration approval",
+        "subParagraph2": "Employment placement",
+        "subParagraph3": "University admission"
+      }
+    },
+    "heading10": {
+      "title": "Anti-Chargeback Policy",
+      "paragraph1": "Clients agree not to initiate chargebacks or cancel payments through their bank or financial institution.",
+      "paragraph2": "Any attempt to do so will result in:",
+      "subParagraphs": {
+        "subParagraph1": "Permanent blacklisting from EU Career Serwis services.",
+        "subParagraph2": "Collection proceedings for outstanding balances.",
+        "subParagraph3": "Recovery of related costs through legal action."
+      }
+    },
+    "heading11": {
+      "title": "Communication and Timely Updates",
+      "paragraph1": "Clients are required to promptly update EU Career Serwis regarding:",
+      "paragraph2": "Timely communication is essential to avoid:",
+      "subParagraphs": {
+        "subParagraph1": "Any official communication from immigration or regulatory authorities.",
+        "subParagraph2": "Changes to personal details or contact information.",
+        "subParagraph3": "Service delays",
+        "subParagraph4": "Interruptions",
+        "subParagraph5": "Loss of refund eligibility"
+      }
+    },
+    "heading12": {
+      "title": "Professional Integrity and Anti-Defamation Clause",
+      "paragraph1": "Clients are encouraged to raise grievances directly with the EU Career Serwis support team for resolution.",
+      "paragraph2": "Any attempt to publicly defame, discredit, or damage the reputation of EU Career Serwis without seeking resolution first may result in:",
+      "paragraph3": "EU Career Serwis is committed to addressing issues professionally and constructively.",
+      "subParagraphs": {
+        "subParagraph1": "Termination of services.",
+        "subParagraph2": "Loss of refund eligibility."
+      }
+    },
+    "heading13": {
+      "title": "Final Agreement and Jurisdiction",
+      "paragraph1": "By accepting these Terms and Conditions, clients confirm their understanding and agreement regarding:",
+      "paragraph2": "All disputes fall under the jurisdiction of Polish courts and will be governed by Polish law.",
+      "paragraph3": "Clients are encouraged to request clarification on any term before engaging services.",
+      "paragraph4": "For assistance or inquiries, clients may contact EU Career Serwis at info@eucareerserwis.com.",
+      "subParagraphs": {
+        "subParagraph1": "Refund policies",
+        "subParagraph2": "Data protection commitments",
+        "subParagraph3": "Client responsibilities"
+      }
     }
   }
 }

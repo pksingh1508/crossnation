@@ -30,9 +30,7 @@ export function HeroCustomSection() {
         paragraph1={tWork("paragraph1")}
         paragraph2={tWork("paragraph2")}
         buttons={workButtonsData}
-        imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__53435.webp"
-        }
+        imageSrc={"https://ik.imagekit.io/eucareerserwis/home/work.webp"}
         imageAlt={tWork("imageAlt")}
       />
 

@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
+import AntiFraudPolicy from "@/components/Terms_Conditions/AntiFraudPolicy";
 
 export const metadata: Metadata = {
   title: "Anti-Fraud Policy | CountryNation",
@@ -7,11 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function AntiFraudPolicyPage() {
-  // const t = useTranslations("policies.antiFraud");
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-100">
-      <h1>Anti-Fraud Policy</h1>
-    </div>
-  );
+  return <AntiFraudPolicy />;
 }

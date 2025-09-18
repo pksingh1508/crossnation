@@ -105,17 +105,8 @@ export function BookAppointment() {
 
         {/* Second Section - Meeting Booking Cards */}
         <motion.section variants={itemVariants}>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Choose Your Meeting
-            </h2>
-            <p className="text-xl text-gray-600">
-              Select the perfect consultation package for your needs
-            </p>
-          </div>
-
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Left Side - Job Seeker Advisory */}
             <div>
               <div className="text-center mb-8">
@@ -144,7 +135,7 @@ export function BookAppointment() {
                       </div>
                     )}
 
-                    <div className="flex items-center gap-6">
+                    <div className="flex gap-6">
                       {/* Icon */}
                       <div
                         className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 ${
@@ -156,24 +147,26 @@ export function BookAppointment() {
                         <div className="text-white">{meeting.icon}</div>
                       </div>
 
-                      <div className="flex-grow">
-                        {/* Meeting Name */}
-                        <h4 className="text-xl font-bold text-gray-800 mb-2">
-                          {meeting.name}
-                        </h4>
+                      <div className="flex flex-row flex-1 gap-4 justify-between">
+                        <div>
+                          {/* Meeting Name */}
+                          <h4 className="text-md md:text-xl font-bold text-gray-800 mb-2">
+                            {meeting.name}
+                          </h4>
 
-                        {/* Duration and Price */}
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 text-gray-500 mr-1" />
-                            <span className="text-gray-600 text-sm font-medium">
-                              {meeting.duration} {t("min")}
-                            </span>
-                          </div>
-                          <div>
-                            <span className="text-2xl font-bold text-gray-800">
-                              €{meeting.price}
-                            </span>
+                          {/* Duration and Price */}
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="flex items-center">
+                              <Clock className="w-4 h-4 text-gray-500 mr-1" />
+                              <span className="text-gray-600 text-sm font-medium">
+                                {meeting.duration} {t("min")}
+                              </span>
+                            </div>
+                            <div>
+                              <span className="text-2xl font-bold text-gray-800">
+                                €{meeting.price}
+                              </span>
+                            </div>
                           </div>
                         </div>
 
@@ -224,7 +217,7 @@ export function BookAppointment() {
                       </div>
                     )}
 
-                    <div className="flex items-center gap-6">
+                    <div className="flex gap-6">
                       {/* Icon */}
                       <div
                         className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 ${
@@ -236,24 +229,26 @@ export function BookAppointment() {
                         <div className="text-white">{meeting.icon}</div>
                       </div>
 
-                      <div className="flex-grow">
-                        {/* Meeting Name */}
-                        <h4 className="text-xl font-bold text-gray-800 mb-2">
-                          {meeting.name}
-                        </h4>
+                      <div className="flex flex-row flex-1 gap-4 justify-between">
+                        <div>
+                          {/* Meeting Name */}
+                          <h4 className="text-md md:text-xl font-bold text-gray-800 mb-2">
+                            {meeting.name}
+                          </h4>
 
-                        {/* Duration and Price */}
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 text-gray-500 mr-1" />
-                            <span className="text-gray-600 text-sm font-medium">
-                              {meeting.duration} {t("min")}
-                            </span>
-                          </div>
-                          <div>
-                            <span className="text-2xl font-bold text-gray-800">
-                              €{meeting.price}
-                            </span>
+                          {/* Duration and Price */}
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="flex items-center">
+                              <Clock className="w-4 h-4 text-gray-500 mr-1" />
+                              <span className="text-gray-600 text-sm font-medium">
+                                {meeting.duration} {t("min")}
+                              </span>
+                            </div>
+                            <div>
+                              <span className="text-2xl font-bold text-gray-800">
+                                €{meeting.price}
+                              </span>
+                            </div>
                           </div>
                         </div>
 
