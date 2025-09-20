@@ -56,12 +56,12 @@ export function Hero() {
             </div>
 
             {/* First Row Buttons */}
-            <div className="grid grid-cols-2 gap-2 md:gap-6 px-3 lg:px-0 w-full lg:w-2/3">
+            <div className="grid grid-cols-2 gap-2 md:gap-3 px-3 lg:px-0 w-full lg:w-2/3">
               <RippleButton
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/recruiter`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
               >
                 {t("btn1")}
               </RippleButton>
@@ -69,7 +69,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/jobseeker`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
               >
                 {t("btn2")}
               </RippleButton>
@@ -78,7 +78,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/migrate`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
               >
                 {t("btn3")}
               </RippleButton>
@@ -86,7 +86,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/employer`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
               >
                 {t("btn4")}
               </RippleButton>
@@ -96,18 +96,21 @@ export function Hero() {
             <div className="flex items-center gap-3 mt-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-7 h-7 text-amber-600"
+                className="w-9 h-9 text-yellow-500 border-2 border-yellow-500 rounded-full p-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                strokeWidth="2"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 10h.01M12 14h.01M16 10h.01M21 16v-2a4 4 0 00-3-3.87V9a7 7 0 10-14 0v1.13A4 4 0 001 14v2m20 0a2 2 0 01-2 2H5a2 2 0 01-2-2"
-                />
+                {/* Left person */}
+                <circle cx="7" cy="7" r="3" />
+                <path d="M4 20v-1a4 4 0 014-4h2a4 4 0 014 4v1" />
+
+                {/* Right person */}
+                <circle cx="17" cy="7" r="3" />
+                <path d="M14 20v-1a4 4 0 014-4h2a4 4 0 014 4v1" />
               </svg>
+
               <div>
                 <p
                   className={`text-gray-800 text-base font-medium ${fontInter.className}`}
@@ -115,7 +118,7 @@ export function Hero() {
                   {t("cta1")}
                 </p>
                 <button
-                  className={`text-red-600 text-base font-semibold hover:underline ${fontInter.className}`}
+                  className={`text-yellow-500 text-base font-semibold hover:underline ${fontInter.className}`}
                 >
                   <Link href={`/${locale}/contact`}>{t("cta2")}</Link>
                 </button>

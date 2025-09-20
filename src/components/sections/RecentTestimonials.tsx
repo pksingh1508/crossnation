@@ -1,50 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, easeOut, Variants } from "framer-motion";
-import { TestimonialItem, TestimonialResponse } from "@/lib/strapi";
+import { TestimonialItem } from "@/lib/strapi";
 import { SingleTestimonial } from "./SingleTestimonial";
-import { Loader2, Users, MessageCircle } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 export function RecentTestimonials() {
-  const [testimonials, setTestimonials] = useState<TestimonialItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const testimonialData: TestimonialItem[] = [
+    {
+      id: 1,
+      name: "Rolando Mocoy",
+      what_they_say:
+        "Thanks to EU Career Serwis, my work permit journey was smooth and well-organized. From paperwork to embassy coordination, their expert team handled everything with care. Their knowledge and support truly",
+      user_image: {
+        url: "https://ik.imagekit.io/eucareerserwis/home/insp-4.webp",
+      },
+    },
+    {
+      id: 2,
+      user_image: {
+        url: "https://ik.imagekit.io/eucareerserwis/home/workPermit.webp",
+      },
+    },
+    {
+      id: 3,
+      user_image: {
+        url: "https://ik.imagekit.io/eucareerserwis/home/stamp.webp",
+      },
+    },
+  ];
   const locale = useLocale();
   const t = useTranslations("testimonials");
-
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const response = await fetch(
-          `/api/recent-testimonial?locale=${locale}&pageSize=3`
-        );
-
-        if (!response.ok) {
-          throw new Error(
-            `Failed to fetch testimonials: ${response.statusText}`
-          );
-        }
-
-        const data: TestimonialResponse = await response.json();
-        setTestimonials(data.data || []);
-      } catch (err) {
-        console.error("Error fetching testimonials:", err);
-        setError(
-          err instanceof Error ? err.message : "Failed to fetch testimonials"
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTestimonials();
-  }, [locale]);
 
   // Animation variants for container
   const containerVariants: Variants = {
@@ -71,60 +57,6 @@ export function RecentTestimonials() {
     ease: easeOut,
   };
 
-  if (loading) {
-    return (
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center justify-center min-h-[400px]">
-              <Loader2 className="w-12 h-12 animate-spin text-amber-500 mb-4" />
-              <p className="text-gray-600 text-lg">{t("loading")}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                <MessageCircle className="w-8 h-8 text-red-500" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {t("error") || "Error loading testimonials"}
-              </h3>
-              <p className="text-gray-600 max-w-md">{error}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (!testimonials.length) {
-    return (
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                <Users className="w-8 h-8 text-gray-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {t("noData") || "No testimonials available"}
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section className="py-16 bg-white relative overflow-hidden">
       {/* Background decorations */}
@@ -148,7 +80,7 @@ export function RecentTestimonials() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               {t("heading") || "Testimonials"}
             </h2>
-            <div className="h-1 bg-amber-600 rounded w-24 mx-auto"></div>
+            <div className="h-2 bg-yellow-500 rounded w-24 mx-auto"></div>
           </motion.div>
 
           {/* Testimonials Grid */}
@@ -159,7 +91,7 @@ export function RecentTestimonials() {
             viewport={{ once: true, margin: "-100px" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
-            {testimonials.map((testimonial, index) => (
+            {testimonialData.map((testimonial, index) => (
               <SingleTestimonial
                 key={testimonial.id}
                 testimonial={testimonial}

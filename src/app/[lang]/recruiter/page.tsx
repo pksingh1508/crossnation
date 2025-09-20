@@ -5,7 +5,6 @@ import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import { RecruiterContent } from "@/components/recruiter/RecruiterContent";
 import { RecentTestimonials } from "@/components/sections/RecentTestimonials";
 import { RecentBlog } from "@/components/sections/RecentBlog";
-import { SolveQuery } from "@/components/sections/SolveQuery";
 import { NewsSection } from "@/components/immigration_faq/NewsSection";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function RecruiterPage() {
       <RecentTestimonials />
       <RecentBlog />
       <NewsSection />
-      <SolveQuery />
       <GovernmentLinks />
     </div>
   );

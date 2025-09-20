@@ -5,7 +5,6 @@ import { EmployerContent } from "@/components/employer/EmployerContent";
 import { RecentTestimonials } from "@/components/sections/RecentTestimonials";
 import { RecentBlog } from "@/components/sections/RecentBlog";
 import { NewsSection } from "@/components/immigration_faq/NewsSection";
-import { SolveQuery } from "@/components/sections/SolveQuery";
 
 export const metadata: Metadata = {
   title: "Employer Services | CountryNation",
@@ -21,7 +20,6 @@ export default function EmployerPage() {
       <RecentTestimonials />
       <RecentBlog />
       <NewsSection />
-      <SolveQuery />
       <GovernmentLinks />
     </div>
   );

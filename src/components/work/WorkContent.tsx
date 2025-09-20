@@ -7,7 +7,6 @@ import WorkInfo from "./WorkInfo";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import { RecentBlog } from "../sections/RecentBlog";
 import { NewsSection } from "../immigration_faq/NewsSection";
-import { SolveQuery } from "../sections/SolveQuery";
 
 export function WorkContent() {
   const tPoland = useTranslations("works.steps.poland");
@@ -89,7 +88,6 @@ export function WorkContent() {
       <RecentTestimonials />
       <RecentBlog />
       <NewsSection />
-      <SolveQuery />
       {/* Government Links Section */}
       <GovernmentLinks />
     </>

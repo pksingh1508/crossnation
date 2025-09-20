@@ -1,54 +1,8 @@
 "use client";
 
 import { useTranslations } from "@/hooks/useTranslations";
-import { useEffect, useState } from "react";
 import { TrendingUp } from "lucide-react";
 import Image from "next/image";
-
-interface CounterProps {
-  target: number;
-  suffix?: string;
-  duration?: number;
-}
-
-function Counter({ target, suffix = "", duration = 2000 }: CounterProps) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const startTime = Date.now();
-    const startValue = 0;
-
-    const updateCount = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentCount = Math.floor(
-        startValue + (target - startValue) * easeOutQuart
-      );
-
-      setCount(currentCount);
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCount);
-      }
-    };
-
-    const timer = setTimeout(() => {
-      requestAnimationFrame(updateCount);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [target, duration]);
-
-  return (
-    <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-amber-600">
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 export function About() {
   const t = useTranslations("about");
@@ -97,29 +51,6 @@ export function About() {
 
                   <p className="text-lg leading-relaxed">
                     {t("description.paragraph2")}
-                  </p>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-8">
-                {/* Years Experience */}
-                <div className="text-center lg:text-left">
-                  <div className="mb-2">
-                    <Counter target={15} suffix="+" />
-                  </div>
-                  <p className="text-gray-600 font-medium">
-                    {t("stats.experience")}
-                  </p>
-                </div>
-
-                {/* Success Rate */}
-                <div className="text-center lg:text-left">
-                  <div className="mb-2">
-                    <Counter target={99} suffix="%" />
-                  </div>
-                  <p className="text-gray-600 font-medium">
-                    {t("stats.successRate")}
                   </p>
                 </div>
               </div>
