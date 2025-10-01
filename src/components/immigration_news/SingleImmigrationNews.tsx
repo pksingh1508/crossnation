@@ -116,7 +116,7 @@ export function SingleImmigrationNews({
 
             {/* Title */}
             <Link href={newsUrl}>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-amber-600 transition-colors duration-200 cursor-pointer">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-amber-500 transition-colors duration-200 cursor-pointer">
                 {data.title}
               </h3>
             </Link>
@@ -128,7 +128,7 @@ export function SingleImmigrationNews({
 
             {/* Read more link */}
             <Link href={newsUrl}>
-              <div className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold text-sm group-hover:gap-3 transition-all duration-200 cursor-pointer">
+              <div className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-600 font-semibold text-sm group-hover:gap-3 transition-all duration-200 cursor-pointer">
                 <span>Read Full Article</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </div>

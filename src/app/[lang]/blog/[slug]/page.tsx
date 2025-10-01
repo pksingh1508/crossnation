@@ -27,6 +27,12 @@ import {
 import { Button } from "@/components/ui/button";
 import "highlight.js/styles/github.css";
 import { LatestBlogPost } from "@/components/blogs/LatestBlogPost";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import {
+  generateArticleSchema,
+  organizationSchema,
+} from "@/lib/seo/structuredData";
 
 interface SingleBlogPageProps {
   params: Promise<{ slug: string; lang: string }>;
@@ -149,8 +155,7 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50/30 flex items-center justify-center">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-purple-500 mx-auto mb-4" />
-          <p className="text-gray-600 text-lg">Loading blog post...</p>
+          <Loader2 className="w-12 h-12 animate-spin text-yellow-500 mx-auto mb-4" />
         </div>
       </div>
     );
@@ -180,10 +185,30 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
 
   const tags = parseTags(blogData.tags);
 
+  // Generate structured data for the blog post
+  const articleSchema = generateArticleSchema(
+    blogData.title,
+    blogData.contents.substring(0, 160) + "...",
+    blogData.updatedAt,
+    blogData.updatedAt,
+    blogData.blog_image || undefined
+  );
+
+  const structuredData = [organizationSchema, articleSchema];
+
+  const breadcrumbItems = [
+    { name: "Blog", href: `/${locale}/blog` },
+    { name: blogData.title, href: `/${locale}/blog/${blogData.slug}` },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50/30 flex items-center justify-center">
+      <StructuredData data={structuredData} />
       <div className="max-w-7xl grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-4 mx-auto">
         <article className="container mx-auto px-2 py-12">
+          <div className="mb-6">
+            <Breadcrumbs items={breadcrumbItems} />
+          </div>
           {/* Featured Image */}
           {blogData.blog_image && (
             <motion.div

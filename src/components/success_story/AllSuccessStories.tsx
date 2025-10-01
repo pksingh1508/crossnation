@@ -239,7 +239,7 @@ export function AllSuccessStories() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
-              <Loader2 className="w-12 h-12 animate-spin text-purple-500 mb-4" />
+              <Loader2 className="w-12 h-12 animate-spin text-yellow-500 mb-4" />
             </div>
           </div>
         </div>
@@ -289,8 +289,8 @@ export function AllSuccessStories() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-purple-200 rounded-full px-6 py-3 mb-6"
             >
-              <Users className="w-5 h-5 text-purple-600" />
-              <span className="text-purple-700 font-semibold text-sm uppercase tracking-wide">
+              <Users className="w-5 h-5 text-yellow-600" />
+              <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wide">
                 {t("title")}
               </span>
             </motion.div>
@@ -380,7 +380,7 @@ export function AllSuccessStories() {
           {/* Loading overlay for pagination */}
           {loading && (
             <div className="flex items-center justify-center py-8">
-              <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+              <Loader2 className="w-8 h-8 animate-spin text-yellow-500" />
             </div>
           )}
 

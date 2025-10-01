@@ -128,19 +128,6 @@ export function AllPermitImage() {
 
       const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
 
-      // Debug logging
-      console.log("Scroll Debug:", {
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-        distanceFromBottom,
-        hasNextPage,
-        loadingMore,
-        loading,
-        currentPage,
-        totalImages: permitImages.length,
-      });
-
       // Load more when user is within 300px of the bottom
       if (distanceFromBottom <= 300) {
         console.log(
@@ -277,7 +264,7 @@ export function AllPermitImage() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
-              <Loader2 className="w-12 h-12 animate-spin text-purple-500 mb-4" />
+              <Loader2 className="w-12 h-12 animate-spin text-yellow-500 mb-4" />
             </div>
           </div>
         </div>
@@ -329,8 +316,8 @@ export function AllPermitImage() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-purple-200 rounded-full px-6 py-3 mb-6"
             >
-              <FileImage className="w-5 h-5 text-purple-600" />
-              <span className="text-purple-700 font-semibold text-sm uppercase tracking-wide">
+              <FileImage className="w-5 h-5 text-yellow-600" />
+              <span className="text-yellow-600 font-semibold text-sm uppercase tracking-wide">
                 {t("title")}
               </span>
             </motion.div>
@@ -407,7 +394,7 @@ export function AllPermitImage() {
               {/* Loading more indicator */}
               {loadingMore && (
                 <div className="flex justify-center items-center py-8 mt-8">
-                  <Loader2 className="w-8 h-8 animate-spin text-purple-500 mr-2" />
+                  <Loader2 className="w-8 h-8 animate-spin text-yellow-500 mr-2" />
                   <span className="text-gray-600">Loading more images...</span>
                 </div>
               )}
@@ -421,7 +408,7 @@ export function AllPermitImage() {
                     <Button
                       onClick={() => loadMore()}
                       variant="outline"
-                      className="bg-white hover:bg-purple-50 border-purple-200 text-purple-600 hover:text-purple-700"
+                      className="bg-white hover:bg-purple-50 border-purple-200 text-yellow-600 hover:text-yellow-700"
                     >
                       <FileImage className="w-4 h-4 mr-2" />
                       Load More Images

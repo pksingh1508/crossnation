@@ -295,8 +295,8 @@ export function ImmigrationNewsSection() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200 rounded-full px-6 py-3 mb-6"
             >
-              <Newspaper className="w-5 h-5 text-blue-600" />
-              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wide">
+              <Newspaper className="w-5 h-5 text-yellow-500" />
+              <span className="text-yellow-500 font-semibold text-sm uppercase tracking-wide">
                 {tNews("title")}
               </span>
             </motion.div>
@@ -327,7 +327,7 @@ export function ImmigrationNewsSection() {
               className="flex items-center justify-center gap-8 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
                   {pagination.total}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
@@ -336,7 +336,7 @@ export function ImmigrationNewsSection() {
               </div>
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
                   {pagination.pageCount}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
@@ -345,7 +345,7 @@ export function ImmigrationNewsSection() {
               </div>
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
                   {newsCache.size}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
@@ -368,7 +368,7 @@ export function ImmigrationNewsSection() {
                   placeholder="Search news..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm"
+                  className="w-full pl-12 pr-4 py-3 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent shadow-sm"
                 />
               </div>
               <Button
@@ -422,7 +422,7 @@ export function ImmigrationNewsSection() {
               {/* Loading overlay for pagination */}
               {loading && (
                 <div className="flex items-center justify-center py-8">
-                  <Loader2 className="w-8 h-8 animate-spin text-blue-500" />
+                  <Loader2 className="w-8 h-8 animate-spin text-yellow-500" />
                 </div>
               )}
 

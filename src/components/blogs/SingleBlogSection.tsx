@@ -127,7 +127,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
 
             {/* Title */}
             <Link href={blogUrl}>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors duration-200 cursor-pointer">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-yellow-500 transition-colors duration-200 cursor-pointer">
                 {data.title}
               </h3>
             </Link>
@@ -140,7 +140,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
             {/* Read more link and likes */}
             <div className="flex items-center justify-between">
               <Link href={blogUrl}>
-                <div className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-sm group-hover:gap-3 transition-all duration-200 cursor-pointer">
+                <div className="inline-flex items-center gap-2 text-yellow-500 hover:text-yellow-600 font-semibold text-sm group-hover:gap-3 transition-all duration-200 cursor-pointer">
                   <span>Read Full Post</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </div>

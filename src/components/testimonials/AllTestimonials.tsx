@@ -189,7 +189,6 @@ export function AllTestimonials() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
               <Loader2 className="w-12 h-12 animate-spin text-amber-500 mb-4" />
-              <p className="text-gray-600 text-lg">Loading testimonials...</p>
             </div>
           </div>
         </div>
@@ -243,7 +242,7 @@ export function AllTestimonials() {
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-amber-200 rounded-full px-6 py-3 mb-6"
             >
               <Star className="w-5 h-5 text-amber-600" />
-              <span className="text-amber-700 font-semibold text-sm uppercase tracking-wide">
+              <span className="text-amber-600 font-semibold text-sm uppercase tracking-wide">
                 Client Testimonials
               </span>
             </motion.div>

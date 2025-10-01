@@ -59,14 +59,14 @@ export function SingleLatestNews({ news }: SingleNewsProps) {
           {/* Blog Content - Right Side */}
           <div className="flex-1 min-w-0">
             {/* Title */}
-            <h3 className="text-base font-semibold text-gray-800 leading-tight hover:text-blue-600 transition-colors mb-2">
+            <h3 className="text-base font-semibold text-gray-800 leading-tight hover:text-yellow-500 transition-colors mb-2">
               {title}
             </h3>
 
             {/* Date and Likes */}
             <div className="flex items-center gap-4 text-sm text-gray-600">
               <div className="flex items-center space-x-1">
-                <span className="text-amber-500 font-medium">
+                <span className="text-gray-500 font-medium">
                   {formatDate(publishedAt)}
                 </span>
               </div>

@@ -25,6 +25,12 @@ import {
 import { Button } from "@/components/ui/button";
 import "highlight.js/styles/github.css";
 import { LatestNewsPost } from "@/components/immigration_news/LatestNewsPost";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import {
+  generateArticleSchema,
+  organizationSchema,
+} from "@/lib/seo/structuredData";
 
 interface SingleNewsPageProps {
   params: Promise<{ slug: string; lang: string }>;
@@ -145,8 +151,7 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 flex items-center justify-center">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
-          <p className="text-gray-600 text-lg">Loading article...</p>
+          <Loader2 className="w-12 h-12 animate-spin text-yellow-500 mx-auto mb-4" />
         </div>
       </div>
     );
@@ -176,10 +181,33 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
 
   const tags = parseTags(newsData.tags);
 
+  // Generate structured data for the news article
+  const articleSchema = generateArticleSchema(
+    newsData.title,
+    newsData.contents.substring(0, 160) + "...",
+    newsData.updatedAt,
+    newsData.updatedAt,
+    newsData.news_image || undefined
+  );
+
+  const structuredData = [organizationSchema, articleSchema];
+
+  const breadcrumbItems = [
+    { name: "Immigration News", href: `/${locale}/immigration-news` },
+    {
+      name: newsData.title,
+      href: `/${locale}/immigration-news/${newsData.slug}`,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30">
+      <StructuredData data={structuredData} />
       <div className="max-w-7xl grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-4 mx-auto">
         <article className="container mx-auto px-3 py-12">
+          <div className="mb-6">
+            <Breadcrumbs items={breadcrumbItems} />
+          </div>
           {/* Featured Image */}
           {newsData.news_image && (
             <motion.div

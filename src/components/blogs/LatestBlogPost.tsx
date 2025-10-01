@@ -57,7 +57,7 @@ export function LatestBlogPost() {
               <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
             </div>
             <div className="flex items-center justify-center py-8">
-              <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+              <Loader2 className="w-8 h-8 animate-spin text-yellow-500" />
             </div>
           </div>
         </div>

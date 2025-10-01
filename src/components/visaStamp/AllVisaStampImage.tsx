@@ -277,7 +277,7 @@ export function AllVisaStampImage() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
-              <Loader2 className="w-12 h-12 animate-spin text-blue-500 mb-4" />
+              <Loader2 className="w-12 h-12 animate-spin text-yellow-500 mb-4" />
             </div>
           </div>
         </div>
@@ -407,7 +407,7 @@ export function AllVisaStampImage() {
               {/* Loading more indicator */}
               {loadingMore && (
                 <div className="flex justify-center items-center py-8 mt-8">
-                  <Loader2 className="w-8 h-8 animate-spin text-blue-500 mr-2" />
+                  <Loader2 className="w-8 h-8 animate-spin text-yellow-500 mr-2" />
                   <span className="text-gray-600">Loading more images...</span>
                 </div>
               )}

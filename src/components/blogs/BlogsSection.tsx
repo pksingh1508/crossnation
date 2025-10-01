@@ -218,7 +218,7 @@ export function BlogsSection() {
               disabled={page === "..."}
               className={`w-10 h-10 flex items-center justify-center rounded-lg font-medium transition-all ${
                 page === pagination.page
-                  ? "bg-purple-500 text-white shadow-lg"
+                  ? "bg-yellow-500 text-white shadow-lg"
                   : page === "..."
                     ? "text-gray-400 cursor-not-allowed"
                     : "text-gray-600 hover:bg-gray-100"
@@ -249,7 +249,7 @@ export function BlogsSection() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center justify-center min-h-[400px]">
-              <Loader2 className="w-12 h-12 animate-spin text-purple-500 mb-4" />
+              <Loader2 className="w-12 h-12 animate-spin text-yellow-500 mb-4" />
             </div>
           </div>
         </div>
@@ -299,8 +299,8 @@ export function BlogsSection() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-purple-200 rounded-full px-6 py-3 mb-6"
             >
-              <BookOpen className="w-5 h-5 text-purple-600" />
-              <span className="text-purple-700 font-semibold text-sm uppercase tracking-wide">
+              <BookOpen className="w-5 h-5 text-yellow-500" />
+              <span className="text-yellow-500 font-semibold text-sm uppercase tracking-wide">
                 {tBlog("title")}
               </span>
             </motion.div>
@@ -331,7 +331,7 @@ export function BlogsSection() {
               className="flex items-center justify-center gap-8 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
                   {pagination.total}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
@@ -340,7 +340,7 @@ export function BlogsSection() {
               </div>
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
                   {getTotalLikes()}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
@@ -349,7 +349,7 @@ export function BlogsSection() {
               </div>
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-1">
+                <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
                   {blogCache.size}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
@@ -372,7 +372,7 @@ export function BlogsSection() {
                   placeholder="Search blog posts..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm"
+                  className="w-full pl-12 pr-4 py-3 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent shadow-sm"
                 />
               </div>
               <Button
@@ -426,7 +426,7 @@ export function BlogsSection() {
               {/* Loading overlay for pagination */}
               {loading && (
                 <div className="flex items-center justify-center py-8">
-                  <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+                  <Loader2 className="w-8 h-8 animate-spin text-yellow-500" />
                 </div>
               )}
 
