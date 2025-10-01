@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document outlines a comprehensive SEO strategy for EU Career Serwis (crossnation) to achieve #1 Google rankings for immigration, recruitment, and career services in Europe. The strategy focuses on technical SEO, content optimization, multilingual SEO, and structured data implementation.
+This document outlines a comprehensive SEO strategy for EU Career Serwis to achieve #1 Google rankings for immigration, recruitment, and career services in Europe. The strategy focuses on technical SEO, content optimization, multilingual SEO, and structured data implementation.
 
 ## Current Analysis
 
