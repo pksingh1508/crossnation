@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { fontInter, fontPoppins } from "@/fonts";
 
 interface StepWorkProps {
   image: string;
@@ -50,24 +51,34 @@ export function StepWork({
           <div
             className={`space-y-6 ${isReversed ? "lg:order-1" : "lg:order-2"}`}
           >
-            <h2 className="text-3xl font-bold font-poppins text-gray-900 dark:text-white">
+            <h2
+              className={`text-3xl font-bold font-poppins text-gray-900 dark:text-white ${fontPoppins.className}`}
+            >
               {heading}
             </h2>
 
             <div className="space-y-2">
-              <p className="font-inter text-gray-600 dark:text-gray-300">
+              <p
+                className={`font-inter text-gray-600 dark:text-gray-300 ${fontInter.className}`}
+              >
                 {paragraph1}
               </p>
 
-              <p className="font-inter text-gray-600 dark:text-gray-300">
+              <p
+                className={`font-inter text-gray-600 dark:text-gray-300 ${fontInter.className}`}
+              >
                 {paragraph2}
               </p>
 
-              <p className="font-inter text-gray-600 dark:text-gray-300">
+              <p
+                className={`font-inter text-gray-600 dark:text-gray-300 ${fontInter.className}`}
+              >
                 {paragraph3}
               </p>
 
-              <p className="font-inter text-gray-600 dark:text-gray-300">
+              <p
+                className={`font-inter text-gray-600 dark:text-gray-300 ${fontInter.className}`}
+              >
                 {paragraph4}
               </p>
             </div>

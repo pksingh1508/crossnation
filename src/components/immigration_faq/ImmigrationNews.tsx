@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useTranslations } from "@/hooks/useTranslations";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
+import { fontInter, fontPoppins } from "@/fonts";
 
 interface ImmigrationNewsProps {
   locale?: string;
@@ -53,7 +54,9 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
       <div>
         {/* Header */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2
+            className={`text-2xl font-bold text-gray-900 mb-2 ${fontInter.className}`}
+          >
             {t("heading") || "Immigration News"}
           </h2>
           <div className="h-1 bg-yellow-500 rounded w-16"></div>
@@ -78,14 +81,18 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
       <div>
         {/* Header */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2
+            className={`text-2xl font-bold text-gray-900 mb-2 ${fontInter.className}`}
+          >
             {t("heading") || "Immigration News"}
           </h2>
           <div className="h-1 bg-yellow-500 rounded w-16"></div>
         </div>
 
         {/* Error State */}
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+        <div
+          className={`bg-red-50 border border-red-200 rounded-lg p-4 ${fontInter.className}`}
+        >
           <p className="text-red-700">Error loading news: {error}</p>
         </div>
       </div>
@@ -96,7 +103,9 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
     <div>
       {/* Header */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2
+          className={`text-2xl font-bold text-gray-900 mb-2 ${fontInter.className}`}
+        >
           {t("heading") || "Immigration News"}
         </h2>
         <div className="h-1 bg-yellow-500 rounded w-16"></div>
@@ -109,7 +118,9 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
             <SingleNews key={newsItem.id} news={newsItem} />
           ))
         ) : (
-          <p className="text-gray-600">No news articles found.</p>
+          <p className={`text-gray-600 ${fontInter.className}`}>
+            No news articles found.
+          </p>
         )}
       </div>
       {/* See all news buttons */}
@@ -129,7 +140,7 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
             variant="brandOutline"
             size="lg"
             onClick={() => router.push(`/${locale}/immigration-news`)}
-            className="h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+            className={`h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
           >
             {t("cta") || "See All News"}
           </RippleButton>

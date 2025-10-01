@@ -7,6 +7,7 @@ import { useLocaleStore } from "@/store/useLocaleStore";
 import { useTranslations } from "@/hooks/useTranslations";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
+import { fontPoppins } from "@/fonts";
 
 export function RecentBlog() {
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
@@ -103,7 +104,9 @@ export function RecentBlog() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2
+              className={`text-3xl font-bold text-gray-900 mb-4 ${fontPoppins.className}`}
+            >
               {t("heading") || "Recent Blogs"}
             </h2>
             <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
@@ -114,7 +117,9 @@ export function RecentBlog() {
               blogs.map((blog) => <SingleBlog key={blog.id} blog={blog} />)
             ) : (
               <div className="col-span-full text-center py-12">
-                <p className="text-gray-600">No recent blogs found.</p>
+                <p className={`text-gray-600 ${fontPoppins.className}`}>
+                  No recent blogs found.
+                </p>
               </div>
             )}
           </div>
@@ -135,7 +140,7 @@ export function RecentBlog() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/blog`)}
-                className="h-12 text-base font-semibold font-montserrat border-3 text-yellow-500 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+                className={`h-12 text-base font-semibold font-montserrat border-3 text-yellow-500 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
               >
                 {t("cta") || "Read More Blogs"}
               </RippleButton>

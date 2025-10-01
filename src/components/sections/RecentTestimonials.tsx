@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion, easeOut, Variants } from "framer-motion";
 import { TestimonialItem } from "@/lib/strapi";
 import { SingleTestimonial } from "./SingleTestimonial";
+import { fontPoppins } from "@/fonts";
 
 export function RecentTestimonials() {
   const testimonialData: TestimonialItem[] = [
@@ -77,7 +78,9 @@ export function RecentTestimonials() {
             className="text-center mb-16"
           >
             {/* Title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 ${fontPoppins.className}`}
+            >
               {t("heading") || "Testimonials"}
             </h2>
             <div className="h-2 bg-yellow-500 rounded w-24 mx-auto"></div>

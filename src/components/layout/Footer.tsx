@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
+import { fontInter, fontPoppins } from "@/fonts";
 
 export function Footer() {
   const locale = useLocale();
@@ -85,14 +86,16 @@ export function Footer() {
             <div className="">
               <div className="mb-8">
                 <Image
-                  src="/mylogo.jpeg"
+                  src="/EU-logo.jpeg"
                   alt="Logo"
                   width={180}
                   height={54}
                   className="h-16 w-auto object-contain"
                 />
               </div>
-              <p className="text-gray-600 leading-relaxed text-sm pr-4">
+              <p
+                className={`text-gray-600 leading-relaxed text-sm pr-4 ${fontInter.className}`}
+              >
                 {t("company.description")}
               </p>
             </div>
@@ -100,7 +103,9 @@ export function Footer() {
             {/* Column 2: Our Solution */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("solution")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -110,7 +115,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
+                      className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
                     </Link>
@@ -122,7 +127,9 @@ export function Footer() {
             {/* Column 3: Government Links */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("links")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -134,7 +141,7 @@ export function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
+                      className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
                     </Link>
@@ -146,7 +153,9 @@ export function Footer() {
             {/* Column 4: Updated */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("update")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -156,7 +165,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
+                      className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
                     </Link>
@@ -171,7 +180,9 @@ export function Footer() {
             {/* Column 1: Company Info */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("info")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -179,7 +190,9 @@ export function Footer() {
               <ul className="space-y-3">
                 {companyInfoLinks.map((link, index) => (
                   <li key={index}>
-                    <p className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm">
+                    <p
+                      className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
+                    >
                       {link.label}
                     </p>
                   </li>
@@ -190,7 +203,9 @@ export function Footer() {
             {/* Column 2: Our Success Story */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("story")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -200,7 +215,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
+                      className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
                     </Link>
@@ -212,7 +227,9 @@ export function Footer() {
             {/* Column 3: Our Social Media */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("media")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -232,7 +249,9 @@ export function Footer() {
                       <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-white transition-all duration-200">
                         <IconComponent className="w-4 h-4" />
                       </div>
-                      <span className="text-sm">{social.label}</span>
+                      <span className={`text-sm ${fontInter.className}`}>
+                        {social.label}
+                      </span>
                     </Link>
                   );
                 })}
@@ -242,7 +261,9 @@ export function Footer() {
             {/* Column 4: Terms & Conditions */}
             <div className="">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                <h4
+                  className={`text-lg font-semibold text-gray-900 mb-2 ${fontPoppins.className}`}
+                >
                   {theading("condition")}
                 </h4>
                 <div className="h-1 w-16 bg-yellow-400 rounded-full"></div>
@@ -252,7 +273,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={`/${locale}${link.href}`}
-                      className="text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm"
+                      className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
                     </Link>
@@ -265,7 +286,7 @@ export function Footer() {
           {/* Copyright Section */}
           <div className="border-t border-gray-200 pt-8 mt-12">
             <div className="text-center">
-              <p className="text-gray-500 text-sm">
+              <p className={`text-gray-500 text-sm ${fontInter.className}`}>
                 {t("bottom.copyright", { year: new Date().getFullYear() })}
               </p>
             </div>

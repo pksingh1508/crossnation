@@ -9,6 +9,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { fontInter, fontPoppins } from "@/fonts";
 
 interface GovernmentLink {
   name: string;
@@ -78,11 +79,13 @@ export function GovernmentLinks() {
   };
 
   return (
-    <div className="w-full bg-gray-50 dark:bg-gray-900 pt-16 pb-10">
+    <div className="w-full bg-white dark:bg-gray-900 pt-16 pb-10">
       <div className="container mx-auto max-w-7xl px-4">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold font-poppins text-gray-900 dark:text-white mb-4">
+          <h2
+            className={`text-3xl lg:text-4xl font-bold font-poppins text-gray-900 dark:text-white mb-4 ${fontPoppins.className}`}
+          >
             {t("title")}
           </h2>
           <div className="w-16 h-1 bg-yellow-500 mx-auto"></div>
@@ -125,7 +128,9 @@ export function GovernmentLinks() {
 
         {/* Additional Info */}
         <div className="text-center mt-8">
-          <p className="text-sm font-inter text-gray-600 dark:text-gray-400">
+          <p
+            className={`text-sm font-inter text-gray-600 dark:text-gray-400 ${fontInter.className}`}
+          >
             {t("description")}
           </p>
         </div>

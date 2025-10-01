@@ -6,6 +6,7 @@ import { RippleButton } from "@/components/ui/ripple-button";
 import { MyForm } from "./MyForm";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import { fontInter } from "@/fonts";
 
 export function CommonContact() {
   const t = useTranslations("pages.commonContact");
@@ -29,10 +30,14 @@ export function CommonContact() {
 
               {/* Foreground Content */}
               <div className="relative z-10 flex items-center flex-col my-24 rounded-2xl py-3 bg-black opacity-70 w-fit mx-auto px-3">
-                <p className="text-3xl lg:text-4xl font-bold font-montserrat text-yellow-500 dark:text-white leading-tight">
+                <p
+                  className={`text-3xl lg:text-4xl font-bold font-montserrat text-yellow-500 dark:text-white leading-tight ${fontInter.className}`}
+                >
                   Interested in Working With Us
                 </p>
-                <p className="text-3xl lg:text-4xl font-bold font-montserrat text-yellow-500 dark:text-white leading-tight">
+                <p
+                  className={`text-3xl lg:text-4xl font-bold font-montserrat text-yellow-500 dark:text-white leading-tight ${fontInter.className}`}
+                >
                   As an Employee, Employer, or Partner?
                 </p>
               </div>
@@ -41,7 +46,9 @@ export function CommonContact() {
             {/* Right Section - Form */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-3 lg:p-6 order-1 lg:order-2 border-5 border-yellow-500">
               <div className="mb-8">
-                <p className="text-gray-600 dark:text-gray-300 font-inter text-center">
+                <p
+                  className={`text-gray-600 dark:text-gray-300 font-inter text-center ${fontInter.className}`}
+                >
                   {t("formInstruction")}
                 </p>
               </div>

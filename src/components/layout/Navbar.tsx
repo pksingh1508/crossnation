@@ -18,7 +18,7 @@ import {
 import { colors } from "@/constants/color";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { fontInter, fontMontserrat, fontRoboto } from "@/fonts";
+import { fontInter, fontMontserrat, fontPoppins, fontRoboto } from "@/fonts";
 
 export function Navbar() {
   const tCommon = useTranslations("common");
@@ -117,18 +117,17 @@ export function Navbar() {
             <Button
               asChild
               variant="outline"
-              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
               style={{
                 ["--hover-bg" as any]: colors.yellow.DEFAULT,
               }}
             >
-              {/* <Link href={`/${locale}/book`}>{tCommon("book")}</Link> */}
               <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
             </Button>
             <Button
               asChild
               variant="outline"
-              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className}`}
+              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className}`}
               style={{
                 ["--hover-bg" as any]: colors.yellow.dark,
                 ["--active-bg" as any]: colors.yellow.DEFAULT,
@@ -156,9 +155,9 @@ export function Navbar() {
           <div className="container mx-auto px-4  grid grid-cols-2 items-center">
             {/* Logo */}
             <Link href={`/${locale}`} className="flex items-center gap-3">
-              <motion.div whileHover={{ scale: 1.03 }}>
+              <motion.div whileHover={{ scale: 1.01 }}>
                 <Image
-                  src="/mylogo.jpeg"
+                  src="/EU-logo.jpeg"
                   alt="CountryNation Logo"
                   width={160}
                   height={48}
@@ -187,7 +186,7 @@ export function Navbar() {
                   <motion.div key={item.href} whileHover={{ y: -2 }}>
                     <Link
                       href={`/${locale}${item.href}`}
-                      className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontInter.className} font-medium ${
+                      className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontPoppins.className} font-medium ${
                         isActive(item.href)
                           ? "bg-[var(--active-bg)] text-black shadow-lg"
                           : ""
@@ -252,7 +251,7 @@ export function Navbar() {
               </Button>
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-yellow-100 focus:outline-none focus:ring-2 focus:ring-yellow-300"
                 aria-label="Toggle navigation menu"
                 aria-expanded={isOpen}
                 onClick={() => setIsOpen((prev) => !prev)}
@@ -313,7 +312,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={`/${locale}${item.href}`}
-                  className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontInter.className} font-medium ${
+                  className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontPoppins.className} font-medium ${
                     isActive(item.href)
                       ? "bg-[var(--active-bg)] text-black"
                       : ""

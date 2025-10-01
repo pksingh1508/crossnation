@@ -48,8 +48,8 @@ export function CustomHero({
   };
 
   return (
-    <section className="py-10 px-4 xl:px-28 bg-white">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-16 xl:py-20 bg-white">
+      <div className="container mx-auto max-w-7xl px-4 md:px-8">
         <div
           className={cn(
             "grid lg:grid-cols-2 gap-8 lg:gap-12 ",

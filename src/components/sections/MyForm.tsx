@@ -17,6 +17,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { fontInter, fontPoppins } from "@/fonts";
 
 interface CountryCode {
   country: string;
@@ -141,7 +142,7 @@ export function MyForm() {
                 placeholder={t("firstNamePlaceholder")}
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
-                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
+                className={`focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px] ${fontInter.className}`}
                 required
               />
             </div>
@@ -153,7 +154,7 @@ export function MyForm() {
                 placeholder={t("lastNamePlaceholder")}
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
-                className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
+                className={`focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px] ${fontInter.className}`}
                 required
               />
             </div>
@@ -167,7 +168,7 @@ export function MyForm() {
               placeholder={t("emailPlaceholder")}
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px]"
+              className={`focus-visible:ring-yellow-500 focus-visible:border-yellow-500 font-inter focus-visible:ring-[2px] ${fontInter.className}`}
               required
             />
           </div>
@@ -219,7 +220,7 @@ export function MyForm() {
                 placeholder={t("phonePlaceholder")}
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                className="flex-1 font-inter"
+                className={`flex-1 font-inter ${fontInter.className}`}
                 required
               />
             </div>
@@ -254,7 +255,7 @@ export function MyForm() {
             id="acceptTerms"
             checked={formData.acceptTerms}
             onChange={(e) => handleInputChange("acceptTerms", e.target.checked)}
-            className="mt-1 h-4 w-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400"
+            className={`mt-1 h-4 w-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400 ${fontInter.className}`}
             required
           />
           <label
@@ -276,7 +277,7 @@ export function MyForm() {
         <Button
           type="submit"
           disabled={loading}
-          className="w-full font-montserrat font-semibold cursor-pointer  hover:bg-yellow-400 hover:text-black hover:border-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed"
+          className={`w-full font-montserrat font-semibold cursor-pointer  hover:bg-yellow-400 hover:text-black hover:border-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed ${fontPoppins.className}`}
           variant="brandOutline"
         >
           {loading ? t("loadingMessage") : t("submitButton")}

@@ -41,6 +41,7 @@ export function Hero() {
               width={500}
               height={400}
               className="w-[95vw] md:w-[38vw] h-[70vh] object-cover rounded-md"
+              priority
             />
           </motion.div>
 
@@ -61,7 +62,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/recruiter`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
+                className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn1")}
               </RippleButton>
@@ -69,7 +70,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/jobseeker`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
+                className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn2")}
               </RippleButton>
@@ -78,7 +79,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/migrate`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
+                className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn3")}
               </RippleButton>
@@ -86,7 +87,7 @@ export function Hero() {
                 variant="brandOutline"
                 size="lg"
                 onClick={() => router.push(`/${locale}/employer`)}
-                className="h-12 text-base font-semibold font-montserrat border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all"
+                className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn4")}
               </RippleButton>
@@ -94,31 +95,24 @@ export function Hero() {
 
             {/* Counselling Section */}
             <div className="flex items-center gap-3 mt-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-9 h-9 text-yellow-500 border-2 border-yellow-500 rounded-full p-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                {/* Left person */}
-                <circle cx="7" cy="7" r="3" />
-                <path d="M4 20v-1a4 4 0 014-4h2a4 4 0 014 4v1" />
-
-                {/* Right person */}
-                <circle cx="17" cy="7" r="3" />
-                <path d="M14 20v-1a4 4 0 014-4h2a4 4 0 014 4v1" />
-              </svg>
+              <div>
+                <Image
+                  src="/icons.png"
+                  alt="Counselling Icon"
+                  width={45}
+                  height={45}
+                  className="text-yellow-500"
+                />
+              </div>
 
               <div>
                 <p
-                  className={`text-gray-800 text-base font-medium ${fontInter.className}`}
+                  className={`text-gray-800 text-base font-medium ${fontPoppins.className}`}
                 >
                   {t("cta1")}
                 </p>
                 <button
-                  className={`text-yellow-500 text-base font-semibold hover:underline ${fontInter.className}`}
+                  className={`text-yellow-500 text-base font-semibold hover:underline ${fontPoppins.className}`}
                 >
                   <Link href={`/${locale}/contact`}>{t("cta2")}</Link>
                 </button>

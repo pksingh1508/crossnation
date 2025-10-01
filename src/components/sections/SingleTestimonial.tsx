@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
+import { fontPoppins } from "@/fonts";
 
 interface SingleTestimonialProps {
   testimonial: TestimonialItem;
@@ -43,15 +44,6 @@ export function SingleTestimonial({
 
   // Check if both name and what_they_say are empty
   const isImageOnly = data.name == "" && data.what_they_say == "";
-
-  // Debug logging
-  console.log(`Testimonial ${data.id}:`, {
-    name: data.name,
-    what_they_say: data.what_they_say,
-    user_image: data.user_image,
-    isImageOnly,
-    originalData: testimonial,
-  });
 
   return (
     <motion.div
@@ -127,7 +119,9 @@ export function SingleTestimonial({
 
                 {/* Client details */}
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-bold text-gray-900 text-lg truncate text-center">
+                  <h4
+                    className={`font-bold text-gray-900 text-lg truncate text-center ${fontPoppins.className}`}
+                  >
                     {data.name}
                   </h4>
                 </div>
@@ -136,7 +130,9 @@ export function SingleTestimonial({
 
             {/* Testimonial content */}
             <div className="relative flex-1 flex items-start mt-4">
-              <blockquote className="text-gray-700 text-sm leading-relaxed font-medium">
+              <blockquote
+                className={`text-gray-700 text-sm leading-relaxed font-medium ${fontPoppins.className}`}
+              >
                 "{data.what_they_say.split(" ").slice(0, 25).join(" ")}..."
               </blockquote>
             </div>
@@ -153,7 +149,7 @@ export function SingleTestimonial({
           onClick={() => {
             router.push(`${locale}${url}`);
           }}
-          className="h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
+          className={`h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
         >
           {btnName}
         </RippleButton>

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { NewsItem } from "@/lib/strapi";
+import { fontInter } from "@/fonts";
 
 interface SingleNewsProps {
   news: NewsItem;
@@ -39,7 +40,9 @@ export function SingleNews({ news }: SingleNewsProps) {
       <div className="space-y-3">
         {/* Title */}
         <Link href={`/${locale}/immigration-news/${slug}`}>
-          <h3 className="text-lg font-semibold text-gray-800 leading-tight hover:text-yellow-500 cursor-pointer transition-colors">
+          <h3
+            className={`text-lg font-semibold text-gray-800 leading-tight hover:text-yellow-500 cursor-pointer transition-colors ${fontInter.className}`}
+          >
             {title}
           </h3>
         </Link>
@@ -49,11 +52,15 @@ export function SingleNews({ news }: SingleNewsProps) {
           <div className="text-gray-700 leading-relaxed">
             <p className="flex flex-wrap items-center text-gray-700">
               {/* Description */}
-              <span>{truncateText(short_desc)}</span>
+              <span className={`${fontInter.className}`}>
+                {truncateText(short_desc)}
+              </span>
 
               {/* Read More */}
               <Link href={`/${locale}/immigration-news/${slug}`}>
-                <span className="text-yellow-500 cursor-pointer hover:underline ml-1">
+                <span
+                  className={`text-yellow-500 cursor-pointer hover:underline ml-1 ${fontInter.className}`}
+                >
                   [Read More...]
                 </span>
               </Link>
@@ -61,7 +68,9 @@ export function SingleNews({ news }: SingleNewsProps) {
               {/* Published Date */}
               <span className="flex items-center space-x-1 text-sm text-gray-600 ml-4">
                 <span className="inline-block w-3 h-3 bg-yellow-500 rounded-sm"></span>
-                <span>{formatDate(publishedAt)}</span>
+                <span className={`${fontInter.className}`}>
+                  {formatDate(publishedAt)}
+                </span>
               </span>
 
               {/* Views */}
@@ -85,7 +94,7 @@ export function SingleNews({ news }: SingleNewsProps) {
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
                 </svg>
-                <span>{views} views</span>
+                <span className={`${fontInter.className}`}>{views} views</span>
               </span>
             </p>
           </div>

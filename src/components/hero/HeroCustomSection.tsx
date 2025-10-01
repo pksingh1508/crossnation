@@ -40,7 +40,9 @@ export function HeroCustomSection() {
         paragraph1={tMigrate("paragraph1")}
         paragraph2=""
         buttons={migrateButtonsData}
-        imageSrc={tMigrate("imageSrc")}
+        imageSrc={
+          "https://ik.imagekit.io/eucareerserwis/euprimeserwis/home/migrate.webp"
+        }
         imageAlt={tMigrate("imageAlt")}
         isReversed={true}
       />
