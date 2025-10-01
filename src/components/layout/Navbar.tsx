@@ -56,103 +56,208 @@ export function Navbar() {
       }`}
     >
       {/* Top bar */}
-      <div className="container mx-auto px-4 flex items-center justify-between text-sm">
-        <div className="max-w-7xl w-full flex items-center justify-between m-auto">
-          <div className="flex items-center gap-2 md:gap-6 text-gray-400">
-            <a
-              href="tel:+48222095497"
-              className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
-              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-            >
-              <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
-            </a>
-            <a
-              href="tel:+48726635666"
-              className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
-              style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-            >
-              <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
-            </a>
-          </div>
-          {/* Top-bar right: large screens (2xl+) show full actions; below that only language */}
-          <div className="hidden 2xl:flex items-center gap-2 text-gray-400">
-            <div className="flex items-center pr-2">
+      <div className="container mx-auto px-4 text-sm">
+        <div className="max-w-7xl w-full m-auto">
+          {/* Large screens (2xl+): Single row layout with all elements */}
+          <div className="hidden 2xl:flex items-center justify-between">
+            <div className="flex items-center gap-2 md:gap-6 text-gray-400">
               <a
-                href="https://www.facebook.com/eucareerserwis/"
-                aria-label="Facebook"
-                target="_blank"
-                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                href="tel:+48222095497"
+                className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
                 style={{ ["--hover-bg" as any]: colors.yellow.dark }}
               >
-                <Facebook className="h-4 w-4" />
+                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
               </a>
               <a
-                href="https://www.instagram.com/eucareerserwis"
-                aria-label="Instagram"
-                target="_blank"
-                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                href="tel:+48726635666"
+                className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
                 style={{ ["--hover-bg" as any]: colors.yellow.dark }}
               >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="https://x.com/eucareerserwis"
-                aria-label="Twitter"
-                target="_blank"
-                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
-                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/eu-career-serwis"
-                aria-label="Linkedin"
-                target="_blank"
-                className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
-                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
-              >
-                <Linkedin className="h-4 w-4" />
+                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
               </a>
             </div>
-            <Button
-              asChild
-              variant="outline"
-              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
-              style={{
-                ["--hover-bg" as any]: colors.yellow.DEFAULT,
-              }}
-            >
-              <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className={`hidden sm:inline-flex hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className}`}
-              style={{
-                ["--hover-bg" as any]: colors.yellow.dark,
-                ["--active-bg" as any]: colors.yellow.DEFAULT,
-              }}
-            >
-              <Link
-                href={`/${locale}/contact`}
-                className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+            <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center pr-2">
+                <a
+                  href="https://www.facebook.com/eucareerserwis/"
+                  aria-label="Facebook"
+                  target="_blank"
+                  className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                  style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/eucareerserwis"
+                  aria-label="Instagram"
+                  target="_blank"
+                  className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                  style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://x.com/eucareerserwis"
+                  aria-label="Twitter"
+                  target="_blank"
+                  className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                  style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                >
+                  <Twitter className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/eu-career-serwis"
+                  aria-label="Linkedin"
+                  target="_blank"
+                  className="hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-3"
+                  style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              </div>
+              <Button
+                asChild
+                variant="outline"
+                className={`hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                }}
               >
-                {tCommon("contact")}
-              </Link>
-            </Button>
-            <LanguageSwitcher />
+                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className={`hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.dark,
+                  ["--active-bg" as any]: colors.yellow.DEFAULT,
+                }}
+              >
+                <Link
+                  href={`/${locale}/contact`}
+                  className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+                >
+                  {tCommon("contact")}
+                </Link>
+              </Button>
+              <LanguageSwitcher />
+            </div>
           </div>
-          {/* Small to xl: only language on the right */}
-          <div className="flex 2xl:hidden items-center gap-2">
-            <LanguageSwitcher />
+
+          {/* Medium to xl screens: Single row with mobile numbers, buttons, and language switcher */}
+          <div className="hidden md:flex 2xl:hidden items-center justify-between py-2">
+            <div className="flex items-center gap-2 text-gray-400">
+              <a
+                href="tel:+48222095497"
+                className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              >
+                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
+              </a>
+              <a
+                href="tel:+48726635666"
+                className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
+                style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+              >
+                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className={`hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                }}
+              >
+                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className={`hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.dark,
+                  ["--active-bg" as any]: colors.yellow.DEFAULT,
+                }}
+              >
+                <Link
+                  href={`/${locale}/contact`}
+                  className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+                >
+                  {tCommon("contact")}
+                </Link>
+              </Button>
+              <LanguageSwitcher />
+            </div>
+          </div>
+
+          {/* Small screens (< md): Two row layout */}
+          <div className="md:hidden">
+            {/* First row: Mobile numbers on left, language switcher on right */}
+            <div className="flex items-center justify-between py-2">
+              <div className="flex items-center gap-2 text-gray-400">
+                <a
+                  href="tel:+48222095497"
+                  className={`inline-flex text-[12px] items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 py-2.5 ${fontRoboto.className}`}
+                  style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                >
+                  <Phone className="h-2 w-2" /> +48 22 209 5497
+                </a>
+                <a
+                  href="tel:+48726635666"
+                  className={`inline-flex text-[12px] items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 py-2.5 ${fontRoboto.className}`}
+                  style={{ ["--hover-bg" as any]: colors.yellow.dark }}
+                >
+                  <Phone className="h-2 w-2" /> +48 72 635 666
+                </a>
+              </div>
+              <LanguageSwitcher />
+            </div>
+
+            {/* Second row: Book appointment and contact buttons */}
+            <div className="flex items-center gap-2 pb-2">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className={`hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.DEFAULT,
+                }}
+              >
+                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className={`hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontPoppins.className}`}
+                style={{
+                  ["--hover-bg" as any]: colors.yellow.dark,
+                  ["--active-bg" as any]: colors.yellow.DEFAULT,
+                }}
+              >
+                <Link
+                  href={`/${locale}/contact`}
+                  className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
+                >
+                  {tCommon("contact")}
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className="border-t border-b">
-        <div className="max-w-7xl w-full mx-auto flex items-center justify-between">
-          <div className="container mx-auto px-4  grid grid-cols-2 items-center">
+        <div className="max-w-7xl w-full mx-auto">
+          <div className="container mx-auto px-4 flex items-center justify-between">
             {/* Logo */}
             <Link href={`/${locale}`} className="flex items-center gap-3">
               <motion.div whileHover={{ scale: 1.01 }}>
@@ -166,8 +271,8 @@ export function Navbar() {
               </motion.div>
             </Link>
 
-            {/* Links (right) - show from xl and up */}
-            <div className="hidden xl:flex items-center justify-end gap-2">
+            {/* Navigation Links - show from xl and up */}
+            <div className="hidden xl:flex items-center gap-2">
               <Link
                 href={`/${locale}/`}
                 className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
@@ -203,8 +308,8 @@ export function Navbar() {
               })}
             </div>
 
-            {/* Toggle + actions for < xl */}
-            <div className="flex lg:hidden items-center justify-end">
+            {/* Mobile menu toggle for < xl */}
+            <div className="xl:hidden">
               <button
                 type="button"
                 className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
@@ -236,52 +341,7 @@ export function Navbar() {
                 </svg>
               </button>
             </div>
-            {/* From lg to < xl: show Book button left of toggle */}
-            <div className="hidden lg:flex xl:hidden items-center justify-end gap-2">
-              <Button
-                asChild
-                size="sm"
-                variant="brandOutline"
-                className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
-                style={{
-                  ["--hover-bg" as any]: colors.yellow.DEFAULT,
-                }}
-              >
-                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
-              </Button>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-yellow-100 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                aria-label="Toggle navigation menu"
-                aria-expanded={isOpen}
-                onClick={() => setIsOpen((prev) => !prev)}
-              >
-                <svg
-                  className="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                >
-                  {isOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-                    />
-                  )}
-                </svg>
-              </button>
-            </div>
           </div>
-          {/* No bottom actions on xl; actions remain in the top bar */}
         </div>
       </div>
 
@@ -326,39 +386,7 @@ export function Navbar() {
                   {tNav(item.href.replace(/^\//, "") as any)}
                 </Link>
               ))}
-              {/* Buttons visible in drawer only for < lg */}
-              <div className="mt-2 grid gap-2 lg:hidden">
-                <Button
-                  asChild
-                  variant="brandOutline"
-                  className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/book") ? "bg-yellow-500 text-black" : ""}`}
-                  style={{
-                    ["--hover-bg" as any]: colors.yellow.DEFAULT,
-                  }}
-                >
-                  <Link
-                    href={`/${locale}/book`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {tCommon("book")}
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className={`w-full hover:bg-[var(--hover-bg)] hover:text-black border-[var(--hover-bg)] ${fontMontserrat.className} ${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
-                  style={{
-                    ["--hover-bg" as any]: colors.yellow.DEFAULT,
-                  }}
-                >
-                  <Link
-                    href={`/${locale}/contact`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {tCommon("contact")}
-                  </Link>
-                </Button>
-              </div>
+              {/* No buttons in mobile drawer since they're now in topbar */}
             </div>
           </motion.div>
         )}
