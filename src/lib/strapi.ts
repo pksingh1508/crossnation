@@ -233,6 +233,7 @@ export interface VisaStampResponse {
 }
 
 const DEFAULT_LOCALE = "en";
+const BASE_URL = "https://api.eucareerserwis.pl/api/";
 
 export async function fetchImmigrationNews(
   token: string,
@@ -242,9 +243,9 @@ export async function fetchImmigrationNews(
   collection: string
 ): Promise<StrapiResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
     const fetchFromLocale = async (loc: string) => {
-      const response = await axios.get(BASE_URL, {
+      const response = await axios.get(URL, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -287,9 +288,9 @@ export async function fetchRecentBlogs(
   collection: string
 ): Promise<BlogResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -321,9 +322,9 @@ export async function fetchRecentTestimonials(
   collection: string
 ): Promise<TestimonialResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -355,9 +356,9 @@ export async function getAllTestimonials(
   collection: string
 ): Promise<TestimonialResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -391,9 +392,9 @@ export async function fetchPaginatedImmigrationNews(
   collection: string
 ): Promise<StrapiResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -426,9 +427,9 @@ export async function fetchRecentNews(
   collection: string
 ): Promise<StrapiResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -460,9 +461,9 @@ export async function getSingleNews(
   collection: string
 ): Promise<StrapiResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -496,9 +497,8 @@ export async function getPaginatedBlog(
   collection: string
 ): Promise<BlogResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
-
-    const response = await axios.get(BASE_URL, {
+    const URL = `${BASE_URL}${collection}`;
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -530,9 +530,9 @@ export async function getSingleBlogPost(
   collection: string
 ): Promise<BlogResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -566,9 +566,9 @@ export async function getAllSuccessStories(
   collection: string
 ): Promise<SuccessStoryResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -599,9 +599,9 @@ export async function getAllPermitImages(
   collection: string
 ): Promise<PermitResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -628,9 +628,9 @@ export async function getAllStampImages(
   collection: string
 ): Promise<VisaStampResponse> {
   try {
-    const BASE_URL = `https://determined-unity-de531adc95.strapiapp.com/api/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
-    const response = await axios.get(BASE_URL, {
+    const response = await axios.get(URL, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

@@ -44,6 +44,7 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
   const [error, setError] = useState<string | null>(null);
   const [slug, setSlug] = useState<string>("");
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Handle async params
   useEffect(() => {
@@ -218,11 +219,7 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
               className="relative w-full h-64 md:h-[30rem] rounded-2xl overflow-hidden mb-8 shadow-xl"
             >
               <Image
-                src={
-                  blogData.blog_image.startsWith("http")
-                    ? blogData.blog_image
-                    : `https://determined-unity-de531adc95.strapiapp.com${blogData.blog_image}`
-                }
+                src={`${URL}${blogData.blog_image}`}
                 alt={blogData.title}
                 fill
                 className="object-cover"

@@ -10,6 +10,7 @@ interface SingleNewsProps {
 
 export function SingleLatestNews({ news }: SingleNewsProps) {
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Handle both nested attributes structure and flat structure
   const title = news.attributes?.title || news.title || "Untitled";
@@ -43,7 +44,7 @@ export function SingleLatestNews({ news }: SingleNewsProps) {
           <div className="flex-shrink-0 w-27 h-20 overflow-hidden rounded-lg">
             {news_image ? (
               <Image
-                src={`${news_image}`}
+                src={`${URL}${news_image}`}
                 alt={title}
                 width={80}
                 height={80}

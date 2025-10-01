@@ -31,6 +31,7 @@ export function AllPermitImage() {
   const lastImageRef = useRef<HTMLDivElement | null>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations("workPermit");
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   const fetchPermitImages = useCallback(
     async (page: number = 1, append: boolean = false) => {
@@ -249,9 +250,7 @@ export function AllPermitImage() {
           item.permit_image?.url ||
           "";
 
-        return imageUrl.startsWith("http")
-          ? imageUrl
-          : `https://determined-unity-de531adc95.strapiapp.com${imageUrl}`;
+        return imageUrl.startsWith("http") ? imageUrl : `${URL}${imageUrl}`;
       })
       .filter((url) => url !== "");
   };

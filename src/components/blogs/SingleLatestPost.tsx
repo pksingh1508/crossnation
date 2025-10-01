@@ -16,6 +16,7 @@ export function SingleLatestPost({ blog }: LatestPostProps) {
   const slug = blog.attributes?.slug || blog.slug || "";
   const image_url = blog.blog_image?.url || "";
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Format the date to show like "03 Jun"
   const formatDate = (dateString: string) => {
@@ -36,7 +37,7 @@ export function SingleLatestPost({ blog }: LatestPostProps) {
           <div className="flex-shrink-0 w-27 h-20 overflow-hidden rounded-lg">
             {image_url ? (
               <Image
-                src={`${image_url}`}
+                src={`${URL}${image_url}`}
                 alt={title}
                 width={80}
                 height={80}

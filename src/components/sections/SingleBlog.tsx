@@ -18,6 +18,7 @@ export function SingleBlog({ blog }: SingleBlogProps) {
   const image_url = blog.blog_image?.url || "";
   const short_desc = blog.attributes?.short_desc || blog.short_desc || "";
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Format the date to show like "03 Jun"
   const formatDate = (dateString: string) => {
@@ -36,7 +37,7 @@ export function SingleBlog({ blog }: SingleBlogProps) {
       <div className="aspect-video w-full overflow-hidden">
         {image_url ? (
           <Image
-            src={`${image_url}`}
+            src={`${URL}${image_url}`}
             alt={title}
             width={500}
             height={500}

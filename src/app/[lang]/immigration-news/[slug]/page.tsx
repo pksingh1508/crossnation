@@ -42,6 +42,7 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
   const [error, setError] = useState<string | null>(null);
   const [slug, setSlug] = useState<string>("");
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Handle async params
   useEffect(() => {
@@ -217,11 +218,7 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
               className="relative w-full h-64 md:h-[30rem] rounded-2xl overflow-hidden mb-8 shadow-xl"
             >
               <Image
-                src={
-                  newsData.news_image.startsWith("http")
-                    ? newsData.news_image
-                    : `https://determined-unity-de531adc95.strapiapp.com${newsData.news_image}`
-                }
+                src={`${URL}${newsData.news_image}`}
                 alt={newsData.title}
                 fill
                 className="object-cover"

@@ -17,6 +17,7 @@ export function SingleImmigrationNews({
   index = 0,
 }: SingleImmigrationNewsProps) {
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
@@ -77,11 +78,7 @@ export function SingleImmigrationNews({
             <div className="relative h-48 md:h-full md:min-h-[200px] overflow-hidden">
               {data.news_image ? (
                 <Image
-                  src={
-                    data.news_image.startsWith("http")
-                      ? data.news_image
-                      : `https://determined-unity-de531adc95.strapiapp.com${data.news_image}`
-                  }
+                  src={`${URL}${data.news_image}`}
                   alt={data.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"

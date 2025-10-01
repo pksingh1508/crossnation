@@ -13,6 +13,7 @@ export function SingleSuccessStory({
   successStory,
   index,
 }: SingleSuccessStoryProps) {
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
   // Get values from both nested and flat structure
   const name = successStory.attributes?.name || successStory.name || "";
   const story = successStory.attributes?.story || successStory.story || "";
@@ -27,7 +28,7 @@ export function SingleSuccessStory({
 
   const fullImageUrl = imageUrl.startsWith("http")
     ? imageUrl
-    : `https://determined-unity-de531adc95.strapiapp.com${imageUrl}`;
+    : `${URL}${imageUrl}`;
 
   // Format date
   const formatDate = (dateString: string) => {
@@ -56,7 +57,7 @@ export function SingleSuccessStory({
           <div className="mb-4">
             <div className="relative w-full aspect-square max-w-[200px] mx-auto">
               <Image
-                src={fullImageUrl}
+                src={`${fullImageUrl}`}
                 alt={name}
                 fill
                 className="object-cover rounded-xl"

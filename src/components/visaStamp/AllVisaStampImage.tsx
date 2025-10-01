@@ -31,6 +31,7 @@ export function AllVisaStampImage() {
   const lastImageRef = useRef<HTMLDivElement | null>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations("visaStamp");
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   const fetchStampImages = useCallback(
     async (page: number = 1, append: boolean = false) => {
@@ -262,9 +263,7 @@ export function AllVisaStampImage() {
           item.stamp_image?.url ||
           "";
 
-        return imageUrl.startsWith("http")
-          ? imageUrl
-          : `https://determined-unity-de531adc95.strapiapp.com${imageUrl}`;
+        return imageUrl.startsWith("http") ? imageUrl : `${URL}${imageUrl}`;
       })
       .filter((url) => url !== "");
   };
@@ -329,8 +328,8 @@ export function AllVisaStampImage() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200 rounded-full px-6 py-3 mb-6"
             >
-              <Stamp className="w-5 h-5 text-blue-600" />
-              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wide">
+              <Stamp className="w-5 h-5 text-yellow-500" />
+              <span className="text-yellow-500 font-semibold text-sm uppercase tracking-wide">
                 {t("title")}
               </span>
             </motion.div>

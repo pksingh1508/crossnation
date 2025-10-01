@@ -14,6 +14,7 @@ interface SingleBlogSectionProps {
 
 export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
   const locale = useLocale();
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
@@ -80,11 +81,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
             <div className="relative h-44 md:h-full md:min-h-[200px] overflow-hidden">
               {data.blog_image ? (
                 <Image
-                  src={
-                    data.blog_image.startsWith("http")
-                      ? data.blog_image
-                      : `https://determined-unity-de531adc95.strapiapp.com${data.blog_image}`
-                  }
+                  src={`${URL}${data.blog_image}`}
                   alt={data.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
