@@ -38,8 +38,8 @@ export function Hero() {
             <Image
               src="https://ik.imagekit.io/eucareerserwis/home/HomeLogo.webp"
               alt="Home"
-              width={500}
-              height={400}
+              width={1200}
+              height={800}
               className="w-[95vw] md:w-[38vw] h-[70vh] object-cover rounded-md"
               priority
             />

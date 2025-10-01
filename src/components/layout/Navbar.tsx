@@ -61,14 +61,14 @@ export function Navbar() {
           <div className="flex items-center gap-2 md:gap-6 text-gray-400">
             <a
               href="tel:+48222095497"
-              className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
+              className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
               <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
             </a>
             <a
               href="tel:+48726635666"
-              className={`inline-flex items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-2.5 py-2.5 ${fontRoboto.className}`}
+              className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
               style={{ ["--hover-bg" as any]: colors.yellow.dark }}
             >
               <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
