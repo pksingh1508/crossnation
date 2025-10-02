@@ -125,11 +125,11 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
     }
   };
 
-  // Parse tags
+  // FIXED: Parse tags using # as delimiter
   const parseTags = (tagsString: string) => {
     if (!tagsString) return [];
     return tagsString
-      .split(",")
+      .split("#")
       .map((tag) => tag.trim())
       .filter((tag) => tag.length > 0);
   };
@@ -300,18 +300,19 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
             <div
               className="prose prose-lg prose-gray max-w-none
                          prose-headings:text-gray-900 prose-headings:font-bold
-                         prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-8
-                         prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-6
-                         prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-4
-                         prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
+                         prose-h1:text-4xl prose-h1:mb-6 prose-h1:mt-8
+                         prose-h2:text-3xl prose-h2:mb-5 prose-h2:mt-8
+                         prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-6
+                         prose-h4:text-xl prose-h4:mb-3 prose-h4:mt-5
+                         prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-p:text-base
                          prose-a:text-purple-600 prose-a:no-underline hover:prose-a:underline
-                         prose-strong:text-gray-900 prose-strong:font-semibold
+                         prose-strong:text-gray-900 prose-strong:font-bold
                          prose-ul:my-4 prose-ol:my-4
                          prose-li:text-gray-700 prose-li:mb-2
                          prose-blockquote:border-l-4 prose-blockquote:border-purple-500
                          prose-blockquote:bg-purple-50 prose-blockquote:py-4 prose-blockquote:px-6
                          prose-blockquote:my-6 prose-blockquote:rounded-r-lg
-                         prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
+                         prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
                          prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg
                          prose-img:rounded-lg prose-img:shadow-lg prose-img:my-6"
             >
@@ -319,6 +320,54 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeHighlight, rehypeRaw]}
                 components={{
+                  // FIXED: Custom heading components with proper styling
+                  h1: ({ node, ...props }) => (
+                    <h1
+                      className="text-4xl font-bold text-gray-900 mb-6 mt-8"
+                      {...props}
+                    />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h2
+                      className="text-3xl font-bold text-gray-900 mb-5 mt-8"
+                      {...props}
+                    />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h3
+                      className="text-2xl font-bold text-gray-900 mb-4 mt-6"
+                      {...props}
+                    />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h4
+                      className="text-xl font-bold text-gray-900 mb-3 mt-5"
+                      {...props}
+                    />
+                  ),
+                  h5: ({ node, ...props }) => (
+                    <h5
+                      className="text-lg font-bold text-gray-900 mb-2 mt-4"
+                      {...props}
+                    />
+                  ),
+                  h6: ({ node, ...props }) => (
+                    <h6
+                      className="text-base font-bold text-gray-900 mb-2 mt-3"
+                      {...props}
+                    />
+                  ),
+                  // FIXED: Paragraph styling
+                  p: ({ node, ...props }) => (
+                    <p
+                      className="text-gray-700 text-base leading-relaxed mb-4"
+                      {...props}
+                    />
+                  ),
+                  // FIXED: Strong/bold text
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-bold text-gray-900" {...props} />
+                  ),
                   // Custom image component
                   img: ({ node, ...props }) => {
                     const src = typeof props.src === "string" ? props.src : "";
@@ -335,19 +384,34 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
                       />
                     );
                   },
-                  // Custom link component
+                  // FIXED: Custom link component with proper URL handling
                   a: ({ node, ...props }) => {
                     const href =
                       typeof props.href === "string" ? props.href : "";
 
+                    // Check if the URL is already absolute (starts with http:// or https://)
+                    const isAbsoluteUrl =
+                      href.startsWith("http://") || href.startsWith("https://");
+
+                    // If not absolute and doesn't start with /, add https://
+                    const finalHref = isAbsoluteUrl
+                      ? href
+                      : href.startsWith("/")
+                        ? href
+                        : `https://${href}`;
+
                     return (
                       <a
                         {...props}
-                        href={href}
+                        href={finalHref}
                         className="text-purple-600 hover:text-purple-800 hover:underline font-medium transition-colors"
-                        target={href?.startsWith("http") ? "_blank" : undefined}
+                        target={
+                          isAbsoluteUrl || !href.startsWith("/")
+                            ? "_blank"
+                            : undefined
+                        }
                         rel={
-                          href?.startsWith("http")
+                          isAbsoluteUrl || !href.startsWith("/")
                             ? "noopener noreferrer"
                             : undefined
                         }
