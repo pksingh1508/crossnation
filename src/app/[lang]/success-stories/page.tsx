@@ -1,6 +1,6 @@
-import { AllSuccessStories } from "@/components/success_story/AllSuccessStories";
+import { AllTestimonials } from "@/components/testimonials/AllTestimonials";
 import React from "react";
 
 export default function page() {
-  return <AllSuccessStories />;
+  return <AllTestimonials />;
 }

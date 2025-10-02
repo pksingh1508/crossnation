@@ -57,7 +57,7 @@ export default function Page() {
                     {/* Zoom icon overlay */}
                     <button
                       onClick={() => setSelectedImage(certificate.image)}
-                      className="absolute top-4 right-4 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110"
+                      className="absolute hidden md:flex top-4 right-4 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110"
                       aria-label="Zoom certificate"
                     >
                       <svg

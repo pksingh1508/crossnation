@@ -153,18 +153,19 @@ export function Navbar() {
           <div className="hidden md:flex 2xl:hidden items-center justify-between py-2">
             <div className="flex items-center gap-2 text-gray-400">
               <a
-                href="tel:+48222095497"
+                href="tel:+48787277550"
                 className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
                 style={{ ["--hover-bg" as any]: colors.yellow.dark }}
               >
-                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 22 209 5497
+                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 787 277 550
               </a>
               <a
-                href="tel:+48726635666"
+                href="https://wa.me/4878727755"
                 className={`inline-flex text-[12px] md:text-base items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 sm:px-2.5 py-2.5 ${fontRoboto.className}`}
                 style={{ ["--hover-bg" as any]: colors.yellow.dark }}
               >
-                <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 72 635 666
+                <MessageCircle className="md:h-4 md:w-4 h-2 w-2" /> +48 787 277
+                555
               </a>
             </div>
             <div className="flex items-center gap-2">
@@ -206,18 +207,18 @@ export function Navbar() {
             <div className="flex items-center justify-between py-2">
               <div className="flex items-center gap-2 text-gray-400">
                 <a
-                  href="tel:+48222095497"
+                  href="tel:+48787277550"
                   className={`inline-flex text-[12px] items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 py-2.5 ${fontRoboto.className}`}
                   style={{ ["--hover-bg" as any]: colors.yellow.dark }}
                 >
-                  <Phone className="h-2 w-2" /> +48 22 209 5497
+                  <Phone className="h-2 w-2" /> +48 787 277 550
                 </a>
                 <a
-                  href="tel:+48726635666"
+                  href="https://wa.me/4878727755"
                   className={`inline-flex text-[12px] items-center gap-2 hover:text-gray-600 transition-colors hover:bg-[var(--hover-bg)] px-1 py-2.5 ${fontRoboto.className}`}
                   style={{ ["--hover-bg" as any]: colors.yellow.dark }}
                 >
-                  <Phone className="h-2 w-2" /> +48 72 635 666
+                  <MessageCircle className="h-2 w-2" /> +48 787 277 555
                 </a>
               </div>
               <LanguageSwitcher />

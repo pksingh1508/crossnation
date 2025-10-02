@@ -14,6 +14,7 @@ export function SingleOneTestimonial({
   testimonial,
   index = 0,
 }: SingleOneTestimonialProps) {
+  const URL = process.env.NEXT_PUBLIC_CMS_URL;
   // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
     id: testimonial.id,
@@ -49,17 +50,13 @@ export function SingleOneTestimonial({
       className="w-full"
     >
       <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-        <div className="flex gap-6 items-start">
+        <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
           {/* Left side - Image */}
           <div className="flex-shrink-0">
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-md">
+            <div className="rounded-xl overflow-hidden shadow-md">
               {data.user_image ? (
                 <Image
-                  src={
-                    data.user_image.startsWith("http")
-                      ? data.user_image
-                      : `https://determined-unity-de531adc95.strapiapp.com${data.user_image}`
-                  }
+                  src={`${URL}${data.user_image}`}
                   alt={`${data.name} - testimonial`}
                   width={128}
                   height={128}

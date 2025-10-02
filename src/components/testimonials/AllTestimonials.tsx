@@ -243,7 +243,7 @@ export function AllTestimonials() {
             >
               <Star className="w-5 h-5 text-amber-600" />
               <span className="text-amber-600 font-semibold text-sm uppercase tracking-wide">
-                Client Testimonials
+                Success Stories
               </span>
             </motion.div>
 
