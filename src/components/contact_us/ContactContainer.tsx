@@ -82,7 +82,7 @@ export function ContactContainer() {
       title: t("info.whatsapp.title"),
       content: [t("info.whatsapp.number")],
       color: "from-yellow-500 to-yellow-500",
-      link: `tel:${t("info.whatsapp.number")}`,
+      link: `https://wa.me/${t("info.whatsapp.number")}`,
     },
     {
       icon: Mail,
@@ -245,6 +245,8 @@ export function ContactContainer() {
                               {item.link ? (
                                 <a
                                   href={item.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                   className="hover:text-yellow-600 transition-colors duration-200 hover:underline"
                                 >
                                   {line}
@@ -322,6 +324,8 @@ export function ContactContainer() {
                               {item.link ? (
                                 <a
                                   href={item.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                   className="hover:text-yellow-600 transition-colors duration-200 hover:underline"
                                 >
                                   {line}
