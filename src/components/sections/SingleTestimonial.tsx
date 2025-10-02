@@ -69,11 +69,7 @@ export function SingleTestimonial({
               {/* Ensure fixed height */}
               {data.user_image ? (
                 <Image
-                  src={
-                    data.user_image.startsWith("http")
-                      ? data.user_image
-                      : `https://determined-unity-de531adc95.strapiapp.com${data.user_image}`
-                  }
+                  src={data.user_image}
                   alt="Testimonial image"
                   fill
                   className="rounded-2xl object-contain lg:object-cover"
@@ -93,14 +89,10 @@ export function SingleTestimonial({
               <div className="relative flex flex-col items-center gap-4">
                 {/* Avatar */}
                 <div className="relative">
-                  <div className="w-32 h-32 rounded-sm overflow-hidden ring-4 ring-white shadow-md">
+                  <div className="w-40 h-44 rounded-sm overflow-hidden ring-4 ring-white shadow-md">
                     {data.user_image ? (
                       <Image
-                        src={
-                          data.user_image.startsWith("http")
-                            ? data.user_image
-                            : `https://determined-unity-de531adc95.strapiapp.com${data.user_image}`
-                        }
+                        src={data.user_image}
                         alt={`${data.name} - testimonial`}
                         fill
                         className="w-full h-full rounded-md object-cover"

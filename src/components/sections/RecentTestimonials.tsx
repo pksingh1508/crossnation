@@ -10,11 +10,11 @@ export function RecentTestimonials() {
   const testimonialData: TestimonialItem[] = [
     {
       id: 1,
-      name: "Rolando Mocoy",
+      name: "Manoj",
       what_they_say:
-        "Thanks to EU Career Serwis, my work permit journey was smooth and well-organized. From paperwork to embassy coordination, their expert team handled everything with care. Their knowledge and support truly",
+        "Thanks to EU Career Serwis, my work permit journey was smooth and well-organized. From paperwork to embassy coordination, their expert team handled everything with care. Their knowledge and support truly make a difference for international candidates like me",
       user_image: {
-        url: "https://ik.imagekit.io/eucareerserwis/home/insp-4.webp",
+        url: "https://ik.imagekit.io/eucareerserwis/home/Manoj.webp",
       },
     },
     {
