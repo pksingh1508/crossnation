@@ -307,9 +307,9 @@
         "title": "Contatta il nostro team di esperti",
         "address": {
           "title": "Indirizzo",
-          "street": "Via: Ul Ludwika Idzikowskiego 16, 4° piano",
-          "zipCode": "CAP: 00-710 Varsavia",
-          "city": "Città: Varsavia, Paese: Polonia"
+          "street": "Street: Mennica Legacy Tower, Prosta 20",
+          "zipCode": "ZIP code: 00-850",
+          "city": "City: Warszawa"
         },
         "callUs": {
           "title": "Chiamaci",

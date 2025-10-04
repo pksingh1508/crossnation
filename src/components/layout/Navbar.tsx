@@ -225,7 +225,7 @@ export function Navbar() {
             </div>
 
             {/* Second row: Book appointment and contact buttons */}
-            <div className="flex items-center gap-2 pb-2">
+            <div className="flex items-center justify-center gap-2 pb-2">
               <Button
                 asChild
                 variant="outline"

@@ -307,9 +307,9 @@
         "title": "Contactez Notre Équipe d'Experts",
         "address": {
           "title": "Adresse",
-          "street": "Rue : Ul Ludwika Idzikowskiego 16, 4ème étage",
-          "zipCode": "Code postal : 00-710 Warszawa",
-          "city": "Ville : Warszawa, Pays : Pologne"
+          "street": "Street: Mennica Legacy Tower, Prosta 20",
+          "zipCode": "ZIP code: 00-850",
+          "city": "City: Warszawa"
         },
         "callUs": {
           "title": "Appelez-nous",

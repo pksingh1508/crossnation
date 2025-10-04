@@ -26,7 +26,7 @@ export function RecentTestimonials() {
     {
       id: 3,
       user_image: {
-        url: "https://ik.imagekit.io/eucareerserwis/home/stamp.webp",
+        url: "https://ik.imagekit.io/eucareerserwis/home/stampImg.webp",
       },
     },
   ];

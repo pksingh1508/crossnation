@@ -307,9 +307,9 @@
         "title": "Skontaktuj się z Naszym Zespołem Ekspertów",
         "address": {
           "title": "Adres",
-          "street": "Ulica: Ul Ludwika Idzikowskiego 16, 4 piętro",
-          "zipCode": "Kod pocztowy: 00-710 Warszawa",
-          "city": "Miasto: Warszawa, Kraj: Polska"
+          "street": "Street: Mennica Legacy Tower, Prosta 20",
+          "zipCode": "ZIP code: 00-850",
+          "city": "City: Warszawa"
         },
         "callUs": {
           "title": "Zadzwoń do nas",
