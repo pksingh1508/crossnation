@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import BankDetails from "./BankDetails";
 
 export function BookAppointment() {
   const t = useTranslations("bookAppointment");
@@ -272,6 +273,9 @@ export function BookAppointment() {
             </div>
           </div>
         </motion.section>
+        <div>
+          <BankDetails />
+        </div>
       </motion.div>
     </div>
   );
