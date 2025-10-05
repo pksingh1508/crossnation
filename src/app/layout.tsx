@@ -11,8 +11,10 @@ import { generateMetadata } from "@/lib/seo/metadata";
 const fonts = `${fontSans.variable} ${fontMono.variable}`;
 
 export const metadata: Metadata = generateMetadata({
-  title: siteConfig.name,
-  description: siteConfig.description,
+  title:
+    "EU Career Serwis | Professional Immigration & Recruitment Solutions Across Europe",
+  description:
+    "Partner with EU Career Serwis for premium immigration, recruitment, and HR consulting services in Europe. Tailored solutions for professionals and employers seeking growth and global opportunities.",
   keywords: [
     "immigration services",
     "work permits",
@@ -38,6 +40,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang={siteConfig.defaultLanguage}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <ReactLenis root options={lenisOptions}>
         <body className={fonts}>
           {process.env.NEXT_PUBLIC_GA_ID && (
