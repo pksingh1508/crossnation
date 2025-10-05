@@ -243,7 +243,7 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
                   {newsData.category}
                 </div>
               )}
-              {tags.map((tag, index) => (
+              {/* {tags.map((tag, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-1.5 bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full text-sm font-medium"
@@ -251,7 +251,7 @@ export default function SingleNewsPage({ params }: SingleNewsPageProps) {
                   <Tag className="w-3 h-3" />
                   {tag}
                 </div>
-              ))}
+              ))} */}
             </div>
 
             {/* Title */}

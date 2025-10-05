@@ -244,7 +244,7 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
                   {blogData.category}
                 </div>
               )}
-              {tags.map((tag, index) => (
+              {/* {tags.map((tag, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-1.5 bg-pink-100 text-pink-800 px-3 py-1.5 rounded-full text-sm font-medium"
@@ -252,7 +252,7 @@ export default function SingleBlogPage({ params }: SingleBlogPageProps) {
                   <Tag className="w-3 h-3" />
                   {tag}
                 </div>
-              ))}
+              ))} */}
             </div>
 
             {/* Title */}

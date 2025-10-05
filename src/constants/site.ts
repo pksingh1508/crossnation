@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "EU Career Serwis",
   description: "Europe's Premier Immigration and Recruitment Consultancy",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  ogImage: "/og-image.jpg",
+  ogImage: "/brandLogo.webp",
   links: {
     twitter: "https://x.com/eucareerserwis",
     github: "https://github.com/eucareerserwis",
@@ -11,13 +11,13 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/company/eu-career-serwis",
   },
   contact: {
-    email: "info@eucareerserwis.pl",
-    phone: "+48 22 268 3497",
-    whatsapp: "+48 79 835 6664",
+    email: "office@eucareerserwis.pl",
+    phone: "+48 787 277 550",
+    whatsapp: "+48787277555",
     address: {
-      street: "Ul Ludwika Idzikowskiego 16, 4th Floor",
+      street: "Mennica Legacy Tower, Prosta 20",
       city: "Warszawa",
-      zipCode: "00-710",
+      zipCode: "00-850",
       country: "Poland",
     },
   },
