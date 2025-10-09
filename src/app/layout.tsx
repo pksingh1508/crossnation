@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang={siteConfig.defaultLanguage}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
       </head>
       <ReactLenis root options={lenisOptions}>
         <body className={fonts}>
