@@ -425,7 +425,7 @@ export async function fetchSlugs(
   locale: string = "en"
 ): Promise<string[]> {
   try {
-    const URL = `${BASE_URL}/${collection}`;
+    const URL = `${BASE_URL}${collection}`;
 
     const response = await axios.get(URL, {
       headers: {
