@@ -419,6 +419,36 @@ export async function fetchPaginatedImmigrationNews(
   }
 }
 
+export async function fetchSlugs(
+  token: string,
+  collection: string,
+  locale: string = "en"
+): Promise<string[]> {
+  try {
+    const URL = `${BASE_URL}/${collection}`;
+
+    const response = await axios.get(URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      params: {
+        locale: locale,
+        "fields[0]": "slug",
+        pagination: {
+          pageSize: 1000, // adjust if needed
+        },
+      },
+    });
+
+    // Return just the slugs
+    return response.data?.data?.map((item: any) => item.attributes.slug) || [];
+  } catch (error) {
+    console.error(`Error fetching slugs from ${collection}:`, error);
+    throw new Error(`Failed to fetch slugs from ${collection}`);
+  }
+}
+
 export async function fetchRecentNews(
   token: string,
   page: number = 1,

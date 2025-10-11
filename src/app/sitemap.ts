@@ -58,5 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // This make Google aware of blog sitemap
+  sitemapEntries.push({
+    url: `${baseUrl}/sitemap-blogs.xml`,
+    lastModified: currentDate,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
+
   return sitemapEntries;
 }

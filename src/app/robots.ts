@@ -15,7 +15,10 @@ export default function robots(): MetadataRoute.Robots {
         "/search",
       ],
     },
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: [
+      `${siteConfig.url}/sitemap.xml`,
+      `${siteConfig.url}/sitemap-blogs.xml`,
+    ],
     host: siteConfig.url,
   };
 }
