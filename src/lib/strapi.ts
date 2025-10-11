@@ -442,7 +442,8 @@ export async function fetchSlugs(
     });
 
     // Return just the slugs
-    return response.data?.data?.map((item: any) => item.attributes.slug) || [];
+    console.log("Fetched slugs:", response.data?.data);
+    return response.data?.data?.map((item: any) => item.slug) || [];
   } catch (error) {
     console.error(`Error fetching slugs from ${collection}:`, error);
     throw new Error(`Failed to fetch slugs from ${collection}`);
