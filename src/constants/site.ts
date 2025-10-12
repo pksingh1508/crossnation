@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "EU Career Serwis",
   description: "Europe's Premier Immigration and Recruitment Consultancy",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL,
   ogImage: "/brandLogo.webp",
   links: {
     twitter: "https://x.com/eucareerserwis",

@@ -6,7 +6,7 @@ export const revalidate = 3600;
 
 export async function GET() {
   try {
-    const baseUrl = siteConfig.url;
+    const baseUrl = "https://eucareerserwis.pl";
     const sitemapEntries: any[] = [];
 
     // Fetch all slugs
@@ -100,10 +100,11 @@ export async function GET() {
     console.error("❌ Error generating blogs sitemap:", error);
 
     // Return a minimal valid sitemap on error
+    const baseUrl = "https://eucareerserwis.pl";
     const errorXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>${siteConfig.url}</loc>
+    <loc>${baseUrl}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
   </url>
 </urlset>`;
