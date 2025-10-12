@@ -3,18 +3,29 @@ import { siteConfig } from "@/constants/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: [
-        "/api/",
-        "/admin/",
-        "/_next/",
-        "/private/",
-        "*.json",
-        "/search",
-      ],
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/_next/",
+          "/private/",
+          "*.json",
+          "/search",
+          "/*?*sort=", // Prevent indexing of sorted pages
+          "/*?*filter=", // Prevent indexing of filtered pages
+        ],
+      },
+      // Optionally allow specific bots more access
+      {
+        userAgent: ["Googlebot", "Bingbot"],
+        allow: "/",
+        disallow: ["/api/", "/admin/", "/private/"],
+        crawlDelay: 0,
+      },
+    ],
     sitemap: [
       `${siteConfig.url}/sitemap.xml`,
       `${siteConfig.url}/sitemap-blogs.xml`,
