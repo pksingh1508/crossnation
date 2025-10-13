@@ -409,6 +409,7 @@ export async function fetchPaginatedImmigrationNews(
         "fields[3]": "views",
         "fields[4]": "slug",
         "populate[news_image][fields][0]": "url",
+        "sort[0]": "updatedAt:desc",
       },
     });
 
