@@ -63,7 +63,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="./favicon.ico" />
         <meta name="theme-color" content="#0b74da" />
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="index, follow" />
 
         {/* ✅ JSON-LD for Google */}
         <script
