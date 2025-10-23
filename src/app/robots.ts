@@ -7,29 +7,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/api/",
-          "/admin/",
-          "/_next/",
-          "/private/",
-          "*.json",
-          "/search",
-          "/*?*sort=", // Prevent indexing of sorted pages
-          "/*?*filter=", // Prevent indexing of filtered pages
-        ],
+        disallow: ["/api/", "/admin/", "/_next/", "/private/", "/search"],
       },
-      // Optionally allow specific bots more access
       {
         userAgent: ["Googlebot", "Bingbot"],
         allow: "/",
         disallow: ["/api/", "/admin/", "/private/"],
-        crawlDelay: 0,
       },
     ],
     sitemap: [
       `${siteConfig.url}/sitemap.xml`,
       `${siteConfig.url}/sitemap-blogs.xml`,
     ],
-    host: siteConfig.url,
   };
 }

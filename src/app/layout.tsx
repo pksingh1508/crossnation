@@ -11,8 +11,7 @@ import { generateMetadata } from "@/lib/seo/metadata";
 const fonts = `${fontSans.variable} ${fontMono.variable}`;
 
 export const metadata: Metadata = generateMetadata({
-  title:
-    "EU Career Serwis | Professional Immigration & Recruitment Solutions Across Europe",
+  title: "Europe's Premier Immigration & Recruitment Consultancy",
   description:
     "Partner with EU Career Serwis for premium immigration, recruitment, and HR consulting services in Europe. Tailored solutions for professionals and employers seeking growth and global opportunities.",
   keywords: [
@@ -64,7 +63,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="./favicon.ico" />
         <meta name="theme-color" content="#0b74da" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex" />
 
         {/* ✅ JSON-LD for Google */}
         <script

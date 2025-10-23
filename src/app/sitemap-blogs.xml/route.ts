@@ -35,55 +35,47 @@ export async function GET() {
     const blogSlugs: string[] = blogsRes.ok ? await blogsRes.json() : [];
     const newsSlugs: string[] = newsRes.ok ? await newsRes.json() : [];
 
-    console.log(
-      `✅ Fetched ${blogSlugs.length} blogs and ${newsSlugs.length} news articles`
-    );
+    // Add main category pages
+    sitemapEntries.push({
+      url: `${baseUrl}/en/blog`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
 
-    for (const lang of siteConfig.supportedLanguages) {
-      // Add main category pages
-      sitemapEntries.push({
-        url: `${baseUrl}/${lang}/blog`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: "weekly",
-        priority: 0.8,
-      });
+    sitemapEntries.push({
+      url: `${baseUrl}/en/immigration-news`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
 
-      sitemapEntries.push({
-        url: `${baseUrl}/${lang}/immigration-news`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: "weekly",
-        priority: 0.8,
-      });
+    // Add individual blog URLs
+    blogSlugs.forEach((slug) => {
+      if (slug && typeof slug === "string") {
+        // URL encode the slug to handle spaces and special characters
+        const encodedSlug = encodeURIComponent(slug);
+        sitemapEntries.push({
+          url: `${baseUrl}/en/blog/${encodedSlug}`,
+          lastModified: new Date().toISOString(),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
+    });
 
-      // Add individual blog URLs
-      blogSlugs.forEach((slug) => {
-        if (slug && typeof slug === "string") {
-          // URL encode the slug to handle spaces and special characters
-          const encodedSlug = encodeURIComponent(slug);
-          sitemapEntries.push({
-            url: `${baseUrl}/${lang}/blog/${encodedSlug}`,
-            lastModified: new Date().toISOString(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-          });
-        }
-      });
-
-      // Add individual news URLs
-      newsSlugs.forEach((slug) => {
-        if (slug && typeof slug === "string") {
-          const encodedSlug = encodeURIComponent(slug);
-          sitemapEntries.push({
-            url: `${baseUrl}/${lang}/immigration-news/${encodedSlug}`,
-            lastModified: new Date().toISOString(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-          });
-        }
-      });
-    }
-
-    console.log(`✅ Generated ${sitemapEntries.length} sitemap entries`);
+    // Add individual news URLs
+    newsSlugs.forEach((slug) => {
+      if (slug && typeof slug === "string") {
+        const encodedSlug = encodeURIComponent(slug);
+        sitemapEntries.push({
+          url: `${baseUrl}/en/immigration-news/${encodedSlug}`,
+          lastModified: new Date().toISOString(),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
+    });
 
     // Generate XML
     const xml = generateSitemapXML(sitemapEntries);
