@@ -5,7 +5,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
   const currentDate = new Date();
 
-  // Static pages for each language
   const staticPages = [
     "",
     "/work",
@@ -28,13 +27,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/antiFraud-policy",
   ];
 
-  // Generate URLs for all supported languages
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
   siteConfig.supportedLanguages.forEach((lang) => {
     staticPages.forEach((page) => {
+      // Fix: Handle empty string (homepage) to avoid double slash
+      const fullPath = page === "" ? `/${lang}` : `/${lang}${page}`;
+
       sitemapEntries.push({
-        url: `${baseUrl}/${lang}${page}`,
+        url: `${baseUrl}${fullPath}`,
         lastModified: currentDate,
         changeFrequency:
           page === ""
@@ -56,14 +57,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
                   : 0.6,
       });
     });
-  });
-
-  // This make Google aware of blog sitemap
-  sitemapEntries.push({
-    url: `${baseUrl}/sitemap-blogs.xml`,
-    lastModified: currentDate,
-    changeFrequency: "weekly",
-    priority: 0.8,
   });
 
   return sitemapEntries;
