@@ -18,9 +18,7 @@ export function generateMetadata({
   noIndex = false,
   canonical,
 }: SEOConfig): Metadata {
-  const fullTitle = title.includes(siteConfig.name)
-    ? title
-    : `${title} | ${siteConfig.name}`;
+  const fullTitle = title.includes(siteConfig.name) ? title : `${title}`;
 
   const metadataBase = new URL(siteConfig.url);
 
@@ -64,11 +62,11 @@ export function generateMetadata({
       creator: "@eucareerserwis",
     },
     robots: {
-      index: !noIndex,
-      follow: !noIndex,
+      index: true,
+      follow: true,
       googleBot: {
-        index: !noIndex,
-        follow: !noIndex,
+        index: true,
+        follow: true,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
@@ -86,9 +84,7 @@ export function generateLocalizedMetadata({
   locale = "en",
   pathname = "",
 }: SEOConfig & { locale?: string; pathname?: string }): Metadata {
-  const fullTitle = title.includes(siteConfig.name)
-    ? title
-    : `${title} | ${siteConfig.name}`;
+  const fullTitle = title.includes(siteConfig.name) ? title : `${title}`;
 
   const metadataBase = new URL(siteConfig.url);
   const canonicalUrl = `${siteConfig.url}/${locale}${pathname}`;
@@ -159,11 +155,11 @@ export function generateLocalizedMetadata({
       creator: "@eucareerserwis",
     },
     robots: {
-      index: !noIndex,
-      follow: !noIndex,
+      index: true,
+      follow: true,
       googleBot: {
-        index: !noIndex,
-        follow: !noIndex,
+        index: true,
+        follow: true,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
