@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "EU Career Serwis",
   description: "Europe's Premier Immigration and Recruitment Consultancy",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://eucareerserwis.pl",
+  url: process.env.NEXT_PUBLIC_SITE_URL,
   ogImage: "/logoImage.jpeg",
   links: {
     twitter: "https://x.com/eucareerserwis",
@@ -33,12 +33,12 @@ export const siteConfig = {
   } as const,
   // SEO-optimized descriptions for each language
   localizedDescriptions: {
-    en: "EU Career Serwis - Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
-    es: "EU Career Serwis - Principal Consultoría de Inmigración y Reclutamiento de Europa. Permisos de trabajo expertos, asistencia de visa y orientación profesional en toda Europa.",
-    pl: "EU Career Serwis - Wiodąca Europejska Firma Konsultingowa ds. Imigracji i Rekrutacji. Ekspertowe pozwolenia na pracę, pomoc wizowa i doradztwo zawodowe w całej Europie.",
-    fr: "EU Career Serwis - Premier Cabinet de Conseil en Immigration et Recrutement d'Europe. Permis de travail experts, assistance visa et orientation de carrière à travers l'Europe.",
-    it: "EU Career Serwis - Prima Società di Consulenza per Immigrazione e Reclutamento d'Europa. Permessi di lavoro esperti, assistenza visti e orientamento professionale in tutta Europa.",
-    de: "EU Career Serwis - Europas führende Beratung für Einwanderung und Rekrutierung. Experten-Arbeitserlaubnisse, Visa-Unterstützung und Karriereberatung in ganz Europa.",
+    en: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
+    es: "Principal Consultoría de Inmigración y Reclutamiento de Europa. Permisos de trabajo expertos, asistencia de visa y orientación profesional en toda Europa.",
+    pl: "Wiodąca Europejska Firma Konsultingowa ds. Imigracji i Rekrutacji. Ekspertowe pozwolenia na pracę, pomoc wizowa i doradztwo zawodowe w całej Europie.",
+    fr: "Premier Cabinet de Conseil en Immigration et Recrutement d'Europe. Permis de travail experts, assistance visa et orientation de carrière à travers l'Europe.",
+    it: "Prima Società di Consulenza per Immigrazione e Reclutamento d'Europa. Permessi di lavoro esperti, assistenza visti e orientamento professionale in tutta Europa.",
+    de: "Europas führende Beratung für Einwanderung und Rekrutierung. Experten-Arbeitserlaubnisse, Visa-Unterstützung und Karriereberatung in ganz Europa.",
   } as const,
 };
 
