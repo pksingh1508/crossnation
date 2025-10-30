@@ -16,7 +16,7 @@ export function generateMetadata({
   keywords = [],
   image = "/logoImage.jpeg",
   noIndex = false,
-  canonical,
+  canonical = "https://eucareerserwis.pl",
 }: SEOConfig): Metadata {
   const fullTitle = title.includes(siteConfig.name) ? title : `${title}`;
 

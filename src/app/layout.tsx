@@ -14,7 +14,6 @@ export const metadata: Metadata = generateMetadata({
   title: "European Recruitment Agency for Unskilled & Semi-Skilled Workers",
   description:
     "EU Career Serwis is a trusted recruitment agency in Poland, connecting European employers with qualified unskilled and semi-skilled workers from non-EU countries.",
-  canonical: `${siteConfig.url}`,
   keywords: [
     "international recruitment agency",
     "recruitment agency in Poland",
