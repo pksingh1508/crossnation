@@ -8,7 +8,7 @@ import { RecentBlog } from "@/components/sections/RecentBlog";
 import { NewsSection } from "@/components/immigration_faq/NewsSection";
 
 export const metadata: Metadata = {
-  title: "Recruiter Services | CountryNation",
+  title: "Recruiter Services | EU Career Serwis",
   description:
     "Professional recruitment services and talent acquisition support",
 };

@@ -4,7 +4,7 @@ import BookingWidget from "@/components/simplyBookMe/BookingWidget";
 import { BookAppointment } from "@/components/bookAppointment/BookAppointment";
 
 export const metadata: Metadata = {
-  title: "Book Appointment | CountryNation",
+  title: "Book Appointment | EU Career Serwis",
   description: "Schedule a consultation with our experts",
 };
 

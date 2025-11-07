@@ -16,20 +16,43 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
-export function AllPermitImage() {
-  const [permitImages, setPermitImages] = useState<PermitItem[]>([]);
-  const [loading, setLoading] = useState(true);
+interface InitialMeta {
+  currentPage: number;
+  totalPages: number;
+  hasNextPage: boolean;
+}
+
+interface AllPermitImageProps {
+  initialPermits?: PermitItem[];
+  initialMeta?: InitialMeta;
+}
+
+export function AllPermitImage({
+  initialPermits = [],
+  initialMeta,
+}: AllPermitImageProps) {
+  const [permitImages, setPermitImages] = useState<PermitItem[]>(
+    initialPermits
+  );
+  const [loading, setLoading] = useState(initialPermits.length === 0);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
-  const [currentPage, setCurrentPage] = useState(1);
-  const [hasNextPage, setHasNextPage] = useState(true);
-  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(
+    initialMeta?.currentPage ?? 1
+  );
+  const [hasNextPage, setHasNextPage] = useState(
+    initialMeta?.hasNextPage ?? true
+  );
+  const [totalPages, setTotalPages] = useState(
+    initialMeta?.totalPages ?? 0
+  );
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastImageRef = useRef<HTMLDivElement | null>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const skipInitialFetchRef = useRef(initialPermits.length > 0);
   const t = useTranslations("workPermit");
   const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
@@ -93,6 +116,11 @@ export function AllPermitImage() {
   );
 
   useEffect(() => {
+    if (skipInitialFetchRef.current) {
+      skipInitialFetchRef.current = false;
+      setLoading(false);
+      return;
+    }
     fetchPermitImages();
   }, [fetchPermitImages]);
 

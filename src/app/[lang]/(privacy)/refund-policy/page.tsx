@@ -2,7 +2,7 @@ import { Refund_Policy } from "@/components/Terms_Conditions/Refund_Policy";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Refund Policy | CountryNation",
+  title: "Refund Policy | EU Career Serwis",
   description: "Our refund policy and terms for service cancellations",
 };
 

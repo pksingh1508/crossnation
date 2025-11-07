@@ -1,5 +1,17 @@
 import { siteConfig } from "@/constants/site";
 
+const toAbsoluteUrl = (path: string) => {
+  if (!path) {
+    return siteConfig.url;
+  }
+  if (/^https?:\/\//i.test(path)) {
+    return path;
+  }
+  return `${siteConfig.url}${path.startsWith("/") ? "" : "/"}${path}`;
+};
+
+const siteLogoUrl = toAbsoluteUrl(siteConfig.ogImage || "/logoImage.jpeg");
+
 // Organization Schema
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -7,7 +19,7 @@ export const organizationSchema = {
   name: "EU Career Serwis",
   alternateName: "EU Career Service",
   url: siteConfig.url,
-  logo: `${siteConfig.url}/logo.png`,
+  logo: siteLogoUrl,
   description: siteConfig.description,
   foundingDate: "2020",
   contactPoint: {
@@ -99,14 +111,14 @@ export function generateArticleSchema(
   imageUrl?: string,
   authorName: string = "EU Career Serwis Team"
 ) {
+  const resolvedImage = imageUrl ? toAbsoluteUrl(imageUrl) : siteLogoUrl;
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description: description,
-    image: imageUrl
-      ? `${siteConfig.url}${imageUrl}`
-      : `${siteConfig.url}/og-image.jpg`,
+    image: resolvedImage,
     datePublished: publishedDate,
     dateModified: modifiedDate,
     author: {
@@ -119,7 +131,7 @@ export function generateArticleSchema(
       name: "EU Career Serwis",
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/logo.png`,
+        url: siteLogoUrl,
       },
     },
     mainEntityOfPage: {
@@ -168,7 +180,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "EU Career Serwis",
-  image: `${siteConfig.url}/logo.png`,
+  image: siteLogoUrl,
   "@id": siteConfig.url,
   url: siteConfig.url,
   telephone: "+48-22-268-3497",

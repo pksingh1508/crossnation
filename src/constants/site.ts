@@ -25,20 +25,20 @@ export const siteConfig = {
   defaultLanguage: "en" as const,
   languageNames: {
     en: "English",
-    es: "Español",
+    es: "Espanol",
     pl: "Polski",
-    fr: "Français",
+    fr: "Francais",
     it: "Italiano",
     de: "Deutsch",
   } as const,
   // SEO-optimized descriptions for each language
   localizedDescriptions: {
     en: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
-    es: "Principal Consultoría de Inmigración y Reclutamiento de Europa. Permisos de trabajo expertos, asistencia de visa y orientación profesional en toda Europa.",
-    pl: "Wiodąca Europejska Firma Konsultingowa ds. Imigracji i Rekrutacji. Ekspertowe pozwolenia na pracę, pomoc wizowa i doradztwo zawodowe w całej Europie.",
-    fr: "Premier Cabinet de Conseil en Immigration et Recrutement d'Europe. Permis de travail experts, assistance visa et orientation de carrière à travers l'Europe.",
-    it: "Prima Società di Consulenza per Immigrazione e Reclutamento d'Europa. Permessi di lavoro esperti, assistenza visti e orientamento professionale in tutta Europa.",
-    de: "Europas führende Beratung für Einwanderung und Rekrutierung. Experten-Arbeitserlaubnisse, Visa-Unterstützung und Karriereberatung in ganz Europa.",
+    es: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
+    pl: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
+    fr: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
+    it: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
+    de: "Europe's Premier Immigration and Recruitment Consultancy. Expert work permits, visa assistance, and career guidance across Europe.",
   } as const,
 };
 

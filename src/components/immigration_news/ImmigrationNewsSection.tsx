@@ -24,16 +24,7 @@ interface PaginationData {
   total: number;
 }
 
-interface CachedPage {
-  data: NewsItem[];
-  timestamp: number;
-}
-
 export function ImmigrationNewsSection() {
-  // State for news data and caching
-  const [newsCache, setNewsCache] = useState<Map<number, CachedPage>>(
-    new Map()
-  );
   const [currentNews, setCurrentNews] = useState<NewsItem[]>([]);
   const [pagination, setPagination] = useState<PaginationData>({
     page: 1,
@@ -51,27 +42,9 @@ export function ImmigrationNewsSection() {
 
   const locale = useLocale();
 
-  // Cache timeout - 5 minutes
-  const CACHE_TIMEOUT = 5 * 60 * 1000;
-
   const fetchNews = useCallback(
-    async (page: number, forceRefresh = false) => {
+    async (page: number) => {
       try {
-        // Check if we have cached data for this page
-        const cachedPage = newsCache.get(page);
-        const now = Date.now();
-
-        if (
-          !forceRefresh &&
-          cachedPage &&
-          now - cachedPage.timestamp < CACHE_TIMEOUT
-        ) {
-          // Use cached data
-          setCurrentNews(cachedPage.data);
-          setLoading(false);
-          return;
-        }
-
         setLoading(true);
         setError(null);
 
@@ -85,17 +58,6 @@ export function ImmigrationNewsSection() {
 
         const data: StrapiResponse = await response.json();
         const newsItems = data.data || [];
-
-        // Cache the fetched data
-        setNewsCache(
-          (prev) =>
-            new Map(
-              prev.set(page, {
-                data: newsItems,
-                timestamp: now,
-              })
-            )
-        );
 
         setCurrentNews(newsItems);
 
@@ -113,7 +75,7 @@ export function ImmigrationNewsSection() {
         setLoading(false);
       }
     },
-    [locale, newsCache, CACHE_TIMEOUT]
+    [locale]
   );
 
   useEffect(() => {
@@ -153,8 +115,7 @@ export function ImmigrationNewsSection() {
 
   // Clear cache for refresh
   const handleRefresh = () => {
-    setNewsCache(new Map());
-    fetchNews(pagination.page, true);
+    fetchNews(pagination.page);
   };
 
   // Pagination component
@@ -346,10 +307,10 @@ export function ImmigrationNewsSection() {
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
-                  {newsCache.size}
+                  {pagination.pageCount}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  {tNews("cachedPage")}
+                  {tNews("totalPage")}
                 </div>
               </div>
             </motion.div>

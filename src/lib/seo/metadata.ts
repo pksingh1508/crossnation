@@ -1,6 +1,16 @@
 import { Metadata } from "next";
 import { siteConfig } from "@/constants/site";
 
+const toAbsoluteUrl = (path?: string) => {
+  if (!path) {
+    return `${siteConfig.url}${siteConfig.ogImage}`;
+  }
+  if (/^https?:\/\//i.test(path)) {
+    return path;
+  }
+  return `${siteConfig.url}${path.startsWith("/") ? "" : "/"}${path}`;
+};
+
 export interface SEOConfig {
   title: string;
   description: string;
@@ -18,9 +28,13 @@ export function generateMetadata({
   noIndex = false,
   canonical = "https://eucareerserwis.pl",
 }: SEOConfig): Metadata {
-  const fullTitle = title.includes(siteConfig.name) ? title : `${title}`;
+  const fullTitle = title.includes(siteConfig.name)
+    ? title
+    : `${title} | ${siteConfig.name}`;
 
   const metadataBase = new URL(siteConfig.url);
+  const ogImageUrl = toAbsoluteUrl(image);
+  const shouldIndex = !noIndex;
 
   return {
     title: fullTitle,
@@ -35,6 +49,11 @@ export function generateMetadata({
       telephone: false,
     },
     metadataBase,
+    icons: {
+      icon: siteConfig.ogImage,
+      shortcut: siteConfig.ogImage,
+      apple: siteConfig.ogImage,
+    },
     alternates: {
       canonical: canonical || undefined,
     },
@@ -45,7 +64,7 @@ export function generateMetadata({
       siteName: siteConfig.name,
       images: [
         {
-          url: image,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: `${siteConfig.name} - ${title}`,
@@ -58,15 +77,15 @@ export function generateMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [image],
+      images: [ogImageUrl],
       creator: "@eucareerserwis",
     },
     robots: {
-      index: true,
-      follow: true,
+      index: shouldIndex,
+      follow: shouldIndex,
       googleBot: {
-        index: true,
-        follow: true,
+        index: shouldIndex,
+        follow: shouldIndex,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
@@ -79,15 +98,19 @@ export function generateLocalizedMetadata({
   title,
   description,
   keywords = [],
-  image = "/og-image.jpg",
+  image = siteConfig.ogImage,
   noIndex = false,
   locale = "en",
   pathname = "",
 }: SEOConfig & { locale?: string; pathname?: string }): Metadata {
-  const fullTitle = title.includes(siteConfig.name) ? title : `${title}`;
+  const fullTitle = title.includes(siteConfig.name)
+    ? title
+    : `${title} | ${siteConfig.name}`;
 
   const metadataBase = new URL(siteConfig.url);
   const canonicalUrl = `${siteConfig.url}/${locale}${pathname}`;
+  const ogImageUrl = toAbsoluteUrl(image);
+  const shouldIndex = !noIndex;
 
   // Use localized description if available, fallback to provided description
   const localizedDescription =
@@ -124,6 +147,11 @@ export function generateLocalizedMetadata({
       telephone: false,
     },
     metadataBase,
+    icons: {
+      icon: siteConfig.ogImage,
+      shortcut: siteConfig.ogImage,
+      apple: siteConfig.ogImage,
+    },
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -138,7 +166,7 @@ export function generateLocalizedMetadata({
       siteName: siteConfig.name,
       images: [
         {
-          url: image,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: `${siteConfig.name} - ${title}`,
@@ -151,15 +179,15 @@ export function generateLocalizedMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description: localizedDescription,
-      images: [image],
+      images: [ogImageUrl],
       creator: "@eucareerserwis",
     },
     robots: {
-      index: true,
-      follow: true,
+      index: shouldIndex,
+      follow: shouldIndex,
       googleBot: {
-        index: true,
-        follow: true,
+        index: shouldIndex,
+        follow: shouldIndex,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,

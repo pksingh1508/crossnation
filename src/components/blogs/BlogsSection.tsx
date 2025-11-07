@@ -25,16 +25,7 @@ interface PaginationData {
   total: number;
 }
 
-interface CachedPage {
-  data: BlogItem[];
-  timestamp: number;
-}
-
 export function BlogsSection() {
-  // State for blog data and caching
-  const [blogCache, setBlogCache] = useState<Map<number, CachedPage>>(
-    new Map()
-  );
   const [currentBlogs, setCurrentBlogs] = useState<BlogItem[]>([]);
   const [pagination, setPagination] = useState<PaginationData>({
     page: 1,
@@ -52,27 +43,9 @@ export function BlogsSection() {
 
   const locale = useLocale();
 
-  // Cache timeout - 5 minutes
-  const CACHE_TIMEOUT = 5 * 60 * 1000;
-
   const fetchBlogs = useCallback(
-    async (page: number, forceRefresh = false) => {
+    async (page: number) => {
       try {
-        // Check if we have cached data for this page
-        const cachedPage = blogCache.get(page);
-        const now = Date.now();
-
-        if (
-          !forceRefresh &&
-          cachedPage &&
-          now - cachedPage.timestamp < CACHE_TIMEOUT
-        ) {
-          // Use cached data
-          setCurrentBlogs(cachedPage.data);
-          setLoading(false);
-          return;
-        }
-
         setLoading(true);
         setError(null);
 
@@ -87,17 +60,6 @@ export function BlogsSection() {
         const data: BlogResponse = await response.json();
         const blogItems = data.data || [];
 
-        // Cache the fetched data
-        setBlogCache(
-          (prev) =>
-            new Map(
-              prev.set(page, {
-                data: blogItems,
-                timestamp: now,
-              })
-            )
-        );
-
         setCurrentBlogs(blogItems);
 
         if (data.meta?.pagination) {
@@ -110,7 +72,7 @@ export function BlogsSection() {
         setLoading(false);
       }
     },
-    [locale, blogCache, CACHE_TIMEOUT]
+    [locale]
   );
 
   useEffect(() => {
@@ -126,7 +88,7 @@ export function BlogsSection() {
       setPagination((prev) => ({ ...prev, page: newPage }));
       fetchBlogs(newPage);
       // Scroll to top when page changes
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 300, behavior: "smooth" });
     }
   };
 
@@ -148,10 +110,8 @@ export function BlogsSection() {
     );
   });
 
-  // Clear cache for refresh
   const handleRefresh = () => {
-    setBlogCache(new Map());
-    fetchBlogs(pagination.page, true);
+    fetchBlogs(pagination.page);
   };
 
   // Get total likes from current page
@@ -350,10 +310,10 @@ export function BlogsSection() {
               <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">
-                  {blogCache.size}
+                  {pagination.pageCount}
                 </div>
                 <div className="text-sm text-gray-500 font-medium">
-                  {tBlog("cachedPage")}
+                  Total Pages
                 </div>
               </div>
             </motion.div>

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { fontSans, fontMono } from "@/fonts";
 import "./globals.css";
 import { siteConfig } from "@/constants/site";
@@ -7,6 +8,7 @@ import { ReactLenis } from "@/utils/lenis";
 import { LenisOptions } from "lenis";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { generateMetadata } from "@/lib/seo/metadata";
+import { StructuredData } from "@/components/seo/StructuredData";
 
 const fonts = `${fontSans.variable} ${fontMono.variable}`;
 
@@ -33,6 +35,10 @@ export const metadata: Metadata = generateMetadata({
   ],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0b74da",
+};
+
 const lenisOptions: Partial<LenisOptions> = {
   // smoothing controls
   duration: 1.2,
@@ -42,11 +48,14 @@ const lenisOptions: Partial<LenisOptions> = {
   touchMultiplier: 2,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale =
+    (await headers()).get("x-next-intl-locale") || siteConfig.defaultLanguage;
+
   // ✅ Structured Data Schemas (safe for production)
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -69,31 +78,10 @@ export default function RootLayout({
     ],
   };
   return (
-    <html lang={siteConfig.defaultLanguage}>
-      <head>
-        <link rel="icon" href="./favicon.ico" />
-        <title>
-          European Recruitment Agency for Unskilled & Semi-Skilled Workers
-        </title>
-        <meta name="theme-color" content="#0b74da" />
-        <meta name="robots" content="index, follow" />
-
-        {/* ✅ JSON-LD for Google */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-      </head>
+    <html lang={locale}>
       <ReactLenis root options={lenisOptions}>
         <body className={fonts}>
+          <StructuredData data={[websiteSchema, organizationSchema]} />
           {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
           )}
@@ -104,3 +92,4 @@ export default function RootLayout({
     </html>
   );
 }
+

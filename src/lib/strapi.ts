@@ -442,9 +442,11 @@ export async function fetchSlugs(
       },
     });
 
-    // Return just the slugs
-    console.log("Fetched slugs:", response.data?.data);
-    return response.data?.data?.map((item: any) => item.slug) || [];
+    const rawItems = response.data?.data ?? [];
+
+    return rawItems
+      .map((item: any) => item?.attributes?.slug || item?.slug)
+      .filter((slug: unknown): slug is string => typeof slug === "string");
   } catch (error) {
     console.error(`Error fetching slugs from ${collection}:`, error);
     throw new Error(`Failed to fetch slugs from ${collection}`);

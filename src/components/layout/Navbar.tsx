@@ -268,7 +268,7 @@ export function Navbar() {
               <motion.div whileHover={{ scale: 1.01 }}>
                 <Image
                   src="/EU-logo.jpeg"
-                  alt="CountryNation Logo"
+                  alt="EU Career Serwis Logo"
                   width={160}
                   height={48}
                   className="h-16 w-52 object-cover"

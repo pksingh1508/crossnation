@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { ChevronRight, Home } from "lucide-react";
 import { StructuredData } from "./StructuredData";
 import { generateBreadcrumbSchema } from "@/lib/seo/structuredData";
+import { siteConfig } from "@/constants/site";
 
 interface BreadcrumbItem {
   name: string;
@@ -26,7 +27,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   const breadcrumbSchema = generateBreadcrumbSchema(
     allItems.map((item) => ({
       name: item.name,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://eucareerserwis.com"}${item.href}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url}${item.href}`,
     }))
   );
 

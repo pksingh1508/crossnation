@@ -29,33 +29,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  siteConfig.supportedLanguages.forEach((lang) => {
-    staticPages.forEach((page) => {
-      // Fix: Handle empty string (homepage) to avoid double slash
-      const fullPath = page === "" ? `/${lang}` : `/${lang}${page}`;
+  const lang = siteConfig.defaultLanguage;
 
-      sitemapEntries.push({
-        url: `${baseUrl}${fullPath}`,
-        lastModified: currentDate,
-        changeFrequency:
-          page === ""
-            ? "daily"
-            : page.includes("blog") || page.includes("news")
-              ? "weekly"
-              : page.includes("success") || page.includes("testimonials")
-                ? "monthly"
-                : "weekly",
-        priority:
-          page === ""
-            ? 1.0
-            : page === "/work" || page === "/migrate" || page === "/employer"
-              ? 0.9
-              : page === "/blog" || page === "/immigration-news"
-                ? 0.8
-                : page === "/contact" || page === "/book"
-                  ? 0.7
-                  : 0.6,
-      });
+  staticPages.forEach((page) => {
+    const fullPath = page === "" ? `/${lang}` : `/${lang}${page}`;
+
+    sitemapEntries.push({
+      url: `${baseUrl}${fullPath}`,
+      lastModified: currentDate,
+      changeFrequency:
+        page === ""
+          ? "daily"
+          : page.includes("blog") || page.includes("news")
+            ? "weekly"
+            : page.includes("success") || page.includes("testimonials")
+              ? "monthly"
+              : "weekly",
+      priority:
+        page === ""
+          ? 1.0
+          : page === "/work" || page === "/migrate" || page === "/employer"
+            ? 0.9
+            : page === "/blog" || page === "/immigration-news"
+              ? 0.8
+              : page === "/contact" || page === "/book"
+                ? 0.7
+                : 0.6,
     });
   });
 
