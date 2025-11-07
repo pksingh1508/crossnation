@@ -1,68 +1,83 @@
-
 import { NextResponse } from "next/server";
-import { siteConfig } from "@/constants/site";
-import { fetchSlugs } from "@/lib/strapi";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
-interface SitemapEntry {
-  url: string;
-  lastModified: string;
-  changeFrequency: "daily" | "weekly" | "monthly";
-  priority: number;
-}
-
 export async function GET() {
   try {
-    const baseUrl = siteConfig.url;
-    const entries: SitemapEntry[] = [];
-    const token = process.env.STRAPI_ACCESS_TOKEN;
+    const baseUrl = "https://eucareerserwis.pl";
+    const sitemapEntries: any[] = [];
 
-    const [blogSlugs, newsSlugs] = token
-      ? await Promise.all([
-          fetchSlugs(token, "blogs", siteConfig.defaultLanguage),
-          fetchSlugs(token, "immigration-news", siteConfig.defaultLanguage),
-        ])
-      : [[], []];
+    // Fetch all slugs
+    const [blogsRes, newsRes] = await Promise.all([
+      fetch(`${baseUrl}/api/fetchBlogsSlug`, {
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+      fetch(`${baseUrl}/api/fetchNewsSlug`, {
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+    ]);
 
-    const now = new Date().toISOString();
-    entries.push(
-      {
-        url: `${baseUrl}/en/blog`,
-        lastModified: now,
-        changeFrequency: "weekly",
-        priority: 0.8,
-      },
-      {
-        url: `${baseUrl}/en/immigration-news`,
-        lastModified: now,
-        changeFrequency: "weekly",
-        priority: 0.8,
-      }
-    );
+    if (!blogsRes.ok) {
+      console.error(`Blog API failed: ${blogsRes.status}`);
+    }
+    if (!newsRes.ok) {
+      console.error(`News API failed: ${newsRes.status}`);
+    }
 
+    const blogSlugs: string[] = blogsRes.ok ? await blogsRes.json() : [];
+    const newsSlugs: string[] = newsRes.ok ? await newsRes.json() : [];
+
+    // Add main category pages
+    sitemapEntries.push({
+      url: `${baseUrl}/en/blog`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+
+    sitemapEntries.push({
+      url: `${baseUrl}/en/immigration-news`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+
+    // Add individual blog URLs
     blogSlugs.forEach((slug) => {
-      const encodedSlug = encodeURIComponent(slug);
-      entries.push({
-        url: `${baseUrl}/en/blog/${encodedSlug}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.7,
-      });
+      if (slug && typeof slug === "string") {
+        // URL encode the slug to handle spaces and special characters
+        const encodedSlug = encodeURIComponent(slug);
+        sitemapEntries.push({
+          url: `${baseUrl}/en/blog/${encodedSlug}`,
+          lastModified: new Date().toISOString(),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
     });
 
+    // Add individual news URLs
     newsSlugs.forEach((slug) => {
-      const encodedSlug = encodeURIComponent(slug);
-      entries.push({
-        url: `${baseUrl}/en/immigration-news/${encodedSlug}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.7,
-      });
+      if (slug && typeof slug === "string") {
+        const encodedSlug = encodeURIComponent(slug);
+        sitemapEntries.push({
+          url: `${baseUrl}/en/immigration-news/${encodedSlug}`,
+          lastModified: new Date().toISOString(),
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
     });
 
-    const xml = generateSitemapXML(entries);
+    // Generate XML
+    const xml = generateSitemapXML(sitemapEntries);
 
     return new NextResponse(xml, {
       status: 200,
@@ -73,9 +88,11 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error("Error generating blogs sitemap:", error);
-    const baseUrl = siteConfig.url;
-    const fallbackXml = `<?xml version="1.0" encoding="UTF-8"?>
+    console.error("❌ Error generating blogs sitemap:", error);
+
+    // Return a minimal valid sitemap on error
+    const baseUrl = "https://eucareerserwis.pl";
+    const errorXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${baseUrl}</loc>
@@ -83,7 +100,7 @@ export async function GET() {
   </url>
 </urlset>`;
 
-    return new NextResponse(fallbackXml, {
+    return new NextResponse(errorXml, {
       status: 200,
       headers: {
         "Content-Type": "application/xml; charset=utf-8",
@@ -92,7 +109,7 @@ export async function GET() {
   }
 }
 
-function generateSitemapXML(entries: SitemapEntry[]): string {
+function generateSitemapXML(entries: any[]): string {
   const urlElements = entries
     .map(
       (entry) => `
@@ -100,7 +117,7 @@ function generateSitemapXML(entries: SitemapEntry[]): string {
     <loc>${escapeXml(entry.url)}</loc>
     <lastmod>${entry.lastModified}</lastmod>
     <changefreq>${entry.changeFrequency}</changefreq>
-    <priority>${entry.priority.toFixed(1)}</priority>
+    <priority>${entry.priority}</priority>
   </url>`
     )
     .join("");
@@ -110,6 +127,7 @@ function generateSitemapXML(entries: SitemapEntry[]): string {
 </urlset>`;
 }
 
+// Escape special XML characters
 function escapeXml(unsafe: string): string {
   return unsafe
     .replace(/&/g, "&amp;")
