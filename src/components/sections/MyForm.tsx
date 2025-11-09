@@ -97,7 +97,7 @@ export function MyForm() {
 
     // try to send data to Zoho CRM
     try {
-      const res = await axios.post("/api/zoho/submit", {
+      const res = await axios.post("/api/post-lead", {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
@@ -106,7 +106,8 @@ export function MyForm() {
         subject: "Enquiry : Know More About Your Services",
         message: "I am filling this form to know more about your serwis.",
       });
-      if (res.status === 200) {
+      console.log("data", res);
+      if (res.status === 200 || res.status === 201) {
         clearForm();
         // window.alert(t("successMessage"));
         toast.success(t("successMessage"), {

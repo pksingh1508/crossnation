@@ -102,7 +102,7 @@ export function ContactForm() {
 
     // try to send data to ZOHO CRM
     try {
-      const res = await axios.post("/api/zoho/submit", {
+      const res = await axios.post("/api/post-lead", {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
@@ -111,7 +111,7 @@ export function ContactForm() {
         subject: formData.subject,
         message: formData.message,
       });
-      if (res.status === 200) {
+      if (res.status === 200 || res.status === 201) {
         clearForm();
         // window.alert(t("successMessage"));
         toast.success(t("successMessage"), {
