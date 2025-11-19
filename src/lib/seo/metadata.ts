@@ -28,10 +28,7 @@ export function generateMetadata({
   noIndex = false,
   canonical = "https://eucareerserwis.pl",
 }: SEOConfig): Metadata {
-  const fullTitle = title.includes(siteConfig.name)
-    ? title
-    : `${title} | ${siteConfig.name}`;
-
+  const fullTitle = title;
   const metadataBase = new URL(siteConfig.url);
   const ogImageUrl = toAbsoluteUrl(image);
   const shouldIndex = !noIndex;
@@ -103,10 +100,7 @@ export function generateLocalizedMetadata({
   locale = "en",
   pathname = "",
 }: SEOConfig & { locale?: string; pathname?: string }): Metadata {
-  const fullTitle = title.includes(siteConfig.name)
-    ? title
-    : `${title} | ${siteConfig.name}`;
-
+  const fullTitle = title;
   const metadataBase = new URL(siteConfig.url);
   const canonicalUrl = `${siteConfig.url}/${locale}${pathname}`;
   const ogImageUrl = toAbsoluteUrl(image);
@@ -395,7 +389,8 @@ export const localizedKeywords = {
 export function getLocalizedPageConfig(page: string, locale: string = "en") {
   const baseConfigs = {
     home: {
-      title: "Europe's Premier Immigration & Recruitment Consultancy",
+      title:
+        "International Employment Company For Europe Work Visa and Work Permit",
       description:
         "EU Career Serwis provides expert immigration services, work permits, and career guidance across Europe. Licensed consultancy in Poland with proven success.",
       keywords: getLocalizedKeywords(locale, "primary"),
@@ -483,7 +478,8 @@ export function getLocalizedPageConfig(page: string, locale: string = "en") {
 // Page-specific SEO configurations (kept for backward compatibility)
 export const pageConfigs = {
   home: {
-    title: "Europe's Premier Immigration & Recruitment Consultancy",
+    title:
+      "International Employment Company For Europe Work Visa and Work Permit",
     description:
       "EU Career Serwis provides expert immigration services, work permits, and career guidance across Europe. Licensed consultancy in Poland with proven success.",
     keywords: [...seoKeywords.primary, ...seoKeywords.secondary.slice(0, 3)],

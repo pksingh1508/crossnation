@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import AntiFraudPolicy from "@/components/Terms_Conditions/AntiFraudPolicy";
 
 export const metadata: Metadata = {
-  title: "Anti-Fraud Policy | EU Career Serwis",
+  title: "Anti-Fraud Policy",
   description: "Our anti-fraud policy and security measures",
 };
 

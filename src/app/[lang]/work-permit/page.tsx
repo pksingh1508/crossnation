@@ -7,7 +7,7 @@ import { getAllPermitImages } from "@/lib/strapi";
 const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/work-permit`;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Work Permit Approvals Gallery | EU Career Serwis",
+  title: "Work Permit Approvals Gallery",
   description:
     "Browse verified EU Career Serwis work permit approvals that showcase successful immigration support for employers and candidates across Europe.",
   keywords: [
@@ -31,8 +31,7 @@ async function getInitialPermits() {
       ? {
           currentPage: pagination.page ?? 1,
           totalPages: pagination.pageCount ?? 0,
-          hasNextPage:
-            (pagination.page ?? 1) < (pagination.pageCount ?? 0),
+          hasNextPage: (pagination.page ?? 1) < (pagination.pageCount ?? 0),
         }
       : undefined;
 

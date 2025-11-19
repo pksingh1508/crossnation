@@ -6,7 +6,7 @@ import { siteConfig } from "@/constants/site";
 const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/company-certificate`;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Company Certificates | EU Career Serwis",
+  title: "Company Certificates",
   description:
     "Review EU Career Serwis company certificates and compliance credentials for transparent, trusted immigration services.",
   keywords: [

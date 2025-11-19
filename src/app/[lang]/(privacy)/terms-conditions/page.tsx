@@ -6,7 +6,7 @@ import { siteConfig } from "@/constants/site";
 const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/terms-conditions`;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Terms & Conditions | EU Career Serwis",
+  title: "Terms & Conditions",
   description:
     "Review the official EU Career Serwis terms and conditions covering service agreements, responsibilities, and legal policies for immigration support.",
   keywords: [

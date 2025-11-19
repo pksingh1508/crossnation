@@ -7,7 +7,7 @@ import { getAllStampImages } from "@/lib/strapi";
 const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/visa-stamp`;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Visa Stamp Approvals Gallery | EU Career Serwis",
+  title: "Visa Stamp Approvals Gallery",
   description:
     "See real visa stamp approvals earned by EU Career Serwis clients, demonstrating trusted immigration outcomes for travel and work across Europe.",
   keywords: [
@@ -31,8 +31,7 @@ async function getInitialStamps() {
       ? {
           currentPage: pagination.page ?? 1,
           totalPages: pagination.pageCount ?? 0,
-          hasNextPage:
-            (pagination.page ?? 1) < (pagination.pageCount ?? 0),
+          hasNextPage: (pagination.page ?? 1) < (pagination.pageCount ?? 0),
         }
       : undefined;
 

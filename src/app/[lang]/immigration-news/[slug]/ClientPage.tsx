@@ -231,8 +231,7 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
                 {newsData.views} views
               </div>
               <div className="flex items-center gap-2 bg-orange-50 rounded-full px-4 py-2 text-orange-600">
-                <Clock className="w-4 h-4" />
-                4 min read
+                <Clock className="w-4 h-4" />4 min read
               </div>
             </div>
 
@@ -240,7 +239,7 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                 {newsData.title}
               </h1>
-              <div className="flex flex-wrap gap-3">
+              {/* <div className="flex flex-wrap gap-3">
                 {tags.map((tag) => (
                   <span
                     key={tag}
@@ -250,7 +249,7 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
                     {tag}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </header>
 
             <div className="prose prose-lg max-w-none text-gray-700">

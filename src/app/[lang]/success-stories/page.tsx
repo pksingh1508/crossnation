@@ -6,7 +6,7 @@ import { siteConfig } from "@/constants/site";
 const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/success-stories`;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Success Stories & Testimonials | EU Career Serwis",
+  title: "Success Stories & Testimonials",
   description:
     "Read authentic immigration and recruitment success stories from EU Career Serwis clients who secured legal work permits and visas across Europe.",
   keywords: [

@@ -240,8 +240,7 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
                 {blogData.comments_count} comments
               </div>
               <div className="flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 text-green-600">
-                <Clock className="w-4 h-4" />
-                5 min read
+                <Clock className="w-4 h-4" />5 min read
               </div>
             </div>
 
@@ -255,7 +254,7 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                 {blogData.title}
               </h1>
-              <div className="flex flex-wrap gap-3">
+              {/* <div className="flex flex-wrap gap-3">
                 {tags.map((tag) => (
                   <span
                     key={tag}
@@ -265,7 +264,7 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
                     {tag}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </header>
 
             <div className="prose prose-lg max-w-none text-gray-700">

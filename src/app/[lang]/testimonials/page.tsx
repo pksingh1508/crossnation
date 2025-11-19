@@ -3,7 +3,7 @@ import { AllTestimonials } from "@/components/testimonials/AllTestimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Client Testimonials | EU Career Serwis",
+  title: "Client Testimonials",
   description:
     "Read what our clients say about their experience with EU Career Serwis. Real stories from people who achieved their dreams with our immigration and recruitment services.",
   keywords: [
