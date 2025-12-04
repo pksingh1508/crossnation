@@ -9,6 +9,7 @@ import { LenisOptions } from "lenis";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { generateMetadata } from "@/lib/seo/metadata";
 import { StructuredData } from "@/components/seo/StructuredData";
+import Script from "next/script";
 
 const fonts = `${fontSans.variable} ${fontMono.variable}`;
 
@@ -85,6 +86,19 @@ export default async function RootLayout({
           {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
           )}
+          {/* Google Ads Tag */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=AW-17774544099"
+            strategy="afterInteractive"
+          />
+          <Script id="google-ads" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17774544099');
+            `}
+          </Script>
           {children}
           <Toaster position="top-right" reverseOrder={false} />
         </body>
@@ -92,4 +106,3 @@ export default async function RootLayout({
     </html>
   );
 }
-
