@@ -106,7 +106,7 @@ export function MyForm() {
         subject: "Enquiry : Know More About Your Services",
         message: "I am filling this form to know more about your serwis.",
       });
-      console.log("data", res);
+      // console.log("data", res);
       if (res.status === 200 || res.status === 201) {
         clearForm();
         // window.alert(t("successMessage"));
@@ -117,6 +117,14 @@ export function MyForm() {
             color: "#111827",
           },
         });
+        // 🔥 FIRE GOOGLE ADS CONVERSION EVENT HERE
+        if (typeof window !== "undefined") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-17774544099/9fs8CImXysobEOOJyJtC",
+            value: 1.0,
+            currency: "PLN",
+          });
+        }
       }
     } catch (error) {
       console.error("Error submitting form:", error);

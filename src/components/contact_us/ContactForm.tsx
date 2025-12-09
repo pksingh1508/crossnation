@@ -121,6 +121,14 @@ export function ContactForm() {
             color: "#111827",
           },
         });
+        // 🔥 FIRE GOOGLE ADS CONVERSION EVENT HERE
+        if (typeof window !== "undefined") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-17774544099/9fs8CImXysobEOOJyJtC",
+            value: 1.0,
+            currency: "PLN",
+          });
+        }
       }
     } catch (error) {
       console.error("Error submitting form:", error);
