@@ -270,7 +270,17 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
             <div className="prose prose-lg max-w-none text-gray-700">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight, rehypeRaw]}
+                rehypePlugins={[
+                  [
+                    rehypeHighlight,
+                    {
+                      ignoreMissing: true,
+                      subset: [], // disable all autodetection
+                      plainText: ["powershell", "ps", "ps1"], // treat these as plain text
+                    },
+                  ],
+                  rehypeRaw,
+                ]}
                 components={{
                   h1: ({ node, ...props }) => (
                     <h1
