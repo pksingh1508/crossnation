@@ -1,17 +1,10 @@
 "use client";
-
-import * as React from "react";
 import { useTranslations } from "next-intl";
-import { RippleButton } from "@/components/ui/ripple-button";
 import { MyForm } from "./MyForm";
-import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
 import { fontInter } from "@/fonts";
 
 export function CommonContact() {
   const t = useTranslations("pages.commonContact");
-  const locale = useLocale();
-  const router = useRouter();
   return (
     <div className="w-full min-h-[80vh] bg-white">
       <div className="container mx-auto max-w-7xl px-4 py-12">

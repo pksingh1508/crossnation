@@ -18,6 +18,7 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { fontInter, fontPoppins } from "@/fonts";
+import { trackConversion } from "@/utils/gtag";
 
 interface CountryCode {
   country: string;
@@ -117,14 +118,8 @@ export function MyForm() {
             color: "#111827",
           },
         });
-        // 🔥 FIRE GOOGLE ADS CONVERSION EVENT HERE
-        if (typeof window !== "undefined") {
-          window.gtag("event", "conversion", {
-            send_to: "AW-17774544099/9fs8CImXysobEOOJyJtC",
-            value: 1.0,
-            currency: "PLN",
-          });
-        }
+        // 🔥 Track Google Ads conversion
+        trackConversion("9fs8CImXysobEOOJyJtC", 1.0, "PLN");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

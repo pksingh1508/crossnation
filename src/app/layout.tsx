@@ -80,25 +80,27 @@ export default async function RootLayout({
   };
   return (
     <html lang={locale}>
+      <head>
+        {/* Google Ads Conversion Tracking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17774544099"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17774544099');
+          `}
+        </Script>
+      </head>
       <ReactLenis root options={lenisOptions}>
         <body className={fonts}>
           <StructuredData data={[websiteSchema, organizationSchema]} />
           {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
           )}
-          {/* Google Ads Tag */}
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=AW-17774544099"
-            strategy="afterInteractive"
-          />
-          <Script id="google-ads" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17774544099');
-            `}
-          </Script>
           {children}
           <Toaster position="top-right" reverseOrder={false} />
         </body>
