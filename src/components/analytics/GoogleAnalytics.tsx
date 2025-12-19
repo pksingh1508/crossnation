@@ -49,9 +49,11 @@ export const trackEvent = (
 };
 
 // Page view tracking
+// Page view tracking
 export const trackPageView = (url: string, title: string) => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("config", process.env.NEXT_PUBLIC_GA_ID, {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  if (typeof window !== "undefined" && window.gtag && gaId) {
+    window.gtag("config", gaId, {
       page_title: title,
       page_location: url,
     });
@@ -93,9 +95,3 @@ export const trackSearch = (searchTerm: string, resultsCount: number) => {
   trackEvent("search", "engagement", searchTerm, resultsCount);
 };
 
-// Declare gtag for TypeScript
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void;
-  }
-}
