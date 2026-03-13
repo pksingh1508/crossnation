@@ -12,9 +12,9 @@ interface BankDetailProps {
 }
 
 const BankDetails: React.FC<BankDetailProps> = ({
-  owner = "EU PRIME SERWIS SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+  owner = "EU CAREER SERWIS SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
   currency = "EUR",
-  iban = "PL12109018700000000159966769",
+  iban = "PL37109018830000000165497132",
   swiftCode = "WBKPPLPP",
   bankName = "Santander Bank Polska S.A.",
   bankAddress = "al. Jana Pawła II 17, 00-854 Warsaw",
