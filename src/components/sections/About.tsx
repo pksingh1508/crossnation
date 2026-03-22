@@ -30,7 +30,7 @@ export function About() {
               </div>
 
               {/* Trusted by Thousands Badge */}
-              <Link
+              {/* <Link
                 href={`/${locale}/company-certificate`}
                 className="absolute -bottom-2 left-6 bg-gradient-to-r from-amber-400 to-orange-400 text-white px-6 py-4 rounded-2xl shadow-lg transform rotate-0 hover:rotate-3 transition-transform duration-300"
               >
@@ -42,7 +42,7 @@ export function About() {
                     {t("trustedBadge")}
                   </span>
                 </div>
-              </Link>
+              </Link> */}
             </div>
 
             {/* Left Content */}
