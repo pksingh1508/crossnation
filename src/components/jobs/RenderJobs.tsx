@@ -12,6 +12,11 @@ interface JobSectionProps {
   jobs: JobItem[];
 }
 
+interface RenderJobsProps {
+  whiteCollarTitle?: string;
+  blueCollarTitle?: string;
+}
+
 function JobSection({ title, jobs }: JobSectionProps) {
   return (
     <section className="mt-12 first:mt-0">
@@ -36,19 +41,16 @@ function JobSection({ title, jobs }: JobSectionProps) {
   );
 }
 
-export default function RenderJobs() {
+export default function RenderJobs({
+  whiteCollarTitle = "White Collar Jobs in Poland",
+  blueCollarTitle = "Blue Collar Jobs in Poland",
+}: RenderJobsProps) {
   return (
-    <div className="bg-stone-50 px-4 py-12 md:py-16">
+    <div className="bg-white px-4 py-12 md:py-16">
       <div className="mx-auto max-w-7xl">
-        <JobSection
-          title="White Collar Jobs in Poland"
-          jobs={WhiteCollarJobs}
-        />
+        <JobSection title={whiteCollarTitle} jobs={WhiteCollarJobs} />
 
-        <JobSection
-          title="Blue Collar Jobs in Poland"
-          jobs={BlueCollarJobs}
-        />
+        <JobSection title={blueCollarTitle} jobs={BlueCollarJobs} />
       </div>
     </div>
   );
