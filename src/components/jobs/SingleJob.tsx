@@ -64,45 +64,22 @@ const iconMap: Record<JobIconKey, LucideIcon> = {
   settings: Settings,
 };
 
-const accentThemes = [
-  {
-    bar: "bg-sky-400",
-    border: "border-sky-100",
-    iconBg: "bg-sky-50",
-    iconText: "text-sky-600",
-  },
-  {
-    bar: "bg-emerald-400",
-    border: "border-emerald-100",
-    iconBg: "bg-emerald-50",
-    iconText: "text-emerald-600",
-  },
-  {
-    bar: "bg-amber-400",
-    border: "border-amber-100",
-    iconBg: "bg-amber-50",
-    iconText: "text-amber-600",
-  },
-] as const;
-
 interface SingleJobProps {
   job: JobItem;
-  accentIndex: number;
 }
 
-export default function SingleJob({ job, accentIndex }: SingleJobProps) {
+export default function SingleJob({ job }: SingleJobProps) {
   const Icon = iconMap[job.icon] ?? BriefcaseBusiness;
-  const accent = accentThemes[accentIndex % accentThemes.length];
 
   return (
     <article
-      className={`overflow-hidden rounded-[28px] border ${accent.border} bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]`}
+      className="overflow-hidden rounded-[28px] border border-amber-100 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]"
     >
-      <div className={`h-2 w-full ${accent.bar}`}></div>
+      <div className="h-2 w-full bg-amber-400"></div>
       <div className="p-5 md:p-6">
         <div className="flex items-start gap-4">
           <div
-            className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-slate-200 ${accent.iconBg} ${accent.iconText}`}
+            className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-amber-100 bg-amber-50 text-amber-400"
             aria-label={job.iconName}
             title={job.iconName}
           >
@@ -128,7 +105,7 @@ export default function SingleJob({ job, accentIndex }: SingleJobProps) {
 
         <div className="mt-5 border-t border-slate-100 pt-5">
           <p
-            className={`text-xl font-semibold text-amber-700 md:text-2xl ${fontPoppins.className}`}
+            className={`text-xl font-semibold text-amber-400 md:text-2xl ${fontPoppins.className}`}
           >
             € {job.GrossSalary}
           </p>

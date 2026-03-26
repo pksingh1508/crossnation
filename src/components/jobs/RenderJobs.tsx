@@ -10,10 +10,9 @@ import SingleJob from "./SingleJob";
 interface JobSectionProps {
   title: string;
   jobs: JobItem[];
-  offset?: number;
 }
 
-function JobSection({ title, jobs, offset = 0 }: JobSectionProps) {
+function JobSection({ title, jobs }: JobSectionProps) {
   return (
     <section className="mt-12 first:mt-0">
       <div className="mb-8 flex flex-col items-center text-center">
@@ -29,12 +28,8 @@ function JobSection({ title, jobs, offset = 0 }: JobSectionProps) {
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-        {jobs.map((job, index) => (
-          <SingleJob
-            key={`${title}-${job.JobTitle}`}
-            job={job}
-            accentIndex={index + offset}
-          />
+        {jobs.map((job) => (
+          <SingleJob key={`${title}-${job.JobTitle}`} job={job} />
         ))}
       </div>
     </section>
@@ -53,7 +48,6 @@ export default function RenderJobs() {
         <JobSection
           title="Blue Collar Jobs in Poland"
           jobs={BlueCollarJobs}
-          offset={1}
         />
       </div>
     </div>
