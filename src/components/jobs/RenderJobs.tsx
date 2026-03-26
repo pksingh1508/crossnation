@@ -1,5 +1,9 @@
 import { fontPoppins } from "@/fonts";
-import { BlueCollarJobs, WhiteCollarJobs, type JobItem } from "@/constants/jobsData";
+import {
+  BlueCollarJobs,
+  WhiteCollarJobs,
+  type JobItem,
+} from "@/constants/jobsData";
 import { Search } from "lucide-react";
 import SingleJob from "./SingleJob";
 
@@ -24,7 +28,7 @@ function JobSection({ title, jobs, offset = 0 }: JobSectionProps) {
         <div className="mt-4 h-1 w-24 rounded-full bg-amber-500"></div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
         {jobs.map((job, index) => (
           <SingleJob
             key={`${title}-${job.JobTitle}`}
@@ -41,7 +45,11 @@ export default function RenderJobs() {
   return (
     <div className="bg-stone-50 px-4 py-12 md:py-16">
       <div className="mx-auto max-w-7xl">
-        <JobSection title="White Collar Jobs in Poland" jobs={WhiteCollarJobs} />
+        <JobSection
+          title="White Collar Jobs in Poland"
+          jobs={WhiteCollarJobs}
+        />
+
         <JobSection
           title="Blue Collar Jobs in Poland"
           jobs={BlueCollarJobs}

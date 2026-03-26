@@ -128,7 +128,7 @@ export default function SingleJob({ job, accentIndex }: SingleJobProps) {
 
         <div className="mt-5 border-t border-slate-100 pt-5">
           <p
-            className={`text-2xl font-semibold text-amber-700 md:text-3xl ${fontPoppins.className}`}
+            className={`text-xl font-semibold text-amber-700 md:text-2xl ${fontPoppins.className}`}
           >
             € {job.GrossSalary}
           </p>
