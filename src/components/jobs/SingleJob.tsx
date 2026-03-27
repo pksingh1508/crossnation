@@ -72,12 +72,10 @@ export default function SingleJob({ job }: SingleJobProps) {
   const Icon = iconMap[job.icon] ?? BriefcaseBusiness;
 
   return (
-    <article
-      className="overflow-hidden rounded-[28px] border border-amber-100 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]"
-    >
+    <article className="overflow-hidden rounded-[28px] border border-amber-100 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
       <div className="h-2 w-full bg-amber-400"></div>
-      <div className="p-5 md:p-6">
-        <div className="flex items-start gap-4">
+      <div className="p-4 md:p-5">
+        <div className="flex items-start gap-2">
           <div
             className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-amber-100 bg-amber-50 text-amber-400"
             aria-label={job.iconName}
@@ -95,7 +93,7 @@ export default function SingleJob({ job }: SingleJobProps) {
           </div>
         </div>
 
-        <div className="mt-5 border-t border-slate-100 pt-5">
+        <div className="mt-2 border-t border-slate-100 pt-2">
           <p
             className={`min-h-16 text-base leading-7 text-slate-600 ${fontInter.className}`}
           >
@@ -103,7 +101,7 @@ export default function SingleJob({ job }: SingleJobProps) {
           </p>
         </div>
 
-        <div className="mt-5 border-t border-slate-100 pt-5">
+        <div className="mt-2 border-t border-slate-100 pt-2">
           <p
             className={`text-xl font-semibold text-amber-400 md:text-2xl ${fontPoppins.className}`}
           >

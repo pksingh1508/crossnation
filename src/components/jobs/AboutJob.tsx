@@ -31,7 +31,7 @@ export default function AboutJob() {
   return (
     <section className="bg-white px-4 py-12 md:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-10 lg:p-12">
+        <div className="md:p-10 lg:p-12">
           <div className="mx-auto max-w-4xl text-center">
             <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
               Poland Jobs Portal
@@ -83,18 +83,15 @@ export default function AboutJob() {
               <p
                 className={`mt-5 text-base leading-8 text-slate-600 ${fontInter.className}`}
               >
-                All employers listed on our platform are carefully verified, so
-                you can confidently apply for jobs in sectors like:
+                You can confidently apply for jobs in sectors like:
               </p>
 
               <div className="mt-6 space-y-3">
                 {jobSectors.map((sector) => (
-                  <div
-                    key={sector}
-                    className="rounded-2xl border border-amber-100 bg-amber-50 px-4 py-3 text-slate-700"
-                  >
+                  <div key={sector} className="flex items-start gap-3">
+                    <span className="mt-2 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-amber-500"></span>
                     <span
-                      className={`text-base font-medium ${fontInter.className}`}
+                      className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
                     >
                       {sector}
                     </span>
@@ -125,10 +122,7 @@ export default function AboutJob() {
 
               <div className="mt-6 space-y-4">
                 {supportItems.map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
+                  <div key={item} className="flex items-start gap-3">
                     <span className="mt-2 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-amber-500"></span>
                     <span
                       className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
@@ -149,10 +143,7 @@ export default function AboutJob() {
             </h2>
             <div className="mt-8 space-y-4">
               {keyFeatures.map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-start gap-3"
-                >
+                <div key={feature} className="flex items-start gap-3">
                   <span className="mt-2 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-amber-500"></span>
                   <p
                     className={`text-base leading-7 text-slate-700 ${fontInter.className}`}

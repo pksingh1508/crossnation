@@ -2,6 +2,8 @@ import { Cities } from "@/constants/JobCities";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { fontInter, fontPoppins } from "@/fonts";
 import RenderJobs from "@/components/jobs/RenderJobs";
+import RenderFAQ from "@/components/jobs/RenderFAQ";
+import { RecentTestimonials } from "@/components/sections/RecentTestimonials";
 
 interface CityJobsPageProps {
   params: Promise<{ lang: string; city: string }>;
@@ -21,6 +23,17 @@ export default async function CityJobsPage({ params }: CityJobsPageProps) {
     <div className="bg-white px-4">
       <div className="container mx-auto px-4 py-4">
         <Breadcrumbs items={breadcrumbItems} />
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="rounded-2xl bg-amber-200 px-6 py-5 text-center shadow-sm">
+          <h2
+            className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
+          >
+            EU Career Serwis - International Recruitment agency in Poland
+          </h2>
+        </div>
+        <div className="mt-5 h-px w-full bg-slate-200"></div>
       </div>
 
       <div className="mx-auto max-w-6xl">
@@ -92,6 +105,12 @@ export default async function CityJobsPage({ params }: CityJobsPageProps) {
             whiteCollarTitle={`White Collar Jobs in ${cityName}`}
             blueCollarTitle={`Blue Collar Jobs in ${cityName}`}
           />
+        </div>
+        <div>
+          <RenderFAQ />
+        </div>
+        <div>
+          <RecentTestimonials />
         </div>
       </div>
     </div>
