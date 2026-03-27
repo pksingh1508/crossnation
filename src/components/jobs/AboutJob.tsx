@@ -37,7 +37,7 @@ export default function AboutJob() {
               Poland Jobs Portal
             </span>
             <h1
-              className={`mt-5 text-3xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-5xl ${fontPoppins.className}`}
+              className={`mt-5 text-3xl font-bold leading-tight text-slate-900  ${fontPoppins.className}`}
             >
               Jobs in Poland with Work Permit | EU Career Serwis
             </h1>
@@ -68,7 +68,7 @@ export default function AboutJob() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <h2
-                className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
+                className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
               >
                 Why Choose eucareerserwis.pl for Jobs in Poland?
               </h2>
@@ -102,7 +102,7 @@ export default function AboutJob() {
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <h2
-                className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
+                className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
               >
                 Poland Job Portal with Full Visa Support
               </h2>
@@ -137,7 +137,7 @@ export default function AboutJob() {
 
           <div className="mt-12 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
             <h2
-              className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
+              className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
             >
               Key Features of eucareerserwis.pl
             </h2>

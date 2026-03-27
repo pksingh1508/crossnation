@@ -18,7 +18,7 @@ export default function RenderCities() {
             <MapPin className="h-7 w-7" />
           </div>
           <h2
-            className={`text-3xl font-bold text-slate-900 md:text-4xl ${fontPoppins.className}`}
+            className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
           >
             Job's in Poland Top City
           </h2>

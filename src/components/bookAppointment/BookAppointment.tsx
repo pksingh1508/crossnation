@@ -148,7 +148,7 @@ export function BookAppointment() {
                       Advisory Services
                     </p>
                   </div>
-                  <h3 className="text-3xl font-bold text-slate-900">
+                  <h3 className="text-[22px] font-bold text-slate-900">
                     {section.title}
                   </h3>
                   <div className="mt-4 h-1 w-16 rounded-full bg-amber-500"></div>
@@ -167,7 +167,7 @@ export function BookAppointment() {
                           </div>
 
                           <div className="space-y-3">
-                            <h4 className="text-xl font-semibold leading-tight text-slate-900 md:text-2xl">
+                            <h4 className="text-base font-semibold leading-tight text-slate-900">
                               {meeting.name}
                             </h4>
 

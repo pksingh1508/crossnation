@@ -25,15 +25,46 @@ export default async function CityJobsPage({ params }: CityJobsPageProps) {
         <Breadcrumbs items={breadcrumbItems} />
       </div>
 
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="rounded-2xl bg-amber-200 px-6 py-5 text-center shadow-sm">
-          <h2
-            className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
-          >
-            EU Career Serwis - International Recruitment agency in Poland
-          </h2>
+      {/* <div className="mx-auto max-w-6xl px-4">
+        <div className="rounded-2xl md:p-5">
+          <div className="rounded-2xl bg-[linear-gradient(90deg,#fbbf24_0%,#fbbf24_19%,#9ca3af_29%,#374151_60%,#374151_80%)] px-5 py-4 text-center md:px-8 md:py-5">
+            <h2
+              className={`text-xl font-bold leading-tight md:text-2xl lg:text-3xl ${fontPoppins.className}`}
+            >
+              <span className="text-black">EU Career Serwis -</span>{" "}
+              <span className="text-amber-500">
+                International Recruitment agency in Poland
+              </span>
+            </h2>
+          </div>
         </div>
         <div className="mt-5 h-px w-full bg-slate-200"></div>
+      </div> */}
+
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="rounded-2xl md:p-5">
+          <div
+            className="rounded-2xl px-5 py-4 text-center md:px-8 md:py-5"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(251,191,36,0.9) 0%, rgba(251,191,36,0.7) 25%, rgba(31,41,55,0.7) 41%, rgba(31,41,55,0.9) 100%)",
+            }}
+          >
+            <h2
+              className="text-xl font-bold leading-tight md:text-2xl lg:text-3xl"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              <span style={{ color: "#000" }}>EU Career Serwis -</span>{" "}
+              <span style={{ color: "#f59e0b" }}>
+                International Recruitment agency in Poland
+              </span>
+            </h2>
+          </div>
+        </div>
+        <div
+          className="mt-5 h-px w-full"
+          style={{ backgroundColor: "#e2e8f0" }}
+        ></div>
       </div>
 
       <div className="mx-auto max-w-6xl">
@@ -43,7 +74,7 @@ export default async function CityJobsPage({ params }: CityJobsPageProps) {
               City Guide
             </span>
             <h1
-              className={`mt-5 text-2xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-3xl ${fontPoppins.className}`}
+              className={`mt-5 text-2xl font-bold leading-tight text-slate-900 md:text-3xl ${fontPoppins.className}`}
             >
               {cityName} - Complete Guide for International Workers
             </h1>
@@ -73,7 +104,7 @@ export default async function CityJobsPage({ params }: CityJobsPageProps) {
 
           <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
             <h2
-              className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
+              className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
             >
               Why Foreign Workers Choose {cityName}
             </h2>

@@ -25,7 +25,7 @@ function JobSection({ title, jobs }: JobSectionProps) {
           <Search className="h-7 w-7" />
         </div>
         <h2
-          className={`text-3xl font-bold text-slate-900 md:text-4xl ${fontPoppins.className}`}
+          className={`text-2xl font-bold text-slate-900 md:text-3xl ${fontPoppins.className}`}
         >
           {title}
         </h2>
