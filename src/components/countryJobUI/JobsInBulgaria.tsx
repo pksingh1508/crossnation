@@ -224,7 +224,7 @@ function SectionTitle({
         {eyebrow}
       </span>
       <h2
-        className={`mt-5 text-3xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-5xl ${fontPoppins.className}`}
+        className={`mt-5 text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
       >
         {title}
       </h2>
@@ -276,7 +276,7 @@ export default function JobsInBulgaria() {
               Jobs in Bulgaria
             </span>
             <h1
-              className={`mt-5 max-w-5xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl ${fontPoppins.className}`}
+              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
             >
               Bulgaria Work Visa, Job Matching, and Settlement Support for
               Foreign Workers
@@ -306,9 +306,9 @@ export default function JobsInBulgaria() {
                   key={item}
                   {...cardMotion}
                   whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
+                  className="flex items-start gap-4 rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
                 >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
@@ -337,9 +337,9 @@ export default function JobsInBulgaria() {
                   key={item}
                   {...cardMotion}
                   whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
+                  className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
                 >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
@@ -366,9 +366,9 @@ export default function JobsInBulgaria() {
                 key={permit.type}
                 {...cardMotion}
                 whileHover={{ y: -3 }}
-                className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[220px_1fr] md:items-center md:p-6"
+                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[220px_1fr] md:items-start md:gap-4"
               >
-                <div className="inline-flex w-fit items-center gap-3 rounded-2xl bg-amber-100 px-4 py-3 text-amber-700">
+                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
                   <span
                     className={`text-lg font-bold md:text-xl ${fontPoppins.className}`}
                   >
@@ -397,7 +397,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BriefcaseBusiness className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Popular Job Roles in Bulgaria
               </h3>
               <BulletList items={popularRoles} className="mt-6" />
@@ -414,7 +414,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Globe2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Eligible Regions for Recruitment
               </h3>
               <BulletList items={eligibleRegions} className="mt-6" />
@@ -434,7 +434,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Wallet className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Pricing Plan
               </h3>
               <BulletList items={pricingPlan} className="mt-6" />
@@ -448,7 +448,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Why Consider EU Career Serwis?
               </h3>
               <BulletList items={whyChoose} className="mt-6" />
@@ -462,7 +462,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileText className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Initial Requirements
               </h3>
               <BulletList items={initialRequirements} className="mt-6" />
@@ -482,7 +482,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BadgeCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Important Conditions
               </h3>
               <BulletList items={importantConditions} className="mt-6" />
@@ -496,7 +496,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileCheck2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Key Documents
               </h3>
               <BulletList items={keyDocuments} className="mt-6" />
@@ -510,7 +510,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Clock3 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Work Permit Processing
               </h3>
               <BulletList items={processingInfo} className="mt-6" />
@@ -525,23 +525,26 @@ export default function JobsInBulgaria() {
             eyebrow="Application Process"
             title="Bulgaria Work Permit Process"
           />
-          <div className="grid gap-4">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={step}
-                {...cardMotion}
-                whileHover={{ y: -2 }}
-                className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[72px_1fr] md:items-center md:p-6"
-              >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-lg font-bold text-amber-700">
-                  {index + 1}
-                </div>
-                <p className={`text-base leading-8 text-slate-600 ${fontInter.className}`}>
-                  {step}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            {...cardMotion}
+            className="mx-auto max-w-5xl rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
+          >
+            <div className="space-y-4">
+              {processSteps.map((step) => (
+                <motion.div
+                  key={step}
+                  {...cardMotion}
+                  whileHover={{ y: -2 }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                  <p className={`text-base leading-8 text-slate-600 ${fontInter.className}`}>
+                    {step}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -556,7 +559,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Plane className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Post-Arrival Services
               </h3>
               <BulletList items={postArrivalServices} className="mt-6" />
@@ -570,7 +573,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Home className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Accommodation Details
               </h3>
               <BulletList items={accommodationDetails} className="mt-6" />
@@ -584,7 +587,7 @@ export default function JobsInBulgaria() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Banknote className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}>
+              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
                 Payment Summary
               </h3>
               <BulletList items={paymentSummary} className="mt-6" />

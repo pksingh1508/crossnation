@@ -179,7 +179,7 @@ function SectionTitle({
         {eyebrow}
       </span>
       <h2
-        className={`mt-5 text-3xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-5xl ${fontPoppins.className}`}
+        className={`mt-5 text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
       >
         {title}
       </h2>
@@ -210,7 +210,7 @@ export default function JobsInPoland() {
               Jobs in Poland
             </span>
             <h1
-              className={`mt-5 max-w-5xl text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl ${fontPoppins.className}`}
+              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
             >
               Work Permit, Visa Support, Job Opportunities, and Settlement
               Guidance for Foreign Workers in Poland
@@ -218,9 +218,9 @@ export default function JobsInPoland() {
             <p
               className={`mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
             >
-              A simple guide for job seekers who want to work in Poland
-              legally, understand the work permit process, and get support both
-              before and after arrival.
+              A simple guide for job seekers who want to work in Poland legally,
+              understand the work permit process, and get support both before
+              and after arrival.
             </p>
           </motion.div>
         </div>
@@ -241,13 +241,13 @@ export default function JobsInPoland() {
                   key={item}
                   {...cardMotion}
                   whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
+                  className="flex items-start gap-4 rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
                 >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
-                    className={`text-lg font-semibold leading-7 text-slate-900 ${fontPoppins.className}`}
+                    className={`pt-2 text-lg font-semibold leading-7 text-gray-700 ${fontPoppins.className}`}
                   >
                     {item}
                   </p>
@@ -273,13 +273,13 @@ export default function JobsInPoland() {
                   key={item}
                   {...cardMotion}
                   whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
+                  className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
                 >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
-                    className={`text-lg font-semibold leading-7 text-slate-900 ${fontPoppins.className}`}
+                    className={`pt-2 text-lg font-semibold leading-7 text-gray-700 ${fontPoppins.className}`}
                   >
                     {item}
                   </p>
@@ -296,15 +296,15 @@ export default function JobsInPoland() {
             eyebrow="Work Permits"
             title="Types of Work Permits in Poland for Non-EU Citizens"
           />
-          <div className="space-y-4">
+          <div className="space-y-6">
             {permitTypes.map((permit) => (
               <motion.div
                 key={permit.type}
                 {...cardMotion}
                 whileHover={{ y: -3 }}
-                className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[140px_1fr] md:items-center md:p-6"
+                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[140px_1fr] md:items-start md:gap-4"
               >
-                <div className="inline-flex w-fit items-center gap-3 rounded-2xl bg-amber-100 px-4 py-3 text-amber-700">
+                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
                   <span
                     className={`text-xl font-bold ${fontPoppins.className}`}
                   >
@@ -378,7 +378,7 @@ export default function JobsInPoland() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3
-                    className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
+                    className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
                   >
                     {section.title}
                   </h3>
@@ -436,7 +436,7 @@ export default function JobsInPoland() {
                 <FileText className="h-6 w-6" />
               </div>
               <h3
-                className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
               >
                 Documents Required for a Poland Work Permit
               </h3>
@@ -475,7 +475,7 @@ export default function JobsInPoland() {
                 <Building2 className="h-6 w-6" />
               </div>
               <h3
-                className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
               >
                 Poland Work Permit Processing
               </h3>
@@ -519,7 +519,7 @@ export default function JobsInPoland() {
                 <Users className="h-6 w-6" />
               </div>
               <h3
-                className={`text-2xl font-bold text-slate-900 ${fontPoppins.className}`}
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
               >
                 Poland Work Visa Processing
               </h3>
