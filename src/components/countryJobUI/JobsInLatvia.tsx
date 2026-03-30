@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
@@ -24,6 +25,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
+import TopTitleBar from "./TopTitleBar";
 
 const visaReasons = [
   "More than 70,000 jobs are available in sectors such as construction, manufacturing, healthcare, and logistics.",
@@ -59,13 +61,11 @@ const permitCategories = [
   },
   {
     type: "Type D",
-    description:
-      "For cross-border services or temporary assignments.",
+    description: "For cross-border services or temporary assignments.",
   },
   {
     type: "Type S",
-    description:
-      "For seasonal jobs in agriculture, tourism, or hospitality.",
+    description: "For seasonal jobs in agriculture, tourism, or hospitality.",
   },
 ];
 
@@ -239,21 +239,9 @@ const cardMotion = {
   transition: { duration: 0.4, ease: "easeOut" as const },
 };
 
-const reasonIcons = [
-  BriefcaseBusiness,
-  Banknote,
-  Clock3,
-  HeartPulse,
-  Home,
-];
+const reasonIcons = [BriefcaseBusiness, Banknote, Clock3, HeartPulse, Home];
 
-const advantageIcons = [
-  TrendingUp,
-  ShieldCheck,
-  Wallet,
- HeartPulse,
-  Sparkles,
-];
+const advantageIcons = [TrendingUp, ShieldCheck, Wallet, HeartPulse, Sparkles];
 
 function SectionTitle({
   eyebrow,
@@ -301,7 +289,9 @@ function BulletList({
       {items.map((item) => (
         <div key={item} className="flex items-start gap-3">
           <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
-          <p className={`text-base leading-7 text-slate-600 ${fontInter.className}`}>
+          <p
+            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
+          >
             {item}
           </p>
         </div>
@@ -314,33 +304,8 @@ export default function JobsInLatvia() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_40%,#f8fafc_100%)] p-8 shadow-sm md:p-12"
-          >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
-              Jobs in Latvia
-            </span>
-            <h1
-              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-            >
-              Latvia Work Visa, Driver Jobs, and Relocation Support for Foreign
-              Workers
-            </h1>
-            <p
-              className={`mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-            >
-              A leading immigration service provider across Europe, helping
-              candidates understand Latvia work permits, driver requirements,
-              salary expectations, and post-arrival support in a clear way.
-            </p>
-          </motion.div>
-        </div>
+        <TopTitleBar name="Latvia" />
       </section>
-
       <section className="bg-stone-50 px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
@@ -446,7 +411,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BadgeCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Temporary Residence and Work Permit
               </h3>
               <BulletList items={temporaryPermitDetails} className="mt-6" />
@@ -460,7 +427,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileText className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Required Documents Especially for Drivers
               </h3>
               <BulletList items={requiredDocuments} className="mt-6" />
@@ -480,7 +449,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileCheck2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Additional Document Notes
               </h3>
               <BulletList items={documentNotes} className="mt-6" />
@@ -494,7 +465,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Truck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Work Experience and Skills
               </h3>
               <BulletList items={workExperience} className="mt-6" />
@@ -508,7 +481,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Languages className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Language Requirements
               </h3>
               <BulletList items={languageRequirements} className="mt-6" />
@@ -522,7 +497,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Users className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Age Requirements
               </h3>
               <BulletList items={ageRequirements} className="mt-6" />
@@ -542,7 +519,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BadgeCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Important Pre-Employment Notes
               </h3>
               <BulletList items={preEmploymentNotes} className="mt-6" />
@@ -556,7 +535,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Professional Qualities Expected
               </h3>
               <BulletList items={professionalQualities} className="mt-6" />
@@ -570,7 +551,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ClipboardList className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Training and Employment Process
               </h3>
               <BulletList items={trainingProcess} className="mt-6" />
@@ -590,7 +573,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Truck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Job Conditions for Drivers
               </h3>
               <BulletList items={jobConditions} className="mt-6" />
@@ -604,7 +589,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Building2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Employer Benefits
               </h3>
               <BulletList items={employerBenefits} className="mt-6" />
@@ -624,7 +611,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Banknote className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Salary Overview
               </h3>
               <BulletList items={salaryOverview} className="mt-6" />
@@ -638,7 +627,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Sparkles className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Bonus Opportunities
               </h3>
               <BulletList items={bonusOpportunities} className="mt-6" />
@@ -652,7 +643,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Wallet className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Visa and Work Permit Package Costs
               </h3>
               <BulletList items={packageCosts} className="mt-6" />
@@ -672,7 +665,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Why Choose This Service?
               </h3>
               <BulletList items={whyChoose} className="mt-6" />
@@ -715,7 +710,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Plane className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Post-Arrival Support
               </h3>
               <BulletList items={postArrivalSupport} className="mt-6" />
@@ -729,7 +726,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Globe2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Living in Latvia
               </h3>
               <BulletList items={livingInLatvia} className="mt-6" />
@@ -743,7 +742,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Banknote className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Salary Structure
               </h3>
               <BulletList items={salaryStructure} className="mt-6" />
@@ -757,7 +758,9 @@ export default function JobsInLatvia() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BadgeCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Key Notes
               </h3>
               <BulletList items={keyNotes} className="mt-6" />

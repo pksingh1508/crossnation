@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
@@ -23,6 +24,7 @@ import {
   UserRoundCheck,
   Wallet,
 } from "lucide-react";
+import TopTitleBar from "./TopTitleBar";
 
 const visaReasons = [
   "Germany offers more than 200,000 vacancies in healthcare, including roles for nurses, doctors, physiotherapists, and caregivers.",
@@ -102,8 +104,7 @@ const healthcareJobs = [
   },
   {
     role: "Radiology Technician",
-    responsibilities:
-      "Using imaging equipment such as X-rays and MRI systems.",
+    responsibilities: "Using imaging equipment such as X-rays and MRI systems.",
     salary: "€2,800 – €3,800 per month",
   },
   {
@@ -235,22 +236,9 @@ const cardMotion = {
   transition: { duration: 0.4, ease: "easeOut" as const },
 };
 
-const visaIcons = [
-  Hospital,
-  Banknote,
-  Timer,
-  HeartPulse,
-  Globe2,
-  ShieldCheck,
-];
+const visaIcons = [Hospital, Banknote, Timer, HeartPulse, Globe2, ShieldCheck];
 
-const benefitIcons = [
-  Stethoscope,
-  Wallet,
-  BadgeCheck,
-  ShieldCheck,
-  Sparkles,
-];
+const benefitIcons = [Stethoscope, Wallet, BadgeCheck, ShieldCheck, Sparkles];
 
 function SectionTitle({
   eyebrow,
@@ -298,7 +286,9 @@ function BulletList({
       {items.map((item) => (
         <div key={item} className="flex items-start gap-3">
           <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
-          <p className={`text-base leading-7 text-slate-600 ${fontInter.className}`}>
+          <p
+            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
+          >
             {item}
           </p>
         </div>
@@ -311,33 +301,8 @@ export default function JobsInGermany() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_40%,#f8fafc_100%)] p-8 shadow-sm md:p-12"
-          >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
-              Jobs in Germany
-            </span>
-            <h1
-              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-            >
-              Healthcare Work Visa, Job Matching, and Relocation Support for
-              Professionals Moving to Germany
-            </h1>
-            <p
-              className={`mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-            >
-              A leading immigration consultancy in Europe, helping healthcare
-              professionals understand the visa route, required documents,
-              employer support, and relocation process for Germany.
-            </p>
-          </motion.div>
-        </div>
+        <TopTitleBar name="Germany" />
       </section>
-
       <section className="bg-stone-50 px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
@@ -22,6 +23,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
+import TopTitleBar from "./TopTitleBar";
 
 const advantages = [
   "Expanding Job Opportunities",
@@ -199,31 +201,7 @@ export default function JobsInPoland() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_45%,#f8fafc_100%)] p-8 shadow-sm md:p-12"
-          >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
-              Jobs in Poland
-            </span>
-            <h1
-              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-            >
-              Work Permit, Visa Support, Job Opportunities, and Settlement
-              Guidance for Foreign Workers in Poland
-            </h1>
-            <p
-              className={`mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-            >
-              A simple guide for job seekers who want to work in Poland legally,
-              understand the work permit process, and get support both before
-              and after arrival.
-            </p>
-          </motion.div>
-        </div>
+        <TopTitleBar name="Poland" />
       </section>
 
       <section className="bg-stone-50 px-4 py-12 md:py-16">

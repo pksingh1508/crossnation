@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { siteConfig } from "@/constants/site";
-import Layout from "@/components/layout/Layout";
 
 interface LangLayoutProps {
   children: ReactNode;
@@ -23,7 +22,7 @@ export default async function LangLayout({
 
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
-      <Layout className="flex-1">{children}</Layout>
+      {children}
     </NextIntlClientProvider>
   );
 }

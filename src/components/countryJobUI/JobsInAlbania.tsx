@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
@@ -23,6 +24,7 @@ import {
   Wallet,
   Wrench,
 } from "lucide-react";
+import TopTitleBar from "./TopTitleBar";
 
 const visaReasons = [
   "A wide range of jobs is available in sectors like agriculture, energy, and textiles.",
@@ -45,23 +47,19 @@ const advantages = [
 const permitTypes = [
   {
     type: "Type A - Employment Permit",
-    description:
-      "For regular employees, seasonal workers, and students.",
+    description: "For regular employees, seasonal workers, and students.",
   },
   {
     type: "Type B - Self-Employment Permit",
-    description:
-      "For investors and independent professionals.",
+    description: "For investors and independent professionals.",
   },
   {
     type: "Type C - Special Permit",
-    description:
-      "For unique or exceptional employment situations.",
+    description: "For unique or exceptional employment situations.",
   },
   {
     type: "Type D - Permanent Permit",
-    description:
-      "For long-term and continuous work authorisation.",
+    description: "For long-term and continuous work authorisation.",
   },
 ];
 
@@ -179,14 +177,7 @@ const reasonIcons = [
   Globe2,
 ];
 
-const advantageIcons = [
-  Wallet,
-  Clock3,
-  Building2,
-  Sparkles,
-  Users,
-  BadgeCheck,
-];
+const advantageIcons = [Wallet, Clock3, Building2, Sparkles, Users, BadgeCheck];
 
 function SectionTitle({
   eyebrow,
@@ -234,7 +225,9 @@ function BulletList({
       {items.map((item) => (
         <div key={item} className="flex items-start gap-3">
           <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
-          <p className={`text-base leading-7 text-slate-600 ${fontInter.className}`}>
+          <p
+            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
+          >
             {item}
           </p>
         </div>
@@ -247,33 +240,8 @@ export default function JobsInAlbania() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_40%,#f8fafc_100%)] p-8 shadow-sm md:p-12"
-          >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
-              Jobs in Albania
-            </span>
-            <h1
-              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-            >
-              Albania Work Visa, Job Matching, and Settlement Support for
-              Foreign Workers
-            </h1>
-            <p
-              className={`mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-            >
-              One of Europe&apos;s leading immigration service providers,
-              helping candidates understand Albania work permits, job sectors,
-              pricing, and relocation support through a simple flow.
-            </p>
-          </motion.div>
-        </div>
+        <TopTitleBar name="Albania" />
       </section>
-
       <section className="bg-stone-50 px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
@@ -383,7 +351,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Wrench className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Technical and Construction Roles
               </h3>
               <BulletList items={technicalRoles} className="mt-6" />
@@ -397,7 +367,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Hotel className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Hospitality and Service Roles
               </h3>
               <BulletList items={hospitalityRoles} className="mt-6" />
@@ -417,7 +389,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Clock3 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 General Employment Conditions
               </h3>
               <BulletList items={employmentConditions} className="mt-6" />
@@ -431,7 +405,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Wallet className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Work Visa Packages for 2025
               </h3>
               <BulletList items={pricingPlan} className="mt-6" />
@@ -445,7 +421,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Why Select This Service?
               </h3>
               <BulletList items={whyChoose} className="mt-6" />
@@ -465,7 +443,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileText className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Documents Required for an Albania Work Permit
               </h3>
               <BulletList items={requiredDocuments} className="mt-6" />
@@ -508,7 +488,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Globe2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Life and Opportunities in Albania
               </h3>
               <BulletList items={lifeInAlbania} className="mt-6" />
@@ -522,7 +504,9 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Home className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Accommodation Details
               </h3>
               <BulletList items={accommodationDetails} className="mt-6" />
@@ -536,12 +520,16 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Banknote className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Salary Overview in Albania
               </h3>
               <BulletList items={salaryOverview} className="mt-6" />
               <div className="mt-8 rounded-2xl bg-white p-4">
-                <h4 className={`text-lg font-semibold text-gray-700 ${fontPoppins.className}`}>
+                <h4
+                  className={`text-lg font-semibold text-gray-700 ${fontPoppins.className}`}
+                >
                   Example Monthly Salaries
                 </h4>
                 <BulletList items={exampleSalaries} className="mt-4" />
@@ -556,15 +544,19 @@ export default function JobsInAlbania() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Plane className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Final Summary
               </h3>
-              <p className={`text-base leading-8 text-slate-600 ${fontInter.className}`}>
-                Albania is becoming a more attractive choice for foreign
-                workers because of its growing economy, affordable lifestyle,
-                and rising number of job opportunities. It offers a practical
-                mix of work, culture, and natural beauty for people seeking
-                international employment.
+              <p
+                className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
+              >
+                Albania is becoming a more attractive choice for foreign workers
+                because of its growing economy, affordable lifestyle, and rising
+                number of job opportunities. It offers a practical mix of work,
+                culture, and natural beauty for people seeking international
+                employment.
               </p>
             </motion.div>
           </div>

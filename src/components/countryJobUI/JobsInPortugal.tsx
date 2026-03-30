@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
@@ -22,6 +23,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
+import TopTitleBar from "./TopTitleBar";
 
 const visaReasons = [
   "More than 100,000 jobs are open in industries such as construction, farming, tourism, and hospitality.",
@@ -53,8 +55,7 @@ const visaCategories = [
   },
   {
     type: "Seasonal Work Permit",
-    description:
-      "For short-term jobs in areas like agriculture and tourism.",
+    description: "For short-term jobs in areas like agriculture and tourism.",
   },
   {
     type: "Highly Qualified Activity Visa",
@@ -261,7 +262,9 @@ function BulletList({
       {items.map((item) => (
         <div key={item} className="flex items-start gap-3">
           <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
-          <p className={`text-base leading-7 text-slate-600 ${fontInter.className}`}>
+          <p
+            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
+          >
             {item}
           </p>
         </div>
@@ -274,33 +277,8 @@ export default function JobsInPortugal() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_40%,#f8fafc_100%)] p-8 shadow-sm md:p-12"
-          >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
-              Jobs in Portugal
-            </span>
-            <h1
-              className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-            >
-              Portugal Work Visa, Job Matching, and Relocation Support for
-              Foreign Workers
-            </h1>
-            <p
-              className={`mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-            >
-              One of Europe&apos;s leading immigration service providers,
-              helping workers understand Portugal visa routes, job
-              opportunities, pricing, and settlement support in a simple way.
-            </p>
-          </motion.div>
-        </div>
+        <TopTitleBar name="Portugal" />
       </section>
-
       <section className="bg-stone-50 px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
@@ -408,7 +386,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BadgeCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Temporary Residence and Work Permit
               </h3>
               <BulletList items={permitDetails} className="mt-6" />
@@ -422,7 +402,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Banknote className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Salary Overview
               </h3>
               <BulletList
@@ -447,7 +429,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BriefcaseBusiness className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Job Example: Construction Worker
               </h3>
               <BulletList items={constructionWorkerDetails} className="mt-6" />
@@ -461,7 +445,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileCheck2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Visa and Work Permit Details
               </h3>
               <BulletList items={visaPermitDetails} className="mt-6" />
@@ -481,10 +467,14 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Wallet className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Achieve Your Goals with EU Career Serwis
               </h3>
-              <p className={`mt-6 text-base leading-8 text-slate-600 ${fontInter.className}`}>
+              <p
+                className={`mt-6 text-base leading-8 text-slate-600 ${fontInter.className}`}
+              >
                 Explore career opportunities in Portugal with customized visa
                 and work permit solutions. The pricing is transparent and there
                 are no hidden costs.
@@ -500,7 +490,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Why Consider EU Career Serwis?
               </h3>
               <BulletList items={whyChoose} className="mt-6" />
@@ -525,7 +517,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Users className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Eligibility
               </h3>
               <BulletList items={eligibility} className="mt-6" />
@@ -539,7 +533,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <FileText className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Required Documents
               </h3>
               <BulletList items={requiredDocuments} className="mt-6" />
@@ -567,7 +563,9 @@ export default function JobsInPortugal() {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
-                  <p className={`text-base leading-8 text-slate-600 ${fontInter.className}`}>
+                  <p
+                    className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
+                  >
                     {step}
                   </p>
                 </motion.div>
@@ -588,7 +586,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <ClipboardList className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 After Work Permit Approval
               </h3>
               <BulletList items={afterPermitApproval} className="mt-6" />
@@ -602,7 +602,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Plane className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Final Stage
               </h3>
               <BulletList items={finalStage} className="mt-6" />
@@ -616,7 +618,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Hotel className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 After Arrival Support
               </h3>
               <BulletList items={afterArrivalSupport} className="mt-6" />
@@ -636,7 +640,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <BadgeCheck className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Important Notes
               </h3>
               <BulletList items={importantNotes} className="mt-6" />
@@ -650,7 +656,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Sparkles className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Life in Portugal
               </h3>
               <BulletList items={lifeInPortugal} className="mt-6" />
@@ -664,7 +672,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Globe2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Additional Benefits
               </h3>
               <BulletList items={additionalBenefits} className="mt-6" />
@@ -678,7 +688,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Banknote className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Salary Structure
               </h3>
               <BulletList items={salaryStructure} className="mt-6" />
@@ -692,7 +704,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Home className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Accommodation Details
               </h3>
               <BulletList items={accommodationDetails} className="mt-6" />
@@ -706,7 +720,9 @@ export default function JobsInPortugal() {
               <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
                 <Building2 className="h-6 w-6" />
               </div>
-              <h3 className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}>
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
                 Company Overview
               </h3>
               <BulletList items={companyOverview} className="mt-6" />
@@ -728,8 +744,8 @@ export default function JobsInPortugal() {
             <p
               className={`mt-6 text-lg leading-8 text-slate-700 md:text-xl ${fontInter.className}`}
             >
-              Portugal offers strong job opportunities, affordable living, and
-              a high quality of life, making it a practical option for foreign
+              Portugal offers strong job opportunities, affordable living, and a
+              high quality of life, making it a practical option for foreign
               workers who want to build a career in Europe.
             </p>
           </motion.div>
