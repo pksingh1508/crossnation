@@ -24,6 +24,8 @@ import {
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
+import CountryFooter from "./countryFooter";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 
 const advantages = [
   "Expanding Job Opportunities",
@@ -177,7 +179,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
         {eyebrow}
       </span>
       <h2
@@ -204,7 +206,7 @@ export default function JobsInPoland() {
         <TopTitleBar name="Poland" />
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Employment Benefits"
@@ -268,7 +270,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Work Permits"
@@ -324,7 +326,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Support Services"
@@ -435,7 +437,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Processing Guide"
@@ -466,7 +468,7 @@ export default function JobsInPoland() {
               </p>
               <div className="mt-6 rounded-2xl bg-amber-50 p-4">
                 <p
-                  className={`text-xl font-semibold text-amber-700 ${fontPoppins.className}`}
+                  className={`text-xl font-semibold text-amber-500 ${fontPoppins.className}`}
                 >
                   92 to 120 working days
                 </p>
@@ -511,7 +513,7 @@ export default function JobsInPoland() {
               </p>
               <div className="mt-6 rounded-2xl bg-amber-50 p-4">
                 <p
-                  className={`text-xl font-semibold text-amber-700 ${fontPoppins.className}`}
+                  className={`text-xl font-semibold text-amber-500 ${fontPoppins.className}`}
                 >
                   15 to 25 working days
                 </p>
@@ -534,6 +536,12 @@ export default function JobsInPoland() {
             </motion.div>
           </div>
         </div>
+      </section>
+      <section>
+        <RecentTestimonials />
+      </section>
+      <section>
+        <CountryFooter />
       </section>
     </div>
   );

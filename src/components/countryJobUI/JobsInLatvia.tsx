@@ -26,6 +26,8 @@ import {
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
+import CountryFooter from "./countryFooter";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 
 const visaReasons = [
   "More than 70,000 jobs are available in sectors such as construction, manufacturing, healthcare, and logistics.",
@@ -257,7 +259,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
         {eyebrow}
       </span>
       <h2
@@ -306,7 +308,7 @@ export default function JobsInLatvia() {
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
         <TopTitleBar name="Latvia" />
       </section>
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Why Latvia"
@@ -368,7 +370,7 @@ export default function JobsInLatvia() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Permit Categories"
@@ -438,7 +440,7 @@ export default function JobsInLatvia() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-2">
             <motion.div
@@ -562,7 +564,7 @@ export default function JobsInLatvia() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
             <motion.div
@@ -654,7 +656,7 @@ export default function JobsInLatvia() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
             <motion.div
@@ -769,14 +771,14 @@ export default function JobsInLatvia() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-5xl">
           <motion.div
             {...cardMotion}
             whileHover={{ y: -4 }}
             className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-8 text-center shadow-sm md:p-10"
           >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
               Final Summary
             </span>
             <p
@@ -790,6 +792,12 @@ export default function JobsInLatvia() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <RecentTestimonials />
+      </section>
+      <section>
+        <CountryFooter />
       </section>
     </div>
   );

@@ -23,6 +23,8 @@ import {
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
+import CountryFooter from "./countryFooter";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 
 const visaReasons = [
   "More than 60,000 jobs open every year across hospitality, agriculture, construction, logistics, IT, and healthcare.",
@@ -272,7 +274,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
         {eyebrow}
       </span>
       <h2
@@ -321,7 +323,7 @@ export default function JobsInRomania() {
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
         <TopTitleBar name="Romania" />
       </section>
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Why Romania"
@@ -384,7 +386,7 @@ export default function JobsInRomania() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Work Permits"
@@ -485,7 +487,7 @@ export default function JobsInRomania() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-3">
             <motion.div
@@ -577,7 +579,7 @@ export default function JobsInRomania() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle eyebrow="Process" title="Romania Work Permit Process" />
           <div className="grid gap-4 md:grid-cols-2">
@@ -588,7 +590,7 @@ export default function JobsInRomania() {
                 whileHover={{ y: -2 }}
                 className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[72px_1fr] md:items-center md:p-6"
               >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-lg font-bold text-amber-700">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-lg font-bold text-amber-500">
                   {index + 1}
                 </div>
                 <p
@@ -656,7 +658,7 @@ export default function JobsInRomania() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-2">
             <motion.div
@@ -733,7 +735,7 @@ export default function JobsInRomania() {
             whileHover={{ y: -4 }}
             className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-8 text-center shadow-sm md:p-10"
           >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
               Final Overview
             </span>
             <p
@@ -745,6 +747,12 @@ export default function JobsInRomania() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <RecentTestimonials />
+      </section>
+      <section>
+        <CountryFooter />
       </section>
     </div>
   );

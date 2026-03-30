@@ -25,6 +25,8 @@ import {
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
+import CountryFooter from "./countryFooter";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 
 const visaReasons = [
   "Cyprus offers more than 50,000 employment opportunities in tourism, hospitality, construction, IT, and healthcare.",
@@ -214,7 +216,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
         {eyebrow}
       </span>
       <h2
@@ -263,7 +265,7 @@ export default function JobsInCyprus() {
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
         <TopTitleBar name="Cyprus" />
       </section>
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Why Cyprus"
@@ -325,7 +327,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Permit Categories"
@@ -395,7 +397,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-3">
             <motion.div
@@ -487,7 +489,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Application Process"
@@ -572,6 +574,12 @@ export default function JobsInCyprus() {
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <RecentTestimonials />
+      </section>
+      <section>
+        <CountryFooter />
       </section>
     </div>
   );

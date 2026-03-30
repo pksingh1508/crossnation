@@ -26,6 +26,8 @@ import {
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
+import CountryFooter from "./countryFooter";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 
 const visaReasons = [
   "Demand is growing for international workers in agriculture, construction, logistics, hospitality, and manufacturing.",
@@ -203,7 +205,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
         {eyebrow}
       </span>
       <h2
@@ -252,15 +254,6 @@ export default function JobsInMoldova() {
       <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
         <TopTitleBar name="Moldova" />
       </section>
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Overview"
-            title="Overview of Jobs and Opportunities in Moldova"
-            description="This guide summarises available roles in Moldova together with eligibility, important details, and estimated monthly earnings for foreign workers."
-          />
-        </div>
-      </section>
 
       <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
@@ -293,7 +286,7 @@ export default function JobsInMoldova() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Work Benefits"
@@ -356,7 +349,7 @@ export default function JobsInMoldova() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Job Role"
@@ -460,7 +453,7 @@ export default function JobsInMoldova() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Documents"
@@ -544,7 +537,7 @@ export default function JobsInMoldova() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Full Process"
@@ -624,14 +617,14 @@ export default function JobsInMoldova() {
         </div>
       </section>
 
-      <section className="bg-stone-50 px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-12 md:py-16">
         <div className="mx-auto max-w-5xl">
           <motion.div
             {...cardMotion}
             whileHover={{ y: -4 }}
             className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-8 text-center shadow-sm md:p-10"
           >
-            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+            <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
               Additional Information
             </span>
             <p
@@ -642,6 +635,12 @@ export default function JobsInMoldova() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <RecentTestimonials />
+      </section>
+      <section>
+        <CountryFooter />
       </section>
     </div>
   );
