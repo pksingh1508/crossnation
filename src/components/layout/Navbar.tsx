@@ -69,7 +69,7 @@ export function Navbar() {
               >
                 <Phone className="md:h-4 md:w-4 h-2 w-2" /> +48 787 277 550
               </a>
-              <a
+              {/* <a
                 href="https://wa.me/48787277555"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export function Navbar() {
               >
                 <MessageCircle className="md:h-4 md:w-4 h-2 w-2" /> +48 787 277
                 555
-              </a>
+              </a> */}
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <div className="flex items-center pr-2">

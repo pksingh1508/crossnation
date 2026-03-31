@@ -77,13 +77,13 @@ export function ContactContainer() {
       color: "from-yellow-500 to-yellow-500",
       link: `tel:${t("info.callUs.phone")}`,
     },
-    {
-      icon: MessageCircle,
-      title: t("info.whatsapp.title"),
-      content: [t("info.whatsapp.number")],
-      color: "from-yellow-500 to-yellow-500",
-      link: `https://wa.me/${t("info.whatsapp.number")}`,
-    },
+    // {
+    //   icon: MessageCircle,
+    //   title: t("info.whatsapp.title"),
+    //   content: [t("info.whatsapp.number")],
+    //   color: "from-yellow-500 to-yellow-500",
+    //   link: `https://wa.me/${t("info.whatsapp.number")}`,
+    // },
     {
       icon: Mail,
       title: t("info.email.title"),
