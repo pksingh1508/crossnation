@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
+import { getLocalizedPath, stripLocalePrefix } from "@/lib/locale-paths";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,20 +20,19 @@ function toTitleCase(segment: string): string {
 export function Breadcrumbs() {
   const locale = useLocale();
   const pathname = usePathname();
-
-  // Ensure we work with paths like /en/..., remove query/hash automatically handled by usePathname
-  const parts = (pathname || "/").split("/").filter(Boolean);
-
-  // Remove leading locale segment if present
-  const pathSegments = parts[0] === locale ? parts.slice(1) : parts;
+  const strippedPath = stripLocalePrefix(pathname);
+  const pathSegments = strippedPath.split("/").filter(Boolean);
 
   const items = [
     {
-      href: `/${locale}`,
+      href: getLocalizedPath(locale, "/"),
       label: "Home",
     },
     ...pathSegments.map((segment, index) => {
-      const href = `/${[locale, ...pathSegments.slice(0, index + 1)].join("/")}`;
+      const href = getLocalizedPath(
+        locale,
+        `/${pathSegments.slice(0, index + 1).join("/")}`
+      );
       return {
         href,
         label: toTitleCase(segment),

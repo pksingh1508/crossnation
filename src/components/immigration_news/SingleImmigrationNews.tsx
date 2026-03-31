@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Eye, Calendar, ArrowRight } from "lucide-react";
 import { useLocale } from "next-intl";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleImmigrationNewsProps {
   news: NewsItem;
@@ -61,7 +62,7 @@ export function SingleImmigrationNews({
     },
   };
 
-  const newsUrl = `/${locale}/immigration-news/${data.slug}`;
+  const newsUrl = getLocalizedPath(locale, `/immigration-news/${data.slug}`);
 
   return (
     <motion.article

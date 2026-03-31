@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -29,13 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  const lang = siteConfig.defaultLanguage;
-
   staticPages.forEach((page) => {
-    const fullPath = page === "" ? `/${lang}` : `/${lang}${page}`;
-
     sitemapEntries.push({
-      url: `${baseUrl}${fullPath}`,
+      url: getLocalizedUrl(siteConfig.defaultLanguage, page || "/"),
       lastModified: currentDate,
       changeFrequency:
         page === ""

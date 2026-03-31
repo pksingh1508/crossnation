@@ -6,6 +6,7 @@ import { ChevronRight, Home } from "lucide-react";
 import { StructuredData } from "./StructuredData";
 import { generateBreadcrumbSchema } from "@/lib/seo/structuredData";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface BreadcrumbItem {
   name: string;
@@ -21,7 +22,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   const locale = useLocale();
 
   // Add home as the first item
-  const allItems = [{ name: "Home", href: `/${locale}` }, ...items];
+  const allItems = [{ name: "Home", href: getLocalizedPath(locale, "/") }, ...items];
 
   // Generate structured data for breadcrumbs
   const breadcrumbSchema = generateBreadcrumbSchema(

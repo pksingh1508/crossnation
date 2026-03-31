@@ -6,6 +6,7 @@ import { fontInter, fontPoppins } from "@/fonts";
 import { Cities } from "@/constants/JobCities";
 import { MapPin } from "lucide-react";
 import { useLocale } from "next-intl";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export default function RenderCities() {
   const locale = useLocale();
@@ -35,7 +36,7 @@ export default function RenderCities() {
           {Cities.map((city) => (
             <Link
               key={city.href}
-              href={`/${locale}/jobs${city.href}`}
+              href={getLocalizedPath(locale, `/jobs${city.href}`)}
               className="group relative overflow-hidden rounded-[28px] border border-amber-100 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1"
             >
               <div className="absolute inset-x-0 top-0 h-2 origin-left scale-x-0 bg-amber-400 opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"></div>

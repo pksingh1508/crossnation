@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { AllTestimonials } from "@/components/testimonials/AllTestimonials";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
-const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/success-stories`;
+const canonicalUrl = getLocalizedUrl(
+  siteConfig.defaultLanguage,
+  "/success-stories"
+);
 
 export const metadata: Metadata = buildMetadata({
   title: "Success Stories & Testimonials",

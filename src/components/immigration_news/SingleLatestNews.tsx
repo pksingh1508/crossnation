@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { NewsItem } from "@/lib/strapi";
 import Image from "next/image";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleNewsProps {
   news: NewsItem;
@@ -35,7 +36,7 @@ export function SingleLatestNews({ news }: SingleNewsProps) {
 
   return (
     <Link
-      href={`/${locale}/immigration-news/${slug}`}
+      href={getLocalizedPath(locale, `/immigration-news/${slug}`)}
       className="block max-w-2xl"
     >
       <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 p-1">

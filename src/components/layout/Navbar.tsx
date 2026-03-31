@@ -20,23 +20,25 @@ import { colors } from "@/constants/color";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { fontInter, fontMontserrat, fontPoppins, fontRoboto } from "@/fonts";
+import { getLocalizedPath, stripLocalePrefix } from "@/lib/locale-paths";
 
 export function Navbar() {
   const tCommon = useTranslations("common");
   const tNav = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
+  const normalizedPathname = stripLocalePrefix(pathname);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Helper function to check if a link is active
   const isActive = (href: string) => {
     if (href === "/") {
-      return pathname === `/${locale}` || pathname === `/${locale}/`;
+      return normalizedPathname === "/";
     }
+
     return (
-      pathname === `/${locale}${href}` ||
-      pathname.startsWith(`/${locale}${href}/`)
+      normalizedPathname === href || normalizedPathname.startsWith(`${href}/`)
     );
   };
 
@@ -127,7 +129,9 @@ export function Navbar() {
                   ["--hover-bg" as any]: colors.yellow.DEFAULT,
                 }}
               >
-                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+                <Link href={getLocalizedPath(locale, "/book")}>
+                  {tCommon("book")}
+                </Link>
               </Button>
               <Button
                 asChild
@@ -139,7 +143,7 @@ export function Navbar() {
                 }}
               >
                 <Link
-                  href={`/${locale}/contact`}
+                  href={getLocalizedPath(locale, "/contact")}
                   className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
                 >
                   {tCommon("contact")}
@@ -178,7 +182,9 @@ export function Navbar() {
                   ["--hover-bg" as any]: colors.yellow.DEFAULT,
                 }}
               >
-                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+                <Link href={getLocalizedPath(locale, "/book")}>
+                  {tCommon("book")}
+                </Link>
               </Button>
               <Button
                 asChild
@@ -191,7 +197,7 @@ export function Navbar() {
                 }}
               >
                 <Link
-                  href={`/${locale}/contact`}
+                  href={getLocalizedPath(locale, "/contact")}
                   className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
                 >
                   {tCommon("contact")}
@@ -235,7 +241,9 @@ export function Navbar() {
                   ["--hover-bg" as any]: colors.yellow.DEFAULT,
                 }}
               >
-                <Link href={`/${locale}/book`}>{tCommon("book")}</Link>
+                <Link href={getLocalizedPath(locale, "/book")}>
+                  {tCommon("book")}
+                </Link>
               </Button>
               <Button
                 asChild
@@ -248,7 +256,7 @@ export function Navbar() {
                 }}
               >
                 <Link
-                  href={`/${locale}/contact`}
+                  href={getLocalizedPath(locale, "/contact")}
                   className={`${isActive("/contact") ? "bg-yellow-500 text-black" : ""}`}
                 >
                   {tCommon("contact")}
@@ -264,7 +272,7 @@ export function Navbar() {
         <div className="max-w-7xl w-full mx-auto">
           <div className="container mx-auto px-4 flex items-center justify-between">
             {/* Logo */}
-            <Link href={`/${locale}`} className="flex items-center gap-3">
+            <Link href={getLocalizedPath(locale, "/")} className="flex items-center gap-3">
               <motion.div whileHover={{ scale: 1.01 }}>
                 <Image
                   src="/EU-logo.jpeg"
@@ -279,7 +287,7 @@ export function Navbar() {
             {/* Navigation Links - show from xl and up */}
             <div className="hidden xl:flex items-center gap-2">
               <Link
-                href={`/${locale}/`}
+                href={getLocalizedPath(locale, "/")}
                 className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
                   isActive("/") ? "bg-[var(--active-bg)]" : ""
                 }`}
@@ -295,7 +303,7 @@ export function Navbar() {
                 return (
                   <motion.div key={item.href} whileHover={{ y: -2 }}>
                     <Link
-                      href={`/${locale}${item.href}`}
+                      href={getLocalizedPath(locale, item.href)}
                       className={`text-gray-700 transition-colors rounded-md px-4 py-2 hover:bg-[var(--hover-bg)] hover:text-black hover:shadow-lg ${fontPoppins.className} font-medium ${
                         isActive(item.href)
                           ? "bg-[var(--active-bg)] text-black shadow-lg"
@@ -361,7 +369,7 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               <Link
-                href={`/${locale}/`}
+                href={getLocalizedPath(locale, "/")}
                 className={`hover:bg-[var(--hover-bg)] px-4 py-2 rounded-md transition-colors hover:translate-y-[-2px] ${
                   isActive("/") ? "bg-[var(--active-bg)]" : ""
                 }`}
@@ -376,7 +384,7 @@ export function Navbar() {
               {NAVBAR_LINKS.map((item) => (
                 <Link
                   key={item.href}
-                  href={`/${locale}${item.href}`}
+                  href={getLocalizedPath(locale, item.href)}
                   className={`text-gray-700 rounded-md px-3 py-2 hover:bg-[var(--hover-bg)] hover:text-black ${fontPoppins.className} font-medium ${
                     isActive(item.href)
                       ? "bg-[var(--active-bg)] text-black"

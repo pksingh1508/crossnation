@@ -8,6 +8,7 @@ import Link from "next/link";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
 import { fontPoppins } from "@/fonts";
+import { getLocalizedPath, getLocalizedUrl } from "@/lib/locale-paths";
 
 interface SingleTestimonialProps {
   testimonial: TestimonialItem;
@@ -85,7 +86,7 @@ export function SingleTestimonial({
           /* Original layout when name or what_they_say exist */
           <div className="flex flex-col h-full">
             {/* Client info */}
-            <Link href={`${locale}/testimonials`}>
+            <Link href={getLocalizedPath(locale, "/testimonials")}>
               <div className="relative flex flex-col items-center gap-4">
                 {/* Avatar */}
                 <div className="relative">
@@ -139,7 +140,7 @@ export function SingleTestimonial({
           variant="brandOutline"
           size="lg"
           onClick={() => {
-            router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/${locale}${url}`);
+            router.push(getLocalizedUrl(locale, url));
           }}
           className={`h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
         >

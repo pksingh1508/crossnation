@@ -3,8 +3,12 @@ import { AllPermitImage } from "@/components/work_permit/AllPermitImage";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
 import { getAllPermitImages } from "@/lib/strapi";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
-const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/work-permit`;
+const canonicalUrl = getLocalizedUrl(
+  siteConfig.defaultLanguage,
+  "/work-permit"
+);
 
 export const metadata: Metadata = buildMetadata({
   title: "Work Permit Approvals Gallery",

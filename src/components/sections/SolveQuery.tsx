@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export function SolveQuery() {
   const t = useTranslations("solveQuery");
@@ -113,7 +114,7 @@ export function SolveQuery() {
                 <RippleButton
                   variant="brandOutline"
                   size="lg"
-                  onClick={() => router.push(`/${locale}/contact`)}
+                  onClick={() => router.push(getLocalizedPath(locale, "/contact"))}
                   className="h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer"
                 >
                   <MessageSquare className="w-5 h-5" />

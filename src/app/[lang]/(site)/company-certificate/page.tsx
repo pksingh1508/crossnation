@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { CertificateGallery } from "@/components/companyCertificate/CertificateGallery";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
-const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/company-certificate`;
+const canonicalUrl = getLocalizedUrl(
+  siteConfig.defaultLanguage,
+  "/company-certificate"
+);
 
 export const metadata: Metadata = buildMetadata({
   title: "Company Certificates",

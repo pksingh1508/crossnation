@@ -3,8 +3,12 @@ import { AllVisaStampImage } from "@/components/visaStamp/AllVisaStampImage";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
 import { getAllStampImages } from "@/lib/strapi";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
-const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/visa-stamp`;
+const canonicalUrl = getLocalizedUrl(
+  siteConfig.defaultLanguage,
+  "/visa-stamp"
+);
 
 export const metadata: Metadata = buildMetadata({
   title: "Visa Stamp Approvals Gallery",

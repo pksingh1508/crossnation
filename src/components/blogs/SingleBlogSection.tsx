@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Heart, Calendar, ArrowRight, BookOpen } from "lucide-react";
 import { useLocale } from "next-intl";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleBlogSectionProps {
   blog: BlogItem;
@@ -64,7 +65,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
     },
   };
 
-  const blogUrl = `/${locale}/blog/${data.slug}`;
+  const blogUrl = getLocalizedPath(locale, `/blog/${data.slug}`);
 
   return (
     <motion.article

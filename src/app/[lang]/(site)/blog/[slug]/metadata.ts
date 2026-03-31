@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/constants/site";
 import { getSingleBlogPost } from "@/lib/strapi";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
 interface RouteParams {
   params: Promise<{ slug?: string; lang?: string }>;
@@ -53,7 +54,10 @@ export async function generateMetadata({
 }: RouteParams): Promise<Metadata> {
   const resolvedParams = await params;
   const { slug = "" } = resolvedParams || {};
-  const canonical = `${siteConfig.url}/${siteConfig.defaultLanguage}/blog/${slug}`;
+  const canonical = getLocalizedUrl(
+    siteConfig.defaultLanguage,
+    `/blog/${slug}`
+  );
 
   const token = process.env.STRAPI_ACCESS_TOKEN;
   if (!slug || !token) {

@@ -6,6 +6,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export function Migrate() {
   const t = useTranslations("migrate");
@@ -63,7 +64,7 @@ export function Migrate() {
                 className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 text-base md:text-lg font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <Link
-                  href={`/${locale}/migrate`}
+                  href={getLocalizedPath(locale, "/migrate")}
                   className="flex items-center gap-2"
                 >
                   {t("cta")}

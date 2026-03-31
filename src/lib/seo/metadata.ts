@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
 const toAbsoluteUrl = (path?: string) => {
   if (!path) {
@@ -102,7 +103,7 @@ export function generateLocalizedMetadata({
 }: SEOConfig & { locale?: string; pathname?: string }): Metadata {
   const fullTitle = title;
   const metadataBase = new URL(siteConfig.url);
-  const canonicalUrl = `${siteConfig.url}/${locale}${pathname}`;
+  const canonicalUrl = getLocalizedUrl(locale, pathname);
   const ogImageUrl = toAbsoluteUrl(image);
   const shouldIndex = !noIndex;
 
@@ -115,7 +116,7 @@ export function generateLocalizedMetadata({
   // Generate alternate language URLs
   const alternateLanguages: Record<string, string> = {};
   siteConfig.supportedLanguages.forEach((lang) => {
-    alternateLanguages[lang] = `${siteConfig.url}/${lang}${pathname}`;
+    alternateLanguages[lang] = getLocalizedUrl(lang, pathname);
   });
 
   // Map locale to proper OpenGraph locale format
@@ -150,7 +151,7 @@ export function generateLocalizedMetadata({
       canonical: canonicalUrl,
       languages: {
         ...alternateLanguages,
-        "x-default": `${siteConfig.url}/en${pathname}`,
+        "x-default": getLocalizedUrl(siteConfig.defaultLanguage, pathname),
       },
     },
     openGraph: {

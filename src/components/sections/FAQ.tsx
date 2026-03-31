@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export function FAQ() {
   const t = useTranslations("faq");
@@ -71,7 +72,9 @@ export function FAQ() {
                 {t("cta2")}
               </p>
               <button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <Link href={`/${locale}/contact`}>{t("cta3")}</Link>
+                <Link href={getLocalizedPath(locale, "/contact")}>
+                  {t("cta3")}
+                </Link>
               </button>
             </div>
           </div>

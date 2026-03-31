@@ -9,6 +9,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
 import { fontInter, fontPoppins } from "@/fonts";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface ImmigrationNewsProps {
   locale?: string;
@@ -139,7 +140,9 @@ export function ImmigrationNews({ locale = "en" }: ImmigrationNewsProps) {
           <RippleButton
             variant="brandOutline"
             size="lg"
-            onClick={() => router.push(`/${locale}/immigration-news`)}
+            onClick={() =>
+              router.push(getLocalizedPath(locale, "/immigration-news"))
+            }
             className={`h-12 text-base font-semibold font-montserrat border-2 border-[#fecc00] text-yellow-500 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
           >
             {t("cta") || "See All News"}

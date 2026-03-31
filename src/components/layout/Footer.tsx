@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import { fontInter, fontPoppins } from "@/fonts";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export function Footer() {
   const locale = useLocale();
@@ -114,7 +115,7 @@ export function Footer() {
                 {solutionLinks.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={`/${locale}${link.href}`}
+                      href={getLocalizedPath(locale, link.href)}
                       className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
@@ -164,7 +165,7 @@ export function Footer() {
                 {updatedLinks.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={`/${locale}${link.href}`}
+                      href={getLocalizedPath(locale, link.href)}
                       className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
@@ -214,7 +215,7 @@ export function Footer() {
                 {successStoryLinks.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={`/${locale}${link.href}`}
+                      href={getLocalizedPath(locale, link.href)}
                       className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}
@@ -272,7 +273,7 @@ export function Footer() {
                 {termsLinks.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={`/${locale}${link.href}`}
+                      href={getLocalizedPath(locale, link.href)}
                       className={`text-gray-600 hover:text-yellow-500 transition-colors duration-200 text-sm ${fontInter.className}`}
                     >
                       {link.label}

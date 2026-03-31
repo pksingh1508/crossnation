@@ -4,7 +4,7 @@ import { siteConfig } from "@/constants/site";
 export default createMiddleware({
   locales: siteConfig.supportedLanguages,
   defaultLocale: siteConfig.defaultLanguage,
-  localePrefix: "always",
+  localePrefix: "as-needed",
 });
 
 export const config = {

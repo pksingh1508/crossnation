@@ -6,6 +6,7 @@ import { RippleButton } from "@/components/ui/ripple-button";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface ButtonData {
   text: string;
@@ -44,7 +45,7 @@ export function CustomHero({
   const locale = useLocale();
 
   const handleButtonClick = () => {
-    router.push(`/${locale}/contact`);
+    router.push(getLocalizedPath(locale, "/contact"));
   };
 
   return (

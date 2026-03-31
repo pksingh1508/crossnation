@@ -1,16 +1,14 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { fontPoppins, fontInter } from "@/fonts";
+import { fontPoppins } from "@/fonts";
 
 export default function TopTitleBar({ name }: { name: string }) {
   return (
     <div className="mx-auto max-w-7xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
-        className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_45%,#f8fafc_100%)] p-8 shadow-sm md:p-12"
+      <div
+        className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_45%,#f8fafc_100%)] p-4 shadow-sm"
       >
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center justify-center">
           <Image
@@ -26,12 +24,14 @@ export default function TopTitleBar({ name }: { name: string }) {
             - Europe’s Premier Immigration Company.
           </h1>
         </div>
-        <h3
-          className={`mt-5 max-w-5xl text-xl font-semibold leading-tight text-gray-700 md:text-xl lg:text-2xl text-center ${fontPoppins.className}`}
-        >
-          Your EU Career Starts Here: {name} Jobs & Visa Process Details
-        </h3>
-      </motion.div>
+        <div className="flex items-center justify-center">
+          <h3
+            className={`mt-5 max-w-5xl text-xl font-semibold leading-tight text-gray-700 md:text-xl lg:text-2xl text-center ${fontPoppins.className}`}
+          >
+            Your EU Career Starts Here: {name} Jobs & Visa Process Details
+          </h3>
+        </div>
+      </div>
     </div>
   );
 }

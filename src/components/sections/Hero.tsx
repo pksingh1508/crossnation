@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 import { fontPoppins, fontMontserrat, fontInter } from "@/fonts";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { useRouter } from "next/navigation";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export function Hero() {
   const t = useTranslations("home");
@@ -61,7 +62,7 @@ export function Hero() {
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                onClick={() => router.push(`/${locale}/recruiter`)}
+                onClick={() => router.push(getLocalizedPath(locale, "/recruiter"))}
                 className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn1")}
@@ -69,7 +70,7 @@ export function Hero() {
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                onClick={() => router.push(`/${locale}/jobseeker`)}
+                onClick={() => router.push(getLocalizedPath(locale, "/jobseeker"))}
                 className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn2")}
@@ -78,7 +79,7 @@ export function Hero() {
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                onClick={() => router.push(`/${locale}/migrate`)}
+                onClick={() => router.push(getLocalizedPath(locale, "/migrate"))}
                 className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn3")}
@@ -86,7 +87,7 @@ export function Hero() {
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                onClick={() => router.push(`/${locale}/employer`)}
+                onClick={() => router.push(getLocalizedPath(locale, "/employer"))}
                 className={`h-12 text-base font-semibold border-2 border-yellow-500 hover:border-gray-700 bg-[#fecc00] hover:bg-[#fecc00] hover:border-2 cursor-pointer shadow-amber-200 shadow-md text-gray-700 transition-all ${fontPoppins.className}`}
               >
                 {t("btn4")}
@@ -114,7 +115,9 @@ export function Hero() {
                 <button
                   className={`text-yellow-500 text-base font-semibold hover:underline ${fontPoppins.className}`}
                 >
-                  <Link href={`/${locale}/contact`}>{t("cta2")}</Link>
+                  <Link href={getLocalizedPath(locale, "/contact")}>
+                    {t("cta2")}
+                  </Link>
                 </button>
               </div>
             </div>

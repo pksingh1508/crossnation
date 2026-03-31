@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BlogItem } from "@/lib/strapi";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface LatestPostProps {
   blog: BlogItem;
@@ -30,7 +31,10 @@ export function SingleLatestPost({ blog }: LatestPostProps) {
   };
 
   return (
-    <Link href={`/${locale}/blog/${slug}`} className="block max-w-2xl">
+    <Link
+      href={getLocalizedPath(locale, `/blog/${slug}`)}
+      className="block max-w-2xl"
+    >
       <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 p-1">
         <div className="flex gap-4 items-start">
           {/* Small Blog Image - Left Side */}

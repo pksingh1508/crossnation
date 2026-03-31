@@ -8,6 +8,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { RippleButton } from "../ui/ripple-button";
 import { useRouter } from "next/navigation";
 import { fontPoppins } from "@/fonts";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 export function RecentBlog() {
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
@@ -139,7 +140,7 @@ export function RecentBlog() {
               <RippleButton
                 variant="brandOutline"
                 size="lg"
-                onClick={() => router.push(`/${locale}/blog`)}
+                onClick={() => router.push(getLocalizedPath(locale, "/blog"))}
                 className={`h-12 text-base font-semibold font-montserrat border-3 text-yellow-500 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
               >
                 {t("cta") || "Read More Blogs"}

@@ -18,6 +18,7 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { trackConversion } from "@/utils/gtag";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface CountryCode {
   country: string;
@@ -296,7 +297,7 @@ export function ContactForm() {
           >
             {t("termsText")}{" "}
             <a
-              href={`/${locale}/terms-and-conditions`}
+              href={getLocalizedPath(locale, "/terms-and-conditions")}
               className="text-yellow-600 hover:text-yellow-700 underline font-medium"
               target="_blank"
               rel="noopener noreferrer"

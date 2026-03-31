@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedPath, stripLocalePrefix } from "@/lib/locale-paths";
 import {
   Select,
   SelectContent,
@@ -23,11 +24,9 @@ export function LanguageSwitcher() {
   const handleLanguageChange = (newLocale: string) => {
     // set the locale in global state management
     setLocale(newLocale);
-    // Remove the current locale from the pathname
-    const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+    const pathWithoutLocale = stripLocalePrefix(pathname);
 
-    // Always include the locale prefix for consistency
-    router.push(`/${newLocale}${pathWithoutLocale}`);
+    router.push(getLocalizedPath(newLocale, pathWithoutLocale));
   };
 
   return (

@@ -32,6 +32,7 @@ import {
   generateArticleSchema,
   organizationSchema,
 } from "@/lib/seo/structuredData";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface BlogArticleClientProps {
   slug: string;
@@ -162,7 +163,7 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
           <p className="text-gray-600 mb-6">
             {error || "The requested blog post could not be found."}
           </p>
-          <Link href={`/${locale}/blog`}>
+          <Link href={getLocalizedPath(locale, "/blog")}>
             <Button className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
@@ -186,8 +187,11 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
   const structuredData = [organizationSchema, articleSchema];
 
   const breadcrumbItems = [
-    { name: "Blog", href: `/${locale}/blog` },
-    { name: blogData.title, href: `/${locale}/blog/${blogData.slug}` },
+    { name: "Blog", href: getLocalizedPath(locale, "/blog") },
+    {
+      name: blogData.title,
+      href: getLocalizedPath(locale, `/blog/${blogData.slug}`),
+    },
   ];
 
   return (
@@ -397,7 +401,7 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
                   Share
                 </Button>
               </div>
-              <Link href={`/${locale}/blog`}>
+              <Link href={getLocalizedPath(locale, "/blog")}>
                 <Button variant="ghost" className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
                   Back to All Posts

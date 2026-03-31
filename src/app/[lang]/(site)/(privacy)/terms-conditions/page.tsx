@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import TermsAndConditions from "@/components/Terms_Conditions/TermsAndConditions";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
-const canonicalUrl = `${siteConfig.url}/${siteConfig.defaultLanguage}/terms-conditions`;
+const canonicalUrl = getLocalizedUrl(
+  siteConfig.defaultLanguage,
+  "/terms-conditions"
+);
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms & Conditions",

@@ -30,6 +30,7 @@ import {
   generateArticleSchema,
   organizationSchema,
 } from "@/lib/seo/structuredData";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface NewsArticleClientProps {
   slug: string;
@@ -154,7 +155,7 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
           <p className="text-gray-600 mb-6">
             {error || "The requested article could not be found."}
           </p>
-          <Link href={`/${locale}/immigration-news`}>
+          <Link href={getLocalizedPath(locale, "/immigration-news")}>
             <Button className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               Back to News
@@ -178,10 +179,13 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
   const structuredData = [organizationSchema, articleSchema];
 
   const breadcrumbItems = [
-    { name: "Immigration News", href: `/${locale}/immigration-news` },
+    {
+      name: "Immigration News",
+      href: getLocalizedPath(locale, "/immigration-news"),
+    },
     {
       name: newsData.title,
-      href: `/${locale}/immigration-news/${newsData.slug}`,
+      href: getLocalizedPath(locale, `/immigration-news/${newsData.slug}`),
     },
   ];
 
@@ -384,7 +388,7 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
                   Share
                 </Button>
               </div>
-              <Link href={`/${locale}/immigration-news`}>
+              <Link href={getLocalizedPath(locale, "/immigration-news")}>
                 <Button variant="ghost" className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
                   Back to All News

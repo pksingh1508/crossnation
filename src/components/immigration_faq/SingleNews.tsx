@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { NewsItem } from "@/lib/strapi";
 import { fontInter } from "@/fonts";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleNewsProps {
   news: NewsItem;
@@ -39,7 +40,7 @@ export function SingleNews({ news }: SingleNewsProps) {
     <article className="border-b border-gray-200 pb-4 mb-4 last:border-b-0">
       <div className="space-y-3">
         {/* Title */}
-        <Link href={`/${locale}/immigration-news/${slug}`}>
+        <Link href={getLocalizedPath(locale, `/immigration-news/${slug}`)}>
           <h3
             className={`text-lg font-semibold text-gray-800 leading-tight hover:text-yellow-500 cursor-pointer transition-colors ${fontInter.className}`}
           >
@@ -57,7 +58,7 @@ export function SingleNews({ news }: SingleNewsProps) {
               </span>
 
               {/* Read More */}
-              <Link href={`/${locale}/immigration-news/${slug}`}>
+              <Link href={getLocalizedPath(locale, `/immigration-news/${slug}`)}>
                 <span
                   className={`text-yellow-500 cursor-pointer hover:underline ml-1 ${fontInter.className}`}
                 >

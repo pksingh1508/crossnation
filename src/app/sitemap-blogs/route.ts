@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
+import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export async function GET() {
   try {
-    const baseUrl = "https://eucareerserwis.pl";
+    const baseUrl = siteConfig.url;
     const sitemapEntries: any[] = [];
 
     // Fetch all slugs
@@ -36,14 +38,14 @@ export async function GET() {
 
     // Add main category pages
     sitemapEntries.push({
-      url: `${baseUrl}/en/blog`,
+      url: getLocalizedUrl(siteConfig.defaultLanguage, "/blog"),
       lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.8,
     });
 
     sitemapEntries.push({
-      url: `${baseUrl}/en/immigration-news`,
+      url: getLocalizedUrl(siteConfig.defaultLanguage, "/immigration-news"),
       lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -55,7 +57,10 @@ export async function GET() {
         // URL encode the slug to handle spaces and special characters
         const encodedSlug = encodeURIComponent(slug);
         sitemapEntries.push({
-          url: `${baseUrl}/en/blog/${encodedSlug}`,
+          url: getLocalizedUrl(
+            siteConfig.defaultLanguage,
+            `/blog/${encodedSlug}`
+          ),
           lastModified: new Date().toISOString(),
           changeFrequency: "monthly",
           priority: 0.7,
@@ -68,7 +73,10 @@ export async function GET() {
       if (slug && typeof slug === "string") {
         const encodedSlug = encodeURIComponent(slug);
         sitemapEntries.push({
-          url: `${baseUrl}/en/immigration-news/${encodedSlug}`,
+          url: getLocalizedUrl(
+            siteConfig.defaultLanguage,
+            `/immigration-news/${encodedSlug}`
+          ),
           lastModified: new Date().toISOString(),
           changeFrequency: "monthly",
           priority: 0.7,
@@ -91,7 +99,7 @@ export async function GET() {
     console.error("❌ Error generating blogs sitemap:", error);
 
     // Return a minimal valid sitemap on error
-    const baseUrl = "https://eucareerserwis.pl";
+    const baseUrl = siteConfig.url;
     const errorXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>

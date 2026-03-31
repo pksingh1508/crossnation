@@ -4,6 +4,7 @@ import { BlogItem } from "@/lib/strapi";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { fontInter } from "@/fonts";
+import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleBlogProps {
   blog: BlogItem;
@@ -53,7 +54,7 @@ export function SingleBlog({ blog }: SingleBlogProps) {
       {/* Blog Content */}
       <div className="p-2">
         {/* Title */}
-        <Link href={`${locale}/blog/${slug}`}>
+        <Link href={getLocalizedPath(locale, `/blog/${slug}`)}>
           <h3
             className={`text-lg font-semibold text-gray-800 leading-tight hover:text-yellow-600 cursor-pointer transition-colors mb-3 line-clamp-2 ${fontInter.className}`}
           >
@@ -64,7 +65,7 @@ export function SingleBlog({ blog }: SingleBlogProps) {
           <p className={`text-gray-600 line-clamp-2 ${fontInter.className}`}>
             {short_desc}
           </p>
-          <Link href={`${locale}/blog/${slug}`}>
+          <Link href={getLocalizedPath(locale, `/blog/${slug}`)}>
             <span
               className={`text-yellow-600 cursor-pointer hover:underline ml-1 ${fontInter.className}`}
             >
