@@ -26,6 +26,7 @@ import {
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
+import WorkPermit from "./WorkPermit";
 
 const visaReasons = [
   "More than 100,000 jobs are open in industries such as construction, farming, tourism, and hospitality.",
@@ -351,29 +352,7 @@ export default function JobsInPortugal() {
             title="Portugal Work Visa Categories"
             description="Portugal's economy keeps growing across construction, agriculture, tourism, hospitality, logistics, and healthcare, creating opportunities for both skilled and unskilled foreign workers."
           />
-          <div className="space-y-4">
-            {visaCategories.map((visa) => (
-              <motion.div
-                key={visa.type}
-                {...cardMotion}
-                whileHover={{ y: -3 }}
-                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[220px_1fr] md:items-start md:gap-4"
-              >
-                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
-                  <span
-                    className={`text-lg font-bold md:text-xl ${fontPoppins.className}`}
-                  >
-                    {visa.type}
-                  </span>
-                </div>
-                <p
-                  className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                >
-                  {visa.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <WorkPermit permitTypes={visaCategories} />
         </div>
       </section>
 

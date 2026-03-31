@@ -26,7 +26,7 @@ const socialLinks = [
   },
 ];
 
-const phoneNumbers = ["+48 787 277 550", "+48 787 277 555"];
+const phoneNumbers = ["+48 787 277 550"];
 
 export default function CountryFooter() {
   return (

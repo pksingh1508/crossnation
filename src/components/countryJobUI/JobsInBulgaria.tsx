@@ -26,6 +26,7 @@ import {
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
+import WorkPermit from "./WorkPermit";
 
 const visaReasons = [
   "Bulgaria is one of the more affordable countries in the EU, which makes saving easier.",
@@ -339,29 +340,7 @@ export default function JobsInBulgaria() {
             eyebrow="Permit Options"
             title="Work Permit Options for Non-EU Applicants"
           />
-          <div className="space-y-4">
-            {permitOptions.map((permit) => (
-              <motion.div
-                key={permit.type}
-                {...cardMotion}
-                whileHover={{ y: -3 }}
-                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[220px_1fr] md:items-start md:gap-4"
-              >
-                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
-                  <span
-                    className={`text-lg font-bold md:text-xl ${fontPoppins.className}`}
-                  >
-                    {permit.type}
-                  </span>
-                </div>
-                <p
-                  className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                >
-                  {permit.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <WorkPermit permitTypes={permitOptions} />
         </div>
       </section>
 

@@ -28,6 +28,7 @@ import {
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
+import WorkPermit from "./WorkPermit";
 
 const visaReasons = [
   "More than 70,000 jobs are available in sectors such as construction, manufacturing, healthcare, and logistics.",
@@ -376,29 +377,7 @@ export default function JobsInLatvia() {
             eyebrow="Permit Categories"
             title="Categories of Latvia Work Permits for Non-EU Nationals"
           />
-          <div className="space-y-4">
-            {permitCategories.map((permit) => (
-              <motion.div
-                key={permit.type}
-                {...cardMotion}
-                whileHover={{ y: -3 }}
-                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[160px_1fr] md:items-start md:gap-4"
-              >
-                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
-                  <span
-                    className={`text-lg font-bold md:text-xl ${fontPoppins.className}`}
-                  >
-                    {permit.type}
-                  </span>
-                </div>
-                <p
-                  className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                >
-                  {permit.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <WorkPermit permitTypes={permitCategories} />
         </div>
       </section>
 

@@ -27,6 +27,7 @@ import {
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
+import WorkPermit from "./WorkPermit";
 
 const visaReasons = [
   "Cyprus offers more than 50,000 employment opportunities in tourism, hospitality, construction, IT, and healthcare.",
@@ -333,29 +334,7 @@ export default function JobsInCyprus() {
             eyebrow="Permit Categories"
             title="Categories of Work Permits in Cyprus for Non-EU Nationals"
           />
-          <div className="space-y-4">
-            {permitCategories.map((permit) => (
-              <motion.div
-                key={permit.type}
-                {...cardMotion}
-                whileHover={{ y: -3 }}
-                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[230px_1fr] md:items-start md:gap-4"
-              >
-                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
-                  <span
-                    className={`text-lg font-bold md:text-xl ${fontPoppins.className}`}
-                  >
-                    {permit.type}
-                  </span>
-                </div>
-                <p
-                  className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                >
-                  {permit.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <WorkPermit permitTypes={permitCategories} />
         </div>
       </section>
 

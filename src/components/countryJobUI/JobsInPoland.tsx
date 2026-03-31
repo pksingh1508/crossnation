@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
+import WorkPermit from "./WorkPermit";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 
 const advantages = [
@@ -276,29 +277,7 @@ export default function JobsInPoland() {
             eyebrow="Work Permits"
             title="Types of Work Permits in Poland for Non-EU Citizens"
           />
-          <div className="space-y-6">
-            {permitTypes.map((permit) => (
-              <motion.div
-                key={permit.type}
-                {...cardMotion}
-                whileHover={{ y: -3 }}
-                className="border-b border-slate-200 pb-6 md:grid md:grid-cols-[140px_1fr] md:items-start md:gap-4"
-              >
-                <div className="inline-flex w-fit items-center gap-3 text-amber-500">
-                  <span
-                    className={`text-xl font-bold ${fontPoppins.className}`}
-                  >
-                    {permit.type}
-                  </span>
-                </div>
-                <p
-                  className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                >
-                  {permit.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <WorkPermit permitTypes={permitTypes} />
         </div>
       </section>
 
@@ -323,61 +302,6 @@ export default function JobsInPoland() {
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Support Services"
-            title="Pre-Arrival and Post-Arrival Services"
-            description="EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Poland."
-          />
-          <div className="grid gap-6 xl:grid-cols-2">
-            {[
-              {
-                title: "Pre-Arrival Services (Before You Travel)",
-                icon: Plane,
-                items: preArrivalServices,
-              },
-              {
-                title: "Post-Arrival Services (After You Arrive)",
-                icon: Landmark,
-                items: postArrivalServices,
-              },
-            ].map((section) => {
-              const Icon = section.icon;
-              return (
-                <motion.div
-                  key={section.title}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-                >
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3
-                    className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-                  >
-                    {section.title}
-                  </h3>
-                  <div className="mt-6 space-y-4">
-                    {section.items.map((item) => (
-                      <div key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
-                        <p
-                          className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
-                        >
-                          {item}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
@@ -537,6 +461,62 @@ export default function JobsInPoland() {
           </div>
         </div>
       </section>
+
+      <section className="bg-white px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-7xl">
+          <SectionTitle
+            eyebrow="Support Services"
+            title="Pre-Arrival and Post-Arrival Services"
+            description="EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Poland."
+          />
+          <div className="grid gap-6 xl:grid-cols-2">
+            {[
+              {
+                title: "Pre-Arrival Services (Before You Travel)",
+                icon: Plane,
+                items: preArrivalServices,
+              },
+              {
+                title: "Post-Arrival Services (After You Arrive)",
+                icon: Landmark,
+                items: postArrivalServices,
+              },
+            ].map((section) => {
+              const Icon = section.icon;
+              return (
+                <motion.div
+                  key={section.title}
+                  {...cardMotion}
+                  whileHover={{ y: -4 }}
+                  className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
+                >
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3
+                    className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+                  >
+                    {section.title}
+                  </h3>
+                  <div className="mt-6 space-y-4">
+                    {section.items.map((item) => (
+                      <div key={item} className="flex items-start gap-3">
+                        <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                        <p
+                          className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
+                        >
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section>
         <RecentTestimonials />
       </section>
