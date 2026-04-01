@@ -31,6 +31,13 @@ import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
 import CompanyOverview from "./CompanyOverview";
+import {
+  BulletList,
+  FeatureCardGrid,
+  SectionTitle,
+  StepList,
+  cardMotion,
+} from "./CountryJobShared";
 
 const permitTypes = [
   {
@@ -192,13 +199,6 @@ const finalSteps = [
   "Legal employment begins with full relocation support.",
 ];
 
-const cardMotion = {
-  initial: { opacity: 0, y: 18 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 as const },
-  transition: { duration: 0.4, ease: "easeOut" as const },
-};
-
 const benefitIcons = [
   TrendingUp,
   Banknote,
@@ -215,63 +215,6 @@ const benefitIcons = [
   Sparkles,
   FileCheck2,
 ];
-
-function SectionTitle({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <motion.div
-      {...cardMotion}
-      className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
-    >
-      <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
-        {eyebrow}
-      </span>
-      <h2
-        className={`mt-5 text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-      >
-        {title}
-      </h2>
-      {description && (
-        <p
-          className={`mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-        >
-          {description}
-        </p>
-      )}
-      <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-amber-500"></div>
-    </motion.div>
-  );
-}
-
-function BulletList({
-  items,
-  className = "",
-}: {
-  items: string[];
-  className?: string;
-}) {
-  return (
-    <div className={`space-y-4 ${className}`}>
-      {items.map((item) => (
-        <div key={item} className="flex items-start gap-3">
-          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-          <p
-            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
-          >
-            {item}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function JobsInLithuania() {
   return (
@@ -299,28 +242,11 @@ export default function JobsInLithuania() {
             title="Temporary Residence and Work Authorization"
             description="This permit lets workers live and work legally in Lithuania at the same time, with a route toward longer-term residence."
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {residenceBenefits.map((item, index) => {
-              const Icon = benefitIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="flex items-start gap-4 rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
-                >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={residenceBenefits}
+            icons={benefitIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-4"
+          />
         </div>
       </section>
 
@@ -562,18 +488,7 @@ export default function JobsInLithuania() {
                 eyebrow="Process"
                 title="Lithuania Work Permit and TRC Process"
               />
-              <div className="-mt-2 space-y-4">
-                {processSteps.map((step) => (
-                  <div key={step} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-                    <p
-                      className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                    >
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <StepList items={processSteps} className="-mt-2" />
             </motion.div>
           </div>
         </div>

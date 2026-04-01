@@ -30,6 +30,14 @@ import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
 import CompanyOverview from "./CompanyOverview";
+import {
+  BulletList,
+  FeatureCardGrid,
+  SectionTitle,
+  StepList,
+  SummaryCard,
+  cardMotion,
+} from "./CountryJobShared";
 
 const visaReasons = [
   "More than 70,000 jobs are available in sectors such as construction, manufacturing, healthcare, and logistics.",
@@ -236,73 +244,9 @@ const keyNotes = [
   "Pay rates differ by location and job role.",
 ];
 
-const cardMotion = {
-  initial: { opacity: 0, y: 18 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 as const },
-  transition: { duration: 0.4, ease: "easeOut" as const },
-};
-
 const reasonIcons = [BriefcaseBusiness, Banknote, Clock3, HeartPulse, Home];
 
 const advantageIcons = [TrendingUp, ShieldCheck, Wallet, HeartPulse, Sparkles];
-
-function SectionTitle({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <motion.div
-      {...cardMotion}
-      className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
-    >
-      <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
-        {eyebrow}
-      </span>
-      <h2
-        className={`mt-5 text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-      >
-        {title}
-      </h2>
-      {description && (
-        <p
-          className={`mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-        >
-          {description}
-        </p>
-      )}
-      <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-amber-500"></div>
-    </motion.div>
-  );
-}
-
-function BulletList({
-  items,
-  className = "",
-}: {
-  items: string[];
-  className?: string;
-}) {
-  return (
-    <div className={`space-y-4 ${className}`}>
-      {items.map((item) => (
-        <div key={item} className="flex items-start gap-3">
-          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-          <p
-            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
-          >
-            {item}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function JobsInLatvia() {
   return (
@@ -316,28 +260,12 @@ export default function JobsInLatvia() {
             eyebrow="Why Latvia"
             title="Why Consider Applying for a Latvia Work Visa?"
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {visaReasons.map((item, index) => {
-              const Icon = reasonIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
-                >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={visaReasons}
+            icons={reasonIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-5"
+            layout="stacked"
+          />
         </div>
       </section>
 
@@ -347,28 +275,13 @@ export default function JobsInLatvia() {
             eyebrow="Advantages"
             title="Advantages of Working in Latvia"
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {advantages.map((item, index) => {
-              const Icon = advantageIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
-                >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={advantages}
+            icons={advantageIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-5"
+            tone="muted"
+            layout="stacked"
+          />
         </div>
       </section>
 
@@ -664,18 +577,7 @@ export default function JobsInLatvia() {
                 eyebrow="Application"
                 title="Application Process Step by Step"
               />
-              <div className="-mt-2 space-y-4">
-                {applicationProcess.map((step) => (
-                  <div key={step} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-                    <p
-                      className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                    >
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <StepList items={applicationProcess} className="-mt-2" />
             </motion.div>
           </div>
         </div>
@@ -753,24 +655,10 @@ export default function JobsInLatvia() {
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-5xl">
-          <motion.div
-            {...cardMotion}
-            whileHover={{ y: -4 }}
-            className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-8 text-center shadow-sm md:p-10"
-          >
-            <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
-              Final Summary
-            </span>
-            <p
-              className={`mt-6 text-lg leading-8 text-slate-700 md:text-xl ${fontInter.className}`}
-            >
-              Latvia is a strong option for foreign workers because it combines
-              a growing job market, EU-standard benefits, and relatively
-              affordable living. With opportunities across several industries
-              and a clear route toward long-term residency, it offers both
-              career growth and quality of life.
-            </p>
-          </motion.div>
+          <SummaryCard
+            eyebrow="Final Summary"
+            summary="Latvia is a strong option for foreign workers because it combines a growing job market, EU-standard benefits, and relatively affordable living. With opportunities across several industries and a clear route toward long-term residency, it offers both career growth and quality of life."
+          />
         </div>
       </section>
       <section>

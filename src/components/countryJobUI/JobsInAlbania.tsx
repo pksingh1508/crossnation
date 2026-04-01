@@ -29,6 +29,14 @@ import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
 import CompanyOverview from "./CompanyOverview";
+import {
+  BulletList,
+  FeatureCardGrid,
+  InfoCard,
+  SectionTitle,
+  StepList,
+  cardMotion,
+} from "./CountryJobShared";
 
 const visaReasons = [
   "A wide range of jobs is available in sectors like agriculture, energy, and textiles.",
@@ -165,13 +173,6 @@ const exampleSalaries = [
   "Construction Worker - €600 to €1000.",
 ];
 
-const cardMotion = {
-  initial: { opacity: 0, y: 18 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 as const },
-  transition: { duration: 0.4, ease: "easeOut" as const },
-};
-
 const reasonIcons = [
   BriefcaseBusiness,
   ShieldCheck,
@@ -182,63 +183,6 @@ const reasonIcons = [
 ];
 
 const advantageIcons = [Wallet, Clock3, Building2, Sparkles, Users, BadgeCheck];
-
-function SectionTitle({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <motion.div
-      {...cardMotion}
-      className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
-    >
-      <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
-        {eyebrow}
-      </span>
-      <h2
-        className={`mt-5 text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-      >
-        {title}
-      </h2>
-      {description && (
-        <p
-          className={`mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-        >
-          {description}
-        </p>
-      )}
-      <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-amber-500"></div>
-    </motion.div>
-  );
-}
-
-function BulletList({
-  items,
-  className = "",
-}: {
-  items: string[];
-  className?: string;
-}) {
-  return (
-    <div className={`space-y-4 ${className}`}>
-      {items.map((item) => (
-        <div key={item} className="flex items-start gap-3">
-          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-          <p
-            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
-          >
-            {item}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function JobsInAlbania() {
   return (
@@ -252,28 +196,11 @@ export default function JobsInAlbania() {
             eyebrow="Why Albania"
             title="Why Choose an Albania Work Visa?"
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {visaReasons.map((item, index) => {
-              const Icon = reasonIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="flex items-start gap-4 rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
-                >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={visaReasons}
+            icons={reasonIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-3"
+          />
         </div>
       </section>
 
@@ -283,28 +210,12 @@ export default function JobsInAlbania() {
             eyebrow="Advantages"
             title="Advantages of Working in Albania"
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {advantages.map((item, index) => {
-              const Icon = advantageIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
-                >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={advantages}
+            icons={advantageIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-3"
+            tone="muted"
+          />
         </div>
       </section>
 
@@ -325,37 +236,17 @@ export default function JobsInAlbania() {
             title="High-Demand Jobs and Industries in Albania"
           />
           <div className="grid gap-6 xl:grid-cols-2">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Wrench className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Technical and Construction Roles
-              </h3>
-              <BulletList items={technicalRoles} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Hotel className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Hospitality and Service Roles
-              </h3>
-              <BulletList items={hospitalityRoles} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={Wrench}
+              title="Technical and Construction Roles"
+              items={technicalRoles}
+            />
+            <InfoCard
+              icon={Hotel}
+              title="Hospitality and Service Roles"
+              items={hospitalityRoles}
+              tone="accent"
+            />
           </div>
         </div>
       </section>
@@ -363,53 +254,23 @@ export default function JobsInAlbania() {
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-3">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Clock3 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                General Employment Conditions
-              </h3>
-              <BulletList items={employmentConditions} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Wallet className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Work Visa Packages for 2025
-              </h3>
-              <BulletList items={pricingPlan} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Why Select This Service?
-              </h3>
-              <BulletList items={whyChoose} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={Clock3}
+              title="General Employment Conditions"
+              items={employmentConditions}
+            />
+            <InfoCard
+              icon={Wallet}
+              title="Work Visa Packages for 2025"
+              items={pricingPlan}
+              tone="accent"
+            />
+            <InfoCard
+              icon={ShieldCheck}
+              title="Why Select This Service?"
+              items={whyChoose}
+              tone="muted"
+            />
           </div>
         </div>
       </section>
@@ -417,21 +278,11 @@ export default function JobsInAlbania() {
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileText className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Documents Required for an Albania Work Permit
-              </h3>
-              <BulletList items={requiredDocuments} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={FileText}
+              title="Documents Required for an Albania Work Permit"
+              items={requiredDocuments}
+            />
 
             <motion.div
               {...cardMotion}
@@ -442,18 +293,7 @@ export default function JobsInAlbania() {
                 eyebrow="Application"
                 title="Steps to Obtain an Albania E-Work Permit and D-Type Visa"
               />
-              <div className="-mt-2 space-y-4">
-                {processSteps.map((step) => (
-                  <div key={step} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-                    <p
-                      className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                    >
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <StepList items={processSteps} className="-mt-2" />
             </motion.div>
           </div>
         </div>
@@ -462,37 +302,16 @@ export default function JobsInAlbania() {
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-2">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Globe2 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Life and Opportunities in Albania
-              </h3>
-              <BulletList items={lifeInAlbania} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Home className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Accommodation Details
-              </h3>
-              <BulletList items={accommodationDetails} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={Globe2}
+              title="Life and Opportunities in Albania"
+              items={lifeInAlbania}
+            />
+            <InfoCard
+              icon={Home}
+              title="Accommodation Details"
+              items={accommodationDetails}
+            />
 
             <motion.div
               {...cardMotion}
@@ -518,29 +337,12 @@ export default function JobsInAlbania() {
               </div>
             </motion.div>
 
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Plane className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Final Summary
-              </h3>
-              <p
-                className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-              >
-                Albania is becoming a more attractive choice for foreign workers
-                because of its growing economy, affordable lifestyle, and rising
-                number of job opportunities. It offers a practical mix of work,
-                culture, and natural beauty for people seeking international
-                employment.
-              </p>
-            </motion.div>
+            <InfoCard
+              icon={Plane}
+              title="Final Summary"
+              tone="muted"
+              description="Albania is becoming a more attractive choice for foreign workers because of its growing economy, affordable lifestyle, and rising number of job opportunities. It offers a practical mix of work, culture, and natural beauty for people seeking international employment."
+            />
           </div>
         </div>
       </section>

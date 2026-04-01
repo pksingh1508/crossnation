@@ -29,6 +29,14 @@ import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
 import CompanyOverview from "./CompanyOverview";
+import {
+  BulletList,
+  FeatureCardGrid,
+  InfoCard,
+  SectionTitle,
+  StepList,
+  cardMotion,
+} from "./CountryJobShared";
 
 const visaReasons = [
   "Germany offers more than 200,000 vacancies in healthcare, including roles for nurses, doctors, physiotherapists, and caregivers.",
@@ -233,73 +241,9 @@ const paymentSummary = [
   "€1000 – After visa approval before travel",
 ];
 
-const cardMotion = {
-  initial: { opacity: 0, y: 18 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 as const },
-  transition: { duration: 0.4, ease: "easeOut" as const },
-};
-
 const visaIcons = [Hospital, Banknote, Timer, HeartPulse, Globe2, ShieldCheck];
 
 const benefitIcons = [Stethoscope, Wallet, BadgeCheck, ShieldCheck, Sparkles];
-
-function SectionTitle({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <motion.div
-      {...cardMotion}
-      className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
-    >
-      <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
-        {eyebrow}
-      </span>
-      <h2
-        className={`mt-5 text-2xl font-bold leading-tight text-gray-700 md:text-2xl lg:text-3xl ${fontPoppins.className}`}
-      >
-        {title}
-      </h2>
-      {description && (
-        <p
-          className={`mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg ${fontInter.className}`}
-        >
-          {description}
-        </p>
-      )}
-      <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-amber-500"></div>
-    </motion.div>
-  );
-}
-
-function BulletList({
-  items,
-  className = "",
-}: {
-  items: string[];
-  className?: string;
-}) {
-  return (
-    <div className={`space-y-4 ${className}`}>
-      {items.map((item) => (
-        <div key={item} className="flex items-start gap-3">
-          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-          <p
-            className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
-          >
-            {item}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function JobsInGermany() {
   return (
@@ -314,28 +258,11 @@ export default function JobsInGermany() {
             title="Why Choose a Germany Work Visa?"
             description="Germany remains one of the strongest destinations in Europe for healthcare professionals because it offers real demand, clear legal pathways, and long-term career stability."
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {visaReasons.map((item, index) => {
-              const Icon = visaIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="flex items-start gap-4 rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
-                >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={visaReasons}
+            icons={visaIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-3"
+          />
         </div>
       </section>
 
@@ -345,28 +272,13 @@ export default function JobsInGermany() {
             eyebrow="Healthcare Benefits"
             title="Key Benefits of Healthcare Jobs in Germany"
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {healthcareBenefits.map((item, index) => {
-              const Icon = benefitIcons[index];
-              return (
-                <motion.div
-                  key={item}
-                  {...cardMotion}
-                  whileHover={{ y: -4 }}
-                  className="rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
-                >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p
-                    className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
-                  >
-                    {item}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+          <FeatureCardGrid
+            items={healthcareBenefits}
+            icons={benefitIcons}
+            columnsClassName="md:grid-cols-2 xl:grid-cols-5"
+            tone="muted"
+            layout="stacked"
+          />
         </div>
       </section>
 
@@ -427,37 +339,16 @@ export default function JobsInGermany() {
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-2">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Languages className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                General Eligibility Requirements
-              </h3>
-              <BulletList items={eligibilityRequirements} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <UserRoundCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Benefits Provided by Employers
-              </h3>
-              <BulletList items={employerBenefits} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={Languages}
+              title="General Eligibility Requirements"
+              items={eligibilityRequirements}
+            />
+            <InfoCard
+              icon={UserRoundCheck}
+              title="Benefits Provided by Employers"
+              items={employerBenefits}
+            />
           </div>
         </div>
       </section>
@@ -465,37 +356,18 @@ export default function JobsInGermany() {
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Wallet className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Pricing Structure
-              </h3>
-              <BulletList items={pricingStructure} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Why Consider EU Career Serwis?
-              </h3>
-              <BulletList items={whyChoose} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={Wallet}
+              title="Pricing Structure"
+              items={pricingStructure}
+              tone="accent"
+            />
+            <InfoCard
+              icon={ShieldCheck}
+              title="Why Consider EU Career Serwis?"
+              items={whyChoose}
+              tone="muted"
+            />
           </div>
         </div>
       </section>
@@ -507,69 +379,27 @@ export default function JobsInGermany() {
             title="Required Documents for a Germany Work Permit"
           />
           <div className="grid gap-6 xl:grid-cols-2">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileText className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                For Healthcare Professionals
-              </h3>
-              <BulletList items={healthcareDocuments} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileCheck2 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Additional Supporting Documents
-              </h3>
-              <BulletList items={supportingDocuments} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Stethoscope className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Additional Requirements for Doctors
-              </h3>
-              <BulletList items={doctorRequirements} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <BadgeCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Important Notes
-              </h3>
-              <BulletList items={importantNotes} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={FileText}
+              title="For Healthcare Professionals"
+              items={healthcareDocuments}
+            />
+            <InfoCard
+              icon={FileCheck2}
+              title="Additional Supporting Documents"
+              items={supportingDocuments}
+            />
+            <InfoCard
+              icon={Stethoscope}
+              title="Additional Requirements for Doctors"
+              items={doctorRequirements}
+            />
+            <InfoCard
+              icon={BadgeCheck}
+              title="Important Notes"
+              items={importantNotes}
+              tone="accent"
+            />
           </div>
         </div>
       </section>
@@ -584,23 +414,7 @@ export default function JobsInGermany() {
             {...cardMotion}
             className="mx-auto max-w-5xl rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
           >
-            <div className="space-y-4">
-              {processSteps.map((step) => (
-                <motion.div
-                  key={step}
-                  {...cardMotion}
-                  whileHover={{ y: -2 }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
-                  <p
-                    className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                  >
-                    {step}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+            <StepList items={processSteps} />
           </motion.div>
         </div>
       </section>
@@ -612,54 +426,24 @@ export default function JobsInGermany() {
             title="Final Steps After Visa Approval"
           />
           <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Plane className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Final Steps After Visa Approval
-              </h3>
-              <BulletList items={finalSteps} className="mt-6" />
-            </motion.div>
+            <InfoCard
+              icon={Plane}
+              title="Final Steps After Visa Approval"
+              items={finalSteps}
+            />
 
             <div className="grid gap-6">
-              <motion.div
-                {...cardMotion}
-                whileHover={{ y: -4 }}
-                className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-              >
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                  <Home className="h-6 w-6" />
-                </div>
-                <h3
-                  className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-                >
-                  Accommodation Details
-                </h3>
-                <BulletList items={accommodationDetails} className="mt-6" />
-              </motion.div>
-
-              <motion.div
-                {...cardMotion}
-                whileHover={{ y: -4 }}
-                className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-              >
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                  <Banknote className="h-6 w-6" />
-                </div>
-                <h3
-                  className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-                >
-                  Payment Summary
-                </h3>
-                <BulletList items={paymentSummary} className="mt-6" />
-              </motion.div>
+              <InfoCard
+                icon={Home}
+                title="Accommodation Details"
+                items={accommodationDetails}
+              />
+              <InfoCard
+                icon={Banknote}
+                title="Payment Summary"
+                items={paymentSummary}
+                tone="accent"
+              />
             </div>
           </div>
         </div>
