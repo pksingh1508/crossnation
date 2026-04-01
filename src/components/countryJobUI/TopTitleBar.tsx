@@ -22,7 +22,7 @@ export default function TopTitleBar({ name, imageUrl }: TopTitleBarProps) {
             className="h-20 w-fit rounded-lg object-cover"
           />
           <h1
-            className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-700 md:text-3xl lg:text-4xl pb-3 ${fontPoppins.className}`}
+            className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-800 md:text-3xl lg:text-4xl pb-3 ${fontPoppins.className}`}
           >
             - Europe’s Premier Immigration Company.
           </h1>
@@ -40,7 +40,7 @@ export default function TopTitleBar({ name, imageUrl }: TopTitleBarProps) {
           <h3
             className={`mt-5 max-w-5xl text-xl font-semibold leading-tight text-gray-700 md:text-xl lg:text-2xl text-center ${fontPoppins.className}`}
           >
-            Your EU Career Starts Here: {name} Jobs & Visa Process Details
+            Your EU Career Starts Here - {name} Jobs & Visa Process Details
           </h3>
         </div>
       </div>
