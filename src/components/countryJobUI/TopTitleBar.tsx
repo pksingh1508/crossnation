@@ -7,9 +7,7 @@ import { fontPoppins } from "@/fonts";
 export default function TopTitleBar({ name }: { name: string }) {
   return (
     <div className="mx-auto max-w-7xl">
-      <div
-        className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_45%,#f8fafc_100%)] p-4 shadow-sm"
-      >
+      <div className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_45%,#f8fafc_100%)] p-4 shadow-sm">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center justify-center">
           <Image
             src="/EU-logo.jpeg"

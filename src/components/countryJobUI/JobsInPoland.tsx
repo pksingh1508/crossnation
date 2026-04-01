@@ -27,6 +27,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import WorkPermit from "./WorkPermit";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
+import CompanyOverview from "./CompanyOverview";
 
 const advantages = [
   "Expanding Job Opportunities",
@@ -180,7 +181,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
+      <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
         {eyebrow}
       </span>
       <h2
@@ -195,7 +196,7 @@ function SectionTitle({
           {description}
         </p>
       )}
-      <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-amber-500"></div>
+      <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-[#fac800]"></div>
     </motion.div>
   );
 }
@@ -203,11 +204,11 @@ function SectionTitle({
 export default function JobsInPoland() {
   return (
     <div className="bg-white">
-      <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
+      <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
         <TopTitleBar name="Poland" />
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Employment Benefits"
@@ -224,7 +225,7 @@ export default function JobsInPoland() {
                   whileHover={{ y: -4 }}
                   className="flex items-start gap-4 rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
                 >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
@@ -239,7 +240,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Why Apply"
@@ -256,7 +257,7 @@ export default function JobsInPoland() {
                   whileHover={{ y: -4 }}
                   className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
                 >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
@@ -271,7 +272,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Work Permits"
@@ -281,7 +282,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Open Roles"
@@ -305,7 +306,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
             <motion.div
@@ -320,7 +321,7 @@ export default function JobsInPoland() {
               <div className="-mt-2 space-y-4">
                 {whyChoose.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <ShieldCheck className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                    <ShieldCheck className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                     <p
                       className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
                     >
@@ -336,7 +337,7 @@ export default function JobsInPoland() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <FileText className="h-6 w-6" />
               </div>
               <h3
@@ -347,7 +348,7 @@ export default function JobsInPoland() {
               <div className="mt-6 space-y-4">
                 {requiredDocuments.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                     <p
                       className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
                     >
@@ -361,7 +362,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Processing Guide"
@@ -375,7 +376,7 @@ export default function JobsInPoland() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <Building2 className="h-6 w-6" />
               </div>
               <h3
@@ -392,7 +393,7 @@ export default function JobsInPoland() {
               </p>
               <div className="mt-6 rounded-2xl bg-amber-50 p-4">
                 <p
-                  className={`text-xl font-semibold text-amber-500 ${fontPoppins.className}`}
+                  className={`text-xl font-semibold text-[#fac800] ${fontPoppins.className}`}
                 >
                   92 to 120 working days
                 </p>
@@ -403,7 +404,7 @@ export default function JobsInPoland() {
                   "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                     <p
                       className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
                     >
@@ -419,7 +420,7 @@ export default function JobsInPoland() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <Users className="h-6 w-6" />
               </div>
               <h3
@@ -437,7 +438,7 @@ export default function JobsInPoland() {
               </p>
               <div className="mt-6 rounded-2xl bg-amber-50 p-4">
                 <p
-                  className={`text-xl font-semibold text-amber-500 ${fontPoppins.className}`}
+                  className={`text-xl font-semibold text-[#fac800] ${fontPoppins.className}`}
                 >
                   15 to 25 working days
                 </p>
@@ -448,7 +449,7 @@ export default function JobsInPoland() {
                   "Submitting complete and accurate documents helps avoid unnecessary delays.",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                     <p
                       className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
                     >
@@ -462,7 +463,7 @@ export default function JobsInPoland() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Support Services"
@@ -490,7 +491,7 @@ export default function JobsInPoland() {
                   whileHover={{ y: -4 }}
                   className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
                 >
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3
@@ -501,7 +502,7 @@ export default function JobsInPoland() {
                   <div className="mt-6 space-y-4">
                     {section.items.map((item) => (
                       <div key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                        <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                         <p
                           className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
                         >
@@ -515,6 +516,10 @@ export default function JobsInPoland() {
             })}
           </div>
         </div>
+      </section>
+
+      <section>
+        <CompanyOverview />
       </section>
 
       <section>

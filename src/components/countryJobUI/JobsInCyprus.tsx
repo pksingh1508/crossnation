@@ -217,7 +217,7 @@ function SectionTitle({
       {...cardMotion}
       className="mx-auto mb-10 max-w-4xl text-center md:mb-12"
     >
-      <span className="inline-flex rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-amber-500">
+      <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">
         {eyebrow}
       </span>
       <h2
@@ -248,7 +248,7 @@ function BulletList({
     <div className={`space-y-4 ${className}`}>
       {items.map((item) => (
         <div key={item} className="flex items-start gap-3">
-          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
           <p
             className={`text-base leading-7 text-slate-600 ${fontInter.className}`}
           >
@@ -263,10 +263,10 @@ function BulletList({
 export default function JobsInCyprus() {
   return (
     <div className="bg-white">
-      <section className="px-4 pb-10 pt-12 md:pb-16 md:pt-16">
+      <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
         <TopTitleBar name="Cyprus" />
       </section>
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Why Cyprus"
@@ -282,7 +282,7 @@ export default function JobsInCyprus() {
                   whileHover={{ y: -4 }}
                   className="rounded-3xl border border-amber-100 bg-white p-6 shadow-sm"
                 >
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
@@ -297,7 +297,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Advantages"
@@ -313,7 +313,7 @@ export default function JobsInCyprus() {
                   whileHover={{ y: -4 }}
                   className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-stone-50 p-6 shadow-sm"
                 >
-                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                  <div className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p
@@ -328,7 +328,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Permit Categories"
@@ -338,7 +338,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
             <motion.div
@@ -346,7 +346,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <BadgeCheck className="h-6 w-6" />
               </div>
               <h3
@@ -362,7 +362,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <ClipboardList className="h-6 w-6" />
               </div>
               <h3
@@ -376,7 +376,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-3">
             <motion.div
@@ -384,7 +384,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <BriefcaseBusiness className="h-6 w-6" />
               </div>
               <h3
@@ -400,7 +400,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <Wallet className="h-6 w-6" />
               </div>
               <h3
@@ -416,7 +416,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <ShieldCheck className="h-6 w-6" />
               </div>
               <h3
@@ -430,7 +430,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-2">
             <motion.div
@@ -438,7 +438,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <FileText className="h-6 w-6" />
               </div>
               <h3
@@ -454,7 +454,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <Users className="h-6 w-6" />
               </div>
               <h3
@@ -468,7 +468,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Application Process"
@@ -486,7 +486,7 @@ export default function JobsInCyprus() {
                   whileHover={{ y: -2 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-500" />
+                  <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                   <p
                     className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
                   >
@@ -499,7 +499,7 @@ export default function JobsInCyprus() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:py-16">
+      <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
             <motion.div
@@ -507,7 +507,7 @@ export default function JobsInCyprus() {
               whileHover={{ y: -4 }}
               className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                 <Banknote className="h-6 w-6" />
               </div>
               <h3
@@ -524,7 +524,7 @@ export default function JobsInCyprus() {
                 whileHover={{ y: -4 }}
                 className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
               >
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                   <BadgeCheck className="h-6 w-6" />
                 </div>
                 <h3
@@ -540,7 +540,7 @@ export default function JobsInCyprus() {
                 whileHover={{ y: -4 }}
                 className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
               >
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
                   <Hotel className="h-6 w-6" />
                 </div>
                 <h3
