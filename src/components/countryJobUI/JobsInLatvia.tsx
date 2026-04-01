@@ -29,6 +29,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "More than 70,000 jobs are available in sectors such as construction, manufacturing, healthcare, and logistics.",
@@ -771,6 +772,9 @@ export default function JobsInLatvia() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

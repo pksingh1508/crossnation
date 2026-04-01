@@ -30,6 +30,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const permitTypes = [
   {
@@ -593,6 +594,9 @@ export default function JobsInLithuania() {
             <BulletList items={finalSteps} className="mt-6" />
           </motion.div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

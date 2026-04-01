@@ -29,6 +29,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "Demand is growing for international workers in agriculture, construction, logistics, hospitality, and manufacturing.",
@@ -614,6 +615,9 @@ export default function JobsInMoldova() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

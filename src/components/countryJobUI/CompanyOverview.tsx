@@ -44,7 +44,7 @@ export default function CompanyOverview() {
                         <h3
                           className={`text-lg font-semibold text-gray-700 ${fontPoppins.className}`}
                         >
-                          {item.question}
+                          {index + 1}. {item.question}
                         </h3>
 
                         {item.isList ? (

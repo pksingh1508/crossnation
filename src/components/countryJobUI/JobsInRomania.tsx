@@ -26,6 +26,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "More than 60,000 jobs open every year across hospitality, agriculture, construction, logistics, IT, and healthcare.",
@@ -726,6 +727,9 @@ export default function JobsInRomania() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

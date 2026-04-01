@@ -28,6 +28,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "Cyprus offers more than 50,000 employment opportunities in tourism, hospitality, construction, IT, and healthcare.",
@@ -553,6 +554,9 @@ export default function JobsInCyprus() {
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

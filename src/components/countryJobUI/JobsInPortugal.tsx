@@ -27,6 +27,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "More than 100,000 jobs are open in industries such as construction, farming, tourism, and hospitality.",
@@ -731,6 +732,9 @@ export default function JobsInPortugal() {
             </p>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

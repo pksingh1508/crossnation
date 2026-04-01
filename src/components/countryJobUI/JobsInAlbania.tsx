@@ -28,6 +28,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "A wide range of jobs is available in sectors like agriculture, energy, and textiles.",
@@ -542,6 +543,9 @@ export default function JobsInAlbania() {
             </motion.div>
           </div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

@@ -312,16 +312,90 @@ export default function JobsInPoland() {
             <motion.div
               {...cardMotion}
               whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
+              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
             >
-              <SectionTitle
-                eyebrow="Why Choose Us"
-                title="Why Choose EU Career Serwis?"
-              />
-              <div className="-mt-2 space-y-4">
-                {whyChoose.map((item) => (
+              <div className="mb-8 rounded-3xl border border-amber-200 bg-amber-50 p-5 md:p-6">
+                <h3
+                  className={`text-xl font-bold text-gray-700 md:text-2xl ${fontPoppins.className}`}
+                >
+                  Our Service Charges and Payment Policy
+                </h3>
+                <p
+                  className={`mt-2 text-base font-semibold text-amber-500 ${fontInter.className}`}
+                >
+                  All Payments in Euros
+                </p>
+                <p
+                  className={`mt-4 text-lg font-semibold text-gray-700 ${fontPoppins.className}`}
+                >
+                  Total Charge: €2,100
+                </p>
+
+                <div className="mt-5 space-y-4">
+                  <div className="border-b border-amber-200 pb-4">
+                    <p
+                      className={`text-base font-semibold text-gray-700 ${fontPoppins.className}`}
+                    >
+                      Part 1: €600 (Prepayment to Start Processing)
+                    </p>
+                    <p
+                      className={`mt-2 text-base leading-7 text-slate-700 ${fontInter.className}`}
+                    >
+                      After receiving the initial payment, we will begin
+                      preparing all necessary supportive documents, including
+                      the work permit, to ensure a smooth application process.
+                    </p>
+                  </div>
+
+                  <div className="border-b border-amber-200 pb-4">
+                    <p
+                      className={`text-base font-semibold text-gray-700 ${fontPoppins.className}`}
+                    >
+                      Part 2: €700 (after work permit is issued)
+                    </p>
+                    <p
+                      className={`mt-2 text-base leading-7 text-slate-700 ${fontInter.className}`}
+                    >
+                      Once the work permit has been successfully issued, we will
+                      send the documents via DHL post. Our immigration team will
+                      then assist you in completing the visa application process
+                      efficiently.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p
+                      className={`text-base font-semibold text-gray-700 ${fontPoppins.className}`}
+                    >
+                      Part 3: €800 (after visa issuance)
+                    </p>
+                    <p
+                      className={`mt-2 text-base leading-7 text-slate-700 ${fontInter.className}`}
+                    >
+                      After your visa has been successfully issued, the final
+                      payment must be made within 7 days.
+                    </p>
+                  </div>
+                </div>
+
+                <p
+                  className={`mt-5 rounded-2xl bg-white px-4 py-3 text-sm leading-7 text-slate-700 md:text-base ${fontInter.className}`}
+                >
+                  <span className="font-semibold text-gray-700">Note:</span> The
+                  flight ticket is provided by the employer at no additional
+                  cost to the candidate.
+                </p>
+              </div>
+
+              <h3
+                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
+              >
+                Documents Required for a Poland Work Permit
+              </h3>
+              <div className="mt-6 space-y-4">
+                {requiredDocuments.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <ShieldCheck className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                     <p
                       className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
                     >
@@ -335,20 +409,16 @@ export default function JobsInPoland() {
             <motion.div
               {...cardMotion}
               whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
+              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
             >
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileText className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Documents Required for a Poland Work Permit
-              </h3>
-              <div className="mt-6 space-y-4">
-                {requiredDocuments.map((item) => (
+              <SectionTitle
+                eyebrow="Why Choose Us"
+                title="Why Choose EU Career Serwis?"
+              />
+              <div className="-mt-2 space-y-4">
+                {whyChoose.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
+                    <ShieldCheck className="mt-1 h-5 w-5 flex-shrink-0 text-[#fac800]" />
                     <p
                       className={`text-base leading-7 text-slate-700 ${fontInter.className}`}
                     >

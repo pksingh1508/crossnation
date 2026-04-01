@@ -28,6 +28,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "Germany offers more than 200,000 vacancies in healthcare, including roles for nurses, doctors, physiotherapists, and caregivers.",
@@ -662,6 +663,9 @@ export default function JobsInGermany() {
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />

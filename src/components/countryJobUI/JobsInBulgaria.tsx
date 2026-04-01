@@ -27,6 +27,7 @@ import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
 import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import CompanyOverview from "./CompanyOverview";
 
 const visaReasons = [
   "Bulgaria is one of the more affordable countries in the EU, which makes saving easier.",
@@ -576,6 +577,9 @@ export default function JobsInBulgaria() {
             </motion.div>
           </div>
         </div>
+      </section>
+      <section>
+        <CompanyOverview />
       </section>
       <section>
         <RecentTestimonials />
