@@ -323,7 +323,10 @@ export default function JobsInRomania() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
-        <TopTitleBar name="Romania" />
+        <TopTitleBar
+          name="Romania"
+          imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Romania.svg"
+        />
       </section>
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">

@@ -271,7 +271,10 @@ export default function JobsInBulgaria() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
-        <TopTitleBar name="Bulgaria" />
+        <TopTitleBar
+          name="Bulgaria"
+          imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Bulgaria.svg"
+        />
       </section>
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">

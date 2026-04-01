@@ -4,10 +4,15 @@ import React from "react";
 import Image from "next/image";
 import { fontPoppins } from "@/fonts";
 
-export default function TopTitleBar({ name }: { name: string }) {
+type TopTitleBarProps = {
+  name: string;
+  imageUrl?: string;
+};
+
+export default function TopTitleBar({ name, imageUrl }: TopTitleBarProps) {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="overflow-hidden rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#fff7ed_45%,#f8fafc_100%)] p-4 shadow-sm">
+      <div className="overflow-hidden rounded-[32px] border border-amber-100 bg-[#fac800] p-4 shadow-sm">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center justify-center">
           <Image
             src="/EU-logo.jpeg"
@@ -21,6 +26,15 @@ export default function TopTitleBar({ name }: { name: string }) {
           >
             - Europe’s Premier Immigration Company.
           </h1>
+          {imageUrl && (
+            <Image
+              src={imageUrl}
+              alt={`${name} flag`}
+              width={172}
+              height={64}
+              className="h-20 w-fit rounded-lg object-cover"
+            />
+          )}
         </div>
         <div className="flex items-center justify-center">
           <h3

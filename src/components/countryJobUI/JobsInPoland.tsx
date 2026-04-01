@@ -205,7 +205,10 @@ export default function JobsInPoland() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
-        <TopTitleBar name="Poland" />
+        <TopTitleBar
+          name="Poland"
+          imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Poland.svg"
+        />
       </section>
 
       <section className="bg-white px-4 py-5 md:py-10">
