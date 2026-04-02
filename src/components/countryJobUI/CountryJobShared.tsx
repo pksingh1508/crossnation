@@ -122,14 +122,14 @@ export function FeatureCardGrid({
             className={joinClasses(
               "rounded-3xl p-6 shadow-sm",
               cardToneClasses[tone],
-              layout === "side" && "flex items-start gap-4",
+              layout === "side" && "flex items-start gap-4"
             )}
           >
             <div
               className={joinClasses(
                 "inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]",
                 layout === "side" && "flex-shrink-0",
-                layout === "stacked" && "mb-5",
+                layout === "stacked" && "mb-5"
               )}
             >
               <Icon className="h-6 w-6" />
@@ -174,7 +174,7 @@ export function InfoCard({
       className={joinClasses(
         "rounded-[32px] p-6 shadow-sm md:p-8",
         cardToneClasses[tone],
-        className,
+        className
       )}
     >
       {Icon && (
@@ -234,24 +234,42 @@ export function StepList({
   );
 }
 
+export function NumberStepList({
+  items,
+  className,
+  itemClassName = `text-base leading-8 text-slate-600 ${fontInter.className}`,
+}: StepListProps) {
+  return (
+    <div className={joinClasses("space-y-4", className)}>
+      {items.map((item, index) => (
+        <motion.div
+          key={item}
+          {...cardMotion}
+          whileHover={{ y: -2 }}
+          className="flex items-center gap-3 justify"
+        >
+          <span className="font-bold text-slate-600">{index + 1}.</span>
+          <p className={itemClassName}>{item}</p>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 type SummaryCardProps = {
   eyebrow: string;
   summary: string;
   className?: string;
 };
 
-export function SummaryCard({
-  eyebrow,
-  summary,
-  className,
-}: SummaryCardProps) {
+export function SummaryCard({ eyebrow, summary, className }: SummaryCardProps) {
   return (
     <motion.div
       {...cardMotion}
       whileHover={{ y: -4 }}
       className={joinClasses(
         "rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-8 text-center shadow-sm md:p-10",
-        className,
+        className
       )}
     >
       <span className="inline-flex rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-[#fac800]">

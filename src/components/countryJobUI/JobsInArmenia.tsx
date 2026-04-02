@@ -60,22 +60,22 @@ const permitTypes = [
   {
     type: "Type A",
     description:
-      "For work with a Serbian company under an official employment agreement.",
+      "For work with a Armenian company under an official employment agreement.",
   },
   {
     type: "Type B",
     description:
-      "For foreign nationals working in management roles within a Serbian company for a period longer than six months.",
+      "For foreign nationals working in management roles within a Armenian company for a period longer than six months.",
   },
   {
     type: "Type C",
     description:
-      "For work at a Serbian branch of a company that is based outside the country.",
+      "For work at a Armenian branch of a company that is based outside the country.",
   },
   {
     type: "Type D",
     description:
-      "For work in Serbia while providing services on behalf of a company based in another country.",
+      "For work in Armenia while providing services on behalf of a company based in another country.",
   },
   {
     type: "Type S",
@@ -85,10 +85,10 @@ const permitTypes = [
 ];
 
 const unskilledJobs = [
+  "Warehouse worker",
   "Construction Worker",
   "General Cleaner",
-  "Warehouse worker",
-  "Welder (MIG/TIG)",
+  "Farm Work",
   "General Construction Worker",
   "Bakery",
   "Food Factory Worker",
@@ -107,11 +107,11 @@ const preArrivalServices = [
   "Job offer confirmation and employment contract support",
   "Guidance on required documents and legalization process",
   "Travel planning and flight booking assistance",
-  "Pre-departure briefing about life and work in Serbia",
+  "Pre-departure briefing about life and work in Armenia",
   "Information about employer, job role, and workplace",
   "Accommodation guidance before arrival",
   "Packing checklist and travel preparation support",
-  "Basic orientation on Serbian culture and rules",
+  "Basic orientation on Armenian culture and rules",
   "24/7 support for any queries before departure",
 ];
 
@@ -169,30 +169,30 @@ const visaIcons = [
 ];
 
 const employmentBenefitsData = {
-  title: "Advantages of Employment in Serbia",
+  title: "Advantages of Employment in Armenia",
   description:
-    "Serbia continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+    "Armenia continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
   items: advantages,
   icons: advantageIcons,
 };
 
 const whyApplyData = {
-  title: "Why Apply for a Serbia Work Visa?",
+  title: "Why Apply for a Armenia Work Visa?",
   description:
-    "For many international workers, Serbia offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+    "For many international workers, Armenia offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
   items: visaReasons,
   icons: visaIcons,
 };
 
 const openRolesData = {
-  title: "Top Unskilled Job Opportunities Now Open in Serbia",
+  title: "Top Unskilled Job Opportunities Now Open in Armenia",
   jobs: unskilledJobs,
 };
 
 const paymentChargePolicyData = {
   title: "Our Pricing",
   currencyLabel: "All Payments in Euros",
-  totalCharge: "Total Charge: €2,300",
+  totalCharge: "Total Charge: €2,900",
   installments: [
     {
       title: "Part 1: €700 (prepayment to start processing)",
@@ -200,12 +200,7 @@ const paymentChargePolicyData = {
         "After receiving the initial payment, we will begin preparing all necessary supportive documents, including the work permit, to ensure a smooth application process.",
     },
     {
-      title: "Part 2: €800 (after work permit is issued)",
-      description:
-        "Once the work permit has been successfully issued, we will send the documents via DHL post. Our immigration team will then assist you in completing the visa application process efficiently.",
-    },
-    {
-      title: "Part 3: €800 (after visa issuance)",
+      title: "Part 2: €2200 (after visa issuance)",
       description:
         "After your visa has been successfully issued, the final payment must be made within 7 days.",
     },
@@ -221,26 +216,26 @@ const whyChooseUsData = {
 };
 
 const processingGuideData = {
-  title: "Serbia Work Permit & Visa: Information and Processing Time",
+  title: "Armenia Work Permit & Visa: Information and Processing Time",
   description:
-    "Before applying for a Serbia work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+    "Before applying for a Armenia work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
   cards: [
     {
-      title: "Serbia Work Permit Processing",
+      title: "Armenia Work Permit Processing",
       icon: Building2,
       description:
-        "Work permit applications in Serbia are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
-      duration: "30 to 40 working days",
+        "Work permit applications in Armenia are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+      duration: "25 to 35 working days",
       points: [
         "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
         "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
       ],
     },
     {
-      title: "Serbia Work Visa Processing",
+      title: "Armenia Work Visa Processing",
       icon: Users,
       description:
-        "After the work permit is approved, the next step is to schedule an appointment at the Serbian Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+        "After the work permit is approved, the next step is to schedule an appointment at the Armenian Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
       duration: "15 to 35 working days",
       points: [
         "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
@@ -253,7 +248,7 @@ const processingGuideData = {
 const supportServicesData = {
   title: "Pre-Arrival and Post-Arrival Services",
   description:
-    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Serbia.",
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Armenia.",
   sections: [
     {
       title: "Pre-Arrival Services (Before You Travel)",
@@ -268,13 +263,13 @@ const supportServicesData = {
   ],
 };
 
-export default function JobsInSerbia() {
+export default function JobsInArmenia() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
         <TopTitleBar
-          name="Serbia"
-          imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Serbia.svg"
+          name="Armenia"
+          imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Armenia.svg"
         />
       </section>
 
@@ -287,7 +282,7 @@ export default function JobsInSerbia() {
           <SectionTitle
             dividerClassName="bg-[#fac800]"
             eyebrow="Work Permits"
-            title="Types of Work Permits in Serbia for Non-EU Citizens"
+            title="Types of Work Permits in Armenia for Non-EU Citizens"
           />
           <WorkPermit permitTypes={permitTypes} />
         </div>

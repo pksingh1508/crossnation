@@ -32,6 +32,7 @@ import PaymentChargePolicy from "./PaymentChargePolicy";
 import WhyChooseUs from "./WhyChooseUs";
 import ProcessingGuide from "./ProcessingGuide";
 import SupportServices from "./SupportServices";
+import ProcessStep from "./ProcessStep";
 
 const advantages = [
   "Expanding Job Opportunities",
@@ -186,7 +187,7 @@ const openRolesData = {
 };
 
 const paymentChargePolicyData = {
-  title: "Our Service Charges and Payment Policy",
+  title: "Our Pricing",
   currencyLabel: "All Payments in Euros",
   totalCharge: "Total Charge: €2,100",
   installments: [
@@ -226,7 +227,7 @@ const processingGuideData = {
       icon: Building2,
       description:
         "Work permit applications in Poland are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
-      duration: "92 to 120 working days",
+      duration: "60 to 90 working days",
       points: [
         "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
         "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
@@ -237,7 +238,7 @@ const processingGuideData = {
       icon: Users,
       description:
         "After the work permit is approved, the next step is to schedule an appointment at the Polish Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
-      duration: "15 to 25 working days",
+      duration: "15 to 35 working days",
       points: [
         "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
         "Submitting complete and accurate documents helps avoid unnecessary delays.",
@@ -290,6 +291,8 @@ export default function JobsInPoland() {
       </section>
 
       <OpenRoles {...openRolesData} />
+
+      <ProcessStep fees="€600" />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
