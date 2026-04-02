@@ -84,22 +84,11 @@ const permitTypes = [
   },
 ];
 
-const unskilledJobs = [
-  "Construction Worker",
-  "General Cleaner",
-  "Warehouse worker",
-  "Welder (MIG/TIG)",
-  "General Construction Worker",
-  "Bakery",
-  "Food Factory Worker",
-  "Forklift Operator",
-  "Packaging & Sorting Worker",
-  "Kitchen Helper / Dishwasher",
-  "Hotel Cleaner / Housekeeper",
-  "Laundry Staff (Hotels & Hospitals)",
-  "Agricultural Worker (Seasonal)",
-  "Plastic Molding Worker",
-  "Parcel Sorter (Logistics)",
+const unskilledJobs = ["Construction Worker", "General Cleaner"];
+
+const salaryAndEligibility = [
+  "Salary: €800–€1,000/month (net)",
+  "Eligibility: Male/Female, Ages 18–50",
 ];
 
 const preArrivalServices = [
@@ -187,6 +176,7 @@ const whyApplyData = {
 const openRolesData = {
   title: "Top Unskilled Job Opportunities Now Open in Serbia",
   jobs: unskilledJobs,
+  salaryAndEligibility,
 };
 
 const paymentChargePolicyData = {
