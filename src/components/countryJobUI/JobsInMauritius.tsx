@@ -85,21 +85,16 @@ const permitTypes = [
 ];
 
 const unskilledJobs = [
-  "Construction (handyman, foreman)",
   "Construction Worker",
-  "General Cleaner",
-  "Farm Work",
-  "General Construction Worker",
-  "Bakery",
-  "Food Factory Worker",
-  "Forklift Operator",
-  "Packaging & Sorting Worker",
-  "Kitchen Helper / Dishwasher",
-  "Hotel Cleaner / Housekeeper",
-  "Laundry Staff (Hotels & Hospitals)",
-  "Agricultural Worker (Seasonal)",
-  "Plastic Molding Worker",
-  "Parcel Sorter (Logistics)",
+  "Food Delivery Jobs",
+  "Hotel jobs (Housekeeping, Kitchen Helper, General Hotel Roles)",
+];
+
+const salaryAndEligibility = [
+  "Salary: €800–€1000 per month (net)",
+  "Gender: Male / Female",
+  "Age Limit: 20–50 years",
+  "Nationality: Only Indian & Nepalese candidates eligible",
 ];
 
 const preArrivalServices = [
@@ -187,6 +182,7 @@ const whyApplyData = {
 const openRolesData = {
   title: "Top Unskilled Job Opportunities Now Open in Ukraine",
   jobs: unskilledJobs,
+  salaryAndEligibility,
 };
 
 const paymentChargePolicyData = {

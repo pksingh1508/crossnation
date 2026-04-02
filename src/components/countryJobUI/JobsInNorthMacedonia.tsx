@@ -93,6 +93,12 @@ const unskilledJobs = [
   " Caregiver",
 ];
 
+const salaryAndEligibility = [
+  "Salary: €800–€1000/month (net)",
+  "Eligibility: Male/Female, Ages 20–50",
+  "Nationality: Only Indian & Nepalese candidates eligible",
+];
+
 const preArrivalServices = [
   "Assistance with work visa application and documentation",
   "Job offer confirmation and employment contract support",
@@ -178,6 +184,7 @@ const whyApplyData = {
 const openRolesData = {
   title: "Top Unskilled Job Opportunities Now Open in Ukraine",
   jobs: unskilledJobs,
+  salaryAndEligibility,
 };
 
 const paymentChargePolicyData = {

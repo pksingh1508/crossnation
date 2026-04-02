@@ -84,22 +84,11 @@ const permitTypes = [
   },
 ];
 
-const unskilledJobs = [
-  "Warehouse worker",
-  "Taxi Driver",
-  "Food Delivery",
-  "Welder (MIG/TIG)",
-  "General Construction Worker",
-  "Bakery",
-  "Food Factory Worker",
-  "Forklift Operator",
-  "Packaging & Sorting Worker",
-  "Kitchen Helper / Dishwasher",
-  "Hotel Cleaner / Housekeeper",
-  "Laundry Staff (Hotels & Hospitals)",
-  "Agricultural Worker (Seasonal)",
-  "Plastic Molding Worker",
-  "Parcel Sorter (Logistics)",
+const unskilledJobs = ["Warehouse worker", "Taxi Driver", "Food Delivery"];
+
+const salaryAndEligibility = [
+  "Salary: €800–€1000/month (net)",
+  "Eligibility: Male/Female, Ages 20–50",
 ];
 
 const preArrivalServices = [
@@ -186,6 +175,7 @@ const whyApplyData = {
 const openRolesData = {
   title: "Top Unskilled Job Opportunities Now Open in Belarus",
   jobs: unskilledJobs,
+  salaryAndEligibility,
 };
 
 const paymentChargePolicyData = {
