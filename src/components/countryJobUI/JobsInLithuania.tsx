@@ -1,220 +1,263 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
   Banknote,
   BriefcaseBusiness,
   Building2,
-  CheckCircle2,
-  ClipboardList,
   Clock3,
-  FileCheck2,
   FileText,
   Globe2,
   HeartPulse,
-  Home,
-  Hotel,
-  PackageCheck,
+  Landmark,
+  MapPinned,
   Plane,
   ShieldCheck,
   Sparkles,
+  Stethoscope,
   TrendingUp,
-  Truck,
   Users,
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
-import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 import CompanyOverview from "./CompanyOverview";
-import {
-  BulletList,
-  FeatureCardGrid,
-  SectionTitle,
-  StepList,
-  cardMotion,
-} from "./CountryJobShared";
+import { SectionTitle } from "./CountryJobShared";
+import EmploymentBenefits from "./EmploymentBenefits";
+import WhyApply from "./WhyApply";
+import OpenRoles from "./OpenRoles";
+import PaymentChargePolicy from "./PaymentChargePolicy";
+import WhyChooseUs from "./WhyChooseUs";
+import ProcessingGuide from "./ProcessingGuide";
+import SupportServices from "./SupportServices";
+import ProcessStep from "./ProcessStep";
+
+const advantages = [
+  "Expanding Job Opportunities",
+  "Stable and Growing Income Levels",
+  "Standard Work Schedule",
+  "Access to Public Medical Services",
+  "Cost-Effective Living Environment",
+  "Career Advancement Opportunities",
+  "Strategic Location in Europe",
+  "Rich Culture and Modern Lifestyle",
+];
+
+const visaReasons = [
+  "Massive Hiring Demand",
+  "Reliable Earnings with Growth Potential",
+  "Structured Work Routine",
+  "Strong Health and Social Coverage",
+  "Budget-Friendly Lifestyle",
+  "Easy Access to Europe",
+  "Professional Development Opportunities",
+  "Dynamic Living Experience",
+];
 
 const permitTypes = [
   {
-    type: "Type A Work Permit",
+    type: "Type A",
     description:
-      "Issued for foreign nationals employed by Lithuanian companies under regular contracts.",
+      "For work with a Polish company under an official employment agreement.",
   },
   {
-    type: "EU Blue Card",
+    type: "Type B",
     description:
-      "For highly skilled professionals such as engineers, IT specialists, and healthcare workers.",
+      "For foreign nationals working in management roles within a Polish company for a period longer than six months.",
   },
   {
-    type: "Seasonal Employment Permit",
+    type: "Type C",
     description:
-      "For short-term work in sectors like agriculture, tourism, and food production.",
+      "For work at a Polish branch of a company that is based outside the country.",
   },
   {
-    type: "Intra-Company Transfer Permit",
+    type: "Type D",
     description:
-      "For employees transferred to a Lithuanian branch of an international company.",
+      "For work in Lithuania while providing services on behalf of a company based in another country.",
   },
   {
-    type: "Driver Work Permit",
+    type: "Type S",
     description:
-      "A common option for CE-category truck drivers who want a long-term residence path.",
+      "For temporary work in sectors like farming, gardening, or tourism during peak seasons.",
   },
 ];
 
-const residenceBenefits = [
-  "More than 90,000 vacancies are available in logistics, construction, manufacturing, and transport.",
-  "Average yearly earnings usually range from €14,000 to €17,000.",
-  "The standard work schedule is around 40 hours per week.",
-  "Employees get access to European healthcare systems and social security support.",
-  "Lithuania offers a safe and affordable lifestyle in cities such as Vilnius, Kaunas, and Klaipeda.",
-  "The growing economy creates demand for both skilled and unskilled workers.",
-  "Foreign workers are especially needed in trucking, warehousing, farming, and hospitality.",
-  "Employment is legally protected through work contracts, with access to long-term Temporary Residence Cards.",
-  "Workers may qualify for family reunification and mobility within the EU.",
-  "Government and private institutions both support integration and employment readiness.",
-  "As part of the Schengen Zone, Lithuania allows visa-free movement across 27 European countries.",
-  "The permit combines both residency and employment rights.",
-  "It is usually issued for 1 to 2 years and can be renewed or later converted to permanent residency.",
-  "A valid job contract and employer sponsorship are required.",
+const unskilledJobs = ["Truck Driver"];
+
+const salaryAndEligibility = [
+  "Salary: €2,500–€2,700/month (net)",
+  "•	Benefits: Accommodation, medical insurance, and uniform provided by the employer",
+  "•	Eligibility: Male/Female, Ages 25–50",
 ];
 
-const truckDriverEligibility = [
-  "Open to male applicants only.",
-  "Age requirement: 21 to 48 years.",
-  "Must hold a CE driving licence and Code 95 certification.",
-  "At least 1 year of driving experience is preferred.",
-  "The job includes routes across the European Union.",
-  "Accommodation is provided by the employer.",
-  "Training support is included.",
+const preArrivalServices = [
+  "Assistance with work visa application and documentation",
+  "Job offer confirmation and employment contract support",
+  "Guidance on required documents and legalization process",
+  "Travel planning and flight booking assistance",
+  "Pre-departure briefing about life and work in Lithuania",
+  "Information about employer, job role, and workplace",
+  "Accommodation guidance before arrival",
+  "Packing checklist and travel preparation support",
+  "Basic orientation on Polish culture and rules",
+  "24/7 support for any queries before departure",
 ];
 
-const truckDriverSalary = [
-  "Weekly advance: €150.",
-  "Experienced drivers earn from €85 per day.",
-  "Beginners usually earn around €60 per day during the first two months, with increases based on performance.",
-  "Final salary depends on skill level, experience, and job responsibilities.",
-];
-
-const trainingCosts = [
-  "Driving lessons: €70 per session.",
-  "Short Code 95 course: €600 for drivers who already hold a CE licence.",
-  "Long Code 95 course: €800 for licences issued after 10 September 2009.",
-  "Internship duration: 1 to 2 weeks after training.",
-];
-
-const meatPlantInfo = [
-  "Work includes processing meat products such as sausages and packaged items.",
-  "Pay starts from €4.4 per hour after tax.",
-  "Average monthly salary is around €730 based on 168 hours.",
-  "An official employment contract is provided.",
-  "Free housing is included.",
-  "Work location: Utena, Lithuania.",
-];
-
-const workingSchedule = [
-  "Shifts are usually around 11 hours long.",
-  "Different schedules are available, including rotating day and night shifts with off days.",
-];
-
-const meatPlantResponsibilities = [
-  "Meat cutting and separation from bones.",
-  "Removing fat, skin, and small bones.",
-  "Slaughterhouse duties.",
-  "Packaging roles, which can also suit female workers.",
-];
-
-const accommodationDetails = [
-  "Housing is provided free of cost by the employer.",
-  "Workers stay in shared houses or apartments.",
-  "Rooms usually have 2 to 3 occupants.",
-  "Facilities include Wi-Fi, kitchen appliances, and basic living essentials.",
-  "Married couples may stay together, usually with two couples per room.",
-  "Housing is close to the workplace.",
-  "Work uniforms and protective clothing are provided.",
-  "Workplace temperature is usually between +2°C and +10°C depending on the task.",
-];
-
-const jobRequirements = [
-  "Relevant qualification certificate such as butcher or machine operator.",
-  "At least 1 year of work experience within the last 3 years.",
-  "Police clearance certificate.",
-  "Medical fitness certificate for food industry work.",
-  "All documents must be translated into English or Lithuanian and properly certified.",
-];
-
-const pricingStructure = [
-  "Initial payment: €1,200 for document processing and employer matching.",
-  "Second payment: €1,500 after approval of the invitation or mediation letter.",
-  "Final payment: €1,200 after TRC approval and before departure.",
+const postArrivalServices = [
+  "Airport pickup and welcome assistance",
+  "Help with accommodation and settling in",
+  "Support with local registration and legal formalities",
+  "Assistance in obtaining residence permit (if required)",
+  "Help with opening a bank account",
+  "Guidance on local transport and daily life",
+  "Introduction to workplace and job onboarding",
+  "Support in getting a SIM card and communication setup",
+  "Ongoing assistance for any work or living issues",
+  "Continuous support and guidance throughout your stay",
 ];
 
 const whyChoose = [
-  "Clear and transparent pricing with no hidden charges.",
-  "Complete support for visa and TRC procedures.",
-  "Secure document delivery through DHL.",
-  "Professional guidance at every stage.",
+  "Trusted and Verified Job Opportunities",
+  "Strong Employer Network",
+  "Fast and Transparent Process",
+  "Visa and Documentation Assistance",
+  "Pre-Arrival and Post-Arrival Services",
+  "Opportunities for Unskilled and Skilled Workers",
+  "Affordable and Reliable Services",
+  "Dedicated Customer Support",
+  "Your Gateway to a Career in Europe",
 ];
 
 const requiredDocuments = [
-  "Valid passport with a clear scanned copy of the bio page.",
-  "Driving licence with front and back copies.",
-  "Police clearance certificate, apostilled and valid within 6 months.",
-  "Proof of driving experience for at least 1 year, issued by the employer with an official stamp.",
+  "Valid passport (scanned copy, all pages)",
+  "Police Clearance Certificate (PCC)",
+  "Valid C+E driving license",
 ];
 
-const processingTime = [
-  "Invitation or Mediation Letter: up to 60 days, around 2 months.",
-  "Temporary Residence Card (TRC): 30 to 90 days after biometric submission.",
-];
-
-const processSteps = [
-  "Sign the agreement to start the application process.",
-  "Eligibility is assessed based on qualifications and job requirements.",
-  "Submit all required documents.",
-  "Make the initial payment of €1,200.",
-  "Employer matching is completed.",
-  "The application is submitted to the Migration Department.",
-  "Regular updates are shared on the application status.",
-  "Second payment of €1,500 is made after approval of the work permit or invitation.",
-  "Documents are sent by courier if needed.",
-  "Support is provided for booking the visa appointment.",
-  "Help is given for document review and mock interview preparation.",
-  "Support is available for reapplication or appeal in case of visa rejection.",
-];
-
-const finalSteps = [
-  "Final payment of €1,200 is made before travel after TRC approval.",
-  "A pre-departure checklist and guidance are provided.",
-  "Airport pickup and arrival support are arranged in Lithuania.",
-  "Temporary accommodation and housing support are provided.",
-  "Help is given with SIM card, bank account, and tax registration.",
-  "Assistance is provided at the Migration Department for final TRC completion.",
-  "Cultural orientation and settlement guidance are included.",
-  "Legal employment begins with full relocation support.",
-];
-
-const benefitIcons = [
+const advantageIcons = [
+  BriefcaseBusiness,
   TrendingUp,
+  Clock3,
+  Stethoscope,
+  Wallet,
+  BadgeCheck,
+  Globe2,
+  Sparkles,
+];
+
+const visaIcons = [
+  Building2,
   Banknote,
   Clock3,
   HeartPulse,
-  Home,
-  BriefcaseBusiness,
-  Truck,
-  ShieldCheck,
-  Users,
-  Building2,
-  Globe2,
-  BadgeCheck,
+  Wallet,
+  MapPinned,
+  TrendingUp,
   Sparkles,
-  FileCheck2,
 ];
+
+const employmentBenefitsData = {
+  title: "Advantages of Employment in Lithuania",
+  description:
+    "Lithuania continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+  items: advantages,
+  icons: advantageIcons,
+};
+
+const whyApplyData = {
+  title: "Why Apply for a Lithuania Work Visa?",
+  description:
+    "For many international workers, Lithuania offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+  items: visaReasons,
+  icons: visaIcons,
+};
+
+const openRolesData = {
+  title: "Top Unskilled Job Opportunities Now Open in Lithuania",
+  jobs: unskilledJobs,
+  salaryAndEligibility,
+};
+
+const paymentChargePolicyData = {
+  title: "Our Pricing",
+  currencyLabel: "All Payments in Euros",
+  totalCharge: "Total Charge: €4,000",
+  installments: [
+    {
+      title: "Part 1: €1,000 (prepayment to start processing)",
+      description:
+        "After receiving the initial payment, we will begin preparing all necessary supportive documents, including the work permit, to ensure a smooth application process.",
+    },
+    {
+      title: "Part 2: €1,500 (after work permit is issued)",
+      description:
+        "Once the work permit has been successfully issued, we will send the documents via DHL post. Our immigration team will then assist you in completing the visa application process efficiently.",
+    },
+    {
+      title: "Part 3: €1,500 (after visa issuance)",
+      description:
+        "After your visa has been successfully issued, the final payment must be made within 7 days.",
+    },
+  ],
+  note: "The flight ticket is provided by the employer at no additional cost to the candidate.",
+  documentsTitle: "Documents Required for a Lithuania Work Permit",
+  requiredDocuments,
+};
+
+const whyChooseUsData = {
+  title: "Why Choose EU Career Serwis?",
+  items: whyChoose,
+};
+
+const processingGuideData = {
+  title: "Lithuania Work Permit & Visa: Information and Processing Time",
+  description:
+    "Before applying for a Lithuania work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+  cards: [
+    {
+      title: "Lithuania Work Permit Processing",
+      icon: Building2,
+      description:
+        "Work permit applications in Lithuania are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+      duration: "40 to 55 working days",
+      points: [
+        "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
+        "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
+      ],
+    },
+    {
+      title: "Lithuania Work Visa Processing",
+      icon: Users,
+      description:
+        "After the work permit is approved, the next step is to schedule an appointment at the Polish Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+      duration: "15 to 35 working days",
+      points: [
+        "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
+        "Submitting complete and accurate documents helps avoid unnecessary delays.",
+      ],
+    },
+  ],
+};
+
+const supportServicesData = {
+  title: "Pre-Arrival and Post-Arrival Services",
+  description:
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Lithuania.",
+  sections: [
+    {
+      title: "Pre-Arrival Services (Before You Travel)",
+      icon: Plane,
+      items: preArrivalServices,
+    },
+    {
+      title: "Post-Arrival Services (After You Arrive)",
+      icon: Landmark,
+      items: postArrivalServices,
+    },
+  ],
+};
 
 export default function JobsInLithuania() {
   return (
@@ -225,297 +268,43 @@ export default function JobsInLithuania() {
           imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Lithuania.svg"
         />
       </section>
+
+      <EmploymentBenefits {...employmentBenefitsData} />
+
+      <WhyApply {...whyApplyData} />
+
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Permit Types"
-            title="Types of Work Permits in Lithuania"
+            dividerClassName="bg-[#fac800]"
+            eyebrow="Work Permits"
+            title="Types of Work Permits in Lithuania for Non-EU Citizens"
           />
           <WorkPermit permitTypes={permitTypes} />
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Residence and Work"
-            title="Temporary Residence and Work Authorization"
-            description="This permit lets workers live and work legally in Lithuania at the same time, with a route toward longer-term residence."
-          />
-          <FeatureCardGrid
-            items={residenceBenefits}
-            icons={benefitIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-4"
-          />
-        </div>
-      </section>
+      <OpenRoles {...openRolesData} />
+
+      <ProcessStep fees="€1000" />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="High-Demand Occupations"
-            title="International Freight Truck Driver (Category CE)"
-          />
-          <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Truck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Eligibility and Requirements
-              </h3>
-              <BulletList items={truckDriverEligibility} className="mt-6" />
-            </motion.div>
-
-            <div className="grid gap-6">
-              <motion.div
-                {...cardMotion}
-                whileHover={{ y: -4 }}
-                className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-              >
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                  <Banknote className="h-6 w-6" />
-                </div>
-                <h3
-                  className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-                >
-                  Salary and Payment Structure
-                </h3>
-                <BulletList items={truckDriverSalary} className="mt-6" />
-              </motion.div>
-
-              <motion.div
-                {...cardMotion}
-                whileHover={{ y: -4 }}
-                className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-              >
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                  <BadgeCheck className="h-6 w-6" />
-                </div>
-                <h3
-                  className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-                >
-                  Training Costs if Required
-                </h3>
-                <BulletList items={trainingCosts} className="mt-6" />
-              </motion.div>
-            </div>
+          <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+            <PaymentChargePolicy {...paymentChargePolicyData} />
+            <WhyChooseUs {...whyChooseUsData} />
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Factory Role"
-            title="Meat Processing Plant Worker in Utena, Lithuania"
-          />
-          <div className="grid gap-6 xl:grid-cols-3">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <BriefcaseBusiness className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Basic Job Information
-              </h3>
-              <BulletList items={meatPlantInfo} className="mt-6" />
-            </motion.div>
+      <ProcessingGuide {...processingGuideData} />
 
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Clock3 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Working Schedule
-              </h3>
-              <BulletList items={workingSchedule} className="mt-6" />
-            </motion.div>
+      <SupportServices {...supportServicesData} />
 
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <PackageCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Job Responsibilities
-              </h3>
-              <BulletList items={meatPlantResponsibilities} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-2">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Home className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Accommodation Details
-              </h3>
-              <BulletList items={accommodationDetails} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileCheck2 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Job Requirements
-              </h3>
-              <BulletList items={jobRequirements} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Wallet className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Transparent Pricing Structure
-              </h3>
-              <BulletList items={pricingStructure} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Why Consider EU Career Serwis?
-              </h3>
-              <BulletList items={whyChoose} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileText className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Required Documents for Lithuania Work Permit
-              </h3>
-              <BulletList items={requiredDocuments} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Clock3 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Processing Time
-              </h3>
-              <BulletList items={processingTime} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <SectionTitle
-                eyebrow="Process"
-                title="Lithuania Work Permit and TRC Process"
-              />
-              <StepList items={processSteps} className="-mt-2" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-5xl">
-          <motion.div
-            {...cardMotion}
-            whileHover={{ y: -4 }}
-            className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-8 shadow-sm md:p-10"
-          >
-            <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-              <Plane className="h-6 w-6" />
-            </div>
-            <h3
-              className={`text-3xl font-bold text-gray-700 ${fontPoppins.className}`}
-            >
-              Final Steps After Approval
-            </h3>
-            <BulletList items={finalSteps} className="mt-6" />
-          </motion.div>
-        </div>
-      </section>
       <section>
         <CompanyOverview />
       </section>
+
       <section>
         <RecentTestimonials />
       </section>
