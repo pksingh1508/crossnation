@@ -1,14 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, CheckCircle, X } from "lucide-react";
+import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import BankDetails from "./BankDetails";
 
+const STRIPE_PAYMENT_LINKS = {
+  "100": "https://buy.stripe.com/3cIcN4fMbcEb6q993p5Rm02",
+  "80": "https://buy.stripe.com/eVqdR8fMbdIf4i1enJ5Rm03",
+} as const;
+
 export function BookAppointment() {
   const t = useTranslations("bookAppointment");
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const meetings = [
     {
@@ -49,54 +52,12 @@ export function BookAppointment() {
     },
   ];
 
-  const openBookingModal = () => setIsBookingModalOpen(true);
-  const closeBookingModal = () => setIsBookingModalOpen(false);
+  const openStripeCheckout = (price: keyof typeof STRIPE_PAYMENT_LINKS) => {
+    window.location.assign(STRIPE_PAYMENT_LINKS[price]);
+  };
 
   return (
     <div className="min-h-screen bg-stone-50 py-16 px-4">
-      {isBookingModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 px-4 py-8">
-          <div className="relative w-full max-w-xl rounded-[28px] border border-slate-200 bg-white p-6 shadow-2xl md:p-8">
-            <button
-              type="button"
-              aria-label="Close booking modal"
-              onClick={closeBookingModal}
-              className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            <div className="pr-10">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500 text-white">
-                <Calendar className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900">
-                Booking Information
-              </h3>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                Hello, sir please use the below account detail for booking, we
-                are working on the feature.
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-500">
-                You can use the bank account details shown below on this page to
-                complete the booking process for now.
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-end">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={closeBookingModal}
-                className="h-11 rounded-xl border-amber-500 px-6 text-sm font-semibold text-amber-500"
-              >
-                Close
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto">
         {/* First Section - Two Information Boxes */}
         <section className="mb-20">
@@ -189,7 +150,11 @@ export function BookAppointment() {
                           <Button
                             variant="outline"
                             size="lg"
-                            onClick={openBookingModal}
+                            onClick={() =>
+                              openStripeCheckout(
+                                meeting.price as keyof typeof STRIPE_PAYMENT_LINKS
+                              )
+                            }
                             className="h-11 w-full rounded-xl border-2 border-amber-500 px-6 text-sm font-semibold tracking-wide text-amber-500 md:w-auto"
                           >
                             BOOK NOW

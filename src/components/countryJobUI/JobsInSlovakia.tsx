@@ -56,34 +56,6 @@ const visaReasons = [
   "Dynamic Living Experience",
 ];
 
-const permitTypes = [
-  {
-    type: "Type A",
-    description:
-      "For work with a Polish company under an official employment agreement.",
-  },
-  {
-    type: "Type B",
-    description:
-      "For foreign nationals working in management roles within a Polish company for a period longer than six months.",
-  },
-  {
-    type: "Type C",
-    description:
-      "For work at a Polish branch of a company that is based outside the country.",
-  },
-  {
-    type: "Type D",
-    description:
-      "For work in Slovakia while providing services on behalf of a company based in another country.",
-  },
-  {
-    type: "Type S",
-    description:
-      "For temporary work in sectors like farming, gardening, or tourism during peak seasons.",
-  },
-];
-
 const unskilledJobs = [
   "Warehouse worker",
   "Automobile Plant Manufacturing (Seats)",
@@ -276,17 +248,6 @@ export default function JobsInSlovakia() {
       <EmploymentBenefits {...employmentBenefitsData} />
 
       <WhyApply {...whyApplyData} />
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            dividerClassName="bg-[#fac800]"
-            eyebrow="Work Permits"
-            title="Types of Work Permits in Slovakia for Non-EU Citizens"
-          />
-          <WorkPermit permitTypes={permitTypes} />
-        </div>
-      </section>
 
       <OpenRoles {...openRolesData} />
 

@@ -56,34 +56,6 @@ const visaReasons = [
   "Dynamic Living Experience",
 ];
 
-const permitTypes = [
-  {
-    type: "Type A",
-    description:
-      "For work with a Romania company under an official employment agreement.",
-  },
-  {
-    type: "Type B",
-    description:
-      "For foreign nationals working in management roles within a Romania company for a period longer than six months.",
-  },
-  {
-    type: "Type C",
-    description:
-      "For work at a Romania branch of a company that is based outside the country.",
-  },
-  {
-    type: "Type D",
-    description:
-      "For work in Romania while providing services on behalf of a company based in another country.",
-  },
-  {
-    type: "Type S",
-    description:
-      "For temporary work in sectors like farming, gardening, or tourism during peak seasons.",
-  },
-];
-
 const unskilledJobs = [
   "Warehouse worker",
   "Construction worker",
@@ -274,17 +246,6 @@ export default function JobsInRomania() {
       <EmploymentBenefits {...employmentBenefitsData} />
 
       <WhyApply {...whyApplyData} />
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            dividerClassName="bg-[#fac800]"
-            eyebrow="Work Permits"
-            title="Types of Work Permits in Romania for Non-EU Citizens"
-          />
-          <WorkPermit permitTypes={permitTypes} />
-        </div>
-      </section>
 
       <OpenRoles {...openRolesData} />
 

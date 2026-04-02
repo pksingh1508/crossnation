@@ -56,25 +56,6 @@ const advantages = [
   "Workers can gain useful experience in a stable and growing market.",
 ];
 
-const permitTypes = [
-  {
-    type: "Type A - Employment Permit",
-    description: "For regular employees, seasonal workers, and students.",
-  },
-  {
-    type: "Type B - Self-Employment Permit",
-    description: "For investors and independent professionals.",
-  },
-  {
-    type: "Type C - Special Permit",
-    description: "For unique or exceptional employment situations.",
-  },
-  {
-    type: "Type D - Permanent Permit",
-    description: "For long-term and continuous work authorisation.",
-  },
-];
-
 const technicalRoles = [
   "Light Vehicle Auto Electrician - €500–€700, male candidates preferred, includes 1 meal and accommodation.",
   "Light Vehicle Mechanic - €500–€700 with similar benefits.",
@@ -216,16 +197,6 @@ export default function JobsInAlbania() {
             columnsClassName="md:grid-cols-2 xl:grid-cols-3"
             tone="muted"
           />
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Permit Types"
-            title="Types of Work Permits in Albania for Non-EU Nationals"
-          />
-          <WorkPermit permitTypes={permitTypes} />
         </div>
       </section>
 
