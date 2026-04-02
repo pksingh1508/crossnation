@@ -100,6 +100,13 @@ const unskilledJobs = [
   "Parcel Sorter (Logistics)",
 ];
 
+const salaryAndEligibility = [
+  "Salary: PLN 30.50/hour (net)",
+  "Working Hours: 40 hours/week (8-10 hours/day, 5 days/week)",
+  "Eligibility: Male/Female, Ages 18-55",
+  "English Proficiency: Basic level",
+];
+
 const preArrivalServices = [
   "Assistance with work visa application and documentation",
   "Job offer confirmation and employment contract support",
@@ -184,6 +191,7 @@ const whyApplyData = {
 const openRolesData = {
   title: "Top Unskilled Job Opportunities Now Open in Poland",
   jobs: unskilledJobs,
+  salaryAndEligibility,
 };
 
 const paymentChargePolicyData = {
