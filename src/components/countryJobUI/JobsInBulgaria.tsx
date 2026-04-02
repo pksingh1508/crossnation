@@ -75,7 +75,7 @@ const permitTypes = [
   {
     type: "Type D",
     description:
-      "For work in Poland while providing services on behalf of a company based in another country.",
+      "For work in Bulgaria while providing services on behalf of a company based in another country.",
   },
   {
     type: "Type S",
@@ -96,7 +96,7 @@ const preArrivalServices = [
   "Job offer confirmation and employment contract support",
   "Guidance on required documents and legalization process",
   "Travel planning and flight booking assistance",
-  "Pre-departure briefing about life and work in Poland",
+  "Pre-departure briefing about life and work in Bulgaria",
   "Information about employer, job role, and workplace",
   "Accommodation guidance before arrival",
   "Packing checklist and travel preparation support",
@@ -158,23 +158,23 @@ const visaIcons = [
 ];
 
 const employmentBenefitsData = {
-  title: "Advantages of Employment in Poland",
+  title: "Advantages of Employment in Bulgaria",
   description:
-    "Poland continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+    "Bulgaria continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
   items: advantages,
   icons: advantageIcons,
 };
 
 const whyApplyData = {
-  title: "Why Apply for a Poland Work Visa?",
+  title: "Why Apply for a Bulgaria Work Visa?",
   description:
-    "For many international workers, Poland offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+    "For many international workers, Bulgaria offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
   items: visaReasons,
   icons: visaIcons,
 };
 
 const openRolesData = {
-  title: "Top Unskilled Job Opportunities Now Open in Poland",
+  title: "Top Unskilled Job Opportunities Now Open in Bulgaria",
   jobs: unskilledJobs,
   salaryAndEligibility,
 };
@@ -196,7 +196,7 @@ const paymentChargePolicyData = {
     },
   ],
   note: "The flight ticket is provided by the employer at no additional cost to the candidate.",
-  documentsTitle: "Documents Required for a Poland Work Permit",
+  documentsTitle: "Documents Required for a Bulgaria Work Permit",
   requiredDocuments,
 };
 
@@ -206,15 +206,15 @@ const whyChooseUsData = {
 };
 
 const processingGuideData = {
-  title: "Poland Work Permit & Visa: Information and Processing Time",
+  title: "Bulgaria Work Permit & Visa: Information and Processing Time",
   description:
-    "Before applying for a Poland work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+    "Before applying for a Bulgaria work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
   cards: [
     {
-      title: "Poland Work Permit Processing",
+      title: "Bulgaria Work Permit Processing",
       icon: Building2,
       description:
-        "Work permit applications in Poland are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+        "Work permit applications in Bulgaria are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
       duration: "25 to 35 working days",
       points: [
         "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
@@ -222,7 +222,7 @@ const processingGuideData = {
       ],
     },
     {
-      title: "Poland Work Visa Processing",
+      title: "Bulgaria Work Visa Processing",
       icon: Users,
       description:
         "After the work permit is approved, the next step is to schedule an appointment at the Polish Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
@@ -238,7 +238,7 @@ const processingGuideData = {
 const supportServicesData = {
   title: "Pre-Arrival and Post-Arrival Services",
   description:
-    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Poland.",
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Bulgaria.",
   sections: [
     {
       title: "Pre-Arrival Services (Before You Travel)",
@@ -272,7 +272,7 @@ export default function JobsInBulgaria() {
           <SectionTitle
             dividerClassName="bg-[#fac800]"
             eyebrow="Work Permits"
-            title="Types of Work Permits in Poland for Non-EU Citizens"
+            title="Types of Work Permits in Bulgaria for Non-EU Citizens"
           />
           <WorkPermit permitTypes={permitTypes} />
         </div>
