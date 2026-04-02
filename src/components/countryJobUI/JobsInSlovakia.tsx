@@ -245,18 +245,21 @@ const visaIcons = [Hospital, Banknote, Timer, HeartPulse, Globe2, ShieldCheck];
 
 const benefitIcons = [Stethoscope, Wallet, BadgeCheck, ShieldCheck, Sparkles];
 
-export default function JobsInGermany() {
+export default function JobsInSlovakia() {
   return (
     <div className="bg-white">
       <section className="px-4 pb-5 pt-5 md:pb-9 md:pt-9">
-        <TopTitleBar name="Germany" />
+        <TopTitleBar
+          name="Slovakia"
+          imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Slovakia.svg"
+        />
       </section>
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Why Germany"
-            title="Why Choose a Germany Work Visa?"
-            description="Germany remains one of the strongest destinations in Europe for healthcare professionals because it offers real demand, clear legal pathways, and long-term career stability."
+            eyebrow="Why Slovakia"
+            title="Why Choose a Slovakia Work Visa?"
+            description="Slovakia remains one of the strongest destinations in Europe for healthcare professionals because it offers real demand, clear legal pathways, and long-term career stability."
           />
           <FeatureCardGrid
             items={visaReasons}

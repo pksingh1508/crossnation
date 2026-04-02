@@ -1,208 +1,274 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
   Banknote,
   BriefcaseBusiness,
   Building2,
-  CheckCircle2,
-  ClipboardList,
   Clock3,
-  FileCheck2,
   FileText,
   Globe2,
   HeartPulse,
-  Home,
-  Hotel,
+  Landmark,
+  MapPinned,
   Plane,
   ShieldCheck,
   Sparkles,
+  Stethoscope,
   TrendingUp,
   Users,
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
-import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 import CompanyOverview from "./CompanyOverview";
-import {
-  FeatureCardGrid,
-  InfoCard,
-  SectionTitle,
-  StepList,
-  cardMotion,
-} from "./CountryJobShared";
-
-const visaReasons = [
-  "Serbia offers more than 50,000 employment opportunities in tourism, hospitality, construction, IT, and healthcare.",
-  "Typical yearly earnings usually range from €20,000 to €25,000.",
-  "Standard working hours are normally around 38 to 40 hours per week.",
-  "Workers benefit from a reliable healthcare system and social security coverage.",
-  "The country offers a Mediterranean climate, a secure environment, and a more cost-effective lifestyle in cities such as Nicosia, Limassol, and Larnaca.",
-];
+import { SectionTitle } from "./CountryJobShared";
+import EmploymentBenefits from "./EmploymentBenefits";
+import WhyApply from "./WhyApply";
+import OpenRoles from "./OpenRoles";
+import PaymentChargePolicy from "./PaymentChargePolicy";
+import WhyChooseUs from "./WhyChooseUs";
+import ProcessingGuide from "./ProcessingGuide";
+import SupportServices from "./SupportServices";
 
 const advantages = [
-  "There are over 50,000 jobs in tourism, construction, shipping, IT, and healthcare.",
-  "Monthly salaries usually range from €1,600 to €2,100 depending on skills and the role.",
-  "Employees usually work 38 to 40 hours per week and receive paid leave and public holidays.",
-  "Workers can access both public and private healthcare through social security contributions.",
-  "The cost of living is lower than in many EU countries, helping with work-life balance.",
-  "English is widely spoken, which makes adjustment easier for international workers.",
+  "Expanding Job Opportunities",
+  "Stable and Growing Income Levels",
+  "Standard Work Schedule",
+  "Access to Public Medical Services",
+  "Cost-Effective Living Environment",
+  "Career Advancement Opportunities",
+  "Strategic Location in Europe",
+  "Rich Culture and Modern Lifestyle",
 ];
 
-const permitCategories = [
+const visaReasons = [
+  "Massive Hiring Demand",
+  "Reliable Earnings with Growth Potential",
+  "Structured Work Routine",
+  "Strong Health and Social Coverage",
+  "Budget-Friendly Lifestyle",
+  "Easy Access to Europe",
+  "Professional Development Opportunities",
+  "Dynamic Living Experience",
+];
+
+const permitTypes = [
   {
-    type: "General Employment Permit",
+    type: "Type A",
     description:
-      "For foreign nationals employed by Cypriot companies under a formal agreement.",
+      "For work with a Serbian company under an official employment agreement.",
   },
   {
-    type: "Skilled Worker Permit",
+    type: "Type B",
     description:
-      "For professionals in sectors such as IT, finance, engineering, and healthcare.",
+      "For foreign nationals working in management roles within a Serbian company for a period longer than six months.",
   },
   {
-    type: "Seasonal Work Permit",
-    description: "For temporary jobs in tourism, agriculture, and hospitality.",
-  },
-  {
-    type: "Intra-Company Transfer Permit",
+    type: "Type C",
     description:
-      "For employees moved within multinational companies operating in Serbia.",
+      "For work at a Serbian branch of a company that is based outside the country.",
   },
   {
-    type: "Domestic Worker Permit",
+    type: "Type D",
     description:
-      "For household and caregiving roles, usually with annual renewal options.",
+      "For work in Serbia while providing services on behalf of a company based in another country.",
+  },
+  {
+    type: "Type S",
+    description:
+      "For temporary work in sectors like farming, gardening, or tourism during peak seasons.",
   },
 ];
 
-const temporaryPermitDetails = [
-  "Allows a person to live and work in Serbia at the same time.",
-  "Usually valid for one year and renewable if employment continues.",
-  "Work permits are tied to a specific employer.",
-  "Permits are issued by the Civil Registry and Migration Department based on the job type and employer authorisation.",
+const unskilledJobs = [
+  "Construction Worker",
+  "General Cleaner",
+  "Salary: €800–€1,000/month (net)",
+  "Eligibility: Male/Female, Ages 18–50",
+  "Warehouse worker",
+  "Welder (MIG/TIG)",
+  "General Construction Worker",
+  "Bakery",
+  "Food Factory Worker",
+  "Forklift Operator",
+  "Packaging & Sorting Worker",
+  "Kitchen Helper / Dishwasher",
+  "Hotel Cleaner / Housekeeper",
+  "Laundry Staff (Hotels & Hospitals)",
+  "Agricultural Worker (Seasonal)",
+  "Plastic Molding Worker",
+  "Parcel Sorter (Logistics)",
 ];
 
-const employmentConditions = [
-  "Applicants must be between 18 and 50 years old.",
-  "Base monthly salary starts at around €600 net.",
-  "Salary increases depend on individual performance.",
-  "Extra benefits or allowances may be provided based on performance.",
-  "Employment contracts are usually valid for one year, with possible extension.",
-  "Accommodation is usually provided by the employer.",
-  "Food allowances are not included.",
-  "Insurance premiums are paid by the employer.",
-  "Annual medical check-ups are paid by the employer.",
-  "Travel expenses from India to Serbia are paid by the employee.",
-  "Return travel costs are paid by the employee after contract completion or early termination.",
-  "Daily working hours are 8 to 10 hours, six days a week.",
-  "Overtime is paid according to Serbia labour regulations.",
-  "Employers handle salary taxes and levies.",
-  "Compensation in case of death is provided according to labour law.",
-  "Employees are entitled to annual leave and public holidays as required by regulations.",
-  "Transport between housing and the workplace is arranged and paid by the employer.",
-  "Repatriation costs for terminated employees are paid by the employee.",
-  "Employers pay repatriation costs for sick or injured workers.",
-  "In case of death, repatriation follows Serbia labour law.",
-  "Safety equipment and protective clothing are provided by the employer.",
-  "A one-month notice period applies to termination from either side.",
-  "All work takes place within Serbia.",
+const preArrivalServices = [
+  "Assistance with work visa application and documentation",
+  "Job offer confirmation and employment contract support",
+  "Guidance on required documents and legalization process",
+  "Travel planning and flight booking assistance",
+  "Pre-departure briefing about life and work in Serbia",
+  "Information about employer, job role, and workplace",
+  "Accommodation guidance before arrival",
+  "Packing checklist and travel preparation support",
+  "Basic orientation on Serbian culture and rules",
+  "24/7 support for any queries before departure",
 ];
 
-const exampleRole = [
-  "Kitchen Helper (Unskilled)",
-  "Vacancies: 50",
-  "Salary: €600 net per month",
-];
-
-const serviceCharges = [
-  "Initial payment: €1000 for eligibility assessment, document processing, and job matching.",
-  "Second payment: €1000 after work permit approval.",
-  "Final payment: €1200 after visa approval and before travel.",
+const postArrivalServices = [
+  "Airport pickup and welcome assistance",
+  "Help with accommodation and settling in",
+  "Support with local registration and legal formalities",
+  "Assistance in obtaining residence permit (if required)",
+  "Help with opening a bank account",
+  "Guidance on local transport and daily life",
+  "Introduction to workplace and job onboarding",
+  "Support in getting a SIM card and communication setup",
+  "Ongoing assistance for any work or living issues",
+  "Continuous support and guidance throughout your stay",
 ];
 
 const whyChoose = [
-  "Transparent pricing with no hidden costs.",
-  "Complete support from documentation through arrival.",
-  "Professional assistance at every stage.",
+  "Trusted and Verified Job Opportunities",
+  "Strong Employer Network",
+  "Fast and Transparent Process",
+  "Visa and Documentation Assistance",
+  "Pre-Arrival and Post-Arrival Services",
+  "Opportunities for Unskilled and Skilled Workers",
+  "Affordable and Reliable Services",
+  "Dedicated Customer Support",
+  "Your Gateway to a Career in Europe",
 ];
 
-const requiredDocuments = [
-  "Valid passport copies including personal details and travel history.",
-  "Educational certificates or professional qualifications relevant to the role.",
-  "Proof of previous work experience where applicable.",
-  "English language proficiency at B1 level may be required for some roles.",
+const employmentRequirements = [
+  "Valid passport (scanned copy, all pages)",
+  "CV/Bio-data with address",
+  "Education certificate/diploma with apostille translated into Serbian",
+  "Time frame: Documents will come in 30-40 days",
 ];
-
-const eligibilityCriteria = [
-  "Applicants from most non-EU countries are eligible.",
-  "Individuals from India and Nepal aged 18 to 45 are currently not eligible to apply.",
-];
-
-const processSteps = [
-  "Sign the agreement and begin the application process.",
-  "Eligibility is checked based on nationality, age, and job category.",
-  "Submit required documents such as passport and certificates.",
-  "The candidate is matched with an approved employer.",
-  "The work permit application is submitted to the authorities.",
-  "Regular status updates are provided.",
-  "The second payment of €1000 is made after permit approval.",
-  "The approved permit is sent for visa processing.",
-  "Attend the visa appointment at the embassy.",
-  "Receive support for visa interview preparation.",
-  "The final payment of €1200 is made after visa approval.",
-  "Pre-departure guidance is provided.",
-  "Travel arrangements are coordinated, excluding ticket costs.",
-  "Arrival assistance is provided in Serbia.",
-  "Support is given for accommodation setup.",
-  "Assistance is provided for bank account and SIM card setup.",
-  "Help is given for getting a tax identification number.",
-  "Orientation is provided on local culture and work environment.",
-  "Begin legal employment in Serbia.",
-];
-
-const salaryEstimates = [
-  "Waiter / Cook: €800–€1,100",
-  "Kitchen Helper / Dishwasher: €600–€800",
-  "Bartender: €900–€1,200",
-  "Hotel Cleaner: €700–€950",
-  "Housekeeping Staff: €650–€900",
-  "Construction Worker: €900–€1,300",
-  "Gardener / Maintenance: €700–€1,000",
-  "Caregiver: €650–€900",
-  "Factory Worker: €800–€1,100",
-  "Driver / Delivery Staff: €900–€1,200",
-];
-
-const importantNotes = [
-  "Entry-level roles usually pay between €600 and €1,000 per month.",
-  "The salaries listed are before tax and social security deductions.",
-  "Net income depends on the applicable deductions.",
-  "Additional earnings may be possible through overtime or night shifts.",
-  "Pay can vary by location, with higher wages often in coastal areas such as Limassol and Larnaca.",
-];
-
-const accommodationDetails = [
-  "Housing is usually shared between 2 and 4 workers.",
-  "Rooms are furnished and include shared kitchen and bathroom facilities.",
-  "Family members, partners, and pets are not allowed in employer-provided housing.",
-];
-
-const reasonIcons = [BriefcaseBusiness, Banknote, Clock3, HeartPulse, Sparkles];
 
 const advantageIcons = [
+  BriefcaseBusiness,
   TrendingUp,
+  Clock3,
+  Stethoscope,
   Wallet,
   BadgeCheck,
-  ShieldCheck,
-  Home,
   Globe2,
+  Sparkles,
 ];
+
+const visaIcons = [
+  Building2,
+  Banknote,
+  Clock3,
+  HeartPulse,
+  Wallet,
+  MapPinned,
+  TrendingUp,
+  Sparkles,
+];
+
+const employmentBenefitsData = {
+  title: "Advantages of Employment in Serbia",
+  description:
+    "Serbia continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+  items: advantages,
+  icons: advantageIcons,
+};
+
+const whyApplyData = {
+  title: "Why Apply for a Serbia Work Visa?",
+  description:
+    "For many international workers, Serbia offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+  items: visaReasons,
+  icons: visaIcons,
+};
+
+const openRolesData = {
+  title: "Top Unskilled Job Opportunities Now Open in Serbia",
+  jobs: unskilledJobs,
+};
+
+const paymentChargePolicyData = {
+  title: "Our Service Charges and Payment Policy",
+  currencyLabel: "All Payments in Euros",
+  totalCharge: "Total Charge: €2,300",
+  installments: [
+    {
+      title: "Part 1: €700 (prepayment to start processing)",
+      description:
+        "After receiving the initial payment, we will begin preparing all necessary supportive documents, including the work permit, to ensure a smooth application process.",
+    },
+    {
+      title: "Part 2: €800 (after work permit is issued)",
+      description:
+        "Once the work permit has been successfully issued, we will send the documents via DHL post. Our immigration team will then assist you in completing the visa application process efficiently.",
+    },
+    {
+      title: "Part 3: €800 (after visa issuance)",
+      description:
+        "After your visa has been successfully issued, the final payment must be made within 7 days.",
+    },
+  ],
+  note: "The flight ticket is provided by the employer at no additional cost to the candidate.",
+  documentsTitle: "Employment Requirements",
+  requiredDocuments: employmentRequirements,
+};
+
+const whyChooseUsData = {
+  title: "Why Choose EU Career Serwis?",
+  items: whyChoose,
+};
+
+const processingGuideData = {
+  title: "Serbia Work Permit & Visa: Information and Processing Time",
+  description:
+    "Before applying for a Serbia work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+  cards: [
+    {
+      title: "Serbia Work Permit Processing",
+      icon: Building2,
+      description:
+        "Work permit applications in Serbia are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+      duration: "92 to 120 working days",
+      points: [
+        "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
+        "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
+      ],
+    },
+    {
+      title: "Serbia Work Visa Processing",
+      icon: Users,
+      description:
+        "After the work permit is approved, the next step is to schedule an appointment at the Serbian Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+      duration: "15 to 25 working days",
+      points: [
+        "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
+        "Submitting complete and accurate documents helps avoid unnecessary delays.",
+      ],
+    },
+  ],
+};
+
+const supportServicesData = {
+  title: "Pre-Arrival and Post-Arrival Services",
+  description:
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Serbia.",
+  sections: [
+    {
+      title: "Pre-Arrival Services (Before You Travel)",
+      icon: Plane,
+      items: preArrivalServices,
+    },
+    {
+      title: "Post-Arrival Services (After You Arrive)",
+      icon: Landmark,
+      items: postArrivalServices,
+    },
+  ],
+};
 
 export default function JobsInSerbia() {
   return (
@@ -213,149 +279,41 @@ export default function JobsInSerbia() {
           imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Serbia.svg"
         />
       </section>
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Why Serbia"
-            title="Reasons to Choose a Serbia Work Visa"
-          />
-          <FeatureCardGrid
-            items={visaReasons}
-            icons={reasonIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-5"
-            layout="stacked"
-          />
-        </div>
-      </section>
+
+      <EmploymentBenefits {...employmentBenefitsData} />
+
+      <WhyApply {...whyApplyData} />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Advantages"
-            title="Advantages of Working in Serbia"
+            dividerClassName="bg-[#fac800]"
+            eyebrow="Work Permits"
+            title="Types of Work Permits in Serbia for Non-EU Citizens"
           />
-          <FeatureCardGrid
-            items={advantages}
-            icons={advantageIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-3"
-            tone="muted"
-          />
+          <WorkPermit permitTypes={permitTypes} />
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Permit Categories"
-            title="Categories of Work Permits in Serbia for Non-EU Nationals"
-          />
-          <WorkPermit permitTypes={permitCategories} />
-        </div>
-      </section>
+      <OpenRoles {...openRolesData} />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-            <InfoCard
-              icon={BadgeCheck}
-              title="Temporary Residence and Employment Permit"
-              items={temporaryPermitDetails}
-              tone="accent"
-            />
-            <InfoCard
-              icon={ClipboardList}
-              title="Employment Conditions in Serbia"
-              items={employmentConditions}
-            />
+          <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+            <PaymentChargePolicy {...paymentChargePolicyData} />
+            <WhyChooseUs {...whyChooseUsData} />
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <InfoCard
-              icon={BriefcaseBusiness}
-              title="Example Job Role"
-              items={exampleRole}
-            />
-            <InfoCard
-              icon={Wallet}
-              title="Service Charges Breakdown"
-              items={serviceCharges}
-              tone="accent"
-            />
-            <InfoCard
-              icon={ShieldCheck}
-              title="Why Consider EU Career Serwis?"
-              items={whyChoose}
-              tone="muted"
-            />
-          </div>
-        </div>
-      </section>
+      <ProcessingGuide {...processingGuideData} />
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-2">
-            <InfoCard
-              icon={FileText}
-              title="Documents Required for Serbia Work Permit"
-              items={requiredDocuments}
-            />
-            <InfoCard
-              icon={Users}
-              title="Eligibility Criteria"
-              items={eligibilityCriteria}
-            />
-          </div>
-        </div>
-      </section>
+      <SupportServices {...supportServicesData} />
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Application Process"
-            title="Serbia Work Permit Process"
-          />
-          <motion.div
-            {...cardMotion}
-            className="mx-auto max-w-5xl rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-          >
-            <StepList items={processSteps} />
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-            <InfoCard
-              icon={Banknote}
-              title="Estimated Monthly Salaries in Serbia"
-              items={salaryEstimates}
-            />
-
-            <div className="grid gap-6">
-              <InfoCard
-                icon={BadgeCheck}
-                title="Important Notes"
-                items={importantNotes}
-                tone="muted"
-              />
-              <InfoCard
-                icon={Hotel}
-                title="Accommodation Details"
-                items={accommodationDetails}
-                tone="accent"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
       <section>
         <CompanyOverview />
       </section>
+
       <section>
         <RecentTestimonials />
       </section>
