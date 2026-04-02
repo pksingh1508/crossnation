@@ -1,266 +1,265 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
   Banknote,
   BriefcaseBusiness,
   Building2,
-  CheckCircle2,
-  ClipboardList,
-  FileCheck2,
+  Clock3,
   FileText,
   Globe2,
-  Home,
-  Languages,
+  HeartPulse,
+  Landmark,
+  MapPinned,
   Plane,
   ShieldCheck,
   Sparkles,
+  Stethoscope,
   TrendingUp,
   Users,
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
-import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 import CompanyOverview from "./CompanyOverview";
-import {
-  BulletList,
-  FeatureCardGrid,
-  SectionTitle,
-  SummaryCard,
-  cardMotion,
-} from "./CountryJobShared";
-
-const visaReasons = [
-  "More than 60,000 jobs open every year across hospitality, agriculture, construction, logistics, IT, and healthcare.",
-  "Annual salaries usually range from €8,000 to €18,000 depending on the role and industry.",
-  "Romania has a relatively low unemployment rate of around 5.6%, which supports stable work opportunities.",
-  "The standard work schedule is 40 hours per week, usually in 8-hour shifts.",
-  "Employees receive 20 to 21 days of paid leave each year, plus public holidays.",
-  "Wages have been growing steadily, with average salaries increasing by around 10% in recent years.",
-];
+import { SectionTitle } from "./CountryJobShared";
+import EmploymentBenefits from "./EmploymentBenefits";
+import WhyApply from "./WhyApply";
+import OpenRoles from "./OpenRoles";
+import PaymentChargePolicy from "./PaymentChargePolicy";
+import WhyChooseUs from "./WhyChooseUs";
+import ProcessingGuide from "./ProcessingGuide";
+import SupportServices from "./SupportServices";
+import ProcessStep from "./ProcessStep";
 
 const advantages = [
-  "Lower living costs for housing, food, and daily needs compared with much of Western Europe.",
-  "A growing economy with rising foreign investment.",
-  "Job openings for both skilled and unskilled workers, especially in agriculture, construction, manufacturing, and IT.",
-  "Worker protections such as employment contracts, paid leave, parental benefits, and social security coverage.",
-  "Language flexibility, with jobs available in English, Romanian, or Hungarian depending on the region.",
-  "A strategic location in Eastern Europe with easy access to nearby EU countries and neighbors.",
-  "Standard working hours and family-focused benefits that support work-life balance.",
-  "A long-term legal route that can lead to residency opportunities.",
+  "Expanding Job Opportunities",
+  "Stable and Growing Income Levels",
+  "Standard Work Schedule",
+  "Access to Public Medical Services",
+  "Cost-Effective Living Environment",
+  "Career Advancement Opportunities",
+  "Strategic Location in Europe",
+  "Rich Culture and Modern Lifestyle",
+];
+
+const visaReasons = [
+  "Massive Hiring Demand",
+  "Reliable Earnings with Growth Potential",
+  "Structured Work Routine",
+  "Strong Health and Social Coverage",
+  "Budget-Friendly Lifestyle",
+  "Easy Access to Europe",
+  "Professional Development Opportunities",
+  "Dynamic Living Experience",
 ];
 
 const permitTypes = [
   {
-    type: "Single Work Permit",
+    type: "Type A",
     description:
-      "For regular employment based on a job offer. Usually valid for 1 year and renewable.",
+      "For work with a Romania company under an official employment agreement.",
   },
   {
-    type: "EU Blue Card",
+    type: "Type B",
     description:
-      "For highly skilled professionals. Usually valid for up to 2 years with renewal options.",
+      "For foreign nationals working in management roles within a Romania company for a period longer than six months.",
   },
   {
-    type: "Seasonal Work Permit",
+    type: "Type C",
     description:
-      "For temporary jobs in sectors such as agriculture and tourism, valid for up to 6 months.",
+      "For work at a Romania branch of a company that is based outside the country.",
   },
   {
-    type: "Cross-Border Permit",
+    type: "Type D",
     description:
-      "For people living in neighboring countries who work in Romania.",
+      "For work in Romania while providing services on behalf of a company based in another country.",
   },
   {
-    type: "Secondment Permit",
+    type: "Type S",
     description:
-      "For employees temporarily assigned to Romania by a foreign company.",
-  },
-  {
-    type: "Business Permit",
-    description:
-      "For entrepreneurs or self-employed people operating in Romania.",
-  },
-  {
-    type: "Working Holiday Visa",
-    description:
-      "A limited program for young people from selected countries that allows work and travel for up to 1 year.",
+      "For temporary work in sectors like farming, gardening, or tourism during peak seasons.",
   },
 ];
 
-const highDemandJobs = [
-  {
-    code: "CGR75",
-    role: "Kitchen Equipment / AC Technician (Commercial Use)",
-    salary: "$900/month",
-    benefits: "Accommodation provided",
-    selection: "CV + video + passport -> interview",
-    eligible: "Candidates from Oman, Malaysia, Albania, Kuwait, and Qatar",
-  },
-  {
-    code: "DAG95",
-    role: "Leather Goods Worker (Shoes, Bags, Car Interiors)",
-    salary: "€700/month for the first 3 months of training",
-    benefits: "Accommodation + 1 meal per day + bonuses",
-    selection: "CV + video + passport -> interview + PCC",
-    eligible: "Candidates from Gulf countries, Singapore, and Malaysia",
-  },
-  {
-    code: "TTR139",
-    role: "Car Mechanic (Minimum 5 Years Experience)",
-    salary: "€5.5/hour",
-    benefits: "Meal tickets + accommodation",
-    selection: "CV + video -> interview + PCC -> employer interview",
-    eligible: "Candidates from Gulf countries, Singapore, and Malaysia",
-  },
-  {
-    code: "FTC135",
-    role: "Truck Mechanic (Electrical & Diagnostics)",
-    salary: "€1000/month",
-    benefits: "Accommodation + meal tickets",
-    selection: "CV + video -> interview + PCC -> employer interview",
-    eligible: "Candidates from Gulf countries, Singapore, and Malaysia",
-  },
-  {
-    code: "RUI144",
-    role: "Mechanics / Tow Truck Drivers / Tyre Repair Technicians",
-    salary: "€1000–€1400 for mechanics, €800–€1200 for drivers",
-    benefits: "Standard company benefits",
-    selection: "Multi-stage interview process",
-    eligible: "Candidates from Gulf countries, Singapore, and Malaysia",
-  },
-  {
-    code: "VCN154 / AGT156 / BAC157 / STE161 / CLT164",
-    role: "Heavy Truck Drivers",
-    salary:
-      "€400 during documentation, €1500 for the first 3 months, then €2000 after 3 months",
-    benefits: "Accommodation provided",
-    selection: "CV + video -> interview + PCC -> employer interview",
-    eligible: "Candidates from Gulf countries, Singapore, and Malaysia",
-  },
+const unskilledJobs = [
+  "Warehouse worker",
+  "Construction worker",
+  "Assembly Operator (Sofa & Beds - Production line)",
 ];
 
-const eligibleCandidates = [
-  "Applicants currently living in Gulf countries such as UAE, Qatar, Kuwait, Oman, Saudi Arabia, and Bahrain.",
-  "Candidates currently residing in Singapore or Malaysia.",
+const salaryAndEligibility = [
+  "Salary: €1000–€1200/month (net)",
+  "Eligibility: Male/Female, Ages 20–50",
 ];
 
-const requiredDocuments = [
-  "Updated CV",
-  "Passport copy",
-  "Valid residence permit from the current country",
-  "Introduction video",
-  "Police Clearance Certificate after the interview stage",
+const preArrivalServices = [
+  "Assistance with work visa application and documentation",
+  "Job offer confirmation and employment contract support",
+  "Guidance on required documents and legalization process",
+  "Travel planning and flight booking assistance",
+  "Pre-departure briefing about life and work in Romania",
+  "Information about employer, job role, and workplace",
+  "Accommodation guidance before arrival",
+  "Packing checklist and travel preparation support",
+  "Basic orientation on Romanian culture and rules",
+  "24/7 support for any queries before departure",
 ];
 
-const pricingDetails = [
-  "Initial payment: €1500 for eligibility check, documentation, and job matching.",
-  "Second payment: €1500 after work permit approval.",
-  "Final payment: €1500 after visa issuance and before travel.",
+const postArrivalServices = [
+  "Airport pickup and welcome assistance",
+  "Help with accommodation and settling in",
+  "Support with local registration and legal formalities",
+  "Assistance in obtaining residence permit (if required)",
+  "Help with opening a bank account",
+  "Guidance on local transport and daily life",
+  "Introduction to workplace and job onboarding",
+  "Support in getting a SIM card and communication setup",
+  "Ongoing assistance for any work or living issues",
+  "Continuous support and guidance throughout your stay",
 ];
 
 const whyChoose = [
-  "Transparent pricing without hidden fees.",
-  "Complete support from application through settlement.",
-  "Experienced consultants guiding every step.",
-  "Secure document delivery through DHL.",
+  "Trusted and Verified Job Opportunities",
+  "Strong Employer Network",
+  "Fast and Transparent Process",
+  "Visa and Documentation Assistance",
+  "Pre-Arrival and Post-Arrival Services",
+  "Opportunities for Unskilled and Skilled Workers",
+  "Affordable and Reliable Services",
+  "Dedicated Customer Support",
+  "Your Gateway to a Career in Europe",
 ];
 
-const permitDocuments = [
-  "Valid passport with at least 12 months validity.",
-  "European-style CV.",
-  "Proof of 2 to 5 years of work experience.",
-  "Clear passport scan.",
-  "Minimum basic or secondary education.",
-  "Introduction video of 1 to 2 minutes in English.",
-  "Work demonstration video.",
-  "Police Clearance Certificate (PCC).",
-];
-
-const processSteps = [
-  "Sign the service agreement.",
-  "Complete the eligibility check.",
-  "Submit the required documents.",
-  "Pay the initial fee of €1500.",
-  "Get a dedicated agent.",
-  "Begin employer matching.",
-  "Submit the work permit application.",
-  "Receive progress updates.",
-];
-
-const afterPermitApproval = [
-  "Pay the second fee of €1500.",
-  "Receive the approved documents.",
-  "Get visa guidance.",
-  "Schedule the visa appointment, with optional extra service cost if needed.",
-  "Submit the visa application.",
-  "Prepare for the interview.",
-  "Receive support in case of visa rejection.",
-];
-
-const finalSteps = [
-  "Pay the final fee of €1500.",
-  "Receive a pre-departure checklist.",
-  "Get financial guidance.",
-  "Arrange travel.",
-  "Receive airport assistance.",
-  "Get one day of free accommodation.",
-];
-
-const afterArrivalServices = [
-  "Local orientation.",
-  "Welcome support.",
-  "Housing assistance.",
-  "SIM card and bank account setup.",
-];
-
-const salaryOverview = [
-  "40 hours per week: €700–€1200 per month and €8,400–€14,400 per year.",
-  "36 hours per week: €600–€1050 per month and €7,200–€12,600 per year.",
-];
-
-const importantNotes = [
-  "Salaries are approximate and depend on the job role, region, and experience.",
-  "All figures are gross amounts before tax deductions.",
-];
-
-const accommodationDetails = [
-  "Shared rooms with 2 to 4 people.",
-  "Furnished accommodation with shared kitchen and bathroom.",
-  "Not suitable for families or pets.",
-];
-
-const companyOverview = [
-  "More than 500 successful applicants.",
-  "Operating since 2009.",
-  "Headquarters in Warsaw, Poland.",
-  "Presence across multiple European countries.",
-];
-
-const reasonIcons = [
-  BriefcaseBusiness,
-  Banknote,
-  TrendingUp,
-  BadgeCheck,
-  Sparkles,
-  Wallet,
+const requiredDocuments = [
+  "Provide a scanned copy of the first page of your passport",
+  "Submit an updated CV",
 ];
 
 const advantageIcons = [
-  Wallet,
-  TrendingUp,
   BriefcaseBusiness,
-  ShieldCheck,
-  Languages,
-  Globe2,
+  TrendingUp,
+  Clock3,
+  Stethoscope,
+  Wallet,
   BadgeCheck,
-  Building2,
+  Globe2,
+  Sparkles,
 ];
+
+const visaIcons = [
+  Building2,
+  Banknote,
+  Clock3,
+  HeartPulse,
+  Wallet,
+  MapPinned,
+  TrendingUp,
+  Sparkles,
+];
+
+const employmentBenefitsData = {
+  title: "Advantages of Employment in Romania",
+  description:
+    "Romania continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+  items: advantages,
+  icons: advantageIcons,
+};
+
+const whyApplyData = {
+  title: "Why Apply for a Romania Work Visa?",
+  description:
+    "For many international workers, Romania offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+  items: visaReasons,
+  icons: visaIcons,
+};
+
+const openRolesData = {
+  title: "Top Unskilled Job Opportunities Now Open in Romania",
+  jobs: unskilledJobs,
+  salaryAndEligibility,
+};
+
+const paymentChargePolicyData = {
+  title: "Our Pricing",
+  currencyLabel: "All Payments in Euros",
+  totalCharge: "Total Charge: €3,000",
+  installments: [
+    {
+      title: "Part 1: €900 (prepayment to start processing)",
+      description:
+        "After receiving the initial payment, we will begin preparing all necessary supportive documents, including the work permit, to ensure a smooth application process.",
+    },
+    {
+      title: "Part 2: €1000 (after work permit is issued)",
+      description:
+        "Once the work permit has been successfully issued, we will send the documents via DHL post. Our immigration team will then assist you in completing the visa application process efficiently.",
+    },
+    {
+      title: "Part 3: €1100 (after visa issuance)",
+      description:
+        "After your visa has been successfully issued, the final payment must be made within 7 days.",
+    },
+  ],
+  note: "The flight ticket is provided by the employer at no additional cost to the candidate.",
+  documentsTitle: "Documents Required for a Romania Work Permit",
+  requiredDocuments,
+};
+
+const whyChooseUsData = {
+  title: "Why Choose EU Career Serwis?",
+  items: whyChoose,
+};
+
+const processingGuideData = {
+  title: "Romania Work Permit & Visa: Information and Processing Time",
+  description:
+    "Before applying for a Romania work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+  cards: [
+    {
+      title: "Romania Work Permit Processing",
+      icon: Building2,
+      description:
+        "Work permit applications in Romania are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+      duration: "60 to 90 working days",
+      points: [
+        "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
+        "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
+      ],
+    },
+    {
+      title: "Romania Work Visa Processing",
+      icon: Users,
+      description:
+        "After the work permit is approved, the next step is to schedule an appointment at the Romania Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+      duration: "15 to 35 working days",
+      points: [
+        "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
+        "Submitting complete and accurate documents helps avoid unnecessary delays.",
+      ],
+    },
+  ],
+};
+
+const supportServicesData = {
+  title: "Pre-Arrival and Post-Arrival Services",
+  description:
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Romania.",
+  sections: [
+    {
+      title: "Pre-Arrival Services (Before You Travel)",
+      icon: Plane,
+      items: preArrivalServices,
+    },
+    {
+      title: "Post-Arrival Services (After You Arrive)",
+      icon: Landmark,
+      items: postArrivalServices,
+    },
+  ],
+};
 
 export default function JobsInRomania() {
   return (
@@ -271,367 +270,43 @@ export default function JobsInRomania() {
           imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Romania.svg"
         />
       </section>
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Why Romania"
-            title="Why Choose a Romania Work Visa?"
-            description="Romania continues to attract foreign workers because it offers broad job availability, practical living costs, and a stable legal route for employment."
-          />
-          <FeatureCardGrid
-            items={visaReasons}
-            icons={reasonIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-3"
-          />
-        </div>
-      </section>
+
+      <EmploymentBenefits {...employmentBenefitsData} />
+
+      <WhyApply {...whyApplyData} />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Work Benefits"
-            title="Advantages of Working in Romania"
-          />
-          <FeatureCardGrid
-            items={advantages}
-            icons={advantageIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-4"
-            tone="muted"
-          />
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
+            dividerClassName="bg-[#fac800]"
             eyebrow="Work Permits"
-            title="All Types of Romania Work Permits for Non-EU Citizens"
+            title="Types of Work Permits in Romania for Non-EU Citizens"
           />
           <WorkPermit permitTypes={permitTypes} />
         </div>
       </section>
 
+      <OpenRoles {...openRolesData} />
+
+      <ProcessStep fees="€900" />
+
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="High-Demand Roles"
-            title="High-Demand Jobs in Romania"
-          />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {highDemandJobs.map((job) => (
-              <motion.div
-                key={job.code}
-                {...cardMotion}
-                whileHover={{ y: -4 }}
-                className="rounded-[28px] border border-amber-100 bg-[linear-gradient(180deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm"
-              >
-                <div className="mb-5 flex items-start justify-between gap-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                    <BriefcaseBusiness className="h-6 w-6" />
-                  </div>
-                  <span
-                    className={`rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-slate-600 ${fontInter.className}`}
-                  >
-                    {job.code}
-                  </span>
-                </div>
-                <h3
-                  className={`text-xl font-bold text-gray-700 ${fontPoppins.className}`}
-                >
-                  {job.role}
-                </h3>
-                <div className="mt-5 space-y-3">
-                  <p
-                    className={`text-sm leading-7 text-slate-600 md:text-base ${fontInter.className}`}
-                  >
-                    <span className="font-semibold text-slate-800">
-                      Salary:
-                    </span>{" "}
-                    {job.salary}
-                  </p>
-                  <p
-                    className={`text-sm leading-7 text-slate-600 md:text-base ${fontInter.className}`}
-                  >
-                    <span className="font-semibold text-slate-800">
-                      Benefits:
-                    </span>{" "}
-                    {job.benefits}
-                  </p>
-                  <p
-                    className={`text-sm leading-7 text-slate-600 md:text-base ${fontInter.className}`}
-                  >
-                    <span className="font-semibold text-slate-800">
-                      Selection:
-                    </span>{" "}
-                    {job.selection}
-                  </p>
-                  <p
-                    className={`text-sm leading-7 text-slate-600 md:text-base ${fontInter.className}`}
-                  >
-                    <span className="font-semibold text-slate-800">
-                      Eligible:
-                    </span>{" "}
-                    {job.eligible}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+            <PaymentChargePolicy {...paymentChargePolicyData} />
+            <WhyChooseUs {...whyChooseUsData} />
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Users className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Eligible Candidates
-              </h3>
-              <BulletList items={eligibleCandidates} className="mt-6" />
-            </motion.div>
+      <ProcessingGuide {...processingGuideData} />
 
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileText className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Required Documents
-              </h3>
-              <BulletList items={requiredDocuments} className="mt-6" />
-            </motion.div>
+      <SupportServices {...supportServicesData} />
 
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Wallet className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Pricing Details
-              </h3>
-              <BulletList items={pricingDetails} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Why Consider EU Career Serwis?
-              </h3>
-              <BulletList items={whyChoose} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <FileCheck2 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Required Documents for Romania Work Permit
-              </h3>
-              <BulletList items={permitDocuments} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle eyebrow="Process" title="Romania Work Permit Process" />
-          <div className="grid gap-4 md:grid-cols-2">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={step}
-                {...cardMotion}
-                whileHover={{ y: -2 }}
-                className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-[72px_1fr] md:items-center md:p-6"
-              >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-lg font-bold text-[#fac800]">
-                  {index + 1}
-                </div>
-                <p
-                  className={`text-base leading-8 text-slate-600 ${fontInter.className}`}
-                >
-                  {step}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <ClipboardList className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                After Work Permit Approval
-              </h3>
-              <BulletList items={afterPermitApproval} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Plane className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Final Steps
-              </h3>
-              <BulletList items={finalSteps} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-stone-50 p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Home className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                After Arrival Services
-              </h3>
-              <BulletList items={afterArrivalServices} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-2">
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Banknote className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Salary Overview in Romania
-              </h3>
-              <BulletList items={salaryOverview} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <BadgeCheck className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Important Notes
-              </h3>
-              <BulletList items={importantNotes} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Home className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Accommodation Details
-              </h3>
-              <BulletList items={accommodationDetails} className="mt-6" />
-            </motion.div>
-
-            <motion.div
-              {...cardMotion}
-              whileHover={{ y: -4 }}
-              className="rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,#fffaf0_0%,#ffffff_100%)] p-6 shadow-sm md:p-8"
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-100 text-[#fac800]">
-                <Building2 className="h-6 w-6" />
-              </div>
-              <h3
-                className={`text-2xl font-bold text-gray-700 ${fontPoppins.className}`}
-              >
-                Company Overview
-              </h3>
-              <BulletList items={companyOverview} className="mt-6" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-5xl">
-          <SummaryCard
-            eyebrow="Final Overview"
-            summary="Romania offers affordable living, growing job opportunities, and a clear path for foreign workers who want to build a stable career in Europe."
-          />
-        </div>
-      </section>
       <section>
         <CompanyOverview />
       </section>
+
       <section>
         <RecentTestimonials />
       </section>
