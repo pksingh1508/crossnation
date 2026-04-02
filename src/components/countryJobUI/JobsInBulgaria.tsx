@@ -1,215 +1,257 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { fontInter, fontPoppins } from "@/fonts";
 import {
   BadgeCheck,
   Banknote,
   BriefcaseBusiness,
   Building2,
-  CheckCircle2,
-  ClipboardList,
   Clock3,
-  FileCheck2,
   FileText,
   Globe2,
-  Home,
-  Hotel,
+  HeartPulse,
+  Landmark,
+  MapPinned,
   Plane,
   ShieldCheck,
   Sparkles,
+  Stethoscope,
   TrendingUp,
   Users,
   Wallet,
 } from "lucide-react";
 import TopTitleBar from "./TopTitleBar";
 import CountryFooter from "./countryFooter";
-import { RecentTestimonials } from "../sections/RecentTestimonials";
 import WorkPermit from "./WorkPermit";
+import { RecentTestimonials } from "../sections/RecentTestimonials";
 import CompanyOverview from "./CompanyOverview";
-import {
-  BulletList,
-  FeatureCardGrid,
-  InfoCard,
-  SectionTitle,
-  StepList,
-  cardMotion,
-} from "./CountryJobShared";
-
-const visaReasons = [
-  "Bulgaria is one of the more affordable countries in the EU, which makes saving easier.",
-  "Thousands of jobs are available in hospitality, construction, agriculture, and logistics.",
-  "Monthly salaries usually range from €600 to €1,200 depending on the role and experience.",
-  "The labour market is stable and demand for international workers is increasing.",
-  "Standard schedules are usually 40 hours across five days, with regulated overtime.",
-  "Employees receive around 20 days of annual leave plus public holidays.",
-  "Working in Bulgaria can support longer-term career opportunities within the EU.",
-  "Work permit and visa processing usually takes around 2 to 3 months.",
-];
+import { SectionTitle } from "./CountryJobShared";
+import EmploymentBenefits from "./EmploymentBenefits";
+import WhyApply from "./WhyApply";
+import OpenRoles from "./OpenRoles";
+import PaymentChargePolicy from "./PaymentChargePolicy";
+import WhyChooseUs from "./WhyChooseUs";
+import ProcessingGuide from "./ProcessingGuide";
+import SupportServices from "./SupportServices";
+import ProcessStep from "./ProcessStep";
 
 const advantages = [
-  "Employees work in an EU-regulated environment with legal protections and safer workplaces.",
-  "There is strong demand in hospitality for chefs, hotel staff, cleaners, and maintenance workers.",
-  "Official employment contracts include social security and tax contributions.",
-  "Workers gain international exposure by working in multicultural teams and building EU experience.",
-  "Employers often provide official invitation letters and legal visa support.",
-  "Long-term work can create a path toward residence permits.",
+  "Expanding Job Opportunities",
+  "Stable and Growing Income Levels",
+  "Standard Work Schedule",
+  "Access to Public Medical Services",
+  "Cost-Effective Living Environment",
+  "Career Advancement Opportunities",
+  "Strategic Location in Europe",
+  "Rich Culture and Modern Lifestyle",
 ];
 
-const permitOptions = [
+const visaReasons = [
+  "Massive Hiring Demand",
+  "Reliable Earnings with Growth Potential",
+  "Structured Work Routine",
+  "Strong Health and Social Coverage",
+  "Budget-Friendly Lifestyle",
+  "Easy Access to Europe",
+  "Professional Development Opportunities",
+  "Dynamic Living Experience",
+];
+
+const permitTypes = [
   {
-    type: "Standard Work Permit",
+    type: "Type A",
     description:
-      "Issued for up to one year with renewal options based on a confirmed job offer.",
+      "For work with a Polish company under an official employment agreement.",
   },
   {
-    type: "Seasonal Permit",
+    type: "Type B",
     description:
-      "For short-term jobs of up to 90 days, mainly in tourism and agriculture.",
+      "For foreign nationals working in management roles within a Polish company for a period longer than six months.",
   },
   {
-    type: "EU Blue Card",
+    type: "Type C",
     description:
-      "For highly skilled professionals earning well above the national average.",
+      "For work at a Polish branch of a company that is based outside the country.",
   },
   {
-    type: "Intra-Company Transfer Permit",
-    description: "For employees moving within multinational organisations.",
-  },
-  {
-    type: "Freelance / Business Visa",
-    description: "For self-employed applicants or investors.",
-  },
-  {
-    type: "Temporary Residence Permit",
+    type: "Type D",
     description:
-      "Required together with a work permit for legal stay in Bulgaria.",
+      "For work in Poland while providing services on behalf of a company based in another country.",
+  },
+  {
+    type: "Type S",
+    description:
+      "For temporary work in sectors like farming, gardening, or tourism during peak seasons.",
   },
 ];
 
-const popularRoles = [
-  "Massage Therapist – Around €800/month with experience in therapeutic or relaxation techniques.",
-  "Truck Mechanic – Around €750/month with at least 3 years of experience.",
-  "Heavy Vehicle Driver (C+E) – Up to €1,200/month with 5+ years of experience and licence.",
-  "Furniture Maker – Around €750/month with practical experience.",
-  "Welder – Around €750/month with relevant technical skills.",
-  "Blaster / Metal Worker – Around €700/month with prior experience.",
-  "Butcher – Around €700/month with meat processing experience.",
-  "Florist / Flower Arranger – Around €700/month with creative floral design experience preferred.",
-  "Insulation Worker – Around €750/month with construction experience.",
-  "Plumber / Electrician – Around €750/month with technical experience and skills.",
+const unskilledJobs = ["Packaging work", "General Cleaner", "Farm Work"];
+
+const salaryAndEligibility = [
+  "Salary: €900–€1,200/month (net)",
+  "Eligibility: Male/Female, Ages 18–55",
 ];
 
-const roleNotes = [
-  "Many employers provide accommodation and food vouchers.",
-  "Salaries may vary by city and are often higher in Sofia or Varna.",
-  "Overtime and night shifts may include extra pay.",
-];
-
-const eligibleRegions = [
-  "Africa: Egypt, Morocco, Tunisia, South Africa, and others.",
-  "Central Asia: Kazakhstan, Uzbekistan, Kyrgyzstan, and others.",
-  "Middle East: UAE, Saudi Arabia, Qatar, and others.",
-  "Asia: India, Nepal, Bangladesh, Vietnam, Indonesia, and others.",
-  "Americas: Brazil, Mexico, Argentina, Colombia, and others.",
-];
-
-const pricingPlan = [
-  "Initial payment: €1000 for eligibility check, documentation, and job matching.",
-  "After work permit approval: €1200.",
-  "After visa approval: €1200.",
-];
-
-const whyChoose = [
-  "Clear and transparent pricing with no hidden charges.",
-  "Complete assistance from application through settlement.",
-  "Professional support from experienced consultants.",
-  "A fully legal and compliant immigration process.",
-];
-
-const initialRequirements = [
-  "Valid passport, preferably with at least 3 years validity.",
-  "Passport copy submitted immediately after selection.",
-];
-
-const importantConditions = [
-  "All original documents must be sent to Bulgaria within 20 days.",
-  "Delays can lead to replacement of the candidate.",
-];
-
-const keyDocuments = [
-  "Police Clearance Certificate for overseas employment.",
-  "Police certificate must include apostille and official verification.",
-  "Police certificate must remain valid after arrival.",
-  "Educational certificates are required for some roles and are mandatory for drivers.",
-  "Educational documents must be notarised and apostilled.",
-];
-
-const processingInfo = [
-  "Documents are translated and legalised in Bulgaria.",
-  "Processing usually takes between 1 and 3 months.",
-  "Preferred applicant age is below 42 years.",
-];
-
-const processSteps = [
-  "Sign the agreement and start the application with the €1000 payment.",
-  "Complete the eligibility assessment.",
-  "Submit and verify documents.",
-  "Start employer matching.",
-  "Submit the work permit application.",
-  "Receive regular updates on the application.",
-  "Make the second payment of €1200 after approval.",
-  "Receive documents by courier dispatch.",
-  "Book the visa appointment.",
-  "Get interview preparation and support.",
-  "Make the final payment of €1200 before travel.",
+const preArrivalServices = [
+  "Assistance with work visa application and documentation",
+  "Job offer confirmation and employment contract support",
+  "Guidance on required documents and legalization process",
+  "Travel planning and flight booking assistance",
+  "Pre-departure briefing about life and work in Poland",
+  "Information about employer, job role, and workplace",
+  "Accommodation guidance before arrival",
+  "Packing checklist and travel preparation support",
+  "Basic orientation on Polish culture and rules",
+  "24/7 support for any queries before departure",
 ];
 
 const postArrivalServices = [
-  "Airport pickup and initial support.",
-  "One-day temporary accommodation.",
-  "Help with housing arrangements.",
-  "SIM card setup.",
-  "Support for opening a bank account.",
-  "Tax ID registration.",
-  "Cultural guidance and settlement support.",
-  "Full relocation support.",
-  "Start work with the employer.",
+  "Airport pickup and welcome assistance",
+  "Help with accommodation and settling in",
+  "Support with local registration and legal formalities",
+  "Assistance in obtaining residence permit (if required)",
+  "Help with opening a bank account",
+  "Guidance on local transport and daily life",
+  "Introduction to workplace and job onboarding",
+  "Support in getting a SIM card and communication setup",
+  "Ongoing assistance for any work or living issues",
+  "Continuous support and guidance throughout your stay",
 ];
 
-const accommodationDetails = [
-  "Shared rooms with 2 to 4 occupants.",
-  "Furnished spaces with shared kitchen and bathroom.",
-  "Housing depends on availability.",
-  "Not suitable for families or pets.",
+const whyChoose = [
+  "Trusted and Verified Job Opportunities",
+  "Strong Employer Network",
+  "Fast and Transparent Process",
+  "Visa and Documentation Assistance",
+  "Pre-Arrival and Post-Arrival Services",
+  "Opportunities for Unskilled and Skilled Workers",
+  "Affordable and Reliable Services",
+  "Dedicated Customer Support",
+  "Your Gateway to a Career in Europe",
 ];
 
-const paymentSummary = [
-  "€1000 for the initial stage.",
-  "€1200 after work permit approval.",
-  "€1200 before travel after visa approval.",
+const requiredDocuments = [
+  "Valid passport (scanned copy, all pages)",
+  "CV/Bio-data with address",
+  "Education certificate/diploma with apostille translated into Serbian",
 ];
 
-const reasonIcons = [
-  Wallet,
+const advantageIcons = [
   BriefcaseBusiness,
-  Banknote,
   TrendingUp,
   Clock3,
+  Stethoscope,
+  Wallet,
   BadgeCheck,
   Globe2,
   Sparkles,
 ];
 
-const advantageIcons = [
-  ShieldCheck,
+const visaIcons = [
   Building2,
-  FileCheck2,
-  Users,
-  FileText,
-  Home,
+  Banknote,
+  Clock3,
+  HeartPulse,
+  Wallet,
+  MapPinned,
+  TrendingUp,
+  Sparkles,
 ];
+
+const employmentBenefitsData = {
+  title: "Advantages of Employment in Poland",
+  description:
+    "Poland continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+  items: advantages,
+  icons: advantageIcons,
+};
+
+const whyApplyData = {
+  title: "Why Apply for a Poland Work Visa?",
+  description:
+    "For many international workers, Poland offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+  items: visaReasons,
+  icons: visaIcons,
+};
+
+const openRolesData = {
+  title: "Top Unskilled Job Opportunities Now Open in Poland",
+  jobs: unskilledJobs,
+  salaryAndEligibility,
+};
+
+const paymentChargePolicyData = {
+  title: "Our Pricing",
+  currencyLabel: "All Payments in Euros",
+  totalCharge: "Total Charge: €2,900",
+  installments: [
+    {
+      title: "Part 1: €700 (Prepayment to Start Processing)",
+      description:
+        "After receiving the initial payment, we will begin preparing all necessary supportive documents, including the work permit, to ensure a smooth application process.",
+    },
+    {
+      title: "Part 2: €2200 (after visa issuance) ",
+      description:
+        "After your visa has been successfully issued, the final payment must be made within 7 days.",
+    },
+  ],
+  note: "The flight ticket is provided by the employer at no additional cost to the candidate.",
+  documentsTitle: "Documents Required for a Poland Work Permit",
+  requiredDocuments,
+};
+
+const whyChooseUsData = {
+  title: "Why Choose EU Career Serwis?",
+  items: whyChoose,
+};
+
+const processingGuideData = {
+  title: "Poland Work Permit & Visa: Information and Processing Time",
+  description:
+    "Before applying for a Poland work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+  cards: [
+    {
+      title: "Poland Work Permit Processing",
+      icon: Building2,
+      description:
+        "Work permit applications in Poland are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+      duration: "25 to 35 working days",
+      points: [
+        "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
+        "In some cases, approvals may be issued faster, but during peak periods or high-demand seasons, delays may occur.",
+      ],
+    },
+    {
+      title: "Poland Work Visa Processing",
+      icon: Users,
+      description:
+        "After the work permit is approved, the next step is to schedule an appointment at the Polish Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+      duration: "15 to 35 working days",
+      points: [
+        "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
+        "Submitting complete and accurate documents helps avoid unnecessary delays.",
+      ],
+    },
+  ],
+};
+
+const supportServicesData = {
+  title: "Pre-Arrival and Post-Arrival Services",
+  description:
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Poland.",
+  sections: [
+    {
+      title: "Pre-Arrival Services (Before You Travel)",
+      icon: Plane,
+      items: preArrivalServices,
+    },
+    {
+      title: "Post-Arrival Services (After You Arrive)",
+      icon: Landmark,
+      items: postArrivalServices,
+    },
+  ],
+};
 
 export default function JobsInBulgaria() {
   return (
@@ -220,156 +262,43 @@ export default function JobsInBulgaria() {
           imageUrl="https://ik.imagekit.io/eucareerserwis/Country%20Flag/flag/Flag_of_Bulgaria.svg"
         />
       </section>
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Why Bulgaria"
-            title="Why Consider a Bulgaria Work Visa?"
-          />
-          <FeatureCardGrid
-            items={visaReasons}
-            icons={reasonIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-4"
-          />
-        </div>
-      </section>
+
+      <EmploymentBenefits {...employmentBenefitsData} />
+
+      <WhyApply {...whyApplyData} />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
-            eyebrow="Advantages"
-            title="Advantages of Working in Bulgaria"
+            dividerClassName="bg-[#fac800]"
+            eyebrow="Work Permits"
+            title="Types of Work Permits in Poland for Non-EU Citizens"
           />
-          <FeatureCardGrid
-            items={advantages}
-            icons={advantageIcons}
-            columnsClassName="md:grid-cols-2 xl:grid-cols-3"
-            tone="muted"
-          />
+          <WorkPermit permitTypes={permitTypes} />
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Permit Options"
-            title="Work Permit Options for Non-EU Applicants"
-          />
-          <WorkPermit permitTypes={permitOptions} />
-        </div>
-      </section>
+      <OpenRoles {...openRolesData} />
+
+      <ProcessStep fees="€700" />
 
       <section className="bg-white px-4 py-5 md:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-            <InfoCard
-              icon={BriefcaseBusiness}
-              title="Popular Job Roles in Bulgaria"
-              items={popularRoles}
-            >
-              <div className="mt-8 rounded-2xl bg-amber-50 p-4">
-                <BulletList items={roleNotes} />
-              </div>
-            </InfoCard>
-
-            <InfoCard
-              icon={Globe2}
-              title="Eligible Regions for Recruitment"
-              items={eligibleRegions}
-              tone="accent"
-            />
+          <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+            <PaymentChargePolicy {...paymentChargePolicyData} />
+            <WhyChooseUs {...whyChooseUsData} />
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <InfoCard
-              icon={Wallet}
-              title="Pricing Plan"
-              items={pricingPlan}
-              tone="accent"
-            />
-            <InfoCard
-              icon={ShieldCheck}
-              title="Why Consider EU Career Serwis?"
-              items={whyChoose}
-            />
-            <InfoCard
-              icon={FileText}
-              title="Initial Requirements"
-              items={initialRequirements}
-              tone="muted"
-            />
-          </div>
-        </div>
-      </section>
+      <ProcessingGuide {...processingGuideData} />
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <InfoCard
-              icon={BadgeCheck}
-              title="Important Conditions"
-              items={importantConditions}
-            />
-            <InfoCard
-              icon={FileCheck2}
-              title="Key Documents"
-              items={keyDocuments}
-            />
-            <InfoCard
-              icon={Clock3}
-              title="Work Permit Processing"
-              items={processingInfo}
-              tone="accent"
-            />
-          </div>
-        </div>
-      </section>
+      <SupportServices {...supportServicesData} />
 
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionTitle
-            eyebrow="Application Process"
-            title="Bulgaria Work Permit Process"
-          />
-          <motion.div
-            {...cardMotion}
-            className="mx-auto max-w-5xl rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-          >
-            <StepList items={processSteps} />
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-5 md:py-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 xl:grid-cols-3">
-            <InfoCard
-              icon={Plane}
-              title="Post-Arrival Services"
-              items={postArrivalServices}
-            />
-            <InfoCard
-              icon={Home}
-              title="Accommodation Details"
-              items={accommodationDetails}
-              tone="muted"
-            />
-            <InfoCard
-              icon={Banknote}
-              title="Payment Summary"
-              items={paymentSummary}
-              tone="accent"
-            />
-          </div>
-        </div>
-      </section>
       <section>
         <CompanyOverview />
       </section>
+
       <section>
         <RecentTestimonials />
       </section>
