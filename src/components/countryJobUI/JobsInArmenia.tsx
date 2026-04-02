@@ -89,17 +89,11 @@ const unskilledJobs = [
   "Construction Worker",
   "General Cleaner",
   "Farm Work",
-  "General Construction Worker",
-  "Bakery",
-  "Food Factory Worker",
-  "Forklift Operator",
-  "Packaging & Sorting Worker",
-  "Kitchen Helper / Dishwasher",
-  "Hotel Cleaner / Housekeeper",
-  "Laundry Staff (Hotels & Hospitals)",
-  "Agricultural Worker (Seasonal)",
-  "Plastic Molding Worker",
-  "Parcel Sorter (Logistics)",
+];
+
+const salaryAndEligibility = [
+  "Salary: €900–€1,200/month (net)",
+  "Eligibility: Male/Female, Ages 30–55",
 ];
 
 const preArrivalServices = [
@@ -187,6 +181,7 @@ const whyApplyData = {
 const openRolesData = {
   title: "Top Unskilled Job Opportunities Now Open in Armenia",
   jobs: unskilledJobs,
+  salaryAndEligibility,
 };
 
 const paymentChargePolicyData = {
