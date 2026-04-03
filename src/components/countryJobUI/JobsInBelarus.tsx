@@ -190,7 +190,7 @@ const processingGuideData = {
       title: "Belarus Work Permit Processing",
       icon: Building2,
       description:
-        "Work permit applications in Belarus are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+        "Work permit applications in Belarus are handled by Regional Executive Committees based on the employer’s location.",
       duration: "25 to 30 working days",
       points: [
         "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
@@ -201,7 +201,7 @@ const processingGuideData = {
       title: "Belarus Work Visa Processing",
       icon: Users,
       description:
-        "After the work permit is approved, the next step is to schedule an appointment at the Belarusn Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+        "We schedule an appointment when the work permit is approved. The visa timeline starts only after document submission at the appointment.",
       duration: "15 to 35 working days",
       points: [
         "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",

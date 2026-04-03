@@ -74,11 +74,11 @@ const preArrivalServices = [
   "Job offer confirmation and employment contract support",
   "Guidance on required documents and legalization process",
   "Travel planning and flight booking assistance",
-  "Pre-departure briefing about life and work in Ukraine",
+  "Pre-departure briefing about life and work in Mauritius",
   "Information about employer, job role, and workplace",
   "Accommodation guidance before arrival",
   "Packing checklist and travel preparation support",
-  "Basic orientation on Ukrainen culture and rules",
+  "Basic orientation on Mauritiusn culture and rules",
   "24/7 support for any queries before departure",
 ];
 
@@ -136,23 +136,23 @@ const visaIcons = [
 ];
 
 const employmentBenefitsData = {
-  title: "Advantages of Employment in Ukraine",
+  title: "Advantages of Employment in Mauritius",
   description:
-    "Ukraine continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
+    "Mauritius continues to attract international workers because it combines practical career opportunities with a stable and affordable lifestyle.",
   items: advantages,
   icons: advantageIcons,
 };
 
 const whyApplyData = {
-  title: "Why Apply for a Ukraine Work Visa?",
+  title: "Why Apply for a Mauritius Work Visa?",
   description:
-    "For many international workers, Ukraine offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
+    "For many international workers, Mauritius offers a strong balance of hiring demand, legal employment pathways, and long-term growth potential.",
   items: visaReasons,
   icons: visaIcons,
 };
 
 const openRolesData = {
-  title: "Top Unskilled Job Opportunities Now Open in Ukraine",
+  title: "Top Unskilled Job Opportunities Now Open in Mauritius",
   jobs: unskilledJobs,
   salaryAndEligibility,
 };
@@ -184,15 +184,15 @@ const whyChooseUsData = {
 };
 
 const processingGuideData = {
-  title: "Ukraine Work Permit & Visa: Information and Processing Time",
+  title: "Mauritius Work Permit & Visa: Information and Processing Time",
   description:
-    "Before applying for a Ukraine work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
+    "Before applying for a Mauritius work permit and visa, it’s important to understand how the process works and how long each step may take. This overview helps you plan clearly and avoid unnecessary delays.",
   cards: [
     {
-      title: "Ukraine Work Permit Processing",
+      title: "Mauritius Work Permit Processing",
       icon: Building2,
       description:
-        "Work permit applications in Ukraine are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
+        "Work permit applications in Mauritius are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
       duration: "25 to 30 working days",
       points: [
         "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
@@ -200,10 +200,10 @@ const processingGuideData = {
       ],
     },
     {
-      title: "Ukraine Work Visa Processing",
+      title: "Mauritius Work Visa Processing",
       icon: Users,
       description:
-        "After the work permit is approved, the next step is to schedule an appointment at the Ukrainen Embassy or a VFS center in your country. The visa timeline starts only after document submission at the appointment.",
+        "We schedule an appointment when the work permit is approved. The visa timeline starts only after document submission at the appointment.",
       duration: "15 to 35 working days",
       points: [
         "Processing times can vary depending on document verification, biometric submissions, and embassy workload.",
@@ -216,7 +216,7 @@ const processingGuideData = {
 const supportServicesData = {
   title: "Pre-Arrival and Post-Arrival Services",
   description:
-    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Ukraine.",
+    "EU Career Serwis supports workers throughout the full journey, from documentation and travel planning to settlement and workplace support in Mauritius.",
   sections: [
     {
       title: "Pre-Arrival Services (Before You Travel)",
