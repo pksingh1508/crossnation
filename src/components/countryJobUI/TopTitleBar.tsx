@@ -13,7 +13,7 @@ export default function TopTitleBar({ name, imageUrl }: TopTitleBarProps) {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="overflow-hidden rounded-[32px] border border-amber-100 bg-[#fac800] p-4 shadow-sm">
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center justify-center">
+        <div className="flex flex-col items-center gap-4 md:flex-row md:items-center justify-center">
           <Image
             src="/EU-logo.jpeg"
             alt="EU Career Serwis logo"
@@ -22,7 +22,7 @@ export default function TopTitleBar({ name, imageUrl }: TopTitleBarProps) {
             className="h-20 w-fit rounded-lg object-cover"
           />
           <h1
-            className={`mt-5 max-w-5xl text-2xl font-bold leading-tight text-gray-800 md:text-3xl lg:text-4xl pb-3 ${fontPoppins.className}`}
+            className={`mt-5 max-w-5xl text-[0.9rem] sm:text-[1.2rem] font-bold leading-tight text-gray-800 md:text-3xl lg:text-4xl pb-3 ${fontPoppins.className}`}
           >
             - Europe’s Premier Immigration Company.
           </h1>
