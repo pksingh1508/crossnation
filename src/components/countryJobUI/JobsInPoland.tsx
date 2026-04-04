@@ -206,7 +206,7 @@ const processingGuideData = {
       title: "Poland Work Permit Processing",
       icon: Building2,
       description:
-        "Work permit applications in Poland are handled by the Ministry of Labour, Human Resource Development based on the employer’s location.",
+        "Work permit applications in Poland are handled by the Voivodeship Office (Urząd Wojewódzki) based on the employer’s location.",
       duration: "60 to 90 working days",
       points: [
         "The exact timeline can vary depending on the number of applications being processed and the internal workflow of the office.",
