@@ -205,7 +205,7 @@ export function NewsArticleClient({ slug }: NewsArticleClientProps) {
               className="relative w-full h-64 md:h-[30rem] rounded-2xl overflow-hidden mb-8 shadow-xl"
             >
               <Image
-                src={`${URL}${newsData.news_image}`}
+                src={`${newsData.news_image}`}
                 alt={newsData.title}
                 fill
                 className="object-cover"

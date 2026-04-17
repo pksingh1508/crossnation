@@ -28,6 +28,18 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "media.eucareerserwis.pl",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "pub-45c65eb843604170bc538337842fb5a9.r2.dev",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

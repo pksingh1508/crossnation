@@ -41,7 +41,7 @@ export function SingleLatestPost({ blog }: LatestPostProps) {
           <div className="flex-shrink-0 w-27 h-20 overflow-hidden rounded-lg">
             {image_url ? (
               <Image
-                src={`${URL}${image_url}`}
+                src={`${image_url}`}
                 alt={title}
                 width={80}
                 height={80}

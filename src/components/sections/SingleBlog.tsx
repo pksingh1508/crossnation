@@ -38,7 +38,7 @@ export function SingleBlog({ blog }: SingleBlogProps) {
       <div className="aspect-video w-full overflow-hidden">
         {image_url ? (
           <Image
-            src={`${URL}${image_url}`}
+            src={`${image_url}`}
             alt={title}
             width={500}
             height={500}

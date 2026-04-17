@@ -45,7 +45,7 @@ export function SingleLatestNews({ news }: SingleNewsProps) {
           <div className="flex-shrink-0 w-27 h-20 overflow-hidden rounded-lg">
             {news_image ? (
               <Image
-                src={`${URL}${news_image}`}
+                src={`${news_image}`}
                 alt={title}
                 width={80}
                 height={80}

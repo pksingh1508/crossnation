@@ -56,7 +56,7 @@ export function SingleOneTestimonial({
             <div className="rounded-xl overflow-hidden shadow-md">
               {data.user_image ? (
                 <Image
-                  src={`${URL}${data.user_image}`}
+                  src={`${data.user_image}`}
                   alt={`${data.name} - testimonial`}
                   width={128}
                   height={128}

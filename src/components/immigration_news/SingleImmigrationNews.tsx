@@ -79,7 +79,7 @@ export function SingleImmigrationNews({
             <div className="relative h-48 md:h-full md:min-h-[200px] overflow-hidden">
               {data.news_image ? (
                 <Image
-                  src={`${URL}${data.news_image}`}
+                  src={`${data.news_image}`}
                   alt={data.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"

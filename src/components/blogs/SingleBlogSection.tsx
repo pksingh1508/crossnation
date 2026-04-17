@@ -82,7 +82,7 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
             <div className="relative h-44 md:h-full md:min-h-[200px] overflow-hidden">
               {data.blog_image ? (
                 <Image
-                  src={`${URL}${data.blog_image}`}
+                  src={`${data.blog_image}`}
                   alt={data.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"

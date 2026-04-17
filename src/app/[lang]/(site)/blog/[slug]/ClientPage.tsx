@@ -210,7 +210,7 @@ export function BlogArticleClient({ slug }: BlogArticleClientProps) {
               className="relative w-full h-64 md:h-[30rem] rounded-2xl overflow-hidden mb-8 shadow-xl"
             >
               <Image
-                src={`${URL}${blogData.blog_image}`}
+                src={`${blogData.blog_image}`}
                 alt={blogData.title}
                 fill
                 className="object-cover"
