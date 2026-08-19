@@ -131,9 +131,9 @@ export function ContactContainer() {
             {t("title")}
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
-          <p className="text-lg font-inter text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          {/* <p className="text-lg font-inter text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t("description")}
-          </p>
+          </p> */}
         </motion.div>
         <div className="container mx-auto max-w-7xl px-4">
           {/* Main Container with 3-column grid layout */}

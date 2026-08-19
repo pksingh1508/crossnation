@@ -12,7 +12,7 @@ export function RecentTestimonials() {
       id: 1,
       name: "Manoj",
       what_they_say:
-        "Thanks to EU Career Serwis, my work permit journey was smooth and well-organized. From paperwork to embassy coordination, their expert team handled everything with care. Their knowledge and support truly make a difference for international candidates like me",
+        "I’m very thankful to EU Career Serwis for their support throughout my journey. Their team was always responsive, professional, and ready to guide me whenever I had questions. The whole experience felt much easier with their assistance. I highly recommend EU Career Serwis to anyone looking for reliable and efficient support in their career endeavors.",
       user_image: {
         url: "https://ik.imagekit.io/eucareerserwis/home/Manoj.webp",
       },

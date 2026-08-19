@@ -304,7 +304,7 @@
         "submit": "Send Message"
       },
       "info": {
-        "title": "Reach Our Expert Team",
+        "title": "Reach Out to Us",
         "address": {
           "title": "Address",
           "street": "Street: Mennica Legacy Tower, Prosta 20",
@@ -664,7 +664,7 @@
     }
   },
   "governmentLinks": {
-    "title": "Government of Poland: Useful Links",
+    "title": "Poland's Official Government Links",
     "description": "Click on any logo to visit the official government website"
   },
   "solveQuery": {
