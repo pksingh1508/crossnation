@@ -15,7 +15,7 @@ export const siteConfig = {
     phone: "+48 787 277 550",
     whatsapp: "+48787277555",
     address: {
-      street: "Mennica Legacy Tower, Prosta 20",
+      street: "Mennica Legacy Tower, Prosta 18",
       city: "Warszawa",
       zipCode: "00-850",
       country: "Poland",

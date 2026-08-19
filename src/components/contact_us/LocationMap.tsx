@@ -11,7 +11,7 @@ export function LocationMap() {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="Office Location - Ludwika Idzikowskiego 16, Warsaw, Poland"
+        title="Office Location - Mennica Legacy Tower, Prosta 18, Warsaw, Poland"
       />
     </div>
   );

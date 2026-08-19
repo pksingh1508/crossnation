@@ -137,7 +137,7 @@ export const Testimonials = [
     image:
       "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
     review:
-      "CountryNation helped me establish my business overseas. Their investment guidance was invaluable.",
+      "EU Career Serwis helped me establish my business overseas. Their investment guidance was invaluable.",
   },
   {
     name: "Ahmed Hassan",
