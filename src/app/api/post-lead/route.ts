@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 const API_KEY = process.env.X_API_KEY!;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
 
 export async function POST(req: Request) {
   const { firstName, lastName, email, phone, option, subject, message } =
@@ -14,8 +15,7 @@ export async function POST(req: Request) {
   }
 
   // Decide which module to hit
-  // let moduleUrl = "https://eu-crm.vercel.app/api/leads";
-  let moduleUrl = "https://eucareerserwis.pl/api/leads";
+  let moduleUrl = "https://crm.eucareerserwis.pl/api/leads";
   let data: any = {
     name: `${firstName} ${lastName}`,
     email: email,
