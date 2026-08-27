@@ -14,7 +14,8 @@ export async function POST(req: Request) {
   }
 
   // Decide which module to hit
-  let moduleUrl = "https://eu-crm.vercel.app/api/leads";
+  // let moduleUrl = "https://eu-crm.vercel.app/api/leads";
+  let moduleUrl = "https://eucareerserwis.pl/api/leads";
   let data: any = {
     name: `${firstName} ${lastName}`,
     email: email,
