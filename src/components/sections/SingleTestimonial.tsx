@@ -1,6 +1,5 @@
 "use client";
 
-import { TestimonialItem } from "@/lib/strapi";
 import Image from "next/image";
 import { motion, easeInOut } from "framer-motion";
 import { Card } from "@/components/ui/card";
@@ -10,8 +9,16 @@ import { useRouter } from "next/navigation";
 import { fontPoppins } from "@/fonts";
 import { getLocalizedPath, getLocalizedUrl } from "@/lib/locale-paths";
 
+/** A card in the testimonials section: a quote with a photo, or only an image. */
+export interface TestimonialHighlight {
+  id: number;
+  name?: string;
+  what_they_say?: string;
+  user_image?: { url: string };
+}
+
 interface SingleTestimonialProps {
-  testimonial: TestimonialItem;
+  testimonial: TestimonialHighlight;
   index?: number;
   locale: string;
 }
@@ -21,16 +28,11 @@ export function SingleTestimonial({
   index = 0,
   locale,
 }: SingleTestimonialProps) {
-  // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
     id: testimonial.id,
-    name: testimonial.attributes?.name || testimonial.name || "",
-    what_they_say:
-      testimonial.attributes?.what_they_say || testimonial.what_they_say || "",
-    user_image:
-      testimonial.attributes?.user_image?.data?.attributes?.url || // Strapi nested structure
-      testimonial.user_image?.url || // Flat structure
-      null,
+    name: testimonial.name || "",
+    what_they_say: testimonial.what_they_say || "",
+    user_image: testimonial.user_image?.url || null,
   };
   const router = useRouter();
 

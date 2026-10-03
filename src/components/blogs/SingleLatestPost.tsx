@@ -1,34 +1,23 @@
 import React from "react";
 import Link from "next/link";
-import { BlogItem } from "@/lib/strapi";
+import type { BlogPostCard } from "@/lib/cms/types";
+import { formatDate } from "@/lib/cms/format";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface LatestPostProps {
-  blog: BlogItem;
+  blog: BlogPostCard;
 }
 
 export function SingleLatestPost({ blog }: LatestPostProps) {
-  // Handle both nested attributes structure and flat structure
-  const title = blog.attributes?.title || blog.title || "Untitled";
-  const updatedAt = blog.attributes?.updatedAt || blog.updatedAt || "";
-  const likes_count = blog.attributes?.likes_count || blog.likes_count || 0;
-  const slug = blog.attributes?.slug || blog.slug || "";
-  const image_url = blog.blog_image?.url || "";
+  const { title, likes_count, slug, image_url } = blog;
   const locale = useLocale();
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
-  // Format the date to show like "03 Jun"
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "No date";
-    const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
-      day: "2-digit",
-      month: "short",
-    };
-    return date.toLocaleDateString("en-US", options);
-  };
+  // Show the date like "Jun 03"
+  const publishedAt =
+    formatDate(blog.published_at, { day: "2-digit", month: "short" }) ||
+    "No date";
 
   return (
     <Link
@@ -41,8 +30,8 @@ export function SingleLatestPost({ blog }: LatestPostProps) {
           <div className="flex-shrink-0 w-27 h-20 overflow-hidden rounded-lg">
             {image_url ? (
               <Image
-                src={`${image_url}`}
-                alt={title}
+                src={image_url}
+                alt={blog.image_alt || title}
                 width={80}
                 height={80}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -65,7 +54,7 @@ export function SingleLatestPost({ blog }: LatestPostProps) {
             <div className="flex items-center gap-4 text-sm text-gray-600">
               <div className="flex items-center space-x-1">
                 <span className="text-amber-500 font-medium">
-                  {formatDate(updatedAt)}
+                  {publishedAt}
                 </span>
               </div>
 

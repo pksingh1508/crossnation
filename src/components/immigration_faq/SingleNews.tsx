@@ -1,23 +1,21 @@
 import React from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { NewsItem } from "@/lib/strapi";
+import type { NewsArticleCard } from "@/lib/cms/types";
+import { formatDate } from "@/lib/cms/format";
 import { fontInter } from "@/fonts";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleNewsProps {
-  news: NewsItem;
+  news: NewsArticleCard;
 }
 
 export function SingleNews({ news }: SingleNewsProps) {
   const locale = useLocale();
 
-  // Handle both nested attributes structure and flat structure
-  const title = news.attributes?.title || news.title || "Untitled";
-  const publishedAt = news.attributes?.updatedAt || news.updatedAt || "";
-  const views = news.attributes?.views || news.views || 0;
-  const short_desc = news.attributes?.short_desc || news.short_desc || "";
-  const slug = news.attributes?.slug || news.slug || "";
+  const { title, slug } = news;
+  const views = news.views_count;
+  const short_desc = news.excerpt ?? "";
 
   // Truncate short description to 200 characters
   const truncateText = (text: string, maxLength: number = 30) => {
@@ -25,16 +23,10 @@ export function SingleNews({ news }: SingleNewsProps) {
     return text.substring(0, maxLength).trim() + " ";
   };
 
-  // Format the date to show like "03 Jun"
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "No date";
-    const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
-      day: "2-digit",
-      month: "short",
-    };
-    return date.toLocaleDateString("en-US", options);
-  };
+  // Show the date like "Jun 03"
+  const publishedAt =
+    formatDate(news.published_at, { day: "2-digit", month: "short" }) ||
+    "No date";
 
   return (
     <article className="border-b border-gray-200 pb-4 mb-4 last:border-b-0">
@@ -69,9 +61,7 @@ export function SingleNews({ news }: SingleNewsProps) {
               {/* Published Date */}
               <span className="flex items-center space-x-1 text-sm text-gray-600 ml-4">
                 <span className="inline-block w-3 h-3 bg-yellow-500 rounded-sm"></span>
-                <span className={`${fontInter.className}`}>
-                  {formatDate(publishedAt)}
-                </span>
+                <span className={`${fontInter.className}`}>{publishedAt}</span>
               </span>
 
               {/* Views */}

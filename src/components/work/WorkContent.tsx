@@ -2,11 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { StepWork } from "@/components/work/StepWork";
-import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import WorkInfo from "./WorkInfo";
-import { RecentTestimonials } from "../sections/RecentTestimonials";
-import { RecentBlog } from "../sections/RecentBlog";
-import { NewsSection } from "../immigration_faq/NewsSection";
 
 export function WorkContent() {
   const tPoland = useTranslations("works.steps.poland");
@@ -84,12 +80,6 @@ export function WorkContent() {
         paragraph4={tStep5("paragraph4")}
         isReversed={true}
       />
-
-      <RecentTestimonials />
-      <RecentBlog />
-      <NewsSection />
-      {/* Government Links Section */}
-      <GovernmentLinks />
     </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { NewsItem } from "@/lib/strapi";
+import type { NewsArticleCard } from "@/lib/cms/types";
+import { formatDate } from "@/lib/cms/format";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -9,7 +10,7 @@ import { useLocale } from "next-intl";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleImmigrationNewsProps {
-  news: NewsItem;
+  news: NewsArticleCard;
   index?: number;
 }
 
@@ -18,39 +19,16 @@ export function SingleImmigrationNews({
   index = 0,
 }: SingleImmigrationNewsProps) {
   const locale = useLocale();
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
-  // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
     id: news.id,
-    title: news.attributes?.title || news.title || "Untitled",
-    short_desc: news.attributes?.short_desc || news.short_desc || "",
-    updatedAt:
-      news.attributes?.updatedAt ||
-      news.attributes?.publishedAt ||
-      news.updatedAt ||
-      news.publishedAt ||
-      "",
-    views: news.attributes?.views || news.views || 0,
-    slug: news.attributes?.slug || news.slug || "",
-    news_image:
-      news.attributes?.news_image?.data?.attributes?.url ||
-      news.news_image?.url ||
-      null,
-  };
-
-  // Format date
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "";
-    try {
-      return new Date(dateString).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    } catch {
-      return "";
-    }
+    title: news.title,
+    short_desc: news.excerpt ?? "",
+    publishedAt: news.published_at,
+    views: news.views_count,
+    slug: news.slug,
+    news_image: news.image_url,
+    news_image_alt: news.image_alt || news.title,
   };
 
   // Animation variants
@@ -79,9 +57,10 @@ export function SingleImmigrationNews({
             <div className="relative h-48 md:h-full md:min-h-[200px] overflow-hidden">
               {data.news_image ? (
                 <Image
-                  src={`${data.news_image}`}
-                  alt={data.title}
+                  src={data.news_image}
+                  alt={data.news_image_alt}
                   fill
+                  sizes="(max-width: 768px) 100vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
@@ -104,11 +83,17 @@ export function SingleImmigrationNews({
             <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />
-                <span>{formatDate(data.updatedAt)}</span>
+                <span>
+                  {formatDate(data.publishedAt, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Eye className="w-4 h-4" />
-                <span>{data.views.toLocaleString()} views</span>
+                <span>{data.views.toLocaleString("en-US")} views</span>
               </div>
             </div>
 

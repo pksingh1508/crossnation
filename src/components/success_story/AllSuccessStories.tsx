@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState, useCallback, use } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { SuccessItem, SuccessStoryResponse } from "@/lib/strapi";
+import type { Page, SuccessStoryCard } from "@/lib/cms/types";
 import { SingleSuccessStory } from "./SingleSuccessStory";
 import {
   Loader2,
@@ -23,102 +23,68 @@ interface PaginationData {
   total: number;
 }
 
-interface CachedPage {
-  data: SuccessItem[];
-  timestamp: number;
+const PAGE_SIZE = 10;
+
+interface AllSuccessStoriesProps {
+  /** Page 1, rendered on the server with getSuccessStories(). Null when it could not be loaded. */
+  initialPage: Page<SuccessStoryCard> | null;
 }
 
-export function AllSuccessStories() {
-  // State for success story data and caching
-  const [successStoriesCache, setSuccessStoriesCache] = useState<
-    Map<number, CachedPage>
-  >(new Map());
+export function AllSuccessStories({ initialPage }: AllSuccessStoriesProps) {
   const [currentSuccessStories, setCurrentSuccessStories] = useState<
-    SuccessItem[]
-  >([]);
+    SuccessStoryCard[]
+  >(initialPage?.items ?? []);
   const [pagination, setPagination] = useState<PaginationData>({
-    page: 1,
-    pageSize: 10,
-    pageCount: 1,
-    total: 0,
+    page: initialPage?.page ?? 1,
+    pageSize: initialPage?.pageSize ?? PAGE_SIZE,
+    pageCount: initialPage?.pageCount ?? 1,
+    total: initialPage?.total ?? 0,
   });
 
   // UI state
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(
+    initialPage ? null : "Failed to fetch success stories"
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const t = useTranslations("successStory");
   const tP = useTranslations("pagination");
-  const locale = useLocale();
 
-  // Cache timeout - 5 minutes
-  const CACHE_TIMEOUT = 5 * 60 * 1000;
+  // Every language shows the same stories, so the page only depends on the page number.
+  // The server caches each page, so there is no cache here.
+  const fetchSuccessStories = useCallback(async (page: number) => {
+    try {
+      setLoading(true);
+      setError(null);
 
-  const fetchSuccessStories = useCallback(
-    async (page: number, forceRefresh = false) => {
-      try {
-        // Check if we have cached data for this page
-        const cachedPage = successStoriesCache.get(page);
-        const now = Date.now();
+      const response = await fetch(
+        `/api/cms/success-stories?page=${page}&pageSize=${PAGE_SIZE}`
+      );
 
-        if (
-          !forceRefresh &&
-          cachedPage &&
-          now - cachedPage.timestamp < CACHE_TIMEOUT
-        ) {
-          // Use cached data
-          setCurrentSuccessStories(cachedPage.data);
-          setLoading(false);
-          return;
-        }
-
-        setLoading(true);
-        setError(null);
-
-        const response = await fetch(
-          `/api/success-story?locale=${locale}&page=${page}&pageSize=10`
+      if (!response.ok) {
+        throw new Error(
+          `Failed to fetch success stories: ${response.statusText}`
         );
-
-        if (!response.ok) {
-          throw new Error(
-            `Failed to fetch success stories: ${response.statusText}`
-          );
-        }
-
-        const data: SuccessStoryResponse = await response.json();
-        const successStoryItems = data.data || [];
-
-        // Cache the fetched data
-        setSuccessStoriesCache(
-          (prev) =>
-            new Map(
-              prev.set(page, {
-                data: successStoryItems,
-                timestamp: now,
-              })
-            )
-        );
-
-        setCurrentSuccessStories(successStoryItems);
-
-        if (data.meta?.pagination) {
-          setPagination(data.meta.pagination);
-        }
-      } catch (err) {
-        console.error("Error fetching success stories:", err);
-        setError(
-          err instanceof Error ? err.message : "Failed to fetch success stories"
-        );
-      } finally {
-        setLoading(false);
       }
-    },
-    [locale, successStoriesCache, CACHE_TIMEOUT]
-  );
 
-  useEffect(() => {
-    fetchSuccessStories(1);
-  }, [fetchSuccessStories]);
+      const data: Page<SuccessStoryCard> = await response.json();
+
+      setCurrentSuccessStories(data.items);
+      setPagination({
+        page: data.page,
+        pageSize: data.pageSize,
+        pageCount: data.pageCount,
+        total: data.total,
+      });
+    } catch (err) {
+      console.error("Error fetching success stories:", err);
+      setError(
+        err instanceof Error ? err.message : "Failed to fetch success stories"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   const handlePageChange = (newPage: number) => {
     if (
@@ -135,20 +101,17 @@ export function AllSuccessStories() {
 
   // Filter success stories based on search term
   const filteredSuccessStories = currentSuccessStories.filter((successItem) => {
-    const name = successItem.attributes?.name || successItem.name || "";
-    const whatTheySay =
-      successItem.attributes?.story || successItem.story || "";
+    const name = successItem.name;
+    const story = successItem.story ?? "";
 
     return (
       name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      whatTheySay.toLowerCase().includes(searchTerm.toLowerCase())
+      story.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
 
-  // Clear cache for refresh
   const handleRefresh = () => {
-    setSuccessStoriesCache(new Map());
-    fetchSuccessStories(pagination.page, true);
+    fetchSuccessStories(pagination.page);
   };
 
   // Pagination component

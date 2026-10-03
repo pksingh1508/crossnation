@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AllPermitImage } from "@/components/work_permit/AllPermitImage";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
-import { getAllPermitImages } from "@/lib/strapi";
+import { getWorkPermits } from "@/lib/cms/queries";
 import { getLocalizedUrl } from "@/lib/locale-paths";
 
 const canonicalUrl = getLocalizedUrl(
@@ -22,31 +22,12 @@ export const metadata: Metadata = buildMetadata({
   canonical: canonicalUrl,
 });
 
-async function getInitialPermits() {
-  const token = process.env.STRAPI_ACCESS_TOKEN;
-  if (!token) {
-    return { permits: [], meta: undefined };
-  }
-
-  try {
-    const response = await getAllPermitImages(token, 1, 20, "work-permits");
-    const pagination = response.meta?.pagination;
-    const meta = pagination
-      ? {
-          currentPage: pagination.page ?? 1,
-          totalPages: pagination.pageCount ?? 0,
-          hasNextPage: (pagination.page ?? 1) < (pagination.pageCount ?? 0),
-        }
-      : undefined;
-
-    return { permits: response.data ?? [], meta };
-  } catch (error) {
-    console.error("Failed to prefetch work permit gallery:", error);
-    return { permits: [], meta: undefined };
-  }
-}
-
 export default async function WorkPermitGalleryPage() {
-  const { permits, meta } = await getInitialPermits();
-  return <AllPermitImage initialPermits={permits} initialMeta={meta} />;
+  // Page 1 is rendered here; the gallery loads more images as the visitor scrolls
+  const initialPage = await getWorkPermits(1, 20).catch((error) => {
+    console.error("Failed to prefetch work permit gallery:", error);
+    return null;
+  });
+
+  return <AllPermitImage initialPage={initialPage} />;
 }

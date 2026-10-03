@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { PermitItem, PermitResponse } from "@/lib/strapi";
+import type { GalleryImage, Page } from "@/lib/cms/types";
 import {
   Loader2,
   FileImage,
@@ -16,45 +16,33 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
-interface InitialMeta {
-  currentPage: number;
-  totalPages: number;
-  hasNextPage: boolean;
-}
+const PAGE_SIZE = 20;
 
 interface AllPermitImageProps {
-  initialPermits?: PermitItem[];
-  initialMeta?: InitialMeta;
+  /** Page 1, rendered on the server. When null, the gallery loads it in the browser. */
+  initialPage: Page<GalleryImage> | null;
 }
 
-export function AllPermitImage({
-  initialPermits = [],
-  initialMeta,
-}: AllPermitImageProps) {
-  const [permitImages, setPermitImages] = useState<PermitItem[]>(
-    initialPermits
+export function AllPermitImage({ initialPage }: AllPermitImageProps) {
+  const [permitImages, setPermitImages] = useState<GalleryImage[]>(
+    initialPage?.items ?? []
   );
-  const [loading, setLoading] = useState(initialPermits.length === 0);
+  const [loading, setLoading] = useState(initialPage === null);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
-  const [currentPage, setCurrentPage] = useState(
-    initialMeta?.currentPage ?? 1
-  );
+  const [currentPage, setCurrentPage] = useState(initialPage?.page ?? 1);
   const [hasNextPage, setHasNextPage] = useState(
-    initialMeta?.hasNextPage ?? true
+    initialPage ? initialPage.page < initialPage.pageCount : true
   );
-  const [totalPages, setTotalPages] = useState(
-    initialMeta?.totalPages ?? 0
-  );
+  const [totalPages, setTotalPages] = useState(initialPage?.pageCount ?? 0);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastImageRef = useRef<HTMLDivElement | null>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const skipInitialFetchRef = useRef(initialPermits.length > 0);
+  const hasInitialPage = initialPage !== null;
   const t = useTranslations("workPermit");
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   const fetchPermitImages = useCallback(
     async (page: number = 1, append: boolean = false) => {
@@ -67,7 +55,7 @@ export function AllPermitImage({
         setError(null);
 
         const response = await fetch(
-          `/api/work-permit?page=${page}&pageSize=20`
+          `/api/cms/work-permits?page=${page}&pageSize=${PAGE_SIZE}`
         );
 
         if (!response.ok) {
@@ -76,29 +64,19 @@ export function AllPermitImage({
           );
         }
 
-        const data: PermitResponse = await response.json();
+        const data: Page<GalleryImage> = await response.json();
 
         // Update state based on whether we're appending or replacing
         if (append) {
-          setPermitImages((prev) => [...prev, ...(data.data || [])]);
+          setPermitImages((prev) => [...prev, ...data.items]);
         } else {
-          setPermitImages(data.data || []);
+          setPermitImages(data.items);
         }
 
         // Update pagination info
-        if (data.meta?.pagination) {
-          setTotalPages(data.meta.pagination.pageCount || 0);
-          setCurrentPage(data.meta.pagination.page || page);
-          setHasNextPage(
-            (data.meta.pagination.page || page) <
-              (data.meta.pagination.pageCount || 0)
-          );
-        } else {
-          // Fallback logic if pagination meta is not available
-          const hasMore = (data.data || []).length === 20; // Assuming pageSize is 20
-          setHasNextPage(hasMore);
-          setCurrentPage(page);
-        }
+        setTotalPages(data.pageCount);
+        setCurrentPage(data.page);
+        setHasNextPage(data.page < data.pageCount);
       } catch (err) {
         console.error("Error fetching permit images:", err);
         setError(
@@ -116,13 +94,11 @@ export function AllPermitImage({
   );
 
   useEffect(() => {
-    if (skipInitialFetchRef.current) {
-      skipInitialFetchRef.current = false;
-      setLoading(false);
-      return;
+    // Page 1 normally comes from the server; load it here only if that failed
+    if (!hasInitialPage) {
+      fetchPermitImages();
     }
-    fetchPermitImages();
-  }, [fetchPermitImages]);
+  }, [hasInitialPage, fetchPermitImages]);
 
   // Load more images function
   const loadMore = useCallback(async () => {
@@ -227,7 +203,7 @@ export function AllPermitImage({
         observerRef.current.unobserve(lastImageRef.current);
       }
     };
-  }, [permitImages.length]); // Changed from permitImages to imageUrls.length
+  }, [permitImages.length]); // Changed from permitImages to permitImages.length
 
   const handleImageClick = (index: number) => {
     setSelectedImageIndex(index);
@@ -269,21 +245,9 @@ export function AllPermitImage({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedImageIndex]);
 
-  // Get full image URLs
-  const getImageUrls = () => {
-    return permitImages
-      .map((item) => {
-        const imageUrl =
-          item.attributes?.permit_image?.data?.attributes?.url ||
-          item.permit_image?.url ||
-          "";
-
-        return imageUrl.startsWith("http") ? imageUrl : `${URL}${imageUrl}`;
-      })
-      .filter((url) => url !== "");
-  };
-
-  const imageUrls = getImageUrls();
+  // Image URLs from the CMS are complete, and every work permit has one
+  const selectedImage =
+    selectedImageIndex !== null ? permitImages[selectedImageIndex] : null;
 
   if (loading) {
     return (
@@ -369,7 +333,7 @@ export function AllPermitImage({
           </div>
 
           {/* Image Grid */}
-          {imageUrls.length === 0 ? (
+          {permitImages.length === 0 ? (
             <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                 <FileImage className="w-8 h-8 text-gray-400" />
@@ -389,10 +353,12 @@ export function AllPermitImage({
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               >
-                {imageUrls.map((imageUrl, index) => (
+                {permitImages.map((item, index) => (
                   <motion.div
-                    key={index}
-                    ref={index === imageUrls.length - 1 ? lastImageRef : null}
+                    key={item.id}
+                    ref={
+                      index === permitImages.length - 1 ? lastImageRef : null
+                    }
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -402,8 +368,8 @@ export function AllPermitImage({
                     {/* Image */}
                     <div className="relative aspect-[3/4] overflow-hidden">
                       <Image
-                        src={imageUrl}
-                        alt={`Work Permit ${index + 1}`}
+                        src={item.image_url}
+                        alt={item.image_alt || `Work Permit ${index + 1}`}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
@@ -430,7 +396,7 @@ export function AllPermitImage({
               {hasNextPage &&
                 !loadingMore &&
                 !loading &&
-                imageUrls.length > 0 && (
+                permitImages.length > 0 && (
                   <div className="flex justify-center py-8 mt-8">
                     <Button
                       onClick={() => loadMore()}
@@ -449,7 +415,7 @@ export function AllPermitImage({
 
       {/* Modal */}
       <AnimatePresence>
-        {selectedImageIndex !== null && (
+        {selectedImageIndex !== null && selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -466,7 +432,7 @@ export function AllPermitImage({
             </button>
 
             {/* Navigation buttons */}
-            {imageUrls.length > 1 && (
+            {permitImages.length > 1 && (
               <>
                 <button
                   onClick={(e) => {
@@ -484,7 +450,7 @@ export function AllPermitImage({
                     e.stopPropagation();
                     handleNext();
                   }}
-                  disabled={selectedImageIndex === imageUrls.length - 1}
+                  disabled={selectedImageIndex === permitImages.length - 1}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
@@ -493,10 +459,10 @@ export function AllPermitImage({
             )}
 
             {/* Image counter */}
-            {imageUrls.length > 1 && (
+            {permitImages.length > 1 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
                 <p className="text-white text-sm">
-                  {selectedImageIndex + 1} / {imageUrls.length}
+                  {selectedImageIndex + 1} / {permitImages.length}
                 </p>
               </div>
             )}
@@ -511,10 +477,13 @@ export function AllPermitImage({
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={imageUrls[selectedImageIndex]}
-                alt={`Work Permit ${selectedImageIndex + 1}`}
-                width={1200}
-                height={1600}
+                src={selectedImage.image_url}
+                alt={
+                  selectedImage.image_alt ||
+                  `Work Permit ${selectedImageIndex + 1}`
+                }
+                width={selectedImage.image_width ?? 1200}
+                height={selectedImage.image_height ?? 1600}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg"
                 priority
               />

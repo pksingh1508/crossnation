@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { VisaStampItem, VisaStampResponse } from "@/lib/strapi";
+import type { GalleryImage, Page } from "@/lib/cms/types";
 import {
   Loader2,
   Stamp,
@@ -16,45 +16,33 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
-interface InitialMeta {
-  currentPage: number;
-  totalPages: number;
-  hasNextPage: boolean;
-}
+const PAGE_SIZE = 20;
 
 interface AllVisaStampProps {
-  initialStamps?: VisaStampItem[];
-  initialMeta?: InitialMeta;
+  /** Page 1, rendered on the server. When null, the gallery loads it in the browser. */
+  initialPage: Page<GalleryImage> | null;
 }
 
-export function AllVisaStampImage({
-  initialStamps = [],
-  initialMeta,
-}: AllVisaStampProps) {
-  const [stampImages, setStampImages] = useState<VisaStampItem[]>(
-    initialStamps
+export function AllVisaStampImage({ initialPage }: AllVisaStampProps) {
+  const [stampImages, setStampImages] = useState<GalleryImage[]>(
+    initialPage?.items ?? []
   );
-  const [loading, setLoading] = useState(initialStamps.length === 0);
+  const [loading, setLoading] = useState(initialPage === null);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
-  const [currentPage, setCurrentPage] = useState(
-    initialMeta?.currentPage ?? 1
-  );
+  const [currentPage, setCurrentPage] = useState(initialPage?.page ?? 1);
   const [hasNextPage, setHasNextPage] = useState(
-    initialMeta?.hasNextPage ?? true
+    initialPage ? initialPage.page < initialPage.pageCount : true
   );
-  const [totalPages, setTotalPages] = useState(
-    initialMeta?.totalPages ?? 0
-  );
+  const [totalPages, setTotalPages] = useState(initialPage?.pageCount ?? 0);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastImageRef = useRef<HTMLDivElement | null>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const skipInitialFetchRef = useRef(initialStamps.length > 0);
+  const hasInitialPage = initialPage !== null;
   const t = useTranslations("visaStamp");
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
   const fetchStampImages = useCallback(
     async (page: number = 1, append: boolean = false) => {
@@ -67,7 +55,7 @@ export function AllVisaStampImage({
         setError(null);
 
         const response = await fetch(
-          `/api/visa-stamp?page=${page}&pageSize=20`
+          `/api/cms/visa-stamps?page=${page}&pageSize=${PAGE_SIZE}`
         );
 
         if (!response.ok) {
@@ -76,29 +64,19 @@ export function AllVisaStampImage({
           );
         }
 
-        const data: VisaStampResponse = await response.json();
+        const data: Page<GalleryImage> = await response.json();
 
         // Update state based on whether we're appending or replacing
         if (append) {
-          setStampImages((prev) => [...prev, ...(data.data || [])]);
+          setStampImages((prev) => [...prev, ...data.items]);
         } else {
-          setStampImages(data.data || []);
+          setStampImages(data.items);
         }
 
         // Update pagination info
-        if (data.meta?.pagination) {
-          setTotalPages(data.meta.pagination.pageCount || 0);
-          setCurrentPage(data.meta.pagination.page || page);
-          setHasNextPage(
-            (data.meta.pagination.page || page) <
-              (data.meta.pagination.pageCount || 0)
-          );
-        } else {
-          // Fallback logic if pagination meta is not available
-          const hasMore = (data.data || []).length === 20; // Assuming pageSize is 20
-          setHasNextPage(hasMore);
-          setCurrentPage(page);
-        }
+        setTotalPages(data.pageCount);
+        setCurrentPage(data.page);
+        setHasNextPage(data.page < data.pageCount);
       } catch (err) {
         console.error("Error fetching stamp images:", err);
         setError(
@@ -116,13 +94,11 @@ export function AllVisaStampImage({
   );
 
   useEffect(() => {
-    if (skipInitialFetchRef.current) {
-      skipInitialFetchRef.current = false;
-      setLoading(false);
-      return;
+    // Page 1 normally comes from the server; load it here only if that failed
+    if (!hasInitialPage) {
+      fetchStampImages();
     }
-    fetchStampImages();
-  }, [fetchStampImages]);
+  }, [hasInitialPage, fetchStampImages]);
 
   // Load more images function
   const loadMore = useCallback(async () => {
@@ -282,21 +258,9 @@ export function AllVisaStampImage({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedImageIndex]);
 
-  // Get full image URLs
-  const getImageUrls = () => {
-    return stampImages
-      .map((item) => {
-        const imageUrl =
-          item.attributes?.stamp_image?.data?.attributes?.url ||
-          item.stamp_image?.url ||
-          "";
-
-        return imageUrl.startsWith("http") ? imageUrl : `${URL}${imageUrl}`;
-      })
-      .filter((url) => url !== "");
-  };
-
-  const imageUrls = getImageUrls();
+  // Image URLs from the CMS are complete, and every visa stamp has one
+  const selectedImage =
+    selectedImageIndex !== null ? stampImages[selectedImageIndex] : null;
 
   if (loading) {
     return (
@@ -382,7 +346,7 @@ export function AllVisaStampImage({
           </div>
 
           {/* Image Grid */}
-          {imageUrls.length === 0 ? (
+          {stampImages.length === 0 ? (
             <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                 <Stamp className="w-8 h-8 text-gray-400" />
@@ -402,10 +366,10 @@ export function AllVisaStampImage({
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               >
-                {imageUrls.map((imageUrl, index) => (
+                {stampImages.map((item, index) => (
                   <motion.div
-                    key={index}
-                    ref={index === imageUrls.length - 1 ? lastImageRef : null}
+                    key={item.id}
+                    ref={index === stampImages.length - 1 ? lastImageRef : null}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -415,8 +379,8 @@ export function AllVisaStampImage({
                     {/* Image */}
                     <div className="relative aspect-[3/4] overflow-hidden">
                       <Image
-                        src={imageUrl}
-                        alt={`Visa Stamp ${index + 1}`}
+                        src={item.image_url}
+                        alt={item.image_alt || `Visa Stamp ${index + 1}`}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
@@ -443,7 +407,7 @@ export function AllVisaStampImage({
               {hasNextPage &&
                 !loadingMore &&
                 !loading &&
-                imageUrls.length > 0 && (
+                stampImages.length > 0 && (
                   <div className="flex justify-center py-8 mt-8">
                     <Button
                       onClick={() => loadMore()}
@@ -462,7 +426,7 @@ export function AllVisaStampImage({
 
       {/* Modal */}
       <AnimatePresence>
-        {selectedImageIndex !== null && (
+        {selectedImageIndex !== null && selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -479,7 +443,7 @@ export function AllVisaStampImage({
             </button>
 
             {/* Navigation buttons */}
-            {imageUrls.length > 1 && (
+            {stampImages.length > 1 && (
               <>
                 <button
                   onClick={(e) => {
@@ -497,7 +461,7 @@ export function AllVisaStampImage({
                     e.stopPropagation();
                     handleNext();
                   }}
-                  disabled={selectedImageIndex === imageUrls.length - 1}
+                  disabled={selectedImageIndex === stampImages.length - 1}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
@@ -506,10 +470,10 @@ export function AllVisaStampImage({
             )}
 
             {/* Image counter */}
-            {imageUrls.length > 1 && (
+            {stampImages.length > 1 && (
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
                 <p className="text-white text-sm">
-                  {selectedImageIndex + 1} / {imageUrls.length}
+                  {selectedImageIndex + 1} / {stampImages.length}
                 </p>
               </div>
             )}
@@ -524,10 +488,13 @@ export function AllVisaStampImage({
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={imageUrls[selectedImageIndex]}
-                alt={`Visa Stamp ${selectedImageIndex + 1}`}
-                width={1200}
-                height={1600}
+                src={selectedImage.image_url}
+                alt={
+                  selectedImage.image_alt ||
+                  `Visa Stamp ${selectedImageIndex + 1}`
+                }
+                width={selectedImage.image_width ?? 1200}
+                height={selectedImage.image_height ?? 1600}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg"
                 priority
               />

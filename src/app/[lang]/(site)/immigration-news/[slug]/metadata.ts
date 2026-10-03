@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/constants/site";
-import { getSingleNews } from "@/lib/strapi";
+import { getNewsArticle } from "@/lib/cms/queries";
+import { canonicalSlug } from "@/lib/cms/slug";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { getLocalizedUrl } from "@/lib/locale-paths";
 
@@ -8,103 +9,59 @@ interface RouteParams {
   params: Promise<{ slug?: string; lang?: string }>;
 }
 
+const FALLBACK_TITLE = "Immigration News Article";
 const FALLBACK_DESCRIPTION =
   "Stay updated with EU Career Serwis immigration news, policy changes, and recruitment developments across Europe.";
-
-function normalizeText(content?: string, fallback: string = FALLBACK_DESCRIPTION) {
-  if (!content) {
-    return fallback;
-  }
-  const stripped = content
-    .replace(/<[^>]+>/g, "")
-    .replace(/[`*_>#]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-  return stripped.length > 40 ? stripped : fallback;
-}
-
-function extractMediaUrl(media: unknown): string | undefined {
-  if (!media) {
-    return undefined;
-  }
-
-  if (typeof media === "string") {
-    return media;
-  }
-
-  if (typeof media === "object") {
-    const withUrl = media as { url?: string };
-    if (typeof withUrl.url === "string") {
-      return withUrl.url;
-    }
-
-    const withData = media as {
-      data?: { attributes?: { url?: string } };
-    };
-    if (typeof withData.data?.attributes?.url === "string") {
-      return withData.data.attributes.url;
-    }
-  }
-
-  return undefined;
-}
 
 export async function generateMetadata({
   params,
 }: RouteParams): Promise<Metadata> {
-  const resolvedParams = await params;
-  const { slug = "" } = resolvedParams || {};
+  const { slug = "" } = await params;
+  const clean = canonicalSlug(slug);
+  // Every language shows the same article, so the English address is the canonical one
   const canonical = getLocalizedUrl(
     siteConfig.defaultLanguage,
-    `/immigration-news/${slug}`
+    `/immigration-news/${clean}`
   );
-  const token = process.env.STRAPI_ACCESS_TOKEN;
-
-  if (!slug || !token) {
-    return buildMetadata({
-      title: "Immigration News Article",
+  const fallback = () =>
+    buildMetadata({
+      title: FALLBACK_TITLE,
       description: FALLBACK_DESCRIPTION,
       canonical,
     });
+
+  if (!clean) {
+    return fallback();
   }
 
   try {
-    const response = await getSingleNews(
-      token,
-      slug,
-      siteConfig.defaultLanguage,
-      "immigration-news"
-    );
-    const entry = response?.data?.[0];
-    const attributes = entry?.attributes ?? entry;
+    const news = await getNewsArticle(clean);
+    if (!news) {
+      return fallback();
+    }
 
-    const title = attributes?.title || "Immigration News Article";
-    const description = normalizeText(
-      attributes?.short_desc || attributes?.contents,
-      FALLBACK_DESCRIPTION
-    );
-    const ogImage =
-      extractMediaUrl(attributes?.news_image) || siteConfig.ogImage;
-
-    const keywords = [
-      attributes?.category,
-      "immigration news",
-      "EU Career Serwis",
-    ].filter(Boolean) as string[];
-
-    return buildMetadata({
-      title,
-      description,
-      image: ogImage,
-      keywords,
+    const metadata = buildMetadata({
+      title: news.seo_title || news.title,
+      description: news.seo_description || news.excerpt || FALLBACK_DESCRIPTION,
+      image: news.image_url || siteConfig.ogImage,
+      keywords:
+        news.tags.length > 0
+          ? news.tags
+          : ["immigration news", "EU Career Serwis"],
       canonical,
     });
+
+    return {
+      ...metadata,
+      openGraph: {
+        ...metadata.openGraph,
+        type: "article",
+        publishedTime: news.published_at ?? undefined,
+        modifiedTime: news.updated_at,
+      },
+    };
   } catch (error) {
     console.error("Failed to generate news metadata:", error);
-    return buildMetadata({
-      title: "Immigration News Article",
-      description: FALLBACK_DESCRIPTION,
-      canonical,
-    });
+    return fallback();
   }
 }

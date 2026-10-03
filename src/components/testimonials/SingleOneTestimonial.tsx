@@ -1,12 +1,12 @@
 "use client";
 
-import { TestimonialItem } from "@/lib/strapi";
+import type { TestimonialCard } from "@/lib/cms/types";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Eye, User } from "lucide-react";
 
 interface SingleOneTestimonialProps {
-  testimonial: TestimonialItem;
+  testimonial: TestimonialCard;
   index?: number;
 }
 
@@ -14,22 +14,12 @@ export function SingleOneTestimonial({
   testimonial,
   index = 0,
 }: SingleOneTestimonialProps) {
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
-  // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
     id: testimonial.id,
-    name: testimonial.attributes?.name || testimonial.name || "Anonymous",
-    what_they_say:
-      testimonial.attributes?.what_they_say || testimonial.what_they_say || "",
-    role: testimonial.attributes?.role || testimonial.role || "",
-    slug: testimonial.attributes?.slug || testimonial.slug || "",
-    view_count:
-      testimonial.attributes?.view_count || testimonial.view_count || 0,
-    updatedAt: testimonial.attributes?.updatedAt || testimonial.updatedAt || "",
-    user_image:
-      testimonial.attributes?.user_image?.data?.attributes?.url ||
-      testimonial.user_image?.url ||
-      null,
+    name: testimonial.name || "Anonymous",
+    quote: testimonial.quote ?? "",
+    views_count: testimonial.views_count,
+    user_image: testimonial.image_url,
   };
 
   // Animation variants
@@ -56,8 +46,8 @@ export function SingleOneTestimonial({
             <div className="rounded-xl overflow-hidden shadow-md">
               {data.user_image ? (
                 <Image
-                  src={`${data.user_image}`}
-                  alt={`${data.name} - testimonial`}
+                  src={data.user_image}
+                  alt={testimonial.image_alt || `${data.name} - testimonial`}
                   width={128}
                   height={128}
                   className="w-full h-full object-cover"
@@ -81,18 +71,15 @@ export function SingleOneTestimonial({
             <div className="flex items-center gap-2 mb-4">
               <div className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
                 <Eye className="w-4 h-4" />
-                <span>Views: {data.view_count.toLocaleString()}</span>
+                <span>Views: {data.views_count.toLocaleString("en-US")}</span>
               </div>
-              {data.role && (
-                <div className="inline-flex items-center bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
-                  {data.role}
-                </div>
-              )}
             </div>
 
-            {/* Testimonial content */}
+            {/* Testimonial content: plain text that can contain line breaks */}
             <div className="text-gray-700 leading-relaxed">
-              <p className="text-base md:text-lg">{data.what_they_say}</p>
+              <p className="text-base md:text-lg whitespace-pre-line">
+                {data.quote}
+              </p>
             </div>
           </div>
         </div>

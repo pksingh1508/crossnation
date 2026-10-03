@@ -1,38 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { NewsItem } from "@/lib/strapi";
+import type { NewsArticleCard } from "@/lib/cms/types";
+import { formatDate } from "@/lib/cms/format";
 import Image from "next/image";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleNewsProps {
-  news: NewsItem;
+  news: NewsArticleCard;
 }
 
 export function SingleLatestNews({ news }: SingleNewsProps) {
   const locale = useLocale();
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
-  // Handle both nested attributes structure and flat structure
-  const title = news.attributes?.title || news.title || "Untitled";
-  const publishedAt = news.attributes?.updatedAt || news.updatedAt || "";
-  const views = news.attributes?.views || news.views || 0;
-  const slug = news.attributes?.slug || news.slug || "";
-  const news_image =
-    news.attributes?.news_image?.data?.attributes?.url ||
-    news.news_image?.url ||
-    "";
+  const { title, slug } = news;
+  const views = news.views_count;
+  const news_image = news.image_url;
 
-  // Format the date to show like "03 Jun"
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "No date";
-    const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
-      day: "2-digit",
-      month: "short",
-    };
-    return date.toLocaleDateString("en-US", options);
-  };
+  // Show the date like "Jun 03"
+  const publishedAt =
+    formatDate(news.published_at, { day: "2-digit", month: "short" }) ||
+    "No date";
 
   return (
     <Link
@@ -45,8 +33,8 @@ export function SingleLatestNews({ news }: SingleNewsProps) {
           <div className="flex-shrink-0 w-27 h-20 overflow-hidden rounded-lg">
             {news_image ? (
               <Image
-                src={`${news_image}`}
-                alt={title}
+                src={news_image}
+                alt={news.image_alt || title}
                 width={80}
                 height={80}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -68,9 +56,7 @@ export function SingleLatestNews({ news }: SingleNewsProps) {
             {/* Date and Likes */}
             <div className="flex items-center gap-4 text-sm text-gray-600">
               <div className="flex items-center space-x-1">
-                <span className="text-gray-500 font-medium">
-                  {formatDate(publishedAt)}
-                </span>
+                <span className="text-gray-500 font-medium">{publishedAt}</span>
               </div>
 
               <div className="flex items-center space-x-1">
