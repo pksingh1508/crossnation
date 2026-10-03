@@ -683,13 +683,13 @@
     "paragraph1": "Pas sûr de quel pays européen convient le mieux à votre profil ?",
     "paragraph2": "Chez EU Career Serwis, nous fournissons des conseils de carrière personnalisés.",
     "buttons": [
-      { "text": "Pologne" },
-      { "text": "Slovaquie" },
-      { "text": "Lituanie" },
-      { "text": "République Tchèque" },
-      { "text": "Serbie" },
-      { "text": "Espagne" },
-      { "text": "Croatie" }
+      { "text": "Pologne", "code": "PL" },
+      { "text": "Slovaquie", "code": "SK" },
+      { "text": "Lituanie", "code": "LT" },
+      { "text": "République Tchèque", "code": "CZ" },
+      { "text": "Serbie", "code": "RS" },
+      { "text": "Espagne", "code": "ES" },
+      { "text": "Croatie", "code": "HR" }
     ],
     "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
     "imageAlt": "Opportunités de carrière européennes"
@@ -698,10 +698,10 @@
     "heading": "Migrer",
     "paragraph1": "Migrez vers l'Europe avec EU Career Serwis et commencez un avenir réussi à l'étranger.",
     "buttons": [
-      { "text": "Allemagne" },
-      { "text": "Espagne" },
-      { "text": "Italie" },
-      { "text": "Finlande" }
+      { "text": "Allemagne", "code": "DE" },
+      { "text": "Espagne", "code": "ES" },
+      { "text": "Italie", "code": "IT" },
+      { "text": "Finlande", "code": "FI" }
     ],
     "imageSrc": "/migrate.webp",
     "imageAlt": "Opportunités de migration vers l'Europe"
@@ -710,10 +710,10 @@
     "heading": "Stage",
     "paragraph1": "Nous offrons des opportunités de stage dans multiples pays pour les professionnels qualifiés.",
     "buttons": [
-      { "text": "Espagne" },
-      { "text": "Pologne" },
-      { "text": "Italie" },
-      { "text": "Portugal" }
+      { "text": "Espagne", "code": "ES" },
+      { "text": "Pologne", "code": "PL" },
+      { "text": "Italie", "code": "IT" },
+      { "text": "Portugal", "code": "PT" }
     ],
     "imageSrc": "/traineeship.webp",
     "imageAlt": "Opportunités de stage en Europe"
@@ -722,15 +722,15 @@
     "heading": "Étudier",
     "paragraph1": "Étudier en Europe est une opportunité de gagner une éducation de classe mondiale.",
     "buttons": [
-      { "text": "Pologne" },
-      { "text": "Finlande" },
-      { "text": "Allemagne" },
-      { "text": "Espagne" },
-      { "text": "Portugal" },
-      { "text": "Lettonie" },
-      { "text": "Royaume-Uni" },
-      { "text": "Irlande" },
-      { "text": "Canada" }
+      { "text": "Pologne", "code": "PL" },
+      { "text": "Finlande", "code": "FI" },
+      { "text": "Allemagne", "code": "DE" },
+      { "text": "Espagne", "code": "ES" },
+      { "text": "Portugal", "code": "PT" },
+      { "text": "Lettonie", "code": "LV" },
+      { "text": "Royaume-Uni", "code": "GB" },
+      { "text": "Irlande", "code": "IE" },
+      { "text": "Canada", "code": "CA" }
     ],
     "imageSrc": "/study.webp",
     "imageAlt": "Opportunités d'études en Europe"
@@ -739,11 +739,11 @@
     "heading": "Investisseur",
     "paragraph1": "Si vous êtes un investisseur cherchant des opportunités en Europe, nous offrons multiples projets.",
     "buttons": [
-      { "text": "Allemagne" },
-      { "text": "Slovaquie" },
-      { "text": "Espagne" },
-      { "text": "Lituanie" },
-      { "text": "Finlande" }
+      { "text": "Allemagne", "code": "DE" },
+      { "text": "Slovaquie", "code": "SK" },
+      { "text": "Espagne", "code": "ES" },
+      { "text": "Lituanie", "code": "LT" },
+      { "text": "Finlande", "code": "FI" }
     ],
     "imageSrc": "/invest.webp",
     "imageAlt": "Opportunités d'investissement en Europe"
@@ -752,12 +752,12 @@
     "heading": "Visiter",
     "paragraph1": "Si vous souhaitez explorer l'Europe, nous fournissons un soutien complet pour les visas.",
     "buttons": [
-      { "text": "Pologne" },
-      { "text": "Suisse" },
-      { "text": "Allemagne" },
-      { "text": "Lettonie" },
-      { "text": "Finlande" },
-      { "text": "Luxembourg" }
+      { "text": "Pologne", "code": "PL" },
+      { "text": "Suisse", "code": "CH" },
+      { "text": "Allemagne", "code": "DE" },
+      { "text": "Lettonie", "code": "LV" },
+      { "text": "Finlande", "code": "FI" },
+      { "text": "Luxembourg", "code": "LU" }
     ],
     "imageSrc": "/visit.webp",
     "imageAlt": "Opportunités de visite en Europe"

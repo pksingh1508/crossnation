@@ -681,15 +681,15 @@
   "customHero": {
     "heading": "Lavoro",
     "paragraph1": "Non sai quale paese europeo si adatta meglio al tuo profilo, competenze ed esperienza? Scegliere il percorso giusto è il primo passo verso un futuro sicuro e gratificante.",
-    "paragraph2": "Noi di [EU Career Serwis] offriamo orientamento personalizzato per esplorare opportunità con datori di lavoro europei affidabili. Valuteremo attentamente le tue qualifiche e consiglieremo le opzioni più adatte alla tua crescita professionale.",
+    "paragraph2": "Noi di EU Career Serwis offriamo orientamento personalizzato per esplorare opportunità con datori di lavoro europei affidabili. Valuteremo attentamente le tue qualifiche e consiglieremo le opzioni più adatte alla tua crescita professionale.",
     "buttons": [
-      { "text": "Polonia" },
-      { "text": "Slovacchia" },
-      { "text": "Lituania" },
-      { "text": "Repubblica Ceca" },
-      { "text": "Serbia" },
-      { "text": "Spagna" },
-      { "text": "Croazia" }
+      { "text": "Polonia", "code": "PL" },
+      { "text": "Slovacchia", "code": "SK" },
+      { "text": "Lituania", "code": "LT" },
+      { "text": "Repubblica Ceca", "code": "CZ" },
+      { "text": "Serbia", "code": "RS" },
+      { "text": "Spagna", "code": "ES" },
+      { "text": "Croazia", "code": "HR" }
     ],
     "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
     "imageAlt": "Opportunità di carriera in Europa"
@@ -698,10 +698,10 @@
     "heading": "Migrare",
     "paragraph1": "Migra in Europa con EU Career Serwis e fai il primo passo verso un futuro di successo e soddisfazione all'estero. Siamo specializzati nell'orientare professionisti come te verso il paese, l'opportunità e il percorso giusti.",
     "buttons": [
-      { "text": "Germania" },
-      { "text": "Spagna" },
-      { "text": "Italia" },
-      { "text": "Finlandia" }
+      { "text": "Germania", "code": "DE" },
+      { "text": "Spagna", "code": "ES" },
+      { "text": "Italia", "code": "IT" },
+      { "text": "Finlandia", "code": "FI" }
     ],
     "imageSrc": "/migrate.webp",
     "imageAlt": "Migrazione verso l'Europa"
@@ -710,27 +710,27 @@
     "heading": "Tirocinio",
     "paragraph1": "Offriamo opportunità di tirocinio in più paesi per professionisti qualificati. Al termine riceverai certificazione e supporto all'inserimento presso aziende affidabili, per un percorso in linea con i tuoi obiettivi.",
     "buttons": [
-      { "text": "Spagna" },
-      { "text": "Polonia" },
-      { "text": "Italia" },
-      { "text": "Portogallo" }
+      { "text": "Spagna", "code": "ES" },
+      { "text": "Polonia", "code": "PL" },
+      { "text": "Italia", "code": "IT" },
+      { "text": "Portogallo", "code": "PT" }
     ],
     "imageSrc": "/traineeship.webp",
     "imageAlt": "Opportunità di tirocinio in Europa"
   },
   "customHeroStudy": {
     "heading": "Studio",
-    "paragraph1": "Studiare in Europa significa molto più che conseguire una laurea: è un'opportunità per ottenere un'istruzione di livello mondiale, vivere culture diverse e costruire solide basi per la tua carriera",
+    "paragraph1": "Studiare in Europa significa molto più che conseguire una laurea: è un'opportunità per ottenere un'istruzione di livello mondiale, vivere culture diverse e costruire solide basi per la tua carriera.",
     "buttons": [
-      { "text": "Polonia" },
-      { "text": "Finlandia" },
-      { "text": "Germania" },
-      { "text": "Spagna" },
-      { "text": "Portogallo" },
-      { "text": "Lettonia" },
-      { "text": "Regno Unito" },
-      { "text": "Irlanda" },
-      { "text": "Canada" }
+      { "text": "Polonia", "code": "PL" },
+      { "text": "Finlandia", "code": "FI" },
+      { "text": "Germania", "code": "DE" },
+      { "text": "Spagna", "code": "ES" },
+      { "text": "Portogallo", "code": "PT" },
+      { "text": "Lettonia", "code": "LV" },
+      { "text": "Regno Unito", "code": "GB" },
+      { "text": "Irlanda", "code": "IE" },
+      { "text": "Canada", "code": "CA" }
     ],
     "imageSrc": "/study.webp",
     "imageAlt": "Opportunità di studio in Europa e oltre"
@@ -739,11 +739,11 @@
     "heading": "Investitore",
     "paragraph1": "Se sei un investitore e vuoi esplorare opportunità in Europa, offriamo progetti in vari settori orientati alla crescita e alla redditività. Forniamo supporto end‑to‑end per identificare l'investimento giusto, navigare le normative e raggiungere i tuoi obiettivi nel mercato europeo.",
     "buttons": [
-      { "text": "Germania" },
-      { "text": "Slovacchia" },
-      { "text": "Spagna" },
-      { "text": "Lituania" },
-      { "text": "Finlandia" }
+      { "text": "Germania", "code": "DE" },
+      { "text": "Slovacchia", "code": "SK" },
+      { "text": "Spagna", "code": "ES" },
+      { "text": "Lituania", "code": "LT" },
+      { "text": "Finlandia", "code": "FI" }
     ],
     "imageSrc": "/invest.webp",
     "imageAlt": "Opportunità di investimento in Europa"
@@ -752,12 +752,12 @@
     "heading": "Visita",
     "paragraph1": "Se desideri esplorare l'Europa e richiedere un visto turistico, contatta il nostro team di supporto. Forniamo guida e assistenza complete durante l'intero processo, per un'esperienza di visto senza intoppi.",
     "buttons": [
-      { "text": "Polonia" },
-      { "text": "Svizzera" },
-      { "text": "Germania" },
-      { "text": "Lettonia" },
-      { "text": "Finlandia" },
-      { "text": "Lussemburgo" }
+      { "text": "Polonia", "code": "PL" },
+      { "text": "Svizzera", "code": "CH" },
+      { "text": "Germania", "code": "DE" },
+      { "text": "Lettonia", "code": "LV" },
+      { "text": "Finlandia", "code": "FI" },
+      { "text": "Lussemburgo", "code": "LU" }
     ],
     "imageSrc": "/visit.webp",
     "imageAlt": "Visita l'Europa"

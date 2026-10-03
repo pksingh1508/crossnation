@@ -683,13 +683,13 @@
     "paragraph1": "Nie jesteś pewien, który kraj europejski najlepiej pasuje do twojego profilu?",
     "paragraph2": "W EU Career Serwis zapewniamy spersonalizowane doradztwo kariery.",
     "buttons": [
-      { "text": "Polska" },
-      { "text": "Słowacja" },
-      { "text": "Litwa" },
-      { "text": "Republika Czeska" },
-      { "text": "Serbia" },
-      { "text": "Hiszpania" },
-      { "text": "Chorwacja" }
+      { "text": "Polska", "code": "PL" },
+      { "text": "Słowacja", "code": "SK" },
+      { "text": "Litwa", "code": "LT" },
+      { "text": "Republika Czeska", "code": "CZ" },
+      { "text": "Serbia", "code": "RS" },
+      { "text": "Hiszpania", "code": "ES" },
+      { "text": "Chorwacja", "code": "HR" }
     ],
     "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
     "imageAlt": "Europejskie możliwości kariery"
@@ -698,10 +698,10 @@
     "heading": "Migracja",
     "paragraph1": "Migruj do Europy z EU Career Serwis i rozpocznij udaną przyszłość za granicą.",
     "buttons": [
-      { "text": "Niemcy" },
-      { "text": "Hiszpania" },
-      { "text": "Włochy" },
-      { "text": "Finlandia" }
+      { "text": "Niemcy", "code": "DE" },
+      { "text": "Hiszpania", "code": "ES" },
+      { "text": "Włochy", "code": "IT" },
+      { "text": "Finlandia", "code": "FI" }
     ],
     "imageSrc": "/migrate.webp",
     "imageAlt": "Możliwości migracji do Europy"
@@ -710,10 +710,10 @@
     "heading": "Staż",
     "paragraph1": "Zapewniamy możliwości stażowe w wielu krajach dla wykwalifikowanych profesjonalistów.",
     "buttons": [
-      { "text": "Hiszpania" },
-      { "text": "Polska" },
-      { "text": "Włochy" },
-      { "text": "Portugalia" }
+      { "text": "Hiszpania", "code": "ES" },
+      { "text": "Polska", "code": "PL" },
+      { "text": "Włochy", "code": "IT" },
+      { "text": "Portugalia", "code": "PT" }
     ],
     "imageSrc": "/traineeship.webp",
     "imageAlt": "Możliwości stażowe w Europie"
@@ -722,15 +722,15 @@
     "heading": "Studia",
     "paragraph1": "Studiowanie w Europie to możliwość uzyskania edukacji światowej klasy.",
     "buttons": [
-      { "text": "Polska" },
-      { "text": "Finlandia" },
-      { "text": "Niemcy" },
-      { "text": "Hiszpania" },
-      { "text": "Portugalia" },
-      { "text": "Łotwa" },
-      { "text": "Wielka Brytania" },
-      { "text": "Irlandia" },
-      { "text": "Kanada" }
+      { "text": "Polska", "code": "PL" },
+      { "text": "Finlandia", "code": "FI" },
+      { "text": "Niemcy", "code": "DE" },
+      { "text": "Hiszpania", "code": "ES" },
+      { "text": "Portugalia", "code": "PT" },
+      { "text": "Łotwa", "code": "LV" },
+      { "text": "Wielka Brytania", "code": "GB" },
+      { "text": "Irlandia", "code": "IE" },
+      { "text": "Kanada", "code": "CA" }
     ],
     "imageSrc": "/study.webp",
     "imageAlt": "Możliwości studiowania w Europie"
@@ -739,11 +739,11 @@
     "heading": "Inwestor",
     "paragraph1": "Jeśli jesteś inwestorem poszukującym możliwości w Europie, oferujemy wiele projektów.",
     "buttons": [
-      { "text": "Niemcy" },
-      { "text": "Słowacja" },
-      { "text": "Hiszpania" },
-      { "text": "Litwa" },
-      { "text": "Finlandia" }
+      { "text": "Niemcy", "code": "DE" },
+      { "text": "Słowacja", "code": "SK" },
+      { "text": "Hiszpania", "code": "ES" },
+      { "text": "Litwa", "code": "LT" },
+      { "text": "Finlandia", "code": "FI" }
     ],
     "imageSrc": "/invest.webp",
     "imageAlt": "Możliwości inwestycyjne w Europie"
@@ -752,12 +752,12 @@
     "heading": "Odwiedź",
     "paragraph1": "Jeśli chcesz zwiedzić Europę, zapewniamy kompleksowe wsparcie wizowe.",
     "buttons": [
-      { "text": "Polska" },
-      { "text": "Szwajcaria" },
-      { "text": "Niemcy" },
-      { "text": "Łotwa" },
-      { "text": "Finlandia" },
-      { "text": "Luksemburg" }
+      { "text": "Polska", "code": "PL" },
+      { "text": "Szwajcaria", "code": "CH" },
+      { "text": "Niemcy", "code": "DE" },
+      { "text": "Łotwa", "code": "LV" },
+      { "text": "Finlandia", "code": "FI" },
+      { "text": "Luksemburg", "code": "LU" }
     ],
     "imageSrc": "/visit.webp",
     "imageAlt": "Możliwości odwiedzin Europy"

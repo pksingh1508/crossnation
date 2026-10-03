@@ -1,99 +1,76 @@
 "use client";
-import React from "react";
-import { CustomHero } from "../sections/CustomHero";
+
+import {
+  Award,
+  BriefcaseBusiness,
+  GraduationCap,
+  Luggage,
+  PlaneTakeoff,
+  TrendingUp,
+  type LucideIcon,
+} from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
+import { CustomHero, type Country } from "../sections/CustomHero";
+
+// The services on the home page, in order. The texts and countries are in the messages,
+// under the section's key; the photos alternate sides.
+const SECTIONS: { key: string; icon: LucideIcon; image: string }[] = [
+  {
+    key: "customHero",
+    icon: BriefcaseBusiness,
+    image: "https://ik.imagekit.io/eucareerserwis/home/work.webp",
+  },
+  {
+    key: "customHeroMigrate",
+    icon: PlaneTakeoff,
+    image:
+      "https://ik.imagekit.io/eucareerserwis/euprimeserwis/home/migrate.webp",
+  },
+  {
+    key: "customHeroTraineeship",
+    icon: Award,
+    image:
+      "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__51386.webp",
+  },
+  {
+    key: "customHeroStudy",
+    icon: GraduationCap,
+    image:
+      "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__33230.webp",
+  },
+  {
+    key: "customHeroInvestor",
+    icon: TrendingUp,
+    image: "https://ik.imagekit.io/eucareerserwis/home/investor.webp",
+  },
+  {
+    key: "customHeroVisit",
+    icon: Luggage,
+    image:
+      "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__53435.webp",
+  },
+];
 
 export function HeroCustomSection() {
-  const tWork = useTranslations("customHero");
-  const tMigrate = useTranslations("customHeroMigrate");
-  const tTraineeship = useTranslations("customHeroTraineeship");
-  const tStudy = useTranslations("customHeroStudy");
-  const tInvestor = useTranslations("customHeroInvestor");
-  const tVisit = useTranslations("customHeroVisit");
-
-  const workButtonsData = tWork.raw("buttons") as Array<{ text: string }>;
-  const migrateButtonsData = tMigrate.raw("buttons") as Array<{ text: string }>;
-  const traineeshipButtonsData = tTraineeship.raw("buttons") as Array<{
-    text: string;
-  }>;
-  const studyButtonsData = tStudy.raw("buttons") as Array<{ text: string }>;
-  const investorButtonsData = tInvestor.raw("buttons") as Array<{
-    text: string;
-  }>;
-  const visitButtonsData = tVisit.raw("buttons") as Array<{ text: string }>;
+  const t = useTranslations();
 
   return (
     <>
-      {/* Work Section */}
-      <CustomHero
-        heading={tWork("heading")}
-        paragraph1={tWork("paragraph1")}
-        paragraph2={tWork("paragraph2")}
-        buttons={workButtonsData}
-        imageSrc={"https://ik.imagekit.io/eucareerserwis/home/work.webp"}
-        imageAlt={tWork("imageAlt")}
-      />
-
-      {/* Migrate Section */}
-      <CustomHero
-        heading={tMigrate("heading")}
-        paragraph1={tMigrate("paragraph1")}
-        paragraph2=""
-        buttons={migrateButtonsData}
-        imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/euprimeserwis/home/migrate.webp"
-        }
-        imageAlt={tMigrate("imageAlt")}
-        isReversed={true}
-      />
-
-      {/* Traineeship Section */}
-      <CustomHero
-        heading={tTraineeship("heading")}
-        paragraph1={tTraineeship("paragraph1")}
-        paragraph2=""
-        buttons={traineeshipButtonsData}
-        imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__51386.webp"
-        }
-        imageAlt={tTraineeship("imageAlt")}
-      />
-
-      {/* Study Section */}
-      <CustomHero
-        heading={tStudy("heading")}
-        paragraph1={tStudy("paragraph1")}
-        paragraph2=""
-        buttons={studyButtonsData}
-        imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__33230.webp"
-        }
-        imageAlt={tStudy("imageAlt")}
-        isReversed={true}
-      />
-
-      {/* Investor Section */}
-      <CustomHero
-        heading={tInvestor("heading")}
-        paragraph1={tInvestor("paragraph1")}
-        paragraph2=""
-        buttons={investorButtonsData}
-        imageSrc={"https://ik.imagekit.io/eucareerserwis/home/investor.webp"}
-        imageAlt={tInvestor("imageAlt")}
-      />
-
-      {/* Visit Section */}
-      <CustomHero
-        heading={tVisit("heading")}
-        paragraph1={tVisit("paragraph1")}
-        paragraph2=""
-        buttons={visitButtonsData}
-        imageSrc={
-          "https://ik.imagekit.io/eucareerserwis/home/freepik__expand__53435.webp"
-        }
-        imageAlt={tVisit("imageAlt")}
-        isReversed={true}
-      />
+      {SECTIONS.map(({ key, icon, image }, index) => (
+        <CustomHero
+          key={key}
+          index={index + 1}
+          icon={icon}
+          heading={t(`${key}.heading`)}
+          paragraphs={[`${key}.paragraph1`, `${key}.paragraph2`]
+            .filter((paragraph) => t.has(paragraph))
+            .map((paragraph) => t(paragraph))}
+          countries={t.raw(`${key}.buttons`) as Country[]}
+          imageSrc={image}
+          imageAlt={t(`${key}.imageAlt`)}
+          isReversed={index % 2 === 1}
+        />
+      ))}
     </>
   );
 }

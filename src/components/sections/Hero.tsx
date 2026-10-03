@@ -61,13 +61,14 @@ export function Hero() {
       {/* From lg up it fills the first screen below the navbar (6.5rem, 7.5rem from xl) */}
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pt-16 pb-16 sm:pb-20 lg:min-h-[calc(100svh-6.5rem)] lg:grid-cols-2 lg:gap-16 lg:py-12 xl:min-h-[calc(100svh-7.5rem)] xl:gap-24">
         <div>
-          <h2 className="text-[2.5rem] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl lg:text-6xl">
+          {/* The page's main heading; the sections below use h2 */}
+          <h1 className="text-[2.5rem] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl lg:text-6xl">
             <WordReveal
               text={t("title1")}
               delay={100}
               className="animate-word motion-reduce:animate-none"
             />
-          </h2>
+          </h1>
 
           <ul className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2">
             {CHOICES.map(({ label, path, icon: Icon }, index) => (
