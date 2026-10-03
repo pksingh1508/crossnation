@@ -53,6 +53,14 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Brand colours, the same values as src/constants/color.ts. Gives classes like bg-brand. */
+@theme {
+  --color-brand: #fecc00; /* the logo yellow */
+  --color-brand-soft: #fef9c3;
+  /* Fast start, long soft landing. Class: ease-out-quint */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
