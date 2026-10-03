@@ -114,9 +114,10 @@
     "cta": "Mehr Blogs lesen"
   },
   "ImmigrationNews": {
-    "heading": "Einwanderungsnachrichten",
+    "heading": "Einwanderungs\u00adnachrichten",
     "cta": "Alle Nachrichten anzeigen",
-    "latest": "Neueste Einwanderungsnachrichten"
+    "latest": "Neueste Einwanderungsnachrichten",
+    "views": "{count, plural, one {# Aufruf} other {# Aufrufe}}"
   },
   "pages": {
     "study": {

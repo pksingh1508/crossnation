@@ -116,7 +116,8 @@
   "ImmigrationNews": {
     "heading": "Immigration News",
     "cta": "See All News",
-    "latest": "Latest Immigration News"
+    "latest": "Latest Immigration News",
+    "views": "{count, plural, one {# view} other {# views}}"
   },
   "pages": {
     "study": {

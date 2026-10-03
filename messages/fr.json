@@ -116,7 +116,8 @@
   "ImmigrationNews": {
     "heading": "Actualités d'Immigration",
     "cta": "Voir Toutes les Actualités",
-    "latest": "Dernières Actualités sur l’Immigration"
+    "latest": "Dernières Actualités sur l’Immigration",
+    "views": "{count, plural, one {# vue} other {# vues}}"
   },
   "pages": {
     "study": {
