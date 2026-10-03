@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useLocale } from "next-intl";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { TestimonialItem, TestimonialResponse } from "@/lib/strapi";
+import type { Page, TestimonialCard } from "@/lib/cms/types";
 import { SingleOneTestimonial } from "@/components/testimonials/SingleOneTestimonial";
 import {
   Loader2,
@@ -23,39 +22,52 @@ interface PaginationData {
   total: number;
 }
 
-export function AllTestimonials() {
-  const [testimonials, setTestimonials] = useState<TestimonialItem[]>([]);
+const PAGE_SIZE = 10;
+
+interface AllTestimonialsProps {
+  /** Page 1, rendered on the server. Null when it could not be loaded. */
+  initialPage: Page<TestimonialCard> | null;
+}
+
+export function AllTestimonials({ initialPage }: AllTestimonialsProps) {
+  const [testimonials, setTestimonials] = useState<TestimonialCard[]>(
+    initialPage?.items ?? []
+  );
   const [pagination, setPagination] = useState<PaginationData>({
-    page: 1,
-    pageSize: 10,
-    pageCount: 1,
-    total: 0,
+    page: initialPage?.page ?? 1,
+    pageSize: initialPage?.pageSize ?? PAGE_SIZE,
+    pageCount: initialPage?.pageCount ?? 1,
+    total: initialPage?.total ?? 0,
   });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(
+    initialPage ? null : "Failed to fetch testimonials"
+  );
   const [searchTerm, setSearchTerm] = useState("");
-  const locale = useLocale();
   const testimonialRef = useRef<HTMLDivElement>(null);
 
+  // Every language shows the same testimonials, so the page only depends on the page number
   const fetchTestimonials = async (page: number = 1) => {
     try {
       setLoading(true);
       setError(null);
 
       const response = await fetch(
-        `/api/all-testimonial?locale=${locale}&page=${page}&pageSize=10`
+        `/api/cms/testimonials?page=${page}&pageSize=${PAGE_SIZE}`
       );
 
       if (!response.ok) {
         throw new Error(`Failed to fetch testimonials: ${response.statusText}`);
       }
 
-      const data: TestimonialResponse = await response.json();
-      setTestimonials(data.data || []);
-
-      if (data.meta?.pagination) {
-        setPagination(data.meta.pagination);
-      }
+      const data: Page<TestimonialCard> = await response.json();
+      setTestimonials(data.items);
+      setPagination({
+        page: data.page,
+        pageSize: data.pageSize,
+        pageCount: data.pageCount,
+        total: data.total,
+      });
     } catch (err) {
       console.error("Error fetching testimonials:", err);
       setError(
@@ -65,10 +77,6 @@ export function AllTestimonials() {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchTestimonials(1);
-  }, [locale]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= pagination.pageCount) {
@@ -83,21 +91,14 @@ export function AllTestimonials() {
 
   // Filter testimonials based on search term
   const filteredTestimonials = testimonials.filter((testimonial) => {
-    const name = testimonial.attributes?.name || testimonial.name || "";
-    const what_they_say =
-      testimonial.attributes?.what_they_say || testimonial.what_they_say || "";
-    const role = testimonial.attributes?.role || testimonial.role || "";
-    const view_count = (
-      testimonial.attributes?.view_count ||
-      testimonial.view_count ||
-      0
-    ).toString();
+    const name = testimonial.name;
+    const quote = testimonial.quote ?? "";
+    const views = testimonial.views_count.toString();
 
     return (
       name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      what_they_say.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      role.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      view_count.includes(searchTerm)
+      quote.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      views.includes(searchTerm)
     );
   });
   // Pagination component

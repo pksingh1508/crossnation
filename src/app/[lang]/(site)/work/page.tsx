@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import { CommonContact } from "@/components/sections/CommonContact";
 import { WorkContent } from "@/components/work/WorkContent";
+import { RecentTestimonials } from "@/components/sections/RecentTestimonials";
+import { RecentBlog } from "@/components/sections/RecentBlog";
+import { NewsSection } from "@/components/immigration_faq/NewsSection";
+import { GovernmentLinks } from "@/components/sections/GovernmentLinks";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { FAQSection } from "@/components/seo/FAQSection";
@@ -74,6 +78,11 @@ export default async function WorkPage({ params }: WorkPageProps) {
       </div>
       <CommonContact />
       <WorkContent />
+      {/* Server-rendered sections, so they live here rather than in the client WorkContent */}
+      <RecentTestimonials />
+      <RecentBlog />
+      <NewsSection />
+      <GovernmentLinks />
       <FAQSection
         title="Work Opportunities in Poland - Frequently Asked Questions"
         faqs={workFAQs}

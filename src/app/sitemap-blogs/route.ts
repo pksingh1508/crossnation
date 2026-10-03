@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@/constants/site";
+import { getSitemapEntries } from "@/lib/cms/queries";
 import { getLocalizedUrl } from "@/lib/locale-paths";
 
 export const dynamic = "force-dynamic";
@@ -7,34 +8,10 @@ export const revalidate = 3600;
 
 export async function GET() {
   try {
-    const baseUrl = siteConfig.url;
     const sitemapEntries: any[] = [];
 
-    // Fetch all slugs
-    const [blogsRes, newsRes] = await Promise.all([
-      fetch(`${baseUrl}/api/fetchBlogsSlug`, {
-        cache: "no-store",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }),
-      fetch(`${baseUrl}/api/fetchNewsSlug`, {
-        cache: "no-store",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }),
-    ]);
-
-    if (!blogsRes.ok) {
-      console.error(`Blog API failed: ${blogsRes.status}`);
-    }
-    if (!newsRes.ok) {
-      console.error(`News API failed: ${newsRes.status}`);
-    }
-
-    const blogSlugs: string[] = blogsRes.ok ? await blogsRes.json() : [];
-    const newsSlugs: string[] = newsRes.ok ? await newsRes.json() : [];
+    // Every published post and article, with the date it last changed
+    const { blog, news } = await getSitemapEntries();
 
     // Add main category pages
     sitemapEntries.push({
@@ -52,36 +29,29 @@ export async function GET() {
     });
 
     // Add individual blog URLs
-    blogSlugs.forEach((slug) => {
-      if (slug && typeof slug === "string") {
-        // URL encode the slug to handle spaces and special characters
-        const encodedSlug = encodeURIComponent(slug);
-        sitemapEntries.push({
-          url: getLocalizedUrl(
-            siteConfig.defaultLanguage,
-            `/blog/${encodedSlug}`
-          ),
-          lastModified: new Date().toISOString(),
-          changeFrequency: "monthly",
-          priority: 0.7,
-        });
-      }
+    blog.forEach(({ slug, updated_at }) => {
+      sitemapEntries.push({
+        url: getLocalizedUrl(
+          siteConfig.defaultLanguage,
+          `/blog/${encodeURIComponent(slug)}`
+        ),
+        lastModified: new Date(updated_at).toISOString(),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
     });
 
     // Add individual news URLs
-    newsSlugs.forEach((slug) => {
-      if (slug && typeof slug === "string") {
-        const encodedSlug = encodeURIComponent(slug);
-        sitemapEntries.push({
-          url: getLocalizedUrl(
-            siteConfig.defaultLanguage,
-            `/immigration-news/${encodedSlug}`
-          ),
-          lastModified: new Date().toISOString(),
-          changeFrequency: "monthly",
-          priority: 0.7,
-        });
-      }
+    news.forEach(({ slug, updated_at }) => {
+      sitemapEntries.push({
+        url: getLocalizedUrl(
+          siteConfig.defaultLanguage,
+          `/immigration-news/${encodeURIComponent(slug)}`
+        ),
+        lastModified: new Date(updated_at).toISOString(),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
     });
 
     // Generate XML

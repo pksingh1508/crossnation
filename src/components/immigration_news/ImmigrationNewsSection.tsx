@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { NewsItem, StrapiResponse } from "@/lib/strapi";
+import type { NewsArticleCard, Page } from "@/lib/cms/types";
 import { SingleImmigrationNews } from "./SingleImmigrationNews";
 import {
   Loader2,
@@ -24,63 +24,69 @@ interface PaginationData {
   total: number;
 }
 
-export function ImmigrationNewsSection() {
-  const [currentNews, setCurrentNews] = useState<NewsItem[]>([]);
+const PAGE_SIZE = 10;
+
+interface ImmigrationNewsSectionProps {
+  /** Page 1, rendered on the server. Null when it could not be loaded. */
+  initialPage: Page<NewsArticleCard> | null;
+  latestNews: NewsArticleCard[];
+}
+
+export function ImmigrationNewsSection({
+  initialPage,
+  latestNews,
+}: ImmigrationNewsSectionProps) {
+  const [currentNews, setCurrentNews] = useState<NewsArticleCard[]>(
+    initialPage?.items ?? []
+  );
   const [pagination, setPagination] = useState<PaginationData>({
-    page: 1,
-    pageSize: 10,
-    pageCount: 1,
-    total: 0,
+    page: initialPage?.page ?? 1,
+    pageSize: initialPage?.pageSize ?? PAGE_SIZE,
+    pageCount: initialPage?.pageCount ?? 1,
+    total: initialPage?.total ?? 0,
   });
 
   // UI state
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(
+    initialPage ? null : "Failed to fetch immigration news"
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const t = useTranslations("pagination");
   const tNews = useTranslations("immigrationPage");
 
-  const locale = useLocale();
+  // Every language shows the same articles, so the page only depends on the page number
+  const fetchNews = useCallback(async (page: number) => {
+    try {
+      setLoading(true);
+      setError(null);
 
-  const fetchNews = useCallback(
-    async (page: number) => {
-      try {
-        setLoading(true);
-        setError(null);
+      const response = await fetch(
+        `/api/cms/news?page=${page}&pageSize=${PAGE_SIZE}`
+      );
 
-        const response = await fetch(
-          `/api/immigration-news?locale=${locale}&page=${page}&pageSize=10`
-        );
-
-        if (!response.ok) {
-          throw new Error(`Failed to fetch news: ${response.statusText}`);
-        }
-
-        const data: StrapiResponse = await response.json();
-        const newsItems = data.data || [];
-
-        setCurrentNews(newsItems);
-
-        if (data.meta?.pagination) {
-          setPagination(data.meta.pagination);
-        }
-      } catch (err) {
-        console.error("Error fetching immigration news:", err);
-        setError(
-          err instanceof Error
-            ? err.message
-            : "Failed to fetch immigration news"
-        );
-      } finally {
-        setLoading(false);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch news: ${response.statusText}`);
       }
-    },
-    [locale]
-  );
 
-  useEffect(() => {
-    fetchNews(1);
-  }, [fetchNews]);
+      const data: Page<NewsArticleCard> = await response.json();
+
+      setCurrentNews(data.items);
+      setPagination({
+        page: data.page,
+        pageSize: data.pageSize,
+        pageCount: data.pageCount,
+        total: data.total,
+      });
+    } catch (err) {
+      console.error("Error fetching immigration news:", err);
+      setError(
+        err instanceof Error ? err.message : "Failed to fetch immigration news"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   const handlePageChange = (newPage: number) => {
     if (
@@ -97,18 +103,13 @@ export function ImmigrationNewsSection() {
 
   // Filter news based on search term
   const filteredNews = currentNews.filter((newsItem) => {
-    const title = newsItem.attributes?.title || newsItem.title || "";
-    const short_desc =
-      newsItem.attributes?.short_desc || newsItem.short_desc || "";
-    const views = (
-      newsItem.attributes?.views ||
-      newsItem.views ||
-      0
-    ).toString();
+    const title = newsItem.title;
+    const excerpt = newsItem.excerpt ?? "";
+    const views = newsItem.views_count.toString();
 
     return (
       title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      short_desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
       views.includes(searchTerm)
     );
   });
@@ -378,7 +379,7 @@ export function ImmigrationNewsSection() {
                   />
                 ))}
               </motion.div>
-              <LatestNewsPost />
+              <LatestNewsPost news={latestNews} />
 
               {/* Loading overlay for pagination */}
               {loading && (

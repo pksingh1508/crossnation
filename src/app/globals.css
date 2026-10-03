@@ -131,6 +131,63 @@
   }
 }
 
+/* Blog and news articles from the CMS. The CMS cleans the HTML when it is saved, so only these
+   tags occur: p, br, h2-h4, strong, em, u, s, blockquote, ul, ol, li, hr, a and img. */
+@layer components {
+  .cms-content {
+    @apply text-base leading-relaxed text-gray-700;
+  }
+  .cms-content > :first-child {
+    @apply mt-0;
+  }
+  .cms-content p {
+    @apply mb-4;
+  }
+  .cms-content h2 {
+    @apply mt-8 mb-5 text-3xl font-bold text-gray-900;
+  }
+  .cms-content h3 {
+    @apply mt-6 mb-4 text-2xl font-bold text-gray-900;
+  }
+  .cms-content h4 {
+    @apply mt-5 mb-3 text-xl font-bold text-gray-900;
+  }
+  .cms-content strong {
+    @apply font-bold text-gray-900;
+  }
+  .cms-content ul {
+    @apply mb-4 list-disc pl-6;
+  }
+  .cms-content ol {
+    @apply mb-4 list-decimal pl-6;
+  }
+  .cms-content li {
+    @apply mb-2;
+  }
+  .cms-content li > p {
+    @apply mb-0;
+  }
+  .cms-content li > ul,
+  .cms-content li > ol {
+    @apply mt-2 mb-0;
+  }
+  .cms-content a {
+    @apply font-medium text-purple-600 transition-colors hover:text-purple-800 hover:underline;
+  }
+  .cms-content-news a {
+    @apply text-blue-600 hover:text-blue-800;
+  }
+  .cms-content blockquote {
+    @apply my-6 border-l-4 border-yellow-400 pl-4 italic;
+  }
+  .cms-content hr {
+    @apply my-10 border-gray-200;
+  }
+  .cms-content img {
+    @apply my-6 h-auto max-w-full rounded-lg shadow-lg;
+  }
+}
+
 @layer utilities {
   /* Consistent horizontal gutters for layouts */
   .gutter {

@@ -1,36 +1,25 @@
 import React from "react";
 import Link from "next/link";
-import { BlogItem } from "@/lib/strapi";
+import type { BlogPostCard } from "@/lib/cms/types";
+import { formatDate } from "@/lib/cms/format";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { fontInter } from "@/fonts";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleBlogProps {
-  blog: BlogItem;
+  blog: BlogPostCard;
 }
 
 export function SingleBlog({ blog }: SingleBlogProps) {
-  // Handle both nested attributes structure and flat structure
-  const title = blog.attributes?.title || blog.title || "Untitled";
-  const updatedAt = blog.attributes?.updatedAt || blog.updatedAt || "";
-  const likes_count = blog.attributes?.likes_count || blog.likes_count || 0;
-  const slug = blog.attributes?.slug || blog.slug || "";
-  const image_url = blog.blog_image?.url || "";
-  const short_desc = blog.attributes?.short_desc || blog.short_desc || "";
+  const { title, likes_count, slug, image_url } = blog;
+  const short_desc = blog.excerpt ?? "";
   const locale = useLocale();
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
-  // Format the date to show like "03 Jun"
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "No date";
-    const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
-      day: "2-digit",
-      month: "short",
-    };
-    return date.toLocaleDateString("en-US", options);
-  };
+  // Show the date like "Jun 03"
+  const publishedAt =
+    formatDate(blog.published_at, { day: "2-digit", month: "short" }) ||
+    "No date";
 
   return (
     <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -38,8 +27,8 @@ export function SingleBlog({ blog }: SingleBlogProps) {
       <div className="aspect-video w-full overflow-hidden">
         {image_url ? (
           <Image
-            src={`${image_url}`}
-            alt={title}
+            src={image_url}
+            alt={blog.image_alt || title}
             width={500}
             height={500}
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -90,9 +79,7 @@ export function SingleBlog({ blog }: SingleBlogProps) {
                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
             </svg>
-            <span className={`${fontInter.className}`}>
-              {formatDate(updatedAt)}
-            </span>
+            <span className={`${fontInter.className}`}>{publishedAt}</span>
           </div>
 
           <div className="flex items-center space-x-1">

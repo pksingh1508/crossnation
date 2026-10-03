@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AllTestimonials } from "@/components/testimonials/AllTestimonials";
+import { getTestimonials } from "@/lib/cms/queries";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
 import { getLocalizedUrl } from "@/lib/locale-paths";
@@ -21,6 +22,12 @@ export const metadata: Metadata = buildMetadata({
   canonical: canonicalUrl,
 });
 
-export default function SuccessStoriesPage() {
-  return <AllTestimonials />;
+// Shows the client testimonials (eu_testimonials), as it did with Strapi
+export default async function SuccessStoriesPage() {
+  const initialPage = await getTestimonials(1, 10).catch((error) => {
+    console.error("Failed to load testimonials:", error);
+    return null;
+  });
+
+  return <AllTestimonials initialPage={initialPage} />;
 }

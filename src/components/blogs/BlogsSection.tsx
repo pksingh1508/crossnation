@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { BlogItem, BlogResponse } from "@/lib/strapi";
+import type { BlogPostCard, Page } from "@/lib/cms/types";
 import { SingleBlogSection } from "./SingleBlogSection";
 import {
   Loader2,
@@ -15,7 +15,6 @@ import {
   Calendar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { RecentBlog } from "../sections/RecentBlog";
 import { LatestBlogPost } from "./LatestBlogPost";
 
 interface PaginationData {
@@ -25,59 +24,64 @@ interface PaginationData {
   total: number;
 }
 
-export function BlogsSection() {
-  const [currentBlogs, setCurrentBlogs] = useState<BlogItem[]>([]);
+const PAGE_SIZE = 10;
+
+interface BlogsSectionProps {
+  /** Page 1, rendered on the server. Null when it could not be loaded. */
+  initialPage: Page<BlogPostCard> | null;
+  latestPosts: BlogPostCard[];
+}
+
+export function BlogsSection({ initialPage, latestPosts }: BlogsSectionProps) {
+  const [currentBlogs, setCurrentBlogs] = useState<BlogPostCard[]>(
+    initialPage?.items ?? []
+  );
   const [pagination, setPagination] = useState<PaginationData>({
-    page: 1,
-    pageSize: 10,
-    pageCount: 1,
-    total: 0,
+    page: initialPage?.page ?? 1,
+    pageSize: initialPage?.pageSize ?? PAGE_SIZE,
+    pageCount: initialPage?.pageCount ?? 1,
+    total: initialPage?.total ?? 0,
   });
 
   // UI state
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(
+    initialPage ? null : "Failed to fetch blogs"
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const tP = useTranslations("pagination");
   const tBlog = useTranslations("blogsPage");
 
-  const locale = useLocale();
+  // Every language shows the same posts, so the page only depends on the page number
+  const fetchBlogs = useCallback(async (page: number) => {
+    try {
+      setLoading(true);
+      setError(null);
 
-  const fetchBlogs = useCallback(
-    async (page: number) => {
-      try {
-        setLoading(true);
-        setError(null);
+      const response = await fetch(
+        `/api/cms/blog?page=${page}&pageSize=${PAGE_SIZE}`
+      );
 
-        const response = await fetch(
-          `/api/paginated-blogs?locale=${locale}&page=${page}&pageSize=10`
-        );
-
-        if (!response.ok) {
-          throw new Error(`Failed to fetch blogs: ${response.statusText}`);
-        }
-
-        const data: BlogResponse = await response.json();
-        const blogItems = data.data || [];
-
-        setCurrentBlogs(blogItems);
-
-        if (data.meta?.pagination) {
-          setPagination(data.meta.pagination);
-        }
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-        setError(err instanceof Error ? err.message : "Failed to fetch blogs");
-      } finally {
-        setLoading(false);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch blogs: ${response.statusText}`);
       }
-    },
-    [locale]
-  );
 
-  useEffect(() => {
-    fetchBlogs(1);
-  }, [fetchBlogs]);
+      const data: Page<BlogPostCard> = await response.json();
+
+      setCurrentBlogs(data.items);
+      setPagination({
+        page: data.page,
+        pageSize: data.pageSize,
+        pageCount: data.pageCount,
+        total: data.total,
+      });
+    } catch (err) {
+      console.error("Error fetching blogs:", err);
+      setError(err instanceof Error ? err.message : "Failed to fetch blogs");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   const handlePageChange = (newPage: number) => {
     if (
@@ -94,18 +98,13 @@ export function BlogsSection() {
 
   // Filter blogs based on search term
   const filteredBlogs = currentBlogs.filter((blogItem) => {
-    const title = blogItem.attributes?.title || blogItem.title || "";
-    const short_desc =
-      blogItem.attributes?.short_desc || blogItem.short_desc || "";
-    const likes_count = (
-      blogItem.attributes?.likes_count ||
-      blogItem.likes_count ||
-      0
-    ).toString();
+    const title = blogItem.title;
+    const excerpt = blogItem.excerpt ?? "";
+    const likes_count = blogItem.likes_count.toString();
 
     return (
       title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      short_desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
       likes_count.includes(searchTerm)
     );
   });
@@ -116,9 +115,7 @@ export function BlogsSection() {
 
   // Get total likes from current page
   const getTotalLikes = () => {
-    return currentBlogs.reduce((total, blog) => {
-      return total + (blog.attributes?.likes_count || blog.likes_count || 0);
-    }, 0);
+    return currentBlogs.reduce((total, blog) => total + blog.likes_count, 0);
   };
 
   // Pagination component
@@ -381,7 +378,7 @@ export function BlogsSection() {
                   />
                 ))}
               </motion.div>
-              <LatestBlogPost />
+              <LatestBlogPost posts={latestPosts} />
 
               {/* Loading overlay for pagination */}
               {loading && (

@@ -2,12 +2,11 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { motion, easeOut, Variants } from "framer-motion";
-import { TestimonialItem } from "@/lib/strapi";
-import { SingleTestimonial } from "./SingleTestimonial";
+import { SingleTestimonial, TestimonialHighlight } from "./SingleTestimonial";
 import { fontPoppins } from "@/fonts";
 
 export function RecentTestimonials() {
-  const testimonialData: TestimonialItem[] = [
+  const testimonialData: TestimonialHighlight[] = [
     {
       id: 1,
       name: "Manoj",

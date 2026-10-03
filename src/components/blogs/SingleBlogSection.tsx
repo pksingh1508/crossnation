@@ -1,6 +1,7 @@
 "use client";
 
-import { BlogItem } from "@/lib/strapi";
+import type { BlogPostCard } from "@/lib/cms/types";
+import { formatDate } from "@/lib/cms/format";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -9,40 +10,22 @@ import { useLocale } from "next-intl";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface SingleBlogSectionProps {
-  blog: BlogItem;
+  blog: BlogPostCard;
   index?: number;
 }
 
 export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
   const locale = useLocale();
-  const URL = process.env.NEXT_PUBLIC_CMS_URL;
 
-  // Extract data with fallback handling for both Strapi attribute structure and flat structure
   const data = {
     id: blog.id,
-    title: blog.attributes?.title || blog.title || "Untitled",
-    short_desc: blog.attributes?.short_desc || blog.short_desc || "",
-    updatedAt: blog.attributes?.updatedAt || blog.updatedAt || "",
-    likes_count: blog.attributes?.likes_count || blog.likes_count || 0,
-    slug: blog.attributes?.slug || blog.slug || "",
-    blog_image:
-      blog.attributes?.blog_image?.data?.attributes?.url ||
-      blog.blog_image?.url ||
-      null,
-  };
-
-  // Format date
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "";
-    try {
-      return new Date(dateString).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    } catch {
-      return "";
-    }
+    title: blog.title,
+    short_desc: blog.excerpt ?? "",
+    publishedAt: blog.published_at,
+    likes_count: blog.likes_count,
+    slug: blog.slug,
+    blog_image: blog.image_url,
+    blog_image_alt: blog.image_alt || blog.title,
   };
 
   // Calculate reading time
@@ -82,9 +65,10 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
             <div className="relative h-44 md:h-full md:min-h-[200px] overflow-hidden">
               {data.blog_image ? (
                 <Image
-                  src={`${data.blog_image}`}
-                  alt={data.title}
+                  src={data.blog_image}
+                  alt={data.blog_image_alt}
                   fill
+                  sizes="(max-width: 768px) 100vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
@@ -115,7 +99,13 @@ export function SingleBlogSection({ blog, index = 0 }: SingleBlogSectionProps) {
             <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />
-                <span>{formatDate(data.updatedAt)}</span>
+                <span>
+                  {formatDate(data.publishedAt, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <BookOpen className="w-4 h-4" />
