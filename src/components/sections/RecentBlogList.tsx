@@ -1,111 +1,179 @@
 "use client";
-import { motion, easeOut } from "framer-motion";
-import React from "react";
+
+import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { useLocale } from "next-intl";
+import { CalendarDays, Heart } from "lucide-react";
 import type { BlogPostCard } from "@/lib/cms/types";
-import { SingleBlog } from "./SingleBlog";
+import { formatDate } from "@/lib/cms/format";
 import { useTranslations } from "@/hooks/useTranslations";
-import { RippleButton } from "../ui/ripple-button";
-import { useRouter } from "next/navigation";
-import { fontPoppins } from "@/fonts";
+import { useReveal } from "@/hooks/useReveal";
+import { SectionHeader } from "@/components/ui/section-header";
+import { fontInter, fontPoppins } from "@/fonts";
+import { delay, RISE_ON_REVEAL } from "@/lib/animation";
+import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
+
+// From md to lg the newest post spans both columns with its picture beside the text, so
+// the three posts don't leave a lone card in the second row
+const FEATURED = {
+  item: "md:max-lg:col-span-2",
+  body: "md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:items-center md:max-lg:gap-8",
+  text: "md:max-lg:mt-0",
+};
 
 interface RecentBlogListProps {
   blogs: BlogPostCard[];
 }
 
+/** The newest blog posts, with a link to the blog. Used on several pages. */
 export function RecentBlogList({ blogs }: RecentBlogListProps) {
-  const locale = useLocale();
-  const t = useTranslations("RecentBlogs");
-  const router = useRouter();
+  if (blogs.length === 0) return null;
 
   return (
-    <section className="py-10 md:pt-2 md:pb-10 lg:pb-16 bg-white mx-auto">
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h2
-              className={`text-3xl font-bold text-gray-900 mb-4 ${fontPoppins.className}`}
-            >
-              {t("heading") || "Recent Blogs"}
-            </h2>
-            <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
-          </div>
-          {/* Blog post */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
-            {blogs.length > 0 ? (
-              blogs.map((blog) => <SingleBlog key={blog.id} blog={blog} />)
-            ) : (
-              <div className="col-span-full text-center py-12">
-                <p className={`text-gray-600 ${fontPoppins.className}`}>
-                  No recent blogs found.
-                </p>
-              </div>
-            )}
-          </div>
+    <BlogSection>
+      {blogs.map((blog, index) => (
+        <PostCard
+          key={blog.id}
+          blog={blog}
+          start={index * 120}
+          featured={index === 0}
+        />
+      ))}
+    </BlogSection>
+  );
+}
 
-          {blogs.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: 0.4,
-                ease: easeOut,
-              }}
-              className="text-center mt-16"
-            >
-              <RippleButton
-                variant="brandOutline"
-                size="lg"
-                onClick={() => router.push(getLocalizedPath(locale, "/blog"))}
-                className={`h-12 text-base font-semibold font-montserrat border-3 text-yellow-500 border-[#fecc00] hover:bg-yellow-400 hover:text-black hover:border-yellow-400 cursor-pointer ${fontPoppins.className}`}
-              >
-                {t("cta") || "Read More Blogs"}
-              </RippleButton>
-            </motion.div>
-          )}
-        </div>
+/** Shown while the posts stream in from the server, in the same layout */
+export function RecentBlogSkeleton() {
+  return (
+    <BlogSection>
+      {[0, 1, 2].map((index) => {
+        const featured = index === 0;
+        return (
+          <li
+            key={index}
+            aria-hidden
+            className={cn("animate-pulse", featured && FEATURED.item)}
+          >
+            <div className={cn(featured && FEATURED.body)}>
+              <div className="aspect-video rounded-3xl bg-neutral-100" />
+              <div className={cn("mt-6 space-y-3", featured && FEATURED.text)}>
+                <div className="h-4 w-40 rounded-full bg-neutral-100" />
+                <div className="h-6 w-11/12 rounded-full bg-neutral-100" />
+                <div className="h-6 w-2/3 rounded-full bg-neutral-100" />
+              </div>
+            </div>
+          </li>
+        );
+      })}
+    </BlogSection>
+  );
+}
+
+function BlogSection({ children }: { children: ReactNode }) {
+  const t = useTranslations("RecentBlogs");
+  const locale = useLocale();
+
+  return (
+    <section className={cn("bg-white py-20 sm:py-24", fontPoppins.className)}>
+      <div className="mx-auto w-full max-w-7xl px-4">
+        <SectionHeader
+          title={t("heading")}
+          link={{ href: getLocalizedPath(locale, "/blog"), label: t("cta") }}
+        />
+        <ul className="mt-10 grid gap-x-6 gap-y-14 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
+          {children}
+        </ul>
       </div>
     </section>
   );
 }
 
-/** Shown while the posts stream in from the server */
-export function RecentBlogSkeleton() {
-  const t = useTranslations("RecentBlogs");
+interface PostCardProps {
+  blog: BlogPostCard;
+  /** When its entrance starts after it comes into view, in ms */
+  start: number;
+  featured: boolean;
+}
+
+/**
+ * A post: picture, date and likes, title and summary. The title's link covers the whole
+ * card, so the card is one click target but screen readers just hear the title. The
+ * link's area reaches 12px past the card, so its focus ring clears the card's corners.
+ */
+function PostCard({ blog, start, featured }: PostCardProps) {
+  const t = useTranslations("blogsPage");
+  const locale = useLocale();
+  const [ref, reveal] = useReveal<HTMLLIElement>();
+  const date = formatDate(blog.published_at, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {t("heading") || "Recent Blogs"}
-            </h2>
-            <div className="h-1 bg-yellow-500 rounded w-24 mx-auto"></div>
-          </div>
-
-          {/* Loading State */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-lg shadow-md overflow-hidden animate-pulse"
-              >
-                <div className="aspect-video bg-gray-200"></div>
-                <div className="p-6 space-y-3">
-                  <div className="h-6 bg-gray-200 rounded"></div>
-                  <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <li
+      ref={ref}
+      data-reveal={reveal}
+      className={cn(featured && FEATURED.item, RISE_ON_REVEAL)}
+      style={delay(start)}
+    >
+      <article className={cn("group/post relative", featured && FEATURED.body)}>
+        <div className="relative aspect-video overflow-hidden rounded-3xl bg-neutral-100 ring-1 ring-black/5">
+          {blog.image_url && (
+            <Image
+              src={blog.image_url}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
+              className="object-cover transition-[scale] duration-700 ease-out-quint reveal-waiting:scale-[1.12] reveal-shown:animate-settle motion-reduce:animate-none motion-safe:group-hover/post:scale-[1.04]"
+            />
+          )}
         </div>
-      </div>
-    </section>
+
+        <div className={cn("mt-6", featured && FEATURED.text)}>
+          <p
+            className={cn(
+              "flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-500",
+              fontInter.className
+            )}
+          >
+            {date && blog.published_at && (
+              <span className="inline-flex items-center gap-1.5">
+                <CalendarDays aria-hidden className="size-4" />
+                <time dateTime={blog.published_at}>{date}</time>
+              </span>
+            )}
+            <span className="inline-flex items-center gap-1.5">
+              <Heart aria-hidden className="size-4 fill-red-500 text-red-500" />
+              <span className="sr-only">{t("totalLikes")}:</span>
+              {blog.likes_count.toLocaleString("en-US")}
+            </span>
+          </p>
+
+          <h3 className="mt-3 line-clamp-3 text-xl leading-snug font-semibold text-neutral-950">
+            <Link
+              href={getLocalizedPath(locale, `/blog/${blog.slug}`)}
+              className="decoration-brand decoration-2 underline-offset-4 outline-none group-hover/post:underline after:absolute after:-inset-3 after:rounded-[2.25rem] focus-visible:after:ring-2 focus-visible:after:ring-neutral-950"
+            >
+              {blog.title}
+            </Link>
+          </h3>
+
+          {blog.excerpt && (
+            <p
+              className={cn(
+                "mt-3 line-clamp-2 leading-relaxed text-neutral-600",
+                fontInter.className
+              )}
+            >
+              {blog.excerpt}
+            </p>
+          )}
+        </div>
+      </article>
+    </li>
   );
 }
