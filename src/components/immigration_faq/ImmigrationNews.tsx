@@ -81,7 +81,7 @@ function NewsLayout({ children }: { children: ReactNode }) {
             label: t("cta"),
           }}
         />
-        <div className="mt-10 grid items-start gap-14 sm:mt-12 lg:grid-cols-[7fr_5fr] lg:gap-12 xl:gap-16">
+        <div className="mt-10 grid grid-cols-1 items-start gap-14 sm:mt-12 lg:grid-cols-[7fr_5fr] lg:gap-12 xl:gap-16">
           {children}
           <SomeFAQ />
         </div>

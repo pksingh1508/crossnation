@@ -9,16 +9,8 @@ import { WordReveal } from "@/components/ui/word-reveal";
 import { siteConfig } from "@/constants/site";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
+import { countryName } from "@/lib/country-name";
 import { cn } from "@/lib/utils";
-
-/** "Poland" in the visitor's language (Polska, Polen, Pologne ...) */
-function polandIn(locale: string) {
-  try {
-    return new Intl.DisplayNames([locale], { type: "region" }).of("PL");
-  } catch {
-    return "Poland";
-  }
-}
 
 export function About() {
   const t = useTranslations("about");
@@ -129,7 +121,7 @@ export function About() {
               </p>
               <p className="mt-0.5 flex items-center gap-1 text-xs text-neutral-500">
                 <MapPin aria-hidden className="size-3.5 text-amber-500" />
-                {siteConfig.contact.address.city}, {polandIn(locale)}
+                {siteConfig.contact.address.city}, {countryName(locale)}
               </p>
             </div>
           </div>

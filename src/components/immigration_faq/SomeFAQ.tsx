@@ -84,7 +84,10 @@ export function SomeFAQ() {
                   onClick={() => setOpen(isOpen ? null : key)}
                   className="group/question -mx-3 flex w-[calc(100%+1.5rem)] cursor-pointer items-center justify-between gap-6 rounded-xl px-3 py-5 text-left font-semibold text-neutral-800 transition-colors duration-200 outline-none hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950 aria-expanded:text-neutral-950"
                 >
-                  {t(`questions.${key}.question`)}
+                  {/* Long words (German) may break, so they never widen the panel */}
+                  <span className="min-w-0 hyphens-auto wrap-anywhere">
+                    {t(`questions.${key}.question`)}
+                  </span>
                   {/* A plus whose upright bar turns flat, making a minus */}
                   <span
                     aria-hidden
@@ -107,7 +110,7 @@ export function SomeFAQ() {
                 <div className="overflow-hidden">
                   <p
                     className={cn(
-                      "pr-12 pb-6 text-[15px] leading-relaxed text-neutral-600 transition-[opacity,translate] duration-500 ease-out-quint",
+                      "pr-12 pb-6 text-[15px] leading-relaxed text-neutral-600 hyphens-auto wrap-anywhere transition-[opacity,translate] duration-500 ease-out-quint",
                       fontInter.className,
                       isOpen ? "opacity-100" : "-translate-y-2 opacity-0"
                     )}
