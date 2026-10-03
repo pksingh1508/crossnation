@@ -1,6 +1,5 @@
 "use client";
 
-import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -23,6 +22,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { fontPoppins } from "@/fonts";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
+import { WordReveal } from "@/components/ui/word-reveal";
 import { HeroLines } from "./HeroLines";
 
 // The four ways in, each with its own page
@@ -35,25 +35,6 @@ const CHOICES: { label: string; path: string; icon: LucideIcon }[] = [
 
 /** When a CSS entrance animation (animate-rise etc.) starts */
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
-
-/**
- * Splits the heading into words, which slide up one after another. A lone "?" or "!"
- * (French puts a space before them) stays with the word before it, so it never ends up
- * alone on the last line.
- */
-function splitWords(text: string) {
-  return text
-    .split(/\s+/)
-    .filter(Boolean)
-    .reduce<string[]>((words, word) => {
-      if (words.length > 0 && /^[?!:;]+$/.test(word)) {
-        words[words.length - 1] += `\u00a0${word}`;
-      } else {
-        words.push(word);
-      }
-      return words;
-    }, []);
-}
 
 export function Hero() {
   const t = useTranslations("home");
@@ -81,21 +62,11 @@ export function Hero() {
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pt-16 pb-16 sm:pb-20 lg:min-h-[calc(100svh-6.5rem)] lg:grid-cols-2 lg:gap-16 lg:py-12 xl:min-h-[calc(100svh-7.5rem)] xl:gap-24">
         <div>
           <h2 className="text-[2.5rem] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl lg:text-6xl">
-            {splitWords(t("title1")).map((word, index) => (
-              <Fragment key={index}>
-                {index > 0 && " "}
-                {/* The padding leaves room for accents and descenders; the negative margin
-                    keeps the line height unchanged */}
-                <span className="-mt-[0.1em] -mb-[0.15em] inline-block overflow-hidden pt-[0.1em] pb-[0.15em] align-top">
-                  <span
-                    className="inline-block animate-word motion-reduce:animate-none"
-                    style={delay(100 + index * 70)}
-                  >
-                    {word}
-                  </span>
-                </span>
-              </Fragment>
-            ))}
+            <WordReveal
+              text={t("title1")}
+              delay={100}
+              className="animate-word motion-reduce:animate-none"
+            />
           </h2>
 
           <ul className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2">

@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Scroll reveal, see src/hooks/useReveal.ts: a block with data-reveal="waiting" is still
+   below the screen, "shown" has come into view. Its children style both moments, e.g.
+   reveal-waiting:opacity-0 reveal-shown:animate-rise */
+@custom-variant reveal-waiting (&:where([data-reveal="waiting"], [data-reveal="waiting"] *));
+@custom-variant reveal-shown (&:where([data-reveal="shown"], [data-reveal="shown"] *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -94,6 +100,15 @@
   @keyframes settle {
     from {
       scale: 1.12;
+    }
+  }
+
+  /* A short line grows from its start (set the origin, e.g. origin-left). Class: animate-grow-x */
+  --animate-grow-x: grow-x 0.8s var(--ease-out-quint) backwards;
+
+  @keyframes grow-x {
+    from {
+      scale: 0 1;
     }
   }
 
