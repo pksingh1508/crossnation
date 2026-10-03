@@ -773,7 +773,8 @@
       "privacyPolicy": "Datenschutzrichtlinie",
       "termsOfService": "Nutzungsbedingungen",
       "refundPolicy": "Rückerstattungsrichtlinie",
-      "antiFraudPolicy": "Anti-Betrugs-Richtlinie"
+      "antiFraudPolicy": "Anti-Betrugs-Richtlinie",
+      "backToTop": "Nach oben"
     },
     "heading": {
       "solution": "Unsere Lösungen",

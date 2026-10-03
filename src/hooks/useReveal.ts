@@ -13,8 +13,12 @@ export type RevealState = "static" | "waiting" | "shown";
  * Plays a block's entrance animations once, when it scrolls into view. Put the ref and
  * data-reveal={state} on the block; its children style both moments with the
  * reveal-waiting: and reveal-shown: variants from globals.css.
+ *
+ * It reveals once its top is 15% of the screen height into view. A block at the very end
+ * of the page may never get that far, so it can pass atEdge to reveal as soon as any of
+ * it shows.
  */
-export function useReveal<T extends HTMLElement>() {
+export function useReveal<T extends HTMLElement>({ atEdge = false } = {}) {
   const ref = useRef<T>(null);
   const [state, setState] = useState<RevealState>("static");
 
@@ -28,7 +32,7 @@ export function useReveal<T extends HTMLElement>() {
       return;
     }
 
-    // Below the screen, so nobody sees it hide. It reveals once its top is 15% into view.
+    // Below the screen, so nobody sees it hide
     setState("waiting");
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -36,11 +40,11 @@ export function useReveal<T extends HTMLElement>() {
         setState("shown");
         observer.disconnect();
       },
-      { rootMargin: "0px 0px -15% 0px" }
+      { rootMargin: atEdge ? "0px" : "0px 0px -15% 0px" }
     );
     observer.observe(element);
     return () => observer.disconnect();
-  }, []);
+  }, [atEdge]);
 
   return [ref, state] as const;
 }

@@ -773,7 +773,8 @@
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "refundPolicy": "Refund Policy",
-      "antiFraudPolicy": "Anti-Fraud Policy"
+      "antiFraudPolicy": "Anti-Fraud Policy",
+      "backToTop": "Back to top"
     },
     "heading": {
       "solution": "Our Solutions",

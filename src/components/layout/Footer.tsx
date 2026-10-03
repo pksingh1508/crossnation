@@ -4,16 +4,10 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  CalendarCheck,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useReveal } from "@/hooks/useReveal";
+import { useLenis } from "@/utils/lenis";
 import { siteConfig } from "@/constants/site";
 import { NAVBAR_LINKS } from "@/constants/data";
 import { fontInter, fontPoppins } from "@/fonts";
@@ -22,6 +16,7 @@ import { countryName } from "@/lib/country-name";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 import { EMAIL_LINK, PHONE_LINK, SOCIAL_LINKS } from "./header-links";
+import { FooterSpotlight } from "./FooterSpotlight";
 
 const { address } = siteConfig.contact;
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -37,28 +32,33 @@ const GOVERNMENT_LINKS = [
   { label: "link5", href: "https://stat.gov.pl/en/" },
 ];
 
-/** A link in the footer's dark colours */
+/** A link in the footer's dark colours. It slides a little to the right on hover. */
 const LINK =
-  "rounded-sm text-[15px] text-neutral-400 [overflow-wrap:anywhere] hyphens-auto transition-colors duration-200 outline-none hover:text-white focus-visible:ring-2 focus-visible:ring-brand/70";
+  "inline-block rounded-sm text-[15px] text-neutral-400 [overflow-wrap:anywhere] hyphens-auto transition-[color,translate] duration-300 ease-out-quint outline-none hover:text-white focus-visible:ring-2 focus-visible:ring-brand/70 motion-safe:hover:translate-x-1";
 
 export function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
   const locale = useLocale();
   const localized = (path: string) => getLocalizedPath(locale, path);
+  const [ref, reveal] = useReveal<HTMLDivElement>();
 
   return (
     <footer
       className={cn(
-        "mt-auto bg-neutral-950 text-neutral-400",
+        "relative isolate mt-auto overflow-hidden bg-neutral-950 text-neutral-400",
         fontPoppins.className
       )}
     >
-      <div className="mx-auto w-full max-w-7xl px-4">
-        <CallToAction />
+      <FooterSpotlight />
 
-        <div className="grid gap-12 py-16 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-4">
+      <div
+        ref={ref}
+        data-reveal={reveal}
+        className="relative mx-auto w-full max-w-7xl px-4"
+      >
+        <div className="grid gap-14 pt-20 pb-16 sm:pt-24 lg:grid-cols-12 lg:gap-8">
+          <div className={cn("lg:col-span-4", RISE_ON_REVEAL)}>
             <Link
               href={localized("/")}
               className="inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-brand/70"
@@ -111,8 +111,8 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:col-span-8">
-            <LinkGroup title={t("heading.solution")}>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-4 lg:col-span-8">
+            <LinkGroup title={t("heading.solution")} start={80}>
               {NAVBAR_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={localized(link.href)} className={LINK}>
@@ -122,8 +122,8 @@ export function Footer() {
               ))}
             </LinkGroup>
 
-            <div className="space-y-10">
-              <LinkGroup title={t("heading.update")}>
+            <div className="space-y-12">
+              <LinkGroup title={t("heading.update")} start={160}>
                 {[
                   { href: "/blog", label: t("updates.blog") },
                   { href: "/immigration-news", label: t("updates.news") },
@@ -135,7 +135,7 @@ export function Footer() {
                   </li>
                 ))}
               </LinkGroup>
-              <LinkGroup title={t("heading.story")}>
+              <LinkGroup title={t("heading.story")} start={200}>
                 {[
                   { href: "/success-stories", label: t("successStory.story1") },
                   { href: "/work-permit", label: t("successStory.story2") },
@@ -150,7 +150,7 @@ export function Footer() {
               </LinkGroup>
             </div>
 
-            <LinkGroup title={t("heading.links")}>
+            <LinkGroup title={t("heading.links")} start={240}>
               {GOVERNMENT_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
@@ -170,7 +170,7 @@ export function Footer() {
               ))}
             </LinkGroup>
 
-            <LinkGroup title={t("heading.condition")}>
+            <LinkGroup title={t("heading.condition")} start={320}>
               {[
                 { href: "/privacy-policy", label: t("bottom.privacyPolicy") },
                 { href: "/refund-policy", label: t("bottom.refundPolicy") },
@@ -193,10 +193,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright, and the company's Polish registration numbers */}
+        {/* Copyright, the company's Polish registration numbers, and a way back up */}
         <div
           className={cn(
-            "flex flex-col gap-3 border-t border-white/10 py-8 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between",
+            "flex flex-col gap-4 border-t border-white/10 py-8 text-sm text-neutral-500 xl:flex-row xl:items-center xl:justify-between",
             fontInter.className
           )}
         >
@@ -206,56 +206,74 @@ export function Footer() {
             <span>{t("info.KRS")}</span>
             <span>{t("info.REGON")}</span>
           </p>
+          <BackToTop label={t("bottom.backToTop")} />
         </div>
       </div>
+
+      <Wordmark />
     </footer>
   );
 }
 
-/** The closing invitation: free counselling, with the booking and contact links */
-function CallToAction() {
-  const tHome = useTranslations("home");
-  const tCommon = useTranslations("common");
-  const locale = useLocale();
-  const [ref, reveal] = useReveal<HTMLDivElement>();
+/**
+ * The company name, huge and faint, sitting on the page's bottom edge. Its letters rise
+ * into place one after another when it comes into view.
+ */
+function Wordmark() {
+  // It ends the page, so it reveals as soon as it starts to show
+  const [ref, reveal] = useReveal<HTMLDivElement>({ atEdge: true });
 
   return (
     <div
       ref={ref}
       data-reveal={reveal}
-      className="flex flex-col gap-8 border-b border-white/10 py-16 sm:py-20 lg:flex-row lg:items-end lg:justify-between"
+      aria-hidden
+      className="relative mx-auto w-full max-w-7xl overflow-hidden px-4 select-none"
     >
-      <p
-        className={cn(
-          "max-w-3xl text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl",
-          RISE_ON_REVEAL
-        )}
-      >
-        {tHome("cta1")}, <span className="text-brand">{tHome("cta2")}</span>
+      <p className="-mb-[0.04em] text-center text-[min(calc(12.3vw-4px),9.6rem)] leading-[0.82] font-semibold tracking-tight whitespace-nowrap">
+        {[...siteConfig.name].map((letter, index) => (
+          <span
+            key={index}
+            className="inline-block bg-gradient-to-b from-white/[0.16] to-white/[0.02] bg-clip-text pt-[0.06em] text-transparent reveal-waiting:translate-y-[125%] reveal-shown:animate-word motion-reduce:animate-none"
+            style={delay(100 + index * 35)}
+          >
+            {letter === " " ? "\u00a0" : letter}
+          </span>
+        ))}
       </p>
-      <div
-        className={cn("flex shrink-0 flex-wrap gap-3", RISE_ON_REVEAL)}
-        style={delay(200)}
-      >
-        <Link
-          href={getLocalizedPath(locale, "/book")}
-          className="group/book inline-flex h-12 items-center gap-2 rounded-full bg-brand px-6 font-semibold text-neutral-950 transition-[translate,box-shadow] duration-300 ease-out-quint outline-none hover:shadow-[0_14px_32px_-12px_rgba(254,204,0,0.8)] focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 motion-safe:hover:-translate-y-0.5"
-        >
-          <CalendarCheck aria-hidden className="size-4" />
-          {tCommon("book")}
-        </Link>
-        <Link
-          href={getLocalizedPath(locale, "/contact")}
-          className="group/contact inline-flex h-12 items-center gap-2 rounded-full px-6 font-semibold text-white ring-1 ring-white/25 transition-[background-color,box-shadow] duration-300 outline-none hover:bg-white/10 hover:ring-white/40 focus-visible:ring-2 focus-visible:ring-brand"
-        >
-          {tCommon("contact")}
-          <ArrowRight
-            aria-hidden
-            className="size-4 transition-transform duration-300 ease-out-quint group-hover/contact:translate-x-1"
-          />
-        </Link>
-      </div>
     </div>
+  );
+}
+
+/** Scrolls smoothly back to the top of the page */
+function BackToTop({ label }: { label: string }) {
+  const lenis = useLenis();
+
+  const scrollToTop = () => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (lenis) {
+      lenis.scrollTo(0, { duration: reduceMotion ? 0 : 1.6 });
+    } else {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={scrollToTop}
+      className="group/top inline-flex cursor-pointer items-center gap-3 self-start rounded-full font-medium whitespace-nowrap text-neutral-300 transition-colors duration-300 outline-none hover:text-white focus-visible:ring-2 focus-visible:ring-brand/70 xl:self-auto"
+    >
+      {label}
+      <span className="grid size-9 place-items-center rounded-full ring-1 ring-white/15 transition-[background-color,box-shadow,color] duration-300 group-hover/top:bg-brand group-hover/top:text-neutral-950 group-hover/top:ring-brand">
+        <ArrowUp
+          aria-hidden
+          className="size-4 transition-transform duration-300 ease-out-quint group-hover/top:-translate-y-0.5"
+        />
+      </span>
+    </button>
   );
 }
 
@@ -281,13 +299,16 @@ function WithTrailingIcon({
 
 function LinkGroup({
   title,
+  start,
   children,
 }: {
   title: string;
+  /** When it rises into view, in ms after the footer appears */
+  start: number;
   children: ReactNode;
 }) {
   return (
-    <div>
+    <div className={RISE_ON_REVEAL} style={delay(start)}>
       <h2 className="text-sm font-semibold text-white">{title}</h2>
       <ul className={cn("mt-5 space-y-3", fontInter.className)}>{children}</ul>
     </div>
