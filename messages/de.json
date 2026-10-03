@@ -114,9 +114,10 @@
     "cta": "Mehr Blogs lesen"
   },
   "ImmigrationNews": {
-    "heading": "Einwanderungsnachrichten",
+    "heading": "Einwanderungs\u00adnachrichten",
     "cta": "Alle Nachrichten anzeigen",
-    "latest": "Neueste Einwanderungsnachrichten"
+    "latest": "Neueste Einwanderungsnachrichten",
+    "views": "{count, plural, one {# Aufruf} other {# Aufrufe}}"
   },
   "pages": {
     "study": {
@@ -681,15 +682,15 @@
   "customHero": {
     "heading": "Arbeit",
     "paragraph1": "Nicht sicher, welches europäische Land am besten zu Ihrem Profil, Ihren Fähigkeiten und Erfahrungen passt? Die Wahl des richtigen Weges ist der erste Schritt zum Aufbau einer sicheren und lohnenden Zukunft.",
-    "paragraph2": "Bei [EU Career Serwis] bieten wir personalisierte Karriereberatung, um Ihnen zu helfen, Möglichkeiten mit vertrauenswürdigen europäischen Arbeitgebern zu erkunden. Unser Expertenteam wird Ihre Qualifikationen sorgfältig bewerten und die am besten geeigneten Optionen für Ihr Karrierewachstum empfehlen.",
+    "paragraph2": "Bei EU Career Serwis bieten wir personalisierte Karriereberatung, um Ihnen zu helfen, Möglichkeiten mit vertrauenswürdigen europäischen Arbeitgebern zu erkunden. Unser Expertenteam wird Ihre Qualifikationen sorgfältig bewerten und die am besten geeigneten Optionen für Ihr Karrierewachstum empfehlen.",
     "buttons": [
-      { "text": "Polen" },
-      { "text": "Slowakei" },
-      { "text": "Litauen" },
-      { "text": "Tschechische Republik" },
-      { "text": "Serbien" },
-      { "text": "Spanien" },
-      { "text": "Kroatien" }
+      { "text": "Polen", "code": "PL" },
+      { "text": "Slowakei", "code": "SK" },
+      { "text": "Litauen", "code": "LT" },
+      { "text": "Tschechische Republik", "code": "CZ" },
+      { "text": "Serbien", "code": "RS" },
+      { "text": "Spanien", "code": "ES" },
+      { "text": "Kroatien", "code": "HR" }
     ],
     "imageSrc": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop",
     "imageAlt": "Europäische Karrieremöglichkeiten"
@@ -698,10 +699,10 @@
     "heading": "Auswandern",
     "paragraph1": "Wandern Sie nach Europa aus mit EU Career Serwis und machen Sie den ersten Schritt zu einer erfolgreichen und lohnenden Zukunft im Ausland. Wir sind spezialisiert darauf, Fachkräfte wie Sie zum richtigen Land, zur richtigen Gelegenheit und zum richtigen Karriereweg zu führen.",
     "buttons": [
-      { "text": "Deutschland" },
-      { "text": "Spanien" },
-      { "text": "Italien" },
-      { "text": "Finnland" }
+      { "text": "Deutschland", "code": "DE" },
+      { "text": "Spanien", "code": "ES" },
+      { "text": "Italien", "code": "IT" },
+      { "text": "Finnland", "code": "FI" }
     ],
     "imageSrc": "/migrate.webp",
     "imageAlt": "Migration nach Europa Möglichkeiten"
@@ -710,27 +711,27 @@
     "heading": "Praktikum",
     "paragraph1": "Wir bieten Praktikumsmöglichkeiten in mehreren Ländern für qualifizierte Fachkräfte. Nach erfolgreichem Abschluss der Ausbildung erhalten Sie eine Zertifizierung und Vermittlungshilfe bei angesehenen Unternehmen, um einen Karriereweg sicherzustellen, der mit Ihren Zielen übereinstimmt und eine bessere Zukunft sichert.",
     "buttons": [
-      { "text": "Spanien" },
-      { "text": "Polen" },
-      { "text": "Italien" },
-      { "text": "Portugal" }
+      { "text": "Spanien", "code": "ES" },
+      { "text": "Polen", "code": "PL" },
+      { "text": "Italien", "code": "IT" },
+      { "text": "Portugal", "code": "PT" }
     ],
     "imageSrc": "/traineeship.webp",
     "imageAlt": "Praktikumsmöglichkeiten in Europa"
   },
   "customHeroStudy": {
     "heading": "Studium",
-    "paragraph1": "Ein Studium in Europa ist mehr als nur einen Abschluss zu erlangen—es ist eine Gelegenheit, weltklasse Bildung zu erhalten, verschiedene Kulturen zu erleben und eine starke Grundlage für Ihre zukünftige Karriere aufzubauen",
+    "paragraph1": "Ein Studium in Europa ist mehr als nur einen Abschluss zu erlangen—es ist eine Gelegenheit, weltklasse Bildung zu erhalten, verschiedene Kulturen zu erleben und eine starke Grundlage für Ihre zukünftige Karriere aufzubauen.",
     "buttons": [
-      { "text": "Polen" },
-      { "text": "Finnland" },
-      { "text": "Deutschland" },
-      { "text": "Spanien" },
-      { "text": "Portugal" },
-      { "text": "Lettland" },
-      { "text": "Großbritannien" },
-      { "text": "Irland" },
-      { "text": "Kanada" }
+      { "text": "Polen", "code": "PL" },
+      { "text": "Finnland", "code": "FI" },
+      { "text": "Deutschland", "code": "DE" },
+      { "text": "Spanien", "code": "ES" },
+      { "text": "Portugal", "code": "PT" },
+      { "text": "Lettland", "code": "LV" },
+      { "text": "Großbritannien", "code": "GB" },
+      { "text": "Irland", "code": "IE" },
+      { "text": "Kanada", "code": "CA" }
     ],
     "imageSrc": "/study.webp",
     "imageAlt": "Studienmöglichkeiten in Europa und darüber hinaus"
@@ -739,11 +740,11 @@
     "heading": "Investor",
     "paragraph1": "Falls Sie ein Investor sind, der Möglichkeiten in Europa erkunden möchte, bieten wir mehrere Projekte in verschiedenen Sektoren, die auf Wachstum und Rentabilität zugeschnitten sind. Unser Team bietet End-to-End-Unterstützung, um Ihnen zu helfen, die richtige Investition zu identifizieren, Vorschriften zu navigieren und Ihre strategischen Ziele im europäischen Markt zu erreichen.",
     "buttons": [
-      { "text": "Deutschland" },
-      { "text": "Slowakei" },
-      { "text": "Spanien" },
-      { "text": "Litauen" },
-      { "text": "Finnland" }
+      { "text": "Deutschland", "code": "DE" },
+      { "text": "Slowakei", "code": "SK" },
+      { "text": "Spanien", "code": "ES" },
+      { "text": "Litauen", "code": "LT" },
+      { "text": "Finnland", "code": "FI" }
     ],
     "imageSrc": "/invest.webp",
     "imageAlt": "Investitionsmöglichkeiten in Europa"
@@ -752,12 +753,12 @@
     "heading": "Besuchen",
     "paragraph1": "Falls Sie Europa erkunden möchten und ein Besuchervisum suchen, kontaktieren Sie unser Support-Team. Wir bieten umfassende Beratung und Hilfe während des gesamten Prozesses und gewährleisten eine nahtlose Visa-Erfahrung und helfen Ihnen, Ihre Reisepläne mit Vertrauen und Leichtigkeit zu verwirklichen.",
     "buttons": [
-      { "text": "Polen" },
-      { "text": "Schweiz" },
-      { "text": "Deutschland" },
-      { "text": "Lettland" },
-      { "text": "Finnland" },
-      { "text": "Luxemburg" }
+      { "text": "Polen", "code": "PL" },
+      { "text": "Schweiz", "code": "CH" },
+      { "text": "Deutschland", "code": "DE" },
+      { "text": "Lettland", "code": "LV" },
+      { "text": "Finnland", "code": "FI" },
+      { "text": "Luxemburg", "code": "LU" }
     ],
     "imageSrc": "/visit.webp",
     "imageAlt": "Europa besuchen Möglichkeiten"
@@ -772,7 +773,8 @@
       "privacyPolicy": "Datenschutzrichtlinie",
       "termsOfService": "Nutzungsbedingungen",
       "refundPolicy": "Rückerstattungsrichtlinie",
-      "antiFraudPolicy": "Anti-Betrugs-Richtlinie"
+      "antiFraudPolicy": "Anti-Betrugs-Richtlinie",
+      "backToTop": "Nach oben"
     },
     "heading": {
       "solution": "Unsere Lösungen",

@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Scroll reveal, see src/hooks/useReveal.ts: a block with data-reveal="waiting" is still
+   below the screen, "shown" has come into view. Its children style both moments, e.g.
+   reveal-waiting:opacity-0 reveal-shown:animate-rise */
+@custom-variant reveal-waiting (&:where([data-reveal="waiting"], [data-reveal="waiting"] *));
+@custom-variant reveal-shown (&:where([data-reveal="shown"], [data-reveal="shown"] *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -51,6 +57,100 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Brand colours, the same values as src/constants/color.ts. Gives classes like bg-brand. */
+@theme {
+  --color-brand: #fecc00; /* the logo yellow */
+  --color-brand-soft: #fef9c3;
+  /* Fast start, long soft landing. Class: ease-out-quint */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Entrance animations for content that is on screen when the page loads. They are plain
+     CSS, so they start with the first paint instead of waiting for JavaScript. Stagger them
+     with animation-delay; "backwards" keeps an element hidden until its turn comes.
+     Classes: animate-rise, animate-word, animate-reveal, animate-settle */
+  --animate-rise: rise 0.9s var(--ease-out-quint) backwards;
+  --animate-word: word 1s var(--ease-out-quint) backwards;
+  --animate-reveal: reveal 1.3s var(--ease-out-quint) backwards;
+  --animate-settle: settle 1.8s var(--ease-out-quint) backwards;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 1.25rem;
+    }
+  }
+  /* A word slides up into view; its wrapper's overflow-hidden hides it until then */
+  @keyframes word {
+    from {
+      translate: 0 125%;
+    }
+  }
+  /* A frame wipes open from the bottom */
+  @keyframes reveal {
+    from {
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  /* A slight zoom that settles to normal size */
+  @keyframes settle {
+    from {
+      scale: 1.12;
+    }
+  }
+
+  /* Slides up into view from below an edge; the container's overflow-hidden hides it
+     until then. Like animate-word, for larger elements. Class: animate-emerge */
+  --animate-emerge: emerge 1.2s var(--ease-out-quint) backwards;
+
+  @keyframes emerge {
+    from {
+      translate: 0 75%;
+    }
+  }
+
+  /* A short line grows from its start (set the origin, e.g. origin-left). Class: animate-grow-x */
+  --animate-grow-x: grow-x 0.8s var(--ease-out-quint) backwards;
+
+  @keyframes grow-x {
+    from {
+      scale: 0 1;
+    }
+  }
+
+  /* SVG lines. animate-draw draws a path from its start; the path needs --len (its
+     length) and stroke-dasharray: var(--len). animate-pop grows a small shape into view
+     and animate-ping-soft sends a soft ring out of it, over and over. The last two scale
+     SVG shapes, which needs transform-box: fill-box and origin-center. */
+  --animate-draw: draw 2s var(--ease-out-quint) backwards;
+  --animate-pop: pop 0.6s var(--ease-out-quint) backwards;
+  --animate-ping-soft: ping-soft 2.8s var(--ease-out-quint) infinite;
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: var(--len);
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      scale: 0.3;
+    }
+  }
+  @keyframes ping-soft {
+    from {
+      opacity: 0.7;
+      scale: 1;
+    }
+    to {
+      opacity: 0;
+      scale: 3.5;
+    }
+  }
 }
 
 :root {
