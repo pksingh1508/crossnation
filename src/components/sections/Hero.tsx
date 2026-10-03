@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { fontPoppins } from "@/fonts";
+import { delay } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 import { WordReveal } from "@/components/ui/word-reveal";
@@ -32,9 +33,6 @@ const CHOICES: { label: string; path: string; icon: LucideIcon }[] = [
   { label: "btn3", path: "/migrate", icon: PlaneTakeoff },
   { label: "btn4", path: "/employer", icon: Building2 },
 ];
-
-/** When a CSS entrance animation (animate-rise etc.) starts */
-const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
 
 export function Hero() {
   const t = useTranslations("home");
@@ -89,7 +87,7 @@ export function Hero() {
                   <span className="relative grid size-11 shrink-0 place-items-center rounded-xl bg-brand-soft text-neutral-900 transition-colors duration-200 group-hover:bg-neutral-950 group-hover:text-brand group-focus-visible:bg-neutral-950 group-focus-visible:text-brand">
                     <Icon aria-hidden className="size-5" />
                   </span>
-                  <span className="relative min-w-0 flex-1 text-base leading-snug font-semibold hyphens-auto text-neutral-900">
+                  <span className="relative min-w-0 flex-1 text-base leading-snug font-semibold hyphens-auto wrap-anywhere text-neutral-900">
                     {t(label)}
                   </span>
                   <ArrowRight

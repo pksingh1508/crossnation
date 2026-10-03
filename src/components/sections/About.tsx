@@ -8,14 +8,8 @@ import { useReveal } from "@/hooks/useReveal";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { siteConfig } from "@/constants/site";
 import { fontInter, fontPoppins } from "@/fonts";
+import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { cn } from "@/lib/utils";
-
-/** When an entrance animation starts, counted from the moment its block comes into view */
-const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
-
-/** Hidden until its block scrolls into view, then rises into place */
-const RISE =
-  "reveal-waiting:opacity-0 reveal-shown:animate-rise motion-reduce:animate-none";
 
 /** "Poland" in the visitor's language (Polska, Polen, Pologne ...) */
 function polandIn(locale: string) {
@@ -43,7 +37,7 @@ export function About() {
           <p
             className={cn(
               "flex items-start gap-3 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase",
-              RISE
+              RISE_ON_REVEAL
             )}
           >
             {/* mt-[7px] centres the dash on the first line of text, in case the label wraps */}
@@ -66,7 +60,10 @@ export function About() {
 
           <div className={cn("mt-7 space-y-6", fontInter.className)}>
             <p
-              className={cn("text-lg leading-relaxed text-neutral-700", RISE)}
+              className={cn(
+                "text-lg leading-relaxed text-neutral-700",
+                RISE_ON_REVEAL
+              )}
               style={delay(400)}
             >
               {t("description.paragraph1")}
@@ -75,7 +72,7 @@ export function About() {
             <p
               className={cn(
                 "border-l-2 border-brand pl-5 text-base leading-relaxed text-neutral-600",
-                RISE
+                RISE_ON_REVEAL
               )}
               style={delay(520)}
             >
@@ -95,7 +92,7 @@ export function About() {
             aria-hidden
             className={cn(
               "absolute top-4 right-4 bottom-0 left-0 rounded-[2rem] border-2 border-brand sm:top-5 sm:right-5",
-              RISE
+              RISE_ON_REVEAL
             )}
             style={delay(450)}
           />
@@ -115,7 +112,7 @@ export function About() {
           <div
             className={cn(
               "absolute right-3 bottom-10 flex items-center gap-3 rounded-2xl bg-white/95 p-2.5 pr-5 shadow-[0_20px_40px_-20px_rgba(15,23,42,0.4)] ring-1 ring-black/5 backdrop-blur-sm sm:bottom-14 lg:-right-10",
-              RISE
+              RISE_ON_REVEAL
             )}
             style={delay(700)}
           >

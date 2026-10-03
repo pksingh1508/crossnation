@@ -32,7 +32,9 @@ interface WordRevealProps {
 /**
  * Heading text whose words slide up one after another. Each word sits in a box that hides
  * it until it slides in. The box's padding leaves room for accents and descenders; its
- * negative margin keeps the line height unchanged.
+ * negative margin keeps the line height unchanged. A word too long for the line (a long
+ * German word on a small phone) wraps instead of sticking out of the page: hyphenated
+ * where the browser can, otherwise broken anywhere.
  */
 export function WordReveal({
   text,
@@ -45,9 +47,12 @@ export function WordReveal({
       {splitWords(text).map((word, index) => (
         <Fragment key={index}>
           {index > 0 && " "}
-          <span className="-mt-[0.1em] -mb-[0.15em] inline-block overflow-hidden pt-[0.1em] pb-[0.15em] align-top">
+          <span className="-mt-[0.1em] -mb-[0.15em] inline-block max-w-full overflow-hidden pt-[0.1em] pb-[0.15em] align-top">
             <span
-              className={cn("inline-block", className)}
+              className={cn(
+                "inline-block hyphens-auto wrap-anywhere",
+                className
+              )}
               style={{ animationDelay: `${delay + index * stagger}ms` }}
             >
               {word}

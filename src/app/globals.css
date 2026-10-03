@@ -103,6 +103,16 @@
     }
   }
 
+  /* Slides up into view from below an edge; the container's overflow-hidden hides it
+     until then. Like animate-word, for larger elements. Class: animate-emerge */
+  --animate-emerge: emerge 1.2s var(--ease-out-quint) backwards;
+
+  @keyframes emerge {
+    from {
+      translate: 0 75%;
+    }
+  }
+
   /* A short line grows from its start (set the origin, e.g. origin-left). Class: animate-grow-x */
   --animate-grow-x: grow-x 0.8s var(--ease-out-quint) backwards;
 

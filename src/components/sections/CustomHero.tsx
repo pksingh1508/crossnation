@@ -9,6 +9,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { useReveal } from "@/hooks/useReveal";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter, fontPoppins } from "@/fonts";
+import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
@@ -35,13 +36,6 @@ interface CustomHeroProps {
 // the files never change and browsers can cache them for good.
 const FLAG_CDN =
   "https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.5.0/flags/1x1/";
-
-/** When an entrance animation starts, counted from the moment its block comes into view */
-const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
-
-/** Hidden until its block scrolls into view, then rises into place */
-const RISE =
-  "reveal-waiting:opacity-0 reveal-shown:animate-rise motion-reduce:animate-none";
 
 /**
  * One service on the home page: text and countries next to a photo. The countries link to
@@ -73,7 +67,7 @@ export function CustomHero({
           <p
             className={cn(
               "flex items-center gap-3 text-sm font-semibold tracking-[0.2em] text-neutral-400 tabular-nums",
-              RISE
+              RISE_ON_REVEAL
             )}
           >
             <span
@@ -97,7 +91,7 @@ export function CustomHero({
               <p
                 className={cn(
                   "leading-relaxed text-neutral-700 sm:text-lg",
-                  RISE
+                  RISE_ON_REVEAL
                 )}
                 style={delay(250)}
               >
@@ -107,7 +101,10 @@ export function CustomHero({
             {rest.map((paragraph, i) => (
               <p
                 key={i}
-                className={cn("leading-relaxed text-neutral-600", RISE)}
+                className={cn(
+                  "leading-relaxed text-neutral-600",
+                  RISE_ON_REVEAL
+                )}
                 style={delay(350 + i * 100)}
               >
                 {paragraph}
@@ -119,7 +116,7 @@ export function CustomHero({
             {countries.map(({ text, code }, i) => (
               <li
                 key={`${code ?? ""}-${text}`}
-                className={RISE}
+                className={RISE_ON_REVEAL}
                 style={delay(450 + i * 40)}
               >
                 <Link
