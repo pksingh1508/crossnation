@@ -958,13 +958,32 @@
   },
   "workPermit": {
     "title": "ARBEITSERLAUBNIS",
-    "heading": "Arbeitserlaubnis-Galerie",
-    "description": "Durchsuchen Sie unsere Sammlung erfolgreicher Arbeitserlaubnis-Genehmigungen"
+    "heading": "Arbeits\u00aderlaubnis-Galerie",
+    "description": "Durchsuchen Sie unsere Sammlung erfolgreicher Arbeitserlaubnis-Genehmigungen",
+    "count": "{count, plural, one {# Arbeitserlaubnis} other {# Arbeitserlaubnisse}}",
+    "document": "Arbeitserlaubnis"
   },
   "visaStamp": {
     "title": "VISA-STEMPEL",
     "heading": "Visa-Stempel-Galerie",
-    "description": "Erkunden Sie unsere Sammlung erfolgreicher Visa-Stempel-Genehmigungen aus verschiedenen Ländern"
+    "description": "Erkunden Sie unsere Sammlung erfolgreicher Visa-Stempel-Genehmigungen aus verschiedenen Ländern",
+    "count": "{count, plural, one {# Visa-Stempel} other {# Visa-Stempel}}",
+    "document": "Visa-Stempel"
+  },
+  "gallery": {
+    "filterLabel": "Nach Land filtern",
+    "all": "Alle",
+    "showing": "{shown} von {total}",
+    "showMore": "{count} weitere anzeigen",
+    "position": "{index} von {count}",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "close": "Schließen",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "empty": "Noch keine Dokumente. Schauen Sie bald wieder vorbei.",
+    "loadError": "Die Dokumente konnten nicht geladen werden.",
+    "retry": "Erneut versuchen"
   },
   "bookAppointment": {
     "heading1": "Beratung für Arbeitssuchende – Internationale Kunden",

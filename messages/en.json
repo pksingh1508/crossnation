@@ -959,12 +959,31 @@
   "workPermit": {
     "title": "WORK PERMIT",
     "heading": "Work Permit Gallery",
-    "description": "Browse through our collection of successful work permit approvals"
+    "description": "Browse through our collection of successful work permit approvals",
+    "count": "{count, plural, one {# work permit} other {# work permits}}",
+    "document": "Work permit"
   },
   "visaStamp": {
     "title": "VISA STAMP",
     "heading": "Visa Stamp Gallery",
-    "description": "Explore our collection of successful visa stamp approvals from various countries"
+    "description": "Explore our collection of successful visa stamp approvals from various countries",
+    "count": "{count, plural, one {# visa stamp} other {# visa stamps}}",
+    "document": "Visa stamp"
+  },
+  "gallery": {
+    "filterLabel": "Filter by country",
+    "all": "All",
+    "showing": "{shown} of {total}",
+    "showMore": "Show {count} more",
+    "position": "{index} of {count}",
+    "previous": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "empty": "No documents yet. Check back soon.",
+    "loadError": "We couldn't load the documents.",
+    "retry": "Try again"
   },
   "bookAppointment": {
     "heading1": "Job Seekers Advisory – International Clients",

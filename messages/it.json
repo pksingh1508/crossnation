@@ -959,12 +959,31 @@
   "workPermit": {
     "title": "PERMESSO DI LAVORO",
     "heading": "Galleria dei permessi di lavoro",
-    "description": "Sfoglia la nostra raccolta di permessi di lavoro approvati con successo"
+    "description": "Sfoglia la nostra raccolta di permessi di lavoro approvati con successo",
+    "count": "{count, plural, one {# permesso di lavoro} other {# permessi di lavoro}}",
+    "document": "Permesso di lavoro"
   },
   "visaStamp": {
     "title": "VISTO TIMBRATO",
     "heading": "Galleria dei visti timbrati",
-    "description": "Esplora la nostra raccolta di visti timbrati approvati da vari paesi"
+    "description": "Esplora la nostra raccolta di visti timbrati approvati da vari paesi",
+    "count": "{count, plural, one {# visto timbrato} other {# visti timbrati}}",
+    "document": "Visto timbrato"
+  },
+  "gallery": {
+    "filterLabel": "Filtra per paese",
+    "all": "Tutti",
+    "showing": "{shown} di {total}",
+    "showMore": "Mostra altri {count}",
+    "position": "{index} di {count}",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "close": "Chiudi",
+    "zoomIn": "Ingrandisci",
+    "zoomOut": "Riduci",
+    "empty": "Ancora nessun documento. Torna presto.",
+    "loadError": "Impossibile caricare i documenti.",
+    "retry": "Riprova"
   },
   "bookAppointment": {
     "heading1": "Consulenza per Chi Cerca Lavoro – Clienti Internazionali",

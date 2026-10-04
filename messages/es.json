@@ -959,12 +959,31 @@
   "workPermit": {
     "title": "PERMISO DE TRABAJO",
     "heading": "Galería de Permisos de Trabajo",
-    "description": "Explora nuestra colección de aprobaciones exitosas de permisos de trabajo"
+    "description": "Explora nuestra colección de aprobaciones exitosas de permisos de trabajo",
+    "count": "{count, plural, one {# permiso de trabajo} other {# permisos de trabajo}}",
+    "document": "Permiso de trabajo"
   },
   "visaStamp": {
     "title": "SELLO DE VISA",
     "heading": "Galería de Sellos de Visa",
-    "description": "Descubre nuestra colección de aprobaciones exitosas de sellos de visa de varios países"
+    "description": "Descubre nuestra colección de aprobaciones exitosas de sellos de visa de varios países",
+    "count": "{count, plural, one {# sello de visa} other {# sellos de visa}}",
+    "document": "Sello de visa"
+  },
+  "gallery": {
+    "filterLabel": "Filtrar por país",
+    "all": "Todos",
+    "showing": "{shown} de {total}",
+    "showMore": "Mostrar {count} más",
+    "position": "{index} de {count}",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "close": "Cerrar",
+    "zoomIn": "Ampliar",
+    "zoomOut": "Reducir",
+    "empty": "Aún no hay documentos. Vuelve pronto.",
+    "loadError": "No pudimos cargar los documentos.",
+    "retry": "Intentar de nuevo"
   },
   "bookAppointment": {
     "heading1": "Asesoría para Buscadores de Empleo – Clientes Internacionales",

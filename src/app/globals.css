@@ -175,6 +175,18 @@
       scale: 3.5;
     }
   }
+
+  /* A soft light sweeps across a placeholder while its picture loads. Class: animate-shimmer */
+  --animate-shimmer: shimmer 1.8s ease-in-out infinite;
+
+  @keyframes shimmer {
+    from {
+      translate: -100% 0;
+    }
+    to {
+      translate: 100% 0;
+    }
+  }
 }
 
 :root {

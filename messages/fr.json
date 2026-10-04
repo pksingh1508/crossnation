@@ -959,12 +959,31 @@
   "workPermit": {
     "title": "PERMIS DE TRAVAIL",
     "heading": "Galerie des Permis de Travail",
-    "description": "Parcourez notre collection d’approbations réussies de permis de travail"
+    "description": "Parcourez notre collection d’approbations réussies de permis de travail",
+    "count": "{count, plural, one {# permis de travail} other {# permis de travail}}",
+    "document": "Permis de travail"
   },
   "visaStamp": {
     "title": "TAMPON DE VISA",
     "heading": "Galerie des Tampons de Visa",
-    "description": "Découvrez notre collection d’approbations réussies de tampons de visa provenant de différents pays"
+    "description": "Découvrez notre collection d’approbations réussies de tampons de visa provenant de différents pays",
+    "count": "{count, plural, one {# tampon de visa} other {# tampons de visa}}",
+    "document": "Tampon de visa"
+  },
+  "gallery": {
+    "filterLabel": "Filtrer par pays",
+    "all": "Tous",
+    "showing": "{shown} sur {total}",
+    "showMore": "Afficher {count} de plus",
+    "position": "{index} sur {count}",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "close": "Fermer",
+    "zoomIn": "Zoomer",
+    "zoomOut": "Dézoomer",
+    "empty": "Aucun document pour le moment. Revenez bientôt.",
+    "loadError": "Impossible de charger les documents.",
+    "retry": "Réessayer"
   },
   "bookAppointment": {
     "heading1": "Conseil pour les Chercheurs d’Emploi – Clients Internationaux",

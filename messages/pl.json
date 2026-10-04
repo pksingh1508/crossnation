@@ -959,12 +959,31 @@
   "workPermit": {
     "title": "ZEZWOLENIE NA PRACĘ",
     "heading": "Galeria Zezwoleń na Pracę",
-    "description": "Przejrzyj naszą kolekcję pomyślnie zatwierdzonych zezwoleń na pracę"
+    "description": "Przejrzyj naszą kolekcję pomyślnie zatwierdzonych zezwoleń na pracę",
+    "count": "{count, plural, one {# zezwolenie na pracę} few {# zezwolenia na pracę} many {# zezwoleń na pracę} other {# zezwolenia na pracę}}",
+    "document": "Zezwolenie na pracę"
   },
   "visaStamp": {
     "title": "WIZA – STEMPEL",
     "heading": "Galeria Wizowych Stemplów",
-    "description": "Poznaj naszą kolekcję pomyślnie zatwierdzonych wizowych stempli z różnych krajów"
+    "description": "Poznaj naszą kolekcję pomyślnie zatwierdzonych wizowych stempli z różnych krajów",
+    "count": "{count, plural, one {# stempel wizowy} few {# stemple wizowe} many {# stempli wizowych} other {# stempla wizowego}}",
+    "document": "Stempel wizowy"
+  },
+  "gallery": {
+    "filterLabel": "Filtruj według kraju",
+    "all": "Wszystkie",
+    "showing": "{shown} z {total}",
+    "showMore": "Pokaż jeszcze {count}",
+    "position": "{index} z {count}",
+    "previous": "Poprzedni",
+    "next": "Następny",
+    "close": "Zamknij",
+    "zoomIn": "Powiększ",
+    "zoomOut": "Pomniejsz",
+    "empty": "Nie ma jeszcze dokumentów. Zajrzyj wkrótce.",
+    "loadError": "Nie udało się wczytać dokumentów.",
+    "retry": "Spróbuj ponownie"
   },
   "bookAppointment": {
     "heading1": "Doradztwo dla Osób Poszukujących Pracy – Klienci Międzynarodowi",

@@ -208,6 +208,34 @@ export function getVisaStamps(
   );
 }
 
+/**
+ * A whole gallery, newest first, for its page: it holds a few dozen documents, which the
+ * page filters and steps through in the browser. Capped, in case it ever grows very large.
+ */
+const GALLERY_LIMIT = 500;
+
+export async function getAllWorkPermits(): Promise<GalleryImage[]> {
+  const { data, error } = await cms
+    .from("eu_work_permits")
+    .select(GALLERY)
+    .eq("status", "published")
+    .order("published_at", { ascending: false })
+    .limit(GALLERY_LIMIT);
+  if (error) throw error;
+  return data;
+}
+
+export async function getAllVisaStamps(): Promise<GalleryImage[]> {
+  const { data, error } = await cms
+    .from("eu_visa_stamps")
+    .select(GALLERY)
+    .eq("status", "published")
+    .order("published_at", { ascending: false })
+    .limit(GALLERY_LIMIT);
+  if (error) throw error;
+  return data;
+}
+
 // Sitemap
 
 /** Every published post and article, with the date it last changed. */

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { AllPermitImage } from "@/components/work_permit/AllPermitImage";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { DocumentGallery } from "@/components/gallery/DocumentGallery";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
-import { getWorkPermits } from "@/lib/cms/queries";
-import { getLocalizedUrl } from "@/lib/locale-paths";
+import { getAllWorkPermits } from "@/lib/cms/queries";
+import { toGalleryDocuments } from "@/lib/cms/gallery";
+import { getLocalizedPath, getLocalizedUrl } from "@/lib/locale-paths";
 
 const canonicalUrl = getLocalizedUrl(
   siteConfig.defaultLanguage,
@@ -22,12 +24,43 @@ export const metadata: Metadata = buildMetadata({
   canonical: canonicalUrl,
 });
 
-export default async function WorkPermitGalleryPage() {
-  // Page 1 is rendered here; the gallery loads more images as the visitor scrolls
-  const initialPage = await getWorkPermits(1, 20).catch((error) => {
-    console.error("Failed to prefetch work permit gallery:", error);
-    return null;
-  });
+interface WorkPermitGalleryPageProps {
+  params: Promise<{ lang: string }>;
+  /** ?country=pl shows only that country's permits */
+  searchParams?: Promise<{ country?: string | string[] }>;
+}
 
-  return <AllPermitImage initialPage={initialPage} />;
+export default async function WorkPermitGalleryPage({
+  params,
+  searchParams,
+}: WorkPermitGalleryPageProps) {
+  const { lang } = await params;
+  const [country] = [(await searchParams)?.country].flat();
+
+  const documents = await getAllWorkPermits()
+    .then((permits) => toGalleryDocuments(permits, lang))
+    .catch((error) => {
+      console.error("Failed to load the work permit gallery:", error);
+      return null;
+    });
+
+  return (
+    <div>
+      <div className="container mx-auto px-4 pt-6">
+        <Breadcrumbs
+          items={[
+            {
+              name: "Work Permits",
+              href: getLocalizedPath(lang, "/work-permit"),
+            },
+          ]}
+        />
+      </div>
+      <DocumentGallery
+        namespace="workPermit"
+        documents={documents}
+        country={country}
+      />
+    </div>
+  );
 }

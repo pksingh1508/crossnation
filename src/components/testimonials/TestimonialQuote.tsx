@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Quote, User } from "lucide-react";
 import type { TestimonialCard } from "@/lib/cms/types";
+import { useColumn } from "@/hooks/useColumn";
 import { useReveal } from "@/hooks/useReveal";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter } from "@/fonts";
@@ -27,20 +27,8 @@ interface TestimonialProps {
  */
 export function TestimonialQuote({ testimonial }: TestimonialProps) {
   const [ref, reveal] = useReveal<HTMLLIElement>();
-  // The browser picks a card's column as it balances the columns, so the card measures
-  // which column it is in to time its entrance
-  const [column, setColumn] = useState(0);
-
-  useEffect(() => {
-    const card = ref.current;
-    const list = card?.parentElement;
-    if (!card || !list) return;
-    const left =
-      card.getBoundingClientRect().left - list.getBoundingClientRect().left;
-    setColumn(Math.round(left / card.offsetWidth));
-  }, [ref]);
-
-  const start = column * 120;
+  // The browser picks a card's column as it balances the columns
+  const start = useColumn(ref) * 120;
 
   return (
     <li
