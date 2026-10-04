@@ -1,12 +1,15 @@
-import { useTranslations } from "next-intl";
-import { Metadata } from "next";
-import AntiFraudPolicy from "@/components/Terms_Conditions/AntiFraudPolicy";
+import type { Metadata } from "next";
+import { PolicyPage } from "@/components/policy/PolicyPage";
+import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/constants/site";
+import { getLocalizedUrl } from "@/lib/locale-paths";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Anti-Fraud Policy",
   description: "Our anti-fraud policy and security measures",
-};
+  canonical: getLocalizedUrl(siteConfig.defaultLanguage, "/antiFraud-policy"),
+});
 
 export default function AntiFraudPolicyPage() {
-  return <AntiFraudPolicy />;
+  return <PolicyPage policy="antiFraud" />;
 }

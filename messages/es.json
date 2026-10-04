@@ -995,7 +995,7 @@
     "meeting3": "Consulta rápida por WhatsApp",
     "min": "minutos"
   },
-  "term&Conditions": {
+  "privacyPolicy": {
     "mainHeading": "EU Career Serwis – Términos, Condiciones y Políticas",
     "heading1": {
       "title": "Afiliación Organizativa y Renuncia",
@@ -1353,8 +1353,7 @@
       "paragraph2": "Se toman todas las medidas razonables para proteger la información del cliente contra accesos no autorizados, uso indebido, pérdida, alteración o divulgación.",
       "paragraph3": "Los datos se recopilan exclusivamente para operaciones comerciales, cumplimiento legal, comunicación con clientes y mejora de servicios.",
       "paragraph4": "Los datos de los clientes nunca se divulgarán a terceros sin consentimiento expreso, a menos que lo exija la ley.",
-      "paragraph5": "Al contratar con EU Career Serwis, los clientes reconocen y aceptan estos términos y nuestras prácticas de protección de datos.",
-      "subParagraphs": {}
+      "paragraph5": "Al contratar con EU Career Serwis, los clientes reconocen y aceptan estos términos y nuestras prácticas de protección de datos."
     },
     "heading2": {
       "title": "Alcance de los Servicios y Requisitos de Elegibilidad del Cliente",
@@ -1363,85 +1362,84 @@
       "paragraph3": "El alcance de los servicios puede variar según las necesidades individuales del cliente.",
       "paragraph4": "Todos los resultados relacionados con inmigración y regulaciones dependen exclusivamente de las autoridades competentes.",
       "paragraph5": "EU Career Serwis no garantiza aprobaciones de inmigración, ofertas de empleo ni resultados relacionados.",
-      "paragraph6": "Los servicios son de carácter consultivo y no sustituyen el asesoramiento legal formal.",
-      "subParagraphs": {}
+      "paragraph6": "Los servicios son de carácter consultivo y no sustituyen el asesoramiento legal formal."
     },
     "heading3": {
       "title": "Condiciones de Pago",
       "paragraph1": "Todas las tarifas de servicio deben pagarse en su totalidad antes de iniciar el proceso de consultoría.",
       "paragraph2": "Los cargos de EU Career Serwis son independientes de los costos externos como las tasas cobradas por:",
-      "paragraph3": "Los clientes son los únicos responsables de cubrir estas tarifas de terceros.",
       "subParagraphs": {
         "subParagraph1": "Autoridades de inmigración",
         "subParagraph2": "Consulados",
         "subParagraph3": "Centros de exámenes",
         "subParagraph4": "Otros entes regulatorios"
-      }
+      },
+      "paragraph3": "Los clientes son los únicos responsables de cubrir estas tarifas de terceros."
     },
     "heading4": {
       "title": "Elegibilidad para Reembolsos",
       "paragraph1": "La elegibilidad para reembolsos aplica únicamente a clientes que hayan pagado la tarifa completa del servicio sin saldos pendientes.",
       "paragraph2": "Los reembolsos se limitan a las tarifas de consultoría pagadas a EU Career Serwis y excluyen impuestos o cargos administrativos no reembolsables.",
       "paragraph3": "Se pueden considerar reembolsos si una solicitud es oficialmente rechazada por la autoridad correspondiente, siempre que:",
-      "paragraph4": "Los reembolsos aprobados se procesan dentro de 15–30 días laborables, sujetos a posibles retrasos externos.",
       "subParagraphs": {
         "subParagraph1": "El cliente envíe un Formulario de Solicitud de Reembolso en Línea completo.",
         "subParagraph2": "Se presenten documentos de respaldo, como una carta formal de rechazo."
-      }
+      },
+      "paragraph4": "Los reembolsos aprobados se procesan dentro de 15–30 días laborables, sujetos a posibles retrasos externos."
     },
     "heading5": {
       "title": "Fuerza Mayor y Circunstancias Excepcionales",
       "paragraph1": "EU Career Serwis no se responsabiliza por interrupciones del servicio causadas por eventos fuera de su control, incluidos:",
-      "paragraph2": "Desastres naturales",
-      "paragraph3": "Pandemias",
-      "paragraph4": "Actos de guerra o terrorismo",
-      "paragraph5": "Restricciones gubernamentales",
-      "paragraph6": "Cambios significativos en la política de inmigración",
-      "paragraph7": "En tales casos, los servicios se reanudarán cuando sea posible. No se emitirán reembolsos por retrasos causados por circunstancias incontrolables.",
-      "paragraph8": "Si un problema procedimental por parte de la empresa afecta el caso de un cliente, EU Career Serwis puede revisar el asunto de buena fe y, a su discreción, ofrecer un reembolso parcial o una solución alternativa.",
-      "subParagraphs": {}
+      "subParagraphs": {
+        "subParagraph1": "Desastres naturales",
+        "subParagraph2": "Pandemias",
+        "subParagraph3": "Actos de guerra o terrorismo",
+        "subParagraph4": "Restricciones gubernamentales",
+        "subParagraph5": "Cambios significativos en la política de inmigración"
+      },
+      "paragraph2": "En tales casos, los servicios se reanudarán cuando sea posible. No se emitirán reembolsos por retrasos causados por circunstancias incontrolables.",
+      "paragraph3": "Si un problema procedimental por parte de la empresa afecta el caso de un cliente, EU Career Serwis puede revisar el asunto de buena fe y, a su discreción, ofrecer un reembolso parcial o una solución alternativa."
     },
     "heading6": {
       "title": "Tarifas y Cargos de Terceros",
       "paragraph1": "Las tarifas de servicio pagadas a EU Career Serwis son totalmente independientes de las tarifas de terceros (autoridades de inmigración, centros de exámenes, consulados, etc.).",
       "paragraph2": "Estos cargos externos son responsabilidad exclusiva del cliente.",
       "paragraph3": "Las tarifas de EU Career Serwis se determinan de forma independiente para reflejar la calidad del servicio y no pueden ser impugnadas una vez completada la inscripción.",
-      "paragraph4": "No se permiten reembolsos ni transferencias de servicios si el cliente interrumpe voluntariamente los servicios.",
-      "subParagraphs": {}
+      "paragraph4": "No se permiten reembolsos ni transferencias de servicios si el cliente interrumpe voluntariamente los servicios."
     },
     "heading7": {
       "title": "Obligaciones de Confidencialidad y Protección de Datos",
       "paragraph1": "EU Career Serwis garantiza pleno cumplimiento con los estándares del GDPR, asegurando que los datos de los clientes se mantengan confidenciales y seguros.",
       "paragraph2": "Los clientes deben proporcionar información precisa y completa relacionada con el proceso de inmigración.",
       "paragraph3": "Ocultar detalles críticos (p. ej., antecedentes penales, situación financiera) puede:",
-      "paragraph4": "La transparencia y la cooperación son necesarias para garantizar una consultoría eficaz.",
       "subParagraphs": {
         "subParagraph1": "Impactar negativamente en el caso de inmigración.",
         "subParagraph2": "Conllevar la pérdida de elegibilidad para reembolsos."
-      }
+      },
+      "paragraph4": "La transparencia y la cooperación son necesarias para garantizar una consultoría eficaz."
     },
     "heading8": {
       "title": "Responsabilidad Limitada en Caso de Cambios en la Política de Inmigración",
       "paragraph1": "EU Career Serwis no puede controlar ni predecir cambios en las políticas gubernamentales, límites de cupos o actualizaciones procedimentales.",
       "paragraph2": "Dichos cambios pueden afectar:",
-      "paragraph3": "Los clientes aceptan que EU Career Serwis no es responsable de denegaciones de visado o retrasos derivados de cambios en políticas o regulaciones.",
-      "paragraph4": "No se emitirán reembolsos en estas circunstancias.",
       "subParagraphs": {
         "subParagraph1": "Criterios de elegibilidad",
         "subParagraph2": "Plazos",
         "subParagraph3": "Resultados finales"
-      }
+      },
+      "paragraph3": "Los clientes aceptan que EU Career Serwis no es responsable de denegaciones de visado o retrasos derivados de cambios en políticas o regulaciones.",
+      "paragraph4": "No se emitirán reembolsos en estas circunstancias."
     },
     "heading9": {
       "title": "Sin Garantía de Resultados o Empleo",
       "paragraph1": "EU Career Serwis no puede garantizar:",
-      "paragraph2": "Las decisiones finales corresponden exclusivamente a las autoridades gubernamentales, empleadores y universidades.",
-      "paragraph3": "Los clientes reconocen que ningún consultor, empleado o socio de EU Career Serwis puede prometer legalmente resultados garantizados.",
       "subParagraphs": {
         "subParagraph1": "Aprobación de inmigración",
         "subParagraph2": "Colocación laboral",
         "subParagraph3": "Admisión universitaria"
-      }
+      },
+      "paragraph2": "Las decisiones finales corresponden exclusivamente a las autoridades gubernamentales, empleadores y universidades.",
+      "paragraph3": "Los clientes reconocen que ningún consultor, empleado o socio de EU Career Serwis puede prometer legalmente resultados garantizados."
     },
     "heading10": {
       "title": "Política Anti-Chargeback",
@@ -1456,36 +1454,49 @@
     "heading11": {
       "title": "Comunicación y Actualizaciones Puntuales",
       "paragraph1": "Los clientes deben informar oportunamente a EU Career Serwis sobre:",
-      "paragraph2": "La comunicación puntual es esencial para evitar:",
       "subParagraphs": {
         "subParagraph1": "Cualquier comunicación oficial de autoridades de inmigración o regulatorias.",
-        "subParagraph2": "Cambios en los datos personales o información de contacto.",
-        "subParagraph3": "Retrasos en el servicio",
-        "subParagraph4": "Interrupciones",
-        "subParagraph5": "Pérdida de elegibilidad para reembolsos"
+        "subParagraph2": "Cambios en los datos personales o información de contacto."
+      },
+      "paragraph2": "La comunicación puntual es esencial para evitar:",
+      "subParagraphs2": {
+        "subParagraph1": "Retrasos en el servicio",
+        "subParagraph2": "Interrupciones",
+        "subParagraph3": "Pérdida de elegibilidad para reembolsos"
       }
     },
     "heading12": {
       "title": "Integridad Profesional y Cláusula Anti-Difamación",
       "paragraph1": "Se anima a los clientes a plantear quejas directamente al equipo de soporte de EU Career Serwis para su resolución.",
       "paragraph2": "Cualquier intento de difamar, desacreditar o dañar públicamente la reputación de EU Career Serwis sin buscar primero una resolución puede resultar en:",
-      "paragraph3": "EU Career Serwis se compromete a abordar los problemas de manera profesional y constructiva.",
       "subParagraphs": {
         "subParagraph1": "Terminación de los servicios.",
         "subParagraph2": "Pérdida de elegibilidad para reembolsos."
-      }
+      },
+      "paragraph3": "EU Career Serwis se compromete a abordar los problemas de manera profesional y constructiva."
     },
     "heading13": {
       "title": "Acuerdo Final y Jurisdicción",
       "paragraph1": "Al aceptar estos Términos y Condiciones, los clientes confirman su comprensión y aceptación respecto a:",
-      "paragraph2": "Todas las disputas están bajo la jurisdicción de los tribunales polacos y se regirán por la ley polaca.",
-      "paragraph3": "Se anima a los clientes a solicitar aclaraciones sobre cualquier término antes de contratar los servicios.",
-      "paragraph4": "Para asistencia o consultas, los clientes pueden contactar a EU Career Serwis en info@eucareerserwis.com.",
       "subParagraphs": {
         "subParagraph1": "Políticas de reembolso",
         "subParagraph2": "Compromisos de protección de datos",
         "subParagraph3": "Responsabilidades del cliente"
-      }
+      },
+      "paragraph2": "Todas las disputas están bajo la jurisdicción de los tribunales polacos y se regirán por la ley polaca.",
+      "paragraph3": "Se anima a los clientes a solicitar aclaraciones sobre cualquier término antes de contratar los servicios.",
+      "paragraph4": "Para asistencia o consultas, los clientes pueden contactar a EU Career Serwis en info@eucareerserwis.com."
     }
+  },
+  "policy": {
+    "eyebrow": "Legal",
+    "sections": "{count, plural, one {# sección} other {# secciones}}",
+    "readingTime": "{minutes} min de lectura",
+    "contents": "En esta página",
+    "linkToSection": "Enlace a esta sección",
+    "otherPolicies": "Otras políticas",
+    "questions": "¿Tienes preguntas?",
+    "questionsText": "Nuestro equipo te explicará con gusto cualquier punto de este documento.",
+    "contactUs": "Contáctanos"
   }
 }

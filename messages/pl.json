@@ -995,7 +995,7 @@
     "meeting3": "Szybka konsultacja przez WhatsApp",
     "min": "minuty"
   },
-  "term&Conditions": {
+  "privacyPolicy": {
     "mainHeading": "EU Career Serwis – Warunki, Zasady i Polityki",
     "heading1": {
       "title": "Powiązanie Organizacyjne i Zastrzeżenie",
@@ -1353,8 +1353,7 @@
       "paragraph2": "Podejmowane są wszelkie rozsądne kroki w celu ochrony informacji klientów przed nieautoryzowanym dostępem, nadużyciem, utratą, zmianą lub ujawnieniem.",
       "paragraph3": "Dane są zbierane wyłącznie do celów operacyjnych, zgodności z prawem, komunikacji z klientem i poprawy jakości usług.",
       "paragraph4": "Dane klientów nigdy nie zostaną ujawnione osobom trzecim bez wyraźnej zgody, chyba że jest to wymagane przez prawo.",
-      "paragraph5": "Korzystając z usług EU Career Serwis, klienci potwierdzają i akceptują niniejsze warunki oraz nasze praktyki w zakresie ochrony danych.",
-      "subParagraphs": {}
+      "paragraph5": "Korzystając z usług EU Career Serwis, klienci potwierdzają i akceptują niniejsze warunki oraz nasze praktyki w zakresie ochrony danych."
     },
     "heading2": {
       "title": "Zakres usług i kwalifikowalność klienta",
@@ -1363,85 +1362,84 @@
       "paragraph3": "Zakres usług może różnić się w zależności od indywidualnych potrzeb klienta.",
       "paragraph4": "Wszystkie wyniki imigracyjne i regulacyjne pozostają w wyłącznej gestii właściwych organów.",
       "paragraph5": "EU Career Serwis nie gwarantuje pomyślnego zatwierdzenia wniosków imigracyjnych, ofert pracy ani innych powiązanych rezultatów.",
-      "paragraph6": "Usługi mają charakter doradczy i nie zastępują formalnej porady prawnej.",
-      "subParagraphs": {}
+      "paragraph6": "Usługi mają charakter doradczy i nie zastępują formalnej porady prawnej."
     },
     "heading3": {
       "title": "Warunki płatności",
       "paragraph1": "Wszystkie opłaty za usługi muszą zostać opłacone w całości przed rozpoczęciem procesu konsultacyjnego.",
       "paragraph2": "Opłaty EU Career Serwis są oddzielne od kosztów zewnętrznych, takich jak opłaty pobierane przez:",
-      "paragraph3": "Klienci ponoszą pełną odpowiedzialność za pokrycie tych opłat stron trzecich.",
       "subParagraphs": {
         "subParagraph1": "Władze imigracyjne",
         "subParagraph2": "Konsulaty",
         "subParagraph3": "Centra egzaminacyjne",
         "subParagraph4": "Inne organy regulacyjne"
-      }
+      },
+      "paragraph3": "Klienci ponoszą pełną odpowiedzialność za pokrycie tych opłat stron trzecich."
     },
     "heading4": {
       "title": "Uprawnienia do zwrotu",
       "paragraph1": "Prawo do zwrotu przysługuje wyłącznie klientom, którzy zapłacili pełną opłatę za usługę bez zaległości.",
       "paragraph2": "Zwroty ograniczają się do opłat konsultacyjnych zapłaconych EU Career Serwis i nie obejmują niepodlegających zwrotowi podatków ani opłat administracyjnych.",
       "paragraph3": "Zwroty mogą być rozpatrywane, jeśli wniosek zostanie oficjalnie odrzucony przez właściwy organ, pod warunkiem że:",
-      "paragraph4": "Zatwierdzone zwroty są realizowane w ciągu 15–30 dni roboczych, z zastrzeżeniem możliwych opóźnień zewnętrznych.",
       "subParagraphs": {
         "subParagraph1": "Klient złoży kompletny internetowy formularz zwrotu.",
         "subParagraph2": "Dostarczone zostaną dokumenty potwierdzające, takie jak oficjalne pismo odmowne."
-      }
+      },
+      "paragraph4": "Zatwierdzone zwroty są realizowane w ciągu 15–30 dni roboczych, z zastrzeżeniem możliwych opóźnień zewnętrznych."
     },
     "heading5": {
       "title": "Siła wyższa i wyjątkowe okoliczności",
       "paragraph1": "EU Career Serwis nie ponosi odpowiedzialności za zakłócenia w świadczeniu usług spowodowane zdarzeniami pozostającymi poza jego kontrolą, w tym:",
-      "paragraph2": "Katastrofy naturalne",
-      "paragraph3": "Pandemie",
-      "paragraph4": "Działania wojenne lub terrorystyczne",
-      "paragraph5": "Ograniczenia rządowe",
-      "paragraph6": "Istotne zmiany w polityce imigracyjnej",
-      "paragraph7": "W takich przypadkach usługi zostaną wznowione, gdy będzie to możliwe. Zwroty nie są wydawane w przypadku opóźnień spowodowanych okolicznościami niezależnymi.",
-      "paragraph8": "Jeśli problem proceduralny ze strony firmy wpłynie na sprawę klienta, EU Career Serwis może rozpatrzyć sprawę w dobrej wierze i według własnego uznania zapewnić częściowy zwrot lub alternatywne rozwiązanie.",
-      "subParagraphs": {}
+      "subParagraphs": {
+        "subParagraph1": "Katastrofy naturalne",
+        "subParagraph2": "Pandemie",
+        "subParagraph3": "Działania wojenne lub terrorystyczne",
+        "subParagraph4": "Ograniczenia rządowe",
+        "subParagraph5": "Istotne zmiany w polityce imigracyjnej"
+      },
+      "paragraph2": "W takich przypadkach usługi zostaną wznowione, gdy będzie to możliwe. Zwroty nie są wydawane w przypadku opóźnień spowodowanych okolicznościami niezależnymi.",
+      "paragraph3": "Jeśli problem proceduralny ze strony firmy wpłynie na sprawę klienta, EU Career Serwis może rozpatrzyć sprawę w dobrej wierze i według własnego uznania zapewnić częściowy zwrot lub alternatywne rozwiązanie."
     },
     "heading6": {
       "title": "Opłaty i koszty stron trzecich",
       "paragraph1": "Opłaty za usługi płacone EU Career Serwis są całkowicie oddzielne od opłat stron trzecich (władze imigracyjne, centra egzaminacyjne, konsulaty itp.).",
       "paragraph2": "Te zewnętrzne opłaty pozostają w wyłącznej gestii klienta.",
       "paragraph3": "Opłaty EU Career Serwis są ustalane niezależnie, aby odzwierciedlać jakość usług i nie mogą być kwestionowane po zakończeniu rejestracji.",
-      "paragraph4": "Zwroty ani przeniesienia usług nie są dozwolone, jeśli klient dobrowolnie rezygnuje z usług.",
-      "subParagraphs": {}
+      "paragraph4": "Zwroty ani przeniesienia usług nie są dozwolone, jeśli klient dobrowolnie rezygnuje z usług."
     },
     "heading7": {
       "title": "Poufność i obowiązki w zakresie ochrony danych",
       "paragraph1": "EU Career Serwis gwarantuje pełną zgodność ze standardami RODO, zapewniając poufność i bezpieczeństwo danych klientów.",
       "paragraph2": "Klienci muszą podać dokładne i kompletne informacje istotne dla procesu imigracyjnego.",
       "paragraph3": "Ukrywanie kluczowych informacji (np. historii karnej, sytuacji finansowej) może:",
-      "paragraph4": "Wymagana jest przejrzystość i współpraca w celu zapewnienia skutecznego doradztwa.",
       "subParagraphs": {
         "subParagraph1": "Negatywnie wpłynąć na sprawę imigracyjną.",
         "subParagraph2": "Prowadzić do utraty uprawnienia do zwrotu."
-      }
+      },
+      "paragraph4": "Wymagana jest przejrzystość i współpraca w celu zapewnienia skutecznego doradztwa."
     },
     "heading8": {
       "title": "Ograniczona odpowiedzialność w przypadku zmian polityki imigracyjnej",
       "paragraph1": "EU Career Serwis nie może kontrolować ani przewidywać zmian polityki rządowej, limitów kwotowych ani aktualizacji procedur.",
       "paragraph2": "Takie zmiany mogą wpłynąć na:",
-      "paragraph3": "Klienci akceptują, że EU Career Serwis nie ponosi odpowiedzialności za odmowy wiz ani opóźnienia wynikające ze zmian politycznych lub regulacyjnych.",
-      "paragraph4": "Zwroty nie będą wydawane w takich okolicznościach.",
       "subParagraphs": {
         "subParagraph1": "Kryteria kwalifikacyjne",
         "subParagraph2": "Terminy",
         "subParagraph3": "Ostateczne wyniki"
-      }
+      },
+      "paragraph3": "Klienci akceptują, że EU Career Serwis nie ponosi odpowiedzialności za odmowy wiz ani opóźnienia wynikające ze zmian politycznych lub regulacyjnych.",
+      "paragraph4": "Zwroty nie będą wydawane w takich okolicznościach."
     },
     "heading9": {
       "title": "Brak gwarancji rezultatu lub zatrudnienia",
       "paragraph1": "EU Career Serwis nie może zagwarantować:",
-      "paragraph2": "Ostateczne decyzje należą wyłącznie do właściwych organów rządowych, pracodawców i uczelni.",
-      "paragraph3": "Klienci przyjmują do wiadomości, że żaden konsultant, pracownik ani partner EU Career Serwis nie może prawnie obiecywać gwarantowanych wyników.",
       "subParagraphs": {
         "subParagraph1": "Zatwierdzenia imigracyjnego",
         "subParagraph2": "Zatrudnienia",
         "subParagraph3": "Przyjęcia na uczelnię"
-      }
+      },
+      "paragraph2": "Ostateczne decyzje należą wyłącznie do właściwych organów rządowych, pracodawców i uczelni.",
+      "paragraph3": "Klienci przyjmują do wiadomości, że żaden konsultant, pracownik ani partner EU Career Serwis nie może prawnie obiecywać gwarantowanych wyników."
     },
     "heading10": {
       "title": "Polityka anty-chargeback",
@@ -1456,36 +1454,49 @@
     "heading11": {
       "title": "Komunikacja i terminowe aktualizacje",
       "paragraph1": "Klienci są zobowiązani do niezwłocznego informowania EU Career Serwis o:",
-      "paragraph2": "Terminowa komunikacja jest niezbędna, aby uniknąć:",
       "subParagraphs": {
         "subParagraph1": "Każdej oficjalnej komunikacji od władz imigracyjnych lub regulacyjnych.",
-        "subParagraph2": "Zmian danych osobowych lub kontaktowych.",
-        "subParagraph3": "Opóźnień w świadczeniu usług",
-        "subParagraph4": "Przerw",
-        "subParagraph5": "Utraty prawa do zwrotu"
+        "subParagraph2": "Zmian danych osobowych lub kontaktowych."
+      },
+      "paragraph2": "Terminowa komunikacja jest niezbędna, aby uniknąć:",
+      "subParagraphs2": {
+        "subParagraph1": "Opóźnień w świadczeniu usług",
+        "subParagraph2": "Przerw",
+        "subParagraph3": "Utraty prawa do zwrotu"
       }
     },
     "heading12": {
       "title": "Profesjonalna uczciwość i klauzula antyzniesławieniowa",
       "paragraph1": "Klienci są zachęcani do zgłaszania skarg bezpośrednio do zespołu wsparcia EU Career Serwis w celu ich rozwiązania.",
       "paragraph2": "Każda próba publicznego zniesławienia, zdyskredytowania lub zaszkodzenia reputacji EU Career Serwis bez wcześniejszego szukania rozwiązania może skutkować:",
-      "paragraph3": "EU Career Serwis zobowiązuje się do profesjonalnego i konstruktywnego rozwiązywania problemów.",
       "subParagraphs": {
         "subParagraph1": "Zakończeniem świadczenia usług.",
         "subParagraph2": "Utratą prawa do zwrotu."
-      }
+      },
+      "paragraph3": "EU Career Serwis zobowiązuje się do profesjonalnego i konstruktywnego rozwiązywania problemów."
     },
     "heading13": {
       "title": "Ostateczna umowa i jurysdykcja",
       "paragraph1": "Akceptując niniejsze warunki, klienci potwierdzają swoje zrozumienie i zgodę dotyczącą:",
-      "paragraph2": "Wszystkie spory podlegają jurysdykcji sądów polskich i będą regulowane przez prawo polskie.",
-      "paragraph3": "Klienci są zachęcani do żądania wyjaśnień w odniesieniu do każdego warunku przed skorzystaniem z usług.",
-      "paragraph4": "W celu uzyskania pomocy lub zapytań klienci mogą skontaktować się z EU Career Serwis pod adresem info@eucareerserwis.com.",
       "subParagraphs": {
         "subParagraph1": "Polityki zwrotów",
         "subParagraph2": "Zobowiązania dotyczące ochrony danych",
         "subParagraph3": "Obowiązki klienta"
-      }
+      },
+      "paragraph2": "Wszystkie spory podlegają jurysdykcji sądów polskich i będą regulowane przez prawo polskie.",
+      "paragraph3": "Klienci są zachęcani do żądania wyjaśnień w odniesieniu do każdego warunku przed skorzystaniem z usług.",
+      "paragraph4": "W celu uzyskania pomocy lub zapytań klienci mogą skontaktować się z EU Career Serwis pod adresem info@eucareerserwis.com."
     }
+  },
+  "policy": {
+    "eyebrow": "Informacje prawne",
+    "sections": "{count, plural, one {# sekcja} few {# sekcje} many {# sekcji} other {# sekcji}}",
+    "readingTime": "{minutes} min czytania",
+    "contents": "Na tej stronie",
+    "linkToSection": "Link do tej sekcji",
+    "otherPolicies": "Pozostałe dokumenty",
+    "questions": "Masz pytania?",
+    "questionsText": "Nasz zespół chętnie wyjaśni każdy punkt tego dokumentu.",
+    "contactUs": "Skontaktuj się z nami"
   }
 }

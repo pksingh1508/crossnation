@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import TermsAndConditions from "@/components/Terms_Conditions/TermsAndConditions";
+import { PolicyPage } from "@/components/policy/PolicyPage";
 import { generateMetadata as buildMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/constants/site";
 import { getLocalizedUrl } from "@/lib/locale-paths";
-
-const canonicalUrl = getLocalizedUrl(
-  siteConfig.defaultLanguage,
-  "/terms-conditions"
-);
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms & Conditions",
@@ -18,9 +13,9 @@ export const metadata: Metadata = buildMetadata({
     "immigration service policies",
     "terms and conditions poland",
   ],
-  canonical: canonicalUrl,
+  canonical: getLocalizedUrl(siteConfig.defaultLanguage, "/terms-conditions"),
 });
 
 export default function TermsAndConditionsPage() {
-  return <TermsAndConditions />;
+  return <PolicyPage policy="terms" />;
 }
