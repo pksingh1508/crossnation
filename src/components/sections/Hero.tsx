@@ -24,7 +24,7 @@ import { delay } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 import { WordReveal } from "@/components/ui/word-reveal";
-import { HeroLines } from "./HeroLines";
+import { HeroLines, HeroRouteBand } from "./HeroLines";
 
 // The four ways in, each with its own page
 const CHOICES: { label: string; path: string; icon: LucideIcon }[] = [
@@ -56,9 +56,13 @@ export function Hero() {
     >
       <HeroLines />
 
-      {/* From lg up it fills the first screen below the navbar (6.5rem, 7.5rem from xl) */}
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pt-16 pb-16 sm:pb-20 lg:min-h-[calc(100svh-6.5rem)] lg:grid-cols-2 lg:gap-16 lg:py-12 xl:min-h-[calc(100svh-7.5rem)] xl:gap-24">
-        <div>
+      {/* Below lg the photo comes first, then the route's band, then the heading and the
+          choices, in one column. From lg up they sit side by side and fill the first
+          screen below the navbar (6.5rem, 7.5rem from xl). */}
+      <div className="mx-auto grid w-full max-w-7xl items-center px-4 pt-6 pb-16 sm:pt-8 sm:pb-20 lg:min-h-[calc(100svh-6.5rem)] lg:grid-cols-2 lg:gap-16 lg:py-12 xl:min-h-[calc(100svh-7.5rem)] xl:gap-24">
+        <HeroRouteBand className="-mx-4 lg:hidden" />
+
+        <div className="mx-auto w-full max-w-xl lg:max-w-none">
           {/* The page's main heading; the sections below use h2 */}
           <h1 className="text-[2.5rem] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl lg:text-6xl">
             <WordReveal
@@ -124,7 +128,7 @@ export function Hero() {
         </div>
 
         {/* The padding makes room for the yellow block, so it ends on the page's edge */}
-        <div className="relative mx-auto w-full max-w-xl pr-3 pb-3 sm:pr-5 sm:pb-5 lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-xl pr-3 pb-3 max-lg:order-first sm:pr-5 sm:pb-5 lg:max-w-none">
           {/* A yellow block behind the photo, echoing the logo */}
           <div
             aria-hidden

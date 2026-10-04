@@ -1,21 +1,28 @@
-import type { CSSProperties } from "react";
+"use client";
+
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 /*
- * Decorative line art behind the home hero, like routes on a map: a dotted yellow route
- * and, on large screens, two fine arcs around the content. After the heading appears the
- * lines draw themselves in; then the route's end points pulse softly and every 7 seconds
- * a dot travels the route.
+ * Decorative line art for the home hero, like routes on a map: a dotted yellow route from
+ * a dark start, and fine grey arcs. After the heading appears the lines draw themselves
+ * in; then the start pulses softly and every 7 seconds something travels the route.
  *
- * Plain SVG and CSS, no JavaScript. Each layout is drawn at its real size (1 unit = 1px)
- * so the lines stay sharp.
- * len: a path's length (getTotalLength(), rounded up), which the draw-in animates.
- * Measure it again after changing the path.
+ * From lg up the lines sit behind the whole hero (HeroLines): a dot travels the route to
+ * a yellow destination. Below lg, where the photo stands above the heading, the route
+ * crosses the band between them (HeroRouteBand), drawn to the band's width: it climbs
+ * into the photo's yellow block, and a little plane flies it and lands behind the block.
+ *
+ * Plain SVG and CSS animations. Each drawing is at its real size (1 unit = 1px), so the
+ * lines stay sharp.
+ * len: a path's length (getTotalLength(), rounded up), which the draw-in animates; measure
+ * it again after changing the path. A path without it is measured by the browser
+ * (pathLength 1), as the band's are, since they change with its width.
  */
 
 interface Path {
   d: string;
-  len: number;
+  len?: number;
 }
 
 interface Layout {
@@ -25,9 +32,12 @@ interface Layout {
   height: number;
   arcs: Path[];
   route: Path;
-  /** Where the route starts and ends */
+  /** Where the route starts */
   from: [number, number];
-  to: [number, number];
+  /** Its yellow destination, where it ends in view */
+  to?: [number, number];
+  /** What travels the route */
+  traveller: "dot" | "plane";
   /** Position, breakpoint and edge fade */
   className: string;
 }
@@ -51,22 +61,56 @@ const DESKTOP: Layout = {
   },
   from: [300, 690],
   to: [726, 110],
+  traveller: "dot",
   className:
-    "top-1/2 left-1/2 hidden -translate-1/2 [mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)] lg:block",
+    "top-1/2 left-1/2 -translate-1/2 [mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)]",
 };
 
-// Below lg only the route, arching through the 64px band above the heading (pt-16 in
-// Hero), so it never runs behind the heading, whatever its language.
-const MOBILE: Layout = {
-  id: "hero-lines-sm",
-  width: 390,
-  height: 72,
-  arcs: [],
-  route: { d: "M190 28C250 4 330 4 362 44", len: 185 },
-  from: [190, 28],
-  to: [362, 44],
-  className: "top-0 right-0 lg:hidden",
-};
+/** The band between the photo and the heading below lg, in px */
+const BAND_HEIGHT = 80;
+
+/** Below lg the photo and the text share a column: at most 36rem (max-w-xl), with the
+ * page's 1rem side padding (px-4) */
+const COLUMN = { max: 576, padding: 16 };
+
+/**
+ * The band's drawing at a given width; y 0 is the bottom of the photo's yellow block.
+ * The route sets off above the heading's first word, dips, then climbs to the right into
+ * the yellow block, ending out of sight behind it (the photo is painted over the band).
+ * The route keeps to the content's column; the grey arc runs the band's whole width,
+ * falling the other way from behind the photo's left corner and crossing the route.
+ */
+function bandLayout(width: number): Layout {
+  const h = BAND_HEIGHT;
+  const column = Math.min(width - 2 * COLUMN.padding, COLUMN.max);
+  const left = (width - column) / 2;
+  // "x y" at fractions of the column's width (or the band's) and the band's height
+  const inColumn = (x: number, y: number) =>
+    `${Math.round(left + column * x)} ${Math.round(h * y)}`;
+  const inBand = (x: number, y: number) =>
+    `${Math.round(width * x)} ${Math.round(h * y)}`;
+  const from: [number, number] = [
+    Math.round(left + column * 0.04),
+    Math.round(h * 0.6),
+  ];
+
+  return {
+    id: "hero-lines-band",
+    width,
+    height: h,
+    arcs: [
+      {
+        d: `M${inBand(-0.03, -0.45)}C${inBand(0.3, 0.88)} ${inBand(0.62, 0.95)} ${inBand(1.03, 0.62)}`,
+      },
+    ],
+    route: {
+      d: `M${from.join(" ")}C${inColumn(0.33, 1.08)} ${inColumn(0.66, 0.42)} ${inColumn(0.86, -0.5)}`,
+    },
+    from,
+    traveller: "plane",
+    className: "top-0 left-0 overflow-visible",
+  };
+}
 
 /** The arcs start drawing once the heading is on its way */
 const DRAW_START = 700;
@@ -75,10 +119,15 @@ const ROUTE_START = DRAW_START + 300;
 const ROUTE_END = ROUTE_START + 1800;
 
 const delay = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
-const length = (len: number) => ({ "--len": len }) as CSSProperties;
+const length = (len = 1) => ({ "--len": len }) as CSSProperties;
+
+// lucide's plane, turned to fly along +x and centred on 0 0, so it follows the route
+const PLANE =
+  "M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z";
 
 function LineArt({ layout }: { layout: Layout }) {
-  const { id, width, height, arcs, route, from, to, className } = layout;
+  const { id, width, height, arcs, route, from, to, traveller, className } =
+    layout;
   const routeId = `${id}-route`;
 
   return (
@@ -91,8 +140,9 @@ function LineArt({ layout }: { layout: Layout }) {
     >
       {arcs.map(({ d, len }, index) => (
         <path
-          key={d}
+          key={index}
           d={d}
+          pathLength={len ? undefined : 1}
           stroke="currentColor"
           className="animate-draw text-neutral-300 [stroke-dasharray:var(--len)] motion-reduce:animate-none"
           style={{ ...length(len), ...delay(DRAW_START + index * 150) }}
@@ -104,6 +154,7 @@ function LineArt({ layout }: { layout: Layout }) {
         <mask id={`${routeId}-reveal`} maskUnits="userSpaceOnUse">
           <path
             d={route.d}
+            pathLength={route.len ? undefined : 1}
             stroke="white"
             strokeWidth={8}
             className="animate-draw [stroke-dasharray:var(--len)] motion-reduce:animate-none"
@@ -122,10 +173,10 @@ function LineArt({ layout }: { layout: Layout }) {
         className="text-amber-400"
       />
 
-      {/* End points, each with a soft pulse: a dark start and a yellow destination */}
+      {/* The end points, each with a soft pulse: a dark start and a yellow destination */}
       {[
         { at: from, fill: "fill-neutral-900", start: ROUTE_START },
-        { at: to, fill: "fill-brand", start: ROUTE_END },
+        ...(to ? [{ at: to, fill: "fill-brand", start: ROUTE_END }] : []),
       ].map(({ at: [cx, cy], fill, start }) => (
         <g
           key={fill}
@@ -149,14 +200,29 @@ function LineArt({ layout }: { layout: Layout }) {
         </g>
       ))}
 
-      {/* Every 7 seconds a dot with a yellow halo travels the route (an SVG animation) */}
+      {/* Every 7 seconds a dot with a yellow halo, or a plane, travels the route (an SVG
+          animation). The plane turns with the route. */}
       <g opacity={0} className="motion-reduce:hidden">
-        <circle r={7} className="fill-amber-400/30" />
-        <circle r={3} className="fill-neutral-900" />
+        {traveller === "dot" ? (
+          <>
+            <circle r={7} className="fill-amber-400/30" />
+            <circle r={3} className="fill-neutral-900" />
+          </>
+        ) : (
+          <>
+            <circle r={11} className="fill-amber-400/25" />
+            <path
+              d={PLANE}
+              transform="scale(0.62) rotate(45) translate(-12 -12)"
+              className="fill-neutral-900"
+            />
+          </>
+        )}
         <animateMotion
           dur="7s"
           begin={`${ROUTE_END + 400}ms`}
           repeatCount="indefinite"
+          rotate={traveller === "plane" ? "auto" : undefined}
           keyPoints="0;1;1"
           keyTimes="0;0.55;1"
           calcMode="spline"
@@ -177,14 +243,45 @@ function LineArt({ layout }: { layout: Layout }) {
   );
 }
 
+/** From lg up: the lines behind the whole hero */
 export function HeroLines() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      className="pointer-events-none absolute inset-0 -z-10 hidden overflow-hidden lg:block"
     >
       <LineArt layout={DESKTOP} />
-      <LineArt layout={MOBILE} />
+    </div>
+  );
+}
+
+/**
+ * Below lg: the band between the photo and the heading, with the route drawn to its
+ * width. It spans the screen, past the content's side margins. Before its width is
+ * known it stays empty; the drawing starts later than the heading anyway.
+ */
+export function HeroRouteBand({ className }: { className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const band = ref.current;
+    if (!band) return;
+    const observer = new ResizeObserver(([entry]) =>
+      setWidth(Math.round(entry.contentRect.width))
+    );
+    observer.observe(band);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden
+      className={cn("pointer-events-none relative", className)}
+      style={{ height: BAND_HEIGHT }}
+    >
+      {width > 0 && <LineArt layout={bandLayout(width)} />}
     </div>
   );
 }
