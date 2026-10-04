@@ -1,5 +1,8 @@
-import JobsInBelarus from "@/components/countryJobUI/JobsInBelarus";
+import { CountryJobPage } from "@/components/countryJobs/CountryJobPage";
+import { countryJobsMetadata } from "@/components/countryJobs/metadata";
+
+export const metadata = countryJobsMetadata("belarus");
 
 export default function JobsInBelarusPage() {
-  return <JobsInBelarus />;
+  return <CountryJobPage country="belarus" />;
 }

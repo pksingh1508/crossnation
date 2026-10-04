@@ -187,6 +187,34 @@
       translate: 100% 0;
     }
   }
+
+  /* A line uncovers from left to right, and something flies along it from the left end of
+     its container (which needs container-type: inline-size) to where it rests, e.g. the
+     route and the plane on a boarding pass. Classes: animate-wipe, animate-fly */
+  --animate-wipe: wipe 1.6s var(--ease-out-quint) backwards;
+  --animate-fly: fly 1.6s var(--ease-out-quint) backwards;
+
+  @keyframes wipe {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+
+  /* A marker stroke drawn under a word, left to right; the word has the stroke as its
+     background, 0.3em tall. Class: animate-mark */
+  --animate-mark: mark 1s var(--ease-out-quint) backwards;
+
+  @keyframes mark {
+    from {
+      background-size: 0 0.3em;
+    }
+  }
+  @keyframes fly {
+    from {
+      opacity: 0;
+      translate: -50cqw 0;
+    }
+  }
 }
 
 :root {

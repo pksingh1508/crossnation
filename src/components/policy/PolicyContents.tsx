@@ -1,21 +1,15 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type CSSProperties } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-  type Transition,
-} from "framer-motion";
+import { AnimatePresence, motion, type Transition } from "framer-motion";
 import { ChevronDown, ListOrdered } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
-import { useLenis } from "@/utils/lenis";
 import { fontInter } from "@/fonts";
 import { cn } from "@/lib/utils";
 import type { PolicySection } from "./policies";
 
 /** Where a section's top lands when scrolled to: below the sticky navbar (scroll-mt-28) */
-const SCROLL_OFFSET = 112;
+export const SCROLL_OFFSET = 112;
 
 /** A section is being read once its top has passed this line, in px from the window's top */
 const READING_LINE = 160;
@@ -64,32 +58,6 @@ export function useActiveSection(sections: PolicySection[]) {
   }, [sections]);
 
   return active;
-}
-
-/**
- * Scrolls smoothly to a section and keeps it in the address (#section-3), so the link can
- * be shared. The focus moves to its heading, for the keyboard and screen readers.
- */
-export function useGoToSection() {
-  const lenis = useLenis();
-  const reduceMotion = useReducedMotion();
-
-  return (id: string) => {
-    const section = document.getElementById(id);
-    if (!section) return;
-    window.history.replaceState(null, "", `#${id}`);
-    if (lenis) {
-      // From where the window really is, in case a native scroll got ahead of Lenis
-      lenis.scrollTo(window.scrollY, { immediate: true });
-      lenis.scrollTo(section, {
-        offset: -SCROLL_OFFSET,
-        immediate: Boolean(reduceMotion),
-      });
-    } else {
-      section.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
-    }
-    section.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
-  };
 }
 
 interface ContentsProps {

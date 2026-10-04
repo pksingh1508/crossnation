@@ -1,0 +1,60 @@
+import {
+  CookingPot,
+  Cog,
+  Croissant,
+  Factory,
+  Flame,
+  Forklift,
+  HardHat,
+  Package,
+  PackageCheck,
+  BedDouble,
+  Tractor,
+  Warehouse,
+  WashingMachine,
+} from "lucide-react";
+import {
+  paidAfterPermit,
+  paidAfterVisa,
+  paidToStart,
+  standardCountry,
+} from "../standard";
+
+export const poland = standardCountry({
+  slug: "poland",
+  name: "Poland",
+  adjective: "Polish",
+  code: "PL",
+  code3: "POL",
+  roles: [
+    { title: "Warehouse Worker", icon: Warehouse },
+    { title: "Welder (MIG/TIG)", icon: Flame },
+    { title: "General Construction Worker", icon: HardHat },
+    { title: "Bakery Worker", icon: Croissant },
+    { title: "Food Factory Worker", icon: Factory },
+    { title: "Forklift Operator", icon: Forklift },
+    { title: "Packaging & Sorting Worker", icon: Package },
+    { title: "Kitchen Helper / Dishwasher", icon: CookingPot },
+    { title: "Hotel Cleaner / Housekeeper", icon: BedDouble },
+    { title: "Laundry Staff (Hotels & Hospitals)", icon: WashingMachine },
+    { title: "Agricultural Worker (Seasonal)", icon: Tractor },
+    { title: "Plastic Molding Worker", icon: Cog },
+    { title: "Parcel Sorter (Logistics)", icon: PackageCheck },
+  ],
+  facts: [
+    { label: "Salary", value: "PLN 30.50/hour (net)" },
+    {
+      label: "Working hours",
+      value: "40 hours/week (8–10 hours/day, 5 days/week)",
+    },
+    { label: "Eligibility", value: "Male/Female, Ages 18–55" },
+    { label: "English", value: "Basic level" },
+  ],
+  documents: [
+    "Provide a scanned copy of the first page of your passport",
+    "Submit an updated CV",
+  ],
+  payments: [paidToStart(600), paidAfterPermit(700), paidAfterVisa(800)],
+  permitAuthority: "the Voivodeship Office (Urząd Wojewódzki)",
+  permitDays: [60, 90],
+});

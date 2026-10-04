@@ -1,1 +1,4 @@
-export { default } from "@/app/[lang]/(countrySpecificJob)/jobs-in-romania/page";
+export {
+  metadata,
+  default,
+} from "@/app/[lang]/(countrySpecificJob)/jobs-in-romania/page";

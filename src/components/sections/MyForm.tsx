@@ -53,6 +53,12 @@ const EMPTY_FORM = {
 
 const USER_TYPES = ["jobseeker", "agent", "employer"] as const;
 
+/** What a lead without a message of its own says in the CRM */
+const STANDARD_ENQUIRY = {
+  subject: "Enquiry : Know More About Your Services",
+  message: "I am filling this form to know more about your serwis.",
+};
+
 const TOAST_STYLE = {
   borderRadius: "10px",
   background: "#fecc00",
@@ -121,6 +127,10 @@ interface MyFormProps {
   labelledBy?: string;
   /** Adds a subject and a message, which are sent instead of a standard enquiry */
   withMessage?: boolean;
+  /** Without a message: what the lead says in the CRM, e.g. which job it is about */
+  enquiry?: { subject: string; message: string };
+  /** The role chosen at the start, e.g. "jobseeker" on a page of jobs */
+  userType?: (typeof USER_TYPES)[number];
   className?: string;
 }
 
@@ -132,6 +142,8 @@ interface MyFormProps {
 export function MyForm({
   labelledBy,
   withMessage = false,
+  enquiry = STANDARD_ENQUIRY,
+  userType,
   className,
 }: MyFormProps) {
   const locale = useLocale();
@@ -142,7 +154,8 @@ export function MyForm({
   const [selectedCountry, setSelectedCountry] =
     useState<CountryCode>(DEFAULT_COUNTRY);
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState(EMPTY_FORM);
+  const startForm = { ...EMPTY_FORM, userType: userType ?? "" };
+  const [formData, setFormData] = useState(startForm);
   // The role menu isn't checked by the browser like the other fields, so it is marked here
   const roleRef = useRef<HTMLButtonElement>(null);
   const [roleMissing, setRoleMissing] = useState(false);
@@ -167,7 +180,7 @@ export function MyForm({
   };
 
   const clearForm = () => {
-    setFormData(EMPTY_FORM);
+    setFormData(startForm);
     setSelectedCountry(detectedCountry); // reset to detected country, not hardcoded "US"
   };
 
@@ -205,10 +218,7 @@ export function MyForm({
         option: formData.userType,
         ...(withMessage
           ? { subject: formData.subject, message: formData.message }
-          : {
-              subject: "Enquiry : Know More About Your Services",
-              message: "I am filling this form to know more about your serwis.",
-            }),
+          : enquiry),
       });
       if (res.status === 200 || res.status === 201) {
         clearForm();

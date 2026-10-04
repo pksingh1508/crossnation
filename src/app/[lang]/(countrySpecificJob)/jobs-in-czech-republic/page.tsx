@@ -1,5 +1,8 @@
-import JobsInCzechRepublic from "@/components/countryJobUI/JobsInCzechRepublic";
+import { CountryJobPage } from "@/components/countryJobs/CountryJobPage";
+import { countryJobsMetadata } from "@/components/countryJobs/metadata";
+
+export const metadata = countryJobsMetadata("czech-republic");
 
 export default function JobsInCzechRepublicPage() {
-  return <JobsInCzechRepublic />;
+  return <CountryJobPage country="czech-republic" />;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useRef, type ReactNode } from "react";
+import { useId, useMemo, useRef } from "react";
 import Link from "next/link";
 import { useLocale, useMessages, type AbstractIntlMessages } from "next-intl";
 import { MotionConfig } from "framer-motion";
@@ -13,19 +13,21 @@ import {
 } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useReveal } from "@/hooks/useReveal";
+import { useGoToSection } from "@/hooks/useGoToSection";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { ReadingProgress } from "@/components/articles/ArticleTools";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
+import { linkify } from "@/lib/linkify";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 import {
   PolicyContents,
   PolicyContentsMenu,
+  SCROLL_OFFSET,
   useActiveSection,
-  useGoToSection,
 } from "./PolicyContents";
 import {
   POLICIES,
@@ -58,7 +60,7 @@ export function PolicyPage({ policy }: { policy: PolicyKey }) {
   );
   const { sections } = policyDocument;
   const active = useActiveSection(sections);
-  const goTo = useGoToSection();
+  const goTo = useGoToSection(SCROLL_OFFSET);
   const text = useRef<HTMLDivElement>(null);
   const minutes = Math.max(
     1,
@@ -296,40 +298,6 @@ function SubPoints({
       ))}
     </ul>
   );
-}
-
-// An email address, a phone number (+48 22 208 5497) or a web address
-const CONTACT =
-  /([\w.+-]+@[\w-]+(?:\.[\w-]+)+)|(\+\d[\d ]{6,}\d)|((?:https?:\/\/)?www\.[\w-]+(?:\.[\w-]+)+)/g;
-
-/** The text with its email addresses, phone numbers and web addresses as links */
-function linkify(text: string): ReactNode {
-  const parts: ReactNode[] = [];
-  let end = 0;
-  for (const match of text.matchAll(CONTACT)) {
-    const [found, email, phone] = match;
-    const start = match.index;
-    parts.push(text.slice(end, start));
-    parts.push(
-      <a
-        key={start}
-        href={
-          email
-            ? `mailto:${email}`
-            : phone
-              ? `tel:${phone.replace(/\s+/g, "")}`
-              : `https://${found.replace(/^https?:\/\//, "")}`
-        }
-        className="font-medium wrap-break-word text-neutral-950 underline decoration-brand decoration-2 underline-offset-4 transition-[text-decoration-color] duration-300 hover:decoration-neutral-950"
-      >
-        {found}
-      </a>
-    );
-    end = start + found.length;
-  }
-  if (!end) return text;
-  parts.push(text.slice(end));
-  return parts;
 }
 
 /** After the text: who to ask, and the other legal pages */

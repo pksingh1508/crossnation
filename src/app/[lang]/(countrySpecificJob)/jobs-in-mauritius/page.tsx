@@ -1,5 +1,8 @@
-import JobsInMauritius from "@/components/countryJobUI/JobsInMauritius";
+import { CountryJobPage } from "@/components/countryJobs/CountryJobPage";
+import { countryJobsMetadata } from "@/components/countryJobs/metadata";
+
+export const metadata = countryJobsMetadata("mauritius");
 
 export default function JobsInMauritiusPage() {
-  return <JobsInMauritius />;
+  return <CountryJobPage country="mauritius" />;
 }
