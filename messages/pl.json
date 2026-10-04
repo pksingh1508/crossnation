@@ -893,7 +893,22 @@
     "totalLikes": "Łączna Liczba Polubień",
     "cachedPage": "Strona w Pamięci Podręcznej",
     "refresh": "Odśwież",
-    "searchPlaceholder": "Szukaj wpisów na blogu..."
+    "searchPlaceholder": "Szukaj wpisów na blogu...",
+    "postCount": "{count, plural, one {# wpis} few {# wpisy} many {# wpisów} other {# wpisu}}",
+    "readPost": "Czytaj wpis",
+    "minRead": "{minutes} min czytania",
+    "share": "Udostępnij",
+    "copyLink": "Kopiuj link",
+    "linkCopied": "Link skopiowany",
+    "clearSearch": "Wyczyść wyszukiwanie",
+    "noResults": "Brak wpisów pasujących do „{query}”",
+    "noPosts": "Nie ma jeszcze wpisów. Zajrzyj wkrótce.",
+    "loadError": "Nie udało się wczytać wpisów.",
+    "retry": "Spróbuj ponownie",
+    "notFoundTitle": "Nie znaleziono wpisu",
+    "notFoundText": "Ten wpis mógł zostać przeniesiony lub usunięty.",
+    "backToBlog": "Wróć do bloga",
+    "tags": "Tagi"
   },
   "immigrationPage": {
     "title": "WIADOMOŚCI IMIGRACYJNE",
@@ -908,7 +923,9 @@
   },
   "pagination": {
     "previous": "Poprzednia",
-    "next": "Następna"
+    "next": "Następna",
+    "label": "Paginacja",
+    "pageOf": "Strona {page} z {count}"
   },
   "successStory": {
     "title": "HISTORIE SUKCESU",

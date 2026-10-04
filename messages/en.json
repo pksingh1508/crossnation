@@ -893,7 +893,22 @@
     "totalLikes": "Total Likes",
     "cachedPage": "Cached Page",
     "refresh": "Refresh",
-    "searchPlaceholder": "Search blog posts..."
+    "searchPlaceholder": "Search blog posts...",
+    "postCount": "{count, plural, one {# post} other {# posts}}",
+    "readPost": "Read post",
+    "minRead": "{minutes} min read",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied",
+    "clearSearch": "Clear search",
+    "noResults": "No posts match “{query}”",
+    "noPosts": "No posts yet. Check back soon.",
+    "loadError": "We couldn't load the posts.",
+    "retry": "Try again",
+    "notFoundTitle": "Post not found",
+    "notFoundText": "This post may have moved or been removed.",
+    "backToBlog": "Back to the blog",
+    "tags": "Tags"
   },
   "immigrationPage": {
     "title": "IMMIGRATION NEWS",
@@ -908,7 +923,9 @@
   },
   "pagination": {
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "label": "Pagination",
+    "pageOf": "Page {page} of {count}"
   },
   "successStory": {
     "title": "SUCCESS STORIES",

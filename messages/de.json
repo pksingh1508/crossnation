@@ -893,7 +893,22 @@
     "totalLikes": "Gesamte Likes",
     "cachedPage": "Zwischengespeicherte Seite",
     "refresh": "Aktualisieren",
-    "searchPlaceholder": "Blog-Beiträge suchen..."
+    "searchPlaceholder": "Blog-Beiträge suchen...",
+    "postCount": "{count, plural, one {# Beitrag} other {# Beiträge}}",
+    "readPost": "Beitrag lesen",
+    "minRead": "{minutes} Min. Lesezeit",
+    "share": "Teilen",
+    "copyLink": "Link kopieren",
+    "linkCopied": "Link kopiert",
+    "clearSearch": "Suche löschen",
+    "noResults": "Keine Beiträge zu „{query}“ gefunden",
+    "noPosts": "Noch keine Beiträge. Schauen Sie bald wieder vorbei.",
+    "loadError": "Die Beiträge konnten nicht geladen werden.",
+    "retry": "Erneut versuchen",
+    "notFoundTitle": "Beitrag nicht gefunden",
+    "notFoundText": "Dieser Beitrag wurde möglicherweise verschoben oder entfernt.",
+    "backToBlog": "Zurück zum Blog",
+    "tags": "Schlagwörter"
   },
   "immigrationPage": {
     "title": "EINWANDERUNGSNACHRICHTEN",
@@ -908,7 +923,9 @@
   },
   "pagination": {
     "previous": "Vorherige",
-    "next": "Nächste"
+    "next": "Nächste",
+    "label": "Seitennavigation",
+    "pageOf": "Seite {page} von {count}"
   },
   "successStory": {
     "title": "ERFOLGSGESCHICHTEN",

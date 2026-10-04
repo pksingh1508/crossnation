@@ -893,7 +893,22 @@
     "totalLikes": "Mi piace totali",
     "cachedPage": "Pagine in cache",
     "refresh": "Aggiorna",
-    "searchPlaceholder": "Cerca articoli del blog..."
+    "searchPlaceholder": "Cerca articoli del blog...",
+    "postCount": "{count, plural, one {# articolo} other {# articoli}}",
+    "readPost": "Leggi l'articolo",
+    "minRead": "{minutes} min di lettura",
+    "share": "Condividi",
+    "copyLink": "Copia link",
+    "linkCopied": "Link copiato",
+    "clearSearch": "Cancella ricerca",
+    "noResults": "Nessun articolo corrisponde a «{query}»",
+    "noPosts": "Ancora nessun articolo. Torna presto.",
+    "loadError": "Impossibile caricare gli articoli.",
+    "retry": "Riprova",
+    "notFoundTitle": "Articolo non trovato",
+    "notFoundText": "Questo articolo potrebbe essere stato spostato o rimosso.",
+    "backToBlog": "Torna al blog",
+    "tags": "Tag"
   },
   "immigrationPage": {
     "title": "NOTIZIE SULL'IMMIGRAZIONE",
@@ -908,7 +923,9 @@
   },
   "pagination": {
     "previous": "Precedente",
-    "next": "Successivo"
+    "next": "Successivo",
+    "label": "Paginazione",
+    "pageOf": "Pagina {page} di {count}"
   },
   "successStory": {
     "title": "STORIE DI SUCCESSO",

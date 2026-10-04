@@ -893,7 +893,22 @@
     "totalLikes": "Nombre Total de J’aime",
     "cachedPage": "Page en Cache",
     "refresh": "Rafraîchir",
-    "searchPlaceholder": "Rechercher des articles de blog..."
+    "searchPlaceholder": "Rechercher des articles de blog...",
+    "postCount": "{count, plural, one {# article} other {# articles}}",
+    "readPost": "Lire l'article",
+    "minRead": "{minutes} min de lecture",
+    "share": "Partager",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié",
+    "clearSearch": "Effacer la recherche",
+    "noResults": "Aucun article ne correspond à « {query} »",
+    "noPosts": "Aucun article pour le moment. Revenez bientôt.",
+    "loadError": "Impossible de charger les articles.",
+    "retry": "Réessayer",
+    "notFoundTitle": "Article introuvable",
+    "notFoundText": "Cet article a peut-être été déplacé ou supprimé.",
+    "backToBlog": "Retour au blog",
+    "tags": "Mots-clés"
   },
   "immigrationPage": {
     "title": "ACTUALITÉS SUR L’IMMIGRATION",
@@ -908,7 +923,9 @@
   },
   "pagination": {
     "previous": "Précédent",
-    "next": "Suivant"
+    "next": "Suivant",
+    "label": "Pagination",
+    "pageOf": "Page {page} sur {count}"
   },
   "successStory": {
     "title": "HISTOIRES DE SUCCÈS",

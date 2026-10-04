@@ -49,19 +49,38 @@ async function paged<T>(
 const BLOG_CARD =
   "id, title, slug, excerpt, image_url, image_alt, image_width, image_height, author_name, tags, likes_count, comments_count, published_at";
 
-/** Newest first. getBlogPosts(1, 3) gives the three latest posts. */
+/**
+ * A search term that is safe inside a PostgREST filter: commas and brackets would end the
+ * filter early, and %, _ and * are wildcards. They become spaces. Capped at 100 characters.
+ */
+export function cleanSearch(search: string | undefined) {
+  return (search ?? "")
+    .replace(/[,()%_*\\"]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 100);
+}
+
+/**
+ * Newest first. getBlogPosts(1, 3) gives the three latest posts. With a search term, only
+ * the posts whose title or summary contains it (case-insensitive).
+ */
 export function getBlogPosts(
   page = 1,
-  pageSize = 10
+  pageSize = 10,
+  search?: string
 ): Promise<Page<BlogPostCard>> {
-  return paged(page, pageSize, (from, to) =>
-    cms
+  const term = cleanSearch(search);
+  return paged(page, pageSize, (from, to) => {
+    let query = cms
       .from("eu_blog")
       .select(BLOG_CARD, { count: "exact" })
-      .eq("status", "published")
-      .order("published_at", { ascending: false })
-      .range(from, to)
-  );
+      .eq("status", "published");
+    if (term) {
+      query = query.or(`title.ilike.%${term}%,excerpt.ilike.%${term}%`);
+    }
+    return query.order("published_at", { ascending: false }).range(from, to);
+  });
 }
 
 /** One post, or null (unknown slug, or not published). cache() lets generateMetadata and the page share it. */

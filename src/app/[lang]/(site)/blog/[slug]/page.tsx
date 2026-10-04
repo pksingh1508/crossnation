@@ -33,8 +33,6 @@ export default async function BlogArticlePage({ params }: PageProps) {
         year: "numeric",
         month: "long",
         day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
       })}
       readingMinutes={readingMinutes(post.content)}
     />
