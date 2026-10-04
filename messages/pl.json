@@ -430,7 +430,83 @@
     "info": {
       "heading": "EU Career Serwis Działa",
       "title": "Bezpieczne i Legalne Możliwości Pracy Niewykwalifikowanej w Europie",
-      "paragraph": "W EU Career Serwis zapewniamy bezpieczne i legalne możliwości pracy niewykwalifikowanej w wielu krajach europejskich. Nie są potrzebne zaawansowane kwalifikacje - tylko twoja chęć do pracy i rozwoju. Załatwiamy pozwolenia, kontrakty i wsparcie relokacji, aby proces był bezstresowy. Zakwaterowanie i wsparcie są zorganizowane dla twojego komfortu i bezpieczeństwa."
+      "paragraph": "W EU Career Serwis zapewniamy bezpieczne i legalne możliwości pracy niewykwalifikowanej w wielu krajach europejskich. Nie są potrzebne zaawansowane kwalifikacje - tylko twoja chęć do pracy i rozwoju. Załatwiamy pozwolenia, kontrakty i wsparcie relokacji, aby proces był bezstresowy. Zakwaterowanie i wsparcie są zorganizowane dla twojego komfortu i bezpieczeństwa.",
+      "rolesHeading": "Dostępne stanowiska",
+      "roleGroups": {
+        "transport": {
+          "name": "Transport i dostawy",
+          "roles": [
+            "Kierowcy ciężarówek",
+            "Taksówkarze",
+            "Kierowcy-dostawcy (jedzenie, paczki, kurierzy)"
+          ]
+        },
+        "warehouse": {
+          "name": "Magazyn i logistyka",
+          "roles": [
+            "Pracownicy magazynowi",
+            "Operatorzy wózków widłowych",
+            "Pracownicy załadunku i rozładunku",
+            "Tragarze i pakowacze",
+            "Pracownicy pakowni"
+          ]
+        },
+        "production": {
+          "name": "Produkcja i przemysł",
+          "roles": [
+            "Pracownicy linii montażowej",
+            "Operatorzy maszyn (poziom podstawowy)",
+            "Pomocnicy produkcji",
+            "Asystenci kontroli jakości",
+            "Pracownicy przemysłu tekstylnego",
+            "Pomocnicy w zakładach elektronicznych i motoryzacyjnych"
+          ]
+        },
+        "construction": {
+          "name": "Budownictwo i rzemiosło",
+          "roles": [
+            "Robotnicy ogólnobudowlani",
+            "Pomocnicy elektryków, hydraulików i stolarzy",
+            "Malarze i dekoratorzy",
+            "Pracownicy budowy dróg"
+          ]
+        },
+        "agriculture": {
+          "name": "Rolnictwo i ogrodnictwo",
+          "roles": [
+            "Zbieracze owoców i warzyw",
+            "Sezonowi pracownicy przy zbiorach",
+            "Pracownicy szklarni",
+            "Pomocnicy w gospodarstwach (zwierzęta i uprawy)",
+            "Pomocnicy na plantacjach kwiatów",
+            "Ogrodnicy i pracownicy terenów zielonych"
+          ]
+        },
+        "hospitality": {
+          "name": "Hotele i gastronomia",
+          "roles": [
+            "Personel sprzątający w hotelach",
+            "Pomoce kuchenne",
+            "Zmywacze naczyń",
+            "Personel restauracji i fast foodów"
+          ]
+        },
+        "cleaning": {
+          "name": "Sprzątanie i pralnie",
+          "roles": [
+            "Personel sprzątający i dozorcy",
+            "Sprzątacze i pracownicy dezynfekcji",
+            "Pracownicy pralni"
+          ]
+        },
+        "care": {
+          "name": "Opieka i ochrona",
+          "roles": [
+            "Asystenci w domach opieki",
+            "Pracownicy ochrony (poziom podstawowy)"
+          ]
+        }
+      }
     }
   },
   "employer": {

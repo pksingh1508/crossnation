@@ -430,7 +430,83 @@
     "info": {
       "heading": "EU Career Serwis Works",
       "title": "Opportunità di lavoro non qualificato sicure e legali in Europa",
-      "paragraph": "In EU Career Serwis offriamo opportunità di lavoro sicure e legali in molti paesi europei. Non servono qualifiche avanzate—solo la volontà di lavorare e crescere. Gestiamo permessi, contratti e supporto al trasferimento per rendere il processo senza stress. Alloggio e guida sono organizzati per comfort e sicurezza. I ruoli disponibili includono: Autisti di camion, tassisti, corrieri, magazzinieri, carrellisti, addetti carico/scarico, traslocatori, addetti al confezionamento, operai di linea, operatori di macchine (base), addetti al packaging, assistenti controllo qualità, aiuto produzione, operai tessili, addetti in impianti elettronica/automotive, manovali, aiutanti elettricisti/idraulici/falegnami, imbianchini e decoratori, operai stradali, addetti alle pulizie, giardinieri, raccoglitori di frutta/verdura, lavoratori in serre, assistenti agricoli (animali e colture), stagionali del raccolto, aiuto in vivai/fiore, housekeeping in hotel, aiuto cucina, lavapiatti, personale ristorazione/fast-food, addetti lavanderia, assistenti case di cura, addetti sanificazione e guardie giurate (livello base)."
+      "paragraph": "In EU Career Serwis offriamo opportunità di lavoro sicure e legali in molti paesi europei. Non servono qualifiche avanzate—solo la volontà di lavorare e crescere. Gestiamo permessi, contratti e supporto al trasferimento per rendere il processo senza stress. Alloggio e guida sono organizzati per comfort e sicurezza.",
+      "rolesHeading": "Ruoli disponibili",
+      "roleGroups": {
+        "transport": {
+          "name": "Trasporti e consegne",
+          "roles": [
+            "Autisti di camion",
+            "Tassisti",
+            "Corrieri"
+          ]
+        },
+        "warehouse": {
+          "name": "Magazzino e logistica",
+          "roles": [
+            "Magazzinieri",
+            "Carrellisti",
+            "Addetti carico/scarico",
+            "Traslocatori e addetti al confezionamento",
+            "Addetti al packaging"
+          ]
+        },
+        "production": {
+          "name": "Produzione e industria",
+          "roles": [
+            "Operai di linea",
+            "Operatori di macchine (base)",
+            "Aiuto produzione",
+            "Assistenti controllo qualità",
+            "Operai tessili",
+            "Addetti in impianti elettronica/automotive"
+          ]
+        },
+        "construction": {
+          "name": "Edilizia e mestieri",
+          "roles": [
+            "Manovali",
+            "Aiutanti elettricisti/idraulici/falegnami",
+            "Imbianchini e decoratori",
+            "Operai stradali"
+          ]
+        },
+        "agriculture": {
+          "name": "Agricoltura e giardinaggio",
+          "roles": [
+            "Raccoglitori di frutta/verdura",
+            "Stagionali del raccolto",
+            "Lavoratori in serre",
+            "Assistenti agricoli (animali e colture)",
+            "Aiuto nei vivai di fiori",
+            "Giardinieri"
+          ]
+        },
+        "hospitality": {
+          "name": "Hotel e ristorazione",
+          "roles": [
+            "Housekeeping in hotel",
+            "Aiuto cucina",
+            "Lavapiatti",
+            "Personale ristorazione/fast-food"
+          ]
+        },
+        "cleaning": {
+          "name": "Pulizie e lavanderia",
+          "roles": [
+            "Addetti alle pulizie",
+            "Addetti sanificazione",
+            "Addetti lavanderia"
+          ]
+        },
+        "care": {
+          "name": "Assistenza e sicurezza",
+          "roles": [
+            "Assistenti case di cura",
+            "Guardie giurate (livello base)"
+          ]
+        }
+      }
     }
   },
   "employer": {

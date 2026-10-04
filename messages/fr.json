@@ -430,7 +430,83 @@
     "info": {
       "heading": "EU Career Serwis Fonctionne",
       "title": "Opportunités d'Emploi Non Qualifié Sûres et Légales en Europe",
-      "paragraph": "Chez EU Career Serwis, nous offrons des opportunités d'emploi non qualifié sûres et légales dans de nombreux pays européens. Aucune qualification avancée n'est nécessaire - seulement votre volonté de travailler et de grandir. Nous gérons les permis, les contrats et le soutien à la relocalisation pour rendre le processus sans stress. Le logement et les conseils sont organisés pour votre confort et sécurité."
+      "paragraph": "Chez EU Career Serwis, nous offrons des opportunités d'emploi non qualifié sûres et légales dans de nombreux pays européens. Aucune qualification avancée n'est nécessaire - seulement votre volonté de travailler et de grandir. Nous gérons les permis, les contrats et le soutien à la relocalisation pour rendre le processus sans stress. Le logement et les conseils sont organisés pour votre confort et sécurité.",
+      "rolesHeading": "Postes disponibles",
+      "roleGroups": {
+        "transport": {
+          "name": "Transport et livraison",
+          "roles": [
+            "Chauffeurs poids lourds",
+            "Chauffeurs de taxi",
+            "Livreurs (repas, colis, coursier)"
+          ]
+        },
+        "warehouse": {
+          "name": "Entrepôt et logistique",
+          "roles": [
+            "Magasiniers",
+            "Caristes",
+            "Agents de chargement et de déchargement",
+            "Déménageurs et emballeurs",
+            "Agents d'emballage"
+          ]
+        },
+        "production": {
+          "name": "Industrie et production",
+          "roles": [
+            "Ouvriers de chaîne de montage",
+            "Opérateurs de machines (niveau de base)",
+            "Aides de production",
+            "Assistants contrôle qualité",
+            "Ouvriers du textile",
+            "Aides en usines d'électronique et d'automobile"
+          ]
+        },
+        "construction": {
+          "name": "BTP et métiers",
+          "roles": [
+            "Manœuvres",
+            "Aides électriciens, plombiers et menuisiers",
+            "Peintres et décorateurs",
+            "Ouvriers des travaux routiers"
+          ]
+        },
+        "agriculture": {
+          "name": "Agriculture et jardinage",
+          "roles": [
+            "Cueilleurs de fruits et légumes",
+            "Saisonniers des récoltes",
+            "Ouvriers en serre",
+            "Aides agricoles (animaux et cultures)",
+            "Aides en exploitations florales",
+            "Jardiniers et paysagistes"
+          ]
+        },
+        "hospitality": {
+          "name": "Hôtellerie et restauration",
+          "roles": [
+            "Personnel d'étage en hôtel",
+            "Commis de cuisine",
+            "Plongeurs",
+            "Personnel de restauration et fast-food"
+          ]
+        },
+        "cleaning": {
+          "name": "Nettoyage et blanchisserie",
+          "roles": [
+            "Agents d'entretien et concierges",
+            "Agents de nettoyage et de désinfection",
+            "Employés de blanchisserie"
+          ]
+        },
+        "care": {
+          "name": "Soins et sécurité",
+          "roles": [
+            "Aides en maisons de retraite",
+            "Agents de sécurité (niveau de base)"
+          ]
+        }
+      }
     }
   },
   "employer": {

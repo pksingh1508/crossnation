@@ -430,7 +430,83 @@
     "info": {
       "heading": "EU Career Serwis Works",
       "title": "Oportunidades de trabajo no cualificado seguras y legales en Europa",
-      "paragraph": "En EU Career Serwis ofrecemos oportunidades de empleo no cualificado seguras y legales en muchos países europeos. No se necesitan calificaciones avanzadas, solo la disposición para trabajar y crecer. Nos encargamos de los permisos, contratos y apoyo en la reubicación para que el proceso sea sencillo y sin estrés. También organizamos alojamiento y brindamos orientación para tu comodidad y seguridad. Los puestos disponibles incluyen: Conductores de camión, Conductores de taxi, Repartidores (comida, paquetes, mensajería), Trabajadores de almacén, Operadores de montacargas, Personal de carga y descarga, Mudanceros y empacadores, Trabajadores de línea de montaje, Operadores de máquinas (nivel básico), Personal de embalaje, Asistentes de control de calidad, Ayudantes de producción, Trabajadores textiles, Ayudantes en plantas de electrónica y automotriz, Peones generales, Ayudantes de electricistas, fontaneros y carpinteros, Pintores y decoradores, Trabajadores de construcción de carreteras, Personal de limpieza y mantenimiento, Trabajadores de jardinería y paisajismo, Recolectores de frutas y verduras, Trabajadores de invernadero, Asistentes agrícolas (animales y cultivos), Trabajadores de cosecha estacional, Ayudantes en plantaciones de flores, Personal de limpieza de hoteles, Ayudantes de cocina, Lavaplatos, Personal de restaurantes y comida rápida, Asistentes de lavandería, Asistentes en residencias de mayores, Personal de limpieza y desinfección, y Guardias de seguridad (nivel básico)."
+      "paragraph": "En EU Career Serwis ofrecemos oportunidades de empleo no cualificado seguras y legales en muchos países europeos. No se necesitan calificaciones avanzadas, solo la disposición para trabajar y crecer. Nos encargamos de los permisos, contratos y apoyo en la reubicación para que el proceso sea sencillo y sin estrés. También organizamos alojamiento y brindamos orientación para tu comodidad y seguridad.",
+      "rolesHeading": "Puestos disponibles",
+      "roleGroups": {
+        "transport": {
+          "name": "Transporte y reparto",
+          "roles": [
+            "Conductores de camión",
+            "Conductores de taxi",
+            "Repartidores (comida, paquetes, mensajería)"
+          ]
+        },
+        "warehouse": {
+          "name": "Almacén y logística",
+          "roles": [
+            "Trabajadores de almacén",
+            "Operadores de montacargas",
+            "Personal de carga y descarga",
+            "Mudanceros y empacadores",
+            "Personal de embalaje"
+          ]
+        },
+        "production": {
+          "name": "Fabricación y producción",
+          "roles": [
+            "Trabajadores de línea de montaje",
+            "Operadores de máquinas (nivel básico)",
+            "Ayudantes de producción",
+            "Asistentes de control de calidad",
+            "Trabajadores textiles",
+            "Ayudantes en plantas de electrónica y automotriz"
+          ]
+        },
+        "construction": {
+          "name": "Construcción y oficios",
+          "roles": [
+            "Peones generales",
+            "Ayudantes de electricistas, fontaneros y carpinteros",
+            "Pintores y decoradores",
+            "Trabajadores de construcción de carreteras"
+          ]
+        },
+        "agriculture": {
+          "name": "Agricultura y jardinería",
+          "roles": [
+            "Recolectores de frutas y verduras",
+            "Trabajadores de cosecha estacional",
+            "Trabajadores de invernadero",
+            "Asistentes agrícolas (animales y cultivos)",
+            "Ayudantes en plantaciones de flores",
+            "Trabajadores de jardinería y paisajismo"
+          ]
+        },
+        "hospitality": {
+          "name": "Hoteles y restaurantes",
+          "roles": [
+            "Personal de limpieza de hoteles",
+            "Ayudantes de cocina",
+            "Lavaplatos",
+            "Personal de restaurantes y comida rápida"
+          ]
+        },
+        "cleaning": {
+          "name": "Limpieza y lavandería",
+          "roles": [
+            "Personal de limpieza y mantenimiento",
+            "Personal de limpieza y desinfección",
+            "Asistentes de lavandería"
+          ]
+        },
+        "care": {
+          "name": "Cuidados y seguridad",
+          "roles": [
+            "Asistentes en residencias de mayores",
+            "Guardias de seguridad (nivel básico)"
+          ]
+        }
+      }
     }
   },
   "employer": {

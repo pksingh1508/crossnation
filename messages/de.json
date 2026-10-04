@@ -430,7 +430,83 @@
     "info": {
       "heading": "EU Career Serwis Works",
       "title": "Sichere und legale ungelernte Arbeitsmöglichkeiten in Europa",
-      "paragraph": "Bei EU Career Serwis bieten wir sichere und legale ungelernte Arbeitsmöglichkeiten in vielen europäischen Ländern. Keine fortgeschrittenen Qualifikationen erforderlich—nur Ihre Bereitschaft zu arbeiten und zu wachsen. Wir kümmern uns um Genehmigungen, Verträge und Umzugsunterstützung, um den Prozess stressfrei zu gestalten. Unterkunft und Beratung sind für Ihren Komfort und Ihre Sicherheit arrangiert. Verfügbare Rollen umfassen: LKW-Fahrer, Taxifahrer, Lieferfahrer (Essen, Pakete, Kurier), Lagerarbeiter, Gabelstaplerfahrer, Be- und Entladepersonal, Umzugshelfer und Packer, Fließbandarbeiter, Maschinenbediener (Grundniveau), Verpackungspersonal, Qualitätskontrollassistenten, Produktionshelfer, Textilarbeiter, Elektronik- und Automobilwerkshelfer, Allgemeine Arbeiter, Helfer für Elektriker, Klempner, Zimmermann, Maler und Dekorateure, Straßenbauarbeiter, Reinigungs- und Hausmeisterpersonal, Garten- und Landschaftsbauarbeiter, Obst- und Gemüsepflücker, Gewächshausarbeiter, Farmassistenten (Tiere und Nutzpflanzen), Saisonale Erntearbeiter, Blumenplantagehelfer, Hotel-Housekeeping-Personal, Küchenhelfer, Geschirrspüler, Restaurant- und Fast-Food-Personal, Wäschereiassistenten, Pflegeheimassistenten, Reiniger und Desinfektionspersonal und Sicherheitspersonal (Grundniveau)."
+      "paragraph": "Bei EU Career Serwis bieten wir sichere und legale ungelernte Arbeitsmöglichkeiten in vielen europäischen Ländern. Keine fortgeschrittenen Qualifikationen erforderlich—nur Ihre Bereitschaft zu arbeiten und zu wachsen. Wir kümmern uns um Genehmigungen, Verträge und Umzugsunterstützung, um den Prozess stressfrei zu gestalten. Unterkunft und Beratung sind für Ihren Komfort und Ihre Sicherheit arrangiert.",
+      "rolesHeading": "Verfügbare Stellen",
+      "roleGroups": {
+        "transport": {
+          "name": "Transport und Zustellung",
+          "roles": [
+            "LKW-Fahrer",
+            "Taxifahrer",
+            "Lieferfahrer (Essen, Pakete, Kurier)"
+          ]
+        },
+        "warehouse": {
+          "name": "Lager und Logistik",
+          "roles": [
+            "Lagerarbeiter",
+            "Gabelstaplerfahrer",
+            "Be- und Entladepersonal",
+            "Umzugshelfer und Packer",
+            "Verpackungspersonal"
+          ]
+        },
+        "production": {
+          "name": "Fertigung und Produktion",
+          "roles": [
+            "Fließbandarbeiter",
+            "Maschinenbediener (Grundniveau)",
+            "Produktionshelfer",
+            "Qualitätskontrollassistenten",
+            "Textilarbeiter",
+            "Elektronik- und Automobilwerkshelfer"
+          ]
+        },
+        "construction": {
+          "name": "Bau und Handwerk",
+          "roles": [
+            "Allgemeine Arbeiter",
+            "Helfer für Elektriker, Klempner und Zimmerleute",
+            "Maler und Dekorateure",
+            "Straßenbauarbeiter"
+          ]
+        },
+        "agriculture": {
+          "name": "Landwirtschaft und Gartenbau",
+          "roles": [
+            "Obst- und Gemüsepflücker",
+            "Saisonale Erntearbeiter",
+            "Gewächshausarbeiter",
+            "Farmassistenten (Tiere und Nutzpflanzen)",
+            "Blumenplantagehelfer",
+            "Garten- und Landschaftsbauarbeiter"
+          ]
+        },
+        "hospitality": {
+          "name": "Hotellerie und Gastronomie",
+          "roles": [
+            "Hotel-Housekeeping-Personal",
+            "Küchenhelfer",
+            "Geschirrspüler",
+            "Restaurant- und Fast-Food-Personal"
+          ]
+        },
+        "cleaning": {
+          "name": "Reinigung und Wäscherei",
+          "roles": [
+            "Reinigungs- und Hausmeisterpersonal",
+            "Reiniger und Desinfektionspersonal",
+            "Wäschereiassistenten"
+          ]
+        },
+        "care": {
+          "name": "Pflege und Sicherheit",
+          "roles": [
+            "Pflegeheimassistenten",
+            "Sicherheitspersonal (Grundniveau)"
+          ]
+        }
+      }
     }
   },
   "employer": {

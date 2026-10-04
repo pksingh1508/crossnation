@@ -430,7 +430,83 @@
     "info": {
       "heading": "EU Career Serwis Works",
       "title": "Safe and Legal Non-Skilled Job Opportunities in Europe",
-      "paragraph": "At EU Career Serwis, we provide safe and legal non-skilled job opportunities in many European countries. No advanced qualifications are needed—only your willingness to work and grow. We handle permits, contracts, and relocation support to make the process stress-free. Accommodation and guidance are arranged for your comfort and safety. Available roles include: Truck drivers, Taxi drivers, Delivery drivers (food, parcels, courier), Warehouse workers, Forklift operators, Loading & unloading staff, Movers & packers, Assembly line workers, Machine operators (basic level), Packaging staff, Quality control assistants, Production helpers, Textile workers, Electronics & automotive plant helpers, General laborers, Helpers for electricians, plumbers, carpenters, Painters & decorators, Road construction workers, Cleaning & janitorial staff, Gardening & landscaping workers, Fruit & vegetable pickers, Greenhouse workers, Farm assistants (animals & crops), Seasonal harvest workers, Flower plantation helpers, Hotel housekeeping staff, Kitchen helpers, Dishwashers, Restaurant & fast-food staff, Laundry assistants, Care home assistants, Cleaners & sanitizing staff, and Security guards (basic level)."
+      "paragraph": "At EU Career Serwis, we provide safe and legal non-skilled job opportunities in many European countries. No advanced qualifications are needed—only your willingness to work and grow. We handle permits, contracts, and relocation support to make the process stress-free. Accommodation and guidance are arranged for your comfort and safety.",
+      "rolesHeading": "Available roles",
+      "roleGroups": {
+        "transport": {
+          "name": "Transport & delivery",
+          "roles": [
+            "Truck drivers",
+            "Taxi drivers",
+            "Delivery drivers (food, parcels, courier)"
+          ]
+        },
+        "warehouse": {
+          "name": "Warehouse & logistics",
+          "roles": [
+            "Warehouse workers",
+            "Forklift operators",
+            "Loading & unloading staff",
+            "Movers & packers",
+            "Packaging staff"
+          ]
+        },
+        "production": {
+          "name": "Manufacturing & production",
+          "roles": [
+            "Assembly line workers",
+            "Machine operators (basic level)",
+            "Production helpers",
+            "Quality control assistants",
+            "Textile workers",
+            "Electronics & automotive plant helpers"
+          ]
+        },
+        "construction": {
+          "name": "Construction & trades",
+          "roles": [
+            "General laborers",
+            "Helpers for electricians, plumbers, carpenters",
+            "Painters & decorators",
+            "Road construction workers"
+          ]
+        },
+        "agriculture": {
+          "name": "Agriculture & gardening",
+          "roles": [
+            "Fruit & vegetable pickers",
+            "Seasonal harvest workers",
+            "Greenhouse workers",
+            "Farm assistants (animals & crops)",
+            "Flower plantation helpers",
+            "Gardening & landscaping workers"
+          ]
+        },
+        "hospitality": {
+          "name": "Hotels & restaurants",
+          "roles": [
+            "Hotel housekeeping staff",
+            "Kitchen helpers",
+            "Dishwashers",
+            "Restaurant & fast-food staff"
+          ]
+        },
+        "cleaning": {
+          "name": "Cleaning & laundry",
+          "roles": [
+            "Cleaning & janitorial staff",
+            "Cleaners & sanitizing staff",
+            "Laundry assistants"
+          ]
+        },
+        "care": {
+          "name": "Care & security",
+          "roles": [
+            "Care home assistants",
+            "Security guards (basic level)"
+          ]
+        }
+      }
     }
   },
   "employer": {
