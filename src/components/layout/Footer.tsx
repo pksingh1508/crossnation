@@ -15,13 +15,16 @@ import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { countryName } from "@/lib/country-name";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
-import { EMAIL_LINK, PHONE_LINK, SOCIAL_LINKS } from "./header-links";
+import {
+  EMAIL_LINK,
+  MAPS_LINK,
+  OFFICE_STREET,
+  PHONE_LINK,
+  SOCIAL_LINKS,
+} from "./header-links";
 import { FooterSpotlight } from "./FooterSpotlight";
 
 const { address } = siteConfig.contact;
-const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${address.street}, ${address.zipCode} ${address.city}, ${address.country}`
-)}`;
 
 // Official websites for migrants; labels in footer.governmentLinks
 const GOVERNMENT_LINKS = [
@@ -82,7 +85,7 @@ export function Footer() {
 
             <ul className={cn("mt-8 space-y-4", fontInter.className)}>
               <ContactRow icon={MapPin} href={MAPS_LINK} external>
-                {address.street}
+                {OFFICE_STREET}
                 <br />
                 {address.zipCode} {address.city}, {countryName(locale)}
               </ContactRow>

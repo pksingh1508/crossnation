@@ -2,10 +2,11 @@ import type { SVGProps } from "react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { siteConfig } from "@/constants/site";
 
-// Contact and social links shown in the top bar and the mobile menu. The values come
-// from siteConfig, so a changed phone number or profile only needs updating there.
+// Contact and social links shown in the top bar, the mobile menu, the footer and the
+// contact page. The values come from siteConfig, so a changed phone number or profile
+// only needs updating there.
 
-const { phone, email } = siteConfig.contact;
+const { phone, email, address } = siteConfig.contact;
 
 export const PHONE_LINK = {
   label: phone,
@@ -16,6 +17,14 @@ export const EMAIL_LINK = {
   label: email,
   href: `mailto:${email}`,
 };
+
+/** The office's street; its house number stays on the same line as the street's name */
+export const OFFICE_STREET = address.street.replace(/\s(?=\d)/g, "\u00a0");
+
+/** The office on Google Maps */
+export const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${address.street}, ${address.zipCode} ${address.city}, ${address.country}`
+)}`;
 
 /**
  * The X (Twitter) logo; lucide only has the old bird. The wider viewBox adds padding, so at

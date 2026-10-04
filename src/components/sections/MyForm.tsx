@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, Check, LoaderCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -45,6 +46,8 @@ const EMPTY_FORM = {
   email: "",
   phone: "",
   userType: "",
+  subject: "",
+  message: "",
   acceptTerms: false,
 };
 
@@ -65,6 +68,9 @@ const FIELD = cn(
   "h-12 rounded-xl border-neutral-200 bg-neutral-50 px-4 text-ellipsis text-neutral-950 shadow-none transition-[border-color,background-color,box-shadow] duration-200 placeholder:text-neutral-400 hover:border-neutral-300 focus-visible:border-neutral-950 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-brand/30",
   fontInter.className
 );
+
+// The message box: a field that grows with what's typed (and can be dragged taller)
+const TEXTAREA = cn(FIELD, "h-auto min-h-32 resize-y py-3 leading-relaxed");
 
 const PHONE_BOX = cn(
   "flex h-12 items-center rounded-xl border border-neutral-200 bg-neutral-50 transition-[border-color,background-color,box-shadow] duration-200 hover:border-neutral-300 focus-within:border-neutral-950 focus-within:bg-white focus-within:ring-4 focus-within:ring-brand/30",
@@ -113,14 +119,21 @@ function Field({ label, htmlFor, start, children }: FieldProps) {
 interface MyFormProps {
   /** The id of the text that names the form */
   labelledBy?: string;
+  /** Adds a subject and a message, which are sent instead of a standard enquiry */
+  withMessage?: boolean;
   className?: string;
 }
 
 /**
- * The enquiry form at the top of CommonContact; it sends the lead to the CRM. Its rows
- * animate in with the page, so it belongs at the top of a page.
+ * The enquiry form of CommonContact and, with a message, of the contact page; it sends
+ * the lead to the CRM. Its rows animate in with the page, so it belongs at the top of a
+ * page.
  */
-export function MyForm({ labelledBy, className }: MyFormProps) {
+export function MyForm({
+  labelledBy,
+  withMessage = false,
+  className,
+}: MyFormProps) {
   const locale = useLocale();
   const t = useTranslations("pages.myForm");
   const id = useId();
@@ -168,6 +181,7 @@ export function MyForm({ labelledBy, className }: MyFormProps) {
       !formData.email ||
       !formData.phone ||
       !formData.userType ||
+      (withMessage && (!formData.subject || !formData.message)) ||
       !formData.acceptTerms
     ) {
       if (!formData.userType) {
@@ -189,8 +203,12 @@ export function MyForm({ labelledBy, className }: MyFormProps) {
         email: formData.email,
         phone: `${selectedCountry.code} ${formData.phone}`,
         option: formData.userType,
-        subject: "Enquiry : Know More About Your Services",
-        message: "I am filling this form to know more about your serwis.",
+        ...(withMessage
+          ? { subject: formData.subject, message: formData.message }
+          : {
+              subject: "Enquiry : Know More About Your Services",
+              message: "I am filling this form to know more about your serwis.",
+            }),
       });
       if (res.status === 200 || res.status === 201) {
         clearForm();
@@ -360,13 +378,39 @@ export function MyForm({ labelledBy, className }: MyFormProps) {
         </Select>
       </Field>
 
+      {withMessage && (
+        <>
+          <Field label={t("subject")} htmlFor={`${id}-subject`} start={700}>
+            <Input
+              id={`${id}-subject`}
+              placeholder={t("subjectPlaceholder")}
+              value={formData.subject}
+              onChange={(e) => handleInputChange("subject", e.target.value)}
+              className={FIELD}
+              required
+            />
+          </Field>
+
+          <Field label={t("message")} htmlFor={`${id}-message`} start={760}>
+            <Textarea
+              id={`${id}-message`}
+              placeholder={t("messagePlaceholder")}
+              value={formData.message}
+              onChange={(e) => handleInputChange("message", e.target.value)}
+              className={TEXTAREA}
+              required
+            />
+          </Field>
+        </>
+      )}
+
       <div
         className={cn(
           "flex items-start gap-3 text-sm leading-relaxed text-neutral-600",
           fontInter.className,
           RISE
         )}
-        style={delay(700)}
+        style={delay(withMessage ? 820 : 700)}
       >
         {/* A drawn checkbox: it fills dark and a yellow tick pops in */}
         <span className="relative mt-0.5 grid size-5 shrink-0 place-items-center">
@@ -404,7 +448,7 @@ export function MyForm({ labelledBy, className }: MyFormProps) {
           "group relative mt-1 inline-flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-brand px-6 text-[15px] font-semibold text-neutral-950 shadow-[0_10px_24px_-12px_rgba(254,204,0,0.95)] transition-[translate,box-shadow,opacity] duration-300 ease-out outline-none hover:shadow-[0_16px_32px_-14px_rgba(254,204,0,1)] focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 active:translate-y-0 disabled:cursor-wait disabled:opacity-80 motion-safe:hover:-translate-y-0.5",
           RISE
         )}
-        style={delay(760)}
+        style={delay(withMessage ? 880 : 760)}
       >
         {/* A light sheen sweeps across on hover, as on the navbar's booking button */}
         <span
