@@ -122,6 +122,15 @@
     }
   }
 
+  /* The same for an upright line (e.g. origin-top). Class: animate-grow-y */
+  --animate-grow-y: grow-y 0.8s var(--ease-out-quint) backwards;
+
+  @keyframes grow-y {
+    from {
+      scale: 1 0;
+    }
+  }
+
   /* SVG lines. animate-draw draws a path from its start; the path needs --len (its
      length) and stroke-dasharray: var(--len). animate-pop grows a small shape into view
      and animate-ping-soft sends a soft ring out of it, over and over. The last two scale

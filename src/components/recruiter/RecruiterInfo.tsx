@@ -16,6 +16,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
+import { splitAtDash } from "@/lib/text";
 import { cn } from "@/lib/utils";
 
 // The six ways we support partners: their text is in the translations under
@@ -28,16 +29,6 @@ const BULLETS: { key: string; icon: LucideIcon }[] = [
   { key: "b5", icon: Building2 },
   { key: "b6", icon: TrendingUp },
 ];
-
-/**
- * "Legal Authorization – We are a licensed ..." gives ["Legal Authorization", "We are a
- * licensed ..."]. The dash between title and text is "–" or "-" with spaces around it,
- * depending on the language; a hyphen inside a word ("Visa-Bearbeitung") doesn't count.
- */
-function splitTitle(text: string): [string, string] {
-  const match = text.match(/^(.+?)\s+[–-]\s+(.+)$/);
-  return match ? [match[1], match[2]] : ["", text];
-}
 
 interface SupportCardProps {
   icon: LucideIcon;
@@ -52,7 +43,7 @@ interface SupportCardProps {
  */
 function SupportCard({ icon: Icon, text, index }: SupportCardProps) {
   const [ref, reveal] = useReveal<HTMLLIElement>();
-  const [title, body] = splitTitle(text);
+  const [title, body] = splitAtDash(text);
 
   return (
     <li

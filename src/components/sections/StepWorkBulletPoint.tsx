@@ -1,13 +1,17 @@
 "use client";
 
-import * as React from "react";
-import Image from "next/image";
-import { fontInter, fontPoppins } from "@/fonts";
+import { Check } from "lucide-react";
+import { SplitSection } from "@/components/sections/SplitSection";
+import { fontInter } from "@/fonts";
+import { delay, RISE_ON_REVEAL } from "@/lib/animation";
+import { splitAtDash } from "@/lib/text";
+import { cn } from "@/lib/utils";
 
 interface StepWorkBulletPointProps {
   image: string;
   imageAlt?: string;
   heading: string;
+  /** "Title – text", or just a title; empty bullets are left out */
   bullet1: string;
   bullet2: string;
   bullet3: string;
@@ -15,9 +19,14 @@ interface StepWorkBulletPointProps {
   bullet5: string;
   bullet6: string;
   bullet7: string;
+  /** Photo on the right on large screens */
   isReversed?: boolean;
 }
 
+/**
+ * A topic on the jobseeker page: a photo next to a heading and a checklist. Each item is a
+ * bold title and its text; where the translation has only the title, just that.
+ */
 export function StepWorkBulletPoint({
   image,
   imageAlt = "Step illustration",
@@ -31,119 +40,60 @@ export function StepWorkBulletPoint({
   bullet7,
   isReversed = false,
 }: StepWorkBulletPointProps) {
+  const bullets = [
+    bullet1,
+    bullet2,
+    bullet3,
+    bullet4,
+    bullet5,
+    bullet6,
+    bullet7,
+  ].filter(Boolean);
+
   return (
-    <div className="w-full">
-      <div className="container mx-auto max-w-7xl px-4 lg:py-16 py-8">
-        <div
-          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 ${isReversed ? "lg:flex-row-reverse" : ""}`}
-        >
-          {/* Image Section */}
-          <div
-            className={`flex justify-center ${isReversed ? "lg:justify-end" : "lg:justify-start"} ${isReversed ? "lg:order-2" : "lg:order-1"}`}
-          >
-            <div className="relative w-full h-auto max-w-lg">
-              <Image
-                src={image}
-                alt={imageAlt}
-                width={500}
-                height={400}
-                className="w-full h-[580px] object-cover rounded-md shadow-lg"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Text Content Section */}
-          <div
-            className={`space-y-6 ${isReversed ? "lg:order-1" : "lg:order-2"}`}
-          >
-            <h2
-              className={`text-3xl font-bold font-poppins text-gray-900 dark:text-white ${fontPoppins.className}`}
+    <SplitSection
+      image={image}
+      imageAlt={imageAlt}
+      heading={heading}
+      isReversed={isReversed}
+    >
+      {/* A word too long for a phone's line (German has some) wraps, hyphenated there */}
+      <ul
+        className={cn(
+          "mt-8 grid grid-cols-1 gap-5 wrap-break-word max-sm:hyphens-auto",
+          fontInter.className
+        )}
+      >
+        {bullets.map((bullet, i) => {
+          const [title, text] = splitAtDash(bullet);
+          return (
+            <li
+              key={i}
+              className={cn("flex gap-4", RISE_ON_REVEAL)}
+              style={delay(250 + i * 70)}
             >
-              {heading}
-            </h2>
-
-            <div className="space-y-1">
-              {bullet1 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet1}
+              {/* The tick pops in just after its row */}
+              <span
+                aria-hidden
+                className="mt-px grid size-7 shrink-0 place-items-center rounded-full bg-brand-soft text-neutral-900 reveal-shown:animate-pop motion-reduce:animate-none"
+                style={delay(400 + i * 70)}
+              >
+                <Check className="size-4" strokeWidth={2.5} />
+              </span>
+              <div className="min-w-0">
+                <p className="leading-snug font-semibold text-neutral-950 sm:text-lg">
+                  {title ?? text}
+                </p>
+                {title && (
+                  <p className="mt-1 leading-relaxed text-neutral-600">
+                    {text}
                   </p>
-                </div>
-              )}
-
-              {bullet2 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet2}
-                  </p>
-                </div>
-              )}
-
-              {bullet3 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet3}
-                  </p>
-                </div>
-              )}
-
-              {bullet4 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet4}
-                  </p>
-                </div>
-              )}
-
-              {bullet5 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet5}
-                  </p>
-                </div>
-              )}
-
-              {bullet6 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet6}
-                  </p>
-                </div>
-              )}
-
-              {bullet7 && (
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
-                  <p
-                    className={`font-inter text-gray-600 dark:text-gray-300 leading-relaxed ${fontInter.className}`}
-                  >
-                    {bullet7}
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </SplitSection>
   );
 }
