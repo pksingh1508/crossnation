@@ -6,6 +6,7 @@ import { useLocale } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useReveal } from "@/hooks/useReveal";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
@@ -117,19 +118,7 @@ export default function EmployerInfo() {
           data-reveal={headReveal}
           className="lg:sticky lg:top-28 lg:col-span-5 lg:self-start"
         >
-          <p
-            className={cn(
-              "flex items-center gap-3 text-sm font-semibold tracking-[0.2em] text-neutral-500 uppercase",
-              RISE_ON_REVEAL
-            )}
-          >
-            <span
-              aria-hidden
-              className="h-0.5 w-8 shrink-0 origin-left rounded-full bg-brand reveal-waiting:scale-x-0 reveal-shown:animate-grow-x motion-reduce:animate-none"
-              style={delay(250)}
-            />
-            {tPage("title")}
-          </p>
+          <Eyebrow>{tPage("title")}</Eyebrow>
           {/* The employer page's main heading */}
           <h1 className="mt-5 text-[min(2.25rem,9vw)] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl lg:text-[2.75rem] xl:text-5xl">
             <WordReveal

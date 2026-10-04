@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useReveal } from "@/hooks/useReveal";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
@@ -102,21 +103,9 @@ export default function WorkInfo() {
     >
       <div className="mx-auto w-full max-w-7xl px-4">
         <div ref={headerRef} data-reveal={headerReveal}>
-          <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-16">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div className="lg:col-span-7">
-              <p
-                className={cn(
-                  "flex items-center gap-3 text-sm font-semibold tracking-[0.2em] text-neutral-500 uppercase",
-                  RISE_ON_REVEAL
-                )}
-              >
-                <span
-                  aria-hidden
-                  className="h-0.5 w-8 shrink-0 origin-left rounded-full bg-brand reveal-waiting:scale-x-0 reveal-shown:animate-grow-x motion-reduce:animate-none"
-                  style={delay(250)}
-                />
-                {t("heading")}
-              </p>
+              <Eyebrow>{t("heading")}</Eyebrow>
               {/* The work page's main heading */}
               <h1 className="mt-5 text-[min(2.25rem,9vw)] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl">
                 <WordReveal
@@ -153,7 +142,7 @@ export default function WorkInfo() {
           </h2>
         </div>
 
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {groups.map(({ id, ...group }, index) => (
             <RoleGroup key={id} {...group} index={index} />
           ))}
