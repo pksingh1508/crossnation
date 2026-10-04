@@ -153,21 +153,26 @@ export function getSuccessStories(
   );
 }
 
+/** Newest first; with a search term, only those whose name or words contain it. */
 export function getTestimonials(
   page = 1,
-  pageSize = 10
+  pageSize = 10,
+  search?: string
 ): Promise<Page<TestimonialCard>> {
-  return paged(page, pageSize, (from, to) =>
-    cms
+  const term = cleanSearch(search);
+  return paged(page, pageSize, (from, to) => {
+    let query = cms
       .from("eu_testimonials")
       .select(
         "id, name, quote, image_url, image_alt, image_width, image_height, views_count, published_at",
         { count: "exact" }
       )
-      .eq("status", "published")
-      .order("published_at", { ascending: false })
-      .range(from, to)
-  );
+      .eq("status", "published");
+    if (term) {
+      query = query.or(`name.ilike.%${term}%,quote.ilike.%${term}%`);
+    }
+    return query.order("published_at", { ascending: false }).range(from, to);
+  });
 }
 
 // Image galleries

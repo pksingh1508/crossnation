@@ -2,7 +2,7 @@ import "server-only";
 import { getLocalizedPath } from "@/lib/locale-paths";
 import { cleanSearch } from "./queries";
 
-// The address of a page of the blog or the news list: ?page=2&q=permit
+// The address of a page of a CMS list (blog, news, success stories): ?page=2&q=permit
 
 export type ListSearchParams = {
   page?: string | string[];

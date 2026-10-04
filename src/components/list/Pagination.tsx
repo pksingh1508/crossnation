@@ -144,7 +144,7 @@ export function Pagination({
                 <>
                   {item === page && (
                     <motion.span
-                      layoutId="article-page-marker"
+                      layoutId="list-page-marker"
                       transition={MARKER_SPRING}
                       className="absolute inset-0 rounded-full bg-brand shadow-[0_8px_20px_-10px_rgba(254,204,0,0.95)]"
                     />

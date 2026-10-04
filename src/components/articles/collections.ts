@@ -10,7 +10,7 @@ export type ArticleCardData = BlogPostCard | NewsArticleCard;
 interface CollectionSettings {
   /** Where the list is; an article is at path/slug */
   path: string;
-  /** Its pages' translations. Both have the same keys: title, heading, postCount, share … */
+  /** Its pages' translations. Both have the same keys: title, heading, count, share … */
   namespace: "blogsPage" | "immigrationPage";
   /** The list's name in the breadcrumbs (the breadcrumbs are in English) */
   breadcrumb: string;
