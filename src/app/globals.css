@@ -226,6 +226,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /* framer-motion's useScroll({ target }) measures an element against the page, so the page
+     needs a position; nothing visible is placed against it */
+  html {
+    @apply relative;
+  }
   body {
     @apply bg-background text-foreground;
   }
