@@ -4,11 +4,10 @@ import { useRef } from "react";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Clock, Heart } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock } from "lucide-react";
+import type { BlogPost, NewsArticle } from "@/lib/cms/types";
 import { useTranslations } from "@/hooks/useTranslations";
 import { WordReveal } from "@/components/ui/word-reveal";
-import { RecentBlogList } from "@/components/sections/RecentBlogList";
-import { ReadingProgress, ShareButtons } from "@/components/blogs/ArticleTools";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { siteConfig } from "@/constants/site";
@@ -20,49 +19,65 @@ import {
   organizationSchema,
 } from "@/lib/seo/structuredData";
 import { getLocalizedPath, getLocalizedUrl } from "@/lib/locale-paths";
-import type { BlogPost, BlogPostCard } from "@/lib/cms/types";
+import { ArticleRow } from "./ArticleRow";
+import { ReadingProgress, ShareButtons } from "./ArticleTools";
+import {
+  articleStat,
+  COLLECTIONS,
+  type ArticleCardData,
+  type Collection,
+} from "./collections";
 
-interface BlogArticleClientProps {
-  post: BlogPost;
-  latestPosts: BlogPostCard[];
+interface ArticleViewProps {
+  collection: Collection;
+  article: BlogPost | NewsArticle;
+  /** The newest articles of the list; the others than this one are shown at the end */
+  latest: ArticleCardData[];
   /** The publish date, formatted on the server so the browser renders the same text */
   publishedAt: string;
   readingMinutes: number;
 }
 
 /**
- * A blog post: its header and cover, then the text in a narrow column that's easy to
- * read, with its tags and ways to share it; the latest other posts follow. A yellow bar
- * at the top of the window shows how far the text has been read.
+ * A blog post or news article: its header and cover, then the text in a narrow column
+ * that's easy to read, with its tags and ways to share it; the latest other articles
+ * follow. A yellow bar at the top of the window shows how far the text has been read.
  */
-export function BlogArticleClient({
-  post,
-  latestPosts,
+export function ArticleView({
+  collection,
+  article,
+  latest,
   publishedAt,
   readingMinutes,
-}: BlogArticleClientProps) {
-  const t = useTranslations("blogsPage");
+}: ArticleViewProps) {
+  const { path, namespace, breadcrumb, more } = COLLECTIONS[collection];
+  const t = useTranslations(namespace);
+  const tMore = useTranslations(more.namespace);
   const locale = useLocale();
   const bodyRef = useRef<HTMLDivElement>(null);
-  const url = getLocalizedUrl(locale, `/blog/${post.slug}`);
-  const morePosts = latestPosts.filter(({ id }) => id !== post.id).slice(0, 3);
+  const url = getLocalizedUrl(locale, `${path}/${article.slug}`);
+  const others = latest.filter(({ id }) => id !== article.id).slice(0, 3);
+  const stat = articleStat(article);
+  // News articles have no author of their own
+  const author = ("author_name" in article && article.author_name) || null;
 
-  const articleSchema = generateArticleSchema(
-    post.title,
-    post.excerpt || post.title,
-    post.published_at ?? post.created_at,
-    post.updated_at,
-    post.image_url ?? undefined,
-    post.author_name ?? undefined
-  );
-
-  const structuredData = [organizationSchema, articleSchema];
+  const structuredData = [
+    organizationSchema,
+    generateArticleSchema(
+      article.title,
+      article.excerpt || article.title,
+      article.published_at ?? article.created_at,
+      article.updated_at,
+      article.image_url ?? undefined,
+      author ?? undefined
+    ),
+  ];
 
   const breadcrumbItems = [
-    { name: "Blog", href: getLocalizedPath(locale, "/blog") },
+    { name: breadcrumb, href: getLocalizedPath(locale, path) },
     {
-      name: post.title,
-      href: getLocalizedPath(locale, `/blog/${post.slug}`),
+      name: article.title,
+      href: getLocalizedPath(locale, `${path}/${article.slug}`),
     },
   ];
 
@@ -94,7 +109,7 @@ export function BlogArticleClient({
             {publishedAt && (
               <span className="inline-flex items-center gap-1.5">
                 <CalendarDays aria-hidden className="size-4" />
-                <time dateTime={post.published_at ?? undefined}>
+                <time dateTime={article.published_at ?? undefined}>
                   {publishedAt}
                 </time>
               </span>
@@ -104,22 +119,25 @@ export function BlogArticleClient({
               {t("minRead", { minutes: readingMinutes })}
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Heart aria-hidden className="size-4 fill-red-500 text-red-500" />
-              <span className="sr-only">{t("totalLikes")}:</span>
-              {post.likes_count.toLocaleString("en-US")}
+              <stat.icon
+                aria-hidden
+                className={cn("size-4", stat.iconClassName)}
+              />
+              <span className="sr-only">{t(stat.label)}:</span>
+              {stat.count.toLocaleString("en-US")}
             </span>
           </p>
 
           <h1 className="mt-5 text-[min(2.25rem,9vw)] leading-[1.1] font-semibold tracking-tight text-balance text-neutral-950 sm:text-5xl">
             <WordReveal
-              text={post.title}
+              text={article.title}
               delay={100}
               stagger={40}
               className="reveal-shown:animate-word motion-reduce:animate-none"
             />
           </h1>
 
-          {post.excerpt && (
+          {article.excerpt && (
             <p
               className={cn(
                 "mt-6 text-lg leading-relaxed text-neutral-600 sm:text-xl",
@@ -128,7 +146,7 @@ export function BlogArticleClient({
               )}
               style={delay(400)}
             >
-              {post.excerpt}
+              {article.excerpt}
             </p>
           )}
 
@@ -147,25 +165,38 @@ export function BlogArticleClient({
                 height={48}
                 className="h-8 w-auto rounded-md"
               />
-              {post.author_name ?? siteConfig.name}
+              {author ?? siteConfig.name}
             </p>
-            <ShareButtons title={post.title} url={url} />
+            <ShareButtons
+              collection={collection}
+              title={article.title}
+              url={url}
+            />
           </div>
         </header>
 
-        {post.image_url && (
+        {article.image_url && (
           <div
             data-reveal="shown"
             className="mx-auto mt-10 w-full max-w-5xl px-4 sm:mt-12"
           >
-            {/* The frame wipes open while the picture settles from a slight zoom */}
+            {/* The frame wipes open while the picture settles from a slight zoom. It has the
+                picture's own shape and is never wider than the picture, so a small
+                screenshot stays sharp instead of being blown up. */}
             <div
-              className="relative aspect-video overflow-hidden rounded-[2rem] bg-neutral-100 ring-1 ring-black/5 reveal-shown:animate-reveal motion-reduce:animate-none"
-              style={delay(300)}
+              className="relative mx-auto aspect-video overflow-hidden rounded-[2rem] bg-neutral-100 ring-1 ring-black/5 reveal-shown:animate-reveal motion-reduce:animate-none"
+              style={{
+                ...delay(300),
+                ...(article.image_width &&
+                  article.image_height && {
+                    maxWidth: article.image_width,
+                    aspectRatio: `${article.image_width} / ${article.image_height}`,
+                  }),
+              }}
             >
               <Image
-                src={post.image_url}
-                alt={post.image_alt || post.title}
+                src={article.image_url}
+                alt={article.image_alt || article.title}
                 fill
                 preload
                 sizes="(min-width: 1024px) 992px, 100vw"
@@ -183,15 +214,15 @@ export function BlogArticleClient({
           {/* The CMS cleaned this HTML against an allowlist when it was saved, so it is inserted as it is */}
           <div
             className={cn("cms-content", fontInter.className)}
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: article.content }}
           />
 
-          {post.tags.length > 0 && (
+          {article.tags.length > 0 && (
             <ul
               aria-label={t("tags")}
               className={cn("mt-12 flex flex-wrap gap-2", fontInter.className)}
             >
-              {post.tags.map((tag) => (
+              {article.tags.map((tag) => (
                 <li
                   key={tag}
                   className="rounded-full bg-neutral-100 px-3 py-1.5 text-sm text-neutral-700"
@@ -204,24 +235,36 @@ export function BlogArticleClient({
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-neutral-200 pt-8">
             <Link
-              href={getLocalizedPath(locale, "/blog")}
+              href={getLocalizedPath(locale, path)}
               className="group/back inline-flex items-center gap-2 rounded-sm font-semibold text-neutral-950 underline decoration-brand decoration-2 underline-offset-[6px] transition-[text-decoration-color] duration-300 outline-none hover:decoration-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950"
             >
               <ArrowLeft
                 aria-hidden
                 className="size-4 transition-transform duration-300 ease-out-quint group-hover/back:-translate-x-1"
               />
-              {t("backToBlog")}
+              {t("backToList")}
             </Link>
-            <ShareButtons title={post.title} url={url} />
+            <ShareButtons
+              collection={collection}
+              title={article.title}
+              url={url}
+            />
           </div>
         </div>
       </article>
 
-      {/* The latest other posts, with a link to the blog */}
-      {morePosts.length > 0 && (
+      {/* The latest other articles, with a link to the list */}
+      {others.length > 0 && (
         <div className="border-t border-neutral-200">
-          <RecentBlogList blogs={morePosts} />
+          <ArticleRow
+            collection={collection}
+            articles={others}
+            title={tMore(more.heading)}
+            link={{
+              href: getLocalizedPath(locale, path),
+              label: tMore(more.link),
+            }}
+          />
         </div>
       )}
     </div>

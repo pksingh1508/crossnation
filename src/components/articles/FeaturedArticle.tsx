@@ -4,24 +4,34 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import type { BlogPostCard } from "@/lib/cms/types";
 import { formatDate } from "@/lib/cms/format";
 import { useTranslations } from "@/hooks/useTranslations";
 import { fontInter } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
-import { PostMeta } from "./BlogCard";
+import { ArticleMeta } from "./ArticleCard";
+import {
+  COLLECTIONS,
+  type ArticleCardData,
+  type Collection,
+} from "./collections";
+
+interface FeaturedArticleProps {
+  collection: Collection;
+  article: ArticleCardData;
+}
 
 /**
- * The first post of a page of the blog, large: picture beside the text from lg up. Like
+ * The first article of a page of a list, large: picture beside the text from lg up. Like
  * the cards, the title's link covers it all. Put it in a shown reveal block: it comes in
  * whenever it appears, as the page opens and after a change of page.
  */
-export function FeaturedPost({ blog }: { blog: BlogPostCard }) {
-  const t = useTranslations("blogsPage");
+export function FeaturedArticle({ collection, article }: FeaturedArticleProps) {
+  const { path, namespace } = COLLECTIONS[collection];
+  const t = useTranslations(namespace);
   const locale = useLocale();
-  const date = formatDate(blog.published_at, {
+  const date = formatDate(article.published_at, {
     month: "long",
     day: "numeric",
     year: "numeric",
@@ -34,9 +44,9 @@ export function FeaturedPost({ blog }: { blog: BlogPostCard }) {
         className="relative aspect-video overflow-hidden rounded-[2rem] bg-neutral-100 ring-1 ring-black/5 reveal-shown:animate-reveal motion-reduce:animate-none lg:col-span-7"
         style={delay(150)}
       >
-        {blog.image_url && (
+        {article.image_url && (
           <Image
-            src={blog.image_url}
+            src={article.image_url}
             alt=""
             fill
             preload
@@ -49,12 +59,7 @@ export function FeaturedPost({ blog }: { blog: BlogPostCard }) {
 
       <div className="lg:col-span-5">
         <div className={RISE_ON_REVEAL} style={delay(350)}>
-          <PostMeta
-            date={date}
-            publishedAt={blog.published_at}
-            likes={blog.likes_count}
-            likesLabel={t("totalLikes")}
-          />
+          <ArticleMeta collection={collection} article={article} date={date} />
         </div>
 
         <h2
@@ -65,14 +70,14 @@ export function FeaturedPost({ blog }: { blog: BlogPostCard }) {
           style={delay(420)}
         >
           <Link
-            href={getLocalizedPath(locale, `/blog/${blog.slug}`)}
+            href={getLocalizedPath(locale, `${path}/${article.slug}`)}
             className="decoration-brand decoration-2 underline-offset-[6px] outline-none group-hover/post:underline after:absolute after:-inset-3 after:rounded-[2.5rem] focus-visible:after:ring-2 focus-visible:after:ring-neutral-950"
           >
-            {blog.title}
+            {article.title}
           </Link>
         </h2>
 
-        {blog.excerpt && (
+        {article.excerpt && (
           <p
             className={cn(
               "mt-4 line-clamp-4 leading-relaxed text-neutral-600 sm:text-lg",
@@ -81,7 +86,7 @@ export function FeaturedPost({ blog }: { blog: BlogPostCard }) {
             )}
             style={delay(500)}
           >
-            {blog.excerpt}
+            {article.excerpt}
           </p>
         )}
 

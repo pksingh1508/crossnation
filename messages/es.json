@@ -907,7 +907,7 @@
     "retry": "Intentar de nuevo",
     "notFoundTitle": "Entrada no encontrada",
     "notFoundText": "Puede que esta entrada se haya movido o eliminado.",
-    "backToBlog": "Volver al blog",
+    "backToList": "Volver al blog",
     "tags": "Etiquetas"
   },
   "immigrationPage": {
@@ -919,7 +919,23 @@
     "cachedPage": "Página en Caché",
     "refresh": "Actualizar",
     "searchPlaceholder": "Buscar noticias...",
-    "latest": "Últimas Noticias de Inmigración"
+    "latest": "Últimas Noticias de Inmigración",
+    "postCount": "{count, plural, one {# artículo} other {# artículos}}",
+    "readPost": "Leer artículo",
+    "minRead": "{minutes} min de lectura",
+    "share": "Compartir",
+    "copyLink": "Copiar enlace",
+    "linkCopied": "Enlace copiado",
+    "clearSearch": "Borrar búsqueda",
+    "noResults": "Ningún artículo coincide con «{query}»",
+    "noPosts": "Aún no hay noticias. Vuelve pronto.",
+    "loadError": "No pudimos cargar las noticias.",
+    "retry": "Intentar de nuevo",
+    "notFoundTitle": "Artículo no encontrado",
+    "notFoundText": "Puede que este artículo se haya movido o eliminado.",
+    "backToList": "Volver a las noticias",
+    "tags": "Etiquetas",
+    "totalViews": "Visualizaciones"
   },
   "pagination": {
     "previous": "Anterior",

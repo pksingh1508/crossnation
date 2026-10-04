@@ -907,7 +907,7 @@
     "retry": "Erneut versuchen",
     "notFoundTitle": "Beitrag nicht gefunden",
     "notFoundText": "Dieser Beitrag wurde möglicherweise verschoben oder entfernt.",
-    "backToBlog": "Zurück zum Blog",
+    "backToList": "Zurück zum Blog",
     "tags": "Schlagwörter"
   },
   "immigrationPage": {
@@ -919,7 +919,23 @@
     "cachedPage": "Zwischengespeicherte Seite",
     "refresh": "Aktualisieren",
     "searchPlaceholder": "Nachrichten suchen...",
-    "latest": "Neueste Einwanderungsnachrichten"
+    "latest": "Neueste Einwanderungsnachrichten",
+    "postCount": "{count, plural, one {# Artikel} other {# Artikel}}",
+    "readPost": "Artikel lesen",
+    "minRead": "{minutes} Min. Lesezeit",
+    "share": "Teilen",
+    "copyLink": "Link kopieren",
+    "linkCopied": "Link kopiert",
+    "clearSearch": "Suche löschen",
+    "noResults": "Keine Artikel zu „{query}“ gefunden",
+    "noPosts": "Noch keine Nachrichten. Schauen Sie bald wieder vorbei.",
+    "loadError": "Die Nachrichten konnten nicht geladen werden.",
+    "retry": "Erneut versuchen",
+    "notFoundTitle": "Artikel nicht gefunden",
+    "notFoundText": "Dieser Artikel wurde möglicherweise verschoben oder entfernt.",
+    "backToList": "Zurück zu den Nachrichten",
+    "tags": "Schlagwörter",
+    "totalViews": "Aufrufe"
   },
   "pagination": {
     "previous": "Vorherige",

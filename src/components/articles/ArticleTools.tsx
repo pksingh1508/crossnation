@@ -6,6 +6,7 @@ import { Check, Facebook, Link2, Linkedin, Share2 } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { XLogo } from "@/components/layout/header-links";
 import { cn } from "@/lib/utils";
+import { COLLECTIONS, type Collection } from "./collections";
 
 /**
  * A thin yellow bar across the top of the window that fills as the article is read: from
@@ -41,6 +42,7 @@ const ROUND =
   "relative grid size-10 place-items-center rounded-full border border-neutral-200 text-neutral-600 transition-[translate,background-color,border-color,color] duration-300 ease-out-quint outline-none hover:border-brand hover:bg-brand hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950 motion-safe:hover:-translate-y-0.5";
 
 interface ShareButtonsProps {
+  collection: Collection;
   title: string;
   /** The article's address */
   url: string;
@@ -51,8 +53,13 @@ interface ShareButtonsProps {
  * Share on Facebook, X or LinkedIn, or copy the link. Where the browser can share (most
  * phones), a share button opens its own menu too.
  */
-export function ShareButtons({ title, url, className }: ShareButtonsProps) {
-  const t = useTranslations("blogsPage");
+export function ShareButtons({
+  collection,
+  title,
+  url,
+  className,
+}: ShareButtonsProps) {
+  const t = useTranslations(COLLECTIONS[collection].namespace);
   const [canShare, setCanShare] = useState(false);
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);

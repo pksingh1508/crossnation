@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
+import { ArticleView } from "@/components/articles/ArticleView";
 import { formatDate, readingMinutes } from "@/lib/cms/format";
 import { getNewsArticle, getNewsArticles } from "@/lib/cms/queries";
 import { canonicalSlug } from "@/lib/cms/slug";
-import { NewsArticleClient } from "./ClientPage";
 
 export { generateMetadata } from "./metadata";
 
@@ -17,7 +17,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
   const [news, latestNews] = await Promise.all([
     getNewsArticle(canonicalSlug(slug)),
-    getNewsArticles(1, 7)
+    getNewsArticles(1, 5)
       .then((page) => page.items)
       .catch((error) => {
         console.error("Failed to load the latest immigration news:", error);
@@ -27,15 +27,14 @@ export default async function NewsArticlePage({ params }: PageProps) {
   if (!news) notFound();
 
   return (
-    <NewsArticleClient
-      news={news}
-      latestNews={latestNews}
+    <ArticleView
+      collection="news"
+      article={news}
+      latest={latestNews}
       publishedAt={formatDate(news.published_at, {
         year: "numeric",
         month: "long",
         day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
       })}
       readingMinutes={readingMinutes(news.content)}
     />

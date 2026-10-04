@@ -907,7 +907,7 @@
     "retry": "Réessayer",
     "notFoundTitle": "Article introuvable",
     "notFoundText": "Cet article a peut-être été déplacé ou supprimé.",
-    "backToBlog": "Retour au blog",
+    "backToList": "Retour au blog",
     "tags": "Mots-clés"
   },
   "immigrationPage": {
@@ -919,7 +919,23 @@
     "cachedPage": "Page en Cache",
     "refresh": "Rafraîchir",
     "searchPlaceholder": "Rechercher des actualités...",
-    "latest": "Dernières Actualités sur l’Immigration"
+    "latest": "Dernières Actualités sur l’Immigration",
+    "postCount": "{count, plural, one {# article} other {# articles}}",
+    "readPost": "Lire l'article",
+    "minRead": "{minutes} min de lecture",
+    "share": "Partager",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié",
+    "clearSearch": "Effacer la recherche",
+    "noResults": "Aucun article ne correspond à « {query} »",
+    "noPosts": "Aucune actualité pour le moment. Revenez bientôt.",
+    "loadError": "Impossible de charger les actualités.",
+    "retry": "Réessayer",
+    "notFoundTitle": "Article introuvable",
+    "notFoundText": "Cet article a peut-être été déplacé ou supprimé.",
+    "backToList": "Retour aux actualités",
+    "tags": "Mots-clés",
+    "totalViews": "Vues"
   },
   "pagination": {
     "previous": "Précédent",

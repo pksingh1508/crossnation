@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
+import { ArticleView } from "@/components/articles/ArticleView";
 import { formatDate, readingMinutes } from "@/lib/cms/format";
 import { getBlogPost, getBlogPosts } from "@/lib/cms/queries";
 import { canonicalSlug } from "@/lib/cms/slug";
-import { BlogArticleClient } from "./ClientPage";
 
 export { generateMetadata } from "./metadata";
 
@@ -26,9 +26,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
   if (!post) notFound();
 
   return (
-    <BlogArticleClient
-      post={post}
-      latestPosts={latestPosts}
+    <ArticleView
+      collection="blog"
+      article={post}
+      latest={latestPosts}
       publishedAt={formatDate(post.published_at, {
         year: "numeric",
         month: "long",

@@ -102,18 +102,23 @@ export const getBlogPost = cache(
 const NEWS_CARD =
   "id, title, slug, excerpt, image_url, image_alt, image_width, image_height, tags, views_count, published_at";
 
+/** Newest first; with a search term, like getBlogPosts. */
 export function getNewsArticles(
   page = 1,
-  pageSize = 10
+  pageSize = 10,
+  search?: string
 ): Promise<Page<NewsArticleCard>> {
-  return paged(page, pageSize, (from, to) =>
-    cms
+  const term = cleanSearch(search);
+  return paged(page, pageSize, (from, to) => {
+    let query = cms
       .from("eu_news")
       .select(NEWS_CARD, { count: "exact" })
-      .eq("status", "published")
-      .order("published_at", { ascending: false })
-      .range(from, to)
-  );
+      .eq("status", "published");
+    if (term) {
+      query = query.or(`title.ilike.%${term}%,excerpt.ilike.%${term}%`);
+    }
+    return query.order("published_at", { ascending: false }).range(from, to);
+  });
 }
 
 export const getNewsArticle = cache(

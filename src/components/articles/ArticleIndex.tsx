@@ -11,7 +11,7 @@ import {
 } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { LoaderCircle, RotateCw, Search, SearchX, X } from "lucide-react";
-import type { BlogPostCard, Page } from "@/lib/cms/types";
+import type { Page } from "@/lib/cms/types";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useLenis } from "@/utils/lenis";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -19,28 +19,35 @@ import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { cn } from "@/lib/utils";
-import { BlogCard, WIDE_AT_MD } from "./BlogCard";
-import { FeaturedPost } from "./FeaturedPost";
+import { ArticleCard, WIDE_AT_MD } from "./ArticleCard";
+import { FeaturedArticle } from "./FeaturedArticle";
 import { Pagination } from "./Pagination";
+import {
+  COLLECTIONS,
+  type ArticleCardData,
+  type Collection,
+} from "./collections";
 
 /** How long typing must pause before the search runs, in ms */
 const SEARCH_DELAY = 350;
 
-interface BlogIndexProps {
-  /** The page of posts the address asks for; null when it couldn't be loaded */
-  result: Page<BlogPostCard> | null;
+interface ArticleIndexProps {
+  collection: Collection;
+  /** The page of articles the address asks for; null when it couldn't be loaded */
+  result: Page<ArticleCardData> | null;
   /** The search term in the address, already cleaned */
   query: string;
 }
 
 /**
- * The blog's list. The page number and the search term live in the address (?page=2&q=…),
+ * The list of the blog or the news. The page number and the search term live in the
+ * address (?page=2&q=…),
  * and the server renders that page, so the back button, shared links and search engines
  * all work. Here, changing page or searching navigates smoothly: the list dims while the
  * next one loads, then fades in.
  */
-export function BlogIndex({ result, query }: BlogIndexProps) {
-  const t = useTranslations("blogsPage");
+export function ArticleIndex({ collection, result, query }: ArticleIndexProps) {
+  const t = useTranslations(COLLECTIONS[collection].namespace);
   const tPages = useTranslations("pagination");
   const router = useRouter();
   const pathname = usePathname();
@@ -93,7 +100,7 @@ export function BlogIndex({ result, query }: BlogIndexProps) {
     startTransition(() => router.replace(href(1, term), { scroll: false }));
   };
 
-  // The newest post of each page is shown large; search results are all cards
+  // The newest article of each page is shown large; search results are all cards
   const featured = !query && posts.length > 0 ? posts[0] : null;
   const cards = featured ? posts.slice(1) : posts;
 
@@ -107,7 +114,7 @@ export function BlogIndex({ result, query }: BlogIndexProps) {
         >
           <div className="lg:col-span-7">
             <Eyebrow>{t("title")}</Eyebrow>
-            {/* The blog's main heading */}
+            {/* The page's main heading */}
             <h1 className="mt-5 text-[min(2.75rem,11vw)] leading-[1.05] font-semibold tracking-tight text-balance text-neutral-950 sm:text-6xl">
               <WordReveal
                 text={t("heading")}
@@ -128,6 +135,7 @@ export function BlogIndex({ result, query }: BlogIndexProps) {
               {t("description")}
             </p>
             <SearchBox
+              collection={collection}
               query={query}
               pending={isPending}
               onSearch={search}
@@ -199,15 +207,19 @@ export function BlogIndex({ result, query }: BlogIndexProps) {
               <>
                 {featured && (
                   <div data-reveal="shown" className="mb-16 sm:mb-20">
-                    <FeaturedPost blog={featured} />
+                    <FeaturedArticle
+                      collection={collection}
+                      article={featured}
+                    />
                   </div>
                 )}
                 {cards.length > 0 && (
                   <ul className="grid grid-cols-1 gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-                    {cards.map((blog, index) => (
-                      <BlogCard
-                        key={blog.id}
-                        blog={blog}
+                    {cards.map((article, index) => (
+                      <ArticleCard
+                        key={article.id}
+                        collection={collection}
+                        article={article}
                         // Each row's cards come in one after another
                         start={(index % 3) * 100}
                         // With an odd number of cards, the last spans both columns
@@ -236,6 +248,7 @@ export function BlogIndex({ result, query }: BlogIndexProps) {
 }
 
 interface SearchBoxProps {
+  collection: Collection;
   query: string;
   pending: boolean;
   onSearch: (term: string) => void;
@@ -248,13 +261,14 @@ interface SearchBoxProps {
  * load, the magnifier turns into a spinner.
  */
 function SearchBox({
+  collection,
   query,
   pending,
   onSearch,
   className,
   style,
 }: SearchBoxProps) {
-  const t = useTranslations("blogsPage");
+  const t = useTranslations(COLLECTIONS[collection].namespace);
   const [value, setValue] = useState(query);
   // The last term sent; a different term in the address came from elsewhere (back button)
   const sent = useRef(query);

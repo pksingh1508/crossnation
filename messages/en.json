@@ -907,7 +907,7 @@
     "retry": "Try again",
     "notFoundTitle": "Post not found",
     "notFoundText": "This post may have moved or been removed.",
-    "backToBlog": "Back to the blog",
+    "backToList": "Back to the blog",
     "tags": "Tags"
   },
   "immigrationPage": {
@@ -919,7 +919,23 @@
     "cachedPage": "Cached Page",
     "refresh": "Refresh",
     "searchPlaceholder": "Search news...",
-    "latest": "Latest Immigration News"
+    "latest": "Latest Immigration News",
+    "postCount": "{count, plural, one {# article} other {# articles}}",
+    "readPost": "Read article",
+    "minRead": "{minutes} min read",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied",
+    "clearSearch": "Clear search",
+    "noResults": "No articles match “{query}”",
+    "noPosts": "No news yet. Check back soon.",
+    "loadError": "We couldn't load the news.",
+    "retry": "Try again",
+    "notFoundTitle": "Article not found",
+    "notFoundText": "This article may have moved or been removed.",
+    "backToList": "Back to the news",
+    "tags": "Tags",
+    "totalViews": "Views"
   },
   "pagination": {
     "previous": "Previous",

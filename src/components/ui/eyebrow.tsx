@@ -10,7 +10,8 @@ interface EyebrowProps {
 /**
  * A short label above a section's heading, after a yellow line that grows in. Put it in
  * a block that uses useReveal; it rises into view with the block. When a long label wraps
- * (German has some), the line stays beside its first line.
+ * (German has some), the line stays beside its first line; a single word too long for
+ * the line (EINWANDERUNGSNACHRICHTEN on a small phone) is hyphenated.
  */
 export function Eyebrow({ children, className }: EyebrowProps) {
   return (
@@ -26,7 +27,7 @@ export function Eyebrow({ children, className }: EyebrowProps) {
         className="mt-[calc(0.5lh_-_1px)] h-0.5 w-8 shrink-0 origin-left rounded-full bg-brand reveal-waiting:scale-x-0 reveal-shown:animate-grow-x motion-reduce:animate-none"
         style={delay(250)}
       />
-      {children}
+      <span className="min-w-0 hyphens-auto wrap-break-word">{children}</span>
     </p>
   );
 }

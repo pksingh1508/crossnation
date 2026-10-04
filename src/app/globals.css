@@ -312,9 +312,6 @@
   .cms-content a {
     @apply font-medium text-neutral-950 underline decoration-brand decoration-2 underline-offset-4 transition-[text-decoration-color] duration-300 hover:decoration-neutral-950;
   }
-  .cms-content-news a {
-    @apply text-blue-600 hover:text-blue-800;
-  }
   .cms-content blockquote {
     @apply my-8 rounded-r-2xl border-l-4 border-brand bg-brand-soft/40 py-4 pr-6 pl-6 text-neutral-800 italic;
   }
