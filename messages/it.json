@@ -359,6 +359,8 @@
     },
     "commonContact": {
       "title": "Cerchi lavoro, assunzioni o partnership?",
+      "heading": "Ti interessa lavorare con noi",
+      "headingAccent": "come dipendente, datore di lavoro o partner?",
       "description": "Pronto a fare il passo successivo? Che tu stia cercando opportunità di lavoro, opzioni di investimento, soluzioni di assunzione o possibilità di partnership, siamo qui per aiutarti a connetterti con le persone e le opportunità giuste.",
       "buttons": {
         "work": "Lavoro",

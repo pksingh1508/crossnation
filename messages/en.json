@@ -359,6 +359,8 @@
     },
     "commonContact": {
       "title": "Looking to Work, Hire, or Partner?",
+      "heading": "Interested in working with us",
+      "headingAccent": "as an employee, employer, or partner?",
       "description": "Ready to take the next step? Whether you're looking for work opportunities, investment options, hiring solutions, or partnership possibilities, we're here to help you connect with the right people and opportunities.",
       "buttons": {
         "work": "Work",

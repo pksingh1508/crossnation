@@ -37,7 +37,7 @@ export default async function MigratePage({ params }: MigratePageProps) {
   return (
     <div className="min-h-screen">
       <StructuredData data={structuredData} />
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs items={breadcrumbItems} />
       </div>
       <CommonContact />

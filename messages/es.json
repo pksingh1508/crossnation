@@ -359,6 +359,8 @@
     },
     "commonContact": {
       "title": "¿Buscas Trabajar, Contratar o Asociarte?",
+      "heading": "¿Te interesa trabajar con nosotros",
+      "headingAccent": "como empleado, empleador o socio?",
       "description": "¿Listo para dar el siguiente paso? Ya sea que busques oportunidades de trabajo, opciones de inversión, soluciones de contratación o posibilidades de asociación, estamos aquí para ayudarte a conectar con las personas y oportunidades adecuadas.",
       "buttons": {
         "work": "Trabajo",

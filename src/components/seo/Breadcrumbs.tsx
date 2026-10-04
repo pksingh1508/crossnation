@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { ChevronRight, Home } from "lucide-react";
+import { ChevronRight, House } from "lucide-react";
 import { StructuredData } from "./StructuredData";
 import { generateBreadcrumbSchema } from "@/lib/seo/structuredData";
 import { siteConfig } from "@/constants/site";
+import { fontPoppins } from "@/fonts";
+import { delay } from "@/lib/animation";
+import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
 interface BreadcrumbItem {
@@ -18,11 +21,18 @@ interface BreadcrumbsProps {
   className?: string;
 }
 
-export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
+/**
+ * The trail from the home page to this one, for visitors and, as structured data, for
+ * search engines. On one line: a long last item (an article's title) is cut short.
+ */
+export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   const locale = useLocale();
 
   // Add home as the first item
-  const allItems = [{ name: "Home", href: getLocalizedPath(locale, "/") }, ...items];
+  const allItems = [
+    { name: "Home", href: getLocalizedPath(locale, "/") },
+    ...items,
+  ];
 
   // Generate structured data for breadcrumbs
   const breadcrumbSchema = generateBreadcrumbSchema(
@@ -35,30 +45,59 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   return (
     <>
       <StructuredData data={breadcrumbSchema} />
+      {/* 78rem: as wide as the content of the sections below, max-w-7xl less their
+          padding */}
       <nav
         aria-label="Breadcrumb"
-        className={`flex items-center space-x-2 text-sm text-gray-600 max-w-7xl mx-auto ${className}`}
+        className={cn(
+          "mx-auto max-w-[78rem]",
+          fontPoppins.className,
+          className
+        )}
       >
-        {allItems.map((item, index) => (
-          <div key={item.href} className="flex items-center">
-            {index > 0 && (
-              <ChevronRight className="w-4 h-4 mx-2 text-gray-400" />
-            )}
-            {index === 0 && <Home className="w-4 h-4 mr-2 text-gray-400" />}
-            {index === allItems.length - 1 ? (
-              <span className="font-medium text-gray-900" aria-current="page">
-                {item.name}
-              </span>
-            ) : (
-              <Link
-                href={item.href}
-                className="hover:text-yellow-600 transition-colors"
+        <ol className="flex items-center gap-2 text-sm text-neutral-500">
+          {allItems.map((item, index) => {
+            const isCurrent = index === allItems.length - 1;
+            return (
+              <li
+                key={item.href}
+                className={cn(
+                  "flex animate-rise items-center gap-2 motion-reduce:animate-none",
+                  isCurrent ? "min-w-0" : "shrink-0"
+                )}
+                style={delay(index * 80)}
               >
-                {item.name}
-              </Link>
-            )}
-          </div>
-        ))}
+                {index > 0 && (
+                  <ChevronRight
+                    aria-hidden
+                    className="size-3.5 shrink-0 text-neutral-300"
+                  />
+                )}
+                {isCurrent ? (
+                  <span
+                    aria-current="page"
+                    className="truncate font-medium text-neutral-950"
+                  >
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="group/crumb inline-flex items-center gap-1.5 rounded-sm whitespace-nowrap transition-colors duration-200 outline-none hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950"
+                  >
+                    {index === 0 && (
+                      <House
+                        aria-hidden
+                        className="size-4 transition-transform duration-300 ease-out-quint group-hover/crumb:-translate-y-px"
+                      />
+                    )}
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
       </nav>
     </>
   );

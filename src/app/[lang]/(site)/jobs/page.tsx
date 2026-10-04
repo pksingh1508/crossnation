@@ -12,7 +12,7 @@ export default async function JobsPage({ params }: JobsPageProps) {
 
   return (
     <div>
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs items={breadcrumbItems} />
       </div>
       <Jobs />

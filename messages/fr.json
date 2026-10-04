@@ -359,6 +359,8 @@
     },
     "commonContact": {
       "title": "Vous Cherchez un Travail, à Embaucher ou à Faire Partenariat ?",
+      "heading": "Vous souhaitez travailler avec nous",
+      "headingAccent": "en tant que salarié, employeur ou partenaire ?",
       "description": "Prêt à franchir l'étape suivante ? Que vous recherchiez des opportunités de travail, des options d'investissement, des solutions d'embauche ou des possibilités de partenariat, nous sommes là pour vous aider à vous connecter avec les bonnes personnes et les bonnes opportunités.",
       "buttons": {
         "work": "Travail",

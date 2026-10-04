@@ -359,6 +359,8 @@
     },
     "commonContact": {
       "title": "Szukasz Pracy, Chcesz Zatrudnić lub Współpracować?",
+      "heading": "Chcesz z nami współpracować",
+      "headingAccent": "jako pracownik, pracodawca lub partner?",
       "description": "Gotowy na następny krok? Czy szukasz możliwości pracy, opcji inwestycyjnych, rozwiązań rekrutacyjnych czy możliwości partnerstwa, jesteśmy tutaj, aby pomóc ci połączyć się z odpowiednimi ludźmi i możliwościami.",
       "buttons": {
         "work": "Praca",

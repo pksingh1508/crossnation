@@ -10,6 +10,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { fontInter, fontPoppins } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
+import { FLAG_CDN } from "@/lib/flags";
 import { cn } from "@/lib/utils";
 import { getLocalizedPath } from "@/lib/locale-paths";
 
@@ -31,11 +32,6 @@ interface CustomHeroProps {
   /** Photo on the left on large screens */
   isReversed?: boolean;
 }
-
-// The square flags of flag-icons, the set the contact form uses. Pinned to a version, so
-// the files never change and browsers can cache them for good.
-const FLAG_CDN =
-  "https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.5.0/flags/1x1/";
 
 /**
  * One service on the home page: text and countries next to a photo. The countries link to

@@ -359,6 +359,8 @@
     },
     "commonContact": {
       "title": "Suchen Sie Arbeit, Einstellung oder Partnerschaften?",
+      "heading": "Möchten Sie mit uns zusammenarbeiten",
+      "headingAccent": "als Arbeitnehmer, Arbeitgeber oder Partner?",
       "description": "Bereit für den nächsten Schritt? Ob Sie nach Arbeitsmöglichkeiten, Investitionsoptionen, Einstellungslösungen oder Partnerschaftsmöglichkeiten suchen, wir sind hier, um Ihnen dabei zu helfen, sich mit den richtigen Personen und Möglichkeiten zu verbinden.",
       "buttons": {
         "work": "Arbeit",
