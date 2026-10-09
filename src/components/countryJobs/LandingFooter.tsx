@@ -3,18 +3,14 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, type LucideIcon } from "lucide-react";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useReveal } from "@/hooks/useReveal";
 import {
   EMAIL_LINK,
   MAPS_LINK,
   OFFICE_STREET,
-  PHONE_LINK,
   SOCIAL_LINKS,
-  WHATSAPP_LABEL,
-  WhatsAppLogo,
-  whatsAppLink,
 } from "@/components/layout/header-links";
 import { siteConfig } from "@/constants/site";
 import { fontInter } from "@/fonts";
@@ -97,12 +93,6 @@ export function LandingFooter() {
           >
             <h2 className="text-sm font-semibold text-white">Contact</h2>
             <ul className={cn("mt-5 space-y-4", fontInter.className)}>
-              <ContactRow icon={Phone} href={PHONE_LINK.href}>
-                {PHONE_LINK.label}
-              </ContactRow>
-              <ContactRow icon={WhatsAppLogo} href={whatsAppLink()} external>
-                WhatsApp {WHATSAPP_LABEL}
-              </ContactRow>
               <ContactRow icon={Mail} href={EMAIL_LINK.href}>
                 {EMAIL_LINK.label}
               </ContactRow>
@@ -155,7 +145,7 @@ function ContactRow({
   external = false,
   children,
 }: {
-  icon: typeof Phone | typeof WhatsAppLogo;
+  icon: LucideIcon;
   href: string;
   external?: boolean;
   children: ReactNode;

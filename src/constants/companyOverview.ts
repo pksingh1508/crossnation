@@ -24,8 +24,6 @@ export const CompanyOverview = [
   {
     question: "How can I contact EU Career Serwis?",
     answer: [
-      "Phone: +48 787277550",
-      "WhatsApp: +48787277555",
       "Email: office@eucareerserwis.pl",
       "Our team is available to assist you throughout your process.",
     ],

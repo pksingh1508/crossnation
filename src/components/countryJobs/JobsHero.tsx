@@ -1,13 +1,8 @@
 "use client";
 
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { WordReveal } from "@/components/ui/word-reveal";
-import {
-  PHONE_LINK,
-  WhatsAppLogo,
-  whatsAppLink,
-} from "@/components/layout/header-links";
 import { fontInter } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { cn } from "@/lib/utils";
@@ -31,7 +26,7 @@ interface JobsHeroProps {
 }
 
 /**
- * The top of the page: the country's name with a marker stroke under it, the ways to
+ * The top of the page: the country's name with a marker stroke under it, the button to
  * apply, and the jobs at a glance on a boarding pass. It is on screen when the page opens,
  * so it plays its entrance with the first paint.
  */
@@ -82,11 +77,8 @@ export function JobsHero({ country, onApply }: JobsHeroProps) {
             how we handle your work permit and visa, step by step.
           </p>
 
-          {/* On phones each button takes the full width */}
-          <div
-            className={cn("mt-9 flex flex-wrap gap-3", RISE_ON_REVEAL)}
-            style={delay(620)}
-          >
+          {/* On phones the button takes the full width */}
+          <div className={cn("mt-9 flex", RISE_ON_REVEAL)} style={delay(620)}>
             <a
               href="#apply"
               onClick={(event) => {
@@ -98,34 +90,7 @@ export function JobsHero({ country, onApply }: JobsHeroProps) {
               Apply now
               <ArrowRight aria-hidden className={BUTTON_ARROW} />
             </a>
-            <a
-              href={whatsAppLink(`Hello, I am interested in jobs in ${place}.`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-6 py-3 text-[15px] max-sm:w-full font-semibold text-neutral-950 ring-1 ring-neutral-300 transition-[background-color,box-shadow,translate] duration-300 ease-out-quint outline-none hover:bg-neutral-50 hover:ring-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950 motion-safe:hover:-translate-y-0.5"
-            >
-              <WhatsAppLogo className="size-[18px] text-[#25d366]" />
-              Chat on WhatsApp
-            </a>
           </div>
-
-          <p
-            className={cn(
-              "mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-500",
-              fontInter.className,
-              RISE_ON_REVEAL
-            )}
-            style={delay(720)}
-          >
-            <Phone aria-hidden className="size-4 text-neutral-400" />
-            Prefer to talk? Call us on
-            <a
-              href={PHONE_LINK.href}
-              className="rounded-sm font-medium whitespace-nowrap text-neutral-950 underline decoration-brand decoration-2 underline-offset-4 transition-[text-decoration-color] duration-300 outline-none hover:decoration-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950"
-            >
-              {PHONE_LINK.label}
-            </a>
-          </p>
         </div>
 
         <div className="lg:col-span-5">

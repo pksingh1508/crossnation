@@ -1,49 +1,24 @@
 "use client";
 
-import { useId, useState, type ReactNode } from "react";
-import { ChevronDown, Mail, Phone } from "lucide-react";
+import { useId, useState } from "react";
+import { ChevronDown, Mail } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
-import {
-  EMAIL_LINK,
-  PHONE_LINK,
-  WHATSAPP_LABEL,
-  WhatsAppLogo,
-  whatsAppLink,
-} from "@/components/layout/header-links";
+import { EMAIL_LINK } from "@/components/layout/header-links";
 import { CompanyOverview } from "@/constants/companyOverview";
 import { fontInter } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
-import { linkify, TEXT_LINK } from "@/lib/linkify";
+import { linkify } from "@/lib/linkify";
 import { cn } from "@/lib/utils";
 import { SectionIntro } from "./SectionIntro";
 
 /** Questions shown before "Show all" */
 const FIRST = 6;
 
-/** An answer's line, with its contact details as links; WhatsApp opens a chat */
-function answerLine(text: string): ReactNode {
-  const whatsapp = text.match(/^WhatsApp:\s*\+?\d+$/);
-  if (!whatsapp) return linkify(text);
-  return (
-    <>
-      WhatsApp:{" "}
-      <a
-        href={whatsAppLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={TEXT_LINK}
-      >
-        {WHATSAPP_LABEL}
-      </a>
-    </>
-  );
-}
-
 /**
  * The company, in questions and answers: one answer open at a time. The first few show;
  * the rest open below them on request. Every answer is in the page's HTML, so search
  * engines read them all; a closed one has no height and is inert. Beside them, on larger
- * screens, the ways to reach us stay in view.
+ * screens, our email address stays in view.
  */
 export function CompanyFAQ() {
   const titleId = useId();
@@ -64,38 +39,20 @@ export function CompanyFAQ() {
             description="Who we are, how we work and how to reach us: the questions candidates ask us most."
           />
           <div ref={ref} data-reveal={reveal}>
-            <ul className={cn("mt-8 space-y-2", fontInter.className)}>
-              {[
-                { icon: Phone, href: PHONE_LINK.href, label: PHONE_LINK.label },
-                {
-                  icon: WhatsAppLogo,
-                  href: whatsAppLink(),
-                  label: `WhatsApp ${WHATSAPP_LABEL}`,
-                  external: true,
-                },
-                { icon: Mail, href: EMAIL_LINK.href, label: EMAIL_LINK.label },
-              ].map(({ icon: Icon, href, label, external }, index) => (
-                <li
-                  key={href}
-                  className={RISE_ON_REVEAL}
-                  style={delay(350 + index * 70)}
-                >
-                  <a
-                    href={href}
-                    {...(external && {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    })}
-                    className="group/contact inline-flex items-center gap-3 rounded-full py-1 pr-3 font-medium text-neutral-800 transition-colors duration-200 outline-none hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950"
-                  >
-                    <span className="grid size-9 place-items-center rounded-full bg-neutral-100 text-neutral-700 transition-colors duration-300 group-hover/contact:bg-brand group-hover/contact:text-neutral-950">
-                      <Icon aria-hidden className="size-4" />
-                    </span>
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <p
+              className={cn("mt-8", fontInter.className, RISE_ON_REVEAL)}
+              style={delay(350)}
+            >
+              <a
+                href={EMAIL_LINK.href}
+                className="group/contact inline-flex items-center gap-3 rounded-full py-1 pr-3 font-medium text-neutral-800 transition-colors duration-200 outline-none hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-950"
+              >
+                <span className="grid size-9 place-items-center rounded-full bg-neutral-100 text-neutral-700 transition-colors duration-300 group-hover/contact:bg-brand group-hover/contact:text-neutral-950">
+                  <Mail aria-hidden className="size-4" />
+                </span>
+                {EMAIL_LINK.label}
+              </a>
+            </p>
           </div>
         </div>
 
@@ -166,14 +123,14 @@ export function CompanyFAQ() {
                                   aria-hidden
                                   className="absolute top-[0.5lh] left-0 size-1.5 -translate-y-1/2 rounded-full bg-brand"
                                 />
-                                {answerLine(line)}
+                                {linkify(line)}
                               </li>
                             ))}
                           </ul>
                         ) : (
                           answer.map((line) => (
                             <p key={line} className="mt-2 first:mt-0">
-                              {answerLine(line)}
+                              {linkify(line)}
                             </p>
                           ))
                         )}

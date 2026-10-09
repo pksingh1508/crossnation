@@ -5,12 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Flag from "react-country-flag";
 import { AnimatePresence, motion } from "framer-motion";
-import { Phone } from "lucide-react";
-import {
-  PHONE_LINK,
-  WhatsAppLogo,
-  whatsAppLink,
-} from "@/components/layout/header-links";
 import { FLAG_CDN } from "@/lib/flags";
 import { cn } from "@/lib/utils";
 import { PRIMARY_BUTTON } from "./JobsHero";
@@ -26,9 +20,9 @@ interface LandingHeaderProps {
 }
 
 /**
- * A slim bar that stays at the top: the logo and the ways to get in touch, with the button
- * that leads to the form always in reach. It turns to frosted glass once the page scrolls,
- * and names the country once the page's title has scrolled away.
+ * A slim bar that stays at the top: the logo, with the button that leads to the form
+ * always in reach. It turns to frosted glass once the page scrolls, and names the country
+ * once the page's title has scrolled away.
  */
 export function LandingHeader({ country, onApply }: LandingHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -104,39 +98,16 @@ export function LandingHeader({ country, onApply }: LandingHeaderProps) {
           </AnimatePresence>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2">
-          <a
-            href={PHONE_LINK.href}
-            className="group/phone inline-flex h-10 items-center gap-2 rounded-full px-3 text-sm font-medium whitespace-nowrap text-neutral-700 transition-colors duration-200 outline-none hover:bg-neutral-100 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-900/25 max-lg:hidden"
-          >
-            <Phone
-              aria-hidden
-              className="size-4 transition-transform duration-300 motion-safe:group-hover/phone:-rotate-12"
-            />
-            {PHONE_LINK.label}
-          </a>
-          <a
-            href={whatsAppLink(
-              `Hello, I am interested in jobs in ${country.place}.`
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            className="grid size-10 place-items-center rounded-full text-[#25d366] ring-1 ring-neutral-200 transition-[background-color,box-shadow,translate] duration-300 ease-out-quint outline-none hover:bg-neutral-50 hover:ring-neutral-300 focus-visible:ring-2 focus-visible:ring-neutral-950 motion-safe:hover:-translate-y-0.5 max-[359px]:hidden"
-          >
-            <WhatsAppLogo className="size-[18px]" />
-          </a>
-          <a
-            href="#apply"
-            onClick={(event) => {
-              event.preventDefault();
-              onApply();
-            }}
-            className={cn(PRIMARY_BUTTON, "min-h-10 px-5 py-2 text-sm")}
-          >
-            Apply now
-          </a>
-        </div>
+        <a
+          href="#apply"
+          onClick={(event) => {
+            event.preventDefault();
+            onApply();
+          }}
+          className={cn(PRIMARY_BUTTON, "min-h-10 shrink-0 px-5 py-2 text-sm")}
+        >
+          Apply now
+        </a>
       </div>
     </header>
   );

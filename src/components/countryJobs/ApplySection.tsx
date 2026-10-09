@@ -1,22 +1,19 @@
 "use client";
 
 import { useId } from "react";
-import { BriefcaseBusiness, Mail, Phone, Send, X } from "lucide-react";
+import { BriefcaseBusiness, Mail, Send, X } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { WordReveal } from "@/components/ui/word-reveal";
 import { MyForm } from "@/components/sections/MyForm";
-import {
-  EMAIL_LINK,
-  PHONE_LINK,
-  WHATSAPP_LABEL,
-  WhatsAppLogo,
-  whatsAppLink,
-} from "@/components/layout/header-links";
+import { EMAIL_LINK } from "@/components/layout/header-links";
 import { fontInter } from "@/fonts";
 import { delay, RISE_ON_REVEAL } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import type { CountryJobs } from "./types";
+
+// The email address in two parts: where it doesn't fit on one line, it breaks after the @
+const [MAILBOX, DOMAIN] = EMAIL_LINK.label.split("@");
 
 interface ApplySectionProps {
   country: CountryJobs;
@@ -26,9 +23,9 @@ interface ApplySectionProps {
 }
 
 /**
- * Where every "Apply" leads: an invitation on a dark panel, with the other ways to reach
- * us, beside the enquiry form. A job chosen from the list shows here, and the lead tells
- * our team which country and job it is about.
+ * Where every "Apply" leads: an invitation on a dark panel, with our email address,
+ * beside the enquiry form. A job chosen from the list shows here, and the lead tells our
+ * team which country and job it is about.
  */
 export function ApplySection({
   country,
@@ -39,31 +36,9 @@ export function ApplySection({
   const titleId = useId();
   const formTitleId = useId();
   const [ref, reveal] = useReveal<HTMLDivElement>();
-  const greeting = role
-    ? `Hello, I am interested in the ${role} job in ${place}.`
-    : `Hello, I am interested in jobs in ${place}.`;
-
-  const contacts = [
-    {
-      icon: WhatsAppLogo,
-      label: "WhatsApp",
-      value: WHATSAPP_LABEL,
-      href: whatsAppLink(greeting),
-      external: true,
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: PHONE_LINK.label,
-      href: PHONE_LINK.href,
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      value: EMAIL_LINK.label,
-      href: EMAIL_LINK.href,
-    },
-  ];
+  const message = role
+    ? `I am interested in the ${role} job in ${place}.`
+    : `I am interested in jobs in ${place}.`;
 
   return (
     <section
@@ -134,43 +109,29 @@ export function ApplySection({
             </p>
           )}
 
-          <ul
-            className={cn(
-              "mt-auto grid grid-cols-1 gap-2 pt-10",
-              fontInter.className
-            )}
+          <p
+            className={cn("mt-auto pt-10", fontInter.className, RISE_ON_REVEAL)}
+            style={delay(550)}
           >
-            {contacts.map(
-              ({ icon: Icon, label, value, href, external }, index) => (
-                <li
-                  key={label}
-                  className={RISE_ON_REVEAL}
-                  style={delay(550 + index * 80)}
-                >
-                  <a
-                    href={href}
-                    {...(external && {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    })}
-                    className="group/contact flex items-center gap-4 rounded-2xl p-3 transition-colors duration-200 outline-none hover:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-brand"
-                  >
-                    <span className="grid size-11 shrink-0 place-items-center rounded-full bg-white/[0.06] text-brand ring-1 ring-white/10 transition-colors duration-300 group-hover/contact:bg-brand group-hover/contact:text-neutral-950">
-                      <Icon aria-hidden className="size-[18px]" />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">
-                        {label}
-                      </span>
-                      <span className="block truncate font-medium text-white">
-                        {value}
-                      </span>
-                    </span>
-                  </a>
-                </li>
-              )
-            )}
-          </ul>
+            <a
+              href={EMAIL_LINK.href}
+              className="group/contact flex items-center gap-4 rounded-2xl p-3 transition-colors duration-200 outline-none hover:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-brand"
+            >
+              {/* On the narrowest phones the icon makes way for the address */}
+              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-white/[0.06] text-brand ring-1 ring-white/10 transition-colors duration-300 group-hover/contact:bg-brand group-hover/contact:text-neutral-950 max-[319px]:hidden">
+                <Mail aria-hidden className="size-[18px]" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">
+                  Email
+                </span>
+                <span className="block font-medium wrap-break-word text-white">
+                  {MAILBOX}@<wbr />
+                  {DOMAIN}
+                </span>
+              </span>
+            </a>
+          </p>
         </div>
 
         {/* The form's rows rise in one after another; until the form scrolls into view
@@ -204,7 +165,7 @@ export function ApplySection({
               subject: role
                 ? `Enquiry: ${role} – Jobs in ${name}`
                 : `Enquiry: Jobs in ${name}`,
-              message: greeting.replace(/^Hello, /, ""),
+              message,
             }}
             className="mt-7"
           />
